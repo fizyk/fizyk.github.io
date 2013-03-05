@@ -1,5 +1,5 @@
 .. title: Witaj, Nikola
-.. slug: welcome-nikola
+.. slug: witaj-nikola
 .. date: 2013/03/03 18:19:57
 .. tags: blog, nikola, python
 .. link:

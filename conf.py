@@ -51,12 +51,14 @@ TRANSLATIONS = {
 # You should provide a key-value pair for each used language.
 SIDEBAR_LINKS = {
     DEFAULT_LANG: (
+        ('/blog/', 'Blog'),
         ('/archive.html', 'Archives'),
-        ('/categories/index.html', 'Tags'),
+        ('/tags/', 'Tags'),
     ),
     'pl': (
-        ('/pl/archive.html', 'Archives'),
-        ('/pl/categories/index.html', 'Tags'),
+        ('/pl/blog/', 'Blog'),
+        ('/pl/archive.html', 'Archiwum'),
+        ('/pl/tags/', 'Tagi'),
     ),
 }
 
@@ -88,10 +90,11 @@ SIDEBAR_LINKS = {
 #
 
 post_pages = (
-    ("posts/*.rst", "posts", "post.tmpl", True),
-    ("stories/*.txt", "stories", "story.tmpl", False),
+    ("posts/*.rst", "blog", "post.tmpl", True),
+    ("pages/*.rst", "", "story.tmpl", False),
 )
 
+INDEX_PATH = "blog"
 # One or more folders containing files to be copied as-is into the output.
 # The format is a dictionary of "source" "relative destination".
 # Default is:
@@ -123,14 +126,14 @@ post_compilers = {
 # output / TRANSLATION[lang] / TAG_PATH / index.html (list of tags)
 # output / TRANSLATION[lang] / TAG_PATH / tag.html (list of posts for a tag)
 # output / TRANSLATION[lang] / TAG_PATH / tag.xml (RSS feed for a tag)
-# TAG_PATH = "categories"
+TAG_PATH = "tags"
 
 # If TAG_PAGES_ARE_INDEXES is set to True, each tag's page will contain
 # the posts themselves. If set to False, it will be just a list of links.
 # TAG_PAGES_ARE_INDEXES = True
 
 # Final location is output / TRANSLATION[lang] / INDEX_PATH / index-*.html
-# INDEX_PATH = ""
+INDEX_PATH = "blog"
 # Final locations for the archives are:
 # output / TRANSLATION[lang] / ARCHIVE_PATH / ARCHIVE_FILENAME
 # output / TRANSLATION[lang] / ARCHIVE_PATH / YEAR / index.html
@@ -214,7 +217,7 @@ post_compilers = {
 # THEME = 'site'
 
 # date format used to display post dates. (str used by datetime.datetime.strftime)
-# DATE_FORMAT = '%Y-%m-%d %H:%M'
+DATE_FORMAT = '%d %B %Y %H:%M'
 
 # FAVICONS contains (name, file, size) tuples.
 # Used for create favicon link like this:
@@ -226,7 +229,7 @@ post_compilers = {
 # }
 
 # Show only teasers in the index pages? Defaults to False.
-# INDEX_TEASERS = False
+INDEX_TEASERS = True
 
 # A HTML fragment describing the license, for the sidebar. Default is "".
 # I recommend using the Creative Commons' wizard:
