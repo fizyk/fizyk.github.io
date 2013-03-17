@@ -51,12 +51,12 @@ TRANSLATIONS = {
 # You should provide a key-value pair for each used language.
 SIDEBAR_LINKS = {
     DEFAULT_LANG: (
-        ('/blog/', 'Blog'),
+        # ('/blog/', 'Blog'),
         ('/archive.html', 'Archives'),
         ('/tags/', 'Tags'),
     ),
     'pl': (
-        ('/pl/blog/', 'Blog'),
+        # ('/pl/blog/', 'Blog'),
         ('/pl/archive.html', 'Archiwum'),
         ('/pl/tags/', 'Tagi'),
     ),
@@ -94,7 +94,6 @@ post_pages = (
     ("pages/*.rst", "", "story.tmpl", False),
 )
 
-INDEX_PATH = "blog"
 # One or more folders containing files to be copied as-is into the output.
 # The format is a dictionary of "source" "relative destination".
 # Default is:
@@ -133,7 +132,7 @@ TAG_PATH = "tags"
 # TAG_PAGES_ARE_INDEXES = True
 
 # Final location is output / TRANSLATION[lang] / INDEX_PATH / index-*.html
-INDEX_PATH = "blog"
+# INDEX_PATH = "blog"
 # Final locations for the archives are:
 # output / TRANSLATION[lang] / ARCHIVE_PATH / ARCHIVE_FILENAME
 # output / TRANSLATION[lang] / ARCHIVE_PATH / YEAR / index.html
