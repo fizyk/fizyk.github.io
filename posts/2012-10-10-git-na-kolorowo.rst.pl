@@ -9,7 +9,9 @@ Domyślne usawienia kolorów w konsolowym gicie, nie są zbyt wyszukane.
 Wszystko jest takie same, przeważnie białe. Aby temu zaradzić, można
 ustawić te oto wartości:
 
-::
+.. TEASER_END
+
+.. code-block:: bash
 
     git config --global color.diff auto
     git config --global color.status auto
