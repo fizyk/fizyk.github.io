@@ -245,7 +245,7 @@ INDEX_TEASERS = True
 # A small copyright notice for the page footer (in HTML).
 # Default is ''
 CONTENT_FOOTER = 'Contents &copy; {date} <a href="mailto:{email}">{author}</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>'
-CONTENT_FOOTER = CONTENT_FOOTER.format(email=BLOG_EMAIL,
+CONTENT_FOOTER = CONTENT_FOOTER.format(email=BLOG_EMAIL.replace('@', '~~'),
                                        author=BLOG_AUTHOR,
                                        date=time.gmtime().tm_year)
 
