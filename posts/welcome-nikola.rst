@@ -1,6 +1,6 @@
 .. title: Welcome, Nikola
 .. slug: welcome-nikola
-.. date: 2013/03/03 18:19:57
+.. date: 2013/04/03 18:19:57
 .. tags: blog, nikola, python
 .. link:
 .. description: I've just changed my blog engine from own-developed one, based on symfony, to the Nikola powered static site.
