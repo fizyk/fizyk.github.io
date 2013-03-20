@@ -11,6 +11,8 @@ different mysql drivers in terms of efficiency. At Red Sky, we used
 python projects, at least within our team. But MySQLdb requires
 mysql-client library, and does some compiling during installation.
 
+.. TEASER_END
+
 I was wondering how other drivers will perform, and then saw `Geert
 Vanderkelen's <http://geert.vanderkelen.org/mysql-connector-python-1-0-5-beta/>`_
 post about
