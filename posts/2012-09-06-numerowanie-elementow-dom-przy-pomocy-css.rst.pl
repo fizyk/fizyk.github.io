@@ -8,6 +8,8 @@
 W CSS2 istnieje prosty sposób, na stworzenie listy numerowanej, bez
 użycia znacznika list. Sposób ten pozwala również rozszerzyć same listy.
 
+.. TEASER_END
+
 By osiągnąć efekt listy numerowanej, konieczne jest użycie trzech
 właściwości CSS:
 
@@ -18,7 +20,7 @@ właściwości CSS:
 **counter-reset** informuje w jakich warunkach licznik jest resetowany:
   
 
-::
+.. code-block:: css
 
     .reset
     {
@@ -28,7 +30,7 @@ właściwości CSS:
 **counter-increment** podnosi wartosć licznika:
   
 
-::
+.. code-block:: css
 
     .increment
     {
@@ -39,7 +41,7 @@ Natomiast **content** wraz z funkcją counter wyświetla w odpowiednim
 miejscu wartość licznika. Dlatego najlepiej umieścić tą właściwość w
 definicji z selektorem **:before**
 
-::
+.. code-block:: css
 
     .count-me:before
     {
@@ -50,7 +52,7 @@ definicji z selektorem **:before**
 Metoda content potrafi wyświetlić również ciąg znaków, a nawet dwa
 liczniki, dlatego też można wyświetlić coś takiego:
 
-::
+.. code-block:: css
 
     .count-me-too:before
     {

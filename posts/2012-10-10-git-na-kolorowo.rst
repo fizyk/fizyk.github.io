@@ -5,4 +5,4 @@
 .. link:
 .. description: Polish only
 
-This post is polish only
+This post is in Polish only

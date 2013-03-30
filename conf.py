@@ -9,7 +9,7 @@ import time
 ##############################################
 
 
-SITE_URL = "http://www.fizyk.net.pl"
+SITE_URL = "http://blog.fizyk.net.pl"
 # Data about this site
 BLOG_AUTHOR = "Grzegorz Śliwiński"
 BLOG_TITLE = "Cases"
@@ -52,12 +52,12 @@ TRANSLATIONS = {
 # You should provide a key-value pair for each used language.
 SIDEBAR_LINKS = {
     DEFAULT_LANG: (
-        # ('/blog/', 'Blog'),
+        ('http://www.fizyk.net.pl/en', 'Homepage'),
         ('/archive.html', 'Archives'),
         ('/tags/', 'Tags'),
     ),
     'pl': (
-        # ('/pl/blog/', 'Blog'),
+        ('http://www.fizyk.net.pl', 'Strona domowa'),
         ('/pl/archive.html', 'Archiwum'),
         ('/pl/tags/', 'Tagi'),
     ),
