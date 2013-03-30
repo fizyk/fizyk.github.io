@@ -53,12 +53,12 @@ TRANSLATIONS = {
 SIDEBAR_LINKS = {
     DEFAULT_LANG: (
         ('http://www.fizyk.net.pl/en', 'Homepage'),
-        ('/archive.html', 'Archives'),
+        ('/archive/', 'Archives'),
         ('/tags/', 'Tags'),
     ),
     'pl': (
         ('http://www.fizyk.net.pl', 'Strona domowa'),
-        ('/pl/archive.html', 'Archiwum'),
+        ('/pl/archive/', 'Archiwum'),
         ('/pl/tags/', 'Tagi'),
     ),
 }
@@ -137,8 +137,8 @@ TAG_PATH = "tags"
 # Final locations for the archives are:
 # output / TRANSLATION[lang] / ARCHIVE_PATH / ARCHIVE_FILENAME
 # output / TRANSLATION[lang] / ARCHIVE_PATH / YEAR / index.html
-# ARCHIVE_PATH = ""
-# ARCHIVE_FILENAME = "archive.html"
+ARCHIVE_PATH = "archive"
+ARCHIVE_FILENAME = "index.html"
 # Final locations are:
 # output / TRANSLATION[lang] / RSS_PATH / rss.xml
 # RSS_PATH = ""
@@ -287,19 +287,19 @@ DISQUS_FORUM = "casesblog"
 # This search form works for any site and looks good in the "site" theme where it
 # appears on the navigation bar
 # SEARCH_FORM = """
-#<!-- Custom search -->
-#<form method="get" id="search" action="http://duckduckgo.com/"
+# <!-- Custom search -->
+# <form method="get" id="search" action="http://duckduckgo.com/"
 # class="navbar-form pull-left">
-#<input type="hidden" name="sites" value="%s"/>
-#<input type="hidden" name="k8" value="#444444"/>
-#<input type="hidden" name="k9" value="#D51920"/>
-#<input type="hidden" name="kt" value="h"/>
-#<input type="text" name="q" maxlength="255"
+# <input type="hidden" name="sites" value="%s"/>
+# <input type="hidden" name="k8" value="#444444"/>
+# <input type="hidden" name="k9" value="#D51920"/>
+# <input type="hidden" name="kt" value="h"/>
+# <input type="text" name="q" maxlength="255"
 # placeholder="Search&hellip;" class="span2" style="margin-top: 4px;"/>
-#<input type="submit" value="DuckDuckGo Search" style="visibility: hidden;" />
-#</form>
-#<!-- End of custom search -->
-#""" % BLOG_URL
+# <input type="submit" value="DuckDuckGo Search" style="visibility: hidden;" />
+# </form>
+# <!-- End of custom search -->
+# """ % BLOG_URL
 #
 # Also, there is a local search plugin you can use.
 
