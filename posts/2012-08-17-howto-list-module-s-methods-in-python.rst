@@ -11,10 +11,12 @@ to prepare basis, but after that, I began to wonder, how to make more
 methods, and run them, without worrying about their inclusion into
 testing process?
 
+.. TEASER_END
+
 After searching a while, I've found several solution, but the best one
 employed **dir**:
 
-::
+.. code-block:: python
 
     import types
     import module
@@ -25,24 +27,23 @@ employed **dir**:
 
 There are two parts, first one is iterating over module's elements:
 
-::
+.. code-block:: python
 
     module.__dict__.get(test) for test in dir(module)
 
 Second one is condition, telling when do we want to include module's
 element in a list:
 
-::
+.. code-block:: python
 
-    if isinstance(module.__dict__.get(test), types.FunctionType)
-    and test.startswith('sqltest_')
+    if isinstance(module.__dict__.get(test), types.FunctionType) and test.startswith('sqltest_')
 
 Now remember, that list returned by **dir** contains only names, hence
 the **module.\_\_dict\_\_.get**, which returns module's elements.
 
 And here's unfolded version:
 
-::
+.. code-block:: python
 
     import types
     import module
