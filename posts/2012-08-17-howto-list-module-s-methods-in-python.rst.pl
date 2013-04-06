@@ -1,7 +1,7 @@
 .. title: Listowanie metod modułu w pythonie
 .. slug: listowanie-metod-modulu-w-pythonie
 .. date: 2012/08/17 20:08:03
-.. tags: python, howto
+.. tags: python, howto, list
 .. link:
 .. description: Aktualnie badam wydajność trzech bibliotek łączących do bazy danych w połączeniu z sqlalchemy. Są to mysql-connector, MySQLdb oraz oursql. Po przygotowaniu podstaw, zacząłem się zastanawiać, w jaki sposób dodać kolejne testy i nie przejmować się modyfikacją podstawy testów.
 
@@ -10,10 +10,12 @@ połączeniu z sqlalchemy. Są to mysql-connector, MySQLdb oraz oursql. Po
 przygotowaniu podstaw, zacząłem się zastanawiać, w jaki sposób dodać
 kolejne testy i nie przejmować się modyfikacją podstawy testów.
 
+.. TEASER_END
+
 Znalazłem kilka rozwiązań, z czego najlepsze wykorzystywały metodę
 **dir**:
 
-::
+.. code-block:: python
 
     import types
     import module
@@ -25,13 +27,13 @@ Znalazłem kilka rozwiązań, z czego najlepsze wykorzystywały metodę
 W kodzie są dwie głowne części. Pierwsza odpowiada za iterację po
 wynikach metody dir:
 
-::
+.. code-block:: python
 
     module.__dict__.get(test) for test in dir(module)
 
 Druga jest warunkiem regulującym dodanie elementu do listy:
 
-::
+.. code-block:: python
 
     if isinstance(module.__dict__.get(test), types.FunctionType)
     and test.startswith('sqltest_')
@@ -41,7 +43,7 @@ użycie **module.\_\_dict\_\_.get** .
 
 A poniżej wersja rozwinięta:
 
-::
+.. code-block:: python
 
     alchemy_tests = []
         for test in dir(module):
