@@ -11,6 +11,8 @@ co może spowodować potem śmietnik w bibliotekach systemowych Pythona.
 Rozwiązaniem, by utrzymać porządek, jest wirtualne środowisko
 uruchomieniowe, virtualenv, a znacznym ułatwieniem, virtualenvwrapper.
 
+.. TEASER_END
+
 `Virtualenv <http://www.virtualenv.org/en/latest/index.html>`_ umożliwia
 nam utrzymanie porządku w pakietach - utworzyć osobne środowisko
 uruchomieniowe Pythona, którego możemy używać z jednym projektem. Takim
@@ -19,10 +21,7 @@ znajdować biblioteki niedostępne w głównym środowisku Pythona, w innych
 wersjach (starsze, nowsze). Jest to wielce przydatne zarówno w testach,
 jak w tworzeniu oprogramowania.
 
-`Virtualenvwrapper <http://www.doughellmann.com/projects/virtualenvwrapper/>`_,
-to dodatkowy zestaw narzędzi opakowujących virtualenv. Jak to działa? W
-czystym virtualenv, po utworzeniu środowiska, by się do niego odwołać,
-musimy wywołać ścieżkę dostępu do naszej instancji Pythona:
+`Virtualenvwrapper <http://www.doughellmann.com/projects/virtualenvwrapper/>`_, to dodatkowy zestaw narzędzi opakowujących virtualenv. Jak to działa? W czystym virtualenv, po utworzeniu środowiska, by się do niego odwołać, musimy wywołać ścieżkę dostępu do naszej instancji Pythona:
 
 ::
 
@@ -33,7 +32,7 @@ przy włączonym środowisku venv, wywoła za nas aktualnie włączone
 wirtualne środowisko. Jedyne, co trzeba zrobić, to uruchomić
 odpowiednie:
 
-::
+.. code-block:: bash
 
     workon python-basic
     workon python-z-ta-super-biblioteka
@@ -73,7 +72,7 @@ poprzez ich nazwę.
 Wirtualne środowisko najłatwiej utworzyć za pomocą polecenia
 mkvirtualenv:
 
-::
+.. code-block:: bash
 
     mkvirtualenv python-basic
     mkvirtualenv -p /usr/bin/python3 python3-basic
@@ -82,7 +81,7 @@ Drugi przypadek tworzy nam środowisku uruchomieniowe python3 (musimy
 oczywiście mieć zainstalowane w systemie). Teraz wystarczy się
 przełączyć:
 
-::
+.. code-block:: bash
 
     workon python-basic
     workon python3-basic
