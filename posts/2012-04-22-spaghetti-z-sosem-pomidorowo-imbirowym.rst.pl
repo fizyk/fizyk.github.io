@@ -5,10 +5,12 @@
 .. link:
 .. description: Spaghetti,a przynajmniej sos zacząłm przygotowywać jak tylko sytuacja (studia) zmusiły mnie do rozpoczęcia gotowania. Z czasem odszedłem od sosów w torebkach, potem od sosów słoikach. Teraz spaghetti z sosem pomidorowo-imbiowym jest moją specjalnością.
 
-Spaghetti,a przynajmniej sos zacząłm przygotowywać jak tylko sytuacja
+Spaghetti,a przynajmniej sos zacząłem przygotowywać jak tylko sytuacja
 (studia) zmusiły mnie do rozpoczęcia gotowania. Z czasem odszedłem od
 sosów w torebkach, potem od sosów słoikach. Teraz spaghetti z sosem
 pomidorowo-imbiowym jest moją specjalnością.
+
+.. TEASER_END
 
 Co potrzebne:
 
