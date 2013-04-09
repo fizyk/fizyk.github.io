@@ -9,9 +9,7 @@ Jak się okazuje, **AJAX** i wywołanie w JavaScript **document.write**
 nie współgrają ze sobą. Przekonałem się o tym tworząc formularz
 kontaktowy, który powinien być obsługiwany również przez AJAX przy
 pomocy **jQuery**. Niestety, po dodaniu do formularza reCaptchy,
-wywołanie AJAXowe przestało działać poprawnie. Po wysłaniu formularza i
-wczytaniu go ponownie po walidacji, strona została wyczyszczona, jakby
-odgórnie przekierowana na stronę **about:blank**.
+wywołanie AJAXowe przestało działać poprawnie. Po wysłaniu formularza i wczytaniu go ponownie po walidacji, strona została wyczyszczona, jakby odgórnie przekierowana na stronę **about:blank**.
 
 W Chrome pokazała się chociaż **reCaptcha**. Trochę mi zeszło
 dochodzenie powodu takiego zachowania. Ostatnim krokiem, przed zmianą
