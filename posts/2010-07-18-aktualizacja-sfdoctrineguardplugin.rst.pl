@@ -10,6 +10,8 @@ W tygodniu pojawiła się nowa wersja pluginu sfDoctrineGuardPlugin.
 changelog, który informował tylko o poprawce generowania kluczy
 "pamiętaj mnie" *(ang. Remember Me)*].
 
+.. TEASER_END
+
 Niestety, aktualizacja pluginu z wersji **4.0.1** do
 [STRIKEOUT:**4.0.2**] **5.0.0** powoduje raczej niemiłe przeżycia.
 Okazuje się, że pomimo oznaczenia aktualizacji jako mniejszej, w nowej
@@ -24,7 +26,7 @@ za stworzenie relacji).
 
 Poniżej przykładowa klasa migracyjna:
 
-::
+.. code-block:: php
 
     class Version14 extends Doctrine_Migration_Base
     {
@@ -47,13 +49,11 @@ Poniżej przykładowa klasa migracyjna:
         }
     }
 
-Niestety, dotyczy to również obiektów natywnych dla **sfGuardPlugin**, z
-tym, że w relacjach pomiędzy tymi obiektami musimy zakomentować
-wszystkie relacje.
+Niestety, dotyczy to również obiektów natywnych dla **sfGuardPlugin**, z tym, że w relacjach pomiędzy tymi obiektami musimy zakomentować wszystkie relacje.
 
 Tak więc ostatecznie ta migracja powinna wyglądać mniej więcej tak:
 
-::
+.. code-block:: php
 
     class Version14 extends Doctrine_Migration_Base
     {
@@ -142,7 +142,7 @@ Jeśli projekt był już w użyciu od jakiegoś czasu i w bazie istnieją już
 użytkownicy, to ważne, by w początkowym okresie dodać następujący
 fragment do swojego **schema.yml**:
 
-::
+.. code-block:: php
 
     sfGuardUser:
       columns:
@@ -151,13 +151,11 @@ fragment do swojego **schema.yml**:
           notnull: false
           unique: true
 
-Domyślnie pole to jest ustawione jako **notnull: true**, i migracja nie
-ma szans powodzenia jeśli istnieją już rekordy w tabeli **sfGuardUser**.
+Domyślnie pole to jest ustawione jako **notnull: true**, i migracja nie ma szans powodzenia jeśli istnieją już rekordy w tabeli **sfGuardUser**.
 
-Na sam koniec należy odkomentować wszelkie relacje (ale wcześniej
-zmienić definicje typów powiązanych do **sfGuardUser**):
+Na sam koniec należy odkomentować wszelkie relacje (ale wcześniej zmienić definicje typów powiązanych do **sfGuardUser**):
 
-::
+.. code-block:: php
 
     class Version17 extends Doctrine_Migration_Base
     {
@@ -194,7 +192,7 @@ zmienić definicje typów powiązanych do **sfGuardUser**):
                  'onDelete' => 'CASCADE',
                  ));
             $this->addIndex('sf_guard_forgot_password', 'sf_guard_forgot_password_user_id', array(
-                 'fields' => 
+                 'fields' =>
                  array(
                   0 => 'user_id',
                  ),
@@ -208,7 +206,7 @@ zmienić definicje typów powiązanych do **sfGuardUser**):
             $this->dropForeignKey('sf_guard_forgot_password', 'sf_guard_forgot_password_user_id_sf_guard_user_id');
             $this->dropForeignKey('sf_guard_remember_key', 'sf_guard_remember_key_user_id_sf_guard_user_id');
             $this->removeIndex('sf_guard_forgot_password', 'sf_guard_forgot_password_user_id', array(
-                 'fields' => 
+                 'fields' =>
                  array(
                   0 => 'user_id',
                  ),
@@ -225,5 +223,6 @@ wersja 4.1.0].
 [STRIKEOUT:Przy okazji wydanie\ ** sfForkedDoctrineApply** 1.3.0 trochę
 się opóźni, trzeba będzie dostosować do nowej wersji doctrine guarda.]
 
-Po paru wiadomościach na grupie symfony Jonathan Wage poprawił paczki z
-pluginami.
+.. note::
+
+    Po paru wiadomościach na grupie symfony Jonathan Wage poprawił paczki z pluginami.

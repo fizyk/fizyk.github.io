@@ -5,19 +5,12 @@
 .. link:
 .. description: Choć od jakiegoś czasu zasłuchuję się w muzyce Czeskiej, Słowackiej, a także z krajów byłej Jugosławi, to na nowy album Apocalyptiki - 7th Symphony, czekałem od momentu ogłoszenia nad nią prac przez zespół. Jest we mnie jakiś pociąg do muzyki smyczkowej, szczególnie tej ostrzejszej - Apocalyptica to mój ulubiony zespół, a i nie gardzę wszelkimi innymi smyczkowymi muzykami. Tak więc jeszcze prze premierą zamówiłem sobie wydanie specjalne, licząc, ze tym razem Empik nie zamiecie mojego zamówienia pod dywan, jak to miało miejsce przy Worlds Collide.
 
-Choć od jakiegoś czasu zasłuchuję się w muzyce Czeskiej, Słowackiej, a
-także z krajów byłej Jugosławi, to na nowy album Apocalyptiki - **7th
-Symphony**, czekałem od momentu ogłoszenia nad nią prac przez zespół.
-Jest we mnie jakiś pociąg do muzyki smyczkowej, szczególnie tej
-ostrzejszej - Apocalyptica to mój ulubiony zespół, a i nie gardzę
-wszelkimi innymi smyczkowymi muzykami. Tak więc jeszcze prze premierą
-zamówiłem sobie wydanie specjalne, licząc, ze tym razem Empik nie
-zamiecie mojego zamówienia pod dywan, jak to miało miejsce przy **Worlds
-Collide**.
+Choć od jakiegoś czasu zasłuchuję się w muzyce Czeskiej, Słowackiej, a także z krajów byłej Jugosławi, to na nowy album Apocalyptiki - **7th Symphony**, czekałem od momentu ogłoszenia nad nią prac przez zespół. Jest we mnie jakiś pociąg do muzyki smyczkowej, szczególnie tej ostrzejszej - Apocalyptica to mój ulubiony zespół, a i nie gardzę wszelkimi innymi smyczkowymi muzykami. Tak więc jeszcze prze premierą zamówiłem sobie wydanie specjalne, licząc, ze tym razem Empik nie
+zamiecie mojego zamówienia pod dywan, jak to miało miejsce przy **Worlds Collide**.
 
-I na szczęście nie zamiótł, po odebraniu zamówienia i włożeniu do
-napędu, rozpocząłem odsłuchiwanie albumu w pełnej, specjalnej,
-okazałości...
+.. TEASER_END
+
+I na szczęście nie zamiótł, po odebraniu zamówienia i włożeniu do napędu, rozpocząłem odsłuchiwanie albumu w pełnej, specjalnej, okazałości...
 
 Przez pierwsze trzy sekundy zastanawiałem się o co chodzi? Dźwięk
 przypominał raczej piski z głośników podczas podłączania sprzętu. Ale
@@ -97,12 +90,12 @@ bardziej godny polecenia komuś, kto **Apocalyptyki** nie słuchał.
 Wydanie specjalne posiada jeszcze płytkę DVD z nagraną sesją studyjną 6
 utworów *Apocalyptyki*. 6 utworów to:
 
--  - Beautiful
--  - Not Strong Enough
--  - End of Me
--  - I Don't Care
--  - Sacra
--  - Bittersweet
+-  Beautiful
+-  Not Strong Enough
+-  End of Me
+-  I Don't Care
+-  Sacra
+-  Bittersweet
 
 W trzech z nich: Not Strong Enough, End of Me, I Don't Care śpiewa *Tipe
 Johnson*, ale pasuje tylko do Not Strong Enough. Z kolei Bittersweet

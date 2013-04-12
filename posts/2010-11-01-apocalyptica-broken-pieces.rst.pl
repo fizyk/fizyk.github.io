@@ -8,5 +8,9 @@
 Nie wiem jak, ale przeoczyłem pojawienie się nowego klipu Apocalyptyki
 do **Broken Pieces**.
 
+.. TEASER_END
+
+.. youtube:: TTzZ3KAxV1E
+
 W wideo śpiewa (i wygląda) Lacey Mosley, a gra, jak zazwyczaj
 Apocalyptica.
