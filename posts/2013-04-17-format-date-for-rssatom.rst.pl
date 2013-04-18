@@ -1,5 +1,5 @@
-.. title: Format date for RSS/Atom
-.. slug: format-date-for-rssatom
+.. title: Formatowanie daty dla RSS/Atom
+.. slug: formatowanie-daty-dla-rssatom
 .. date: 2013/04/17 22:22:14
 .. tags: python,date,strefa czasowa,rfc3339
 .. link:

@@ -9,10 +9,7 @@ Szybka aktualizacja z nową wersją biblioteki TagCanvas 1.4.1. Poprawiono
 w niej rakcję na kliknięcie myszką, i od teraz akcję na tagu wykonuje
 tylko lewe kliknięcie myszki.
 
--  Strona TagCanvas:
-   `http://www.goat1000.com/tagcanvas.php <http://www.goat1000.com/tagcanvas.php>`_.
--  Strona gihub
-   fzTagPlugin: \ `https://github.com/fizyk/fzTagPlugin <https://github.com/fizyk/fzTagPlugin>`_
--  Strona symfun
-   fzTagPlugin: \ `http://www.symfony-project.org/plugins/fzTagPlugin <http://www.symfony-project.org/plugins/fzTagPlugin>`_
+-  `Strona TagCanvas <http://www.goat1000.com/tagcanvas.php>`_.
+-  `Strona gihub fzTagPlugin <https://github.com/fizyk/fzTagPlugin>`_
+-  `Strona symfony fzTagPlugin <http://www.symfony-project.org/plugins/fzTagPlugin>`_
 

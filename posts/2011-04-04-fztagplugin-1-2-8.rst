@@ -8,6 +8,8 @@
 I've just released another 8th maintenance release of 1.2.x branch of
 **fzTagPlugin**, that allows to tag models.
 
+.. TEASER_END
+
 This release translates the tag's list page, which somehow slipped
 untranslated before. It also allows for some basic list configuration
 from app.yml:
@@ -19,13 +21,9 @@ Additional plugin's resources:
 
 -  Github pages:
 
-   -  plugin's
-      page: \ `https://github.com/fizyk/fzTagPlugin <https://github.com/fizyk/fzTagPlugin>`_
-   -  diff between `1.2.7 and
-      1.2.8 <https://github.com/fizyk/fzTagPlugin/compare/v1.2.7...v1.2.8>`_
+   -  `plugin's page <https://github.com/fizyk/fzTagPlugin>`_
+   -  `diff between 1.2.7 and 1.2.8 <https://github.com/fizyk/fzTagPlugin/compare/v1.2.7...v1.2.8>`_
    -  `issue tracker <https://github.com/fizyk/fzTagPlugin/issues>`_
 
--  Symfony's plugin page is here: 
-
-   `http://www.symfony-project.org/plugins/fzTagPlugin <http://www.symfony-project.org/plugins/fzTagPlugin>`_
+-  `Symfony's plugin page <http://www.symfony-project.org/plugins/fzTagPlugin>`_
 

@@ -11,6 +11,8 @@ swego rodzaju magią, a ja lubię wiedzieć, jakie kółka zębate wprawiają
 machinę w ruch. Kwiestię właściciela, który stworzył dany obiekt,
 rozwiązywałem tam, gdzie obiekt był tworzony, w każdej akcji osobno.
 
+.. TEASER_END
+
 Ale z czasem, behavioury przestały być tajemnicze, a oferowane
 możliwości znacznie ułatwiały tworzenie aplikacji. Blameable jest
 behaviourem, który w prosty sposób załatwia sprawę właściciela obiektu,
@@ -33,7 +35,7 @@ użytkownika, do obiektu tworzonego. Głównie z tego powodu zdecydowałem
 się stworzyć modyfikację Blameable dla symfony i sfDoctrineGuard. Dodane
 fragmenty kodu są nieznaczną modyfikacją:
 
-::
+.. code-block:: php
 
     Doctrine_Core::getTable( 'sfGuardUser' )->bind(
             array($className.' as Created'.$className.'s',
@@ -52,7 +54,7 @@ Domyślnie `fzBlameable
 współdziała domyślnie z sfDoctrineGuard 4.x, ale do użycia go w
 sfDoctrineGuard 5.x wystarczy zmienić typy pól created i updated:
 
-::
+.. code-block:: php
 
     MyModel:
       actAs:

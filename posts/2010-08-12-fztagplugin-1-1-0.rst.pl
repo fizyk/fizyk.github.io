@@ -15,7 +15,7 @@ Główne zmiany, które dotknęły plugin to:
 
    -  aplikacja posiada moduł **fzTagAutocomplete** (a tym samym
       ścieżkę)
-   -  formularz posiada pole '**tags\_list**\ '.
+   -  formularz posiada pole '**tags\_list**'.
 
 Poza tym, plik css dla
 `fcbkcomplete <http://github.com/emposha/FCBKcomplete>`_ został

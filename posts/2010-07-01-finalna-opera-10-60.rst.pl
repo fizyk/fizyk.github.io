@@ -12,6 +12,8 @@ została udostępniona wersja stabilna, a raczej uznana za taką wczorajsza
 RC3. Jest to równocześnie pierwsza stabilna wersja Opery z nowym
 silnikiem JavaScriptowym na systemy operacyjne Linux i FreeBSD.
 
+.. TEASER_END
+
 W przeglądarce między innymi wprowadzono wsparcie dla kolejnych
 elementów HTML5, poprawiono wydajność w JavaScript i DOM. Opera 10.60
 jest równocześnie pierwszą stabilną przeglądarką posiadającą

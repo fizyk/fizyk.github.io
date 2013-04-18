@@ -19,10 +19,6 @@ between sfGuardUser and your blameable model.
 
 -  `Changelog <https://github.com/fizyk/fzBlameablePlugin/compare/1.0.1...v1.1.0>`_
    since fzBlameable 1.0.1
--  Plugin's release symfony page: 
-
-   `http://www.symfony-project.org/plugins/fzBlameablePlugin/1\_1\_0 <http://www.symfony-project.org/plugins/fzBlameablePlugin/1_1_0>`_
--  Plugin's release repository tree:
-
-   `https://github.com/fizyk/fzBlameablePlugin/tree/v1.1.0 <https://github.com/fizyk/fzBlameablePlugin/tree/v1.1.0>`_
+-  `Plugin's release symfony page <http://www.symfony-project.org/plugins/fzBlameablePlugin/1_1_0>`_
+-  `Plugin's release repository tree <https://github.com/fizyk/fzBlameablePlugin/tree/v1.1.0>`_
 

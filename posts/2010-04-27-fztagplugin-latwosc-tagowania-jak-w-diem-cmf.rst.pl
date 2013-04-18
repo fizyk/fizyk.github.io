@@ -9,12 +9,13 @@
 mnie spore wrażenie, gdy pierwszy raz go testowałem i badałem jego
 funkcjonalność na potrzeby innej, dość podobnej funkcjonalności z
 projektu realizowanego w firmie. Wrażenie na mnie zrobił przede
-wszystkim
-`FCBKcomplete <http://www.emposha.com/javascript/fcbkcomplete.html>`_
+wszystkim `FCBKcomplete <http://www.emposha.com/javascript/fcbkcomplete.html>`_
 użyty w widgecie, a także w miarę badania, bądź co bądź niedużego kodu,
 wstrzykiwanie widgetu i walidatora odpowiedzialnego za operacje na
 tagach do formularza. Bije to inne możliwości tagowania, które widziałem
 w symfony na głowę.
+
+.. TEASER_END
 
 Dlatego też postanowiłem backportować ten plugin z `Diem
 CMF <http://diem-project.org>`_  z powrotem do symfony. Nie było to
