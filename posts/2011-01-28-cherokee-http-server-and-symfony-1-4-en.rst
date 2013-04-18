@@ -12,12 +12,13 @@ it's also easier to configure than Apache. Cherokee is available on
 Linux and BSD operating systems, and probably it's in repository of most
 popular distros. It's licensed with **GPL license**.
 
-So... how do you actually configure a symfony project with it? First of
-all, you'd need to install php-cgi package, as Chreokee uses FastCGI.
+.. TEASER_END
+
+So... how do you actually configure a symfony project with it? First of all, you'd need to install php-cgi package, as Chreokee uses FastCGI.
 
 Then run cherokee admin:
 
-::
+.. code-block:: bash
 
     sudo cherokee-admin
 

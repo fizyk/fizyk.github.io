@@ -11,6 +11,8 @@ are there and are easy to be modified. recently. You can even add
 default filter setting, although it's not as simple as editing
 **generator.yml**.
 
+.. TEASER_END
+
 So, you can set default filter? Certainly not through table\_method,
 this setting is for basic query, admin's filter is operating on later.
 To set default filter values, there are two methods you might want to
@@ -21,7 +23,7 @@ folder.
 First method is getFilterForm(), which is used to serve filter form to
 be generated:
 
-::
+.. code-block:: php
 
     public function getFilterForm($filters)
     {
@@ -43,7 +45,7 @@ Second method to look at is **getFilterDefaults()**, which is actually
 used to get default values for filter. These values are then applied
 both to filter form, and the query from **table\_method**.
 
-::
+.. code-block:: php
 
     public function getFilterDefaults()
     {

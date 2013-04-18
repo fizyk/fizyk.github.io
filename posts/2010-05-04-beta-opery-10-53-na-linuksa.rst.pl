@@ -11,6 +11,8 @@ Działa zauważalnie szybciej, została poprawiona obsługa **CSS3**,
 zintegrowana ze środowiskiem pulpitu, i sprawuje się całkiem dobrze jak
 do tej pory.
 
+.. TEASER_END
+
 Zmieniło się podejście do Widgetów. Otrzymujemy z Operą Opera Widget
 Managera, możliwość uruchamiania widgetów jak zwykłych aplikacji, bez
 konieczności uruchamiania Opery. Czyli coś w stylu aplikacji flashowych

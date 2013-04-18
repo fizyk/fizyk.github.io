@@ -8,10 +8,8 @@
 Parę dni temu Apocalyptica umieściła na Youtube `wideo do nowego utworu
 "End of
 Me" <http://www.apocalyptica.com/us/news/premiere-“end-me”-featuring-gavin-rossdale-vevo>`_.
-Zespół umieścił wideo na kanale VEVO, które niestety od razu
-przekierowuje na swój inny kanał poświecony Mistrzostwom Świata w Piłce
-Nożnej. Na szczęście klip muzyczny został umieszczony również przez
-innych użytkowników:
+
+.. youtube:: 2JzFgvdo4Pk
 
 Obraz jest utrzymany w jednolitych kolorach, jedyne żywsze akcenty do
 wiolonczele, a czasem twarz któregoś z muzyków. No i Gavin Rossdale,

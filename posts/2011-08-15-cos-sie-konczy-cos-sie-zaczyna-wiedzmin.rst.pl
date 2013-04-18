@@ -12,6 +12,8 @@ superprodukcji ruszać nie będę, o tyle drugą grę kiedyś złapię... jak
 zaktualizuję sprzęt komputerowy (Sama gra do tej pory będzie już dawno
 po wersji 2.0).
 
+.. TEASER_END
+
 Ale wracając do samego wiedźmina. Jestem pod wrażeniem kawałka dobrej
 roboty, którą wykonał Sapkowski. I tego, jak poprowadził swojego
 bohatera do końca, do samego końca, historii i jego samego. Choć

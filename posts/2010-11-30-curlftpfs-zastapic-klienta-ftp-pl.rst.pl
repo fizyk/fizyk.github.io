@@ -12,6 +12,8 @@ na zdecydowanej większości serwerów współdzielonych oferowanych przez
 polskie firmy, pozostaje spojrzeć na zawartość udostępnianą przez serwer
 ftp jak na system plików.
 
+.. TEASER_END
+
 By podpiąć serwer ftp jako system plików przyda się **curlftpfs**. W
 skrócie jak podłączyć można przeczytać `tutaj
 (ang) <http://hartvig.de/2009/howto-mount-a-ftp-drive-in-ubuntu/trackback/>`_
@@ -20,7 +22,7 @@ skrócie jak podłączyć można przeczytać `tutaj
 Takie podłączenie, co prawda ułatwia trochę aktualizację projektu, ale
 ciągle jest dość powolne. Raczej nie uruchamiałbym żadnych tasków
 symfony, a na czyszczenie cache'u, dobrze przeznaczyć większą ilość
-czasu na usunięcie zawartości cache'u...
+czasu...
 
 Samo podpięcie nie jest może zbyt wygodne, ale operacje na plikach są
 już dużo wygodniejsze. Ale po zautomatyzowaniu wszystkich operacji

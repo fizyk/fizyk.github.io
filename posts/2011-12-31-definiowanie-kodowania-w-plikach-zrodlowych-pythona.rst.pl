@@ -1,11 +1,13 @@
 .. title: Definiowanie kodowania w plikach źródłowych Pythona
 .. slug: definiowanie-kodowania-w-plikach-zrodlowych-pythona
 .. date: 2011/12/31 13:12:21
-.. tags: unicode, python
+.. tags: unicode, python, pep
 .. link:
 .. description: Dlaczego definiowanie kodowania w pliku źródłowym Pythona jest istotne?
 
 Dlaczego definiowanie kodowania w pliku źródłowym Pythona jest istotne?
+
+.. TEASER_END
 
 Odpowiedź na to pytanie jest dość prosta. O ile zazwyczaj rozwiązania
 powstające na zachodzie są świetne, o tyle nikt tam nie myśli zazwyczaj
@@ -17,7 +19,7 @@ bitowym ASCII i tak też interpretowany. 
 Chyba, że dodamy w pierwszej, lub drugiej linii pliku deklarację
 kodowania np. utf8:
 
-::
+.. code-block:: python
 
     # Some comment
     # -*- coding: utf-8 -*
@@ -28,7 +30,7 @@ Bez tej deklaracji zwykłe stringi, jakie mieścimy w kodzie źródłowym
 zostaną wyświetlone poprawnie, jednak jeśli już zaczniemy pisać ą i ę w
 stringach Unicode:
 
-::
+.. code-block:: python
 
     unicode_string = u'ciąg znaków z ą i ę'
 

@@ -8,6 +8,8 @@
 W poprzednią środę rozpocząłem pracę, jako programista aplikacji
 webowych (framework symfony), ale nie zapominam o innych rzeczach.
 
+.. TEASER_END
+
 Aktualnie w domu pracuję głównie nad forkiem pluginu
 `sfDoctrineApplyPlugin <http://www.symfony-project.org/plugins/sfDoctrineApplyPlugin>`_.
 Doszedłem do wniosku, ze póki co, sfGuardUserProfile nie będzie

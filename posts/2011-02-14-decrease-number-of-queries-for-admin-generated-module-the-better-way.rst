@@ -15,11 +15,13 @@ happy with overwriting buildQuery method of the module's action class.
 But **generator.yml** provides more elegant solution for admin generated
 modules.
 
+.. TEASER_END
+
 When I first saw that solution on techiecorner, I thought: "*hmmm.. that
 could be useful*\ ", but then, I looked at my generator.yml file and saw
 **table\_method** i placed there long time ago...
 
-::
+.. code-block:: yaml
 
     generator:
       param:

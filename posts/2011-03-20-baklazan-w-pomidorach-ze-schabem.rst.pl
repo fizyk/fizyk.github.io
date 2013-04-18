@@ -10,6 +10,8 @@ przygotowuję. Najczęściej na weekend. Oczywiście, zamiast schabu można
 użyć innego mięsa, a nawet kotletów, które być może zostały przygotowane
 w tygodniu.
 
+.. TEASER_END
+
 Lista składników jest dość krótka:
 
 -  Bakłażan
