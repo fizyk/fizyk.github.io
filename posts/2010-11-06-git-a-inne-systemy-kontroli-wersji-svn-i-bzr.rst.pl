@@ -3,7 +3,7 @@
 .. date: 2010/11/06 16:11:16
 .. tags: git, subversion, bazaar, vcs
 .. link:
-.. description: Miałem okazję zapoznać się z trzema systemami kontroli wersji, Subversion, Bazaar i git (w tej kolejności). Każdy ma swoje wady i zalety, jednak ze wszystkich trzech dla mnie git jest najwygodniejszy i najsprawniejszy. Tak jak z Subversion, czy później z Bazaarem, tak i z gitem miałem początkowo problem by płynnie korzystać z jego możliwości, ale wygoda rośnie w miarę używania. Dla swojej (i być może innych) wygody, postaram się tutaj przybliżyć podstawowe komendy git'a a także odpowiedniki w dwóch pozostałych systemach kontroli wersji.
+.. description: Miałem okazję zapoznać się z trzema systemami kontroli wersji, Subversion, Bazaar i git (w tej kolejności). Każdy ma swoje wady i zalety, jednak ze wszystkich trzech dla mnie git jest najwygodniejszy i najsprawniejszy.
 
 Miałem okazję zapoznać się z trzema systemami kontroli wersji,
 **Subversion**, **Bazaar** i **git** (w tej kolejności). Każdy ma swoje
@@ -14,6 +14,8 @@ jego możliwości, ale wygoda rośnie w miarę używania. Dla swojej (i być
 może innych) wygody, postaram się tutaj przybliżyć podstawowe komendy
 git'a a także odpowiedniki w dwóch pozostałych systemach kontroli
 wersji.
+
+.. TEASER_END
 
 Ale najpierw zacznę od paru zdań na temat różnic pomiędzy oboma
 systemami. Czym różnią się od siebie te systemy?

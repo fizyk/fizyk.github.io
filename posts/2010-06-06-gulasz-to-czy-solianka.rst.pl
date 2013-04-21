@@ -3,7 +3,7 @@
 .. date: 2010/06/06 19:06:20
 .. tags: gulasz, solianka, przepis, kuchnia
 .. link:
-.. description: Postanowiłem wczoraj ugotować sobie gulasz. Zabierałem się do tego już od jakiegoś czasu, ale brakowało jakichś chęci do zrealizowania zamiarów. Uzbroiwszy się w niezbędną acz mglistą wiedzę dotyczącą składników wyruszyłem do sklepu uzupełnić potrzebne składniki. Ponieważ mięso, pomidory i przyprawy posiadałem, jedyne co musiałem uzupełnić to papryka, ogórki konserwowe i pieczarki.
+.. description: Postanowiłem wczoraj ugotować sobie gulasz. Zabierałem się do tego już od jakiegoś czasu, ale brakowało jakichś chęci do zrealizowania zamiarów.
 
 Postanowiłem wczoraj ugotować sobie gulasz. Zabierałem się do tego już
 od jakiegoś czasu, ale brakowało jakichś chęci do zrealizowania
@@ -11,6 +11,8 @@ zamiarów. Uzbroiwszy się w niezbędną acz mglistą wiedzę dotyczącą
 składników wyruszyłem do sklepu uzupełnić potrzebne składniki. Ponieważ
 mięso, pomidory i przyprawy posiadałem, jedyne co musiałem uzupełnić to
 papryka, ogórki konserwowe i pieczarki.
+
+.. TEASER_END
 
 Nagotowałem się tego w sumie około dwóch godzin, i wyszło mi tego cały
 średni garnek. Tego, bo nie jestem pewien, czy to gulasz, czy raczej
