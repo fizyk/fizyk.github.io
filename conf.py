@@ -4,9 +4,9 @@ from __future__ import unicode_literals
 import os
 import time
 
-##############################################
+#
 # Configuration, please edit
-##############################################
+#
 
 
 SITE_URL = "http://blog.fizyk.net.pl"
@@ -64,9 +64,9 @@ SIDEBAR_LINKS = {
 }
 
 
-##############################################
+#
 # Below this point, everything is optional
-##############################################
+#
 
 
 # post_pages contains (wildcard, destination, template, use_in_feed) tuples.
@@ -196,9 +196,9 @@ DEPLOY_COMMANDS = [
 #    ".jpg": ["jpegoptim --strip-all -m75 -v %s"],
 # }
 
-# #############################################################################
+#
 # Image Gallery Options
-# #############################################################################
+#
 
 # Galleries are folders in galleries/
 # Final location of galleries will be output / GALLERY_PATH / gallery_name
@@ -207,9 +207,9 @@ DEPLOY_COMMANDS = [
 # MAX_IMAGE_SIZE = 1280
 # USE_FILENAME_AS_TITLE = True
 
-# #############################################################################
+#
 # HTML fragments and diverse things that are used by the templates
-# #############################################################################
+#
 
 # Data about post-per-page indexes
 # INDEXES_TITLE = ""  # If this is empty, the default is BLOG_TITLE
@@ -236,11 +236,19 @@ INDEX_TEASERS = True
 # A HTML fragment describing the license, for the sidebar. Default is "".
 # I recommend using the Creative Commons' wizard:
 # http://creativecommons.org/choose/
-# LICENSE = """
-# <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
-# <img alt="Creative Commons License BY-NC-SA"
-# style="border-width:0; margin-bottom:12px;"
-# src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"></a>"""
+LICENSE = """<a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.pl">
+    <img alt="Licencja Creative Commons" style="border-width:0"
+        src="http://i.creativecommons.org/l/by/3.0/88x31.png" />
+</a>
+<br />Ten utwór, autorstwa
+<span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">
+    {author}</span>
+jest dostępny na licencji
+<a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.pl">
+    Creative Commons Uznanie autorstwa 3.0 Unported
+</a>."""
+
+LICNSE = LICENSE.format(author=BLOG_AUTHOR)
 
 # A small copyright notice for the page footer (in HTML).
 # Default is ''
