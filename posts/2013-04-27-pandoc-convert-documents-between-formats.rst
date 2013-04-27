@@ -9,7 +9,7 @@ Here's another post from my recent migration to Nikola. On my engine, I stored p
 
 .. TEASER_END
 
-After some digging around, I found `Pandoc <http://johnmacfarlane.net/pandoc/index.html>`_. It supports lots of formats between it can convert documents: Markdown, reStructuredText, AsciiDoc, MediaWiki markup, LaTeX, epub, docx, odt, html, PDF. Even though it does not have python API, it still can easily used in python programs. Such program just needs to store source into a file first, run pandoc in subprocess, and then read the output file.
+After some digging around, I found `Pandoc <http://johnmacfarlane.net/pandoc/index.html>`_. It supports lots of formats between it can convert documents: Markdown, reStructuredText, AsciiDoc, MediaWiki markup, LaTeX, epub, docx, odt, html, PDF. Even though it does not have python API, it still can easily used in python programs. Such program just needs to store source into a file first, run **pandoc** in subprocess, and then read the output file.
 
 Using subprocess call, I've been able to convert html documents into rst ones.
 

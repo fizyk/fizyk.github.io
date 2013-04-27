@@ -6,10 +6,12 @@
 .. description: Dość dawno temu napisałem tekst o podstawowych poleceniach gita. Teraz postanowiłem napisać trochę o przepływach roboczych w gicie: przepływ z repozytorium centralne, przepływ z repozytorium rozproszonym a na koniec parę słów o repozytorium samodzielnym.
 
 Dość dawno temu napisałem tekst o `podstawowych poleceniach
-gita <http://www.fizyk.net.pl/blog/git-a-inne-systemy-kontroli-wersji-svn-i-bzr>`_.
+gita <http://blog.fizyk.net.pl/pl/blog/git-a-inne-systemy-kontroli-wersji-svn-i-bzr.html>`_.
 Teraz postanowiłem napisać trochę o przepływach roboczych w gicie:
 przepływ z repozytorium centralne, przepływ z repozytorium rozproszonym
 a na koniec parę słów o repozytorium samodzielnym.
+
+.. TEASER_END
 
 Przepływ scentralizowany.
 -------------------------

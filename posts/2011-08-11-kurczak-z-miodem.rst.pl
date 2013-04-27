@@ -8,6 +8,8 @@
 Przyszedł czas na kolejny eksperyment kuchenny. Tym razem głównymi
 składnikami były słój po miodzie i pierś kurczaka.
 
+.. TEASER_END
+
 Najpierw słój, wiadomo, że miodu się idealnie wybrać ze słoika nie da.
 Siostra kiedyś miała z takich słoików wodę z miodem do picia, ale
 ostatnio straciła apetyt na takie rzeczy. Cóż więc zrobiłem? Zalałem

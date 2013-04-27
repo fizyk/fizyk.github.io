@@ -12,6 +12,10 @@ jest to tym bardziej na plus. Z tego powodu tak bardzo lubię serię
 pojawił się ciekawie wykonany teaser krótkiego filmu fanowskiego w
 całości tworzonego za pomocą CGI.
 
+.. TEASER_END
+
+.. youtube:: Bm5sEaC5tBA
+
 Autorem jest pracownik firmy od efektów specjalnych **WETA**, Włoch
 (Ital?) **Marco Spitoni**. A z jego strony można ściągnąć `wersję
 HD <http://www.cee-gee.net/>`_ tego teasera.

@@ -10,10 +10,12 @@ warunki do usunięcia spełniały w innych tabelach. I o ile
 programistycznie, można cel osiągnąć za pomocą kilku odwołań do bazy, to
 jednak postanowiłem wykonać jedno.
 
+.. TEASER_END
+
 Jak wygląda standardowe zapytanie DELETE każdy wie. Wychodząc z tego
 punktu, szybko rozszerzyłem podstawową wersję zapytania o JOIN i Aliasy:
 
-::
+.. code-block:: mysql
 
     DELETE FROM table AS t
     LEFT JOIN other_table AS o ON o.table_id=t.id WHERE o.condition=1;
@@ -21,7 +23,7 @@ punktu, szybko rozszerzyłem podstawową wersję zapytania o JOIN i Aliasy:
 Niestety, może i klient mySQL przełknie to zapytanie, ale sam mySQL już
 nie. Zapytanie poprawnie powinno wyglądać tak:
 
-::
+.. code-block:: mysql
 
     DELETE t FROM table AS t
     LEFT JOIN other_table AS o ON o.table_id=t.id WHERE o.condition=1;
@@ -31,7 +33,7 @@ na ten temat można przeczytać o dziwo w `dokumentacji
 mySQL <http://dev.mysql.com/doc/refman/5.1/en/delete.html>`_.
 Oczywiście, można jeszcze próbować zapytań zagnieżdżonych:
 
-::
+.. code-block:: mysql
 
     DELETE FROM table WHERE id IN
     (SELECT table_id FROM other_table WHERE condition=1);

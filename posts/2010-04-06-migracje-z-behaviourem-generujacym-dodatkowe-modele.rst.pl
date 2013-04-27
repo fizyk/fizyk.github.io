@@ -12,6 +12,8 @@ tabele bazy danych. Otrzymujemy wtedy następujący błąd:
 
     **Fatal error**: Class BaseToPrfx\* could not be found...
 
+.. TEASER_END
+
 Skąd ten błąd się bierze? Otóż wykonując zadanie
 **doctrine:generate-migrations-diff**, Doctrine tworzy pomocnicze modele
 używając dodatkowego prefiksu ToPrfx. W momencie wystąpienia błędu,

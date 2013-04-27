@@ -13,6 +13,8 @@ narzędzia Opera Dragonfly były wielce przydatne, w ramach jednego z
 tasków musiałem zmierzyć się z jQuery, z którym do tej pory miałem
 styczność oglądając efekty działania.
 
+.. TEASER_END
+
 Problemem z Dragonfly, jest jej domyślne ukrycie w menu. Standardowo są
 to trzy kroki: Narzędzia > Zaawansowane > Narzędzia deweloperskie, a
 jeśli zwiniemy menu główne, dochodzi jeszcze jeden. Nie jest to zbyt

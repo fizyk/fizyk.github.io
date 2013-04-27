@@ -13,6 +13,8 @@ komentarzy do użytkownika, dzięki czemu można je powiązać z konkretnym
 użytkownikiem i wyświetlić na przykład listę jego wypowiedzi, policzyć
 ile posiada on komentarzy, ile tych moderowanych/usuniętych.
 
+.. TEASER_END
+
 Dodatkowo na chwilę obecną, z modelu użytkownika pobierany jest oprócz
 id tylko login/nazwa użytkownika, ale na pewno będzie można zdefiniować
 metody, dzięki którym będzie możliwe pobranie innych informacji na

@@ -10,6 +10,8 @@ przygotowałem indyka w sosie imbirowo-cytrynowym. Mi osobiście smakował,
 lekko słodki, lekko kwaśny smak, choć otrzymałem zastrzeżenie, że zbyt
 kwaśny.
 
+.. TEASER_END
+
 Ale po kolei, najpierw składniki:
 
 -  indyk, choć pewnie każdy drób się nada, najlepiej filet

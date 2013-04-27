@@ -9,6 +9,8 @@ Planowałem pójść na koncert **Jelonka** już w zeszłym roku, ale dopiero
 w tym mi się udało. Gdy dowiedziałem się, że 27 marca Jelonek będzie
 grał we Wrocławiu w Alibi i postanowiłem nie przegapić tej szansy.
 
+.. TEASER_END
+
 Na sam koncert dotarłem jakieś 20 minut po 19, czyli teoretycznie po
 czasie rozpoczęcia. Ale na szczęście dla mnie, grał jeszcze support,
 niejaki zespół ***Krusher***. Zespół mnie specjalnie nie zachwycił, ale
@@ -34,6 +36,8 @@ A skoro o skrzypcach mowa... po 12 latach pamiętam jeszcze jak
 wyglądają. Czas sobie przypomnieć, jak na nich grać.
 
 Na zakończenie, **Jelonek - BaRock**:
+
+.. youtube:: NVWXxf1aYwI
 
 **BaRock** to kawałek, dzięki któremu dowiedziałem się, że gra solo taki
 ktoś, jak Jelonek. Choć najlepszym i zaraz najmilszym dla ucha utworem
