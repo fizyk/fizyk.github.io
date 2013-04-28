@@ -12,27 +12,29 @@ Ale to narzędzie ma tylko ułatwić, nie wyręczyć. Wygeneruje klasy
 migracyjne ale na z góry określonych zasadach. Najpierw operacje na
 tabelach, później klucze i indeksy:
 
-::
+.. TEASER_END
+
+.. code-block:: php
 
     class Version12 extends Doctrine_Migration_Base
     {
         public function up()
         {
             $this->createTable('model_a', array(
-                 'id' => 
+                 'id' =>
                  array(
                   'type' => 'integer',
                   'length' => '8',
                   'autoincrement' => '1',
                   'primary' => '1',
                  ),
-                 'name' => 
+                 'name' =>
                  array(
                   'type' => 'string',
                   'length' => '255',
                  ),
                  ), array(
-                 'primary' => 
+                 'primary' =>
                  array(
                   0 => 'id',
                  ),
@@ -40,25 +42,25 @@ tabelach, później klucze i indeksy:
                  'charset' => 'utf8',
                  ));
             $this->createTable('model_b', array(
-                 'id' => 
+                 'id' =>
                  array(
                   'type' => 'integer',
                   'length' => '8',
                   'autoincrement' => '1',
                   'primary' => '1',
                  ),
-                 'name' => 
+                 'name' =>
                  array(
                   'type' => 'string',
                   'length' => '255',
                  ),
-                 'a_id' => 
+                 'a_id' =>
                  array(
                   'type' => 'integer',
                   'length' => '8',
                  ),
                  ), array(
-                 'primary' => 
+                 'primary' =>
                  array(
                   0 => 'id',
                  ),
@@ -85,7 +87,7 @@ tabelach, później klucze i indeksy:
                  'foreignTable' => 'model_a',
                  ));
             $this->addIndex('model_b', 'model_b_a_id', array(
-                 'fields' => 
+                 'fields' =>
                  array(
                   0 => 'a_id',
                  ),
@@ -96,7 +98,7 @@ tabelach, później klucze i indeksy:
         {
             $this->dropForeignKey('model_b', 'model_b_a_id_model_a_id');
             $this->removeIndex('model_b', 'model_b_a_id', array(
-                 'fields' => 
+                 'fields' =>
                  array(
                   0 => 'a_id',
                  ),
@@ -111,7 +113,7 @@ z bazy, a następnie usuwane są klucze obce i indeksy. Analogicznie
 wygenerowana migracja w operacji w dół próbuje najpierw stworzyć klucze
 obce, później dopiero tabelę.
 
-::
+.. code-block:: php
 
     class Version14 extends Doctrine_Migration_Base
     {
@@ -123,24 +125,24 @@ obce, później dopiero tabelę.
         public function down()
         {
             $this->createTable('model_a', array(
-                 'id' => 
+                 'id' =>
                  array(
                   'type' => 'integer',
                   'length' => '8',
                   'autoincrement' => '1',
                   'primary' => '1',
                  ),
-                 'name' => 
+                 'name' =>
                  array(
                   'type' => 'string',
                   'length' => '255',
                  ),
                  ), array(
                  'type' => '',
-                 'indexes' => 
+                 'indexes' =>
                  array(
                  ),
-                 'primary' => 
+                 'primary' =>
                  array(
                   0 => 'id',
                  ),

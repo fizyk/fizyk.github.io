@@ -9,6 +9,8 @@ Kolejna wersja Środowiska IDE NetBeans zmierza ku wersji stabilnej. Od
 piątku dostępna jest wersja Beta, która wprowadza parę drobnych
 ulepszeń.
 
+.. TEASER_END
+
 -  `Generowanie
    PhpDoc <http://blogs.sun.com/netbeansphp/entry/generate_phpdoc>`_;
 -  `uruchomienie pliku bez

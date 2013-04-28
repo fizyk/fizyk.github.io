@@ -11,6 +11,8 @@ pełna jest planowana na 15 czerwca. Jak to zwykle przy wersjach typu
 Release Candidate bywa, powinna być stabilniejsza od bety. Ale pobawię
 się nią w wolnym czasie.
 
+.. TEASER_END
+
 Mimo wszystko powinna mieć parę usprawnień w stosunku do spowolnień,
 które to wyskakiwały mi w Becie. Mam również nadzieję, że nie będzie
 rzucało wyjątkami przy próbie wyboru podpowiadanej metody. Ściągnąć
