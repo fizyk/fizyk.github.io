@@ -9,6 +9,8 @@ Zespół Opera Desktop przygotował kolejną wersję Opery, **10.63**. Wersja
 ta wprowadza parę poprawek bezpieczeństwa, dlatego też aktualizacja jest
 polecana. Oprócz tego, wprowadzono parę mniejszych ulepszeń i poprawek.
 
+.. TEASER_END
+
 O ile opcja nie została wyłączona, Opera powinna sama zasygnalizować i
 ściągnać na systemach **MicroSoftu**, natomiast na **Unixach** paczka
 znajduje się już w repozytorium.

@@ -10,6 +10,8 @@ Opera Link będzie mogła synchronizować również blokowaną zawartość.
 Dodanie blokowanej zawartości do Opery Link pozwoli na tworzenie jednej,
 spójnej listy blokowanych zawartości.
 
+.. TEASER_END
+
 Do tej pory, w usłudze tej można synchronizować:
 
 -  Zakładki

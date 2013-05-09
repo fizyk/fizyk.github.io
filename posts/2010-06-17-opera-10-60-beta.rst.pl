@@ -11,6 +11,8 @@ operacyjne Linux,  OSX i Windows. Znaczy to, że Opera poważnie
 potraktowała synchronizację wydań przeglądarki od tej wersji i pokonała
 większość problemów technologicznych.
 
+.. TEASER_END
+
 Zmiany, które widać na pierwszy rzut oka, to:
 
 -  powiększony przycisk menu, właśnie o napis, który informuje

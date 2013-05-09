@@ -13,11 +13,13 @@ post: `Plural forms and
 format\_number\_choice <http://forum.symfony-project.org/viewtopic.php?f=3&t=11842>`_
 na forum symfony.
 
+.. TEASER_END
+
 Znajdująca się tam formuła dla helpera **format\_number\_choice()**
 miała kilka wad, dlatego na podstawie istniejącej zaproponowałem własną,
 która radzi sobie ze wszystkimi wariacji liczb:
 
-::
+.. code-block:: php
 
     '[0] brak|[1] 1 wynik|{n: n % 10 > 1 && n % 10 < 5 && ( n < 11 || n > 14 ) && ( n % 100 < 11 || n % 100 > 14 ) } %1% wyniki|[5,+Inf] %1% wyników '
 
@@ -25,7 +27,7 @@ Idąc dalej, stworzyłem funkcję biblioteczną, która przyjmuje w
 parametrach liczbę, oraz zestaw odmian rzeczownika, wybierając
 odpowiednią jego formę do liczby:
 
-::
+.. code-block:: php
 
     class Fizyk
     {

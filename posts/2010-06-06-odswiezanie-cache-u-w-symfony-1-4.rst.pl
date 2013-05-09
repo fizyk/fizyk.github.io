@@ -1,5 +1,5 @@
 .. title: Odświeżanie cache'u w symfony 1.4
-.. slug: odswiezanie-cache-u-w-symfony-aa-4
+.. slug: odswiezanie-cache-u-w-symfony-1-4
 .. date: 2010/06/06 21:06:36
 .. tags: symfony, php, cache, filecache
 .. link:
@@ -9,6 +9,8 @@ Obsługa cache w symfony jest nadzwyczaj ciekawa i w miarę prosta. By
 poznać wszystkie, a przynajmniej większość, aspektów cachowania, warto
 przeczytać rozdział 12 nowej książki o symfony: `A Gentle Introduction
 to symfony <http://www.symfony-project.org/gentle-introduction/1_4/en/12-Caching>`_.  Postanowiłem trochę popracować nad cachem pod wpływem pewnej korespondencji.
+
+.. TEASER_END
 
 Jeśli chodzi o uruchomienie cachu, nie ma nic prostszego. Wystarczy
 ustawić odpowiednie wartości, odpowiednich atrybutów w ustawieniach
@@ -39,14 +41,14 @@ zamieniających parametry na ścieżkę cache.
 Należy jednak zwrócić uwagę, że przekazując między innymi dwie gwiazdki
 jako parametr można usunąć cały cache aplikacji frontend:
 
-::
+.. code-block:: php
 
     $cache->removePattern('**');
 
 Zauważając to, łatwo się zorientować, że prawidłowy parametr metody w
 przykładzie powinien mieć postać:
 
-::
+.. code-block:: php
 
     //remove specified show
     $cache->removePattern('**/user/show/id/12');
@@ -57,7 +59,7 @@ Bazując na swoich poszukiwaniach, i by nie powtarzać niepotrzebnie kod,
 stworzyłem prostą metodę statyczną, która pozwala mi wyczyścić żądany
 fragment cachu:
 
-::
+.. code-block:: php
 
     class Fizyk
     {

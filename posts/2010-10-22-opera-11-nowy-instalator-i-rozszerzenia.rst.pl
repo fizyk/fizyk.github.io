@@ -10,6 +10,8 @@ Programiści Opery zaskakują co chwila czymś nowym. Gdy już się wydaje,
 wyskakują z czymś nowym. I nie chodzi tutaj wcale o przeskoczenie wersji
 z 10.70 na 11...
 
+.. TEASER_END
+
 I tak w kolejnym wydaniu mojej ulubionej przeglądarki postanowiono
 wprowadzić
 `rozszerzenia <http://my.opera.com/desktopteam/blog/2010/10/21/an-important-piece-of-the-puzzle>`_.

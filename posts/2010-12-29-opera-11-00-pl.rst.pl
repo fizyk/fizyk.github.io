@@ -9,6 +9,8 @@ Już niemal dwa tygodnie temu, Opera 11 została wydana w wersji
 stabilnej. Wraz z tą wersją użytkownicy dostali szereg usprawnień,
 udogodnień i nowych funcjonalności.
 
+.. TEASER_END
+
 O większości z nich pisałem już wcześniej, między innymi przy okazji
 wydania `bety <http://www.fizyk.net.pl/blog/opera-11-beta>`_.
 

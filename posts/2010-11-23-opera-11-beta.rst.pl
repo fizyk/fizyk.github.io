@@ -9,6 +9,8 @@ Oto i kolejna wersja Opery zbliża się wielkimi krokami. **Wersja 11**
 weszła w fazę beta, i oprócz tego, co ostatnio pisałem, otrzymała
 kolejną garść usprawnień.
 
+.. TEASER_END
+
 Tak więc w 11. wersji dostaniemy:
 
 -  Roszerzenia - funkcjonalność chyba tylko dla funkcjonalności, lub pod

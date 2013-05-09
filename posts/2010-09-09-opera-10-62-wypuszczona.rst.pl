@@ -11,6 +11,8 @@ dostępna <http://my.opera.com/desktopteam/blog/2010/09/09/opera-10-62-released>
 zmiany pojawią się dopiero w w kolejnej większej wersji (prawdopodobnie
 10.70).
 
+.. TEASER_END
+
 Changelogi:
 
 -  `Unix <http://www.opera.com/docs/changelogs/unix/1062/>`_

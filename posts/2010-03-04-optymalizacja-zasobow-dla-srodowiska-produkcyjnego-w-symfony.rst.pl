@@ -9,10 +9,12 @@ Przy tworzeniu aplikacji internetowych, ważne jest, by się szybko
 ładowała. Jest kilka, niewykluczających się wzajemnie sposobów:
 optymalizacja serwera, aplikacji, lub zasobów.
 
+.. TEASER_END
+
 Najprostszym sposobem na zoptymalizowanie zasobów (np, plików CSS) jest
 ich minifikacja. ich zastosowanie jest dość proste:
 
-::
+.. code-block:: bash
 
     yui-compressor path/to/css/main.css -o path/to/css/main.min.css
 
@@ -22,7 +24,7 @@ trzymanie wszystkiego w jednym pliku CSS, czasem wygodniej jest rozbić
 definicje styli na kilka plików. Ułatwia to pracę, ale generuje zbędne
 żądania. Proces kompresji można zmusić do kompresji do jednego pliku:
 
-::
+.. code-block:: bash
 
     yui-compressor path/to/css/main.css -o path/to/css/min.css
     yui-compressor path/to/css/other.css >> path/to/css/min.css
@@ -38,7 +40,7 @@ PHP i imamy dostęp do elementów frameworka. Dzięki temu, możemy dla obu
 środowisk, produkcyjnego i developerskiego podać osobne zestawy CSS'ów
 (podobnie jak js):
 
-::
+.. code-block:: yml
 
     default:
       stylesheets:
