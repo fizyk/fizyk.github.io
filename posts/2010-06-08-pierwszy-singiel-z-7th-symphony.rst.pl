@@ -10,6 +10,8 @@ premiera została ustalona na 24 sierpnia, ale dzisiaj została
 opublikowana okładka, a także pierwszy singiel z płyty "**End of
 Me**\ ". Zapowiada się znakomicie.
 
+.. TEASER_END
+
 Trudno tutaj mówić o czymś lepszym lub gorszym niż poprzednie albumy, na
 pewno jest inne, i dobrze. Nie można grać cały czas tej samej
 nuty. Gościnnie w utworze śpiewa *Gavin Rossdale*, którego twórczości w
@@ -20,4 +22,4 @@ sierpnia, by się przekonać.
 Okładkę można obejrzeć na oficjalnej stronie
 `Apocalyptyki <http://www.apocalyptica.com/us/news/listen-new-single-end-me>`_,
 a singlu posłuchać na stronach `MySpace
-Apocalyptici <http://www.myspace.com/apocalyptica>`_.
+Apocalyptyki <http://www.myspace.com/apocalyptica>`_.

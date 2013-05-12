@@ -11,6 +11,8 @@ Luty <http://www.tiobe.com/index.php/content/paperinfo/tpci/index.html>`_,
 `php <http://www.php.net>`_. na domiar złego, c# również depcze php po
 piętach.
 
+.. TEASER_END
+
 Popularność C# można przynajmniej częściowo tłumaczyć ciągłym rozwojem
 platformy Mono - w C# powstał między innymi **banshee**, multimedialny
 kombajn, który zastąpi **Rhythmboxa** w kolejnych wydaniach **Ubuntu**.

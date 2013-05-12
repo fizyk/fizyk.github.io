@@ -9,7 +9,9 @@ Niejednokrotnie tworząc bazę danych w MySQL, nie trudno nie zauważyć, iż
 w świeżej, nieskonfigurowanej instalacji tego systemu zarządzania bazą
 danych, domyślnym typem kodowania nie jest
 `utf8 <http://pl.wikipedia.org/wiki/UTF-8>`_ tylko
-`cp1252 <http://pl.wikipedia.org/wiki/ISO_8859-1>`_/`latin1\_swedish <http://pl.wikipedia.org/wiki/ISO_8859-1>`_. 
+`cp1252 <http://pl.wikipedia.org/wiki/ISO_8859-1>`_/`latin1\_swedish <http://pl.wikipedia.org/wiki/ISO_8859-1>`_.
+
+.. TEASE_END
 
 Tworząc aplikację korzystającą z takiej bazy, a samej używającej
 unicode, powinniśmy dla świętego spokoju sprawdzić i pilnować z jakiego
@@ -26,7 +28,7 @@ tabelach, czy też samym połączeniu na lini baza danych - aplikacja.
 Konieczne jest ręczne ustawienie odpowiednich wartości w pliku
 **database.yml**:
 
-::
+.. code-block:: yaml
 
     all:
       doctrine:

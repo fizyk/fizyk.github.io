@@ -10,6 +10,10 @@ telewizyjny. Okazuje się, że **Piekło Pocztowe**, książka, którą
 zaledwie parę lat temu napisał **Terry Pratchett**, została
 zekranizowana i już od 30 maja jest w obiegu!
 
+.. TEASER_END
+
+.. youtube:: x1FT_sTgX7A
+
 Zaskoczyło mnie zekranizowanie tak świeżego tytułu, gdyż poprzednie
 ekranizacje przeprowadzone przez Sky One: **Wiedźmikołaj** i **Kolory
 Magii** posiadają zdecydowanie dłuższy staż rynkowy.

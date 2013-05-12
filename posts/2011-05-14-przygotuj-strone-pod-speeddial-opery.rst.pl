@@ -9,6 +9,8 @@ Po ostatniej aktualizacji Opery do wersji 11.10, kilka stron w SpeedDial
 zmieniło wygląd. Ich miniaturki zostały zastąpione przez logo. W końcu
 przyjrzałem się temu mechanizmowi.
 
+.. TEASER_END
+
 Sama sprawa ikonki okazała się niezwykle prosta. Na dobrą sprawę
 wystarczy wystarczy samo przygotowanie favikonki. Musi mieć tylko
 odpowiedni rozmiar. Minimum 114 pikseli wysokości i szerokości i
@@ -16,7 +18,7 @@ maksimum 256 pikseli. Większe obrazki zostaną zmniejszone. Taka duża
 ikonka może źle wyglądać w miejscach, gdzie zazwyczaj używa się
 mniejszej favikonki. Jest rozwiązanie i na to:
 
-::
+.. code-block:: html
 
     <link rel="icon" type="image/png" href="http://path/to/128x128image.png">
     <link rel="icon" type="image/png" href="http://path/to/200x200image.png">

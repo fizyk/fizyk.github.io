@@ -10,13 +10,15 @@ Chociaż wiedziałem, że dużo w tym języku zależy od konwencji, mocno mnie
 zaskoczyło to, jak bardzo konwencja wpływa na programy w pythonie. Bloki
 kodu wydzielone poprzez wcięcia to banał.
 
+.. TEASER_END
+
 Poruszyło mnie dość mocno jedna rzecz, deklaracja atrybutów klasy. Zanim
 zacząłem pisać pierwszy program w pythonie, trochę poczytałem, więc
 mniej więcej wiedziałem, że tworząc klasę, można mieć atrybuty klasy
 (statyczne), jak i instancji, do których odwołać można się w następujący
 sposób:
 
-::
+.. code-block:: python
 
     class Klasa(object):
 
@@ -33,7 +35,7 @@ Oczywiście, nie ma żadnego słowa kluczowego, który by zasugerował, że
 atrybut jest taki, lub taki. Ja, jak to mam w zwyczaju, atrybuty
 deklaruję zawsze w klasie, a następnie do nich się odwołuję:
 
-::
+.. code-block:: python
 
     class Klasa(object):
         atrybut = []
@@ -50,7 +52,7 @@ deklaruję zawsze w klasie, a następnie do nich się odwołuję:
 Z takim podejściem jest jeden kłopot. Załóżmy teraz takie odwołanie do
 atrybutu w metodzie:
 
-::
+.. code-block:: python
 
     class Klasa(object):
         atrybut = []
@@ -80,7 +82,7 @@ powyższym przykładzie zadeklarowany jest atrybut klasy, a w metodzie
 właśnie. Jak więc dodać atrybut do słownika trybutów instancji? Tylko
 poprzez wcześniejszą inicjację atrybutu:
 
-::
+.. code-block:: python
 
     class Klasa(object):
         atrybut = []
