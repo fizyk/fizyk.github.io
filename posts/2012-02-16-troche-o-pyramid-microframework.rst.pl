@@ -26,7 +26,7 @@ jak i niewielkich, takich, które praktycznie nie mają wpływu na system
 
 Prosta aplikacja w pyramidzie może zawierać się w jednym pliku:
 
-.. code-block:: pyhton
+.. code-block:: python
 
     from wsgiref.simple_server import make_server
     from pyramid.config import Configurator

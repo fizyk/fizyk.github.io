@@ -40,7 +40,7 @@ PHP i imamy dostęp do elementów frameworka. Dzięki temu, możemy dla obu
 środowisk, produkcyjnego i developerskiego podać osobne zestawy CSS'ów
 (podobnie jak js):
 
-.. code-block:: yml
+.. code-block:: yaml
 
     default:
       stylesheets:
