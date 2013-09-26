@@ -9,7 +9,7 @@ import time
 #
 
 
-SITE_URL = "http://blog.fizyk.net.pl"
+SITE_URL = "http://blog.fizyk.net.pl/"
 # Data about this site
 BLOG_AUTHOR = "Grzegorz Śliwiński"
 BLOG_TITLE = "Cases"
@@ -50,7 +50,7 @@ TRANSLATIONS = {
 
 # Links for the sidebar / navigation bar.
 # You should provide a key-value pair for each used language.
-SIDEBAR_LINKS = {
+NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         ('http://www.fizyk.net.pl/en', 'Homepage'),
         ('/archive/', 'Archives'),
@@ -89,10 +89,11 @@ SIDEBAR_LINKS = {
 # if use_in_feed is True, then those posts will be added to the site's
 # rss feeds.
 #
-
-post_pages = (
-    ("posts/*.rst", "blog", "post.tmpl", True),
-    ("pages/*.rst", "", "story.tmpl", False),
+POSTS = (
+    ("posts/*.rst", "blog", "post.tmpl"),
+)
+PAGES = (
+    ("pages/*.rst", "", "story.tmpl"),
 )
 
 # One or more folders containing files to be copied as-is into the output.
@@ -108,7 +109,7 @@ post_pages = (
 # 'rest' is reStructuredText
 # 'markdown' is MarkDown
 # 'html' assumes the file is html and just copies it
-post_compilers = {
+COMPILERS = {
     "rest": ('.txt', '.rst'),
     "markdown": ('.md', '.mdown', '.markdown'),
     "textile": ('.textile',),
@@ -261,7 +262,8 @@ CONTENT_FOOTER = CONTENT_FOOTER.format(email=BLOG_EMAIL.replace('@', '~~'),
 # http://disqus.com, and set DISQUS_FORUM to the short name you selected.
 # If you want to disable comments, set it to False.
 # Default is "nikolademo", used by the demo sites
-DISQUS_FORUM = "casesblog"
+COMMENT_SYSTEM = 'disqus'
+COMMENT_SYSTEM_ID = "casesblog"
 
 # Create index.html for story folders?
 # STORY_INDEX = False
