@@ -5,7 +5,7 @@
 .. title: Easy way to debug email communication in python
 .. slug: easy-way-to-debug-email-communication-in-python
 
-I might not be fond of Django itself, but once can learn thing or two from it. For example, if it wasn't for working with Django, I'd probably miss the fact, that you can start a simple smtp server to debug email communications in your apps (no matter the programming language).
+I might not be fond of Django itself, but one can learn a thing or two from it. For example, if it wasn't for working with Django, I'd probably miss the fact, that you can start a simple smtp server to debug email communications in your apps (no matter the programming language).
 
 .. code-block:: bash
 
