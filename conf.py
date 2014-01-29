@@ -110,7 +110,7 @@ PAGES = (
 # 'markdown' is MarkDown
 # 'html' assumes the file is html and just copies it
 COMPILERS = {
-    "rest": ('.txt', '.rst'),
+    "rest": ('.txt', '.rst', '.pl'),
     "markdown": ('.md', '.mdown', '.markdown'),
     "textile": ('.textile',),
     "txt2tags": ('.t2t',),

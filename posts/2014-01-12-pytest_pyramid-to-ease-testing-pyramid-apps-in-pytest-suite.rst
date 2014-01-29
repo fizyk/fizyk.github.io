@@ -10,6 +10,7 @@ I've just released **pytest_pyramid**, a package, that should help testing pyram
 .. TEASER_END
 
 Links:
+------
 
 Package contains two fixtures and two fixture factories (config and app) to play with in pytest tests.
 
