@@ -9,7 +9,7 @@ This third SQLAlchemy speed tests for various dialects is my third try, prompted
 
 .. TEASER_END
 
-This test, as previous, has been run on 6 dialects: 3 for postgres: **psycopg2**, **pypostgresql**, **pg8000** and 3 for mysql: **mysqldb** *(mysql-python)*, **oursql** and **mysqlconnector** *(mysql-connector-python)*. But this time, iI runned all tests for all these connectors both on Python 2.7 and Python 3.3.
+This test, as previous, has been run on 6 dialects: 3 for postgres: **psycopg2**, **pypostgresql**, **pg8000** and 3 for mysql: **mysqldb** *(mysql-python)*, **oursql** and **mysqlconnector** *(mysql-connector-python)*. But this time, I've run all tests for all these connectors both on Python 2.7 and Python 3.3.
 
 My basic setup almost hasn't changed since my last test in August.
 
