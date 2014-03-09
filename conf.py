@@ -38,6 +38,7 @@ BLOG_DESCRIPTION = "Not only about encountered programming cases."
 # What is the default language?
 DEFAULT_LANG = "en"
 HIDE_UNTRANSLATED_POSTS = True
+TIMEZONE = 'Europe/Warsaw'
 
 # What other languages do you have?
 # The format is {"translationcode" : "path/to/translation" }
