@@ -5,7 +5,7 @@
 .. title: pyramid_fullauth 0.2.3
 .. slug: pyramid_fullauth-023
 
-It took over a four months, but finally got new version of pyramid_fullauth cooked, with three fixes. One relaxic dependency on `tzf.pyramid_yml <https://pypi.python.org/pypi/tzf.pyramid_yml>`_, second adjusts package to `pyramid 1.5a3 <https://pypi.python.org/pypi/pyramid/1.5a3>`_, and third fixes relation definition between AuthenticationProvider and User classes.
+It took over a four months, but finally got new version of pyramid_fullauth cooked, with three fixes. One relaxing dependency on `tzf.pyramid_yml <https://pypi.python.org/pypi/tzf.pyramid_yml>`_, second adjusts package to `pyramid 1.5a3 <https://pypi.python.org/pypi/pyramid/1.5a3>`_, and third fixes relation definition between AuthenticationProvider and User classes.
 
 .. TEASER_END
 
