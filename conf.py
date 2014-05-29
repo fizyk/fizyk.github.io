@@ -219,7 +219,7 @@ DEPLOY_COMMANDS = [
 # INDEXES_PAGES = ""  # If this is empty, the default is 'old posts page %d' translated
 
 # Name of the theme to use. Themes are located in themes/theme_name
-# THEME = 'site'
+THEME = "monospace"
 
 # date format used to display post dates. (str used by datetime.datetime.strftime)
 DATE_FORMAT = '%d %B %Y %H:%M'
@@ -251,7 +251,7 @@ jest dostępny na licencji
     Creative Commons Uznanie autorstwa 3.0 Unported
 </a>."""
 
-LICNSE = LICENSE.format(author=BLOG_AUTHOR)
+LICENSE = LICENSE.format(author=BLOG_AUTHOR)
 
 # A small copyright notice for the page footer (in HTML).
 # Default is ''
