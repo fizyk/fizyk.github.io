@@ -49,8 +49,6 @@ tests
 Links:
 ------
 
-Package contains two fixtures and two fixture factories (config and app) to play with in pytest tests.
-
 #. `pyramid_localize @ pypi <https://pypi.python.org/pypi/pyramid_localize/0.1.0>`_
 #. `pyramid_localize @ readthedocs <http://pyramid-localize.readthedocs.org/>`_
 #. `pyramid_localize @ github <https://github.com/fizyk/pyramid_localize>`_

@@ -45,8 +45,6 @@ tests
 Links:
 ------
 
-Package contains two fixtures and two fixture factories (config and app) to play with in pytest tests.
-
 #. `pyramid_fullauth @ pypi <https://pypi.python.org/pypi/pyramid_fullauth/0.3.0>`_
 #. `pyramid_fullauth @ readthedocs <http://pyramid-fullauth.readthedocs.org/>`_
 #. `pyramid_fullauth @ github <https://github.com/fizyk/pyramid_fullauth>`_
