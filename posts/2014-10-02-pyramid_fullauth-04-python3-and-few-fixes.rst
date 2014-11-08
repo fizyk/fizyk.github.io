@@ -1,7 +1,7 @@
 .. title: pyramid_fullauth 0.4 - python3 and few fixes
 .. slug: pyramid_fullauth-04-python3-and-few-fixes
 .. date: 2014-11-02 19:46:35 UTC+01:00
-.. tags: python,pyramid,authentication
+.. tags: python,pyramid,authentication,fullauth
 .. link:
 .. description:
 .. type: text
