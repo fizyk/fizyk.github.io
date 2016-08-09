@@ -102,9 +102,7 @@ poprzez wcześniejszą inicjację atrybutu:
 Zanim się w tym zorientowałem, doprowadziłem do małego wycieku pamięci
 ;-).
 
-Więcej do poczytania (po angielsku) na ten temat można znaleźć w tych linkach:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-`http://www.pasteur.fr/formation/infobio/python/ch18s05.html <http://www.pasteur.fr/formation/infobio/python/ch18s05.html>`_
+Więcej do poczytania (po angielsku) na ten temat można znaleźć w tym linku:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 `http://docs.python.org/tutorial/classes.html#python-scopes-and-namespaces <http://docs.python.org/tutorial/classes.html#python-scopes-and-namespaces>`_
