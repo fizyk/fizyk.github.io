@@ -223,8 +223,8 @@ DEPLOY_COMMANDS = {
 # Name of the theme to use. Themes are located in themes/theme_name
 THEME = "monospace"
 
-# date format used to display post dates. (str used by datetime.datetime.strftime)
-DATE_FORMAT = '%d %B %Y %H:%M'
+# Nikola now uses CLDR-style date strings. http://cldr.unicode.org/translation/date-time-1/date-time
+DATE_FORMAT = 'dd M y HH:mm'
 
 # FAVICONS contains (name, file, size) tuples.
 # Used for create favicon link like this:
