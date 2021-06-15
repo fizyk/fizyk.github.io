@@ -1,7 +1,8 @@
 on:
   push:
-    branch:
-      - master
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
 jobs:
   nikola_build:
@@ -10,6 +11,9 @@ jobs:
     steps:
     - name: Check out
       uses: actions/checkout@v2
+    - name: Test
+      run: |
+        echo "Is it working?"
     - name: Build and Deploy Nikola
       uses: getnikola/nikola-action@v3
       with:
