@@ -159,16 +159,9 @@ ARCHIVE_FILENAME = "index.html"
 # If you don't need any of these, just set to []
 # REDIRECTIONS = []
 
-# Commands to execute to deploy. Can be anything, for example,
-# you may use rsync:
-# "rsync -rav output/* joe@my.site:/srv/www/site"
-# And then do a backup, or ping pingomatic.
-# To do manual deployment, set it to []
-DEPLOY_COMMANDS = {
-    'default': [
-        'rsync -rav --delete output/* fizyk@fizyk.net.pl:~/blog/',
-    ]
-}
+# Github deployment configuration
+GITHUB_DEPLOY_BRANCH = "gh-pages"
+GITHUB_SOURCE_BRANCH = "master"
 
 # Where the output site should be located
 # If you don't use an absolute path, it will be considered as relative
@@ -223,8 +216,8 @@ DEPLOY_COMMANDS = {
 # Name of the theme to use. Themes are located in themes/theme_name
 THEME = "monospace"
 
-# date format used to display post dates. (str used by datetime.datetime.strftime)
-DATE_FORMAT = '%d %B %Y %H:%M'
+# Nikola now uses CLDR-style date strings. http://cldr.unicode.org/translation/date-time-1/date-time
+DATE_FORMAT = 'dd M y HH:mm'
 
 # FAVICONS contains (name, file, size) tuples.
 # Used for create favicon link like this:
