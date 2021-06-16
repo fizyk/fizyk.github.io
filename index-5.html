@@ -1,16 +1,13 @@
 <!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="description" content="Not only about encountered programming cases.">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width">
 <title>Cases (old posts, page 5) | Cases</title>
 <link href="assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
-<meta name="theme-color" content="#5670d4">
-<meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="rss.xml">
-<link rel="alternate" type="application/rss+xml" title="RSS (pl)" hreflang="pl" href="pl/rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="pl/rss.xml">
 <link rel="canonical" href="http://blog.fizyk.net.pl/index-5.html">
 <link rel="icon" href="favicon.png" sizes="62x60">
 <link rel="icon" href="favicon-speddial.png" sizes="269x262">
@@ -18,108 +15,48 @@
 <link rel="next" href="index-4.html" type="text/html">
 <!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]-->
 </head>
-<body>
-<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
-
-<!-- Header and menu bar -->
-<div class="container">
-      <header class="blog-header py-3"><div class="row nbb-header align-items-center">
-          <div class="col-md-3 col-xs-2 col-sm-2" style="width: auto;">
-            <button class="navbar-toggler navbar-light bg-light nbb-navbar-toggler" type="button" data-toggle="collapse" data-target=".bs-nav-collapsible" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse bs-nav-collapsible bootblog4-search-form-holder">
-                
+<body class="home blog">
+    <div id="wrap" style="width:850px">
+        <div id="container" style="width:560px">
+            
+            
+        <div class="postbox">
+        <h1><a href="blog/pyramid_fullauth-030-released/">pyramid_fullauth 0.3.0 released!</a></h1>
+            <div class="meta" style="background-color: rgb(234, 234, 234); ">
+                <span class="authordate">
+                    Posted: <time class="published" datetime="2014-04-25T22:32:29+02:00">25 4 2014 22:32</time></span>
+                <br><span class="tags">Tags: 
+                            <a class="tag" href="tags/fullauth/"><span>fullauth</span></a>
+                            <a class="tag" href="tags/pyramid/"><span>pyramid</span></a>
+                            <a class="tag" href="tags/pytest/"><span>pytest</span></a>
+                            <a class="tag" href="tags/pytest_pyramid/"><span>pytest_pyramid</span></a>
+                            <a class="tag" href="tags/python/"><span>python</span></a>
+                </span>
             </div>
-        </div>
-          <div class="col-md-6 col-xs-10 col-sm-10 bootblog4-brand" style="width: auto;">
-            <a class="navbar-brand blog-header-logo text-dark" href=".">
-
-            <span id="blog-title">Cases</span>
-        </a>
-          </div>
-            <div class="col-md-3 justify-content-end align-items-center bs-nav-collapsible collapse flex-collapse bootblog4-right-nav">
-            <nav class="navbar navbar-light bg-white"><ul class="navbar-nav bootblog4-right-nav">
-<li class="nav-item"><a href="pl/" rel="alternate" hreflang="pl" class="nav-link">Polski</a></li>
-
-                    
-                    
-                    
-            </ul></nav>
-</div>
-    </div>
-</header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
-            <ul class="navbar-nav nav-fill d-flex w-100">
-<li class="nav-item">
-<a href="http://www.fizyk.net.pl/en" class="nav-link">Homepage</a>
-                </li>
-<li class="nav-item">
-<a href="archive/" class="nav-link">Archives</a>
-                </li>
-<li class="nav-item">
-<a href="tags/" class="nav-link">Tags</a>
-
-                
-            </li>
-</ul>
-</div>
-<!-- /.navbar-collapse -->
-</nav>
-</div>
-
-<div class="container" id="content" role="main">
-    <div class="body-content">
-        <!--Body content-->
-        
-        
-        
-    
-        
-
-    
-        
-    <div class="postindex">
-            <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="blog/pyramid_fullauth-030-released/" class="u-url">pyramid_fullauth 0.3.0 released!</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Grzegorz Śliwiński
-                    </span></p>
-            <p class="dateline">
-            <a href="blog/pyramid_fullauth-030-released/" rel="bookmark">
-            <time class="published dt-published" datetime="2014-04-25T22:32:29+02:00" itemprop="datePublished" title="25 4 2014 22:32">25 4 2014 22:32</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="blog/pyramid_fullauth-030-released/#disqus_thread" data-disqus-identifier="cache/posts/2014-04-25-pyramid_fullauth-030-released.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
+        <div>
 <p>After over a month of work I've finally released version 0.3.0 of pyramid_fullauth!
 This release changes are mostly to testing the package, as with it, it finally reached 100% code coverage, but along I also introduced automatic style checking with pep8, pylint, pep257 and mccabe linter, so in-code changes were big enough, that I had to release it as a new minor version.</p>
 <p class="more"><a href="blog/pyramid_fullauth-030-released/">Read more…</a></p>
 </div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="blog/testing-web-applications-using-sqlalchemy/" class="u-url">Testing web applications using SQLAlchemy.</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Grzegorz Śliwiński
-                    </span></p>
-            <p class="dateline">
-            <a href="blog/testing-web-applications-using-sqlalchemy/" rel="bookmark">
-            <time class="published dt-published" datetime="2014-04-09T23:13:57+02:00" itemprop="datePublished" title="09 4 2014 23:13">09 4 2014 23:13</time></a>
-            </p>
-                        <p class="commentline">
+            
         
-    <a href="blog/testing-web-applications-using-sqlalchemy/#disqus_thread" data-disqus-identifier="cache/posts/2014-04-09-testing-web-applications-using-sqlalchemy.html">Comments</a>
+    <a href="blog/pyramid_fullauth-030-released/#disqus_thread" data-disqus-identifier="cache/posts/2014-04-25-pyramid_fullauth-030-released.html">Comments</a>
 
 
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
+        </div>
+        <div class="postbox">
+        <h1><a href="blog/testing-web-applications-using-sqlalchemy/">Testing web applications using SQLAlchemy.</a></h1>
+            <div class="meta" style="background-color: rgb(234, 234, 234); ">
+                <span class="authordate">
+                    Posted: <time class="published" datetime="2014-04-09T23:13:57+02:00">09 4 2014 23:13</time></span>
+                <br><span class="tags">Tags: 
+                            <a class="tag" href="tags/fullauth/"><span>fullauth</span></a>
+                            <a class="tag" href="tags/pytest-dbfixtures/"><span>pytest-dbfixtures</span></a>
+                            <a class="tag" href="tags/python/"><span>python</span></a>
+                            <a class="tag" href="tags/sqlalchemy/"><span>sqlalchemy</span></a>
+                </span>
+            </div>
+        <div>
 <p>Some time ago, I decided to refactor <a class="reference external" href="https://pypi.python.org/pypi/pyramid_fullauth">pyramid_fullauth</a> tests from mostly unittest style
 (though run by py.test) to same factor function style tests and base them on
 <a class="reference external" href="https://pypi.python.org/pypi/pytest_pyramid">pytest_pyramid</a> package,
@@ -127,25 +64,22 @@ when it comes to test webapp. Everhything went smoothly,
 until I stumbled upon <a class="reference external" href="http://www.sqlalchemy.org/">SQLAlchemy</a> session in tests.</p>
 <p class="more"><a href="blog/testing-web-applications-using-sqlalchemy/">Read more…</a></p>
 </div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="blog/elasticsearch-analyzers/" class="u-url">Elasticsearch analyzers</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Grzegorz Śliwiński
-                    </span></p>
-            <p class="dateline">
-            <a href="blog/elasticsearch-analyzers/" rel="bookmark">
-            <time class="published dt-published" datetime="2014-03-11T22:14:06+01:00" itemprop="datePublished" title="11 3 2014 22:14">11 3 2014 22:14</time></a>
-            </p>
-                        <p class="commentline">
+            
         
-    <a href="blog/elasticsearch-analyzers/#disqus_thread" data-disqus-identifier="cache/posts/2014-03-11-elasticsearch-analyzers.html">Comments</a>
+    <a href="blog/testing-web-applications-using-sqlalchemy/#disqus_thread" data-disqus-identifier="cache/posts/2014-04-09-testing-web-applications-using-sqlalchemy.html">Comments</a>
 
 
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
+        </div>
+        <div class="postbox">
+        <h1><a href="blog/elasticsearch-analyzers/">Elasticsearch analyzers</a></h1>
+            <div class="meta" style="background-color: rgb(234, 234, 234); ">
+                <span class="authordate">
+                    Posted: <time class="published" datetime="2014-03-11T22:14:06+01:00">11 3 2014 22:14</time></span>
+                <br><span class="tags">Tags: 
+                            <a class="tag" href="tags/elasticsearch/"><span>elasticsearch</span></a>
+                </span>
+            </div>
+        <div>
 <p><a class="reference external" href="http://www.elasticsearch.org/">Elasticsearch</a> is all the buzzwords recently.
 There are projects using it to fast distributed search, as a document database
 and as a tool for data analysis. I've wanted to check out Elasticsearch for
@@ -156,184 +90,225 @@ migrating project from whoosh to elasticsearch. And first thing I noticed about
 Elasticsearch from solutions I've been using so far are analyzers.</p>
 <p class="more"><a href="blog/elasticsearch-analyzers/">Read more…</a></p>
 </div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="blog/pylama-python-developers-helpful-companion/" class="u-url">Pylama - Python developer's helpful companion</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Grzegorz Śliwiński
-                    </span></p>
-            <p class="dateline">
-            <a href="blog/pylama-python-developers-helpful-companion/" rel="bookmark">
-            <time class="published dt-published" datetime="2014-03-09T22:14:45+01:00" itemprop="datePublished" title="09 3 2014 22:14">09 3 2014 22:14</time></a>
-            </p>
-                        <p class="commentline">
+            
+        
+    <a href="blog/elasticsearch-analyzers/#disqus_thread" data-disqus-identifier="cache/posts/2014-03-11-elasticsearch-analyzers.html">Comments</a>
+
+
+        </div>
+        <div class="postbox">
+        <h1><a href="blog/pylama-python-developers-helpful-companion/">Pylama - Python developer's helpful companion</a></h1>
+            <div class="meta" style="background-color: rgb(234, 234, 234); ">
+                <span class="authordate">
+                    Posted: <time class="published" datetime="2014-03-09T22:14:45+01:00">09 3 2014 22:14</time></span>
+                <br><span class="tags">Tags: 
+                            <a class="tag" href="tags/linter/"><span>linter</span></a>
+                            <a class="tag" href="tags/pep8/"><span>pep8</span></a>
+                            <a class="tag" href="tags/python/"><span>python</span></a>
+                </span>
+            </div>
+        <div>
+<p>Everyone might have a hard time to keep his code clean, shiny according to pep8, and not to mention that there are other extensions to ` pep8 &lt;<a class="reference external" href="http://legacy.python.org/dev/peps/pep-0008/">http://legacy.python.org/dev/peps/pep-0008/</a>&gt;`_ rules, like <a class="reference external" href="https://pypi.python.org/pypi/pyflakes">pyflakes</a>, or other linters for that matter. Of course, each linter can be installed, but imagine the need to run each separately, to determine what's in your code that should be fixed. Here comes <a class="reference external" href="https://pypi.python.org/pypi/pylama/2.0.4">Pylama</a>.</p>
+<p class="more"><a href="blog/pylama-python-developers-helpful-companion/">Read more…</a></p>
+</div>
+            
         
     <a href="blog/pylama-python-developers-helpful-companion/#disqus_thread" data-disqus-identifier="cache/posts/2014-02-09-pylama-python-developers-helpful-companion.html">Comments</a>
 
 
-                </p>
+        </div>
+        <div class="postbox">
+        <h1><a href="blog/sqlalchemy-09-dialects-speed-tests/">SQLAlchemy 0.9 dialects speed tests</a></h1>
+            <div class="meta" style="background-color: rgb(234, 234, 234); ">
+                <span class="authordate">
+                    Posted: <time class="published" datetime="2014-02-02T22:14:23+01:00">02 2 2014 22:14</time></span>
+                <br><span class="tags">Tags: 
+                            <a class="tag" href="tags/mysql/"><span>mysql</span></a>
+                            <a class="tag" href="tags/postgresql/"><span>postgresql</span></a>
+                            <a class="tag" href="tags/python/"><span>python</span></a>
+                            <a class="tag" href="tags/sqlalchemy/"><span>sqlalchemy</span></a>
+                </span>
+            </div>
+        <div>
+<p>This fourth <a class="reference external" href="http://www.sqlalchemy.org/">SQLAlchemy's</a> dialects speed tests aims to test this ORM's newest version, 0.9.x, which is available for about a month already. This version, amongst other improvements, contains C extension for python3.</p>
+<p class="more"><a href="blog/sqlalchemy-09-dialects-speed-tests/">Read more…</a></p>
 </div>
-            </header><div class="p-summary entry-summary">
-                    <div>
-<p>Everyone might have a hard time to keep his code clean, shiny according to pep8, and not to mention that there are other extensions to ` pep8 &lt;<a class="reference external" href="http://legacy.python.org/dev/peps/pep-0008/">http://legacy.python.org/dev/peps/pep-0008/</a>&gt;`_ rules, like <a class="reference external" href="https://pypi.python.org/pypi/pyflakes">pyflakes</a>, or other linters for that matter. Of course, each linter can be installed, but imagine the need to run each separately, to determine what's in your code that should be fixed. Here comes <a class="reference external" href="https://pypi.python.org/pypi/pylama/2.0.4">Pylama</a>.</p>
-<p class="more"><a href="blog/pylama-python-developers-helpful-companion/">Read more…</a></p>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="blog/sqlalchemy-09-dialects-speed-tests/" class="u-url">SQLAlchemy 0.9 dialects speed tests</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Grzegorz Śliwiński
-                    </span></p>
-            <p class="dateline">
-            <a href="blog/sqlalchemy-09-dialects-speed-tests/" rel="bookmark">
-            <time class="published dt-published" datetime="2014-02-02T22:14:23+01:00" itemprop="datePublished" title="02 2 2014 22:14">02 2 2014 22:14</time></a>
-            </p>
-                        <p class="commentline">
+            
         
     <a href="blog/sqlalchemy-09-dialects-speed-tests/#disqus_thread" data-disqus-identifier="cache/posts/2014-02-02-sqlalchemy-09-dialects-speed-tests.html">Comments</a>
 
 
-                </p>
+        </div>
+        <div class="postbox">
+        <h1><a href="blog/pyramid_fullauth-023/">pyramid_fullauth 0.2.3</a></h1>
+            <div class="meta" style="background-color: rgb(234, 234, 234); ">
+                <span class="authordate">
+                    Posted: <time class="published" datetime="2014-01-29T23:06:07+01:00">29 1 2014 23:06</time></span>
+                <br><span class="tags">Tags: 
+                            <a class="tag" href="tags/fullauth/"><span>fullauth</span></a>
+                            <a class="tag" href="tags/pyramid/"><span>pyramid</span></a>
+                            <a class="tag" href="tags/python/"><span>python</span></a>
+                </span>
+            </div>
+        <div>
+<p>It took over a four months, but finally got new version of pyramid_fullauth cooked, with three fixes. One relaxing dependency on <a class="reference external" href="https://pypi.python.org/pypi/tzf.pyramid_yml">tzf.pyramid_yml</a>, second adjusts package to <a class="reference external" href="https://pypi.python.org/pypi/pyramid/1.5a3">pyramid 1.5a3</a>, and third fixes relation definition between AuthenticationProvider and User classes.</p>
+<p class="more"><a href="blog/pyramid_fullauth-023/">Read more…</a></p>
 </div>
-            </header><div class="p-summary entry-summary">
-                    <div>
-<p>This fourth <a class="reference external" href="http://www.sqlalchemy.org/">SQLAlchemy's</a> dialects speed tests aims to test this ORM's newest version, 0.9.x, which is available for about a month already. This version, amongst other improvements, contains C extension for python3.</p>
-<p class="more"><a href="blog/sqlalchemy-09-dialects-speed-tests/">Read more…</a></p>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="blog/pyramid_fullauth-023/" class="u-url">pyramid_fullauth 0.2.3</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Grzegorz Śliwiński
-                    </span></p>
-            <p class="dateline">
-            <a href="blog/pyramid_fullauth-023/" rel="bookmark">
-            <time class="published dt-published" datetime="2014-01-29T23:06:07+01:00" itemprop="datePublished" title="29 1 2014 23:06">29 1 2014 23:06</time></a>
-            </p>
-                        <p class="commentline">
+            
         
     <a href="blog/pyramid_fullauth-023/#disqus_thread" data-disqus-identifier="cache/posts/2014-01-29-pyramid_fullauth-023.html">Comments</a>
 
 
-                </p>
+        </div>
+        <div class="postbox">
+        <h1><a href="blog/pytest_pyramid-to-ease-testing-pyramid-apps-in-pytest-suite/">pytest_pyramid - to ease testing pyramid apps in pytest suite</a></h1>
+            <div class="meta" style="background-color: rgb(234, 234, 234); ">
+                <span class="authordate">
+                    Posted: <time class="published" datetime="2014-01-12T22:59:05+01:00">12 1 2014 22:59</time></span>
+                <br><span class="tags">Tags: 
+                            <a class="tag" href="tags/pyramid/"><span>pyramid</span></a>
+                            <a class="tag" href="tags/pytest/"><span>pytest</span></a>
+                            <a class="tag" href="tags/testing/"><span>testing</span></a>
+                </span>
+            </div>
+        <div>
+<p>I've just released <strong>pytest_pyramid</strong>, a package, that should help testing pyramid applications with pytest suite. It's mostly generalized code, that I've been using across my projects to create both configuration and testing application.</p>
+<p class="more"><a href="blog/pytest_pyramid-to-ease-testing-pyramid-apps-in-pytest-suite/">Read more…</a></p>
 </div>
-            </header><div class="p-summary entry-summary">
-                    <div>
-<p>It took over a four months, but finally got new version of pyramid_fullauth cooked, with three fixes. One relaxing dependency on <a class="reference external" href="https://pypi.python.org/pypi/tzf.pyramid_yml">tzf.pyramid_yml</a>, second adjusts package to <a class="reference external" href="https://pypi.python.org/pypi/pyramid/1.5a3">pyramid 1.5a3</a>, and third fixes relation definition between AuthenticationProvider and User classes.</p>
-<p class="more"><a href="blog/pyramid_fullauth-023/">Read more…</a></p>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="blog/pytest_pyramid-to-ease-testing-pyramid-apps-in-pytest-suite/" class="u-url">pytest_pyramid - to ease testing pyramid apps in pytest suite</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Grzegorz Śliwiński
-                    </span></p>
-            <p class="dateline">
-            <a href="blog/pytest_pyramid-to-ease-testing-pyramid-apps-in-pytest-suite/" rel="bookmark">
-            <time class="published dt-published" datetime="2014-01-12T22:59:05+01:00" itemprop="datePublished" title="12 1 2014 22:59">12 1 2014 22:59</time></a>
-            </p>
-                        <p class="commentline">
+            
         
     <a href="blog/pytest_pyramid-to-ease-testing-pyramid-apps-in-pytest-suite/#disqus_thread" data-disqus-identifier="cache/posts/2014-01-12-pytest_pyramid-to-ease-testing-pyramid-apps-in-pytest-suite.html">Comments</a>
 
 
-                </p>
+        </div>
+        <div class="postbox">
+        <h1><a href="blog/years-end-sqlalchemy-speed-tests-on-postgres-and-mysql/">Year's end SQLAlchemy speed tests on postgres and mysql</a></h1>
+            <div class="meta" style="background-color: rgb(234, 234, 234); ">
+                <span class="authordate">
+                    Posted: <time class="published" datetime="2013-12-22T14:11:33+01:00">22 12 2013 14:11</time></span>
+                <br><span class="tags">Tags: 
+                            <a class="tag" href="tags/mysql/"><span>mysql</span></a>
+                            <a class="tag" href="tags/postgresql/"><span>postgresql</span></a>
+                            <a class="tag" href="tags/python/"><span>python</span></a>
+                            <a class="tag" href="tags/sqlalchemy/"><span>sqlalchemy</span></a>
+                </span>
+            </div>
+        <div>
+<p>This third SQLAlchemy speed tests for various dialects is my third try, prompted by Tony Locke. Tony is a contributor to <a class="reference external" href="https://pypi.python.org/pypi/pg8000">pg8000</a> postgresql connector, which just recently got a huge overhaul and got a new version, after almost three years. I was happy to comply, as his request got me reason to work a little bit on my testing script as well, and automate the whole process.</p>
+<p class="more"><a href="blog/years-end-sqlalchemy-speed-tests-on-postgres-and-mysql/">Read more…</a></p>
 </div>
-            </header><div class="p-summary entry-summary">
-                    <div>
-<p>I've just released <strong>pytest_pyramid</strong>, a package, that should help testing pyramid applications with pytest suite. It's mostly generalized code, that I've been using across my projects to create both configuration and testing application.</p>
-<p class="more"><a href="blog/pytest_pyramid-to-ease-testing-pyramid-apps-in-pytest-suite/">Read more…</a></p>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="blog/years-end-sqlalchemy-speed-tests-on-postgres-and-mysql/" class="u-url">Year's end SQLAlchemy speed tests on postgres and mysql</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Grzegorz Śliwiński
-                    </span></p>
-            <p class="dateline">
-            <a href="blog/years-end-sqlalchemy-speed-tests-on-postgres-and-mysql/" rel="bookmark">
-            <time class="published dt-published" datetime="2013-12-22T14:11:33+01:00" itemprop="datePublished" title="22 12 2013 14:11">22 12 2013 14:11</time></a>
-            </p>
-                        <p class="commentline">
+            
         
     <a href="blog/years-end-sqlalchemy-speed-tests-on-postgres-and-mysql/#disqus_thread" data-disqus-identifier="cache/posts/2013-12-22-years-end-sqlalchemy-speed-tests-on-postgres-and-mysql.html">Comments</a>
 
 
-                </p>
+        </div>
+        <div class="postbox">
+        <h1><a href="blog/tzfpyramid_yml-030/">tzf.pyramid_yml 0.3.0</a></h1>
+            <div class="meta" style="background-color: rgb(234, 234, 234); ">
+                <span class="authordate">
+                    Posted: <time class="published" datetime="2013-12-15T23:13:05+01:00">15 12 2013 23:13</time></span>
+                <br><span class="tags">Tags: 
+                            <a class="tag" href="tags/pyramid/"><span>pyramid</span></a>
+                            <a class="tag" href="tags/python/"><span>python</span></a>
+                            <a class="tag" href="tags/yaml/"><span>yaml</span></a>
+                </span>
+            </div>
+        <div>
+<p>I've just released new version of <strong>tzf.pyramid_yml</strong>. For toally new thing foir this package, I Licensed it under MIT License. Apart from that it introduces few enchancements in terms of defining config location.</p>
+<p class="more"><a href="blog/tzfpyramid_yml-030/">Read more…</a></p>
 </div>
-            </header><div class="p-summary entry-summary">
-                    <div>
-<p>This third SQLAlchemy speed tests for various dialects is my third try, prompted by Tony Locke. Tony is a contributor to <a class="reference external" href="https://pypi.python.org/pypi/pg8000">pg8000</a> postgresql connector, which just recently got a huge overhaul and got a new version, after almost three years. I was happy to comply, as his request got me reason to work a little bit on my testing script as well, and automate the whole process.</p>
-<p class="more"><a href="blog/years-end-sqlalchemy-speed-tests-on-postgres-and-mysql/">Read more…</a></p>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="blog/tzfpyramid_yml-030/" class="u-url">tzf.pyramid_yml 0.3.0</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Grzegorz Śliwiński
-                    </span></p>
-            <p class="dateline">
-            <a href="blog/tzfpyramid_yml-030/" rel="bookmark">
-            <time class="published dt-published" datetime="2013-12-15T23:13:05+01:00" itemprop="datePublished" title="15 12 2013 23:13">15 12 2013 23:13</time></a>
-            </p>
-                        <p class="commentline">
+            
         
     <a href="blog/tzfpyramid_yml-030/#disqus_thread" data-disqus-identifier="cache/posts/2013-12-15-tzfpyramid_yml-030.html">Comments</a>
 
 
-                </p>
+        </div>
+        <div class="postbox">
+        <h1><a href="blog/how-to-kill-a-process-hanging-on-a-port/">How to kill a process hanging on a port</a></h1>
+            <div class="meta" style="background-color: rgb(234, 234, 234); ">
+                <span class="authordate">
+                    Posted: <time class="published" datetime="2013-12-11T22:07:24+01:00">11 12 2013 22:07</time></span>
+                <br><span class="tags">Tags: 
+                            <a class="tag" href="tags/terminal/"><span>terminal</span></a>
+                            <a class="tag" href="tags/tip/"><span>tip</span></a>
+                </span>
+            </div>
+        <div>
+<p>Sometimes when you develop, you might find yourself with strange error. It says that the process you're trying to start is trying to use port, that is already being used. It's strange, because it is usually You, who used this port on previous run. If that's the case, then <strong>fuser</strong> command should relieve you from this error.</p>
+<p>For example:</p>
+<pre class="code bash"><a id="rest_code_6780e5f66b0f4cf8ad256101ed2f5eb4-1" name="rest_code_6780e5f66b0f4cf8ad256101ed2f5eb4-1"></a>fuser <span class="m">6543</span>/tcp -k
+</pre>
+<p>The <strong>k</strong> parameter is responsible for actual killing. Without it, the command would just identify which process is using port/socket in question.</p>
 </div>
-            </header><div class="p-summary entry-summary">
-                    <div>
-<p>I've just released new version of <strong>tzf.pyramid_yml</strong>. For toally new thing foir this package, I Licensed it under MIT License. Apart from that it introduces few enchancements in terms of defining config location.</p>
-<p class="more"><a href="blog/tzfpyramid_yml-030/">Read more…</a></p>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="blog/how-to-kill-a-process-hanging-on-a-port/" class="u-url">How to kill a process hanging on a port</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Grzegorz Śliwiński
-                    </span></p>
-            <p class="dateline">
-            <a href="blog/how-to-kill-a-process-hanging-on-a-port/" rel="bookmark">
-            <time class="published dt-published" datetime="2013-12-11T22:07:24+01:00" itemprop="datePublished" title="11 12 2013 22:07">11 12 2013 22:07</time></a>
-            </p>
-                        <p class="commentline">
+            
         
     <a href="blog/how-to-kill-a-process-hanging-on-a-port/#disqus_thread" data-disqus-identifier="cache/posts/2013-12-11-how-to-kill-a-process-hanging-on-a-port.html">Comments</a>
 
 
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
-<p>Sometimes when you develop, you might find yourself with strange error. It says that the process you're trying to start is trying to use port, that is already being used. It's strange, because it is usually You, who used this port on previous run. If that's the case, then <strong>fuser</strong> command should relieve you from this error.</p>
-<p>For example:</p>
-<pre class="code bash"><a id="rest_code_9b020be7de8b4d85a4d89e6c4bcb1cde-1" name="rest_code_9b020be7de8b4d85a4d89e6c4bcb1cde-1"></a>fuser <span class="m">6543</span>/tcp -k
-</pre>
-<p>The <strong>k</strong> parameter is responsible for actual killing. Without it, the command would just identify which process is using port/socket in question.</p>
-</div>
-                </div>
-            </article>
-</div>
+        </div>
     
-        <ul class="pager postindexpager clearfix">
-<li class="previous"><a href="index-6.html" rel="prev">Newer posts</a></li>
-            <li class="next"><a href="index-4.html" rel="next">Older posts</a></li>
-        </ul>
-<script>var disqus_shortname="casesblog";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
+        <nav class="postindexpager"><ul class="pager">
+<li class="previous">
+                <a href="index-6.html" rel="prev">Newer posts</a>
+            </li>
+            <li class="next">
+                <a href="index-4.html" rel="next">Older posts</a>
+            </li>
+        </ul></nav><script>var disqus_shortname="casesblog";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+        <div id="sidebar">
+            <!--Sidebar content-->
+            <h1 id="blog-title">
+                <a href="http://blog.fizyk.net.pl/" title="Cases">Cases</a>
+            </h1>
+            
+            <small>
+                Also available in: 
+                
+            <li><a href="http://blog.fizyk.net.pl/pl/" rel="alternate" hreflang="pl">Polski</a></li>
+
+            </small>
+            
+            <ul class="unstyled">
+<li>
+<a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.pl">
+    <img alt="Licencja Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png"></a>
+<br>Ten utwór, autorstwa
+<span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">
+    Grzegorz Śliwiński</span>
+jest dostępny na licencji
+<a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.pl">
+    Creative Commons Uznanie autorstwa 3.0 Unported
+</a>.</li>
+            
+                <li>
+<a href="http://www.fizyk.net.pl/en">Homepage</a>
+                </li>
+<li>
+<a href="archive/">Archives</a>
+                </li>
+<li>
+<a href="tags/">Tags</a>
+
+            </li>
+<li>
+            
+            
+            </ul>
+</div>
+        <div id="footer">
             Contents © 2021 <a href="mailto:fizyk~~fizyk.net.pl">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
             
-            
-        </footer>
-</div>
-</div>
-
-
-        <script src="assets/js/all-nocdn.js"></script><script>
+        </div>
+    </div>
+    
+            <script src="assets/js/all-nocdn.js"></script><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
-        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
     </script><script type="text/javascript">
 
   var _gaq = _gaq || [];

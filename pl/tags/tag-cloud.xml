@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cases (Posty o tag cloud)</title><link>http://blog.fizyk.net.pl/</link><description></description><atom:link href="http://blog.fizyk.net.pl/pl/tags/tag-cloud.xml" rel="self" type="application/rss+xml"></atom:link><language>pl</language><lastBuildDate>Wed, 16 Jun 2021 11:18:44 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>fzTagPlugin 1.2.1</title><link>http://blog.fizyk.net.pl/pl/blog/fztagplugin-1-2-1/</link><dc:creator>Grzegorz Śliwiński</dc:creator><description>&lt;div&gt;&lt;p&gt;Szybka aktualizacja z nową wersją biblioteki TagCanvas 1.4.1. Poprawiono
+<?xml-stylesheet type="text/xsl" href="../../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cases (Posty o tag cloud)</title><link>http://blog.fizyk.net.pl/</link><description></description><atom:link href="http://blog.fizyk.net.pl/pl/tags/tag-cloud.xml" rel="self" type="application/rss+xml"></atom:link><language>pl</language><lastBuildDate>Wed, 16 Jun 2021 11:45:53 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>fzTagPlugin 1.2.1</title><link>http://blog.fizyk.net.pl/pl/blog/fztagplugin-1-2-1/</link><dc:creator>Grzegorz Śliwiński</dc:creator><description>&lt;div&gt;&lt;p&gt;Szybka aktualizacja z nową wersją biblioteki TagCanvas 1.4.1. Poprawiono
 w niej rakcję na kliknięcie myszką, i od teraz akcję na tagu wykonuje
 tylko lewe kliknięcie myszki.&lt;/p&gt;
 &lt;ul class="simple"&gt;
@@ -35,7 +35,7 @@ jednak) a także trzy komponenty chmury tagów.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;Jak zwykle, plugin można zdobyć na trzy sposoby, uruchamiając taska
 symfony:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a id="rest_code_46ddaebf7af84f709dff6606417d48d3-1" name="rest_code_46ddaebf7af84f709dff6606417d48d3-1"&gt;&lt;/a&gt;./symfony plugin:upgrade fzTagPlugin
+&lt;pre class="code bash"&gt;&lt;a id="rest_code_73492aeab8e44cab8073f030973b56cb-1" name="rest_code_73492aeab8e44cab8073f030973b56cb-1"&gt;&lt;/a&gt;./symfony plugin:upgrade fzTagPlugin
 &lt;/pre&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="http://www.symfony-project.org/plugins/fzTagPlugin/1_2_0"&gt;Ze stron symfony&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/fizyk/fzTagPlugin/tree/1.2.0"&gt;Z repozytorium pluginu na githubie&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;

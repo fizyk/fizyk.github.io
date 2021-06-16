@@ -1,16 +1,13 @@
 <!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="description" content="Not only about encountered programming cases.">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width">
 <title>Cases (old posts, page 2) | Cases</title>
 <link href="assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
-<meta name="theme-color" content="#5670d4">
-<meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="rss.xml">
-<link rel="alternate" type="application/rss+xml" title="RSS (pl)" hreflang="pl" href="pl/rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="pl/rss.xml">
 <link rel="canonical" href="http://blog.fizyk.net.pl/index-2.html">
 <link rel="icon" href="favicon.png" sizes="62x60">
 <link rel="icon" href="favicon-speddial.png" sizes="269x262">
@@ -18,85 +15,23 @@
 <link rel="next" href="index-1.html" type="text/html">
 <!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]-->
 </head>
-<body>
-<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
-
-<!-- Header and menu bar -->
-<div class="container">
-      <header class="blog-header py-3"><div class="row nbb-header align-items-center">
-          <div class="col-md-3 col-xs-2 col-sm-2" style="width: auto;">
-            <button class="navbar-toggler navbar-light bg-light nbb-navbar-toggler" type="button" data-toggle="collapse" data-target=".bs-nav-collapsible" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse bs-nav-collapsible bootblog4-search-form-holder">
-                
+<body class="home blog">
+    <div id="wrap" style="width:850px">
+        <div id="container" style="width:560px">
+            
+            
+        <div class="postbox">
+        <h1><a href="blog/sqlalchemy-speed-tests-on-mysql-connector-python-mysqldb-and-oursql-drivers/">sqlAlchemy speed tests on mysql-connector-python, mysqldb and oursql drivers</a></h1>
+            <div class="meta" style="background-color: rgb(234, 234, 234); ">
+                <span class="authordate">
+                    Posted: <time class="published" datetime="2012-10-18T23:10:15+02:00">18 10 2012 23:10</time></span>
+                <br><span class="tags">Tags: 
+                            <a class="tag" href="tags/mysql/"><span>mysql</span></a>
+                            <a class="tag" href="tags/python/"><span>python</span></a>
+                            <a class="tag" href="tags/sqlalchemy/"><span>sqlalchemy</span></a>
+                </span>
             </div>
-        </div>
-          <div class="col-md-6 col-xs-10 col-sm-10 bootblog4-brand" style="width: auto;">
-            <a class="navbar-brand blog-header-logo text-dark" href=".">
-
-            <span id="blog-title">Cases</span>
-        </a>
-          </div>
-            <div class="col-md-3 justify-content-end align-items-center bs-nav-collapsible collapse flex-collapse bootblog4-right-nav">
-            <nav class="navbar navbar-light bg-white"><ul class="navbar-nav bootblog4-right-nav">
-<li class="nav-item"><a href="pl/" rel="alternate" hreflang="pl" class="nav-link">Polski</a></li>
-
-                    
-                    
-                    
-            </ul></nav>
-</div>
-    </div>
-</header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
-            <ul class="navbar-nav nav-fill d-flex w-100">
-<li class="nav-item">
-<a href="http://www.fizyk.net.pl/en" class="nav-link">Homepage</a>
-                </li>
-<li class="nav-item">
-<a href="archive/" class="nav-link">Archives</a>
-                </li>
-<li class="nav-item">
-<a href="tags/" class="nav-link">Tags</a>
-
-                
-            </li>
-</ul>
-</div>
-<!-- /.navbar-collapse -->
-</nav>
-</div>
-
-<div class="container" id="content" role="main">
-    <div class="body-content">
-        <!--Body content-->
-        
-        
-        
-    
-        
-
-    
-        
-    <div class="postindex">
-            <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="blog/sqlalchemy-speed-tests-on-mysql-connector-python-mysqldb-and-oursql-drivers/" class="u-url">sqlAlchemy speed tests on mysql-connector-python, mysqldb and oursql drivers</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Grzegorz Śliwiński
-                    </span></p>
-            <p class="dateline">
-            <a href="blog/sqlalchemy-speed-tests-on-mysql-connector-python-mysqldb-and-oursql-drivers/" rel="bookmark">
-            <time class="published dt-published" datetime="2012-10-18T23:10:15+02:00" itemprop="datePublished" title="18 10 2012 23:10">18 10 2012 23:10</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="blog/sqlalchemy-speed-tests-on-mysql-connector-python-mysqldb-and-oursql-drivers/#disqus_thread" data-disqus-identifier="cache/posts/2012-10-18-sqlalchemy-speed-tests-on-mysql.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
+        <div>
 <p>Some time ago, I decided to check, how sqlalchemy will cope with
 different mysql drivers in terms of efficiency. At Red Sky, we used
 <a class="reference external" href="http://pypi.python.org/pypi/MySQL-python/1.2.4b5">MySQLdb</a> for all
@@ -104,25 +39,24 @@ python projects, at least within our team. But MySQLdb requires
 mysql-client library, and does some compiling during installation.</p>
 <p class="more"><a href="blog/sqlalchemy-speed-tests-on-mysql-connector-python-mysqldb-and-oursql-drivers/">Read more…</a></p>
 </div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="blog/howto-list-module-s-methods-in-python/" class="u-url">Howto list module's methods in python</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Grzegorz Śliwiński
-                    </span></p>
-            <p class="dateline">
-            <a href="blog/howto-list-module-s-methods-in-python/" rel="bookmark">
-            <time class="published dt-published" datetime="2012-08-17T20:08:09+02:00" itemprop="datePublished" title="17 8 2012 20:08">17 8 2012 20:08</time></a>
-            </p>
-                        <p class="commentline">
+            
         
-    <a href="blog/howto-list-module-s-methods-in-python/#disqus_thread" data-disqus-identifier="cache/posts/2012-08-17-howto-list-module-s-methods-in-python.html">Comments</a>
+    <a href="blog/sqlalchemy-speed-tests-on-mysql-connector-python-mysqldb-and-oursql-drivers/#disqus_thread" data-disqus-identifier="cache/posts/2012-10-18-sqlalchemy-speed-tests-on-mysql.html">Comments</a>
 
 
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
+        </div>
+        <div class="postbox">
+        <h1><a href="blog/howto-list-module-s-methods-in-python/">Howto list module's methods in python</a></h1>
+            <div class="meta" style="background-color: rgb(234, 234, 234); ">
+                <span class="authordate">
+                    Posted: <time class="published" datetime="2012-08-17T20:08:09+02:00">17 8 2012 20:08</time></span>
+                <br><span class="tags">Tags: 
+                            <a class="tag" href="tags/howto/"><span>howto</span></a>
+                            <a class="tag" href="tags/list/"><span>list</span></a>
+                            <a class="tag" href="tags/python/"><span>python</span></a>
+                </span>
+            </div>
+        <div>
 <p>I'm testing efficiency of three mysql connector libraries:
 mysql-connector, MySQLdb and oursql, within sqlalchemy. Took me a while
 to prepare basis, but after that, I began to wonder, how to make more
@@ -130,25 +64,25 @@ methods, and run them, without worrying about their inclusion into
 testing process?</p>
 <p class="more"><a href="blog/howto-list-module-s-methods-in-python/">Read more…</a></p>
 </div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="blog/fzblameableplugin-1-1-2-released/" class="u-url">fzBlameablePlugin 1.1.2 released</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Grzegorz Śliwiński
-                    </span></p>
-            <p class="dateline">
-            <a href="blog/fzblameableplugin-1-1-2-released/" rel="bookmark">
-            <time class="published dt-published" datetime="2012-07-15T20:07:55+02:00" itemprop="datePublished" title="15 7 2012 20:07">15 7 2012 20:07</time></a>
-            </p>
-                        <p class="commentline">
+            
         
-    <a href="blog/fzblameableplugin-1-1-2-released/#disqus_thread" data-disqus-identifier="cache/posts/2012-07-15-fzblameableplugin-1-1-2-released.html">Comments</a>
+    <a href="blog/howto-list-module-s-methods-in-python/#disqus_thread" data-disqus-identifier="cache/posts/2012-08-17-howto-list-module-s-methods-in-python.html">Comments</a>
 
 
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
+        </div>
+        <div class="postbox">
+        <h1><a href="blog/fzblameableplugin-1-1-2-released/">fzBlameablePlugin 1.1.2 released</a></h1>
+            <div class="meta" style="background-color: rgb(234, 234, 234); ">
+                <span class="authordate">
+                    Posted: <time class="published" datetime="2012-07-15T20:07:55+02:00">15 7 2012 20:07</time></span>
+                <br><span class="tags">Tags: 
+                            <a class="tag" href="tags/fzblameable/"><span>fzBlameable</span></a>
+                            <a class="tag" href="tags/php/"><span>php</span></a>
+                            <a class="tag" href="tags/plugin/"><span>plugin</span></a>
+                            <a class="tag" href="tags/symfony/"><span>symfony</span></a>
+                </span>
+            </div>
+        <div>
 <p>fzBlameablePlugin has just seen new release. 1.1.2 this time. I fixes
 issue with Doctrine no translating PHP Null to SQL NULL in queries, b passing explicitly string <strong>'NULL'</strong>. Like the last one, this fix was also
 created by Gábor Egyed.</p>
@@ -158,25 +92,25 @@ created by Gábor Egyed.</p>
 <li><p><a class="reference external" href="https://github.com/fizyk/fzBlameablePlugin/tree/v1.1.2">Plugin's release repository tree</a></p></li>
 </ul>
 </div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="blog/fzblameableplugin-1-1-1-released/" class="u-url">fzBlameablePlugin 1.1.1 released</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Grzegorz Śliwiński
-                    </span></p>
-            <p class="dateline">
-            <a href="blog/fzblameableplugin-1-1-1-released/" rel="bookmark">
-            <time class="published dt-published" datetime="2012-04-15T19:04:49+02:00" itemprop="datePublished" title="15 4 2012 19:04">15 4 2012 19:04</time></a>
-            </p>
-                        <p class="commentline">
+            
         
-    <a href="blog/fzblameableplugin-1-1-1-released/#disqus_thread" data-disqus-identifier="cache/posts/2012-04-15-fzblameableplugin-1-1-1-released.html">Comments</a>
+    <a href="blog/fzblameableplugin-1-1-2-released/#disqus_thread" data-disqus-identifier="cache/posts/2012-07-15-fzblameableplugin-1-1-2-released.html">Comments</a>
 
 
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
+        </div>
+        <div class="postbox">
+        <h1><a href="blog/fzblameableplugin-1-1-1-released/">fzBlameablePlugin 1.1.1 released</a></h1>
+            <div class="meta" style="background-color: rgb(234, 234, 234); ">
+                <span class="authordate">
+                    Posted: <time class="published" datetime="2012-04-15T19:04:49+02:00">15 4 2012 19:04</time></span>
+                <br><span class="tags">Tags: 
+                            <a class="tag" href="tags/fzblameable/"><span>fzBlameable</span></a>
+                            <a class="tag" href="tags/php/"><span>php</span></a>
+                            <a class="tag" href="tags/plugin/"><span>plugin</span></a>
+                            <a class="tag" href="tags/symfony/"><span>symfony</span></a>
+                </span>
+            </div>
+        <div>
 <p>I've just released version 1.1.1 of fzBlameable Plugin providing
 Blameable behaviour  for doctrine models in symfony 1.4. This package
 contains two fixes prepared by Gábor Egyed.</p>
@@ -189,119 +123,114 @@ profiles.</p>
 <li><p><a class="reference external" href="https://github.com/fizyk/fzBlameablePlugin/tree/v1.1.1">Plugin's release repository tree</a></p></li>
 </ul>
 </div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="blog/sfforkeddoctrineapplyplugin-1-5-9/" class="u-url">sfForkedDoctrineApplyPlugin 1.5.9</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Grzegorz Śliwiński
-                    </span></p>
-            <p class="dateline">
-            <a href="blog/sfforkeddoctrineapplyplugin-1-5-9/" rel="bookmark">
-            <time class="published dt-published" datetime="2011-08-02T21:08:54+02:00" itemprop="datePublished" title="02 8 2011 21:08">02 8 2011 21:08</time></a>
-            </p>
-                        <p class="commentline">
+            
         
-    <a href="blog/sfforkeddoctrineapplyplugin-1-5-9/#disqus_thread" data-disqus-identifier="cache/posts/2011-08-02-sfforkeddoctrineapplyplugin-1-5-9.html">Comments</a>
+    <a href="blog/fzblameableplugin-1-1-1-released/#disqus_thread" data-disqus-identifier="cache/posts/2012-04-15-fzblameableplugin-1-1-1-released.html">Comments</a>
 
 
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
+        </div>
+        <div class="postbox">
+        <h1><a href="blog/sfforkeddoctrineapplyplugin-1-5-9/">sfForkedDoctrineApplyPlugin 1.5.9</a></h1>
+            <div class="meta" style="background-color: rgb(234, 234, 234); ">
+                <span class="authordate">
+                    Posted: <time class="published" datetime="2011-08-02T21:08:54+02:00">02 8 2011 21:08</time></span>
+                <br><span class="tags">Tags: 
+                            <a class="tag" href="tags/php/"><span>php</span></a>
+                            <a class="tag" href="tags/sfforkeddoctrineapply/"><span>sfForkedDoctrineApply</span></a>
+                            <a class="tag" href="tags/symfony/"><span>symfony</span></a>
+                </span>
+            </div>
+        <div>
 <p>sfForkedDoctrineApply just got updated to new version - 1.5.9. It
 contains Portuguese translation created by Alan Candido, so I hope it
 will get useful for even more people now.</p>
 <p class="more"><a href="blog/sfforkeddoctrineapplyplugin-1-5-9/">Read more…</a></p>
 </div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="blog/sfforkeddoctrineapplyplugin-1-5-8/" class="u-url">sfForkedDoctrineApplyPlugin 1.5.8</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Grzegorz Śliwiński
-                    </span></p>
-            <p class="dateline">
-            <a href="blog/sfforkeddoctrineapplyplugin-1-5-8/" rel="bookmark">
-            <time class="published dt-published" datetime="2011-06-19T12:06:38+02:00" itemprop="datePublished" title="19 6 2011 12:06">19 6 2011 12:06</time></a>
-            </p>
-                        <p class="commentline">
+            
         
-    <a href="blog/sfforkeddoctrineapplyplugin-1-5-8/#disqus_thread" data-disqus-identifier="cache/posts/2011-06-19-sfforkeddoctrineapplyplugin-1-5-8.html">Comments</a>
+    <a href="blog/sfforkeddoctrineapplyplugin-1-5-9/#disqus_thread" data-disqus-identifier="cache/posts/2011-08-02-sfforkeddoctrineapplyplugin-1-5-9.html">Comments</a>
 
 
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
+        </div>
+        <div class="postbox">
+        <h1><a href="blog/sfforkeddoctrineapplyplugin-1-5-8/">sfForkedDoctrineApplyPlugin 1.5.8</a></h1>
+            <div class="meta" style="background-color: rgb(234, 234, 234); ">
+                <span class="authordate">
+                    Posted: <time class="published" datetime="2011-06-19T12:06:38+02:00">19 6 2011 12:06</time></span>
+                <br><span class="tags">Tags: 
+                            <a class="tag" href="tags/php/"><span>php</span></a>
+                            <a class="tag" href="tags/sfforkeddoctrineapply/"><span>sfForkedDoctrineApply</span></a>
+                            <a class="tag" href="tags/symfony/"><span>symfony</span></a>
+                </span>
+            </div>
+        <div>
 <p>New version of sfForkedDoctrineApply plugin has been released. Actually
 it was released twice (1.5.7 and a day later 1.5.8), because of my
 mistake spotted by <strong>John Kary</strong> (thanks!).</p>
 <p class="more"><a href="blog/sfforkeddoctrineapplyplugin-1-5-8/">Read more…</a></p>
 </div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="blog/fztagplugin-1-2-8/" class="u-url">fzTagPlugin 1.2.8</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Grzegorz Śliwiński
-                    </span></p>
-            <p class="dateline">
-            <a href="blog/fztagplugin-1-2-8/" rel="bookmark">
-            <time class="published dt-published" datetime="2011-04-04T22:04:42+02:00" itemprop="datePublished" title="04 4 2011 22:04">04 4 2011 22:04</time></a>
-            </p>
-                        <p class="commentline">
+            
         
-    <a href="blog/fztagplugin-1-2-8/#disqus_thread" data-disqus-identifier="cache/posts/2011-04-04-fztagplugin-1-2-8.html">Comments</a>
+    <a href="blog/sfforkeddoctrineapplyplugin-1-5-8/#disqus_thread" data-disqus-identifier="cache/posts/2011-06-19-sfforkeddoctrineapplyplugin-1-5-8.html">Comments</a>
 
 
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
+        </div>
+        <div class="postbox">
+        <h1><a href="blog/fztagplugin-1-2-8/">fzTagPlugin 1.2.8</a></h1>
+            <div class="meta" style="background-color: rgb(234, 234, 234); ">
+                <span class="authordate">
+                    Posted: <time class="published" datetime="2011-04-04T22:04:42+02:00">04 4 2011 22:04</time></span>
+                <br><span class="tags">Tags: 
+                            <a class="tag" href="tags/fztag/"><span>fzTag</span></a>
+                            <a class="tag" href="tags/symfony/"><span>symfony</span></a>
+                </span>
+            </div>
+        <div>
 <p>I've just released another 8th maintenance release of 1.2.x branch of
 <strong>fzTagPlugin</strong>, that allows to tag models.</p>
 <p class="more"><a href="blog/fztagplugin-1-2-8/">Read more…</a></p>
 </div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="blog/fztagplugin-1-2-7/" class="u-url">fzTagPlugin 1.2.7</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Grzegorz Śliwiński
-                    </span></p>
-            <p class="dateline">
-            <a href="blog/fztagplugin-1-2-7/" rel="bookmark">
-            <time class="published dt-published" datetime="2011-03-22T21:03:03+01:00" itemprop="datePublished" title="22 3 2011 21:03">22 3 2011 21:03</time></a>
-            </p>
-                        <p class="commentline">
+            
         
-    <a href="blog/fztagplugin-1-2-7/#disqus_thread" data-disqus-identifier="cache/posts/2011-03-22-fztagplugin-1-2-7.html">Comments</a>
+    <a href="blog/fztagplugin-1-2-8/#disqus_thread" data-disqus-identifier="cache/posts/2011-04-04-fztagplugin-1-2-8.html">Comments</a>
 
 
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
+        </div>
+        <div class="postbox">
+        <h1><a href="blog/fztagplugin-1-2-7/">fzTagPlugin 1.2.7</a></h1>
+            <div class="meta" style="background-color: rgb(234, 234, 234); ">
+                <span class="authordate">
+                    Posted: <time class="published" datetime="2011-03-22T21:03:03+01:00">22 3 2011 21:03</time></span>
+                <br><span class="tags">Tags: 
+                            <a class="tag" href="tags/fztag/"><span>fzTag</span></a>
+                            <a class="tag" href="tags/php/"><span>php</span></a>
+                            <a class="tag" href="tags/symfony/"><span>symfony</span></a>
+                </span>
+            </div>
+        <div>
 <p>I've just released new version of <strong>fzTagPlugin</strong>, which introduces
 Spanish translation files created by Alex Otero.</p>
 <p class="more"><a href="blog/fztagplugin-1-2-7/">Read more…</a></p>
 </div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="blog/fzblameableplugin-1-1-0/" class="u-url">fzBlameablePlugin 1.1.0</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Grzegorz Śliwiński
-                    </span></p>
-            <p class="dateline">
-            <a href="blog/fzblameableplugin-1-1-0/" rel="bookmark">
-            <time class="published dt-published" datetime="2011-02-26T20:02:49+01:00" itemprop="datePublished" title="26 2 2011 20:02">26 2 2011 20:02</time></a>
-            </p>
-                        <p class="commentline">
+            
         
-    <a href="blog/fzblameableplugin-1-1-0/#disqus_thread" data-disqus-identifier="cache/posts/2011-02-26-fzblameableplugin-1-1-0.html">Comments</a>
+    <a href="blog/fztagplugin-1-2-7/#disqus_thread" data-disqus-identifier="cache/posts/2011-03-22-fztagplugin-1-2-7.html">Comments</a>
 
 
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
+        </div>
+        <div class="postbox">
+        <h1><a href="blog/fzblameableplugin-1-1-0/">fzBlameablePlugin 1.1.0</a></h1>
+            <div class="meta" style="background-color: rgb(234, 234, 234); ">
+                <span class="authordate">
+                    Posted: <time class="published" datetime="2011-02-26T20:02:49+01:00">26 2 2011 20:02</time></span>
+                <br><span class="tags">Tags: 
+                            <a class="tag" href="tags/behaviour/"><span>behaviour</span></a>
+                            <a class="tag" href="tags/fzblameable/"><span>fzBlameable</span></a>
+                            <a class="tag" href="tags/php/"><span>php</span></a>
+                            <a class="tag" href="tags/symfony/"><span>symfony</span></a>
+                </span>
+            </div>
+        <div>
 <p>About half year has pased since the release of sfDoctrineGuard 5.x. I
 decided, that it was the time to update default values for fzBlameable
 behaviour.</p>
@@ -318,25 +247,24 @@ since fzBlameable 1.0.1</p></li>
 <li><p><a class="reference external" href="https://github.com/fizyk/fzBlameablePlugin/tree/v1.1.0">Plugin's release repository tree</a></p></li>
 </ul>
 </div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="blog/sfforkeddoctrineapplyplugin-1-5-6-spanish-translation/" class="u-url">sfForkedDoctrineApplyPlugin 1.5.6 - Spanish translation</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Grzegorz Śliwiński
-                    </span></p>
-            <p class="dateline">
-            <a href="blog/sfforkeddoctrineapplyplugin-1-5-6-spanish-translation/" rel="bookmark">
-            <time class="published dt-published" datetime="2011-02-24T22:02:32+01:00" itemprop="datePublished" title="24 2 2011 22:02">24 2 2011 22:02</time></a>
-            </p>
-                        <p class="commentline">
+            
         
-    <a href="blog/sfforkeddoctrineapplyplugin-1-5-6-spanish-translation/#disqus_thread" data-disqus-identifier="cache/posts/2011-02-24-sfforkeddoctrineapplyplugin-1-5-6-spanish-translation.html">Comments</a>
+    <a href="blog/fzblameableplugin-1-1-0/#disqus_thread" data-disqus-identifier="cache/posts/2011-02-26-fzblameableplugin-1-1-0.html">Comments</a>
 
 
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
+        </div>
+        <div class="postbox">
+        <h1><a href="blog/sfforkeddoctrineapplyplugin-1-5-6-spanish-translation/">sfForkedDoctrineApplyPlugin 1.5.6 - Spanish translation</a></h1>
+            <div class="meta" style="background-color: rgb(234, 234, 234); ">
+                <span class="authordate">
+                    Posted: <time class="published" datetime="2011-02-24T22:02:32+01:00">24 2 2011 22:02</time></span>
+                <br><span class="tags">Tags: 
+                            <a class="tag" href="tags/php/"><span>php</span></a>
+                            <a class="tag" href="tags/sfforkeddoctrineapply/"><span>sfForkedDoctrineApply</span></a>
+                            <a class="tag" href="tags/symfony/"><span>symfony</span></a>
+                </span>
+            </div>
+        <div>
 <p>New version of <strong>sfForkedDoctrineApplyPlugin</strong> has just been released.
 This version introduces <strong>Spanish</strong> translation files and few tweaks to
 the model. Because of these changes, remember to run migrations!</p>
@@ -346,27 +274,74 @@ the model. Because of these changes, remember to run migrations!</p>
 <li><p><a class="reference external" href="https://github.com/fizyk/sfForkedDoctrineApplyPlugin/tree/v1.5.6">Plugin's version github pages</a></p></li>
 </ul>
 </div>
-                </div>
-            </article>
-</div>
+            
+        
+    <a href="blog/sfforkeddoctrineapplyplugin-1-5-6-spanish-translation/#disqus_thread" data-disqus-identifier="cache/posts/2011-02-24-sfforkeddoctrineapplyplugin-1-5-6-spanish-translation.html">Comments</a>
+
+
+        </div>
     
-        <ul class="pager postindexpager clearfix">
-<li class="previous"><a href="index-3.html" rel="prev">Newer posts</a></li>
-            <li class="next"><a href="index-1.html" rel="next">Older posts</a></li>
-        </ul>
-<script>var disqus_shortname="casesblog";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
+        <nav class="postindexpager"><ul class="pager">
+<li class="previous">
+                <a href="index-3.html" rel="prev">Newer posts</a>
+            </li>
+            <li class="next">
+                <a href="index-1.html" rel="next">Older posts</a>
+            </li>
+        </ul></nav><script>var disqus_shortname="casesblog";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+        <div id="sidebar">
+            <!--Sidebar content-->
+            <h1 id="blog-title">
+                <a href="http://blog.fizyk.net.pl/" title="Cases">Cases</a>
+            </h1>
+            
+            <small>
+                Also available in: 
+                
+            <li><a href="http://blog.fizyk.net.pl/pl/" rel="alternate" hreflang="pl">Polski</a></li>
+
+            </small>
+            
+            <ul class="unstyled">
+<li>
+<a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.pl">
+    <img alt="Licencja Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png"></a>
+<br>Ten utwór, autorstwa
+<span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">
+    Grzegorz Śliwiński</span>
+jest dostępny na licencji
+<a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.pl">
+    Creative Commons Uznanie autorstwa 3.0 Unported
+</a>.</li>
+            
+                <li>
+<a href="http://www.fizyk.net.pl/en">Homepage</a>
+                </li>
+<li>
+<a href="archive/">Archives</a>
+                </li>
+<li>
+<a href="tags/">Tags</a>
+
+            </li>
+<li>
+            
+            
+            </ul>
+</div>
+        <div id="footer">
             Contents © 2021 <a href="mailto:fizyk~~fizyk.net.pl">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
             
-            
-        </footer>
-</div>
-</div>
-
-
-        <script src="assets/js/all-nocdn.js"></script><script>
+        </div>
+    </div>
+    
+            <script src="assets/js/all-nocdn.js"></script><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
-        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
     </script><script type="text/javascript">
 
   var _gaq = _gaq || [];

@@ -1,116 +1,42 @@
 <!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="pl">
+<html lang="pl">
 <head>
 <meta charset="utf-8">
 <meta name="description" content="Odmiana rzeczowników w językach słowiańskich jest trochę bardziej skomplikowana niż w językach zachodnich. Z pierwszą próbą zetknąłem się dostosowując swój pierwszy moduł backendowy. Szukając sposobu przetłumaczenia nie tylko tekstów, ale i odmiany ich, natknąłem się na post: Plural forms and format_number_choice na forum symfony.">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width">
 <title>Odmiana słowiańskich rzeczowników według liczb | Cases</title>
 <link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
-<meta name="theme-color" content="#5670d4">
-<meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS (pl)" hreflang="pl" href="../../rss.xml">
-<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../rss.xml">
 <link rel="canonical" href="http://blog.fizyk.net.pl/pl/blog/odmiana-slowianskich-rzeczownikow-wedlug-liczb/">
 <link rel="icon" href="../../../favicon.png" sizes="62x60">
 <link rel="icon" href="../../../favicon-speddial.png" sizes="269x262">
-<!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Grzegorz Śliwiński">
-<link rel="prev" href="../fzblameable/" title="fzBlameable" type="text/html">
-<link rel="next" href="../opera-dragonfly-przegladaj-element/" title='Opera Dragonfly - "przeglądaj element"' type="text/html">
-<meta property="og:site_name" content="Cases">
-<meta property="og:title" content="Odmiana słowiańskich rzeczowników według liczb">
-<meta property="og:url" content="http://blog.fizyk.net.pl/pl/blog/odmiana-slowianskich-rzeczownikow-wedlug-liczb/">
-<meta property="og:description" content="Odmiana rzeczowników w językach słowiańskich jest trochę bardziej skomplikowana niż w językach zachodnich. Z pierwszą próbą zetknąłem się dostosowując swój pierwszy moduł backendowy. Szukając sposobu ">
-<meta property="og:type" content="article">
-<meta property="article:published_time" content="2010-08-04T23:08:20+02:00">
-<meta property="article:tag" content="i18n">
-<meta property="article:tag" content="php">
-<meta property="article:tag" content="symfony">
+<!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]-->
 </head>
-<body>
-<a href="#content" class="sr-only sr-only-focusable">Przejdź do treści</a>
-
-<!-- Header and menu bar -->
-<div class="container">
-      <header class="blog-header py-3"><div class="row nbb-header align-items-center">
-          <div class="col-md-3 col-xs-2 col-sm-2" style="width: auto;">
-            <button class="navbar-toggler navbar-light bg-light nbb-navbar-toggler" type="button" data-toggle="collapse" data-target=".bs-nav-collapsible" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse bs-nav-collapsible bootblog4-search-form-holder">
-                
-            </div>
-        </div>
-          <div class="col-md-6 col-xs-10 col-sm-10 bootblog4-brand" style="width: auto;">
-            <a class="navbar-brand blog-header-logo text-dark" href="../../">
-
-            <span id="blog-title">Cases</span>
-        </a>
-          </div>
-            <div class="col-md-3 justify-content-end align-items-center bs-nav-collapsible collapse flex-collapse bootblog4-right-nav">
-            <nav class="navbar navbar-light bg-white"><ul class="navbar-nav bootblog4-right-nav">
-<li class="nav-item"><a href="../../../" rel="alternate" hreflang="en" class="nav-link">English</a></li>
-
-                    
-                    
-    
-    <li class="nav-item">
-    <a href="index.rst" id="sourcelink" class="nav-link">Źródło</a>
-    </li>
-
-
-                    
-            </ul></nav>
-</div>
-    </div>
-</header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
-            <ul class="navbar-nav nav-fill d-flex w-100">
-<li class="nav-item">
-<a href="http://www.fizyk.net.pl" class="nav-link">Strona domowa</a>
-                </li>
-<li class="nav-item">
-<a href="../../archive/" class="nav-link">Archiwum</a>
-                </li>
-<li class="nav-item">
-<a href="../../tags/" class="nav-link">Tagi</a>
-
-                
-            </li>
-</ul>
-</div>
-<!-- /.navbar-collapse -->
-</nav>
-</div>
-
-<div class="container" id="content" role="main">
-    <div class="body-content">
-        <!--Body content-->
-        
-        
-        
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Odmiana słowiańskich rzeczowników według liczb</a></h1>
-
-        <div class="metadata">
-            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
-                    Grzegorz Śliwiński
-            </span></p>
-            <p class="dateline">
-            <a href="." rel="bookmark">
-            <time class="published dt-published" datetime="2010-08-04T23:08:20+02:00" itemprop="datePublished" title="04 8 2010 23:08">04 8 2010 23:08</time></a>
-            </p>
-                <p class="commentline">
-        
-    <a href="#disqus_thread" data-disqus-identifier="cache/posts/2010-08-04-odmiana-slowianskich-rzeczownikow-wedlug-liczb.pl.html">Komentarze</a>
-
-
+<body class="home blog">
+    <div id="wrap" style="width:850px">
+        <div id="container" style="width:560px">
             
-        </p>
-<p class="sourceline"><a href="index.rst" class="sourcelink">Źródło</a></p>
+            
+    <div class="post">
+    
+    <h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Odmiana słowiańskich rzeczowników według liczb</a></h1>
 
+        <div class="meta" style="background-color: rgb(234, 234, 234); ">
+        <span class="authordate">
+            Opublikowano: <time class="published" datetime="2010-08-04T23:08:20+02:00">04 8 2010 23:08</time>
+               [<a href="index.rst" id="sourcelink">Źródło</a>]
+        </span>
+        <br><span class="tags">Tagi: 
+                    <a class="tag" href="../../tags/i18n/"><span>i18n</span></a>
+                    <a class="tag" href="../../tags/php/"><span>php</span></a>
+                    <a class="tag" href="../../tags/symfony/"><span>symfony</span></a>
+                </span>
+                <br><span class="authordate">
+            
+
+        </span>
         </div>
-        
-
-    </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <p>Odmiana rzeczowników w językach słowiańskich jest trochę bardziej
 skomplikowana niż w językach zachodnich. Z pierwszą próbą zetknąłem się
@@ -123,88 +49,81 @@ na forum symfony.</p>
 <p>Znajdująca się tam formuła dla helpera <strong>format_number_choice()</strong>
 miała kilka wad, dlatego na podstawie istniejącej zaproponowałem własną,
 która radzi sobie ze wszystkimi wariacji liczb:</p>
-<pre class="code php"><a id="rest_code_fec7925008824e3fb0ca34f65ac2112e-1" name="rest_code_fec7925008824e3fb0ca34f65ac2112e-1"></a><span class="x">'[0] brak|[1] 1 wynik|{n: n % 10 &gt; 1 &amp;&amp; n % 10 &lt; 5 &amp;&amp; ( n &lt; 11 || n &gt; 14 ) &amp;&amp; ( n % 100 &lt; 11 || n % 100 &gt; 14 ) } %1% wyniki|[5,+Inf] %1% wyników '</span>
+<pre class="code php"><a id="rest_code_1a9e89071d7f4af8bca68f0de7dec5ce-1" name="rest_code_1a9e89071d7f4af8bca68f0de7dec5ce-1"></a><span class="x">'[0] brak|[1] 1 wynik|{n: n % 10 &gt; 1 &amp;&amp; n % 10 &lt; 5 &amp;&amp; ( n &lt; 11 || n &gt; 14 ) &amp;&amp; ( n % 100 &lt; 11 || n % 100 &gt; 14 ) } %1% wyniki|[5,+Inf] %1% wyników '</span>
 </pre>
 <p>Idąc dalej, stworzyłem funkcję biblioteczną, która przyjmuje w
 parametrach liczbę, oraz zestaw odmian rzeczownika, wybierając
 odpowiednią jego formę do liczby:</p>
-<pre class="code php"><a id="rest_code_f36011deff844345aec557a0bf22122d-1" name="rest_code_f36011deff844345aec557a0bf22122d-1"></a><span class="x">class Fizyk</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-2" name="rest_code_f36011deff844345aec557a0bf22122d-2"></a><span class="x">{</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-3" name="rest_code_f36011deff844345aec557a0bf22122d-3"></a><span class="x">    /**</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-4" name="rest_code_f36011deff844345aec557a0bf22122d-4"></a><span class="x">     * Function that returns proper inflection based on a number that describes it's quantity for slavic languages.</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-5" name="rest_code_f36011deff844345aec557a0bf22122d-5"></a>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-6" name="rest_code_f36011deff844345aec557a0bf22122d-6"></a><span class="x">     * There are four forms: none, one singular and two plurar.</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-7" name="rest_code_f36011deff844345aec557a0bf22122d-7"></a><span class="x">     * $word array indexes 1, 2 and 3 are mandatory, while 0 is optional</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-8" name="rest_code_f36011deff844345aec557a0bf22122d-8"></a><span class="x">     * @param array $words</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-9" name="rest_code_f36011deff844345aec557a0bf22122d-9"></a><span class="x">     * @param integer $number</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-10" name="rest_code_f36011deff844345aec557a0bf22122d-10"></a><span class="x">     * @return string</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-11" name="rest_code_f36011deff844345aec557a0bf22122d-11"></a><span class="x">     * @author Grzegorz Śliwiński</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-12" name="rest_code_f36011deff844345aec557a0bf22122d-12"></a><span class="x">     */</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-13" name="rest_code_f36011deff844345aec557a0bf22122d-13"></a><span class="x">    static public function slavicWordFormNumberChoice( Array $words, $number)</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-14" name="rest_code_f36011deff844345aec557a0bf22122d-14"></a><span class="x">    {</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-15" name="rest_code_f36011deff844345aec557a0bf22122d-15"></a><span class="x">        //throw exception if passed array doesn't kontain 1st, 2nd or 3rd form</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-16" name="rest_code_f36011deff844345aec557a0bf22122d-16"></a><span class="x">        if( !array_key_exists( 1, $words) || !array_key_exists( 2, $words) || !array_key_exists( 3, $words ) )</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-17" name="rest_code_f36011deff844345aec557a0bf22122d-17"></a><span class="x">        {</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-18" name="rest_code_f36011deff844345aec557a0bf22122d-18"></a><span class="x">            //listing all keys</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-19" name="rest_code_f36011deff844345aec557a0bf22122d-19"></a><span class="x">            $keys = '';</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-20" name="rest_code_f36011deff844345aec557a0bf22122d-20"></a><span class="x">            foreach( array_keys( $words ) as $value )</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-21" name="rest_code_f36011deff844345aec557a0bf22122d-21"></a><span class="x">            {</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-22" name="rest_code_f36011deff844345aec557a0bf22122d-22"></a><span class="x">                $keys .= $value.' ';</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-23" name="rest_code_f36011deff844345aec557a0bf22122d-23"></a><span class="x">            }</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-24" name="rest_code_f36011deff844345aec557a0bf22122d-24"></a><span class="x">            //throwning exception</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-25" name="rest_code_f36011deff844345aec557a0bf22122d-25"></a><span class="x">            throw new sfException( sprintf('Word array is incomplete! Should contain indexes 1, 2 and 3. Your contains: %s', $keys ) );</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-26" name="rest_code_f36011deff844345aec557a0bf22122d-26"></a><span class="x">        }</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-27" name="rest_code_f36011deff844345aec557a0bf22122d-27"></a>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-28" name="rest_code_f36011deff844345aec557a0bf22122d-28"></a><span class="x">        //take care of the none case with word set</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-29" name="rest_code_f36011deff844345aec557a0bf22122d-29"></a><span class="x">        if( $number == 0 &amp;&amp; array_key_exists(0, $words) )</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-30" name="rest_code_f36011deff844345aec557a0bf22122d-30"></a><span class="x">        {</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-31" name="rest_code_f36011deff844345aec557a0bf22122d-31"></a><span class="x">            return $words[0];</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-32" name="rest_code_f36011deff844345aec557a0bf22122d-32"></a><span class="x">        }</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-33" name="rest_code_f36011deff844345aec557a0bf22122d-33"></a><span class="x">        //take care of the none case without word set</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-34" name="rest_code_f36011deff844345aec557a0bf22122d-34"></a><span class="x">        elseif( $number == 0 &amp;&amp; !array_key_exists(0, $words) )</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-35" name="rest_code_f36011deff844345aec557a0bf22122d-35"></a><span class="x">        {</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-36" name="rest_code_f36011deff844345aec557a0bf22122d-36"></a><span class="x">            $wordIndex = 3;</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-37" name="rest_code_f36011deff844345aec557a0bf22122d-37"></a><span class="x">        }</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-38" name="rest_code_f36011deff844345aec557a0bf22122d-38"></a><span class="x">        //One is always the same</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-39" name="rest_code_f36011deff844345aec557a0bf22122d-39"></a><span class="x">        elseif( $number == 1 )</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-40" name="rest_code_f36011deff844345aec557a0bf22122d-40"></a><span class="x">        {</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-41" name="rest_code_f36011deff844345aec557a0bf22122d-41"></a><span class="x">            $wordIndex = 1;</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-42" name="rest_code_f36011deff844345aec557a0bf22122d-42"></a><span class="x">        }</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-43" name="rest_code_f36011deff844345aec557a0bf22122d-43"></a><span class="x">        //Second case: numbers from x2 to x4 without those from x12 to x14 (x - any number)</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-44" name="rest_code_f36011deff844345aec557a0bf22122d-44"></a><span class="x">        elseif( $number % 10 &gt; 1 &amp;&amp; $number % 10 &lt; 5 &amp;&amp; ( $number &lt; 11 || $number &gt; 14 )</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-45" name="rest_code_f36011deff844345aec557a0bf22122d-45"></a><span class="x">                &amp;&amp; ( $number % 100 &lt; 11 || $number % 100 &gt; 14 ) )</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-46" name="rest_code_f36011deff844345aec557a0bf22122d-46"></a><span class="x">        {</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-47" name="rest_code_f36011deff844345aec557a0bf22122d-47"></a><span class="x">            $wordIndex = 2;</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-48" name="rest_code_f36011deff844345aec557a0bf22122d-48"></a><span class="x">        }</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-49" name="rest_code_f36011deff844345aec557a0bf22122d-49"></a><span class="x">        else</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-50" name="rest_code_f36011deff844345aec557a0bf22122d-50"></a><span class="x">        {</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-51" name="rest_code_f36011deff844345aec557a0bf22122d-51"></a><span class="x">            $wordIndex = 3;</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-52" name="rest_code_f36011deff844345aec557a0bf22122d-52"></a><span class="x">        }</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-53" name="rest_code_f36011deff844345aec557a0bf22122d-53"></a><span class="x">        //we return numbered phrase to the world</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-54" name="rest_code_f36011deff844345aec557a0bf22122d-54"></a><span class="x">        return $number.' '.$words[$wordIndex];</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-55" name="rest_code_f36011deff844345aec557a0bf22122d-55"></a><span class="x">    }</span>
-<a id="rest_code_f36011deff844345aec557a0bf22122d-56" name="rest_code_f36011deff844345aec557a0bf22122d-56"></a><span class="x">}</span>
+<pre class="code php"><a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-1" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-1"></a><span class="x">class Fizyk</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-2" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-2"></a><span class="x">{</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-3" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-3"></a><span class="x">    /**</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-4" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-4"></a><span class="x">     * Function that returns proper inflection based on a number that describes it's quantity for slavic languages.</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-5" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-5"></a>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-6" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-6"></a><span class="x">     * There are four forms: none, one singular and two plurar.</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-7" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-7"></a><span class="x">     * $word array indexes 1, 2 and 3 are mandatory, while 0 is optional</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-8" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-8"></a><span class="x">     * @param array $words</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-9" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-9"></a><span class="x">     * @param integer $number</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-10" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-10"></a><span class="x">     * @return string</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-11" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-11"></a><span class="x">     * @author Grzegorz Śliwiński</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-12" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-12"></a><span class="x">     */</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-13" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-13"></a><span class="x">    static public function slavicWordFormNumberChoice( Array $words, $number)</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-14" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-14"></a><span class="x">    {</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-15" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-15"></a><span class="x">        //throw exception if passed array doesn't kontain 1st, 2nd or 3rd form</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-16" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-16"></a><span class="x">        if( !array_key_exists( 1, $words) || !array_key_exists( 2, $words) || !array_key_exists( 3, $words ) )</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-17" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-17"></a><span class="x">        {</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-18" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-18"></a><span class="x">            //listing all keys</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-19" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-19"></a><span class="x">            $keys = '';</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-20" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-20"></a><span class="x">            foreach( array_keys( $words ) as $value )</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-21" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-21"></a><span class="x">            {</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-22" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-22"></a><span class="x">                $keys .= $value.' ';</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-23" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-23"></a><span class="x">            }</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-24" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-24"></a><span class="x">            //throwning exception</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-25" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-25"></a><span class="x">            throw new sfException( sprintf('Word array is incomplete! Should contain indexes 1, 2 and 3. Your contains: %s', $keys ) );</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-26" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-26"></a><span class="x">        }</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-27" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-27"></a>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-28" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-28"></a><span class="x">        //take care of the none case with word set</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-29" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-29"></a><span class="x">        if( $number == 0 &amp;&amp; array_key_exists(0, $words) )</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-30" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-30"></a><span class="x">        {</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-31" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-31"></a><span class="x">            return $words[0];</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-32" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-32"></a><span class="x">        }</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-33" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-33"></a><span class="x">        //take care of the none case without word set</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-34" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-34"></a><span class="x">        elseif( $number == 0 &amp;&amp; !array_key_exists(0, $words) )</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-35" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-35"></a><span class="x">        {</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-36" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-36"></a><span class="x">            $wordIndex = 3;</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-37" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-37"></a><span class="x">        }</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-38" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-38"></a><span class="x">        //One is always the same</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-39" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-39"></a><span class="x">        elseif( $number == 1 )</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-40" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-40"></a><span class="x">        {</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-41" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-41"></a><span class="x">            $wordIndex = 1;</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-42" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-42"></a><span class="x">        }</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-43" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-43"></a><span class="x">        //Second case: numbers from x2 to x4 without those from x12 to x14 (x - any number)</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-44" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-44"></a><span class="x">        elseif( $number % 10 &gt; 1 &amp;&amp; $number % 10 &lt; 5 &amp;&amp; ( $number &lt; 11 || $number &gt; 14 )</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-45" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-45"></a><span class="x">                &amp;&amp; ( $number % 100 &lt; 11 || $number % 100 &gt; 14 ) )</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-46" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-46"></a><span class="x">        {</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-47" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-47"></a><span class="x">            $wordIndex = 2;</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-48" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-48"></a><span class="x">        }</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-49" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-49"></a><span class="x">        else</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-50" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-50"></a><span class="x">        {</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-51" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-51"></a><span class="x">            $wordIndex = 3;</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-52" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-52"></a><span class="x">        }</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-53" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-53"></a><span class="x">        //we return numbered phrase to the world</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-54" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-54"></a><span class="x">        return $number.' '.$words[$wordIndex];</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-55" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-55"></a><span class="x">    }</span>
+<a id="rest_code_32eb517ac8de4d4890ee22a1a617536a-56" name="rest_code_32eb517ac8de4d4890ee22a1a617536a-56"></a><span class="x">}</span>
 </pre>
 <p>Jedynym mankamentem tej metody jest konieczność zdefiniowania kluczy
 tablicy przekazywanych słów, ale akceptuje zestaw słów wszelakich.</p>
 </div>
-    </div>
-    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
-<li><a class="tag p-category" href="../../tags/i18n/" rel="tag">i18n</a></li>
-            <li><a class="tag p-category" href="../../tags/php/" rel="tag">php</a></li>
-            <li><a class="tag p-category" href="../../tags/symfony/" rel="tag">symfony</a></li>
-        </ul>
-<ul class="pager hidden-print">
+    
+        <ul class="pager hidden-print">
 <li class="previous">
                 <a href="../fzblameable/" rel="prev" title="fzBlameable">Poprzedni post</a>
             </li>
             <li class="next">
                 <a href="../opera-dragonfly-przegladaj-element/" rel="next" title='Opera Dragonfly - "przeglądaj element"'>Następny post</a>
             </li>
-        </ul></nav></aside><section class="comments hidden-print"><h2>Komentarze</h2>
-        
-        
-        <div id="disqus_thread"></div>
+        </ul>
+<div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="casesblog",
             disqus_url="http://blog.fizyk.net.pl/pl/blog/odmiana-slowianskich-rzeczownikow-wedlug-liczb/",
@@ -223,19 +142,63 @@ tablicy przekazywanych słów, ale akceptuje zestaw słów wszelakich.</p>
     <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
-        </section></article><script>var disqus_shortname="casesblog";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
+    
+
+    </div>
+
+        </div>
+        <div id="sidebar">
+            <!--Sidebar content-->
+            <h1 id="blog-title">
+                <a href="http://blog.fizyk.net.pl/" title="Cases">Cases</a>
+            </h1>
+            
+            <small>
+                Również dostępny w językach: 
+                
+            <li><a href="http://blog.fizyk.net.pl/" rel="alternate" hreflang="en">English</a></li>
+
+            </small>
+            
+            <ul class="unstyled">
+<li>
+<a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.pl">
+    <img alt="Licencja Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png"></a>
+<br>Ten utwór, autorstwa
+<span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">
+    Grzegorz Śliwiński</span>
+jest dostępny na licencji
+<a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.pl">
+    Creative Commons Uznanie autorstwa 3.0 Unported
+</a>.</li>
+            
+                <li>
+<a href="http://www.fizyk.net.pl">Strona domowa</a>
+                </li>
+<li>
+<a href="../../archive/">Archiwum</a>
+                </li>
+<li>
+<a href="../../tags/">Tagi</a>
+
+            </li>
+<li>
+            
+            
+            </ul>
+</div>
+        <div id="footer">
             Contents © 2021 <a href="mailto:fizyk~~fizyk.net.pl">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
             
-            
-        </footer>
-</div>
-</div>
-
-
-        <script src="../../../assets/js/all-nocdn.js"></script><script>
+        </div>
+    </div>
+    
+            <script src="../../../assets/js/all-nocdn.js"></script><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
-        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
     </script><script type="text/javascript">
 
   var _gaq = _gaq || [];

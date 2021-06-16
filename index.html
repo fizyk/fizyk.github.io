@@ -1,101 +1,37 @@
 <!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="description" content="Not only about encountered programming cases.">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cases</title>
+<meta name="viewport" content="width=device-width">
+<title>Cases | Cases</title>
 <link href="assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
-<meta name="theme-color" content="#5670d4">
-<meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="rss.xml">
-<link rel="alternate" type="application/rss+xml" title="RSS (pl)" hreflang="pl" href="pl/rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="pl/rss.xml">
 <link rel="canonical" href="http://blog.fizyk.net.pl/">
 <link rel="icon" href="favicon.png" sizes="62x60">
 <link rel="icon" href="favicon-speddial.png" sizes="269x262">
 <link rel="next" href="index-6.html" type="text/html">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="blog/running-python-tests-on-traviss-osx-workers/" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]-->
 </head>
-<body>
-<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
-
-<!-- Header and menu bar -->
-<div class="container">
-      <header class="blog-header py-3"><div class="row nbb-header align-items-center">
-          <div class="col-md-3 col-xs-2 col-sm-2" style="width: auto;">
-            <button class="navbar-toggler navbar-light bg-light nbb-navbar-toggler" type="button" data-toggle="collapse" data-target=".bs-nav-collapsible" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse bs-nav-collapsible bootblog4-search-form-holder">
-                
+<body class="home blog">
+    <div id="wrap" style="width:850px">
+        <div id="container" style="width:560px">
+            
+            
+        <div class="postbox">
+        <h1><a href="blog/running-python-tests-on-traviss-osx-workers/">Running python tests on Travis's OSX workers</a></h1>
+            <div class="meta" style="background-color: rgb(234, 234, 234); ">
+                <span class="authordate">
+                    Posted: <time class="published" datetime="2016-03-20T21:44:55+01:00">20 3 2016 21:44</time></span>
+                <br><span class="tags">Tags: 
+                            <a class="tag" href="tags/osx/"><span>osx</span></a>
+                            <a class="tag" href="tags/python/"><span>python</span></a>
+                            <a class="tag" href="tags/tests/"><span>tests</span></a>
+                            <a class="tag" href="tags/travis/"><span>travis</span></a>
+                </span>
             </div>
-        </div>
-          <div class="col-md-6 col-xs-10 col-sm-10 bootblog4-brand" style="width: auto;">
-            <a class="navbar-brand blog-header-logo text-dark" href=".">
-
-            <span id="blog-title">Cases</span>
-        </a>
-          </div>
-            <div class="col-md-3 justify-content-end align-items-center bs-nav-collapsible collapse flex-collapse bootblog4-right-nav">
-            <nav class="navbar navbar-light bg-white"><ul class="navbar-nav bootblog4-right-nav">
-<li class="nav-item"><a href="pl/" rel="alternate" hreflang="pl" class="nav-link">Polski</a></li>
-
-                    
-                    
-                    
-            </ul></nav>
-</div>
-    </div>
-</header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
-            <ul class="navbar-nav nav-fill d-flex w-100">
-<li class="nav-item">
-<a href="http://www.fizyk.net.pl/en" class="nav-link">Homepage</a>
-                </li>
-<li class="nav-item">
-<a href="archive/" class="nav-link">Archives</a>
-                </li>
-<li class="nav-item">
-<a href="tags/" class="nav-link">Tags</a>
-
-                
-            </li>
-</ul>
-</div>
-<!-- /.navbar-collapse -->
-</nav>
-</div>
-
-<div class="container" id="content" role="main">
-    <div class="body-content">
-        <!--Body content-->
-        
-        
-        
-    
-        
-
-    
-        
-    <div class="postindex">
-            <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="blog/running-python-tests-on-traviss-osx-workers/" class="u-url">Running python tests on Travis's OSX workers</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Grzegorz Śliwiński
-                    </span></p>
-            <p class="dateline">
-            <a href="blog/running-python-tests-on-traviss-osx-workers/" rel="bookmark">
-            <time class="published dt-published" datetime="2016-03-20T21:44:55+01:00" itemprop="datePublished" title="20 3 2016 21:44">20 3 2016 21:44</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="blog/running-python-tests-on-traviss-osx-workers/#disqus_thread" data-disqus-identifier="cache/posts/2016-03-20-running-python-tests-on-traviss-osx-workers.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
+        <div>
 <p>I, and my colleages are running tests mostly on linux, since our packages usually are clean python implementation.
 However, for <a class="reference external" href="https://pypi.python.org/pypi/mirakuru/">mirakuru</a>, which we use to govern processes in tests,
 and by extension <a class="reference external" href="https://pypi.python.org/pypi/pytest-dbfixtures/">pytest-dbfixtures</a>,
@@ -106,25 +42,25 @@ which will get 2 years old in this May. Apparently, just setting python as a lan
 the system to test on won't work for apple's operating system.</p>
 <p class="more"><a href="blog/running-python-tests-on-traviss-osx-workers/">Read more…</a></p>
 </div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="blog/creating-a-timestamp-in-python-difference-between-calendartimegm-and-timemktime/" class="u-url">Creating a timestamp in python - difference between calendar.timegm and time.mktime</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Grzegorz Śliwiński
-                    </span></p>
-            <p class="dateline">
-            <a href="blog/creating-a-timestamp-in-python-difference-between-calendartimegm-and-timemktime/" rel="bookmark">
-            <time class="published dt-published" datetime="2015-11-25T20:18:16+01:00" itemprop="datePublished" title="25 11 2015 20:18">25 11 2015 20:18</time></a>
-            </p>
-                        <p class="commentline">
+            
         
-    <a href="blog/creating-a-timestamp-in-python-difference-between-calendartimegm-and-timemktime/#disqus_thread" data-disqus-identifier="cache/posts/2015-11-25-creating-a-timestamp-in-python-difference-between-calendartimegm-and-timemktime.html">Comments</a>
+    <a href="blog/running-python-tests-on-traviss-osx-workers/#disqus_thread" data-disqus-identifier="cache/posts/2016-03-20-running-python-tests-on-traviss-osx-workers.html">Comments</a>
 
 
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
+        </div>
+        <div class="postbox">
+        <h1><a href="blog/creating-a-timestamp-in-python-difference-between-calendartimegm-and-timemktime/">Creating a timestamp in python - difference between calendar.timegm and time.mktime</a></h1>
+            <div class="meta" style="background-color: rgb(234, 234, 234); ">
+                <span class="authordate">
+                    Posted: <time class="published" datetime="2015-11-25T20:18:16+01:00">25 11 2015 20:18</time></span>
+                <br><span class="tags">Tags: 
+                            <a class="tag" href="tags/calendar/"><span>calendar</span></a>
+                            <a class="tag" href="tags/performance/"><span>performance</span></a>
+                            <a class="tag" href="tags/python/"><span>python</span></a>
+                            <a class="tag" href="tags/time/"><span>time</span></a>
+                </span>
+            </div>
+        <div>
 <p>If think most of python programmers realise that there are two ways of getting timestamp with only the
 help of stdlib libraries. It's <a class="reference external" href="https://docs.python.org/3.5/library/time.html#time.mktime">time.mktime</a>
 and weirdly placed <a class="reference external" href="https://docs.python.org/3.5/library/calendar.html#calendar.timegm">calendar.timegm</a>.</p>
@@ -142,25 +78,24 @@ returns an integer.</p>
 <p>Second things - timegm function is faster than mktime! See the short benchmarks below:</p>
 <p class="more"><a href="blog/creating-a-timestamp-in-python-difference-between-calendartimegm-and-timemktime/">Read more…</a></p>
 </div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="blog/measuring-test-coverage-of-pytest-plugins/" class="u-url">Measuring test coverage of py.test plugins</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Grzegorz Śliwiński
-                    </span></p>
-            <p class="dateline">
-            <a href="blog/measuring-test-coverage-of-pytest-plugins/" rel="bookmark">
-            <time class="published dt-published" datetime="2014-11-16T16:54:42+01:00" itemprop="datePublished" title="16 11 2014 16:54">16 11 2014 16:54</time></a>
-            </p>
-                        <p class="commentline">
+            
         
-    <a href="blog/measuring-test-coverage-of-pytest-plugins/#disqus_thread" data-disqus-identifier="cache/posts/2014-11-16-measuring-test-coverage-of-pytest-plugins.html">Comments</a>
+    <a href="blog/creating-a-timestamp-in-python-difference-between-calendartimegm-and-timemktime/#disqus_thread" data-disqus-identifier="cache/posts/2015-11-25-creating-a-timestamp-in-python-difference-between-calendartimegm-and-timemktime.html">Comments</a>
 
 
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
+        </div>
+        <div class="postbox">
+        <h1><a href="blog/measuring-test-coverage-of-pytest-plugins/">Measuring test coverage of py.test plugins</a></h1>
+            <div class="meta" style="background-color: rgb(234, 234, 234); ">
+                <span class="authordate">
+                    Posted: <time class="published" datetime="2014-11-16T16:54:42+01:00">16 11 2014 16:54</time></span>
+                <br><span class="tags">Tags: 
+                            <a class="tag" href="tags/coverage/"><span>coverage</span></a>
+                            <a class="tag" href="tags/pytest/"><span>pytest</span></a>
+                            <a class="tag" href="tags/python/"><span>python</span></a>
+                </span>
+            </div>
+        <div>
 <p>Measuring your code's test coverage is important, though not definitive metric
 to tell that Your code is well tested. But to measure coverage properly, tests
 have to be properly initialized as well. And today I asked myself a question,
@@ -168,25 +103,24 @@ how do I measure properly test coverage of <a class="reference external" href="h
 plugins?</p>
 <p class="more"><a href="blog/measuring-test-coverage-of-pytest-plugins/">Read more…</a></p>
 </div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="blog/pytest-dbfixtures-now-works-with-python-3/" class="u-url">pytest-dbfixtures now works with python 3</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Grzegorz Śliwiński
-                    </span></p>
-            <p class="dateline">
-            <a href="blog/pytest-dbfixtures-now-works-with-python-3/" rel="bookmark">
-            <time class="published dt-published" datetime="2014-11-08T19:16:25+01:00" itemprop="datePublished" title="08 11 2014 19:16">08 11 2014 19:16</time></a>
-            </p>
-                        <p class="commentline">
+            
         
-    <a href="blog/pytest-dbfixtures-now-works-with-python-3/#disqus_thread" data-disqus-identifier="cache/posts/2014-11-08-pytest-dbfixtures-now-works-with-python-3.html">Comments</a>
+    <a href="blog/measuring-test-coverage-of-pytest-plugins/#disqus_thread" data-disqus-identifier="cache/posts/2014-11-16-measuring-test-coverage-of-pytest-plugins.html">Comments</a>
 
 
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
+        </div>
+        <div class="postbox">
+        <h1><a href="blog/pytest-dbfixtures-now-works-with-python-3/">pytest-dbfixtures now works with python 3</a></h1>
+            <div class="meta" style="background-color: rgb(234, 234, 234); ">
+                <span class="authordate">
+                    Posted: <time class="published" datetime="2014-11-08T19:16:25+01:00">08 11 2014 19:16</time></span>
+                <br><span class="tags">Tags: 
+                            <a class="tag" href="tags/dbfixtures/"><span>dbfixtures</span></a>
+                            <a class="tag" href="tags/pytest/"><span>pytest</span></a>
+                            <a class="tag" href="tags/python/"><span>python</span></a>
+                </span>
+            </div>
+        <div>
 <p>Few days ago we've released a python3 compatible version of pytest-dbfixtures,
 a pytest plugin with fixtures and factories that can start fresh
 mysql, postgresql, elasticsearch, redis, rabbitmq and mongodb processes for Your tests -
@@ -196,25 +130,25 @@ if you'd need more processes of one kind or with different settings.</p>
 please check your tests carefuly, as these fixtures got most backward incompatible changes.</p>
 <p class="more"><a href="blog/pytest-dbfixtures-now-works-with-python-3/">Read more…</a></p>
 </div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="blog/pyramid_fullauth-04-python3-and-few-fixes/" class="u-url">pyramid_fullauth 0.4 - python3 and few fixes</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Grzegorz Śliwiński
-                    </span></p>
-            <p class="dateline">
-            <a href="blog/pyramid_fullauth-04-python3-and-few-fixes/" rel="bookmark">
-            <time class="published dt-published" datetime="2014-11-02T19:46:35+01:00" itemprop="datePublished" title="02 11 2014 19:46">02 11 2014 19:46</time></a>
-            </p>
-                        <p class="commentline">
+            
         
-    <a href="blog/pyramid_fullauth-04-python3-and-few-fixes/#disqus_thread" data-disqus-identifier="cache/posts/2014-10-02-pyramid_fullauth-04-python3-and-few-fixes.html">Comments</a>
+    <a href="blog/pytest-dbfixtures-now-works-with-python-3/#disqus_thread" data-disqus-identifier="cache/posts/2014-11-08-pytest-dbfixtures-now-works-with-python-3.html">Comments</a>
 
 
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
+        </div>
+        <div class="postbox">
+        <h1><a href="blog/pyramid_fullauth-04-python3-and-few-fixes/">pyramid_fullauth 0.4 - python3 and few fixes</a></h1>
+            <div class="meta" style="background-color: rgb(234, 234, 234); ">
+                <span class="authordate">
+                    Posted: <time class="published" datetime="2014-11-02T19:46:35+01:00">02 11 2014 19:46</time></span>
+                <br><span class="tags">Tags: 
+                            <a class="tag" href="tags/authentication/"><span>authentication</span></a>
+                            <a class="tag" href="tags/fullauth/"><span>fullauth</span></a>
+                            <a class="tag" href="tags/pyramid/"><span>pyramid</span></a>
+                            <a class="tag" href="tags/python/"><span>python</span></a>
+                </span>
+            </div>
+        <div>
 <p>I've just released version 0.4 of my pyramid extension,
 <a class="reference external" href="https://pypi.python.org/pypi/pyramid_fullauth">pyramid_fullauth</a>.
 It's goal is to allow to add authentication abilities - both password- and
@@ -222,70 +156,65 @@ social-based authentication - to pyramid based apps by the means of configuratio
 <p>This version comes with limited python3 compatibility, and two bugfixes.</p>
 <p class="more"><a href="blog/pyramid_fullauth-04-python3-and-few-fixes/">Read more…</a></p>
 </div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="blog/commit-a-day-will-scratch-your-itch-away/" class="u-url">Commit a day, will scratch Your itch away</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Grzegorz Śliwiński
-                    </span></p>
-            <p class="dateline">
-            <a href="blog/commit-a-day-will-scratch-your-itch-away/" rel="bookmark">
-            <time class="published dt-published" datetime="2014-09-04T23:03:07+02:00" itemprop="datePublished" title="04 9 2014 23:03">04 9 2014 23:03</time></a>
-            </p>
-                        <p class="commentline">
+            
         
-    <a href="blog/commit-a-day-will-scratch-your-itch-away/#disqus_thread" data-disqus-identifier="cache/posts/2014-09-04-commit-a-day-will-scratch-your-itch-away.html">Comments</a>
+    <a href="blog/pyramid_fullauth-04-python3-and-few-fixes/#disqus_thread" data-disqus-identifier="cache/posts/2014-10-02-pyramid_fullauth-04-python3-and-few-fixes.html">Comments</a>
 
 
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
+        </div>
+        <div class="postbox">
+        <h1><a href="blog/commit-a-day-will-scratch-your-itch-away/">Commit a day, will scratch Your itch away</a></h1>
+            <div class="meta" style="background-color: rgb(234, 234, 234); ">
+                <span class="authordate">
+                    Posted: <time class="published" datetime="2014-09-04T23:03:07+02:00">04 9 2014 23:03</time></span>
+                <br><span class="tags">Tags: 
+                            <a class="tag" href="tags/community/"><span>community</span></a>
+                            <a class="tag" href="tags/open-source/"><span>open source</span></a>
+                            <a class="tag" href="tags/python/"><span>python</span></a>
+                </span>
+            </div>
+        <div>
 <p>At August's <strong>wroc.py</strong> meeting I had a brief discussion with <a class="reference external" href="http://www.bthlabs.pl/">Tomek Wójcik</a> about <a class="reference external" href="http://tomekwojcik.github.io/envelopes/">Envelopes</a>'s state, and those long opened issues at his issue tracker.</p>
 <p>While thinking about what Tomek said, I remembered reading <a class="reference external" href="http://jeffknupp.com/">Jeff Knupp's</a> post about <a class="reference external" href="http://jeffknupp.com/blog/2014/05/30/you-need-to-start-a-whizbang-project-immediately/">whizbang project</a>, a highly motivational post about willingness to do something - and it got me thinking... What makes project tick? Why does Django, Twisted, Celery have grown so big?</p>
 <p class="more"><a href="blog/commit-a-day-will-scratch-your-itch-away/">Read more…</a></p>
 </div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="blog/my-first-bump-with-pypy/" class="u-url">My first bump with pypy</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Grzegorz Śliwiński
-                    </span></p>
-            <p class="dateline">
-            <a href="blog/my-first-bump-with-pypy/" rel="bookmark">
-            <time class="published dt-published" datetime="2014-08-21T22:34:42+02:00" itemprop="datePublished" title="21 8 2014 22:34">21 8 2014 22:34</time></a>
-            </p>
-                        <p class="commentline">
+            
+        
+    <a href="blog/commit-a-day-will-scratch-your-itch-away/#disqus_thread" data-disqus-identifier="cache/posts/2014-09-04-commit-a-day-will-scratch-your-itch-away.html">Comments</a>
+
+
+        </div>
+        <div class="postbox">
+        <h1><a href="blog/my-first-bump-with-pypy/">My first bump with pypy</a></h1>
+            <div class="meta" style="background-color: rgb(234, 234, 234); ">
+                <span class="authordate">
+                    Posted: <time class="published" datetime="2014-08-21T22:34:42+02:00">21 8 2014 22:34</time></span>
+                <br><span class="tags">Tags: 
+                            <a class="tag" href="tags/pypy/"><span>pypy</span></a>
+                            <a class="tag" href="tags/python/"><span>python</span></a>
+                </span>
+            </div>
+        <div>
+<p>Just until two weeks ago, I was only reading about PyPy. My though about it was somewhat simple: that's the interpreter, that speeds up python code. I expected that some changes to python code, that's supposed to run in PyPy will be required, but I thought it will be easy to spot. I haven't been more wrong.</p>
+<p class="more"><a href="blog/my-first-bump-with-pypy/">Read more…</a></p>
+</div>
+            
         
     <a href="blog/my-first-bump-with-pypy/#disqus_thread" data-disqus-identifier="cache/posts/2014-08-21-my-first-bump-with-pypy.html">Comments</a>
 
 
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
-<p>Just until two weeks ago, I was only reading about PyPy. My though about it was somewhat simple: that's the interpreter, that speeds up python code. I expected that some changes to python code, that's supposed to run in PyPy will be required, but I thought it will be easy to spot. I haven't been more wrong.</p>
-<p class="more"><a href="blog/my-first-bump-with-pypy/">Read more…</a></p>
-</div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="blog/reminder-set-pool_recycle-for-sqlalchemys-connection-to-mysql/" class="u-url">Reminder to use pool_recycle for SQLAlchemy's connection to mysql</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Grzegorz Śliwiński
-                    </span></p>
-            <p class="dateline">
-            <a href="blog/reminder-set-pool_recycle-for-sqlalchemys-connection-to-mysql/" rel="bookmark">
-            <time class="published dt-published" datetime="2014-08-19T22:02:27+02:00" itemprop="datePublished" title="19 8 2014 22:02">19 8 2014 22:02</time></a>
-            </p>
-                        <p class="commentline">
-        
-    <a href="blog/reminder-set-pool_recycle-for-sqlalchemys-connection-to-mysql/#disqus_thread" data-disqus-identifier="cache/posts/2014-08-19-reminder-set-pool_recycle-for-sqlalchemys-connection-to-mysql.html">Comments</a>
-
-
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
+        </div>
+        <div class="postbox">
+        <h1><a href="blog/reminder-set-pool_recycle-for-sqlalchemys-connection-to-mysql/">Reminder to use pool_recycle for SQLAlchemy's connection to mysql</a></h1>
+            <div class="meta" style="background-color: rgb(234, 234, 234); ">
+                <span class="authordate">
+                    Posted: <time class="published" datetime="2014-08-19T22:02:27+02:00">19 8 2014 22:02</time></span>
+                <br><span class="tags">Tags: 
+                            <a class="tag" href="tags/mysql/"><span>mysql</span></a>
+                            <a class="tag" href="tags/sqlalchemy/"><span>sqlalchemy</span></a>
+                </span>
+            </div>
+        <div>
 <p>This post is a reminder to myself and maybe other that will stumble upon
 "<strong>Mysql server has gone away</strong>" error with <a class="reference external" href="http://docs.sqlalchemy.org">SQLAlchemy</a>.</p>
 <p>Recently, we had problem <strong>again</strong> with MySQL and SQLAlchemy application, that it lost
@@ -298,25 +227,24 @@ anywhere with postgresql, but for MySQL it's certainly worth trying first
 <strong>pool_recycle</strong> option, and tuning pooling in general, before franticly browsing
 internet for <em>possible</em> cause of this broad error.</p>
 </div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="blog/mirakuru-02-released/" class="u-url">mirakuru 0.2 released</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Grzegorz Śliwiński
-                    </span></p>
-            <p class="dateline">
-            <a href="blog/mirakuru-02-released/" rel="bookmark">
-            <time class="published dt-published" datetime="2014-08-16T21:21:07+02:00" itemprop="datePublished" title="16 8 2014 21:21">16 8 2014 21:21</time></a>
-            </p>
-                        <p class="commentline">
+            
         
-    <a href="blog/mirakuru-02-released/#disqus_thread" data-disqus-identifier="cache/posts/2014-08-16-mirakuru-02-released.html">Comments</a>
+    <a href="blog/reminder-set-pool_recycle-for-sqlalchemys-connection-to-mysql/#disqus_thread" data-disqus-identifier="cache/posts/2014-08-19-reminder-set-pool_recycle-for-sqlalchemys-connection-to-mysql.html">Comments</a>
 
 
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
+        </div>
+        <div class="postbox">
+        <h1><a href="blog/mirakuru-02-released/">mirakuru 0.2 released</a></h1>
+            <div class="meta" style="background-color: rgb(234, 234, 234); ">
+                <span class="authordate">
+                    Posted: <time class="published" datetime="2014-08-16T21:21:07+02:00">16 8 2014 21:21</time></span>
+                <br><span class="tags">Tags: 
+                            <a class="tag" href="tags/mirakuru/"><span>mirakuru</span></a>
+                            <a class="tag" href="tags/python/"><span>python</span></a>
+                            <a class="tag" href="tags/testing/"><span>testing</span></a>
+                </span>
+            </div>
+        <div>
 <p>Last Thursday, we released new minor version of mirakuru.
 Mirakuru is a helpful tools that lets add superpowers to Your tests, or maybe
 other scripts that need other processes to run.</p>
@@ -328,25 +256,24 @@ other scripts that need other processes to run.</p>
 </ul>
 <p class="more"><a href="blog/mirakuru-02-released/">Read more…</a></p>
 </div>
-                </div>
-            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="blog/mirakuru-your-tests-little-helper/" class="u-url">mirakuru, your tests little helper</a></h1>
-                <div class="metadata">
-                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                        Grzegorz Śliwiński
-                    </span></p>
-            <p class="dateline">
-            <a href="blog/mirakuru-your-tests-little-helper/" rel="bookmark">
-            <time class="published dt-published" datetime="2014-07-03T20:19:11+02:00" itemprop="datePublished" title="03 7 2014 20:19">03 7 2014 20:19</time></a>
-            </p>
-                        <p class="commentline">
+            
         
-    <a href="blog/mirakuru-your-tests-little-helper/#disqus_thread" data-disqus-identifier="cache/posts/2014-07-03-mirakuru-your-tests-little-helper.html">Comments</a>
+    <a href="blog/mirakuru-02-released/#disqus_thread" data-disqus-identifier="cache/posts/2014-08-16-mirakuru-02-released.html">Comments</a>
 
 
-                </p>
-</div>
-            </header><div class="p-summary entry-summary">
-                    <div>
+        </div>
+        <div class="postbox">
+        <h1><a href="blog/mirakuru-your-tests-little-helper/">mirakuru, your tests little helper</a></h1>
+            <div class="meta" style="background-color: rgb(234, 234, 234); ">
+                <span class="authordate">
+                    Posted: <time class="published" datetime="2014-07-03T20:19:11+02:00">03 7 2014 20:19</time></span>
+                <br><span class="tags">Tags: 
+                            <a class="tag" href="tags/mirakuru/"><span>mirakuru</span></a>
+                            <a class="tag" href="tags/python/"><span>python</span></a>
+                            <a class="tag" href="tags/testing/"><span>testing</span></a>
+                </span>
+            </div>
+        <div>
 <p>Just yesterday, we released first version of mirakuru.
 Mirakuru is a helpful tools that lets add superpowers to Your tests, or maybe
 other scripts that need other processes to run.</p>
@@ -355,26 +282,71 @@ start it's own database instance, or the webserver you've just wrote, and need
 to test it by sending real requests to it - automatically.</p>
 <p class="more"><a href="blog/mirakuru-your-tests-little-helper/">Read more…</a></p>
 </div>
-                </div>
-            </article>
-</div>
+            
+        
+    <a href="blog/mirakuru-your-tests-little-helper/#disqus_thread" data-disqus-identifier="cache/posts/2014-07-03-mirakuru-your-tests-little-helper.html">Comments</a>
+
+
+        </div>
     
-        <ul class="pager postindexpager clearfix">
-<li class="next"><a href="index-6.html" rel="next">Older posts</a></li>
-        </ul>
-<script>var disqus_shortname="casesblog";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
+        <nav class="postindexpager"><ul class="pager">
+<li class="next">
+                <a href="index-6.html" rel="next">Older posts</a>
+            </li>
+        </ul></nav><script>var disqus_shortname="casesblog";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+        <div id="sidebar">
+            <!--Sidebar content-->
+            <h1 id="blog-title">
+                <a href="http://blog.fizyk.net.pl/" title="Cases">Cases</a>
+            </h1>
+            
+            <small>
+                Also available in: 
+                
+            <li><a href="http://blog.fizyk.net.pl/pl/" rel="alternate" hreflang="pl">Polski</a></li>
+
+            </small>
+            
+            <ul class="unstyled">
+<li>
+<a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.pl">
+    <img alt="Licencja Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png"></a>
+<br>Ten utwór, autorstwa
+<span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">
+    Grzegorz Śliwiński</span>
+jest dostępny na licencji
+<a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.pl">
+    Creative Commons Uznanie autorstwa 3.0 Unported
+</a>.</li>
+            
+                <li>
+<a href="http://www.fizyk.net.pl/en">Homepage</a>
+                </li>
+<li>
+<a href="archive/">Archives</a>
+                </li>
+<li>
+<a href="tags/">Tags</a>
+
+            </li>
+<li>
+            
+            
+            </ul>
+</div>
+        <div id="footer">
             Contents © 2021 <a href="mailto:fizyk~~fizyk.net.pl">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
             
-            
-        </footer>
-</div>
-</div>
-
-
-        <script src="assets/js/all-nocdn.js"></script><script>
+        </div>
+    </div>
+    
+            <script src="assets/js/all-nocdn.js"></script><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
-        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
     </script><script type="text/javascript">
 
   var _gaq = _gaq || [];

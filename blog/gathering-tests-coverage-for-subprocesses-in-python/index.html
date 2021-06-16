@@ -1,119 +1,42 @@
 <!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width">
 <title>Gathering tests coverage for subprocesses in python | Cases</title>
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
-<meta name="theme-color" content="#5670d4">
-<meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../rss.xml">
-<link rel="alternate" type="application/rss+xml" title="RSS (pl)" hreflang="pl" href="../../pl/rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../pl/rss.xml">
 <link rel="canonical" href="http://blog.fizyk.net.pl/blog/gathering-tests-coverage-for-subprocesses-in-python/">
 <link rel="icon" href="../../favicon.png" sizes="62x60">
 <link rel="icon" href="../../favicon-speddial.png" sizes="269x262">
-<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Grzegorz Śliwiński">
-<link rel="prev" href="../pyramid_fullauth-020/" title="pyramid_fullauth 0.2.0" type="text/html">
-<link rel="next" href="../easy-way-to-debug-email-communication-in-python/" title="Easy way to debug email communication in python" type="text/html">
-<meta property="og:site_name" content="Cases">
-<meta property="og:title" content="Gathering tests coverage for subprocesses in python">
-<meta property="og:url" content="http://blog.fizyk.net.pl/blog/gathering-tests-coverage-for-subprocesses-in-python/">
-<meta property="og:description" content="Recently at work I've stumbled across quite a problem, how do You check your code coverage, especially in integration tests, when portions of your code are running as subprocesses?
-tl;dr: Be gentle.
-
-">
-<meta property="og:type" content="article">
-<meta property="article:published_time" content="2013-10-27T20:22:05+01:00">
-<meta property="article:tag" content="coverage">
-<meta property="article:tag" content="pytest">
-<meta property="article:tag" content="python">
-<meta property="article:tag" content="testing">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
 </head>
-<body>
-<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
-
-<!-- Header and menu bar -->
-<div class="container">
-      <header class="blog-header py-3"><div class="row nbb-header align-items-center">
-          <div class="col-md-3 col-xs-2 col-sm-2" style="width: auto;">
-            <button class="navbar-toggler navbar-light bg-light nbb-navbar-toggler" type="button" data-toggle="collapse" data-target=".bs-nav-collapsible" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse bs-nav-collapsible bootblog4-search-form-holder">
-                
-            </div>
-        </div>
-          <div class="col-md-6 col-xs-10 col-sm-10 bootblog4-brand" style="width: auto;">
-            <a class="navbar-brand blog-header-logo text-dark" href="../../">
-
-            <span id="blog-title">Cases</span>
-        </a>
-          </div>
-            <div class="col-md-3 justify-content-end align-items-center bs-nav-collapsible collapse flex-collapse bootblog4-right-nav">
-            <nav class="navbar navbar-light bg-white"><ul class="navbar-nav bootblog4-right-nav">
-<li class="nav-item"><a href="../../pl/" rel="alternate" hreflang="pl" class="nav-link">Polski</a></li>
-
-                    
-                    
-    
-    <li class="nav-item">
-    <a href="index.rst" id="sourcelink" class="nav-link">Source</a>
-    </li>
-
-
-                    
-            </ul></nav>
-</div>
-    </div>
-</header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
-            <ul class="navbar-nav nav-fill d-flex w-100">
-<li class="nav-item">
-<a href="http://www.fizyk.net.pl/en" class="nav-link">Homepage</a>
-                </li>
-<li class="nav-item">
-<a href="../../archive/" class="nav-link">Archives</a>
-                </li>
-<li class="nav-item">
-<a href="../../tags/" class="nav-link">Tags</a>
-
-                
-            </li>
-</ul>
-</div>
-<!-- /.navbar-collapse -->
-</nav>
-</div>
-
-<div class="container" id="content" role="main">
-    <div class="body-content">
-        <!--Body content-->
-        
-        
-        
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Gathering tests coverage for subprocesses in python</a></h1>
-
-        <div class="metadata">
-            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
-                    Grzegorz Śliwiński
-            </span></p>
-            <p class="dateline">
-            <a href="." rel="bookmark">
-            <time class="published dt-published" datetime="2013-10-27T20:22:05+01:00" itemprop="datePublished" title="27 10 2013 20:22">27 10 2013 20:22</time></a>
-            </p>
-                <p class="commentline">
-        
-    <a href="#disqus_thread" data-disqus-identifier="cache/posts/2013-10-27-gathering-tests-coverage-for-subprocesses-in-python.html">Comments</a>
-
-
+<body class="home blog">
+    <div id="wrap" style="width:850px">
+        <div id="container" style="width:560px">
             
-        </p>
-<p class="sourceline"><a href="index.rst" class="sourcelink">Source</a></p>
+            
+    <div class="post">
+    
+    <h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Gathering tests coverage for subprocesses in python</a></h1>
 
+        <div class="meta" style="background-color: rgb(234, 234, 234); ">
+        <span class="authordate">
+            Posted: <time class="published" datetime="2013-10-27T20:22:05+01:00">27 10 2013 20:22</time>
+               [<a href="index.rst" id="sourcelink">Source</a>]
+        </span>
+        <br><span class="tags">Tags: 
+                    <a class="tag" href="../../tags/coverage/"><span>coverage</span></a>
+                    <a class="tag" href="../../tags/pytest/"><span>pytest</span></a>
+                    <a class="tag" href="../../tags/python/"><span>python</span></a>
+                    <a class="tag" href="../../tags/testing/"><span>testing</span></a>
+                </span>
+                <br><span class="authordate">
+            
+
+        </span>
         </div>
-        
-
-    </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <p>Recently at work I've stumbled across quite a problem, how do You check your code coverage, especially in integration tests, when portions of your code are running as subprocesses?</p>
 <p>tl;dr: Be gentle.</p>
@@ -122,71 +45,63 @@ tl;dr: Be gentle.
 <p>Well, just my luck. Since the solution written by Ned, utilizes Environmental variable, I tried to make sure subprocesses got the same variables from master process, and even checked what do they got. Everything seemed okay at this end, especially that we already used some environmental variable for settings, and test settings were picked up by subprocess.</p>
 <p>Since we use <a class="reference external" href="https://pypi.python.org/pypi/pytest">pytest</a> testing suite for testing and <a class="reference external" href="https://pypi.python.org/pypi/pytest-cov">pytest-cov</a> plugin for gathering code coverage, I looked deeper at the plugins readme. Well... it says that it has code coverage for subprocess already built-in. Quick look at source of pytest-cov and cov-core made me realize, that I needlessly tried to use basic coverage.py functionality, as cov-core package already utilises the <strong>.pth</strong> way, although customized.</p>
 <p>We use <a class="reference external" href="https://pypi.python.org/pypi/summon_process">summon_process</a> package to start subprocesses within pytest fixtures, which in turn, uses subprocess.Popen inside, so I took a look at the plugin, and tried to start subprocesses in it's own shell.</p>
-<pre class="code python"><a id="rest_code_10aa983591674d94877ec2fa64b76e5f-1" name="rest_code_10aa983591674d94877ec2fa64b76e5f-1"></a><span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<pre class="code python"><a id="rest_code_8dfb5f30993a4268863b57a53fffa229-1" name="rest_code_8dfb5f30993a4268863b57a53fffa229-1"></a><span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre>
 <p>I was suprised to see it working, BUT... some tests failed and at the end I got a nasty database lock, which made me forcefully end test session. Damn. Trying to figure out how to get rid of the lock took me nowhere. It ceratinly was the foult within the other plugin <a class="reference external" href="https://pypi.python.org/pypi/pytest-dbfixtures">pytet-dbfixtures</a> as me and my friend in the team initially thought. Database wasn't the problem either, so what was? Well we haven't been waiting for terminating of the process. But starting subprocess in it's own shell, certainly did help.</p>
 <p>Quick modification of the summon_process locally and installation of thismodified package and... nothing. Same problem. I looked up at the process list, and saw that we have as many subprocesses, as there was tests requireing their fixtures. What?</p>
 <p>As it turns out, when you try to kill subprocess started with shell=True, you kill the shell, subprocess doesn't get signal. Quick modification again, creating process group and sending signal to the process group as described in this <a class="reference external" href="http://stackoverflow.com/questions/4789837/how-to-terminate-a-python-subprocess-launched-with-shell-true">stackoverflow question</a>. Quick modification and the code should change from:</p>
-<pre class="code python"><a id="rest_code_f2924f29a6694dee86d55013433d1323-1" name="rest_code_f2924f29a6694dee86d55013433d1323-1"></a><span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="rest_code_f2924f29a6694dee86d55013433d1323-2" name="rest_code_f2924f29a6694dee86d55013433d1323-2"></a>    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<a id="rest_code_f2924f29a6694dee86d55013433d1323-3" name="rest_code_f2924f29a6694dee86d55013433d1323-3"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_process</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_args</span><span class="p">,</span>
-<a id="rest_code_f2924f29a6694dee86d55013433d1323-4" name="rest_code_f2924f29a6694dee86d55013433d1323-4"></a>                                         <span class="n">shell</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_shell</span><span class="p">,</span>
-<a id="rest_code_f2924f29a6694dee86d55013433d1323-5" name="rest_code_f2924f29a6694dee86d55013433d1323-5"></a>                                         <span class="n">stdin</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span>
-<a id="rest_code_f2924f29a6694dee86d55013433d1323-6" name="rest_code_f2924f29a6694dee86d55013433d1323-6"></a>                                         <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">)</span>
-<a id="rest_code_f2924f29a6694dee86d55013433d1323-7" name="rest_code_f2924f29a6694dee86d55013433d1323-7"></a>
-<a id="rest_code_f2924f29a6694dee86d55013433d1323-8" name="rest_code_f2924f29a6694dee86d55013433d1323-8"></a><span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="rest_code_f2924f29a6694dee86d55013433d1323-9" name="rest_code_f2924f29a6694dee86d55013433d1323-9"></a>    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<a id="rest_code_f2924f29a6694dee86d55013433d1323-10" name="rest_code_f2924f29a6694dee86d55013433d1323-10"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_process</span><span class="o">.</span><span class="n">terminate</span><span class="p">()</span>
-<a id="rest_code_f2924f29a6694dee86d55013433d1323-11" name="rest_code_f2924f29a6694dee86d55013433d1323-11"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_process</span> <span class="o">=</span> <span class="kc">None</span>
+<pre class="code python"><a id="rest_code_10c02c8033f14c6fa718f4c31235e003-1" name="rest_code_10c02c8033f14c6fa718f4c31235e003-1"></a><span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="rest_code_10c02c8033f14c6fa718f4c31235e003-2" name="rest_code_10c02c8033f14c6fa718f4c31235e003-2"></a>    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<a id="rest_code_10c02c8033f14c6fa718f4c31235e003-3" name="rest_code_10c02c8033f14c6fa718f4c31235e003-3"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_process</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_args</span><span class="p">,</span>
+<a id="rest_code_10c02c8033f14c6fa718f4c31235e003-4" name="rest_code_10c02c8033f14c6fa718f4c31235e003-4"></a>                                         <span class="n">shell</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_shell</span><span class="p">,</span>
+<a id="rest_code_10c02c8033f14c6fa718f4c31235e003-5" name="rest_code_10c02c8033f14c6fa718f4c31235e003-5"></a>                                         <span class="n">stdin</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span>
+<a id="rest_code_10c02c8033f14c6fa718f4c31235e003-6" name="rest_code_10c02c8033f14c6fa718f4c31235e003-6"></a>                                         <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">)</span>
+<a id="rest_code_10c02c8033f14c6fa718f4c31235e003-7" name="rest_code_10c02c8033f14c6fa718f4c31235e003-7"></a>
+<a id="rest_code_10c02c8033f14c6fa718f4c31235e003-8" name="rest_code_10c02c8033f14c6fa718f4c31235e003-8"></a><span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="rest_code_10c02c8033f14c6fa718f4c31235e003-9" name="rest_code_10c02c8033f14c6fa718f4c31235e003-9"></a>    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<a id="rest_code_10c02c8033f14c6fa718f4c31235e003-10" name="rest_code_10c02c8033f14c6fa718f4c31235e003-10"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_process</span><span class="o">.</span><span class="n">terminate</span><span class="p">()</span>
+<a id="rest_code_10c02c8033f14c6fa718f4c31235e003-11" name="rest_code_10c02c8033f14c6fa718f4c31235e003-11"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_process</span> <span class="o">=</span> <span class="kc">None</span>
 </pre>
 <p>to:</p>
-<pre class="code python"><a id="rest_code_0e3982ec238747a1bc413cafe2d10be6-1" name="rest_code_0e3982ec238747a1bc413cafe2d10be6-1"></a><span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="rest_code_0e3982ec238747a1bc413cafe2d10be6-2" name="rest_code_0e3982ec238747a1bc413cafe2d10be6-2"></a>    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<a id="rest_code_0e3982ec238747a1bc413cafe2d10be6-3" name="rest_code_0e3982ec238747a1bc413cafe2d10be6-3"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_process</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_args</span><span class="p">,</span>
-<a id="rest_code_0e3982ec238747a1bc413cafe2d10be6-4" name="rest_code_0e3982ec238747a1bc413cafe2d10be6-4"></a>                                         <span class="n">shell</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_shell</span><span class="p">,</span>
-<a id="rest_code_0e3982ec238747a1bc413cafe2d10be6-5" name="rest_code_0e3982ec238747a1bc413cafe2d10be6-5"></a>                                         <span class="n">stdin</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span>
-<a id="rest_code_0e3982ec238747a1bc413cafe2d10be6-6" name="rest_code_0e3982ec238747a1bc413cafe2d10be6-6"></a>                                         <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span>
-<a id="rest_code_0e3982ec238747a1bc413cafe2d10be6-7" name="rest_code_0e3982ec238747a1bc413cafe2d10be6-7"></a>                                         <span class="n">preexec_fn</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">setsid</span><span class="p">)</span>
-<a id="rest_code_0e3982ec238747a1bc413cafe2d10be6-8" name="rest_code_0e3982ec238747a1bc413cafe2d10be6-8"></a>
-<a id="rest_code_0e3982ec238747a1bc413cafe2d10be6-9" name="rest_code_0e3982ec238747a1bc413cafe2d10be6-9"></a><span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="rest_code_0e3982ec238747a1bc413cafe2d10be6-10" name="rest_code_0e3982ec238747a1bc413cafe2d10be6-10"></a>    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<a id="rest_code_0e3982ec238747a1bc413cafe2d10be6-11" name="rest_code_0e3982ec238747a1bc413cafe2d10be6-11"></a>        <span class="n">os</span><span class="o">.</span><span class="n">killpg</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_process</span><span class="p">,</span> <span class="n">signal</span><span class="o">.</span><span class="n">SIGTERM</span><span class="p">)</span>
-<a id="rest_code_0e3982ec238747a1bc413cafe2d10be6-12" name="rest_code_0e3982ec238747a1bc413cafe2d10be6-12"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_process</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
-<a id="rest_code_0e3982ec238747a1bc413cafe2d10be6-13" name="rest_code_0e3982ec238747a1bc413cafe2d10be6-13"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_process</span> <span class="o">=</span> <span class="kc">None</span>
+<pre class="code python"><a id="rest_code_0980d1c069e44e6c901d688196794f40-1" name="rest_code_0980d1c069e44e6c901d688196794f40-1"></a><span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="rest_code_0980d1c069e44e6c901d688196794f40-2" name="rest_code_0980d1c069e44e6c901d688196794f40-2"></a>    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<a id="rest_code_0980d1c069e44e6c901d688196794f40-3" name="rest_code_0980d1c069e44e6c901d688196794f40-3"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_process</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_args</span><span class="p">,</span>
+<a id="rest_code_0980d1c069e44e6c901d688196794f40-4" name="rest_code_0980d1c069e44e6c901d688196794f40-4"></a>                                         <span class="n">shell</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_shell</span><span class="p">,</span>
+<a id="rest_code_0980d1c069e44e6c901d688196794f40-5" name="rest_code_0980d1c069e44e6c901d688196794f40-5"></a>                                         <span class="n">stdin</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span>
+<a id="rest_code_0980d1c069e44e6c901d688196794f40-6" name="rest_code_0980d1c069e44e6c901d688196794f40-6"></a>                                         <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span>
+<a id="rest_code_0980d1c069e44e6c901d688196794f40-7" name="rest_code_0980d1c069e44e6c901d688196794f40-7"></a>                                         <span class="n">preexec_fn</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">setsid</span><span class="p">)</span>
+<a id="rest_code_0980d1c069e44e6c901d688196794f40-8" name="rest_code_0980d1c069e44e6c901d688196794f40-8"></a>
+<a id="rest_code_0980d1c069e44e6c901d688196794f40-9" name="rest_code_0980d1c069e44e6c901d688196794f40-9"></a><span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="rest_code_0980d1c069e44e6c901d688196794f40-10" name="rest_code_0980d1c069e44e6c901d688196794f40-10"></a>    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<a id="rest_code_0980d1c069e44e6c901d688196794f40-11" name="rest_code_0980d1c069e44e6c901d688196794f40-11"></a>        <span class="n">os</span><span class="o">.</span><span class="n">killpg</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_process</span><span class="p">,</span> <span class="n">signal</span><span class="o">.</span><span class="n">SIGTERM</span><span class="p">)</span>
+<a id="rest_code_0980d1c069e44e6c901d688196794f40-12" name="rest_code_0980d1c069e44e6c901d688196794f40-12"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_process</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+<a id="rest_code_0980d1c069e44e6c901d688196794f40-13" name="rest_code_0980d1c069e44e6c901d688196794f40-13"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_process</span> <span class="o">=</span> <span class="kc">None</span>
 </pre>
 <p>Should work, right? And it did. I got rid from faulty test runs, got rid from databse lock, and... got rid of subprocess coverage! What?!</p>
 <p>At this moment, I had to take a break from the problem, but let me tell you if you can't solve a problem, take a break.</p>
 <p>Got back to it few days later. Totally resigned started with reading all pytest-cov issues. Those closed ones And found issue about <a class="reference external" href="https://bitbucket.org/memedough/pytest-cov/issue/6/coverage-not-collected-for">coverage not collected for multiprocesses</a>. Quite related. What does it say? That the coverage writes it data at the END of the process run, so starting process in reality first starts your coverage, then process. After the process ends, coverage writes it's data, which in turns gets picked up by coverage in master process, when it ends, and lands combined in the main coverage report.</p>
 <p>So... how do we end the subprocess? We used terminate(). How does it ends the process? let check the <a class="reference external" href="http://man7.org/linux/man-pages/man7/signal.7.html">system signals man pages</a>. Damn... it terminates process in place, so the coverage doesn't have the chance to write it's subreports!</p>
 <p>I've modified the original stop method from summon_process package into this:</p>
-<pre class="code python"><a id="rest_code_18f20022da594492a890ba1147da8c1d-1" name="rest_code_18f20022da594492a890ba1147da8c1d-1"></a><span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="rest_code_18f20022da594492a890ba1147da8c1d-2" name="rest_code_18f20022da594492a890ba1147da8c1d-2"></a>    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<a id="rest_code_18f20022da594492a890ba1147da8c1d-3" name="rest_code_18f20022da594492a890ba1147da8c1d-3"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_process</span><span class="o">.</span><span class="n">send_signal</span><span class="p">(</span><span class="n">signal</span><span class="o">.</span><span class="n">SIGINT</span><span class="p">)</span>
-<a id="rest_code_18f20022da594492a890ba1147da8c1d-4" name="rest_code_18f20022da594492a890ba1147da8c1d-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_process</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
-<a id="rest_code_18f20022da594492a890ba1147da8c1d-5" name="rest_code_18f20022da594492a890ba1147da8c1d-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_process</span> <span class="o">=</span> <span class="kc">None</span>
+<pre class="code python"><a id="rest_code_541346c8dd924bcea7c82cbd5bd871ad-1" name="rest_code_541346c8dd924bcea7c82cbd5bd871ad-1"></a><span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="rest_code_541346c8dd924bcea7c82cbd5bd871ad-2" name="rest_code_541346c8dd924bcea7c82cbd5bd871ad-2"></a>    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<a id="rest_code_541346c8dd924bcea7c82cbd5bd871ad-3" name="rest_code_541346c8dd924bcea7c82cbd5bd871ad-3"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_process</span><span class="o">.</span><span class="n">send_signal</span><span class="p">(</span><span class="n">signal</span><span class="o">.</span><span class="n">SIGINT</span><span class="p">)</span>
+<a id="rest_code_541346c8dd924bcea7c82cbd5bd871ad-4" name="rest_code_541346c8dd924bcea7c82cbd5bd871ad-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_process</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+<a id="rest_code_541346c8dd924bcea7c82cbd5bd871ad-5" name="rest_code_541346c8dd924bcea7c82cbd5bd871ad-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_process</span> <span class="o">=</span> <span class="kc">None</span>
 </pre>
 <p>And it worked! We didn't even had to start them with their own shell (starting subprocess with shells allowed for some of them to end correctly when killing main test thread).</p>
 <p>So, the solution to <em>how gather coverage for subprocess</em> question is to <strong>terminate them gently</strong>. Well... <a class="reference external" href="http://vimeo.com/44725028">Tenacious D is right</a> again ;)</p>
 <p>PS. Solving this problem resulted in <a class="reference external" href="https://github.com/mlen/summon_process/pull/3/files">pull request for summon_process package</a></p>
 </div>
-    </div>
-    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
-<li><a class="tag p-category" href="../../tags/coverage/" rel="tag">coverage</a></li>
-            <li><a class="tag p-category" href="../../tags/pytest/" rel="tag">pytest</a></li>
-            <li><a class="tag p-category" href="../../tags/python/" rel="tag">python</a></li>
-            <li><a class="tag p-category" href="../../tags/testing/" rel="tag">testing</a></li>
-        </ul>
-<ul class="pager hidden-print">
+    
+        <ul class="pager hidden-print">
 <li class="previous">
                 <a href="../pyramid_fullauth-020/" rel="prev" title="pyramid_fullauth 0.2.0">Previous post</a>
             </li>
             <li class="next">
                 <a href="../easy-way-to-debug-email-communication-in-python/" rel="next" title="Easy way to debug email communication in python">Next post</a>
             </li>
-        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
-        
-        
-        <div id="disqus_thread"></div>
+        </ul>
+<div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="casesblog",
             disqus_url="http://blog.fizyk.net.pl/blog/gathering-tests-coverage-for-subprocesses-in-python/",
@@ -205,19 +120,63 @@ tl;dr: Be gentle.
     <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
-        </section></article><script>var disqus_shortname="casesblog";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
+    
+
+    </div>
+
+        </div>
+        <div id="sidebar">
+            <!--Sidebar content-->
+            <h1 id="blog-title">
+                <a href="http://blog.fizyk.net.pl/" title="Cases">Cases</a>
+            </h1>
+            
+            <small>
+                Also available in: 
+                
+            <li><a href="http://blog.fizyk.net.pl/pl/" rel="alternate" hreflang="pl">Polski</a></li>
+
+            </small>
+            
+            <ul class="unstyled">
+<li>
+<a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.pl">
+    <img alt="Licencja Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png"></a>
+<br>Ten utwór, autorstwa
+<span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">
+    Grzegorz Śliwiński</span>
+jest dostępny na licencji
+<a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.pl">
+    Creative Commons Uznanie autorstwa 3.0 Unported
+</a>.</li>
+            
+                <li>
+<a href="http://www.fizyk.net.pl/en">Homepage</a>
+                </li>
+<li>
+<a href="../../archive/">Archives</a>
+                </li>
+<li>
+<a href="../../tags/">Tags</a>
+
+            </li>
+<li>
+            
+            
+            </ul>
+</div>
+        <div id="footer">
             Contents © 2021 <a href="mailto:fizyk~~fizyk.net.pl">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
             
-            
-        </footer>
-</div>
-</div>
-
-
-        <script src="../../assets/js/all-nocdn.js"></script><script>
+        </div>
+    </div>
+    
+            <script src="../../assets/js/all-nocdn.js"></script><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
-        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
     </script><script type="text/javascript">
 
   var _gaq = _gaq || [];

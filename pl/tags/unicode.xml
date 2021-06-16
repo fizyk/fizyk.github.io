@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cases (Posty o unicode)</title><link>http://blog.fizyk.net.pl/</link><description></description><atom:link href="http://blog.fizyk.net.pl/pl/tags/unicode.xml" rel="self" type="application/rss+xml"></atom:link><language>pl</language><lastBuildDate>Wed, 16 Jun 2021 11:18:44 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Definiowanie kodowania w plikach źródłowych Pythona</title><link>http://blog.fizyk.net.pl/pl/blog/definiowanie-kodowania-w-plikach-zrodlowych-pythona/</link><dc:creator>Grzegorz Śliwiński</dc:creator><description>&lt;div&gt;&lt;p&gt;Dlaczego definiowanie kodowania w pliku źródłowym Pythona jest istotne?&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cases (Posty o unicode)</title><link>http://blog.fizyk.net.pl/</link><description></description><atom:link href="http://blog.fizyk.net.pl/pl/tags/unicode.xml" rel="self" type="application/rss+xml"></atom:link><language>pl</language><lastBuildDate>Wed, 16 Jun 2021 11:45:54 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Definiowanie kodowania w plikach źródłowych Pythona</title><link>http://blog.fizyk.net.pl/pl/blog/definiowanie-kodowania-w-plikach-zrodlowych-pythona/</link><dc:creator>Grzegorz Śliwiński</dc:creator><description>&lt;div&gt;&lt;p&gt;Dlaczego definiowanie kodowania w pliku źródłowym Pythona jest istotne?&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://blog.fizyk.net.pl/pl/blog/definiowanie-kodowania-w-plikach-zrodlowych-pythona/"&gt;Czytaj więcej…&lt;/a&gt; (zostało 1 minut czytania)&lt;/p&gt;&lt;/div&gt;</description><category>pep</category><category>python</category><category>unicode</category><guid>http://blog.fizyk.net.pl/pl/blog/definiowanie-kodowania-w-plikach-zrodlowych-pythona/</guid><pubDate>Sat, 31 Dec 2011 12:12:21 GMT</pubDate></item><item><title>Unicode a python</title><link>http://blog.fizyk.net.pl/pl/blog/unicode-a-python/</link><dc:creator>Grzegorz Śliwiński</dc:creator><description>&lt;div&gt;&lt;p&gt;Od paru miesięcy programuję w Pythonie. Najpierw oczywiście trzeba się
 było Pythona nauczyć, zanim zacząłem w robocie dostawać pierwsze
 zadania, ale źle nie było. Jedna rzecz mnie w Pythonie zdziwiła, a
@@ -9,7 +9,7 @@ rozwiązanie tej kwestii w Pythonie sprawia mi niemały kłopot.&lt;/p&gt;
 ogonki, musi być unicodowym ciągiem znaków. Zwykłe stringi akceptują
 tylko i wyłącznie znaki ASCII.&lt;/p&gt;
 &lt;p&gt;I tak deklarując zmienną w kodzie, na pewno będzie stringiem.&lt;/p&gt;
-&lt;pre class="code python"&gt;&lt;a id="rest_code_4e506e4952cc4ae28f066c8914365995-1" name="rest_code_4e506e4952cc4ae28f066c8914365995-1"&gt;&lt;/a&gt;&lt;span class="n"&gt;zmienna&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'łańcuch'&lt;/span&gt;
+&lt;pre class="code python"&gt;&lt;a id="rest_code_67a3ebb4de824223a88fd74ace359091-1" name="rest_code_67a3ebb4de824223a88fd74ace359091-1"&gt;&lt;/a&gt;&lt;span class="n"&gt;zmienna&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'łańcuch'&lt;/span&gt;
 &lt;/pre&gt;&lt;p&gt;Raczej bez różnicy, jakich znaków użyjemy. Jeśli jednak wartość zmienna
 zostaje wczytana z zewnętrznego źródła danych, wtedy możemy napotkać
 problem.&lt;/p&gt;
@@ -26,11 +26,11 @@ Unicode.&lt;/p&gt;
 &lt;p&gt;Jak to obejść? Wyłapać się wszystkiego w czasie pisania nie da, można
 chyba tylko przed wywołaniem, które zwraca błąd zastosować poniższą
 konstrukcję:&lt;/p&gt;
-&lt;pre class="code python"&gt;&lt;a id="rest_code_3680e31c4bbf4ec6a50be03241bbf07b-1" name="rest_code_3680e31c4bbf4ec6a50be03241bbf07b-1"&gt;&lt;/a&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nb"&gt;isinstance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;zmienna&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;unicode&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-&lt;a id="rest_code_3680e31c4bbf4ec6a50be03241bbf07b-2" name="rest_code_3680e31c4bbf4ec6a50be03241bbf07b-2"&gt;&lt;/a&gt;    &lt;span class="n"&gt;zmienna&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;zmienna&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;encode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'utf-8'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;pre class="code python"&gt;&lt;a id="rest_code_8955a996e7a246589b1b3821b18c8a73-1" name="rest_code_8955a996e7a246589b1b3821b18c8a73-1"&gt;&lt;/a&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nb"&gt;isinstance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;zmienna&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;unicode&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a id="rest_code_8955a996e7a246589b1b3821b18c8a73-2" name="rest_code_8955a996e7a246589b1b3821b18c8a73-2"&gt;&lt;/a&gt;    &lt;span class="n"&gt;zmienna&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;zmienna&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;encode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'utf-8'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;p&gt;Gdy po raz pierwszy spotkałem się z tym problemem, znalazłem informację
 o możliwości zdefiniowania kodowania plików źródłowych:&lt;/p&gt;
-&lt;pre class="code python"&gt;&lt;a id="rest_code_ab13e171b44147f1853759e767267cdc-1" name="rest_code_ab13e171b44147f1853759e767267cdc-1"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# -*- coding: utf-8 -*-&lt;/span&gt;
+&lt;pre class="code python"&gt;&lt;a id="rest_code_747a1bc1024141fa96cd2214cb662597-1" name="rest_code_747a1bc1024141fa96cd2214cb662597-1"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# -*- coding: utf-8 -*-&lt;/span&gt;
 &lt;/pre&gt;&lt;p&gt;Ta konstrukcja służy jednak tylko i wyłącznie zdefiniowaniu kodowania
 kodu źródłowego, nie kodowania używanego przez Pythona. Stąd w swoich
 pierwszych programach napisanych w pythonie używałem sporo wywołań
@@ -53,14 +53,14 @@ wymusić stosowanie tego kodowanie w tworzonych poprzez doctrine
 tabelach, czy też samym połączeniu na lini baza danych - aplikacja.
 Konieczne jest ręczne ustawienie odpowiednich wartości w pliku
 &lt;strong&gt;database.yml&lt;/strong&gt;:&lt;/p&gt;
-&lt;pre class="code yaml"&gt;&lt;a id="rest_code_385fe1320d7e462fac33a91d19c8df13-1" name="rest_code_385fe1320d7e462fac33a91d19c8df13-1"&gt;&lt;/a&gt;&lt;span class="nt"&gt;all&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;a id="rest_code_385fe1320d7e462fac33a91d19c8df13-2" name="rest_code_385fe1320d7e462fac33a91d19c8df13-2"&gt;&lt;/a&gt;  &lt;span class="nt"&gt;doctrine&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;a id="rest_code_385fe1320d7e462fac33a91d19c8df13-3" name="rest_code_385fe1320d7e462fac33a91d19c8df13-3"&gt;&lt;/a&gt;    &lt;span class="nt"&gt;class&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;sfDoctrineDatabase&lt;/span&gt;
-&lt;a id="rest_code_385fe1320d7e462fac33a91d19c8df13-4" name="rest_code_385fe1320d7e462fac33a91d19c8df13-4"&gt;&lt;/a&gt;    &lt;span class="nt"&gt;param&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;a id="rest_code_385fe1320d7e462fac33a91d19c8df13-5" name="rest_code_385fe1320d7e462fac33a91d19c8df13-5"&gt;&lt;/a&gt;      &lt;span class="c1"&gt;#...&lt;/span&gt;
-&lt;a id="rest_code_385fe1320d7e462fac33a91d19c8df13-6" name="rest_code_385fe1320d7e462fac33a91d19c8df13-6"&gt;&lt;/a&gt;      &lt;span class="nt"&gt;attributes&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;a id="rest_code_385fe1320d7e462fac33a91d19c8df13-7" name="rest_code_385fe1320d7e462fac33a91d19c8df13-7"&gt;&lt;/a&gt;        &lt;span class="nt"&gt;default_table_charset&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;utf8&lt;/span&gt;
-&lt;a id="rest_code_385fe1320d7e462fac33a91d19c8df13-8" name="rest_code_385fe1320d7e462fac33a91d19c8df13-8"&gt;&lt;/a&gt;        &lt;span class="nt"&gt;default_table_collate&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;utf8_general_ci&lt;/span&gt;
+&lt;pre class="code yaml"&gt;&lt;a id="rest_code_5062f1b6dcbc4fc5ad72d22a8bc0ad2a-1" name="rest_code_5062f1b6dcbc4fc5ad72d22a8bc0ad2a-1"&gt;&lt;/a&gt;&lt;span class="nt"&gt;all&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a id="rest_code_5062f1b6dcbc4fc5ad72d22a8bc0ad2a-2" name="rest_code_5062f1b6dcbc4fc5ad72d22a8bc0ad2a-2"&gt;&lt;/a&gt;  &lt;span class="nt"&gt;doctrine&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a id="rest_code_5062f1b6dcbc4fc5ad72d22a8bc0ad2a-3" name="rest_code_5062f1b6dcbc4fc5ad72d22a8bc0ad2a-3"&gt;&lt;/a&gt;    &lt;span class="nt"&gt;class&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;sfDoctrineDatabase&lt;/span&gt;
+&lt;a id="rest_code_5062f1b6dcbc4fc5ad72d22a8bc0ad2a-4" name="rest_code_5062f1b6dcbc4fc5ad72d22a8bc0ad2a-4"&gt;&lt;/a&gt;    &lt;span class="nt"&gt;param&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a id="rest_code_5062f1b6dcbc4fc5ad72d22a8bc0ad2a-5" name="rest_code_5062f1b6dcbc4fc5ad72d22a8bc0ad2a-5"&gt;&lt;/a&gt;      &lt;span class="c1"&gt;#...&lt;/span&gt;
+&lt;a id="rest_code_5062f1b6dcbc4fc5ad72d22a8bc0ad2a-6" name="rest_code_5062f1b6dcbc4fc5ad72d22a8bc0ad2a-6"&gt;&lt;/a&gt;      &lt;span class="nt"&gt;attributes&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a id="rest_code_5062f1b6dcbc4fc5ad72d22a8bc0ad2a-7" name="rest_code_5062f1b6dcbc4fc5ad72d22a8bc0ad2a-7"&gt;&lt;/a&gt;        &lt;span class="nt"&gt;default_table_charset&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;utf8&lt;/span&gt;
+&lt;a id="rest_code_5062f1b6dcbc4fc5ad72d22a8bc0ad2a-8" name="rest_code_5062f1b6dcbc4fc5ad72d22a8bc0ad2a-8"&gt;&lt;/a&gt;        &lt;span class="nt"&gt;default_table_collate&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;utf8_general_ci&lt;/span&gt;
 &lt;/pre&gt;&lt;p&gt;W ten sposób można w spokoju tworzyć aplikacje używające kodowania
 unicode bez obawy wystąpienia błędu nieprawidłowego kodowania znaków w
 porównaniu MySQL, lub innych niespodzianek z tym związanych.&lt;/p&gt;
