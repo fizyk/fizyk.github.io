@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Obsługa cache w symfony jest nadzwyczaj ciekawa i w miarę prosta. By poznać wszystkie, a przynajmniej większość, aspektów cachowania, warto przeczytać rozdział 12 nowej książki o symfony: A Gentle Introduction to symfony.  Postanowiłem trochę popracować nad cachem pod wpływem pewnej korespondencji.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Odświeżanie cache'u w symfony 1.4 | Cases</title>
+<link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS (pl)" hreflang="pl" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../../rss.xml">
+<link rel="canonical" href="http://blog.fizyk.net.pl/pl/blog/odswiezanie-cache-u-w-symfony-1-4/">
+<link rel="icon" href="../../../favicon.png" sizes="62x60">
+<link rel="icon" href="../../../favicon-speddial.png" sizes="269x262">
+<!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Grzegorz Śliwiński">
+<link rel="prev" href="../gulasz-to-czy-solianka/" title="Gulasz to, czy solianka?" type="text/html">
+<link rel="next" href="../pierwszy-singiel-z-7th-symphony/" title='Pierwszy singiel z "7th Symphony"!' type="text/html">
+<meta property="og:site_name" content="Cases">
+<meta property="og:title" content="Odświeżanie cache'u w symfony 1.4">
+<meta property="og:url" content="http://blog.fizyk.net.pl/pl/blog/odswiezanie-cache-u-w-symfony-1-4/">
+<meta property="og:description" content="Obsługa cache w symfony jest nadzwyczaj ciekawa i w miarę prosta. By poznać wszystkie, a przynajmniej większość, aspektów cachowania, warto przeczytać rozdział 12 nowej książki o symfony: A Gentle Int">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2010-06-06T21:06:36+02:00">
+<meta property="article:tag" content="cache">
+<meta property="article:tag" content="filecache">
+<meta property="article:tag" content="php">
+<meta property="article:tag" content="symfony">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Przejdź do treści</a>
+
+<!-- Header and menu bar -->
+<div class="container">
+      <header class="blog-header py-3"><div class="row nbb-header align-items-center">
+          <div class="col-md-3 col-xs-2 col-sm-2" style="width: auto;">
+            <button class="navbar-toggler navbar-light bg-light nbb-navbar-toggler" type="button" data-toggle="collapse" data-target=".bs-nav-collapsible" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse bs-nav-collapsible bootblog4-search-form-holder">
+                
+            </div>
+        </div>
+          <div class="col-md-6 col-xs-10 col-sm-10 bootblog4-brand" style="width: auto;">
+            <a class="navbar-brand blog-header-logo text-dark" href="../../">
+
+            <span id="blog-title">Cases</span>
+        </a>
+          </div>
+            <div class="col-md-3 justify-content-end align-items-center bs-nav-collapsible collapse flex-collapse bootblog4-right-nav">
+            <nav class="navbar navbar-light bg-white"><ul class="navbar-nav bootblog4-right-nav">
+<li class="nav-item"><a href="../../../" rel="alternate" hreflang="en" class="nav-link">English</a></li>
+
+                    
+                    
+    
+    <li class="nav-item">
+    <a href="index.rst" id="sourcelink" class="nav-link">Źródło</a>
+    </li>
+
+
+                    
+            </ul></nav>
+</div>
+    </div>
+</header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
+            <ul class="navbar-nav nav-fill d-flex w-100">
+<li class="nav-item">
+<a href="http://www.fizyk.net.pl" class="nav-link">Strona domowa</a>
+                </li>
+<li class="nav-item">
+<a href="../../archive/" class="nav-link">Archiwum</a>
+                </li>
+<li class="nav-item">
+<a href="../../tags/" class="nav-link">Tagi</a>
+
+                
+            </li>
+</ul>
+</div>
+<!-- /.navbar-collapse -->
+</nav>
+</div>
+
+<div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Odświeżanie cache'u w symfony 1.4</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Grzegorz Śliwiński
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2010-06-06T21:06:36+02:00" itemprop="datePublished" title="06 6 2010 21:06">06 6 2010 21:06</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/2010-06-06-odswiezanie-cache-u-w-symfony-1-4.pl.html">Komentarze</a>
+
+
+            
+        </p>
+<p class="sourceline"><a href="index.rst" class="sourcelink">Źródło</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>Obsługa cache w symfony jest nadzwyczaj ciekawa i w miarę prosta. By
+poznać wszystkie, a przynajmniej większość, aspektów cachowania, warto
+przeczytać rozdział 12 nowej książki o symfony: <a class="reference external" href="http://www.symfony-project.org/gentle-introduction/1_4/en/12-Caching">A Gentle Introduction
+to symfony</a>.  Postanowiłem trochę popracować nad cachem pod wpływem pewnej korespondencji.</p>
+<!-- TEASER_END -->
+<p>Jeśli chodzi o uruchomienie cachu, nie ma nic prostszego. Wystarczy
+ustawić odpowiednie wartości, odpowiednich atrybutów w ustawieniach
+aplikacji. Można nawet użyć odpowiedniego helpera. Również odświeżanie
+cache jest nadzwyczaj proste - o ile robi się to w tej samej aplikacji.
+Odświeżanie cache'u w jednej z aplikacji projektu z innej wymaga pewnej
+gimnastyki.</p>
+<pre class="code php"><a id="rest_code_d0c61f46cc0b470db67139bdf7a0dad9-1" name="rest_code_d0c61f46cc0b470db67139bdf7a0dad9-1"></a><span class="x">$frontend_cache_dir = sfConfig::get('sf_cache_dir').DIRECTORY_SEPARATOR.'frontend'. DIRECTORY_SEPARATOR.sfConfig::get('sf_environment').DIRECTORY_SEPARATOR.'template';</span>
+<a id="rest_code_d0c61f46cc0b470db67139bdf7a0dad9-2" name="rest_code_d0c61f46cc0b470db67139bdf7a0dad9-2"></a><span class="x">$cache = new sfFileCache(array('cache_dir' =&gt; $frontend_cache_dir)); // Use the same settings as the ones defined in the frontend factories.yml</span>
+<a id="rest_code_d0c61f46cc0b470db67139bdf7a0dad9-3" name="rest_code_d0c61f46cc0b470db67139bdf7a0dad9-3"></a><span class="x">$cache-&gt;removePattern('user/show?id=12');</span>
+</pre>
+<p>Powyższy kod pochodzi ze wspomnianej wyżej książki, rozdział 12.  W
+przykładzie zaprezentowanym w książce jest tylko jeden problem. Możliwe,
+że takie wywołanie działa dla innych sposobów cachowania, ale
+<strong>sfFileCache::removePattern</strong> łączy przekazany ciąg znaków (<em>pattern</em>)
+z wartością <strong>'cache_dir'</strong> w następujący sposób: <em>cache_dir + / + pattern + .cache</em></p>
+<p>Natomiast normalnie w cachu plikowym, pomiędzy ścieżką do cachu, a
+wartością parametru znajdują się jeszcze dwa poziomy: <em>serwer/all</em></p>
+<p>To jest jeden z powodów, dla którego nie uda się odświeżyć cachu. Drugim
+jest fakt, iż metoda removePattern nie zawiera mechanizmów
+zamieniających parametry na ścieżkę cache.</p>
+<p>Należy jednak zwrócić uwagę, że przekazując między innymi dwie gwiazdki
+jako parametr można usunąć cały cache aplikacji frontend:</p>
+<pre class="code php"><a id="rest_code_5d188172ef034452b0afcd6db50ffa10-1" name="rest_code_5d188172ef034452b0afcd6db50ffa10-1"></a><span class="x">$cache-&gt;removePattern('**');</span>
+</pre>
+<p>Zauważając to, łatwo się zorientować, że prawidłowy parametr metody w
+przykładzie powinien mieć postać:</p>
+<pre class="code php"><a id="rest_code_ced1aba85e2447da9a25c2e910c5c706-1" name="rest_code_ced1aba85e2447da9a25c2e910c5c706-1"></a><span class="x">//remove specified show</span>
+<a id="rest_code_ced1aba85e2447da9a25c2e910c5c706-2" name="rest_code_ced1aba85e2447da9a25c2e910c5c706-2"></a><span class="x">$cache-&gt;removePattern('**/user/show/id/12');</span>
+<a id="rest_code_ced1aba85e2447da9a25c2e910c5c706-3" name="rest_code_ced1aba85e2447da9a25c2e910c5c706-3"></a><span class="x">//remove all shows</span>
+<a id="rest_code_ced1aba85e2447da9a25c2e910c5c706-4" name="rest_code_ced1aba85e2447da9a25c2e910c5c706-4"></a><span class="x">$cache-&gt;removePattern('**/user/show/**');</span>
+</pre>
+<p>Bazując na swoich poszukiwaniach, i by nie powtarzać niepotrzebnie kod,
+stworzyłem prostą metodę statyczną, która pozwala mi wyczyścić żądany
+fragment cachu:</p>
+<pre class="code php"><a id="rest_code_d68e25f7a39144938dce653b3a0b2910-1" name="rest_code_d68e25f7a39144938dce653b3a0b2910-1"></a><span class="x">class Fizyk</span>
+<a id="rest_code_d68e25f7a39144938dce653b3a0b2910-2" name="rest_code_d68e25f7a39144938dce653b3a0b2910-2"></a><span class="x">{</span>
+<a id="rest_code_d68e25f7a39144938dce653b3a0b2910-3" name="rest_code_d68e25f7a39144938dce653b3a0b2910-3"></a><span class="x">    /**</span>
+<a id="rest_code_d68e25f7a39144938dce653b3a0b2910-4" name="rest_code_d68e25f7a39144938dce653b3a0b2910-4"></a><span class="x">     * ...</span>
+<a id="rest_code_d68e25f7a39144938dce653b3a0b2910-5" name="rest_code_d68e25f7a39144938dce653b3a0b2910-5"></a><span class="x">     */</span>
+<a id="rest_code_d68e25f7a39144938dce653b3a0b2910-6" name="rest_code_d68e25f7a39144938dce653b3a0b2910-6"></a>
+<a id="rest_code_d68e25f7a39144938dce653b3a0b2910-7" name="rest_code_d68e25f7a39144938dce653b3a0b2910-7"></a>
+<a id="rest_code_d68e25f7a39144938dce653b3a0b2910-8" name="rest_code_d68e25f7a39144938dce653b3a0b2910-8"></a><span class="x">    /**</span>
+<a id="rest_code_d68e25f7a39144938dce653b3a0b2910-9" name="rest_code_d68e25f7a39144938dce653b3a0b2910-9"></a><span class="x">     * method clears frontend cache with given patterns</span>
+<a id="rest_code_d68e25f7a39144938dce653b3a0b2910-10" name="rest_code_d68e25f7a39144938dce653b3a0b2910-10"></a><span class="x">     * @param (mixed) $patterns</span>
+<a id="rest_code_d68e25f7a39144938dce653b3a0b2910-11" name="rest_code_d68e25f7a39144938dce653b3a0b2910-11"></a><span class="x">     */</span>
+<a id="rest_code_d68e25f7a39144938dce653b3a0b2910-12" name="rest_code_d68e25f7a39144938dce653b3a0b2910-12"></a><span class="x">    static public function clearFrontendCache( $patterns = '**' )</span>
+<a id="rest_code_d68e25f7a39144938dce653b3a0b2910-13" name="rest_code_d68e25f7a39144938dce653b3a0b2910-13"></a><span class="x">    {</span>
+<a id="rest_code_d68e25f7a39144938dce653b3a0b2910-14" name="rest_code_d68e25f7a39144938dce653b3a0b2910-14"></a><span class="x">      $frontend_cache_dir = sfConfig::get('sf_cache_dir').DIRECTORY_SEPARATOR.'frontend'. DIRECTORY_SEPARATOR.sfConfig::get('sf_environment').DIRECTORY_SEPARATOR.'template';</span>
+<a id="rest_code_d68e25f7a39144938dce653b3a0b2910-15" name="rest_code_d68e25f7a39144938dce653b3a0b2910-15"></a><span class="x">      $cache = new sfFileCache(array('cache_dir' =&gt; $frontend_cache_dir));</span>
+<a id="rest_code_d68e25f7a39144938dce653b3a0b2910-16" name="rest_code_d68e25f7a39144938dce653b3a0b2910-16"></a><span class="x">      if( is_array( $patterns ) )</span>
+<a id="rest_code_d68e25f7a39144938dce653b3a0b2910-17" name="rest_code_d68e25f7a39144938dce653b3a0b2910-17"></a><span class="x">      {</span>
+<a id="rest_code_d68e25f7a39144938dce653b3a0b2910-18" name="rest_code_d68e25f7a39144938dce653b3a0b2910-18"></a><span class="x">        foreach( $patterns as $pattern )</span>
+<a id="rest_code_d68e25f7a39144938dce653b3a0b2910-19" name="rest_code_d68e25f7a39144938dce653b3a0b2910-19"></a><span class="x">        {</span>
+<a id="rest_code_d68e25f7a39144938dce653b3a0b2910-20" name="rest_code_d68e25f7a39144938dce653b3a0b2910-20"></a><span class="x">          $cache-&gt;removePattern( $pattern );</span>
+<a id="rest_code_d68e25f7a39144938dce653b3a0b2910-21" name="rest_code_d68e25f7a39144938dce653b3a0b2910-21"></a><span class="x">        }</span>
+<a id="rest_code_d68e25f7a39144938dce653b3a0b2910-22" name="rest_code_d68e25f7a39144938dce653b3a0b2910-22"></a><span class="x">      }</span>
+<a id="rest_code_d68e25f7a39144938dce653b3a0b2910-23" name="rest_code_d68e25f7a39144938dce653b3a0b2910-23"></a><span class="x">      else</span>
+<a id="rest_code_d68e25f7a39144938dce653b3a0b2910-24" name="rest_code_d68e25f7a39144938dce653b3a0b2910-24"></a><span class="x">      {</span>
+<a id="rest_code_d68e25f7a39144938dce653b3a0b2910-25" name="rest_code_d68e25f7a39144938dce653b3a0b2910-25"></a><span class="x">        $cache-&gt;removePattern( $patterns );</span>
+<a id="rest_code_d68e25f7a39144938dce653b3a0b2910-26" name="rest_code_d68e25f7a39144938dce653b3a0b2910-26"></a><span class="x">      }</span>
+<a id="rest_code_d68e25f7a39144938dce653b3a0b2910-27" name="rest_code_d68e25f7a39144938dce653b3a0b2910-27"></a><span class="x">    }</span>
+<a id="rest_code_d68e25f7a39144938dce653b3a0b2910-28" name="rest_code_d68e25f7a39144938dce653b3a0b2910-28"></a><span class="x">}</span>
+</pre>
+<p>Modyfikując tę metodę bardziej, można również umożliwić wybór aplikacji
+podczas jej wywoływania.</p>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../tags/cache/" rel="tag">cache</a></li>
+            <li><a class="tag p-category" href="../../tags/filecache/" rel="tag">filecache</a></li>
+            <li><a class="tag p-category" href="../../tags/php/" rel="tag">php</a></li>
+            <li><a class="tag p-category" href="../../tags/symfony/" rel="tag">symfony</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../gulasz-to-czy-solianka/" rel="prev" title="Gulasz to, czy solianka?">Poprzedni post</a>
+            </li>
+            <li class="next">
+                <a href="../pierwszy-singiel-z-7th-symphony/" rel="next" title='Pierwszy singiel z "7th Symphony"!'>Następny post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Komentarze</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="casesblog",
+            disqus_url="http://blog.fizyk.net.pl/pl/blog/odswiezanie-cache-u-w-symfony-1-4/",
+        disqus_title="Od\u015bwie\u017canie cache'u w symfony 1.4",
+        disqus_identifier="cache/posts/2010-06-06-odswiezanie-cache-u-w-symfony-1-4.pl.html",
+        disqus_config = function () {
+            this.language = "pl";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="casesblog";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
+            Contents © 2021 <a href="mailto:fizyk~~fizyk.net.pl">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
+            
+            
+        </footer>
+</div>
+</div>
+
+
+        <script src="../../../assets/js/all-nocdn.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+    </script><script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-20536007-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>

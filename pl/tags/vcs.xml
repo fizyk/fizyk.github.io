@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cases (Posty o vcs)</title><link>http://blog.fizyk.net.pl/</link><description></description><atom:link href="http://blog.fizyk.net.pl/pl/tags/vcs.xml" rel="self" type="application/rss+xml"></atom:link><language>pl</language><lastBuildDate>Wed, 16 Jun 2021 11:18:44 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Kilka słów o przepływach roboczych w gicie</title><link>http://blog.fizyk.net.pl/pl/blog/kilka-slow-o-przeplywach-roboczych-w-gicie-pl/</link><dc:creator>Grzegorz Śliwiński</dc:creator><description>&lt;div&gt;&lt;p&gt;Dość dawno temu napisałem tekst o &lt;a class="reference external" href="http://blog.fizyk.net.pl/pl/blog/git-a-inne-systemy-kontroli-wersji-svn-i-bzr.html"&gt;podstawowych poleceniach
+gita&lt;/a&gt;.
+Teraz postanowiłem napisać trochę o przepływach roboczych w gicie:
+przepływ z repozytorium centralne, przepływ z repozytorium rozproszonym
+a na koniec parę słów o repozytorium samodzielnym.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://blog.fizyk.net.pl/pl/blog/kilka-slow-o-przeplywach-roboczych-w-gicie-pl/"&gt;Czytaj więcej…&lt;/a&gt; (zostało 1 minut czytania)&lt;/p&gt;&lt;/div&gt;</description><category>git</category><category>vcs</category><guid>http://blog.fizyk.net.pl/pl/blog/kilka-slow-o-przeplywach-roboczych-w-gicie-pl/</guid><pubDate>Sun, 02 Jan 2011 18:01:02 GMT</pubDate></item><item><title>Git a inne systemy kontroli wersji (svn i bzr)</title><link>http://blog.fizyk.net.pl/pl/blog/git-a-inne-systemy-kontroli-wersji-svn-i-bzr/</link><dc:creator>Grzegorz Śliwiński</dc:creator><description>&lt;div&gt;&lt;p&gt;Miałem okazję zapoznać się z trzema systemami kontroli wersji,
+&lt;strong&gt;Subversion&lt;/strong&gt;, &lt;strong&gt;Bazaar&lt;/strong&gt; i &lt;strong&gt;git&lt;/strong&gt; (w tej kolejności). Każdy ma swoje
+wady i zalety, jednak ze wszystkich trzech dla mnie git jest
+najwygodniejszy i najsprawniejszy. Tak jak z Subversion, czy później z
+Bazaarem, tak i z gitem miałem początkowo problem by płynnie korzystać z
+jego możliwości, ale wygoda rośnie w miarę używania. Dla swojej (i być
+może innych) wygody, postaram się tutaj przybliżyć podstawowe komendy
+git'a a także odpowiedniki w dwóch pozostałych systemach kontroli
+wersji.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://blog.fizyk.net.pl/pl/blog/git-a-inne-systemy-kontroli-wersji-svn-i-bzr/"&gt;Czytaj więcej…&lt;/a&gt; (zostało 2 minut czytania)&lt;/p&gt;&lt;/div&gt;</description><category>bazaar</category><category>git</category><category>subversion</category><category>vcs</category><guid>http://blog.fizyk.net.pl/pl/blog/git-a-inne-systemy-kontroli-wersji-svn-i-bzr/</guid><pubDate>Sat, 06 Nov 2010 15:11:16 GMT</pubDate></item></channel></rss>

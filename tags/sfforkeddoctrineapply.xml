@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cases (Posts about sfForkedDoctrineApply)</title><link>http://blog.fizyk.net.pl/</link><description></description><atom:link href="http://blog.fizyk.net.pl/tags/sfforkeddoctrineapply.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Wed, 16 Jun 2021 11:18:43 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>sfForkedDoctrineApplyPlugin 1.5.9</title><link>http://blog.fizyk.net.pl/blog/sfforkeddoctrineapplyplugin-1-5-9/</link><dc:creator>Grzegorz Śliwiński</dc:creator><description>&lt;div&gt;&lt;p&gt;sfForkedDoctrineApply just got updated to new version - 1.5.9. It
+contains Portuguese translation created by Alan Candido, so I hope it
+will get useful for even more people now.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://blog.fizyk.net.pl/blog/sfforkeddoctrineapplyplugin-1-5-9/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>php</category><category>sfForkedDoctrineApply</category><category>symfony</category><guid>http://blog.fizyk.net.pl/blog/sfforkeddoctrineapplyplugin-1-5-9/</guid><pubDate>Tue, 02 Aug 2011 19:08:54 GMT</pubDate></item><item><title>sfForkedDoctrineApplyPlugin 1.5.8</title><link>http://blog.fizyk.net.pl/blog/sfforkeddoctrineapplyplugin-1-5-8/</link><dc:creator>Grzegorz Śliwiński</dc:creator><description>&lt;div&gt;&lt;p&gt;New version of sfForkedDoctrineApply plugin has been released. Actually
+it was released twice (1.5.7 and a day later 1.5.8), because of my
+mistake spotted by &lt;strong&gt;John Kary&lt;/strong&gt; (thanks!).&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://blog.fizyk.net.pl/blog/sfforkeddoctrineapplyplugin-1-5-8/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>php</category><category>sfForkedDoctrineApply</category><category>symfony</category><guid>http://blog.fizyk.net.pl/blog/sfforkeddoctrineapplyplugin-1-5-8/</guid><pubDate>Sun, 19 Jun 2011 10:06:38 GMT</pubDate></item><item><title>sfForkedDoctrineApplyPlugin 1.5.6 - Spanish translation</title><link>http://blog.fizyk.net.pl/blog/sfforkeddoctrineapplyplugin-1-5-6-spanish-translation/</link><dc:creator>Grzegorz Śliwiński</dc:creator><description>&lt;div&gt;&lt;p&gt;New version of &lt;strong&gt;sfForkedDoctrineApplyPlugin&lt;/strong&gt; has just been released.
+This version introduces &lt;strong&gt;Spanish&lt;/strong&gt; translation files and few tweaks to
+the model. Because of these changes, remember to run migrations!&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/fizyk/sfForkedDoctrineApplyPlugin/compare/v1.5.5...v1.5.6"&gt;Changes made in the plugin since version 1.5.5&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="http://www.symfony-project.org/plugins/sfForkedDoctrineApplyPlugin/1_5_6"&gt;Plugin's version's symfony pages&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/fizyk/sfForkedDoctrineApplyPlugin/tree/v1.5.6"&gt;Plugin's version github pages&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;</description><category>php</category><category>sfForkedDoctrineApply</category><category>symfony</category><guid>http://blog.fizyk.net.pl/blog/sfforkeddoctrineapplyplugin-1-5-6-spanish-translation/</guid><pubDate>Thu, 24 Feb 2011 21:02:32 GMT</pubDate></item><item><title>sfForkedDoctrineApplyPlugin 1.5.5 - now speaks German</title><link>http://blog.fizyk.net.pl/blog/sfforkeddoctrineapplyplugin-1-5-5-now-speaks-german-en/</link><dc:creator>Grzegorz Śliwiński</dc:creator><description>&lt;div&gt;&lt;p&gt;Another version of sfForkedDoctrineApply doesn't bring any new
+functionality nor fixes (thankfully). It just adds new translation files - this time German.&lt;/p&gt;
+&lt;p&gt;..TEASER_END&lt;/p&gt;
+&lt;p&gt;Translation was created by &lt;strong&gt;Daniel Hanke&lt;/strong&gt; and provided by &lt;strong&gt;Tristan
+Bessoussa&lt;/strong&gt;. Adding this translation means that sfForked is availabe in
+6 languages altogether: English, French, Italian, German, Russian and
+Polish.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Changes made in the plugin since version 1.5.4:
+&lt;a class="reference external" href="https://github.com/fizyk/sfForkedDoctrineApplyPlugin/compare/1.5.4...v1.5.5"&gt;Changelog&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Plugin's version's symfony pages:&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://www.symfony-project.org/plugins/sfForkedDoctrineApplyPlugin/1_5_5"&gt;http://www.symfony-project.org/plugins/sfForkedDoctrineApplyPlugin/1_5_5&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Plugin's version github pages:&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/fizyk/sfForkedDoctrineApplyPlugin/tree/v1.5.5"&gt;https://github.com/fizyk/sfForkedDoctrineApplyPlugin/tree/v1.5.5&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;</description><category>php</category><category>plugin</category><category>sfForkedDoctrineApply</category><category>symfony</category><guid>http://blog.fizyk.net.pl/blog/sfforkeddoctrineapplyplugin-1-5-5-now-speaks-german-en/</guid><pubDate>Mon, 06 Dec 2010 19:12:12 GMT</pubDate></item><item><title>fzTagPlugin 1.2.3 and sfForkedDoctrineApply 1.5.4</title><link>http://blog.fizyk.net.pl/blog/fztagplugin-1-2-3-and-sfforkeddoctrineapply-1-5-4-en/</link><dc:creator>Grzegorz Śliwiński</dc:creator><description>&lt;div&gt;&lt;p&gt;I had to quite fast update both fzTagPlugin and sfForkedDoctrineApply,
+and since Me and several other users discovered some bugs just after I
+thought it's all fixed, both plugins had several releases. Crazy sunday
+as it might seem.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://blog.fizyk.net.pl/blog/fztagplugin-1-2-3-and-sfforkeddoctrineapply-1-5-4-en/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>fzTag</category><category>php</category><category>plugin</category><category>sfForkedDoctrineApply</category><category>symfony</category><guid>http://blog.fizyk.net.pl/blog/fztagplugin-1-2-3-and-sfforkeddoctrineapply-1-5-4-en/</guid><pubDate>Mon, 29 Nov 2010 22:11:49 GMT</pubDate></item></channel></rss>

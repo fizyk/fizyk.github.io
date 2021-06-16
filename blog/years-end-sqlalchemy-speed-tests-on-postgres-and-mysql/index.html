@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Year's end SQLAlchemy speed tests on postgres and mysql | Cases</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (pl)" hreflang="pl" href="../../pl/rss.xml">
+<link rel="canonical" href="http://blog.fizyk.net.pl/blog/years-end-sqlalchemy-speed-tests-on-postgres-and-mysql/">
+<link rel="icon" href="../../favicon.png" sizes="62x60">
+<link rel="icon" href="../../favicon-speddial.png" sizes="269x262">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Grzegorz Śliwiński">
+<link rel="prev" href="../tzfpyramid_yml-030/" title="tzf.pyramid_yml 0.3.0" type="text/html">
+<link rel="next" href="../pytest_pyramid-to-ease-testing-pyramid-apps-in-pytest-suite/" title="pytest_pyramid - to ease testing pyramid apps in pytest suite" type="text/html">
+<meta property="og:site_name" content="Cases">
+<meta property="og:title" content="Year's end SQLAlchemy speed tests on postgres and mysql">
+<meta property="og:url" content="http://blog.fizyk.net.pl/blog/years-end-sqlalchemy-speed-tests-on-postgres-and-mysql/">
+<meta property="og:description" content="This third SQLAlchemy speed tests for various dialects is my third try, prompted by Tony Locke. Tony is a contributor to pg8000 postgresql connector, which just recently got a huge overhaul and got a ">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2013-12-22T14:11:33+01:00">
+<meta property="article:tag" content="mysql">
+<meta property="article:tag" content="postgresql">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="sqlalchemy">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Header and menu bar -->
+<div class="container">
+      <header class="blog-header py-3"><div class="row nbb-header align-items-center">
+          <div class="col-md-3 col-xs-2 col-sm-2" style="width: auto;">
+            <button class="navbar-toggler navbar-light bg-light nbb-navbar-toggler" type="button" data-toggle="collapse" data-target=".bs-nav-collapsible" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse bs-nav-collapsible bootblog4-search-form-holder">
+                
+            </div>
+        </div>
+          <div class="col-md-6 col-xs-10 col-sm-10 bootblog4-brand" style="width: auto;">
+            <a class="navbar-brand blog-header-logo text-dark" href="../../">
+
+            <span id="blog-title">Cases</span>
+        </a>
+          </div>
+            <div class="col-md-3 justify-content-end align-items-center bs-nav-collapsible collapse flex-collapse bootblog4-right-nav">
+            <nav class="navbar navbar-light bg-white"><ul class="navbar-nav bootblog4-right-nav">
+<li class="nav-item"><a href="../../pl/" rel="alternate" hreflang="pl" class="nav-link">Polski</a></li>
+
+                    
+                    
+    
+    <li class="nav-item">
+    <a href="index.rst" id="sourcelink" class="nav-link">Source</a>
+    </li>
+
+
+                    
+            </ul></nav>
+</div>
+    </div>
+</header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
+            <ul class="navbar-nav nav-fill d-flex w-100">
+<li class="nav-item">
+<a href="http://www.fizyk.net.pl/en" class="nav-link">Homepage</a>
+                </li>
+<li class="nav-item">
+<a href="../../archive/" class="nav-link">Archives</a>
+                </li>
+<li class="nav-item">
+<a href="../../tags/" class="nav-link">Tags</a>
+
+                
+            </li>
+</ul>
+</div>
+<!-- /.navbar-collapse -->
+</nav>
+</div>
+
+<div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Year's end SQLAlchemy speed tests on postgres and mysql</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Grzegorz Śliwiński
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2013-12-22T14:11:33+01:00" itemprop="datePublished" title="22 12 2013 14:11">22 12 2013 14:11</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/2013-12-22-years-end-sqlalchemy-speed-tests-on-postgres-and-mysql.html">Comments</a>
+
+
+            
+        </p>
+<p class="sourceline"><a href="index.rst" class="sourcelink">Source</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>This third SQLAlchemy speed tests for various dialects is my third try, prompted by Tony Locke. Tony is a contributor to <a class="reference external" href="https://pypi.python.org/pypi/pg8000">pg8000</a> postgresql connector, which just recently got a huge overhaul and got a new version, after almost three years. I was happy to comply, as his request got me reason to work a little bit on my testing script as well, and automate the whole process.</p>
+<!-- TEASER_END -->
+<p>This test, as previous, has been run on 6 dialects: 3 for postgres: <strong>psycopg2</strong>, <strong>pypostgresql</strong>, <strong>pg8000</strong> and 3 for mysql: <strong>mysqldb</strong> <em>(mysql-python)</em>, <strong>oursql</strong> and <strong>mysqlconnector</strong> <em>(mysql-connector-python)</em>. But this time, I've run all tests for all these connectors both on Python 2.7 and Python 3.3.</p>
+<p>My basic setup almost hasn't changed since my last test in August.</p>
+<ul class="simple">
+<li><p>System: <strong>Ubuntu 13.10 64bit</strong></p></li>
+<li><p>Python: <strong>Python 2.7.5+</strong>/<strong>Python 3.3.2+</strong></p></li>
+<li><p>SQLAlchemy: <strong>0.8.4</strong></p></li>
+</ul>
+<p>Connectors versions used were:</p>
+<ul class="simple">
+<li><p>oursql: <strong>0.9.3.1</strong></p></li>
+<li><p>mysql-connector-python: <strong>1.0.12</strong></p></li>
+<li><p>mysqldb: <strong>1.2.4</strong></p></li>
+<li><p>psycopg2: <strong>2.5.1</strong></p></li>
+<li><p>pg8000 <strong>1.9.2</strong></p></li>
+<li><p>py-postgresql: <strong>1.1.0</strong></p></li>
+</ul>
+<p>Tests run, were the five tests as previously:</p>
+<ul class="simple">
+<li><p>Insert with rollback</p></li>
+<li><p>Insert with commit</p></li>
+<li><p>Select</p></li>
+<li><p>Delete with rollback</p></li>
+<li><p>Delete with commit</p></li>
+</ul>
+<p>All in all test suite has been run 9 times, py-postgresql requires at least python 3.1, and both MySQLdb and oursql wouldn't install on Python 3.3.</p>
+<section id="test-results"><h2>Test results</h2>
+<table>
+<colgroup>
+<col style="width: 36%">
+<col style="width: 20%">
+<col style="width: 21%">
+<col style="width: 23%">
+</colgroup>
+<thead><tr>
+<th class="head"></th>
+<th class="head"><p>s/run 1</p></th>
+<th class="head"><p>s/run 10</p></th>
+<th class="head"><p>s/run 100</p></th>
+</tr></thead>
+<tbody>
+<tr>
+<td><p>psycopg2</p></td>
+<td><p>0.046</p></td>
+<td><p>0.226</p></td>
+<td><p>1.742</p></td>
+</tr>
+<tr>
+<td><p>psycopg2 (py3)</p></td>
+<td><p>0.054</p></td>
+<td><p>0.222</p></td>
+<td><p>1.742</p></td>
+</tr>
+<tr>
+<td><p>pg8000</p></td>
+<td><p>0.203</p></td>
+<td><p>0.776</p></td>
+<td><p>6.457</p></td>
+</tr>
+<tr>
+<td><p>pg8000 (py3)</p></td>
+<td><p>0.211</p></td>
+<td><p>0.731</p></td>
+<td><p>6.337</p></td>
+</tr>
+<tr>
+<td><p>py-postgresql (py3)</p></td>
+<td><p>0.111</p></td>
+<td><p>0.541</p></td>
+<td><p>4.858</p></td>
+</tr>
+<tr>
+<td><p>MySQLdb</p></td>
+<td><p>0.052</p></td>
+<td><p>0.246</p></td>
+<td><p>2.413</p></td>
+</tr>
+<tr>
+<td><p>Connector</p></td>
+<td><p>0.073</p></td>
+<td><p>0.375</p></td>
+<td><p>3.339</p></td>
+</tr>
+<tr>
+<td><p>Connector (py3)</p></td>
+<td><p>0.161</p></td>
+<td><p>1.448</p></td>
+<td><p>4.931</p></td>
+</tr>
+<tr>
+<td><p>Oursql</p></td>
+<td><p>0.080</p></td>
+<td><p>0.437</p></td>
+<td><p>3.810</p></td>
+</tr>
+</tbody>
+</table>
+<p>Table:  Insert with rollback</p>
+<p>Both psycopg2 and pg8000 performed almost the same under python 2.7 and python 3.3, though pg8000 is couple of times slower. py-postgresql placed itself in the middle between other postgresql connectors. Mysql's Connector has seen a big performance dropdown when switching python versions here. All in all, there's a substantial efficiency gain in every database connector, with the most significant gains for pg8000.</p>
+<table>
+<colgroup>
+<col style="width: 36%">
+<col style="width: 20%">
+<col style="width: 21%">
+<col style="width: 23%">
+</colgroup>
+<thead><tr>
+<th class="head"></th>
+<th class="head"><p>s/run 1</p></th>
+<th class="head"><p>s/run 10</p></th>
+<th class="head"><p>s/run 100</p></th>
+</tr></thead>
+<tbody>
+<tr>
+<td><p>psycopg2</p></td>
+<td><p>0.155</p></td>
+<td><p>0.328</p></td>
+<td><p>2.069</p></td>
+</tr>
+<tr>
+<td><p>psycopg2 (py3)</p></td>
+<td><p>0.088</p></td>
+<td><p>0.259</p></td>
+<td><p>1.962</p></td>
+</tr>
+<tr>
+<td><p>pg8000</p></td>
+<td><p>0.291</p></td>
+<td><p>1.026</p></td>
+<td><p>6.959</p></td>
+</tr>
+<tr>
+<td><p>pg8000 (py3)</p></td>
+<td><p>0.235</p></td>
+<td><p>0.977</p></td>
+<td><p>6.510</p></td>
+</tr>
+<tr>
+<td><p>py-postgresql (py3)</p></td>
+<td><p>0.243</p></td>
+<td><p>0.749</p></td>
+<td><p>4.959</p></td>
+</tr>
+<tr>
+<td><p>MySQLdb</p></td>
+<td><p>0.057</p></td>
+<td><p>0.235</p></td>
+<td><p>2.396</p></td>
+</tr>
+<tr>
+<td><p>Connector</p></td>
+<td><p>0.061</p></td>
+<td><p>0.358</p></td>
+<td><p>3.312</p></td>
+</tr>
+<tr>
+<td><p>Connector (py3)</p></td>
+<td><p>0.112</p></td>
+<td><p>0.639</p></td>
+<td><p>4.615</p></td>
+</tr>
+<tr>
+<td><p>Oursql</p></td>
+<td><p>0.080</p></td>
+<td><p>0.401</p></td>
+<td><p>ERROR</p></td>
+</tr>
+</tbody>
+</table>
+<p>Table:  Insert with commit</p>
+<p>psycopg2 performance had regressed when it comes to one object, but speed up otherwise for larger groups. pg8000 speed up significantly, although still py-postgresql has been faster here. MySQLdb seems to be fastest with small ammounts, and comparable to psycopg2, with 100 object's per run. Oursql errored here. (Whole test later than last time).</p>
+<table>
+<colgroup>
+<col style="width: 36%">
+<col style="width: 20%">
+<col style="width: 21%">
+<col style="width: 23%">
+</colgroup>
+<thead><tr>
+<th class="head"></th>
+<th class="head"><p>s/run 1</p></th>
+<th class="head"><p>s/run 10</p></th>
+<th class="head"><p>s/run 100</p></th>
+</tr></thead>
+<tbody>
+<tr>
+<td><p>psycopg2</p></td>
+<td><p>0.022</p></td>
+<td><p>0.029</p></td>
+<td><p>0.118</p></td>
+</tr>
+<tr>
+<td><p>psycopg2 (py3)</p></td>
+<td><p>0.018</p></td>
+<td><p>0.028</p></td>
+<td><p>0.114</p></td>
+</tr>
+<tr>
+<td><p>pg8000</p></td>
+<td><p>0.076</p></td>
+<td><p>0.092</p></td>
+<td><p>0.209</p></td>
+</tr>
+<tr>
+<td><p>pg8000 (py3)</p></td>
+<td><p>0.077</p></td>
+<td><p>0.088</p></td>
+<td><p>0.208</p></td>
+</tr>
+<tr>
+<td><p>py-postgresql (py3)</p></td>
+<td><p>0.045</p></td>
+<td><p>0.058</p></td>
+<td><p>0.143</p></td>
+</tr>
+<tr>
+<td><p>MySQLdb</p></td>
+<td><p>0.018</p></td>
+<td><p>0.032</p></td>
+<td><p>0.134</p></td>
+</tr>
+<tr>
+<td><p>Connector</p></td>
+<td><p>0.035</p></td>
+<td><p>0.044</p></td>
+<td><p>0.147</p></td>
+</tr>
+<tr>
+<td><p>Connector (py3)</p></td>
+<td><p>0.051</p></td>
+<td><p>0.057</p></td>
+<td><p>0.140</p></td>
+</tr>
+<tr>
+<td><p>Oursql</p></td>
+<td><p>ERROR</p></td>
+<td><p>ERROR</p></td>
+<td><p>ERROR</p></td>
+</tr>
+</tbody>
+</table>
+<p>Table:  Select test</p>
+<p>When it comes to python2, postgresql connectors seems to be faster here, with exception to pg8000. All connectors has made a significant progress here since last time I checked.</p>
+<table>
+<colgroup>
+<col style="width: 36%">
+<col style="width: 20%">
+<col style="width: 21%">
+<col style="width: 23%">
+</colgroup>
+<thead><tr>
+<th class="head"></th>
+<th class="head"><p>s/run 1</p></th>
+<th class="head"><p>s/run 10</p></th>
+<th class="head"><p>s/run 100</p></th>
+</tr></thead>
+<tbody>
+<tr>
+<td><p>psycopg2</p></td>
+<td><p>0.031</p></td>
+<td><p>0.033</p></td>
+<td><p>0.055</p></td>
+</tr>
+<tr>
+<td><p>psycopg2 (py3)</p></td>
+<td><p>0.032</p></td>
+<td><p>0.031</p></td>
+<td><p>0.042</p></td>
+</tr>
+<tr>
+<td><p>pg8000</p></td>
+<td><p>0.205</p></td>
+<td><p>0.171</p></td>
+<td><p>0.178</p></td>
+</tr>
+<tr>
+<td><p>pg8000 (py3)</p></td>
+<td><p>0.162</p></td>
+<td><p>0.170</p></td>
+<td><p>0.171</p></td>
+</tr>
+<tr>
+<td><p>py-postgresql (py3)</p></td>
+<td><p>0.127</p></td>
+<td><p>0.124</p></td>
+<td><p>0.135</p></td>
+</tr>
+<tr>
+<td><p>MySQLdb</p></td>
+<td><p>0.049</p></td>
+<td><p>0.101</p></td>
+<td><p>0.183</p></td>
+</tr>
+<tr>
+<td><p>Connector</p></td>
+<td><p>0.070</p></td>
+<td><p>0.106</p></td>
+<td><p>0.147</p></td>
+</tr>
+<tr>
+<td><p>Connector (py3)</p></td>
+<td><p>0.093</p></td>
+<td><p>0.064</p></td>
+<td><p>0.218</p></td>
+</tr>
+<tr>
+<td><p>Oursql</p></td>
+<td><p>ERROR</p></td>
+<td><p>ERROR</p></td>
+<td><p>ERROR</p></td>
+</tr>
+</tbody>
+</table>
+<p>Table:  Delete with rollback</p>
+<p>When it comes to changing your mind during deleting data from database, postgresql is your man.Deletion times do not differ much from one object to 100, and here, pg800 isn't much slower than mysql connectors.</p>
+<table>
+<colgroup>
+<col style="width: 36%">
+<col style="width: 20%">
+<col style="width: 21%">
+<col style="width: 23%">
+</colgroup>
+<thead><tr>
+<th class="head"></th>
+<th class="head"><p>s/run 1</p></th>
+<th class="head"><p>s/run 10</p></th>
+<th class="head"><p>s/run 100</p></th>
+</tr></thead>
+<tbody>
+<tr>
+<td><p>psycopg2</p></td>
+<td><p>0.046</p></td>
+<td><p>0.052</p></td>
+<td><p>0.079</p></td>
+</tr>
+<tr>
+<td><p>psycopg2 (py3)</p></td>
+<td><p>0.081</p></td>
+<td><p>0.095</p></td>
+<td><p>0.056</p></td>
+</tr>
+<tr>
+<td><p>pg8000</p></td>
+<td><p>0.254</p></td>
+<td><p>0.268</p></td>
+<td><p>0.342</p></td>
+</tr>
+<tr>
+<td><p>pg8000 (py3)</p></td>
+<td><p>0.280</p></td>
+<td><p>0.300</p></td>
+<td><p>0.303</p></td>
+</tr>
+<tr>
+<td><p>py-postgresql (py3)</p></td>
+<td><p>0.202</p></td>
+<td><p>0.208</p></td>
+<td><p>0.201</p></td>
+</tr>
+<tr>
+<td><p>MySQLdb</p></td>
+<td><p>0.047</p></td>
+<td><p>0.050</p></td>
+<td><p>0.177</p></td>
+</tr>
+<tr>
+<td><p>Connector</p></td>
+<td><p>0.059</p></td>
+<td><p>0.072</p></td>
+<td><p>0.259</p></td>
+</tr>
+<tr>
+<td><p>Connector (py3)</p></td>
+<td><p>0.079</p></td>
+<td><p>0.083</p></td>
+<td><p>0.287</p></td>
+</tr>
+<tr>
+<td><p>Oursql</p></td>
+<td><p>ERROR</p></td>
+<td><p>ERROR</p></td>
+<td><p>ERROR</p></td>
+</tr>
+</tbody>
+</table>
+<p>Table:  Delete with commit</p>
+<p>Also when committing delete operation, it doesn't make much difference for posgresql if it deltes one or more objects. But it makes all the difference for mysql.</p>
+</section><section id="summarizing"><h2>Summarizing</h2>
+<p>If you want to be interoperable between python 2 and python 3, then posgresql should become your choice, it's connectors performs almost the same in python 2 and 3, which is kind of surprising, since on python3, sqlalchemy 0.8.x doesn't get c extensions for python 3.
+The only mysql connector that works on python 3 regressed when running on python 3.</p>
+<p>Also, it seems that all connectors made progress since last tests, when running on sqlalchemy 0.8.4, but the newest version of pg8000 speed doubled in most of the cases, which brings hope to it.</p>
+<p>It'll be interesting to see how much sqlalchemy 0.9 will gain on python3, as it'll finally support C extensions on that platform.</p>
+</section><section id="tests-code"><h2>Tests code</h2>
+<p>Test code can be checked here <a class="reference external" href="https://github.com/fizyk/sqlalchemy-tests">github.com/fizyk/sqlalchemy-tests</a>. Requirement for it is to have virtualenvwrapper installed, and script itself should create clean envirtonments and install required dependeincies for tets.</p>
+<p>I'd like to automate it further some time, probably with the use of py.test and pytest-dbfixtures to setup databases along with tests.</p>
+</section>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../tags/mysql/" rel="tag">mysql</a></li>
+            <li><a class="tag p-category" href="../../tags/postgresql/" rel="tag">postgresql</a></li>
+            <li><a class="tag p-category" href="../../tags/python/" rel="tag">python</a></li>
+            <li><a class="tag p-category" href="../../tags/sqlalchemy/" rel="tag">sqlalchemy</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../tzfpyramid_yml-030/" rel="prev" title="tzf.pyramid_yml 0.3.0">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../pytest_pyramid-to-ease-testing-pyramid-apps-in-pytest-suite/" rel="next" title="pytest_pyramid - to ease testing pyramid apps in pytest suite">Next post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="casesblog",
+            disqus_url="http://blog.fizyk.net.pl/blog/years-end-sqlalchemy-speed-tests-on-postgres-and-mysql/",
+        disqus_title="Year's end SQLAlchemy speed tests on postgres and mysql",
+        disqus_identifier="cache/posts/2013-12-22-years-end-sqlalchemy-speed-tests-on-postgres-and-mysql.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="casesblog";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
+            Contents © 2021 <a href="mailto:fizyk~~fizyk.net.pl">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
+            
+            
+        </footer>
+</div>
+</div>
+
+
+        <script src="../../assets/js/all-nocdn.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+    </script><script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-20536007-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>

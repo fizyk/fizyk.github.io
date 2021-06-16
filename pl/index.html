@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Not only about encountered programming cases.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cases</title>
+<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS (pl)" hreflang="pl" href="rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../rss.xml">
+<link rel="canonical" href="http://blog.fizyk.net.pl/pl/">
+<link rel="icon" href="../favicon.png" sizes="62x60">
+<link rel="icon" href="../favicon-speddial.png" sizes="269x262">
+<link rel="next" href="index-9.html" type="text/html">
+<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]-->
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Przejdź do treści</a>
+
+<!-- Header and menu bar -->
+<div class="container">
+      <header class="blog-header py-3"><div class="row nbb-header align-items-center">
+          <div class="col-md-3 col-xs-2 col-sm-2" style="width: auto;">
+            <button class="navbar-toggler navbar-light bg-light nbb-navbar-toggler" type="button" data-toggle="collapse" data-target=".bs-nav-collapsible" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse bs-nav-collapsible bootblog4-search-form-holder">
+                
+            </div>
+        </div>
+          <div class="col-md-6 col-xs-10 col-sm-10 bootblog4-brand" style="width: auto;">
+            <a class="navbar-brand blog-header-logo text-dark" href=".">
+
+            <span id="blog-title">Cases</span>
+        </a>
+          </div>
+            <div class="col-md-3 justify-content-end align-items-center bs-nav-collapsible collapse flex-collapse bootblog4-right-nav">
+            <nav class="navbar navbar-light bg-white"><ul class="navbar-nav bootblog4-right-nav">
+<li class="nav-item"><a href="../" rel="alternate" hreflang="en" class="nav-link">English</a></li>
+
+                    
+                    
+                    
+            </ul></nav>
+</div>
+    </div>
+</header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
+            <ul class="navbar-nav nav-fill d-flex w-100">
+<li class="nav-item">
+<a href="http://www.fizyk.net.pl" class="nav-link">Strona domowa</a>
+                </li>
+<li class="nav-item">
+<a href="archive/" class="nav-link">Archiwum</a>
+                </li>
+<li class="nav-item">
+<a href="tags/" class="nav-link">Tagi</a>
+
+                
+            </li>
+</ul>
+</div>
+<!-- /.navbar-collapse -->
+</nav>
+</div>
+
+<div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+    
+        
+
+    
+        
+    <div class="postindex">
+            <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="blog/python-i-wszystko-jest-obiektem/" class="u-url">Python, i wszystko jest obiektem</a></h1>
+                <div class="metadata">
+                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                        Grzegorz Śliwiński
+                    </span></p>
+            <p class="dateline">
+            <a href="blog/python-i-wszystko-jest-obiektem/" rel="bookmark">
+            <time class="published dt-published" datetime="2013-07-08T21:21:33+02:00" itemprop="datePublished" title="08 7 2013 21:21">08 7 2013 21:21</time></a>
+            </p>
+                        <p class="commentline">
+        
+    <a href="blog/python-i-wszystko-jest-obiektem/#disqus_thread" data-disqus-identifier="cache/posts/2013-07-08-python-i-wszystko-jest-obiektem.pl.html">Komentarze</a>
+
+
+                </p>
+</div>
+            </header><div class="p-summary entry-summary">
+                    <div>
+<p>Jakiś czas temu wpisałem sobie konsoli pythonowej wypisałem metody instancj inta za pomocą funkcji dir:</p>
+<pre class="code python"><a id="rest_code_cd5a572af1804863b04cfc36f4e77726-1" name="rest_code_cd5a572af1804863b04cfc36f4e77726-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">dir</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a id="rest_code_cd5a572af1804863b04cfc36f4e77726-2" name="rest_code_cd5a572af1804863b04cfc36f4e77726-2"></a><span class="p">[</span><span class="s1">'__abs__'</span><span class="p">,</span> <span class="s1">'__add__'</span><span class="p">,</span> <span class="s1">'__and__'</span><span class="p">,</span> <span class="s1">'__class__'</span><span class="p">,</span> <span class="s1">'__cmp__'</span><span class="p">,</span> <span class="s1">'__coerce__'</span><span class="p">,</span> <span class="s1">'__delattr__'</span><span class="p">,</span> <span class="s1">'__div__'</span><span class="p">,</span> <span class="s1">'__divmod__'</span><span class="p">,</span> <span class="s1">'__doc__'</span><span class="p">,</span> <span class="s1">'__float__'</span><span class="p">,</span> <span class="s1">'__floordiv__'</span><span class="p">,</span> <span class="s1">'__format__'</span><span class="p">,</span> <span class="s1">'__getattribute__'</span><span class="p">,</span> <span class="s1">'__getnewargs__'</span><span class="p">,</span> <span class="s1">'__hash__'</span><span class="p">,</span> <span class="s1">'__hex__'</span><span class="p">,</span> <span class="s1">'__index__'</span><span class="p">,</span> <span class="s1">'__init__'</span><span class="p">,</span> <span class="s1">'__int__'</span><span class="p">,</span> <span class="s1">'__invert__'</span><span class="p">,</span> <span class="s1">'__long__'</span><span class="p">,</span> <span class="s1">'__lshift__'</span><span class="p">,</span> <span class="s1">'__mod__'</span><span class="p">,</span> <span class="s1">'__mul__'</span><span class="p">,</span> <span class="s1">'__neg__'</span><span class="p">,</span> <span class="s1">'__new__'</span><span class="p">,</span> <span class="s1">'__nonzero__'</span><span class="p">,</span> <span class="s1">'__oct__'</span><span class="p">,</span> <span class="s1">'__or__'</span><span class="p">,</span> <span class="s1">'__pos__'</span><span class="p">,</span> <span class="s1">'__pow__'</span><span class="p">,</span> <span class="s1">'__radd__'</span><span class="p">,</span> <span class="s1">'__rand__'</span><span class="p">,</span> <span class="s1">'__rdiv__'</span><span class="p">,</span> <span class="s1">'__rdivmod__'</span><span class="p">,</span> <span class="s1">'__reduce__'</span><span class="p">,</span> <span class="s1">'__reduce_ex__'</span><span class="p">,</span> <span class="s1">'__repr__'</span><span class="p">,</span> <span class="s1">'__rfloordiv__'</span><span class="p">,</span> <span class="s1">'__rlshift__'</span><span class="p">,</span> <span class="s1">'__rmod__'</span><span class="p">,</span> <span class="s1">'__rmul__'</span><span class="p">,</span> <span class="s1">'__ror__'</span><span class="p">,</span> <span class="s1">'__rpow__'</span><span class="p">,</span> <span class="s1">'__rrshift__'</span><span class="p">,</span> <span class="s1">'__rshift__'</span><span class="p">,</span> <span class="s1">'__rsub__'</span><span class="p">,</span> <span class="s1">'__rtruediv__'</span><span class="p">,</span> <span class="s1">'__rxor__'</span><span class="p">,</span> <span class="s1">'__setattr__'</span><span class="p">,</span> <span class="s1">'__sizeof__'</span><span class="p">,</span> <span class="s1">'__str__'</span><span class="p">,</span> <span class="s1">'__sub__'</span><span class="p">,</span> <span class="s1">'__subclasshook__'</span><span class="p">,</span> <span class="s1">'__truediv__'</span><span class="p">,</span> <span class="s1">'__trunc__'</span><span class="p">,</span> <span class="s1">'__xor__'</span><span class="p">,</span> <span class="s1">'bit_length'</span><span class="p">,</span> <span class="s1">'conjugate'</span><span class="p">,</span> <span class="s1">'denominator'</span><span class="p">,</span> <span class="s1">'imag'</span><span class="p">,</span> <span class="s1">'numerator'</span><span class="p">,</span> <span class="s1">'real'</span><span class="p">]</span>
+</pre>
+<p>Spodziewałem się tego, choć chyba nie aż takiej ilości atrybutów. Instancja integera ma 64 metody i atrybuty. Parę kolejnych przykładów:</p>
+<pre class="code python"><a id="rest_code_3ce34221eacb4618b797272626cd3c7d-1" name="rest_code_3ce34221eacb4618b797272626cd3c7d-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="nb">int</span><span class="p">))</span>
+<a id="rest_code_3ce34221eacb4618b797272626cd3c7d-2" name="rest_code_3ce34221eacb4618b797272626cd3c7d-2"></a><span class="mi">64</span>
+<a id="rest_code_3ce34221eacb4618b797272626cd3c7d-3" name="rest_code_3ce34221eacb4618b797272626cd3c7d-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="nb">str</span><span class="p">))</span>
+<a id="rest_code_3ce34221eacb4618b797272626cd3c7d-4" name="rest_code_3ce34221eacb4618b797272626cd3c7d-4"></a><span class="mi">71</span>
+<a id="rest_code_3ce34221eacb4618b797272626cd3c7d-5" name="rest_code_3ce34221eacb4618b797272626cd3c7d-5"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="nb">bool</span><span class="p">))</span>
+<a id="rest_code_3ce34221eacb4618b797272626cd3c7d-6" name="rest_code_3ce34221eacb4618b797272626cd3c7d-6"></a><span class="mi">64</span>
+<a id="rest_code_3ce34221eacb4618b797272626cd3c7d-7" name="rest_code_3ce34221eacb4618b797272626cd3c7d-7"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">))</span>
+<a id="rest_code_3ce34221eacb4618b797272626cd3c7d-8" name="rest_code_3ce34221eacb4618b797272626cd3c7d-8"></a><span class="mi">26</span>
+<a id="rest_code_3ce34221eacb4618b797272626cd3c7d-9" name="rest_code_3ce34221eacb4618b797272626cd3c7d-9"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="nb">dir</span><span class="p">))</span>
+<a id="rest_code_3ce34221eacb4618b797272626cd3c7d-10" name="rest_code_3ce34221eacb4618b797272626cd3c7d-10"></a><span class="mi">26</span>
+<a id="rest_code_3ce34221eacb4618b797272626cd3c7d-11" name="rest_code_3ce34221eacb4618b797272626cd3c7d-11"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="nb">len</span><span class="p">))</span>
+<a id="rest_code_3ce34221eacb4618b797272626cd3c7d-12" name="rest_code_3ce34221eacb4618b797272626cd3c7d-12"></a><span class="mi">26</span>
+</pre>
+<p>I niespodzianka:</p>
+<pre class="code python"><a id="rest_code_f90f5249a252403095b0377744f74ebe-1" name="rest_code_f90f5249a252403095b0377744f74ebe-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="nb">print</span><span class="p">))</span>
+<a id="rest_code_f90f5249a252403095b0377744f74ebe-2" name="rest_code_f90f5249a252403095b0377744f74ebe-2"></a>  <span class="n">File</span> <span class="s2">"&lt;stdin&gt;"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span>
+<a id="rest_code_f90f5249a252403095b0377744f74ebe-3" name="rest_code_f90f5249a252403095b0377744f74ebe-3"></a>    <span class="nb">len</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="nb">print</span><span class="p">))</span>
+<a id="rest_code_f90f5249a252403095b0377744f74ebe-4" name="rest_code_f90f5249a252403095b0377744f74ebe-4"></a>            <span class="o">^</span>
+<a id="rest_code_f90f5249a252403095b0377744f74ebe-5" name="rest_code_f90f5249a252403095b0377744f74ebe-5"></a><span class="ne">SyntaxError</span><span class="p">:</span> <span class="n">invalid</span> <span class="n">syntax</span>
+</pre>
+<p>W zasadzie nie wiem, czego się spodziewałem.... chociaż, sprawdźmy w paythonie 3.3:</p>
+<pre class="code python"><a id="rest_code_bb83c1b1d7754700a6cafc4e0066af16-1" name="rest_code_bb83c1b1d7754700a6cafc4e0066af16-1"></a><span class="n">Python</span> <span class="mf">3.3.1</span> <span class="p">(</span><span class="n">default</span><span class="p">,</span> <span class="n">Apr</span> <span class="mi">17</span> <span class="mi">2013</span><span class="p">,</span> <span class="mi">22</span><span class="p">:</span><span class="mi">30</span><span class="p">:</span><span class="mi">32</span><span class="p">)</span>
+<a id="rest_code_bb83c1b1d7754700a6cafc4e0066af16-2" name="rest_code_bb83c1b1d7754700a6cafc4e0066af16-2"></a><span class="p">[</span><span class="n">GCC</span> <span class="mf">4.7.3</span><span class="p">]</span> <span class="n">on</span> <span class="n">linux</span>
+<a id="rest_code_bb83c1b1d7754700a6cafc4e0066af16-3" name="rest_code_bb83c1b1d7754700a6cafc4e0066af16-3"></a><span class="n">Type</span> <span class="s2">"help"</span><span class="p">,</span> <span class="s2">"copyright"</span><span class="p">,</span> <span class="s2">"credits"</span> <span class="ow">or</span> <span class="s2">"license"</span> <span class="k">for</span> <span class="n">more</span> <span class="n">information</span><span class="o">.</span>
+<a id="rest_code_bb83c1b1d7754700a6cafc4e0066af16-4" name="rest_code_bb83c1b1d7754700a6cafc4e0066af16-4"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="nb">print</span><span class="p">))</span>
+<a id="rest_code_bb83c1b1d7754700a6cafc4e0066af16-5" name="rest_code_bb83c1b1d7754700a6cafc4e0066af16-5"></a><span class="mi">27</span>
+</pre>
+<p>Tak, w pythonie 3, print jest już normalną funkcją.</p>
+</div>
+                </div>
+            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="blog/tzfpyramid_yml-02/" class="u-url">tzf.pyramid_yml 0.2</a></h1>
+                <div class="metadata">
+                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                        Grzegorz Śliwiński
+                    </span></p>
+            <p class="dateline">
+            <a href="blog/tzfpyramid_yml-02/" rel="bookmark">
+            <time class="published dt-published" datetime="2013-05-29T20:06:41+02:00" itemprop="datePublished" title="29 5 2013 20:06">29 5 2013 20:06</time></a>
+            </p>
+                        <p class="commentline">
+        
+    <a href="blog/tzfpyramid_yml-02/#disqus_thread" data-disqus-identifier="cache/posts/2013-05-29-tzfpyramid_yml-02.html">Komentarze</a>
+
+
+                </p>
+</div>
+            </header><div class="p-summary entry-summary">
+                    <div>
+<p>Plug-in tzf.pyramid_yml jest paczką, która umożliwia dołączenie dziedziczonej i rozszerzalnej konfiguracji aplikacji napisanej w Pyramidzie. Dzisiaj wypuściłem też wersję 0.2.</p>
+<p>Paczka umożliwia zdefiniowanie konfiguracji głównej, w pliku config.yml i konfiguracji nadpisujących niektóre tylko elementy, ze względu na środowisko, w którym zostaje uruchomiona.</p>
+<p class="more"><a href="blog/tzfpyramid_yml-02/">Czytaj więcej…</a></p>
+</div>
+                </div>
+            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="blog/kurczak-po-baskijsku/" class="u-url">Kurczak po baskijsku</a></h1>
+                <div class="metadata">
+                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                        Grzegorz Śliwiński
+                    </span></p>
+            <p class="dateline">
+            <a href="blog/kurczak-po-baskijsku/" rel="bookmark">
+            <time class="published dt-published" datetime="2013-04-21T12:58:05+02:00" itemprop="datePublished" title="21 4 2013 12:58">21 4 2013 12:58</time></a>
+            </p>
+                        <p class="commentline">
+        
+    <a href="blog/kurczak-po-baskijsku/#disqus_thread" data-disqus-identifier="cache/posts/2013-04-21-kurczak-po-baskijsku.pl.html">Komentarze</a>
+
+
+                </p>
+</div>
+            </header><div class="p-summary entry-summary">
+                    <div>
+<p>Gotowanie to całkiem niezła zabawa. Raz na jakiś czas coś sobie z Anią gotujemy/pieczemy na obiad, wybierając albo z książki Jamiego, albo po przepisach w internecie. Tym razem był to znaleziony w internecie Kurczak po Baskijsku.</p>
+<p class="more"><a href="blog/kurczak-po-baskijsku/">Czytaj więcej…</a></p>
+</div>
+                </div>
+            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="blog/formatowanie-daty-dla-rssatom/" class="u-url">Formatowanie daty dla RSS/Atom</a></h1>
+                <div class="metadata">
+                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                        Grzegorz Śliwiński
+                    </span></p>
+            <p class="dateline">
+            <a href="blog/formatowanie-daty-dla-rssatom/" rel="bookmark">
+            <time class="published dt-published" datetime="2013-04-17T22:22:14+02:00" itemprop="datePublished" title="17 4 2013 22:22">17 4 2013 22:22</time></a>
+            </p>
+                        <p class="commentline">
+        
+    <a href="blog/formatowanie-daty-dla-rssatom/#disqus_thread" data-disqus-identifier="cache/posts/2013-04-17-format-date-for-rssatom.html">Komentarze</a>
+
+
+                </p>
+</div>
+            </header><div class="p-summary entry-summary">
+                    <div>
+<p>Podczas importowania moich postów ze starego bloga do <a class="reference external" href="http://nikola.ralsina.com.ar/">Nikoli</a>, zastanawiałem się nad wygenerowaniem pliku atom i zaimportowaniem go do Nikoli używając jednego z jej importerów. Ostatecznie wygenerowałem same pliki z postami, ale po drodze dowiedziałem się, jak sformatować obiekt DateTime zgodnie z normą <a class="reference external" href="http://www.ietf.org/rfc/rfc3339.txt">rfc3339</a> (która jest wymagana przez protokół Atom i RSS)</p>
+<p class="more"><a href="blog/formatowanie-daty-dla-rssatom/">Czytaj więcej…</a></p>
+</div>
+                </div>
+            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="blog/witaj-nikola/" class="u-url">Witaj, Nikola</a></h1>
+                <div class="metadata">
+                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                        Grzegorz Śliwiński
+                    </span></p>
+            <p class="dateline">
+            <a href="blog/witaj-nikola/" rel="bookmark">
+            <time class="published dt-published" datetime="2013-03-20T20:00:00+01:00" itemprop="datePublished" title="20 3 2013 20:00">20 3 2013 20:00</time></a>
+            </p>
+                        <p class="commentline">
+        
+    <a href="blog/witaj-nikola/#disqus_thread" data-disqus-identifier="cache/posts/2013-03-20-welcome-nikola.html">Komentarze</a>
+
+
+                </p>
+</div>
+            </header><div class="p-summary entry-summary">
+                    <div>
+<p>To już chyba był najwyższy czas, by zrobić coś ze swoim blogiem. Skoro od jakiegoś czasu nie dotykam już php, pomyślałem, że stworzę coś w pythonie. Najlepiej w pyramidzie, skoro pracuję w nim na co dzień. Ale nie bardzo miałem ochotę implementować wszystko od podstaw.</p>
+<p class="more"><a href="blog/witaj-nikola/">Czytaj więcej…</a></p>
+</div>
+                </div>
+            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="blog/git-na-kolorowo/" class="u-url">git na kolorowo</a></h1>
+                <div class="metadata">
+                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                        Grzegorz Śliwiński
+                    </span></p>
+            <p class="dateline">
+            <a href="blog/git-na-kolorowo/" rel="bookmark">
+            <time class="published dt-published" datetime="2012-10-10T21:10:42+02:00" itemprop="datePublished" title="10 10 2012 21:10">10 10 2012 21:10</time></a>
+            </p>
+                        <p class="commentline">
+        
+    <a href="blog/git-na-kolorowo/#disqus_thread" data-disqus-identifier="cache/posts/2012-10-10-git-na-kolorowo.pl.html">Komentarze</a>
+
+
+                </p>
+</div>
+            </header><div class="p-summary entry-summary">
+                    <div>
+<p>Domyślne usawienia kolorów w konsolowym gicie, nie są zbyt wyszukane.
+Wszystko jest takie same, przeważnie białe. Aby temu zaradzić, można
+ustawić te oto wartości:</p>
+<p class="more"><a href="blog/git-na-kolorowo/">Czytaj więcej…</a></p>
+</div>
+                </div>
+            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="blog/numerowanie-elementow-dom-przy-pomocy-css/" class="u-url">Numerowanie elementów DOM przy pomocy CSS</a></h1>
+                <div class="metadata">
+                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                        Grzegorz Śliwiński
+                    </span></p>
+            <p class="dateline">
+            <a href="blog/numerowanie-elementow-dom-przy-pomocy-css/" rel="bookmark">
+            <time class="published dt-published" datetime="2012-09-06T22:09:52+02:00" itemprop="datePublished" title="06 9 2012 22:09">06 9 2012 22:09</time></a>
+            </p>
+                        <p class="commentline">
+        
+    <a href="blog/numerowanie-elementow-dom-przy-pomocy-css/#disqus_thread" data-disqus-identifier="cache/posts/2012-09-06-numerowanie-elementow-dom-przy-pomocy-css.pl.html">Komentarze</a>
+
+
+                </p>
+</div>
+            </header><div class="p-summary entry-summary">
+                    <div>
+<p>W CSS2 istnieje prosty sposób, na stworzenie listy numerowanej, bez
+użycia znacznika list. Sposób ten pozwala również rozszerzyć same listy.</p>
+<p class="more"><a href="blog/numerowanie-elementow-dom-przy-pomocy-css/">Czytaj więcej…</a></p>
+</div>
+                </div>
+            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="blog/listowanie-metod-modulu-w-pythonie/" class="u-url">Listowanie metod modułu w pythonie</a></h1>
+                <div class="metadata">
+                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                        Grzegorz Śliwiński
+                    </span></p>
+            <p class="dateline">
+            <a href="blog/listowanie-metod-modulu-w-pythonie/" rel="bookmark">
+            <time class="published dt-published" datetime="2012-08-17T20:08:09+02:00" itemprop="datePublished" title="17 8 2012 20:08">17 8 2012 20:08</time></a>
+            </p>
+                        <p class="commentline">
+        
+    <a href="blog/listowanie-metod-modulu-w-pythonie/#disqus_thread" data-disqus-identifier="cache/posts/2012-08-17-howto-list-module-s-methods-in-python.html">Komentarze</a>
+
+
+                </p>
+</div>
+            </header><div class="p-summary entry-summary">
+                    <div>
+<p>Aktualnie badam wydajność trzech bibliotek łączących do bazy danych w
+połączeniu z sqlalchemy. Są to mysql-connector, MySQLdb oraz oursql. Po
+przygotowaniu podstaw, zacząłem się zastanawiać, w jaki sposób dodać
+kolejne testy i nie przejmować się modyfikacją podstawy testów.</p>
+<p class="more"><a href="blog/listowanie-metod-modulu-w-pythonie/">Czytaj więcej…</a></p>
+</div>
+                </div>
+            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="blog/wirtualne-srodowisko-uruchomieniowe-pythona/" class="u-url">Wirtualne środowisko uruchomieniowe Pythona</a></h1>
+                <div class="metadata">
+                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                        Grzegorz Śliwiński
+                    </span></p>
+            <p class="dateline">
+            <a href="blog/wirtualne-srodowisko-uruchomieniowe-pythona/" rel="bookmark">
+            <time class="published dt-published" datetime="2012-08-09T22:08:40+02:00" itemprop="datePublished" title="09 8 2012 22:08">09 8 2012 22:08</time></a>
+            </p>
+                        <p class="commentline">
+        
+    <a href="blog/wirtualne-srodowisko-uruchomieniowe-pythona/#disqus_thread" data-disqus-identifier="cache/posts/2012-08-09-wirtualne-srodowisko-uruchomieniowe-pythona.pl.html">Komentarze</a>
+
+
+                </p>
+</div>
+            </header><div class="p-summary entry-summary">
+                    <div>
+<p>Praca programisty wymaga niekiedy testowania nowych bibliotek i
+rozwiązań. Niekiedy instalujemy biblioteki do testów zapominając o nich,
+co może spowodować potem śmietnik w bibliotekach systemowych Pythona.
+Rozwiązaniem, by utrzymać porządek, jest wirtualne środowisko
+uruchomieniowe, virtualenv, a znacznym ułatwieniem, virtualenvwrapper.</p>
+<p class="more"><a href="blog/wirtualne-srodowisko-uruchomieniowe-pythona/">Czytaj więcej…</a></p>
+</div>
+                </div>
+            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="blog/spaghetti-z-sosem-pomidorowo-imbirowym/" class="u-url">Spaghetti z sosem pomidorowo-imbirowym</a></h1>
+                <div class="metadata">
+                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                        Grzegorz Śliwiński
+                    </span></p>
+            <p class="dateline">
+            <a href="blog/spaghetti-z-sosem-pomidorowo-imbirowym/" rel="bookmark">
+            <time class="published dt-published" datetime="2012-04-22T17:04:44+02:00" itemprop="datePublished" title="22 4 2012 17:04">22 4 2012 17:04</time></a>
+            </p>
+                        <p class="commentline">
+        
+    <a href="blog/spaghetti-z-sosem-pomidorowo-imbirowym/#disqus_thread" data-disqus-identifier="cache/posts/2012-04-22-spaghetti-z-sosem-pomidorowo-imbirowym.pl.html">Komentarze</a>
+
+
+                </p>
+</div>
+            </header><div class="p-summary entry-summary">
+                    <div>
+<p>Spaghetti,a przynajmniej sos zacząłem przygotowywać jak tylko sytuacja
+(studia) zmusiły mnie do rozpoczęcia gotowania. Z czasem odszedłem od
+sosów w torebkach, potem od sosów słoikach. Teraz spaghetti z sosem
+pomidorowo-imbiowym jest moją specjalnością.</p>
+<p class="more"><a href="blog/spaghetti-z-sosem-pomidorowo-imbirowym/">Czytaj więcej…</a></p>
+</div>
+                </div>
+            </article>
+</div>
+    
+        <ul class="pager postindexpager clearfix">
+<li class="next"><a href="index-9.html" rel="next">Starsze posty</a></li>
+        </ul>
+<script>var disqus_shortname="casesblog";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
+            Contents © 2021 <a href="mailto:fizyk~~fizyk.net.pl">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
+            
+            
+        </footer>
+</div>
+</div>
+
+
+        <script src="../assets/js/all-nocdn.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+    </script><script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-20536007-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>

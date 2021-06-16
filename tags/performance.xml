@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cases (Posts about performance)</title><link>http://blog.fizyk.net.pl/</link><description></description><atom:link href="http://blog.fizyk.net.pl/tags/performance.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Wed, 16 Jun 2021 11:18:43 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Creating a timestamp in python - difference between calendar.timegm and time.mktime</title><link>http://blog.fizyk.net.pl/blog/creating-a-timestamp-in-python-difference-between-calendartimegm-and-timemktime/</link><dc:creator>Grzegorz Śliwiński</dc:creator><description>&lt;div&gt;&lt;p&gt;If think most of python programmers realise that there are two ways of getting timestamp with only the
+help of stdlib libraries. It's &lt;a class="reference external" href="https://docs.python.org/3.5/library/time.html#time.mktime"&gt;time.mktime&lt;/a&gt;
+and weirdly placed &lt;a class="reference external" href="https://docs.python.org/3.5/library/calendar.html#calendar.timegm"&gt;calendar.timegm&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;There are two things people are probably not aware. First one can be attributed due to the fact that
+their docs are not being read properly, or more often skipped is that &lt;strong&gt;time.mktime&lt;/strong&gt; function treats
+timetuple as if it were representing date and time in machine local time. This means even if you
+extract timetuple from your datetime object using
+&lt;a class="reference external" href="https://docs.python.org/3.5/library/datetime.html#datetime.datetime.utctimetuple"&gt;utctimetuple&lt;/a&gt; method
+resulting timestamp will still be a given date in your system local time zone. Might not be a problem
+at all on production, but will be a much bigger issue on your machine, when you pull some data to analyse.
+&lt;strong&gt;calendar.timegm&lt;/strong&gt; on the other hand, treats all input data as if it were passed in utc.&lt;/p&gt;
+&lt;p&gt;Speaking of which, none of those two functions accepts a parameter that would tell which timezone the
+timetuple is in. The only difference is that &lt;strong&gt;time.mktime&lt;/strong&gt; returns a float and &lt;strong&gt;calendar.timegm&lt;/strong&gt;
+returns an integer.&lt;/p&gt;
+&lt;p&gt;Second things - timegm function is faster than mktime! See the short benchmarks below:&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://blog.fizyk.net.pl/blog/creating-a-timestamp-in-python-difference-between-calendartimegm-and-timemktime/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>calendar</category><category>performance</category><category>python</category><category>time</category><guid>http://blog.fizyk.net.pl/blog/creating-a-timestamp-in-python-difference-between-calendartimegm-and-timemktime/</guid><pubDate>Wed, 25 Nov 2015 19:18:16 GMT</pubDate></item></channel></rss>

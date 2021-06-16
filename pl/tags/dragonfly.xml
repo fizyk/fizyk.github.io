@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cases (Posty o dragonfly)</title><link>http://blog.fizyk.net.pl/</link><description></description><atom:link href="http://blog.fizyk.net.pl/pl/tags/dragonfly.xml" rel="self" type="application/rss+xml"></atom:link><language>pl</language><lastBuildDate>Wed, 16 Jun 2021 11:18:42 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Opera Dragonfly - "przeglądaj element"</title><link>http://blog.fizyk.net.pl/pl/blog/opera-dragonfly-przegladaj-element/</link><dc:creator>Grzegorz Śliwiński</dc:creator><description>&lt;div&gt;&lt;p&gt;Parę dni temu, jak zwykle w trakcie pracy, zacząłem używać opcji Opery
+Dragonfly, której nigdy przedtem nie zauważyłem - "&lt;strong&gt;Przeglądaj
+element&lt;/strong&gt;".&lt;/p&gt;
+&lt;p&gt;Niestety nie wiem, kiedy ta opcja się pojawiła. Ale osobom, które
+obstają przy używaniu ciężkiego FireFoksa z uwagi na opcję "Zbadaj
+element" wypadł kolejny argument z ręki. Teraz w Operze również da się
+kliknąć na element a następnie szybko wyświetlić jego zawartość w
+dostępnym narzędziu developerskim.&lt;/p&gt;&lt;/div&gt;</description><category>dragonfly</category><category>opera</category><guid>http://blog.fizyk.net.pl/pl/blog/opera-dragonfly-przegladaj-element/</guid><pubDate>Wed, 11 Aug 2010 19:08:33 GMT</pubDate></item><item><title>Jak szybko dostać się do Opera Dragonfly?</title><link>http://blog.fizyk.net.pl/pl/blog/jak-szybko-dostac-sie-do-opera-dragonfly/</link><dc:creator>Grzegorz Śliwiński</dc:creator><description>&lt;div&gt;&lt;p&gt;Jeśli chodzi o przeglądarkę, to wszędzie gdzie mam wybór, wybieram
+&lt;a class="reference external" href="http://www.opera.com"&gt;Operę&lt;/a&gt;, również w pracy. W Operze dołączone są
+tak zwane narzędzie developerskie - &lt;a class="reference external" href="http://www.opera.com/dragonfly/"&gt;Opera
+Dragonfly&lt;/a&gt;. I właśnie dzisiaj
+narzędzia Opera Dragonfly były wielce przydatne, w ramach jednego z
+tasków musiałem zmierzyć się z jQuery, z którym do tej pory miałem
+styczność oglądając efekty działania.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://blog.fizyk.net.pl/pl/blog/jak-szybko-dostac-sie-do-opera-dragonfly/"&gt;Czytaj więcej…&lt;/a&gt; (zostało 1 minut czytania)&lt;/p&gt;&lt;/div&gt;</description><category>dragonfly</category><category>opera</category><guid>http://blog.fizyk.net.pl/pl/blog/jak-szybko-dostac-sie-do-opera-dragonfly/</guid><pubDate>Fri, 26 Mar 2010 21:03:17 GMT</pubDate></item></channel></rss>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>pyramid_localize 0.1.0 released | Cases</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (pl)" hreflang="pl" href="../../pl/rss.xml">
+<link rel="canonical" href="http://blog.fizyk.net.pl/blog/pyramid_localize-010-released/">
+<link rel="icon" href="../../favicon.png" sizes="62x60">
+<link rel="icon" href="../../favicon-speddial.png" sizes="269x262">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Grzegorz Śliwiński">
+<link rel="prev" href="../pyramid_fullauth-030-released/" title="pyramid_fullauth 0.3.0 released!" type="text/html">
+<link rel="next" href="../deploying-python-packages-with-travis-ci/" title="Deploying python packages with travis-ci" type="text/html">
+<meta property="og:site_name" content="Cases">
+<meta property="og:title" content="pyramid_localize 0.1.0 released">
+<meta property="og:url" content="http://blog.fizyk.net.pl/blog/pyramid_localize-010-released/">
+<meta property="og:description" content="I've just released 0.1 version pf pyramid_localize. It's stacks mostly changes
+I had hanging around on 0.1a*, but while rewriting tests to py.test and
+adding pylama checks, I made some smaller changes">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2014-05-04T19:08:27+02:00">
+<meta property="article:tag" content="i18n">
+<meta property="article:tag" content="pyramid">
+<meta property="article:tag" content="python">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Header and menu bar -->
+<div class="container">
+      <header class="blog-header py-3"><div class="row nbb-header align-items-center">
+          <div class="col-md-3 col-xs-2 col-sm-2" style="width: auto;">
+            <button class="navbar-toggler navbar-light bg-light nbb-navbar-toggler" type="button" data-toggle="collapse" data-target=".bs-nav-collapsible" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse bs-nav-collapsible bootblog4-search-form-holder">
+                
+            </div>
+        </div>
+          <div class="col-md-6 col-xs-10 col-sm-10 bootblog4-brand" style="width: auto;">
+            <a class="navbar-brand blog-header-logo text-dark" href="../../">
+
+            <span id="blog-title">Cases</span>
+        </a>
+          </div>
+            <div class="col-md-3 justify-content-end align-items-center bs-nav-collapsible collapse flex-collapse bootblog4-right-nav">
+            <nav class="navbar navbar-light bg-white"><ul class="navbar-nav bootblog4-right-nav">
+<li class="nav-item"><a href="../../pl/" rel="alternate" hreflang="pl" class="nav-link">Polski</a></li>
+
+                    
+                    
+    
+    <li class="nav-item">
+    <a href="index.rst" id="sourcelink" class="nav-link">Source</a>
+    </li>
+
+
+                    
+            </ul></nav>
+</div>
+    </div>
+</header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
+            <ul class="navbar-nav nav-fill d-flex w-100">
+<li class="nav-item">
+<a href="http://www.fizyk.net.pl/en" class="nav-link">Homepage</a>
+                </li>
+<li class="nav-item">
+<a href="../../archive/" class="nav-link">Archives</a>
+                </li>
+<li class="nav-item">
+<a href="../../tags/" class="nav-link">Tags</a>
+
+                
+            </li>
+</ul>
+</div>
+<!-- /.navbar-collapse -->
+</nav>
+</div>
+
+<div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">pyramid_localize 0.1.0 released</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Grzegorz Śliwiński
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2014-05-04T19:08:27+02:00" itemprop="datePublished" title="04 5 2014 19:08">04 5 2014 19:08</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/2014-05-04-pyramid_localize-010-released.html">Comments</a>
+
+
+            
+        </p>
+<p class="sourceline"><a href="index.rst" class="sourcelink">Source</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>I've just released 0.1 version pf pyramid_localize. It's stacks mostly changes
+I had hanging around on <strong>0.1a*</strong>, but while rewriting tests to py.test and
+adding pylama checks, I made some smaller changes in code, and decided to publish
+it as a new version already.</p>
+<!-- TEASER_END -->
+<p><strong>pyramid_localize</strong> is a pyramid extension providing ready-to-use, translation
+functionality for your pyramid based projects. All you need is to add Babel,
+and add some configuration. localize provides also a web interface that allows
+you to reload translations live, without reloading application.</p>
+<section id="changelog"><h2>Changelog</h2>
+<ul class="simple">
+<li><p>weaker pyramid_yml requirements. Use <code class="docutils literal"><span class="pre">registry['config']</span></code> instead of <code class="docutils literal">request.config</code> which gets added only when explicitly including tzf.pyramid_yml package.</p></li>
+<li><p>deprecated request.locale in favour of request.locale_name delivered by Pyramid 1.5</p></li>
+<li><p>moved locale negotiator into it's own submodule</p></li>
+</ul>
+<section id="backward-incompatible"><h3>backward incompatible</h3>
+<ul class="simple">
+<li><p>required cookie name changed to _LOCALE_ to be consistent with other places</p></li>
+<li><p>fixed a typo from catalog to catalogue</p></li>
+</ul></section><section id="tests"><h3>tests</h3>
+<ul class="simple">
+<li><p>refactor tests to pytest</p></li>
+<li><dl class="simple">
+<dt>introduced pylama checks for:</dt>
+<dd><ul>
+<li><p>pep8</p></li>
+<li><p>pyflakes</p></li>
+<li><p>pep257</p></li>
+<li><p>mccabe</p></li>
+</ul></dd>
+</dl></li>
+<li><p>license information</p></li>
+<li><p>requires at least pyramid 1.5a1 (rely on default localizer reify method)</p></li>
+<li><p>py3 compatibility (require at least babel 1.0)</p></li>
+<li><p>locale negotiator looks first for request attribute _LOCALE_</p></li>
+<li><p>added pyramid_mako dependency (required by pyramid 1.5a2 changes)</p></li>
+</ul></section></section><section id="links"><h2>Links:</h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://pypi.python.org/pypi/pyramid_localize/0.1.0">pyramid_localize @ pypi</a></p></li>
+<li><p><a class="reference external" href="http://pyramid-localize.readthedocs.org/">pyramid_localize @ readthedocs</a></p></li>
+<li><p><a class="reference external" href="https://github.com/fizyk/pyramid_localize">pyramid_localize @ github</a></p></li>
+</ol></section>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../tags/i18n/" rel="tag">i18n</a></li>
+            <li><a class="tag p-category" href="../../tags/pyramid/" rel="tag">pyramid</a></li>
+            <li><a class="tag p-category" href="../../tags/python/" rel="tag">python</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../pyramid_fullauth-030-released/" rel="prev" title="pyramid_fullauth 0.3.0 released!">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../deploying-python-packages-with-travis-ci/" rel="next" title="Deploying python packages with travis-ci">Next post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="casesblog",
+            disqus_url="http://blog.fizyk.net.pl/blog/pyramid_localize-010-released/",
+        disqus_title="pyramid_localize 0.1.0 released",
+        disqus_identifier="cache/posts/2014-05-04-pyramid_localize-010-released.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="casesblog";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
+            Contents © 2021 <a href="mailto:fizyk~~fizyk.net.pl">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
+            
+            
+        </footer>
+</div>
+</div>
+
+
+        <script src="../../assets/js/all-nocdn.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+    </script><script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-20536007-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>

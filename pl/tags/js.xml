@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cases (Posty o js)</title><link>http://blog.fizyk.net.pl/</link><description></description><atom:link href="http://blog.fizyk.net.pl/pl/tags/js.xml" rel="self" type="application/rss+xml"></atom:link><language>pl</language><lastBuildDate>Wed, 16 Jun 2021 11:18:43 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>AJAX i document.write... nie stali w jednym domku</title><link>http://blog.fizyk.net.pl/pl/blog/ajax-i-document-write-nie-stali-w-jednym-domku/</link><dc:creator>Grzegorz Śliwiński</dc:creator><description>&lt;div&gt;&lt;p&gt;Jak się okazuje, &lt;strong&gt;AJAX&lt;/strong&gt; i wywołanie w JavaScript &lt;strong&gt;document.write&lt;/strong&gt;
+nie współgrają ze sobą. Przekonałem się o tym tworząc formularz
+kontaktowy, który powinien być obsługiwany również przez AJAX przy
+pomocy &lt;strong&gt;jQuery&lt;/strong&gt;. Niestety, po dodaniu do formularza reCaptchy,
+wywołanie AJAXowe przestało działać poprawnie. Po wysłaniu formularza i wczytaniu go ponownie po walidacji, strona została wyczyszczona, jakby odgórnie przekierowana na stronę &lt;strong&gt;about:blank&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;W Chrome pokazała się chociaż &lt;strong&gt;reCaptcha&lt;/strong&gt;. Trochę mi zeszło
+dochodzenie powodu takiego zachowania. Ostatnim krokiem, przed zmianą
+captchy, było wyświetlenie formularza ze zwykłym
+document.write('komunikat');. I w tym momencie wyszło szydło z worka,
+standardowo reCaptcha jest rzeczywiście serwowana przez
+&lt;strong&gt;document.write()&lt;/strong&gt;. Na szczęście reCaptcha posiada jeszcze &lt;a class="reference external" href="http://code.google.com/intl/en/apis/recaptcha/docs/display.html#AJAX"&gt;API
+AJAX'owe&lt;/a&gt;
+które zadziałało z wczytywaniem zawartości poprzez AJAX bezbłędnie.&lt;/p&gt;&lt;/div&gt;</description><category>ajax</category><category>js</category><category>recaptcha</category><guid>http://blog.fizyk.net.pl/pl/blog/ajax-i-document-write-nie-stali-w-jednym-domku/</guid><pubDate>Sat, 04 Sep 2010 19:09:08 GMT</pubDate></item></channel></rss>

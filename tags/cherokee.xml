@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cases (Posts about cherokee)</title><link>http://blog.fizyk.net.pl/</link><description></description><atom:link href="http://blog.fizyk.net.pl/tags/cherokee.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Wed, 16 Jun 2021 11:18:42 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Cherokee http server and symfony 1.4</title><link>http://blog.fizyk.net.pl/blog/cherokee-http-server-and-symfony-1-4-en/</link><dc:creator>Grzegorz Śliwiński</dc:creator><description>&lt;div&gt;&lt;p&gt;Few months ago I got directed at &lt;a class="reference external" href="http://www.cherokee-project.com/"&gt;Cherokee http
+server&lt;/a&gt;, as it's supposed to be
+faster than Apache. I finally took a look at Cherokee and it seems that
+it's also easier to configure than Apache. Cherokee is available on
+Linux and BSD operating systems, and probably it's in repository of most
+popular distros. It's licensed with &lt;strong&gt;GPL license&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://blog.fizyk.net.pl/blog/cherokee-http-server-and-symfony-1-4-en/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>cherokee</category><category>php</category><category>symfony</category><guid>http://blog.fizyk.net.pl/blog/cherokee-http-server-and-symfony-1-4-en/</guid><pubDate>Sat, 08 Jan 2011 20:01:22 GMT</pubDate></item></channel></rss>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cases (Posty o mysql)</title><link>http://blog.fizyk.net.pl/</link><description></description><atom:link href="http://blog.fizyk.net.pl/pl/tags/mysql.xml" rel="self" type="application/rss+xml"></atom:link><language>pl</language><lastBuildDate>Wed, 16 Jun 2021 11:18:42 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>JOIN i DELETE w mySQL</title><link>http://blog.fizyk.net.pl/pl/blog/join-i-delete-w-mysql/</link><dc:creator>Grzegorz Śliwiński</dc:creator><description>&lt;div&gt;&lt;p&gt;Parę dni temu zdarzyło się próbować usunąć rekordy z bazy mySQL, które
+warunki do usunięcia spełniały w innych tabelach. I o ile
+programistycznie, można cel osiągnąć za pomocą kilku odwołań do bazy, to
+jednak postanowiłem wykonać jedno.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://blog.fizyk.net.pl/pl/blog/join-i-delete-w-mysql/"&gt;Czytaj więcej…&lt;/a&gt; (zostało 1 minut czytania)&lt;/p&gt;&lt;/div&gt;</description><category>mysql</category><category>sql</category><guid>http://blog.fizyk.net.pl/pl/blog/join-i-delete-w-mysql/</guid><pubDate>Wed, 15 Feb 2012 20:02:53 GMT</pubDate></item><item><title>Polskie znaki w MySQL, doctrine i symfony</title><link>http://blog.fizyk.net.pl/pl/blog/polskie-znaki-w-mysql-doctrine-i-symfony/</link><dc:creator>Grzegorz Śliwiński</dc:creator><description>&lt;div&gt;&lt;p&gt;Niejednokrotnie tworząc bazę danych w MySQL, nie trudno nie zauważyć, iż
+w świeżej, nieskonfigurowanej instalacji tego systemu zarządzania bazą
+danych, domyślnym typem kodowania nie jest
+&lt;a class="reference external" href="http://pl.wikipedia.org/wiki/UTF-8"&gt;utf8&lt;/a&gt; tylko
+&lt;a class="reference external" href="http://pl.wikipedia.org/wiki/ISO_8859-1"&gt;cp1252&lt;/a&gt;/&lt;a class="reference external" href="http://pl.wikipedia.org/wiki/ISO_8859-1"&gt;latin1_swedish&lt;/a&gt;.&lt;/p&gt;
+&lt;!-- TEASE_END --&gt;
+&lt;p&gt;Tworząc aplikację korzystającą z takiej bazy, a samej używającej
+unicode, powinniśmy dla świętego spokoju sprawdzić i pilnować z jakiego
+kodowania nasza baza danych korzysta. Choćby dlatego, że inna aplikacja
+podłączona do takiej bazy danych może mieć problemy z rozpoznaniem i
+połapaniem się w tej mieszance kodowań. Nie jest również zbyt
+intuicyjnym przechowywanie ciągu znaków zakodowanego w
+&lt;a class="reference external" href="http://pl.wikipedia.org/wiki/Unicode"&gt;unicode&lt;/a&gt;, w strukturze
+używającej &lt;strong&gt;cp1252&lt;/strong&gt; lub innego systemu kodowania.&lt;/p&gt;
+&lt;p&gt;Również symfony, z całym przywiązaniem do unicode, nie robi nic, by
+wymusić stosowanie tego kodowanie w tworzonych poprzez doctrine
+tabelach, czy też samym połączeniu na lini baza danych - aplikacja.
+Konieczne jest ręczne ustawienie odpowiednich wartości w pliku
+&lt;strong&gt;database.yml&lt;/strong&gt;:&lt;/p&gt;
+&lt;pre class="code yaml"&gt;&lt;a id="rest_code_385fe1320d7e462fac33a91d19c8df13-1" name="rest_code_385fe1320d7e462fac33a91d19c8df13-1"&gt;&lt;/a&gt;&lt;span class="nt"&gt;all&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a id="rest_code_385fe1320d7e462fac33a91d19c8df13-2" name="rest_code_385fe1320d7e462fac33a91d19c8df13-2"&gt;&lt;/a&gt;  &lt;span class="nt"&gt;doctrine&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a id="rest_code_385fe1320d7e462fac33a91d19c8df13-3" name="rest_code_385fe1320d7e462fac33a91d19c8df13-3"&gt;&lt;/a&gt;    &lt;span class="nt"&gt;class&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;sfDoctrineDatabase&lt;/span&gt;
+&lt;a id="rest_code_385fe1320d7e462fac33a91d19c8df13-4" name="rest_code_385fe1320d7e462fac33a91d19c8df13-4"&gt;&lt;/a&gt;    &lt;span class="nt"&gt;param&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a id="rest_code_385fe1320d7e462fac33a91d19c8df13-5" name="rest_code_385fe1320d7e462fac33a91d19c8df13-5"&gt;&lt;/a&gt;      &lt;span class="c1"&gt;#...&lt;/span&gt;
+&lt;a id="rest_code_385fe1320d7e462fac33a91d19c8df13-6" name="rest_code_385fe1320d7e462fac33a91d19c8df13-6"&gt;&lt;/a&gt;      &lt;span class="nt"&gt;attributes&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a id="rest_code_385fe1320d7e462fac33a91d19c8df13-7" name="rest_code_385fe1320d7e462fac33a91d19c8df13-7"&gt;&lt;/a&gt;        &lt;span class="nt"&gt;default_table_charset&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;utf8&lt;/span&gt;
+&lt;a id="rest_code_385fe1320d7e462fac33a91d19c8df13-8" name="rest_code_385fe1320d7e462fac33a91d19c8df13-8"&gt;&lt;/a&gt;        &lt;span class="nt"&gt;default_table_collate&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;utf8_general_ci&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;W ten sposób można w spokoju tworzyć aplikacje używające kodowania
+unicode bez obawy wystąpienia błędu nieprawidłowego kodowania znaków w
+porównaniu MySQL, lub innych niespodzianek z tym związanych.&lt;/p&gt;
+&lt;p&gt;Z reguły znaki używane na zachodzie (znaki ASCII) są kodowane w ten sam
+sposób w unicode jak i w cp1252/latin1, czego nie można powiedzieć o
+polskich ogonkach, czy występujących w czeskim i innych
+zachodniosłowiańskich językach ptaszkach (Przykład: Čech).&lt;/p&gt;&lt;/div&gt;</description><category>doctrine</category><category>mysql</category><category>symfony</category><category>unicode</category><category>utf8</category><guid>http://blog.fizyk.net.pl/pl/blog/polskie-znaki-w-mysql-doctrine-i-symfony/</guid><pubDate>Sun, 09 May 2010 10:05:53 GMT</pubDate></item></channel></rss>

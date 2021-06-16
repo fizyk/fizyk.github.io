@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cases (Posts about behaviour)</title><link>http://blog.fizyk.net.pl/</link><description></description><atom:link href="http://blog.fizyk.net.pl/tags/behaviour.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Wed, 16 Jun 2021 11:18:43 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>fzBlameablePlugin 1.1.0</title><link>http://blog.fizyk.net.pl/blog/fzblameableplugin-1-1-0/</link><dc:creator>Grzegorz Śliwiński</dc:creator><description>&lt;div&gt;&lt;p&gt;About half year has pased since the release of sfDoctrineGuard 5.x. I
+decided, that it was the time to update default values for fzBlameable
+behaviour.&lt;/p&gt;
+&lt;p&gt;Since now, you don't have to chenge the created_by and updated_by
+field length in Behaviour definition if you run your website on
+sfDoctrineuard 5.x, ut you'll have to set fields length to 4, if you
+haven't upgraded your sfDoctrineGuard yet.&lt;/p&gt;
+&lt;p&gt;Adittionally this release allows you to change foreignAlias on relation
+between sfGuardUser and your blameable model.&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/fizyk/fzBlameablePlugin/compare/1.0.1...v1.1.0"&gt;Changelog&lt;/a&gt;
+since fzBlameable 1.0.1&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="http://www.symfony-project.org/plugins/fzBlameablePlugin/1_1_0"&gt;Plugin's release symfony page&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/fizyk/fzBlameablePlugin/tree/v1.1.0"&gt;Plugin's release repository tree&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;</description><category>behaviour</category><category>fzBlameable</category><category>php</category><category>symfony</category><guid>http://blog.fizyk.net.pl/blog/fzblameableplugin-1-1-0/</guid><pubDate>Sat, 26 Feb 2011 19:02:49 GMT</pubDate></item></channel></rss>

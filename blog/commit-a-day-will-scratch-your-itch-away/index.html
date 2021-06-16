@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Commit a day, will scratch Your itch away | Cases</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (pl)" hreflang="pl" href="../../pl/rss.xml">
+<link rel="canonical" href="http://blog.fizyk.net.pl/blog/commit-a-day-will-scratch-your-itch-away/">
+<link rel="icon" href="../../favicon.png" sizes="62x60">
+<link rel="icon" href="../../favicon-speddial.png" sizes="269x262">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Grzegorz Śliwiński">
+<link rel="prev" href="../my-first-bump-with-pypy/" title="My first bump with pypy" type="text/html">
+<link rel="next" href="../pyramid_fullauth-04-python3-and-few-fixes/" title="pyramid_fullauth 0.4 - python3 and few fixes" type="text/html">
+<meta property="og:site_name" content="Cases">
+<meta property="og:title" content="Commit a day, will scratch Your itch away">
+<meta property="og:url" content="http://blog.fizyk.net.pl/blog/commit-a-day-will-scratch-your-itch-away/">
+<meta property="og:description" content="At August's wroc.py meeting I had a brief discussion with Tomek Wójcik about Envelopes's state, and those long opened issues at his issue tracker.
+While thinking about what Tomek said, I remembered re">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2014-09-04T23:03:07+02:00">
+<meta property="article:tag" content="community">
+<meta property="article:tag" content="open source">
+<meta property="article:tag" content="python">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Header and menu bar -->
+<div class="container">
+      <header class="blog-header py-3"><div class="row nbb-header align-items-center">
+          <div class="col-md-3 col-xs-2 col-sm-2" style="width: auto;">
+            <button class="navbar-toggler navbar-light bg-light nbb-navbar-toggler" type="button" data-toggle="collapse" data-target=".bs-nav-collapsible" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse bs-nav-collapsible bootblog4-search-form-holder">
+                
+            </div>
+        </div>
+          <div class="col-md-6 col-xs-10 col-sm-10 bootblog4-brand" style="width: auto;">
+            <a class="navbar-brand blog-header-logo text-dark" href="../../">
+
+            <span id="blog-title">Cases</span>
+        </a>
+          </div>
+            <div class="col-md-3 justify-content-end align-items-center bs-nav-collapsible collapse flex-collapse bootblog4-right-nav">
+            <nav class="navbar navbar-light bg-white"><ul class="navbar-nav bootblog4-right-nav">
+<li class="nav-item"><a href="../../pl/" rel="alternate" hreflang="pl" class="nav-link">Polski</a></li>
+
+                    
+                    
+    
+    <li class="nav-item">
+    <a href="index.rst" id="sourcelink" class="nav-link">Source</a>
+    </li>
+
+
+                    
+            </ul></nav>
+</div>
+    </div>
+</header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
+            <ul class="navbar-nav nav-fill d-flex w-100">
+<li class="nav-item">
+<a href="http://www.fizyk.net.pl/en" class="nav-link">Homepage</a>
+                </li>
+<li class="nav-item">
+<a href="../../archive/" class="nav-link">Archives</a>
+                </li>
+<li class="nav-item">
+<a href="../../tags/" class="nav-link">Tags</a>
+
+                
+            </li>
+</ul>
+</div>
+<!-- /.navbar-collapse -->
+</nav>
+</div>
+
+<div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Commit a day, will scratch Your itch away</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Grzegorz Śliwiński
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2014-09-04T23:03:07+02:00" itemprop="datePublished" title="04 9 2014 23:03">04 9 2014 23:03</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/2014-09-04-commit-a-day-will-scratch-your-itch-away.html">Comments</a>
+
+
+            
+        </p>
+<p class="sourceline"><a href="index.rst" class="sourcelink">Source</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>At August's <strong>wroc.py</strong> meeting I had a brief discussion with <a class="reference external" href="http://www.bthlabs.pl/">Tomek Wójcik</a> about <a class="reference external" href="http://tomekwojcik.github.io/envelopes/">Envelopes</a>'s state, and those long opened issues at his issue tracker.</p>
+<p>While thinking about what Tomek said, I remembered reading <a class="reference external" href="http://jeffknupp.com/">Jeff Knupp's</a> post about <a class="reference external" href="http://jeffknupp.com/blog/2014/05/30/you-need-to-start-a-whizbang-project-immediately/">whizbang project</a>, a highly motivational post about willingness to do something - and it got me thinking... What makes project tick? Why does Django, Twisted, Celery have grown so big?</p>
+<!-- TEASER_END -->
+<p>Most of the open source project have started as someone's pet projects, usually to help solve a particular problem, that project's author has been facing. Like Jeff Knupp's - <a class="reference external" href="http://jeffknupp.com/blog/2013/07/23/sandman-a-boilerplatefree-python-rest-api-for-existing-databases/">sandman</a>, or envelopes mentioned in the beginning. Those per projects gain popularity, when others find it helpful, but popularity is not enough. What matters, is traction.</p>
+<section id="traction"><h2>Traction</h2>
+<p>Traction is when a project gets a circle of "continuous contributors", that use project, report bugs and ideally contribute code, in the end taking off the weight of maintaining a project from the original author. Where Django, or pyramid would be if they were still developed by a single person?</p>
+<p>Both projects kicked in at the beginning. But both at a different places. While sandman seems to be thriving, Envelopes is stuck with most recent commit from over a year ago. What's the difference? Tomek, as I talked with him, was happy with where Envelopes got, it did what Tomek expected it to do. What differs with sandman, it's that Jeff Knupp constantly tinkers around it.</p>
+</section><section id="bug-reports-feature-requests-are-great-but"><h2>Bug reports/feature requests are great, but...</h2>
+<p>I've asked Tomek what's up with Envelopes, because it haven't progressed a bit in almost a year, and there are years old issues opened. His response was quite interesting. He developed it on train, if I remember correctly, to solve his problem, and presented to the world. The still servers its purpose for Tomek, and he doesn't have time or need to tinker around Envelopes, especially that it works. If he hadn't started working on something, it means that he probably won't. But he would happily accept pull requests, even write tests or documentation for that code.</p>
+<p>And I though, open issues are great, but what really matters for most project is code contribution. And hence a motto of this post:</p>
+</section><section id="commit-a-day-will-scratch-your-itch-away"><h2><strong>Commit a day, will scratch Your itch away</strong></h2>
+<p>Because we're developers, we know our way around the code. We usually use lots of open source projects in work, and find some use cases author could not think about. And following the use cases are usually new bugs.</p>
+<p>Least we can do is to file a bug report. But while we're at filing a bug reports, let's try to triage it to the limit - communicate as detailed and clear as we can - it'll speed up the fix. You might be asked by author for details to help triage a bug anyway. From there, we're usually only a one step from making a commit ourselves and contributing code. And no matter if it's a working solution, or a test case exposing bug in question - it's a commit that moves You, package and author forward.</p>
+</section>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../tags/community/" rel="tag">community</a></li>
+            <li><a class="tag p-category" href="../../tags/open-source/" rel="tag">open source</a></li>
+            <li><a class="tag p-category" href="../../tags/python/" rel="tag">python</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../my-first-bump-with-pypy/" rel="prev" title="My first bump with pypy">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../pyramid_fullauth-04-python3-and-few-fixes/" rel="next" title="pyramid_fullauth 0.4 - python3 and few fixes">Next post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="casesblog",
+            disqus_url="http://blog.fizyk.net.pl/blog/commit-a-day-will-scratch-your-itch-away/",
+        disqus_title="Commit a day, will scratch Your itch away",
+        disqus_identifier="cache/posts/2014-09-04-commit-a-day-will-scratch-your-itch-away.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="casesblog";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
+            Contents © 2021 <a href="mailto:fizyk~~fizyk.net.pl">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
+            
+            
+        </footer>
+</div>
+</div>
+
+
+        <script src="../../assets/js/all-nocdn.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+    </script><script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-20536007-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cases (Posts about admin generator)</title><link>http://blog.fizyk.net.pl/</link><description></description><atom:link href="http://blog.fizyk.net.pl/tags/admin-generator.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Wed, 16 Jun 2021 11:18:43 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Default filter values in admin-generated symfony module</title><link>http://blog.fizyk.net.pl/blog/default-filter-values-in-admin-generated-symfony-module/</link><dc:creator>Grzegorz Śliwiński</dc:creator><description>&lt;div&gt;&lt;p&gt;Admin generated backend modules are very useful, they are generating
+with all necessary code, they have some layout, all necessary actions
+are there and are easy to be modified. recently. You can even add
+default filter setting, although it's not as simple as editing
+&lt;strong&gt;generator.yml&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://blog.fizyk.net.pl/blog/default-filter-values-in-admin-generated-symfony-module/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>admin generator</category><category>php</category><category>symfony</category><guid>http://blog.fizyk.net.pl/blog/default-filter-values-in-admin-generated-symfony-module/</guid><pubDate>Tue, 22 Feb 2011 21:02:56 GMT</pubDate></item><item><title>Decrease number of queries for admin generated module: the better way</title><link>http://blog.fizyk.net.pl/blog/decrease-number-of-queries-for-admin-generated-module-the-better-way/</link><dc:creator>Grzegorz Śliwiński</dc:creator><description>&lt;div&gt;&lt;p&gt;Recently I saw two posts in the symfony blogosphere about decreasing
+number of queries in admin generated module (in January on &lt;a class="reference external" href="http://www.techiecorner.com/1963/how-to-reduce-admin-generator-query-in-symfony-1-4/"&gt;Techie
+Corner&lt;/a&gt;,
+and today on &lt;a class="reference external" href="http://symfony-world.blogspot.com/2011/02/less-doctrine-queries-in-symfony-admin.html"&gt;Symfony
+world&lt;/a&gt;
+- which prompted me to write this post). And both bloggers seemed to be
+happy with overwriting buildQuery method of the module's action class.
+But &lt;strong&gt;generator.yml&lt;/strong&gt; provides more elegant solution for admin generated
+modules.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://blog.fizyk.net.pl/blog/decrease-number-of-queries-for-admin-generated-module-the-better-way/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>admin generator</category><category>php</category><category>query</category><category>symfony</category><guid>http://blog.fizyk.net.pl/blog/decrease-number-of-queries-for-admin-generated-module-the-better-way/</guid><pubDate>Mon, 14 Feb 2011 20:02:50 GMT</pubDate></item></channel></rss>
