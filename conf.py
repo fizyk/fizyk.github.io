@@ -159,16 +159,9 @@ ARCHIVE_FILENAME = "index.html"
 # If you don't need any of these, just set to []
 # REDIRECTIONS = []
 
-# Commands to execute to deploy. Can be anything, for example,
-# you may use rsync:
-# "rsync -rav output/* joe@my.site:/srv/www/site"
-# And then do a backup, or ping pingomatic.
-# To do manual deployment, set it to []
-DEPLOY_COMMANDS = {
-    'default': [
-        'rsync -rav --delete output/* fizyk@fizyk.net.pl:~/blog/',
-    ]
-}
+# Github deployment configuration
+GITHUB_DEPLOY_BRANCH = "gh-pages"
+GITHUB_SOURCE_BRANCH = "master"
 
 # Where the output site should be located
 # If you don't use an absolute path, it will be considered as relative
