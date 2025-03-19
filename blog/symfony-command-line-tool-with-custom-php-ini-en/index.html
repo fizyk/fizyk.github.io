@@ -9,8 +9,8 @@
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../pl/rss.xml">
 <link rel="canonical" href="https://fizyk.dev/blog/symfony-command-line-tool-with-custom-php-ini-en/">
-<link rel="icon" href="../../favicon-speddial.png" sizes="269x262">
 <link rel="icon" href="../../favicon.png" sizes="62x60">
+<link rel="icon" href="../../favicon-speddial.png" sizes="269x262">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -52,9 +52,9 @@ since command line php hadn't had apc module enabled.</p>
 execute. It's small bash script, that runs symfony execute with my
 webserver php.ini file and passes all it's parameters to symfony command
 line tool:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_57f152fc25304f3c8fe3921a0ea94f66-1" name="rest_code_57f152fc25304f3c8fe3921a0ea94f66-1" href="#rest_code_57f152fc25304f3c8fe3921a0ea94f66-1"></a><span class="ch">#!/bin/bash</span>
-<a id="rest_code_57f152fc25304f3c8fe3921a0ea94f66-2" name="rest_code_57f152fc25304f3c8fe3921a0ea94f66-2" href="#rest_code_57f152fc25304f3c8fe3921a0ea94f66-2"></a>
-<a id="rest_code_57f152fc25304f3c8fe3921a0ea94f66-3" name="rest_code_57f152fc25304f3c8fe3921a0ea94f66-3" href="#rest_code_57f152fc25304f3c8fe3921a0ea94f66-3"></a>php<span class="w"> </span>-c<span class="w"> </span>/path/to/php.ini<span class="w"> </span>symfony<span class="w"> </span><span class="nv">$@</span>
+<div class="code"><pre class="code bash"><a id="rest_code_432ac319a7494232b883c8fb5055617c-1" name="rest_code_432ac319a7494232b883c8fb5055617c-1" href="#rest_code_432ac319a7494232b883c8fb5055617c-1"></a><span class="ch">#!/bin/bash</span>
+<a id="rest_code_432ac319a7494232b883c8fb5055617c-2" name="rest_code_432ac319a7494232b883c8fb5055617c-2" href="#rest_code_432ac319a7494232b883c8fb5055617c-2"></a>
+<a id="rest_code_432ac319a7494232b883c8fb5055617c-3" name="rest_code_432ac319a7494232b883c8fb5055617c-3" href="#rest_code_432ac319a7494232b883c8fb5055617c-3"></a>php<span class="w"> </span>-c<span class="w"> </span>/path/to/php.ini<span class="w"> </span>symfony<span class="w"> </span><span class="nv">$@</span>
 </pre></div>
 <p>But there's a question, why bother with this, when I can just run this
 code from command line?</p>
@@ -125,7 +125,7 @@ jest dostępny na licencji
 </a>.</li>
             
                 <li>
-<a href="https://fizyk.dev/en">Homepage</a>
+<a href="https://fizyk.dev/">Homepage</a>
                 </li>
 <li>
 <a href="../../archive/">Archives</a>

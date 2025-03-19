@@ -8,8 +8,8 @@
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../pl/rss.xml">
 <link rel="canonical" href="https://fizyk.dev/blog/mirakuru-02-released/">
-<link rel="icon" href="../../favicon-speddial.png" sizes="269x262">
 <link rel="icon" href="../../favicon.png" sizes="62x60">
+<link rel="icon" href="../../favicon-speddial.png" sizes="269x262">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -61,26 +61,26 @@ informative at all. Currently, TCPExecutor and HTTPExecutor will raise
 <p>And the last one, is a well known issue, when starting subprocesses with
 <strong>shell</strong> arg set to True. This makes subprocess to be started in it's own shell,
 but unfortunately, when You want to kill the process in normal way, let say like that:</p>
-<div class="code"><pre class="code python"><a id="rest_code_f68f3d76b3a74635bd8cb36fb3dea08c-1" name="rest_code_f68f3d76b3a74635bd8cb36fb3dea08c-1" href="#rest_code_f68f3d76b3a74635bd8cb36fb3dea08c-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
-<a id="rest_code_f68f3d76b3a74635bd8cb36fb3dea08c-2" name="rest_code_f68f3d76b3a74635bd8cb36fb3dea08c-2" href="#rest_code_f68f3d76b3a74635bd8cb36fb3dea08c-2"></a>
-<a id="rest_code_f68f3d76b3a74635bd8cb36fb3dea08c-3" name="rest_code_f68f3d76b3a74635bd8cb36fb3dea08c-3" href="#rest_code_f68f3d76b3a74635bd8cb36fb3dea08c-3"></a><span class="n">awsome_process</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span>
-<a id="rest_code_f68f3d76b3a74635bd8cb36fb3dea08c-4" name="rest_code_f68f3d76b3a74635bd8cb36fb3dea08c-4" href="#rest_code_f68f3d76b3a74635bd8cb36fb3dea08c-4"></a>    <span class="s1">'./start_me.py --run_forever'</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<a id="rest_code_f68f3d76b3a74635bd8cb36fb3dea08c-5" name="rest_code_f68f3d76b3a74635bd8cb36fb3dea08c-5" href="#rest_code_f68f3d76b3a74635bd8cb36fb3dea08c-5"></a>
-<a id="rest_code_f68f3d76b3a74635bd8cb36fb3dea08c-6" name="rest_code_f68f3d76b3a74635bd8cb36fb3dea08c-6" href="#rest_code_f68f3d76b3a74635bd8cb36fb3dea08c-6"></a><span class="n">awsome_process</span><span class="o">.</span><span class="n">terminate</span><span class="p">()</span>
+<div class="code"><pre class="code python"><a id="rest_code_21109ee6e1d34b518f37565f8b90f7d0-1" name="rest_code_21109ee6e1d34b518f37565f8b90f7d0-1" href="#rest_code_21109ee6e1d34b518f37565f8b90f7d0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
+<a id="rest_code_21109ee6e1d34b518f37565f8b90f7d0-2" name="rest_code_21109ee6e1d34b518f37565f8b90f7d0-2" href="#rest_code_21109ee6e1d34b518f37565f8b90f7d0-2"></a>
+<a id="rest_code_21109ee6e1d34b518f37565f8b90f7d0-3" name="rest_code_21109ee6e1d34b518f37565f8b90f7d0-3" href="#rest_code_21109ee6e1d34b518f37565f8b90f7d0-3"></a><span class="n">awsome_process</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span>
+<a id="rest_code_21109ee6e1d34b518f37565f8b90f7d0-4" name="rest_code_21109ee6e1d34b518f37565f8b90f7d0-4" href="#rest_code_21109ee6e1d34b518f37565f8b90f7d0-4"></a>    <span class="s1">'./start_me.py --run_forever'</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="rest_code_21109ee6e1d34b518f37565f8b90f7d0-5" name="rest_code_21109ee6e1d34b518f37565f8b90f7d0-5" href="#rest_code_21109ee6e1d34b518f37565f8b90f7d0-5"></a>
+<a id="rest_code_21109ee6e1d34b518f37565f8b90f7d0-6" name="rest_code_21109ee6e1d34b518f37565f8b90f7d0-6" href="#rest_code_21109ee6e1d34b518f37565f8b90f7d0-6"></a><span class="n">awsome_process</span><span class="o">.</span><span class="n">terminate</span><span class="p">()</span>
 </pre></div>
 <p>Killing subprocess here only kills shell subprocess have been started in -
 effectively leaking it. Solution is to set a process group id - but that might
 be changed while the processes are running, or better solution, to set session id:</p>
-<div class="code"><pre class="code python"><a id="rest_code_88c58fdc5a634f2dbd51b73a4608184a-1" name="rest_code_88c58fdc5a634f2dbd51b73a4608184a-1" href="#rest_code_88c58fdc5a634f2dbd51b73a4608184a-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-<a id="rest_code_88c58fdc5a634f2dbd51b73a4608184a-2" name="rest_code_88c58fdc5a634f2dbd51b73a4608184a-2" href="#rest_code_88c58fdc5a634f2dbd51b73a4608184a-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">signal</span>
-<a id="rest_code_88c58fdc5a634f2dbd51b73a4608184a-3" name="rest_code_88c58fdc5a634f2dbd51b73a4608184a-3" href="#rest_code_88c58fdc5a634f2dbd51b73a4608184a-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
-<a id="rest_code_88c58fdc5a634f2dbd51b73a4608184a-4" name="rest_code_88c58fdc5a634f2dbd51b73a4608184a-4" href="#rest_code_88c58fdc5a634f2dbd51b73a4608184a-4"></a>
-<a id="rest_code_88c58fdc5a634f2dbd51b73a4608184a-5" name="rest_code_88c58fdc5a634f2dbd51b73a4608184a-5" href="#rest_code_88c58fdc5a634f2dbd51b73a4608184a-5"></a><span class="n">awsome_process</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span>
-<a id="rest_code_88c58fdc5a634f2dbd51b73a4608184a-6" name="rest_code_88c58fdc5a634f2dbd51b73a4608184a-6" href="#rest_code_88c58fdc5a634f2dbd51b73a4608184a-6"></a>    <span class="s1">'./start_me.py --run_forever'</span><span class="p">,</span>
-<a id="rest_code_88c58fdc5a634f2dbd51b73a4608184a-7" name="rest_code_88c58fdc5a634f2dbd51b73a4608184a-7" href="#rest_code_88c58fdc5a634f2dbd51b73a4608184a-7"></a>    <span class="n">preexec_fn</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">setsid</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<a id="rest_code_88c58fdc5a634f2dbd51b73a4608184a-8" name="rest_code_88c58fdc5a634f2dbd51b73a4608184a-8" href="#rest_code_88c58fdc5a634f2dbd51b73a4608184a-8"></a>
-<a id="rest_code_88c58fdc5a634f2dbd51b73a4608184a-9" name="rest_code_88c58fdc5a634f2dbd51b73a4608184a-9" href="#rest_code_88c58fdc5a634f2dbd51b73a4608184a-9"></a>
-<a id="rest_code_88c58fdc5a634f2dbd51b73a4608184a-10" name="rest_code_88c58fdc5a634f2dbd51b73a4608184a-10" href="#rest_code_88c58fdc5a634f2dbd51b73a4608184a-10"></a><span class="n">os</span><span class="o">.</span><span class="n">killpg</span><span class="p">(</span><span class="n">awsome_process</span><span class="o">.</span><span class="n">pid</span><span class="p">,</span> <span class="n">signal</span><span class="o">.</span><span class="n">SIGTERM</span><span class="p">)</span>
+<div class="code"><pre class="code python"><a id="rest_code_127dfcb619d545119751aa1cc4a566e8-1" name="rest_code_127dfcb619d545119751aa1cc4a566e8-1" href="#rest_code_127dfcb619d545119751aa1cc4a566e8-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<a id="rest_code_127dfcb619d545119751aa1cc4a566e8-2" name="rest_code_127dfcb619d545119751aa1cc4a566e8-2" href="#rest_code_127dfcb619d545119751aa1cc4a566e8-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">signal</span>
+<a id="rest_code_127dfcb619d545119751aa1cc4a566e8-3" name="rest_code_127dfcb619d545119751aa1cc4a566e8-3" href="#rest_code_127dfcb619d545119751aa1cc4a566e8-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
+<a id="rest_code_127dfcb619d545119751aa1cc4a566e8-4" name="rest_code_127dfcb619d545119751aa1cc4a566e8-4" href="#rest_code_127dfcb619d545119751aa1cc4a566e8-4"></a>
+<a id="rest_code_127dfcb619d545119751aa1cc4a566e8-5" name="rest_code_127dfcb619d545119751aa1cc4a566e8-5" href="#rest_code_127dfcb619d545119751aa1cc4a566e8-5"></a><span class="n">awsome_process</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span>
+<a id="rest_code_127dfcb619d545119751aa1cc4a566e8-6" name="rest_code_127dfcb619d545119751aa1cc4a566e8-6" href="#rest_code_127dfcb619d545119751aa1cc4a566e8-6"></a>    <span class="s1">'./start_me.py --run_forever'</span><span class="p">,</span>
+<a id="rest_code_127dfcb619d545119751aa1cc4a566e8-7" name="rest_code_127dfcb619d545119751aa1cc4a566e8-7" href="#rest_code_127dfcb619d545119751aa1cc4a566e8-7"></a>    <span class="n">preexec_fn</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">setsid</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="rest_code_127dfcb619d545119751aa1cc4a566e8-8" name="rest_code_127dfcb619d545119751aa1cc4a566e8-8" href="#rest_code_127dfcb619d545119751aa1cc4a566e8-8"></a>
+<a id="rest_code_127dfcb619d545119751aa1cc4a566e8-9" name="rest_code_127dfcb619d545119751aa1cc4a566e8-9" href="#rest_code_127dfcb619d545119751aa1cc4a566e8-9"></a>
+<a id="rest_code_127dfcb619d545119751aa1cc4a566e8-10" name="rest_code_127dfcb619d545119751aa1cc4a566e8-10" href="#rest_code_127dfcb619d545119751aa1cc4a566e8-10"></a><span class="n">os</span><span class="o">.</span><span class="n">killpg</span><span class="p">(</span><span class="n">awsome_process</span><span class="o">.</span><span class="n">pid</span><span class="p">,</span> <span class="n">signal</span><span class="o">.</span><span class="n">SIGTERM</span><span class="p">)</span>
 </pre></div>
 <p>Mirakuru's executors will now do that out of the box.</p>
 </section><section id="links"><h2>Links</h2>
@@ -147,7 +147,7 @@ jest dostępny na licencji
 </a>.</li>
             
                 <li>
-<a href="https://fizyk.dev/en">Homepage</a>
+<a href="https://fizyk.dev/">Homepage</a>
                 </li>
 <li>
 <a href="../../archive/">Archives</a>

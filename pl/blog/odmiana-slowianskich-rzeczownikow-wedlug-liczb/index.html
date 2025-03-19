@@ -9,8 +9,8 @@
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../rss.xml">
 <link rel="canonical" href="https://fizyk.dev/pl/blog/odmiana-slowianskich-rzeczownikow-wedlug-liczb/">
-<link rel="icon" href="../../../favicon-speddial.png" sizes="269x262">
 <link rel="icon" href="../../../favicon.png" sizes="62x60">
+<link rel="icon" href="../../../favicon-speddial.png" sizes="269x262">
 <!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -48,67 +48,67 @@ na forum symfony.</p>
 <p>Znajdująca się tam formuła dla helpera <strong>format_number_choice()</strong>
 miała kilka wad, dlatego na podstawie istniejącej zaproponowałem własną,
 która radzi sobie ze wszystkimi wariacji liczb:</p>
-<div class="code"><pre class="code php"><a id="rest_code_59d94b3855584327968cd5116d7842f8-1" name="rest_code_59d94b3855584327968cd5116d7842f8-1" href="#rest_code_59d94b3855584327968cd5116d7842f8-1"></a><span class="x">'[0] brak|[1] 1 wynik|{n: n % 10 &gt; 1 &amp;&amp; n % 10 &lt; 5 &amp;&amp; ( n &lt; 11 || n &gt; 14 ) &amp;&amp; ( n % 100 &lt; 11 || n % 100 &gt; 14 ) } %1% wyniki|[5,+Inf] %1% wyników '</span>
+<div class="code"><pre class="code php"><a id="rest_code_858a7a56c8214b54bdb86f7eeb798446-1" name="rest_code_858a7a56c8214b54bdb86f7eeb798446-1" href="#rest_code_858a7a56c8214b54bdb86f7eeb798446-1"></a><span class="x">'[0] brak|[1] 1 wynik|{n: n % 10 &gt; 1 &amp;&amp; n % 10 &lt; 5 &amp;&amp; ( n &lt; 11 || n &gt; 14 ) &amp;&amp; ( n % 100 &lt; 11 || n % 100 &gt; 14 ) } %1% wyniki|[5,+Inf] %1% wyników '</span>
 </pre></div>
 <p>Idąc dalej, stworzyłem funkcję biblioteczną, która przyjmuje w
 parametrach liczbę, oraz zestaw odmian rzeczownika, wybierając
 odpowiednią jego formę do liczby:</p>
-<div class="code"><pre class="code php"><a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-1" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-1" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-1"></a><span class="x">class Fizyk</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-2" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-2" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-2"></a><span class="x">{</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-3" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-3" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-3"></a><span class="x">    /**</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-4" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-4" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-4"></a><span class="x">     * Function that returns proper inflection based on a number that describes it's quantity for slavic languages.</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-5" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-5" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-5"></a>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-6" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-6" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-6"></a><span class="x">     * There are four forms: none, one singular and two plurar.</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-7" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-7" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-7"></a><span class="x">     * $word array indexes 1, 2 and 3 are mandatory, while 0 is optional</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-8" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-8" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-8"></a><span class="x">     * @param array $words</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-9" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-9" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-9"></a><span class="x">     * @param integer $number</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-10" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-10" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-10"></a><span class="x">     * @return string</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-11" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-11" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-11"></a><span class="x">     * @author Grzegorz Śliwiński</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-12" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-12" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-12"></a><span class="x">     */</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-13" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-13" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-13"></a><span class="x">    static public function slavicWordFormNumberChoice( Array $words, $number)</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-14" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-14" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-14"></a><span class="x">    {</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-15" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-15" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-15"></a><span class="x">        //throw exception if passed array doesn't kontain 1st, 2nd or 3rd form</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-16" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-16" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-16"></a><span class="x">        if( !array_key_exists( 1, $words) || !array_key_exists( 2, $words) || !array_key_exists( 3, $words ) )</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-17" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-17" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-17"></a><span class="x">        {</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-18" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-18" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-18"></a><span class="x">            //listing all keys</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-19" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-19" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-19"></a><span class="x">            $keys = '';</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-20" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-20" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-20"></a><span class="x">            foreach( array_keys( $words ) as $value )</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-21" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-21" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-21"></a><span class="x">            {</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-22" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-22" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-22"></a><span class="x">                $keys .= $value.' ';</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-23" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-23" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-23"></a><span class="x">            }</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-24" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-24" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-24"></a><span class="x">            //throwning exception</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-25" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-25" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-25"></a><span class="x">            throw new sfException( sprintf('Word array is incomplete! Should contain indexes 1, 2 and 3. Your contains: %s', $keys ) );</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-26" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-26" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-26"></a><span class="x">        }</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-27" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-27" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-27"></a>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-28" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-28" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-28"></a><span class="x">        //take care of the none case with word set</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-29" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-29" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-29"></a><span class="x">        if( $number == 0 &amp;&amp; array_key_exists(0, $words) )</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-30" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-30" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-30"></a><span class="x">        {</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-31" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-31" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-31"></a><span class="x">            return $words[0];</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-32" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-32" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-32"></a><span class="x">        }</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-33" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-33" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-33"></a><span class="x">        //take care of the none case without word set</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-34" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-34" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-34"></a><span class="x">        elseif( $number == 0 &amp;&amp; !array_key_exists(0, $words) )</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-35" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-35" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-35"></a><span class="x">        {</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-36" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-36" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-36"></a><span class="x">            $wordIndex = 3;</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-37" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-37" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-37"></a><span class="x">        }</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-38" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-38" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-38"></a><span class="x">        //One is always the same</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-39" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-39" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-39"></a><span class="x">        elseif( $number == 1 )</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-40" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-40" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-40"></a><span class="x">        {</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-41" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-41" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-41"></a><span class="x">            $wordIndex = 1;</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-42" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-42" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-42"></a><span class="x">        }</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-43" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-43" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-43"></a><span class="x">        //Second case: numbers from x2 to x4 without those from x12 to x14 (x - any number)</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-44" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-44" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-44"></a><span class="x">        elseif( $number % 10 &gt; 1 &amp;&amp; $number % 10 &lt; 5 &amp;&amp; ( $number &lt; 11 || $number &gt; 14 )</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-45" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-45" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-45"></a><span class="x">                &amp;&amp; ( $number % 100 &lt; 11 || $number % 100 &gt; 14 ) )</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-46" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-46" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-46"></a><span class="x">        {</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-47" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-47" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-47"></a><span class="x">            $wordIndex = 2;</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-48" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-48" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-48"></a><span class="x">        }</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-49" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-49" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-49"></a><span class="x">        else</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-50" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-50" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-50"></a><span class="x">        {</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-51" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-51" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-51"></a><span class="x">            $wordIndex = 3;</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-52" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-52" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-52"></a><span class="x">        }</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-53" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-53" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-53"></a><span class="x">        //we return numbered phrase to the world</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-54" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-54" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-54"></a><span class="x">        return $number.' '.$words[$wordIndex];</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-55" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-55" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-55"></a><span class="x">    }</span>
-<a id="rest_code_a38abf42a85a4e78ab49d0fe9a426174-56" name="rest_code_a38abf42a85a4e78ab49d0fe9a426174-56" href="#rest_code_a38abf42a85a4e78ab49d0fe9a426174-56"></a><span class="x">}</span>
+<div class="code"><pre class="code php"><a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-1" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-1" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-1"></a><span class="x">class Fizyk</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-2" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-2" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-2"></a><span class="x">{</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-3" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-3" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-3"></a><span class="x">    /**</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-4" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-4" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-4"></a><span class="x">     * Function that returns proper inflection based on a number that describes it's quantity for slavic languages.</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-5" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-5" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-5"></a>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-6" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-6" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-6"></a><span class="x">     * There are four forms: none, one singular and two plurar.</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-7" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-7" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-7"></a><span class="x">     * $word array indexes 1, 2 and 3 are mandatory, while 0 is optional</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-8" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-8" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-8"></a><span class="x">     * @param array $words</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-9" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-9" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-9"></a><span class="x">     * @param integer $number</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-10" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-10" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-10"></a><span class="x">     * @return string</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-11" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-11" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-11"></a><span class="x">     * @author Grzegorz Śliwiński</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-12" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-12" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-12"></a><span class="x">     */</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-13" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-13" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-13"></a><span class="x">    static public function slavicWordFormNumberChoice( Array $words, $number)</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-14" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-14" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-14"></a><span class="x">    {</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-15" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-15" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-15"></a><span class="x">        //throw exception if passed array doesn't kontain 1st, 2nd or 3rd form</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-16" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-16" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-16"></a><span class="x">        if( !array_key_exists( 1, $words) || !array_key_exists( 2, $words) || !array_key_exists( 3, $words ) )</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-17" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-17" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-17"></a><span class="x">        {</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-18" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-18" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-18"></a><span class="x">            //listing all keys</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-19" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-19" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-19"></a><span class="x">            $keys = '';</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-20" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-20" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-20"></a><span class="x">            foreach( array_keys( $words ) as $value )</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-21" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-21" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-21"></a><span class="x">            {</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-22" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-22" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-22"></a><span class="x">                $keys .= $value.' ';</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-23" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-23" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-23"></a><span class="x">            }</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-24" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-24" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-24"></a><span class="x">            //throwning exception</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-25" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-25" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-25"></a><span class="x">            throw new sfException( sprintf('Word array is incomplete! Should contain indexes 1, 2 and 3. Your contains: %s', $keys ) );</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-26" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-26" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-26"></a><span class="x">        }</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-27" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-27" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-27"></a>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-28" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-28" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-28"></a><span class="x">        //take care of the none case with word set</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-29" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-29" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-29"></a><span class="x">        if( $number == 0 &amp;&amp; array_key_exists(0, $words) )</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-30" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-30" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-30"></a><span class="x">        {</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-31" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-31" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-31"></a><span class="x">            return $words[0];</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-32" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-32" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-32"></a><span class="x">        }</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-33" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-33" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-33"></a><span class="x">        //take care of the none case without word set</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-34" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-34" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-34"></a><span class="x">        elseif( $number == 0 &amp;&amp; !array_key_exists(0, $words) )</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-35" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-35" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-35"></a><span class="x">        {</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-36" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-36" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-36"></a><span class="x">            $wordIndex = 3;</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-37" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-37" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-37"></a><span class="x">        }</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-38" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-38" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-38"></a><span class="x">        //One is always the same</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-39" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-39" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-39"></a><span class="x">        elseif( $number == 1 )</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-40" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-40" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-40"></a><span class="x">        {</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-41" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-41" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-41"></a><span class="x">            $wordIndex = 1;</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-42" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-42" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-42"></a><span class="x">        }</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-43" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-43" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-43"></a><span class="x">        //Second case: numbers from x2 to x4 without those from x12 to x14 (x - any number)</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-44" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-44" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-44"></a><span class="x">        elseif( $number % 10 &gt; 1 &amp;&amp; $number % 10 &lt; 5 &amp;&amp; ( $number &lt; 11 || $number &gt; 14 )</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-45" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-45" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-45"></a><span class="x">                &amp;&amp; ( $number % 100 &lt; 11 || $number % 100 &gt; 14 ) )</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-46" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-46" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-46"></a><span class="x">        {</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-47" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-47" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-47"></a><span class="x">            $wordIndex = 2;</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-48" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-48" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-48"></a><span class="x">        }</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-49" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-49" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-49"></a><span class="x">        else</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-50" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-50" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-50"></a><span class="x">        {</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-51" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-51" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-51"></a><span class="x">            $wordIndex = 3;</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-52" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-52" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-52"></a><span class="x">        }</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-53" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-53" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-53"></a><span class="x">        //we return numbered phrase to the world</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-54" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-54" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-54"></a><span class="x">        return $number.' '.$words[$wordIndex];</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-55" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-55" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-55"></a><span class="x">    }</span>
+<a id="rest_code_fc3985311c1f4445842e3e96c5ae6fad-56" name="rest_code_fc3985311c1f4445842e3e96c5ae6fad-56" href="#rest_code_fc3985311c1f4445842e3e96c5ae6fad-56"></a><span class="x">}</span>
 </pre></div>
 <p>Jedynym mankamentem tej metody jest konieczność zdefiniowania kluczy
 tablicy przekazywanych słów, ale akceptuje zestaw słów wszelakich.</p>
@@ -171,7 +171,7 @@ jest dostępny na licencji
 </a>.</li>
             
                 <li>
-<a href="https://fizyk.dev">Strona domowa</a>
+<a href="https://fizyk.dev/pl">Strona domowa</a>
                 </li>
 <li>
 <a href="../../archive/">Archiwum</a>

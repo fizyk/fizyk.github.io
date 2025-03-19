@@ -8,8 +8,8 @@
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../pl/rss.xml">
 <link rel="canonical" href="https://fizyk.dev/blog/unicode-is-faster-than-decode/">
-<link rel="icon" href="../../favicon-speddial.png" sizes="269x262">
 <link rel="icon" href="../../favicon.png" sizes="62x60">
+<link rel="icon" href="../../favicon-speddial.png" sizes="269x262">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -37,14 +37,14 @@
         </span>
         </div>
     <p>This might come as a surprise, but in python 2.7, it's actually faster to decode strigs with unicode function, than decode method.</p>
-<div class="code"><pre class="code python"><a id="rest_code_fd6b98edb8684a7c912655efd9f2db03-1" name="rest_code_fd6b98edb8684a7c912655efd9f2db03-1" href="#rest_code_fd6b98edb8684a7c912655efd9f2db03-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span><span class="w"> </span><span class="nn">timeit</span><span class="w"> </span><span class="kn">import</span> <span class="n">Timer</span>
-<a id="rest_code_fd6b98edb8684a7c912655efd9f2db03-2" name="rest_code_fd6b98edb8684a7c912655efd9f2db03-2" href="#rest_code_fd6b98edb8684a7c912655efd9f2db03-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="s2">"grzegrzółka"</span>
-<a id="rest_code_fd6b98edb8684a7c912655efd9f2db03-3" name="rest_code_fd6b98edb8684a7c912655efd9f2db03-3" href="#rest_code_fd6b98edb8684a7c912655efd9f2db03-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ts</span> <span class="o">=</span> <span class="n">Timer</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">s</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">'utf-8'</span><span class="p">))</span>
-<a id="rest_code_fd6b98edb8684a7c912655efd9f2db03-4" name="rest_code_fd6b98edb8684a7c912655efd9f2db03-4" href="#rest_code_fd6b98edb8684a7c912655efd9f2db03-4"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ts</span><span class="o">.</span><span class="n">timeit</span><span class="p">()</span>
-<a id="rest_code_fd6b98edb8684a7c912655efd9f2db03-5" name="rest_code_fd6b98edb8684a7c912655efd9f2db03-5" href="#rest_code_fd6b98edb8684a7c912655efd9f2db03-5"></a><span class="mf">1.4051871299743652</span>
-<a id="rest_code_fd6b98edb8684a7c912655efd9f2db03-6" name="rest_code_fd6b98edb8684a7c912655efd9f2db03-6" href="#rest_code_fd6b98edb8684a7c912655efd9f2db03-6"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">tu</span> <span class="o">=</span> <span class="n">Timer</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">unicode</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="s1">'utf-8'</span><span class="p">))</span>
-<a id="rest_code_fd6b98edb8684a7c912655efd9f2db03-7" name="rest_code_fd6b98edb8684a7c912655efd9f2db03-7" href="#rest_code_fd6b98edb8684a7c912655efd9f2db03-7"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">tu</span><span class="o">.</span><span class="n">timeit</span><span class="p">()</span>
-<a id="rest_code_fd6b98edb8684a7c912655efd9f2db03-8" name="rest_code_fd6b98edb8684a7c912655efd9f2db03-8" href="#rest_code_fd6b98edb8684a7c912655efd9f2db03-8"></a><span class="mf">0.4272959232330322</span>
+<div class="code"><pre class="code python"><a id="rest_code_12374512f53e466eb633838b23b3dd69-1" name="rest_code_12374512f53e466eb633838b23b3dd69-1" href="#rest_code_12374512f53e466eb633838b23b3dd69-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span><span class="w"> </span><span class="nn">timeit</span><span class="w"> </span><span class="kn">import</span> <span class="n">Timer</span>
+<a id="rest_code_12374512f53e466eb633838b23b3dd69-2" name="rest_code_12374512f53e466eb633838b23b3dd69-2" href="#rest_code_12374512f53e466eb633838b23b3dd69-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="s2">"grzegrzółka"</span>
+<a id="rest_code_12374512f53e466eb633838b23b3dd69-3" name="rest_code_12374512f53e466eb633838b23b3dd69-3" href="#rest_code_12374512f53e466eb633838b23b3dd69-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ts</span> <span class="o">=</span> <span class="n">Timer</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">s</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">'utf-8'</span><span class="p">))</span>
+<a id="rest_code_12374512f53e466eb633838b23b3dd69-4" name="rest_code_12374512f53e466eb633838b23b3dd69-4" href="#rest_code_12374512f53e466eb633838b23b3dd69-4"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ts</span><span class="o">.</span><span class="n">timeit</span><span class="p">()</span>
+<a id="rest_code_12374512f53e466eb633838b23b3dd69-5" name="rest_code_12374512f53e466eb633838b23b3dd69-5" href="#rest_code_12374512f53e466eb633838b23b3dd69-5"></a><span class="mf">1.4051871299743652</span>
+<a id="rest_code_12374512f53e466eb633838b23b3dd69-6" name="rest_code_12374512f53e466eb633838b23b3dd69-6" href="#rest_code_12374512f53e466eb633838b23b3dd69-6"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">tu</span> <span class="o">=</span> <span class="n">Timer</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">unicode</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="s1">'utf-8'</span><span class="p">))</span>
+<a id="rest_code_12374512f53e466eb633838b23b3dd69-7" name="rest_code_12374512f53e466eb633838b23b3dd69-7" href="#rest_code_12374512f53e466eb633838b23b3dd69-7"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">tu</span><span class="o">.</span><span class="n">timeit</span><span class="p">()</span>
+<a id="rest_code_12374512f53e466eb633838b23b3dd69-8" name="rest_code_12374512f53e466eb633838b23b3dd69-8" href="#rest_code_12374512f53e466eb633838b23b3dd69-8"></a><span class="mf">0.4272959232330322</span>
 </pre></div>
 <p>Of course, unicode method isn't valid for python3, but you can always mock it's behaviour for py3 in some compat.py file, but... strings in python3 are finally unicode, not ascii like in python2.7,so unless you develop some nice library, you probably know what python version will be running your project.</p>
     
@@ -106,7 +106,7 @@ jest dostępny na licencji
 </a>.</li>
             
                 <li>
-<a href="https://fizyk.dev/en">Homepage</a>
+<a href="https://fizyk.dev/">Homepage</a>
                 </li>
 <li>
 <a href="../../archive/">Archives</a>

@@ -9,8 +9,8 @@
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../pl/rss.xml">
 <link rel="canonical" href="https://fizyk.dev/blog/mirakuru-your-tests-little-helper/">
-<link rel="icon" href="../../favicon-speddial.png" sizes="269x262">
 <link rel="icon" href="../../favicon.png" sizes="62x60">
+<link rel="icon" href="../../favicon-speddial.png" sizes="269x262">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -68,20 +68,20 @@ Or make you focus on completely irrelevant part of your code.</p>
 executables. They'll be started along your test suite, and configured accordingly.</p>
 </section><section id="how-does-it-work"><h2>How does it work?</h2>
 <p>Without further babling, here's example from mirakuru's readme:</p>
-<div class="code"><pre class="code python"><a id="rest_code_3408e2be1d17400eb4f7b02659b4b8cb-1" name="rest_code_3408e2be1d17400eb4f7b02659b4b8cb-1" href="#rest_code_3408e2be1d17400eb4f7b02659b4b8cb-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">mirakuru</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTTPExecutor</span>
-<a id="rest_code_3408e2be1d17400eb4f7b02659b4b8cb-2" name="rest_code_3408e2be1d17400eb4f7b02659b4b8cb-2" href="#rest_code_3408e2be1d17400eb4f7b02659b4b8cb-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">httplib</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTTPConnection</span><span class="p">,</span> <span class="n">OK</span>
-<a id="rest_code_3408e2be1d17400eb4f7b02659b4b8cb-3" name="rest_code_3408e2be1d17400eb4f7b02659b4b8cb-3" href="#rest_code_3408e2be1d17400eb4f7b02659b4b8cb-3"></a>
-<a id="rest_code_3408e2be1d17400eb4f7b02659b4b8cb-4" name="rest_code_3408e2be1d17400eb4f7b02659b4b8cb-4" href="#rest_code_3408e2be1d17400eb4f7b02659b4b8cb-4"></a>
-<a id="rest_code_3408e2be1d17400eb4f7b02659b4b8cb-5" name="rest_code_3408e2be1d17400eb4f7b02659b4b8cb-5" href="#rest_code_3408e2be1d17400eb4f7b02659b4b8cb-5"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_it_works</span><span class="p">():</span>
-<a id="rest_code_3408e2be1d17400eb4f7b02659b4b8cb-6" name="rest_code_3408e2be1d17400eb4f7b02659b4b8cb-6" href="#rest_code_3408e2be1d17400eb4f7b02659b4b8cb-6"></a>    <span class="n">executor</span> <span class="o">=</span> <span class="n">HTTPExecutor</span><span class="p">(</span><span class="s2">"./server"</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="s2">"http://localhost:6543/"</span><span class="p">)</span>
-<a id="rest_code_3408e2be1d17400eb4f7b02659b4b8cb-7" name="rest_code_3408e2be1d17400eb4f7b02659b4b8cb-7" href="#rest_code_3408e2be1d17400eb4f7b02659b4b8cb-7"></a>
-<a id="rest_code_3408e2be1d17400eb4f7b02659b4b8cb-8" name="rest_code_3408e2be1d17400eb4f7b02659b4b8cb-8" href="#rest_code_3408e2be1d17400eb4f7b02659b4b8cb-8"></a>    <span class="c1"># start and wait for it to run</span>
-<a id="rest_code_3408e2be1d17400eb4f7b02659b4b8cb-9" name="rest_code_3408e2be1d17400eb4f7b02659b4b8cb-9" href="#rest_code_3408e2be1d17400eb4f7b02659b4b8cb-9"></a>    <span class="n">executor</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-<a id="rest_code_3408e2be1d17400eb4f7b02659b4b8cb-10" name="rest_code_3408e2be1d17400eb4f7b02659b4b8cb-10" href="#rest_code_3408e2be1d17400eb4f7b02659b4b8cb-10"></a>    <span class="c1"># should be running!</span>
-<a id="rest_code_3408e2be1d17400eb4f7b02659b4b8cb-11" name="rest_code_3408e2be1d17400eb4f7b02659b4b8cb-11" href="#rest_code_3408e2be1d17400eb4f7b02659b4b8cb-11"></a>    <span class="n">conn</span> <span class="o">=</span> <span class="n">HTTPConnection</span><span class="p">(</span><span class="s2">"localhost"</span><span class="p">,</span> <span class="mi">6543</span><span class="p">)</span>
-<a id="rest_code_3408e2be1d17400eb4f7b02659b4b8cb-12" name="rest_code_3408e2be1d17400eb4f7b02659b4b8cb-12" href="#rest_code_3408e2be1d17400eb4f7b02659b4b8cb-12"></a>    <span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s1">'GET'</span><span class="p">,</span> <span class="s1">'/'</span><span class="p">)</span>
-<a id="rest_code_3408e2be1d17400eb4f7b02659b4b8cb-13" name="rest_code_3408e2be1d17400eb4f7b02659b4b8cb-13" href="#rest_code_3408e2be1d17400eb4f7b02659b4b8cb-13"></a>    <span class="k">assert</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span><span class="o">.</span><span class="n">status</span> <span class="ow">is</span> <span class="n">OK</span>
-<a id="rest_code_3408e2be1d17400eb4f7b02659b4b8cb-14" name="rest_code_3408e2be1d17400eb4f7b02659b4b8cb-14" href="#rest_code_3408e2be1d17400eb4f7b02659b4b8cb-14"></a>    <span class="n">executor</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+<div class="code"><pre class="code python"><a id="rest_code_56bd62888ebc499087691f73a7bacb5f-1" name="rest_code_56bd62888ebc499087691f73a7bacb5f-1" href="#rest_code_56bd62888ebc499087691f73a7bacb5f-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">mirakuru</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTTPExecutor</span>
+<a id="rest_code_56bd62888ebc499087691f73a7bacb5f-2" name="rest_code_56bd62888ebc499087691f73a7bacb5f-2" href="#rest_code_56bd62888ebc499087691f73a7bacb5f-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">httplib</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTTPConnection</span><span class="p">,</span> <span class="n">OK</span>
+<a id="rest_code_56bd62888ebc499087691f73a7bacb5f-3" name="rest_code_56bd62888ebc499087691f73a7bacb5f-3" href="#rest_code_56bd62888ebc499087691f73a7bacb5f-3"></a>
+<a id="rest_code_56bd62888ebc499087691f73a7bacb5f-4" name="rest_code_56bd62888ebc499087691f73a7bacb5f-4" href="#rest_code_56bd62888ebc499087691f73a7bacb5f-4"></a>
+<a id="rest_code_56bd62888ebc499087691f73a7bacb5f-5" name="rest_code_56bd62888ebc499087691f73a7bacb5f-5" href="#rest_code_56bd62888ebc499087691f73a7bacb5f-5"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_it_works</span><span class="p">():</span>
+<a id="rest_code_56bd62888ebc499087691f73a7bacb5f-6" name="rest_code_56bd62888ebc499087691f73a7bacb5f-6" href="#rest_code_56bd62888ebc499087691f73a7bacb5f-6"></a>    <span class="n">executor</span> <span class="o">=</span> <span class="n">HTTPExecutor</span><span class="p">(</span><span class="s2">"./server"</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="s2">"http://localhost:6543/"</span><span class="p">)</span>
+<a id="rest_code_56bd62888ebc499087691f73a7bacb5f-7" name="rest_code_56bd62888ebc499087691f73a7bacb5f-7" href="#rest_code_56bd62888ebc499087691f73a7bacb5f-7"></a>
+<a id="rest_code_56bd62888ebc499087691f73a7bacb5f-8" name="rest_code_56bd62888ebc499087691f73a7bacb5f-8" href="#rest_code_56bd62888ebc499087691f73a7bacb5f-8"></a>    <span class="c1"># start and wait for it to run</span>
+<a id="rest_code_56bd62888ebc499087691f73a7bacb5f-9" name="rest_code_56bd62888ebc499087691f73a7bacb5f-9" href="#rest_code_56bd62888ebc499087691f73a7bacb5f-9"></a>    <span class="n">executor</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<a id="rest_code_56bd62888ebc499087691f73a7bacb5f-10" name="rest_code_56bd62888ebc499087691f73a7bacb5f-10" href="#rest_code_56bd62888ebc499087691f73a7bacb5f-10"></a>    <span class="c1"># should be running!</span>
+<a id="rest_code_56bd62888ebc499087691f73a7bacb5f-11" name="rest_code_56bd62888ebc499087691f73a7bacb5f-11" href="#rest_code_56bd62888ebc499087691f73a7bacb5f-11"></a>    <span class="n">conn</span> <span class="o">=</span> <span class="n">HTTPConnection</span><span class="p">(</span><span class="s2">"localhost"</span><span class="p">,</span> <span class="mi">6543</span><span class="p">)</span>
+<a id="rest_code_56bd62888ebc499087691f73a7bacb5f-12" name="rest_code_56bd62888ebc499087691f73a7bacb5f-12" href="#rest_code_56bd62888ebc499087691f73a7bacb5f-12"></a>    <span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s1">'GET'</span><span class="p">,</span> <span class="s1">'/'</span><span class="p">)</span>
+<a id="rest_code_56bd62888ebc499087691f73a7bacb5f-13" name="rest_code_56bd62888ebc499087691f73a7bacb5f-13" href="#rest_code_56bd62888ebc499087691f73a7bacb5f-13"></a>    <span class="k">assert</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span><span class="o">.</span><span class="n">status</span> <span class="ow">is</span> <span class="n">OK</span>
+<a id="rest_code_56bd62888ebc499087691f73a7bacb5f-14" name="rest_code_56bd62888ebc499087691f73a7bacb5f-14" href="#rest_code_56bd62888ebc499087691f73a7bacb5f-14"></a>    <span class="n">executor</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
 </pre></div>
 <p>What we did here:</p>
 <ol class="arabic simple">
@@ -179,7 +179,7 @@ jest dostępny na licencji
 </a>.</li>
             
                 <li>
-<a href="https://fizyk.dev/en">Homepage</a>
+<a href="https://fizyk.dev/">Homepage</a>
                 </li>
 <li>
 <a href="../../archive/">Archives</a>

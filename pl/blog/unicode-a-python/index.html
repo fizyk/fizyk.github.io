@@ -9,8 +9,8 @@
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../rss.xml">
 <link rel="canonical" href="https://fizyk.dev/pl/blog/unicode-a-python/">
-<link rel="icon" href="../../../favicon-speddial.png" sizes="269x262">
 <link rel="icon" href="../../../favicon.png" sizes="62x60">
+<link rel="icon" href="../../../favicon-speddial.png" sizes="269x262">
 <!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -46,7 +46,7 @@ rozwiązanie tej kwestii w Pythonie sprawia mi niemały kłopot.</p>
 ogonki, musi być unicodowym ciągiem znaków. Zwykłe stringi akceptują
 tylko i wyłącznie znaki ASCII.</p>
 <p>I tak deklarując zmienną w kodzie, na pewno będzie stringiem.</p>
-<div class="code"><pre class="code python"><a id="rest_code_29c83cd391994f98a06047ca1bf5f3b0-1" name="rest_code_29c83cd391994f98a06047ca1bf5f3b0-1" href="#rest_code_29c83cd391994f98a06047ca1bf5f3b0-1"></a><span class="n">zmienna</span> <span class="o">=</span> <span class="s1">'łańcuch'</span>
+<div class="code"><pre class="code python"><a id="rest_code_c7b3cc05fa1a4e52a6f2dc22bfe7c764-1" name="rest_code_c7b3cc05fa1a4e52a6f2dc22bfe7c764-1" href="#rest_code_c7b3cc05fa1a4e52a6f2dc22bfe7c764-1"></a><span class="n">zmienna</span> <span class="o">=</span> <span class="s1">'łańcuch'</span>
 </pre></div>
 <p>Raczej bez różnicy, jakich znaków użyjemy. Jeśli jednak wartość zmienna
 zostaje wczytana z zewnętrznego źródła danych, wtedy możemy napotkać
@@ -64,12 +64,12 @@ Unicode.</p>
 <p>Jak to obejść? Wyłapać się wszystkiego w czasie pisania nie da, można
 chyba tylko przed wywołaniem, które zwraca błąd zastosować poniższą
 konstrukcję:</p>
-<div class="code"><pre class="code python"><a id="rest_code_03a1ea6562074d559f7d684d47b58368-1" name="rest_code_03a1ea6562074d559f7d684d47b58368-1" href="#rest_code_03a1ea6562074d559f7d684d47b58368-1"></a><span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">zmienna</span><span class="p">,</span> <span class="n">unicode</span><span class="p">):</span>
-<a id="rest_code_03a1ea6562074d559f7d684d47b58368-2" name="rest_code_03a1ea6562074d559f7d684d47b58368-2" href="#rest_code_03a1ea6562074d559f7d684d47b58368-2"></a>    <span class="n">zmienna</span> <span class="o">=</span> <span class="n">zmienna</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">'utf-8'</span><span class="p">)</span>
+<div class="code"><pre class="code python"><a id="rest_code_9d42600e8e534f2ab689e7f8fdc32d05-1" name="rest_code_9d42600e8e534f2ab689e7f8fdc32d05-1" href="#rest_code_9d42600e8e534f2ab689e7f8fdc32d05-1"></a><span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">zmienna</span><span class="p">,</span> <span class="n">unicode</span><span class="p">):</span>
+<a id="rest_code_9d42600e8e534f2ab689e7f8fdc32d05-2" name="rest_code_9d42600e8e534f2ab689e7f8fdc32d05-2" href="#rest_code_9d42600e8e534f2ab689e7f8fdc32d05-2"></a>    <span class="n">zmienna</span> <span class="o">=</span> <span class="n">zmienna</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">'utf-8'</span><span class="p">)</span>
 </pre></div>
 <p>Gdy po raz pierwszy spotkałem się z tym problemem, znalazłem informację
 o możliwości zdefiniowania kodowania plików źródłowych:</p>
-<div class="code"><pre class="code python"><a id="rest_code_52b3bd6943ee47ae9e9e3de42772e7c2-1" name="rest_code_52b3bd6943ee47ae9e9e3de42772e7c2-1" href="#rest_code_52b3bd6943ee47ae9e9e3de42772e7c2-1"></a><span class="c1"># -*- coding: utf-8 -*-</span>
+<div class="code"><pre class="code python"><a id="rest_code_e9b21bc8881d480fa9a3bb650e5af861-1" name="rest_code_e9b21bc8881d480fa9a3bb650e5af861-1" href="#rest_code_e9b21bc8881d480fa9a3bb650e5af861-1"></a><span class="c1"># -*- coding: utf-8 -*-</span>
 </pre></div>
 <p>Ta konstrukcja służy jednak tylko i wyłącznie zdefiniowaniu kodowania
 kodu źródłowego, nie kodowania używanego przez Pythona. Stąd w swoich
@@ -134,7 +134,7 @@ jest dostępny na licencji
 </a>.</li>
             
                 <li>
-<a href="https://fizyk.dev">Strona domowa</a>
+<a href="https://fizyk.dev/pl">Strona domowa</a>
                 </li>
 <li>
 <a href="../../archive/">Archiwum</a>

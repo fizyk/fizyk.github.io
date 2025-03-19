@@ -9,8 +9,8 @@
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../pl/rss.xml">
 <link rel="canonical" href="https://fizyk.dev/blog/sort-doctrine-model-by-default/">
-<link rel="icon" href="../../favicon-speddial.png" sizes="269x262">
 <link rel="icon" href="../../favicon.png" sizes="62x60">
+<link rel="icon" href="../../favicon-speddial.png" sizes="269x262">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -49,22 +49,22 @@ that...</a>)
 again, and there, in the comments I found what I was looking for. It is
 even simpler than setting orderBy for relation, you can set up orderBy
 for entire model:</p>
-<div class="code"><pre class="code yaml"><a id="rest_code_ede32bdbd38448239b2300aaa6e1028e-1" name="rest_code_ede32bdbd38448239b2300aaa6e1028e-1" href="#rest_code_ede32bdbd38448239b2300aaa6e1028e-1"></a><span class="nt">fzTag</span><span class="p">:</span>
-<a id="rest_code_ede32bdbd38448239b2300aaa6e1028e-2" name="rest_code_ede32bdbd38448239b2300aaa6e1028e-2" href="#rest_code_ede32bdbd38448239b2300aaa6e1028e-2"></a><span class="w">  </span><span class="nt">options</span><span class="p">:</span>
-<a id="rest_code_ede32bdbd38448239b2300aaa6e1028e-3" name="rest_code_ede32bdbd38448239b2300aaa6e1028e-3" href="#rest_code_ede32bdbd38448239b2300aaa6e1028e-3"></a><span class="w">    </span><span class="nt">orderBy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">weight DESC</span>
+<div class="code"><pre class="code yaml"><a id="rest_code_711713cea366496ead81b95865cb5146-1" name="rest_code_711713cea366496ead81b95865cb5146-1" href="#rest_code_711713cea366496ead81b95865cb5146-1"></a><span class="nt">fzTag</span><span class="p">:</span>
+<a id="rest_code_711713cea366496ead81b95865cb5146-2" name="rest_code_711713cea366496ead81b95865cb5146-2" href="#rest_code_711713cea366496ead81b95865cb5146-2"></a><span class="w">  </span><span class="nt">options</span><span class="p">:</span>
+<a id="rest_code_711713cea366496ead81b95865cb5146-3" name="rest_code_711713cea366496ead81b95865cb5146-3" href="#rest_code_711713cea366496ead81b95865cb5146-3"></a><span class="w">    </span><span class="nt">orderBy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">weight DESC</span>
 </pre></div>
 <p>Now, after building up model, doctrine adds that sorting to your query
 unless you set up your own orderBy settings. Everything looks and works
 great, unless you actually try to retrieve tagged object and tags in one
 query.</p>
-<div class="code"><pre class="code php"><a id="rest_code_fbf5d6c62331418e8da21a5b69594163-1" name="rest_code_fbf5d6c62331418e8da21a5b69594163-1" href="#rest_code_fbf5d6c62331418e8da21a5b69594163-1"></a><span class="x">ObjectTable::getinstance() -&gt;createQuery('a')-&gt;leftJoin('a.Tags t');</span>
+<div class="code"><pre class="code php"><a id="rest_code_179d6826fabf425aba3e683d537bab49-1" name="rest_code_179d6826fabf425aba3e683d537bab49-1" href="#rest_code_179d6826fabf425aba3e683d537bab49-1"></a><span class="x">ObjectTable::getinstance() -&gt;createQuery('a')-&gt;leftJoin('a.Tags t');</span>
 </pre></div>
 <p>After that Doctrine tries to sort both by weight both tags and
 association table.</p>
-<div class="code"><pre class="code mysql"><a id="rest_code_76743d5c7ef74a65b701e2ef215b1b90-1" name="rest_code_76743d5c7ef74a65b701e2ef215b1b90-1" href="#rest_code_76743d5c7ef74a65b701e2ef215b1b90-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">object</span><span class="w"> </span><span class="n">o</span>
-<a id="rest_code_76743d5c7ef74a65b701e2ef215b1b90-2" name="rest_code_76743d5c7ef74a65b701e2ef215b1b90-2" href="#rest_code_76743d5c7ef74a65b701e2ef215b1b90-2"></a><span class="w">    </span><span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">object_fz_tag</span><span class="w"> </span><span class="n">o2</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="p">(</span><span class="n">o</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">o2</span><span class="p">.</span><span class="n">id</span><span class="p">)</span>
-<a id="rest_code_76743d5c7ef74a65b701e2ef215b1b90-3" name="rest_code_76743d5c7ef74a65b701e2ef215b1b90-3" href="#rest_code_76743d5c7ef74a65b701e2ef215b1b90-3"></a><span class="w">    </span><span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">fz_tag</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">f</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">o2</span><span class="p">.</span><span class="n">tag_id</span>
-<a id="rest_code_76743d5c7ef74a65b701e2ef215b1b90-4" name="rest_code_76743d5c7ef74a65b701e2ef215b1b90-4" href="#rest_code_76743d5c7ef74a65b701e2ef215b1b90-4"></a><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">f</span><span class="p">.</span><span class="n">weight</span><span class="w"> </span><span class="k">DESC</span><span class="p">,</span><span class="w"> </span><span class="n">o2</span><span class="p">.</span><span class="n">weight</span><span class="w"> </span><span class="k">DESC</span><span class="p">;</span>
+<div class="code"><pre class="code mysql"><a id="rest_code_92b6d9b11ed64be9bb7ff1786bc4abcd-1" name="rest_code_92b6d9b11ed64be9bb7ff1786bc4abcd-1" href="#rest_code_92b6d9b11ed64be9bb7ff1786bc4abcd-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">object</span><span class="w"> </span><span class="n">o</span>
+<a id="rest_code_92b6d9b11ed64be9bb7ff1786bc4abcd-2" name="rest_code_92b6d9b11ed64be9bb7ff1786bc4abcd-2" href="#rest_code_92b6d9b11ed64be9bb7ff1786bc4abcd-2"></a><span class="w">    </span><span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">object_fz_tag</span><span class="w"> </span><span class="n">o2</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="p">(</span><span class="n">o</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">o2</span><span class="p">.</span><span class="n">id</span><span class="p">)</span>
+<a id="rest_code_92b6d9b11ed64be9bb7ff1786bc4abcd-3" name="rest_code_92b6d9b11ed64be9bb7ff1786bc4abcd-3" href="#rest_code_92b6d9b11ed64be9bb7ff1786bc4abcd-3"></a><span class="w">    </span><span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">fz_tag</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">f</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">o2</span><span class="p">.</span><span class="n">tag_id</span>
+<a id="rest_code_92b6d9b11ed64be9bb7ff1786bc4abcd-4" name="rest_code_92b6d9b11ed64be9bb7ff1786bc4abcd-4" href="#rest_code_92b6d9b11ed64be9bb7ff1786bc4abcd-4"></a><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">f</span><span class="p">.</span><span class="n">weight</span><span class="w"> </span><span class="k">DESC</span><span class="p">,</span><span class="w"> </span><span class="n">o2</span><span class="p">.</span><span class="n">weight</span><span class="w"> </span><span class="k">DESC</span><span class="p">;</span>
 </pre></div>
 <p>And even if it worked, would you dare to guess how would object's list
 looked like? Well... it would probably be sorted by tag's weight, unless
@@ -129,7 +129,7 @@ jest dostępny na licencji
 </a>.</li>
             
                 <li>
-<a href="https://fizyk.dev/en">Homepage</a>
+<a href="https://fizyk.dev/">Homepage</a>
                 </li>
 <li>
 <a href="../../archive/">Archives</a>

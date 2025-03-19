@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cases (Posty o jQuery)</title><link>https://fizyk.dev/</link><description></description><atom:link href="https://fizyk.dev/pl/tags/jquery.xml" rel="self" type="application/rss+xml"></atom:link><language>pl</language><lastBuildDate>Wed, 19 Mar 2025 20:55:38 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>fzTagPlugin 1.2.0</title><link>https://fizyk.dev/pl/blog/fztagplugin-1-2-0/</link><dc:creator>Grzegorz Śliwiński</dc:creator><description>&lt;p&gt;Po sporej przerwie od poprzedniej wersji i okresie rozwijania
+<?xml-stylesheet type="text/xsl" href="../../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cases (Posty o jQuery)</title><link>https://fizyk.dev/</link><description></description><atom:link href="https://fizyk.dev/pl/tags/jquery.xml" rel="self" type="application/rss+xml"></atom:link><language>pl</language><lastBuildDate>Wed, 19 Mar 2025 21:04:19 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>fzTagPlugin 1.2.0</title><link>https://fizyk.dev/pl/blog/fztagplugin-1-2-0/</link><dc:creator>Grzegorz Śliwiński</dc:creator><description>&lt;p&gt;Po sporej przerwie od poprzedniej wersji i okresie rozwijania
 zaplanowanych funkcjonalności, z przyjemnością przedstawiam nową wersje
 pluginu fzTag dla &lt;a class="reference external" href="http://www.symfony-project.org/"&gt;symfony&lt;/a&gt;. W menu
 tym razem chmury tagów i ilość użycia.&lt;/p&gt;
@@ -28,7 +28,7 @@ jednak) a także trzy komponenty chmury tagów.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;Jak zwykle, plugin można zdobyć na trzy sposoby, uruchamiając taska
 symfony:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre class="code bash"&gt;&lt;a id="rest_code_10c875737140400ebd1280e1f8c3673e-1" name="rest_code_10c875737140400ebd1280e1f8c3673e-1" href="https://fizyk.dev/pl/blog/fztagplugin-1-2-0/#rest_code_10c875737140400ebd1280e1f8c3673e-1"&gt;&lt;/a&gt;./symfony&lt;span class="w"&gt; &lt;/span&gt;plugin:upgrade&lt;span class="w"&gt; &lt;/span&gt;fzTagPlugin
+&lt;div class="code"&gt;&lt;pre class="code bash"&gt;&lt;a id="rest_code_c9f0e54aa0eb4f7b842a7b6192da8ded-1" name="rest_code_c9f0e54aa0eb4f7b842a7b6192da8ded-1" href="https://fizyk.dev/pl/blog/fztagplugin-1-2-0/#rest_code_c9f0e54aa0eb4f7b842a7b6192da8ded-1"&gt;&lt;/a&gt;./symfony&lt;span class="w"&gt; &lt;/span&gt;plugin:upgrade&lt;span class="w"&gt; &lt;/span&gt;fzTagPlugin
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="http://www.symfony-project.org/plugins/fzTagPlugin/1_2_0"&gt;Ze stron symfony&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;

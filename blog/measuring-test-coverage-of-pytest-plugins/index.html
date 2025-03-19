@@ -8,8 +8,8 @@
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../pl/rss.xml">
 <link rel="canonical" href="https://fizyk.dev/blog/measuring-test-coverage-of-pytest-plugins/">
-<link rel="icon" href="../../favicon-speddial.png" sizes="269x262">
 <link rel="icon" href="../../favicon.png" sizes="62x60">
+<link rel="icon" href="../../favicon-speddial.png" sizes="269x262">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -49,11 +49,11 @@ kicks in in exact moment, thanks to a pytest_sessionstart hook.</p>
 <p>And just today, I was toying with the idea looking first at recent changes in
 pytest-cov, and it occurred to me, that to get full coverage of pytest plugin,
 I actually have to turn it off!</p>
-<div class="code"><pre class="code text"><a id="rest_code_7f56511b7e4243d5aef0c7db797e8ea3-1" name="rest_code_7f56511b7e4243d5aef0c7db797e8ea3-1" href="#rest_code_7f56511b7e4243d5aef0c7db797e8ea3-1"></a>py.test -p no:pytest-plugin
+<div class="code"><pre class="code text"><a id="rest_code_3eb1d164208b4991b32b196a9c59a359-1" name="rest_code_3eb1d164208b4991b32b196a9c59a359-1" href="#rest_code_3eb1d164208b4991b32b196a9c59a359-1"></a>py.test -p no:pytest-plugin
 </pre></div>
 <p>But how do we use plguin's fixtures and configuration then? Well, it's enough
 to import everything from the plugin in test's <em>conftest.py</em> file!</p>
-<div class="code"><pre class="code python"><a id="rest_code_926566dc5f4b450fa200f1d020155fe5-1" name="rest_code_926566dc5f4b450fa200f1d020155fe5-1" href="#rest_code_926566dc5f4b450fa200f1d020155fe5-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pytest_plugin.plugin</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<div class="code"><pre class="code python"><a id="rest_code_b92053f4521a458b99693e6097760104-1" name="rest_code_b92053f4521a458b99693e6097760104-1" href="#rest_code_b92053f4521a458b99693e6097760104-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pytest_plugin.plugin</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 <p>This will make your plugin's fixture to kick in, as well as any configuration
 option your pytest plugin might require.</p>
@@ -122,7 +122,7 @@ jest dostępny na licencji
 </a>.</li>
             
                 <li>
-<a href="https://fizyk.dev/en">Homepage</a>
+<a href="https://fizyk.dev/">Homepage</a>
                 </li>
 <li>
 <a href="../../archive/">Archives</a>

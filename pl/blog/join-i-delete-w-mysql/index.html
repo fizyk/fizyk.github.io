@@ -9,8 +9,8 @@
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../rss.xml">
 <link rel="canonical" href="https://fizyk.dev/pl/blog/join-i-delete-w-mysql/">
-<link rel="icon" href="../../../favicon-speddial.png" sizes="269x262">
 <link rel="icon" href="../../../favicon.png" sizes="62x60">
+<link rel="icon" href="../../../favicon-speddial.png" sizes="269x262">
 <!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -43,20 +43,20 @@ jednak postanowiłem wykonać jedno.</p>
 <!-- TEASER_END -->
 <p>Jak wygląda standardowe zapytanie DELETE każdy wie. Wychodząc z tego
 punktu, szybko rozszerzyłem podstawową wersję zapytania o JOIN i Aliasy:</p>
-<div class="code"><pre class="code mysql"><a id="rest_code_2578a60d72654b9c9950a369269e408a-1" name="rest_code_2578a60d72654b9c9950a369269e408a-1" href="#rest_code_2578a60d72654b9c9950a369269e408a-1"></a><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">t</span>
-<a id="rest_code_2578a60d72654b9c9950a369269e408a-2" name="rest_code_2578a60d72654b9c9950a369269e408a-2" href="#rest_code_2578a60d72654b9c9950a369269e408a-2"></a><span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">other_table</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">table_id</span><span class="o">=</span><span class="n">t</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="k">condition</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+<div class="code"><pre class="code mysql"><a id="rest_code_f22266b9e12a467f932ff008aa2defdc-1" name="rest_code_f22266b9e12a467f932ff008aa2defdc-1" href="#rest_code_f22266b9e12a467f932ff008aa2defdc-1"></a><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">t</span>
+<a id="rest_code_f22266b9e12a467f932ff008aa2defdc-2" name="rest_code_f22266b9e12a467f932ff008aa2defdc-2" href="#rest_code_f22266b9e12a467f932ff008aa2defdc-2"></a><span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">other_table</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">table_id</span><span class="o">=</span><span class="n">t</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="k">condition</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
 </pre></div>
 <p>Niestety, może i klient mySQL przełknie to zapytanie, ale sam mySQL już
 nie. Zapytanie poprawnie powinno wyglądać tak:</p>
-<div class="code"><pre class="code mysql"><a id="rest_code_3ca5bc4ed7bf48ae889a021b3fef11fc-1" name="rest_code_3ca5bc4ed7bf48ae889a021b3fef11fc-1" href="#rest_code_3ca5bc4ed7bf48ae889a021b3fef11fc-1"></a><span class="k">DELETE</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">t</span>
-<a id="rest_code_3ca5bc4ed7bf48ae889a021b3fef11fc-2" name="rest_code_3ca5bc4ed7bf48ae889a021b3fef11fc-2" href="#rest_code_3ca5bc4ed7bf48ae889a021b3fef11fc-2"></a><span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">other_table</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">table_id</span><span class="o">=</span><span class="n">t</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="k">condition</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+<div class="code"><pre class="code mysql"><a id="rest_code_af5ced7a03ab40328951695d1e7f7a2c-1" name="rest_code_af5ced7a03ab40328951695d1e7f7a2c-1" href="#rest_code_af5ced7a03ab40328951695d1e7f7a2c-1"></a><span class="k">DELETE</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">t</span>
+<a id="rest_code_af5ced7a03ab40328951695d1e7f7a2c-2" name="rest_code_af5ced7a03ab40328951695d1e7f7a2c-2" href="#rest_code_af5ced7a03ab40328951695d1e7f7a2c-2"></a><span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">other_table</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">table_id</span><span class="o">=</span><span class="n">t</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="k">condition</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
 </pre></div>
 <p>Gdzie ustalamy, z której tabeli konkretnie chcemy usunąć wiersze. Więcej
 na ten temat można przeczytać o dziwo w <a class="reference external" href="http://dev.mysql.com/doc/refman/5.1/en/delete.html">dokumentacji
 mySQL</a>.
 Oczywiście, można jeszcze próbować zapytań zagnieżdżonych:</p>
-<div class="code"><pre class="code mysql"><a id="rest_code_5cf7d705164c4933ad8a9dec5d5cf9ff-1" name="rest_code_5cf7d705164c4933ad8a9dec5d5cf9ff-1" href="#rest_code_5cf7d705164c4933ad8a9dec5d5cf9ff-1"></a><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">IN</span>
-<a id="rest_code_5cf7d705164c4933ad8a9dec5d5cf9ff-2" name="rest_code_5cf7d705164c4933ad8a9dec5d5cf9ff-2" href="#rest_code_5cf7d705164c4933ad8a9dec5d5cf9ff-2"></a><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">table_id</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">other_table</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="k">condition</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+<div class="code"><pre class="code mysql"><a id="rest_code_5268c77147ab45b59ea2cef9b7d61538-1" name="rest_code_5268c77147ab45b59ea2cef9b7d61538-1" href="#rest_code_5268c77147ab45b59ea2cef9b7d61538-1"></a><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">IN</span>
+<a id="rest_code_5268c77147ab45b59ea2cef9b7d61538-2" name="rest_code_5268c77147ab45b59ea2cef9b7d61538-2" href="#rest_code_5268c77147ab45b59ea2cef9b7d61538-2"></a><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">table_id</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">other_table</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="k">condition</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
 </pre></div>
     
         <ul class="pager hidden-print">
@@ -117,7 +117,7 @@ jest dostępny na licencji
 </a>.</li>
             
                 <li>
-<a href="https://fizyk.dev">Strona domowa</a>
+<a href="https://fizyk.dev/pl">Strona domowa</a>
                 </li>
 <li>
 <a href="../../archive/">Archiwum</a>

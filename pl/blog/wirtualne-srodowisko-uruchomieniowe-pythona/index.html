@@ -9,8 +9,8 @@
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../rss.xml">
 <link rel="canonical" href="https://fizyk.dev/pl/blog/wirtualne-srodowisko-uruchomieniowe-pythona/">
-<link rel="icon" href="../../../favicon-speddial.png" sizes="269x262">
 <link rel="icon" href="../../../favicon.png" sizes="62x60">
+<link rel="icon" href="../../../favicon-speddial.png" sizes="269x262">
 <!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -55,23 +55,23 @@ jak w tworzeniu oprogramowania.</p>
 przy włączonym środowisku venv, wywoła za nas aktualnie włączone
 wirtualne środowisko. Jedyne, co trzeba zrobić, to uruchomić
 odpowiednie:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_04a40703d563403789cb10201c99a7ae-1" name="rest_code_04a40703d563403789cb10201c99a7ae-1" href="#rest_code_04a40703d563403789cb10201c99a7ae-1"></a>workon<span class="w"> </span>python-basic
-<a id="rest_code_04a40703d563403789cb10201c99a7ae-2" name="rest_code_04a40703d563403789cb10201c99a7ae-2" href="#rest_code_04a40703d563403789cb10201c99a7ae-2"></a>workon<span class="w"> </span>python-z-ta-super-biblioteka
+<div class="code"><pre class="code bash"><a id="rest_code_52dea70ba3b04dad907654d4ec93ef8a-1" name="rest_code_52dea70ba3b04dad907654d4ec93ef8a-1" href="#rest_code_52dea70ba3b04dad907654d4ec93ef8a-1"></a>workon<span class="w"> </span>python-basic
+<a id="rest_code_52dea70ba3b04dad907654d4ec93ef8a-2" name="rest_code_52dea70ba3b04dad907654d4ec93ef8a-2" href="#rest_code_52dea70ba3b04dad907654d4ec93ef8a-2"></a>workon<span class="w"> </span>python-z-ta-super-biblioteka
 </pre></div>
 <p>Jedyny minus, to trochę bardziej skomplikowana instalacja narzędzi, za
 to utworzenie nowego środowiska jest już zdecydowanie prostsze.</p>
 <p>Najpierw należy oczywiście zainstalować virtualenvwrappera w systemie.
 Ubuntu 12.04 w repozytorium posiada wersję 2.11, więc najlepiej
 zainstalować najnowszą przez pip'a:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_b1f6864ba4134875a2f261111f5ec32d-1" name="rest_code_b1f6864ba4134875a2f261111f5ec32d-1" href="#rest_code_b1f6864ba4134875a2f261111f5ec32d-1"></a>pip<span class="w"> </span>install<span class="w"> </span>virtualenvwrapper
+<div class="code"><pre class="code bash"><a id="rest_code_7db91cb67cbb4e909defebdf1f8fd105-1" name="rest_code_7db91cb67cbb4e909defebdf1f8fd105-1" href="#rest_code_7db91cb67cbb4e909defebdf1f8fd105-1"></a>pip<span class="w"> </span>install<span class="w"> </span>virtualenvwrapper
 </pre></div>
 <p>bądź:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_c074e3fd0b144b7dac96eb2cd96f2e4d-1" name="rest_code_c074e3fd0b144b7dac96eb2cd96f2e4d-1" href="#rest_code_c074e3fd0b144b7dac96eb2cd96f2e4d-1"></a>sudo<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>virtualenvwrapper
+<div class="code"><pre class="code bash"><a id="rest_code_5c07d68ef9004b329a78fd273754e64c-1" name="rest_code_5c07d68ef9004b329a78fd273754e64c-1" href="#rest_code_5c07d68ef9004b329a78fd273754e64c-1"></a>sudo<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>virtualenvwrapper
 </pre></div>
 <p>Następne polecenia wykonujemy już w kontekście zalogowanego użytkownika,
 nie całego systemu:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_310ffb80dcb0414caa7108125f0c729e-1" name="rest_code_310ffb80dcb0414caa7108125f0c729e-1" href="#rest_code_310ffb80dcb0414caa7108125f0c729e-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">WORKON_HOME</span><span class="o">=</span>~/.virtualenv
-<a id="rest_code_310ffb80dcb0414caa7108125f0c729e-2" name="rest_code_310ffb80dcb0414caa7108125f0c729e-2" href="#rest_code_310ffb80dcb0414caa7108125f0c729e-2"></a><span class="nb">source</span><span class="w"> </span>/usr/local/bin/virtualenvwrapper.sh
+<div class="code"><pre class="code bash"><a id="rest_code_3dc275f465874952a408abfb140b1283-1" name="rest_code_3dc275f465874952a408abfb140b1283-1" href="#rest_code_3dc275f465874952a408abfb140b1283-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">WORKON_HOME</span><span class="o">=</span>~/.virtualenv
+<a id="rest_code_3dc275f465874952a408abfb140b1283-2" name="rest_code_3dc275f465874952a408abfb140b1283-2" href="#rest_code_3dc275f465874952a408abfb140b1283-2"></a><span class="nb">source</span><span class="w"> </span>/usr/local/bin/virtualenvwrapper.sh
 </pre></div>
 <p>Oba powyższe polecenia warto dodać jeszcze do pliku .bashrc.</p>
 <p>Tak wykonana instalacja utworzy nam nowe kontener środowisk, oraz
@@ -80,14 +80,14 @@ ukrytym katalogu, nie będziemy się do środowisk odwoływać inaczej, jak
 poprzez ich nazwę.</p>
 <p>Wirtualne środowisko najłatwiej utworzyć za pomocą polecenia
 mkvirtualenv:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_3878fdec781f49edbd0d59848ecc7bdd-1" name="rest_code_3878fdec781f49edbd0d59848ecc7bdd-1" href="#rest_code_3878fdec781f49edbd0d59848ecc7bdd-1"></a>mkvirtualenv<span class="w"> </span>python-basic
-<a id="rest_code_3878fdec781f49edbd0d59848ecc7bdd-2" name="rest_code_3878fdec781f49edbd0d59848ecc7bdd-2" href="#rest_code_3878fdec781f49edbd0d59848ecc7bdd-2"></a>mkvirtualenv<span class="w"> </span>-p<span class="w"> </span>/usr/bin/python3<span class="w"> </span>python3-basic
+<div class="code"><pre class="code bash"><a id="rest_code_64d70b41f31645aab4aec1d8f19ea1bf-1" name="rest_code_64d70b41f31645aab4aec1d8f19ea1bf-1" href="#rest_code_64d70b41f31645aab4aec1d8f19ea1bf-1"></a>mkvirtualenv<span class="w"> </span>python-basic
+<a id="rest_code_64d70b41f31645aab4aec1d8f19ea1bf-2" name="rest_code_64d70b41f31645aab4aec1d8f19ea1bf-2" href="#rest_code_64d70b41f31645aab4aec1d8f19ea1bf-2"></a>mkvirtualenv<span class="w"> </span>-p<span class="w"> </span>/usr/bin/python3<span class="w"> </span>python3-basic
 </pre></div>
 <p>Drugi przypadek tworzy nam środowisku uruchomieniowe python3 (musimy
 oczywiście mieć zainstalowane w systemie). Teraz wystarczy się
 przełączyć:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_30bf6987f53b4539a85fc3afde307b22-1" name="rest_code_30bf6987f53b4539a85fc3afde307b22-1" href="#rest_code_30bf6987f53b4539a85fc3afde307b22-1"></a>workon<span class="w"> </span>python-basic
-<a id="rest_code_30bf6987f53b4539a85fc3afde307b22-2" name="rest_code_30bf6987f53b4539a85fc3afde307b22-2" href="#rest_code_30bf6987f53b4539a85fc3afde307b22-2"></a>workon<span class="w"> </span>python3-basic
+<div class="code"><pre class="code bash"><a id="rest_code_6cbac618007047a49a29409fce9114bf-1" name="rest_code_6cbac618007047a49a29409fce9114bf-1" href="#rest_code_6cbac618007047a49a29409fce9114bf-1"></a>workon<span class="w"> </span>python-basic
+<a id="rest_code_6cbac618007047a49a29409fce9114bf-2" name="rest_code_6cbac618007047a49a29409fce9114bf-2" href="#rest_code_6cbac618007047a49a29409fce9114bf-2"></a>workon<span class="w"> </span>python3-basic
 </pre></div>
 <p>Po wykonaniu drugiego polecenia, wywołanie Python w terinalu uruchomi
 nam konsolę Pythona w wersji 3, a nie 2.7, jaka jest domyślnie
@@ -153,7 +153,7 @@ jest dostępny na licencji
 </a>.</li>
             
                 <li>
-<a href="https://fizyk.dev">Strona domowa</a>
+<a href="https://fizyk.dev/pl">Strona domowa</a>
                 </li>
 <li>
 <a href="../../archive/">Archiwum</a>

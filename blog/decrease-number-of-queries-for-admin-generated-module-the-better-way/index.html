@@ -9,8 +9,8 @@
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../pl/rss.xml">
 <link rel="canonical" href="https://fizyk.dev/blog/decrease-number-of-queries-for-admin-generated-module-the-better-way/">
-<link rel="icon" href="../../favicon-speddial.png" sizes="269x262">
 <link rel="icon" href="../../favicon.png" sizes="62x60">
+<link rel="icon" href="../../favicon-speddial.png" sizes="269x262">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -51,11 +51,11 @@ modules.</p>
 <p>When I first saw that solution on techiecorner, I thought: "<em>hmmm.. that
 could be useful</em>", but then, I looked at my generator.yml file and saw
 <strong>table_method</strong> i placed there long time ago...</p>
-<div class="code"><pre class="code yaml"><a id="rest_code_f283013dd44d4cef9224a2a8985b94f7-1" name="rest_code_f283013dd44d4cef9224a2a8985b94f7-1" href="#rest_code_f283013dd44d4cef9224a2a8985b94f7-1"></a><span class="nt">generator</span><span class="p">:</span>
-<a id="rest_code_f283013dd44d4cef9224a2a8985b94f7-2" name="rest_code_f283013dd44d4cef9224a2a8985b94f7-2" href="#rest_code_f283013dd44d4cef9224a2a8985b94f7-2"></a><span class="w">  </span><span class="nt">param</span><span class="p">:</span>
-<a id="rest_code_f283013dd44d4cef9224a2a8985b94f7-3" name="rest_code_f283013dd44d4cef9224a2a8985b94f7-3" href="#rest_code_f283013dd44d4cef9224a2a8985b94f7-3"></a><span class="w">    </span><span class="nt">config</span><span class="p">:</span>
-<a id="rest_code_f283013dd44d4cef9224a2a8985b94f7-4" name="rest_code_f283013dd44d4cef9224a2a8985b94f7-4" href="#rest_code_f283013dd44d4cef9224a2a8985b94f7-4"></a><span class="w">      </span><span class="nt">list</span><span class="p">:</span>
-<a id="rest_code_f283013dd44d4cef9224a2a8985b94f7-5" name="rest_code_f283013dd44d4cef9224a2a8985b94f7-5" href="#rest_code_f283013dd44d4cef9224a2a8985b94f7-5"></a><span class="w">        </span><span class="nt">table_method</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">getAdminNotes</span>
+<div class="code"><pre class="code yaml"><a id="rest_code_bdb335cfc75c432688d8607117196674-1" name="rest_code_bdb335cfc75c432688d8607117196674-1" href="#rest_code_bdb335cfc75c432688d8607117196674-1"></a><span class="nt">generator</span><span class="p">:</span>
+<a id="rest_code_bdb335cfc75c432688d8607117196674-2" name="rest_code_bdb335cfc75c432688d8607117196674-2" href="#rest_code_bdb335cfc75c432688d8607117196674-2"></a><span class="w">  </span><span class="nt">param</span><span class="p">:</span>
+<a id="rest_code_bdb335cfc75c432688d8607117196674-3" name="rest_code_bdb335cfc75c432688d8607117196674-3" href="#rest_code_bdb335cfc75c432688d8607117196674-3"></a><span class="w">    </span><span class="nt">config</span><span class="p">:</span>
+<a id="rest_code_bdb335cfc75c432688d8607117196674-4" name="rest_code_bdb335cfc75c432688d8607117196674-4" href="#rest_code_bdb335cfc75c432688d8607117196674-4"></a><span class="w">      </span><span class="nt">list</span><span class="p">:</span>
+<a id="rest_code_bdb335cfc75c432688d8607117196674-5" name="rest_code_bdb335cfc75c432688d8607117196674-5" href="#rest_code_bdb335cfc75c432688d8607117196674-5"></a><span class="w">        </span><span class="nt">table_method</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">getAdminNotes</span>
 </pre></div>
 <p>And while both, overwriting buildQuery and setting table_method can
 achieve same goal, I think table_method is more elegant, as it keeps
@@ -122,7 +122,7 @@ jest dostępny na licencji
 </a>.</li>
             
                 <li>
-<a href="https://fizyk.dev/en">Homepage</a>
+<a href="https://fizyk.dev/">Homepage</a>
                 </li>
 <li>
 <a href="../../archive/">Archives</a>

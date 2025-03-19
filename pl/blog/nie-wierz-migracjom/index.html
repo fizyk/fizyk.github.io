@@ -9,8 +9,8 @@
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../rss.xml">
 <link rel="canonical" href="https://fizyk.dev/pl/blog/nie-wierz-migracjom/">
-<link rel="icon" href="../../../favicon-speddial.png" sizes="269x262">
 <link rel="icon" href="../../../favicon.png" sizes="62x60">
+<link rel="icon" href="../../../favicon-speddial.png" sizes="269x262">
 <!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -44,95 +44,95 @@ Ale to narzędzie ma tylko ułatwić, nie wyręczyć. Wygeneruje klasy
 migracyjne ale na z góry określonych zasadach. Najpierw operacje na
 tabelach, później klucze i indeksy:</p>
 <!-- TEASER_END -->
-<div class="code"><pre class="code php"><a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-1" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-1" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-1"></a><span class="x">class Version12 extends Doctrine_Migration_Base</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-2" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-2" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-2"></a><span class="x">{</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-3" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-3" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-3"></a><span class="x">    public function up()</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-4" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-4" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-4"></a><span class="x">    {</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-5" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-5" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-5"></a><span class="x">        $this-&gt;createTable('model_a', array(</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-6" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-6" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-6"></a><span class="x">             'id' =&gt;</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-7" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-7" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-7"></a><span class="x">             array(</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-8" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-8" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-8"></a><span class="x">              'type' =&gt; 'integer',</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-9" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-9" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-9"></a><span class="x">              'length' =&gt; '8',</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-10" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-10" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-10"></a><span class="x">              'autoincrement' =&gt; '1',</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-11" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-11" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-11"></a><span class="x">              'primary' =&gt; '1',</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-12" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-12" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-12"></a><span class="x">             ),</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-13" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-13" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-13"></a><span class="x">             'name' =&gt;</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-14" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-14" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-14"></a><span class="x">             array(</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-15" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-15" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-15"></a><span class="x">              'type' =&gt; 'string',</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-16" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-16" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-16"></a><span class="x">              'length' =&gt; '255',</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-17" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-17" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-17"></a><span class="x">             ),</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-18" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-18" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-18"></a><span class="x">             ), array(</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-19" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-19" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-19"></a><span class="x">             'primary' =&gt;</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-20" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-20" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-20"></a><span class="x">             array(</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-21" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-21" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-21"></a><span class="x">              0 =&gt; 'id',</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-22" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-22" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-22"></a><span class="x">             ),</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-23" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-23" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-23"></a><span class="x">             'collate' =&gt; 'utf8_general_ci',</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-24" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-24" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-24"></a><span class="x">             'charset' =&gt; 'utf8',</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-25" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-25" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-25"></a><span class="x">             ));</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-26" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-26" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-26"></a><span class="x">        $this-&gt;createTable('model_b', array(</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-27" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-27" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-27"></a><span class="x">             'id' =&gt;</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-28" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-28" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-28"></a><span class="x">             array(</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-29" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-29" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-29"></a><span class="x">              'type' =&gt; 'integer',</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-30" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-30" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-30"></a><span class="x">              'length' =&gt; '8',</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-31" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-31" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-31"></a><span class="x">              'autoincrement' =&gt; '1',</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-32" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-32" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-32"></a><span class="x">              'primary' =&gt; '1',</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-33" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-33" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-33"></a><span class="x">             ),</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-34" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-34" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-34"></a><span class="x">             'name' =&gt;</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-35" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-35" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-35"></a><span class="x">             array(</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-36" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-36" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-36"></a><span class="x">              'type' =&gt; 'string',</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-37" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-37" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-37"></a><span class="x">              'length' =&gt; '255',</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-38" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-38" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-38"></a><span class="x">             ),</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-39" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-39" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-39"></a><span class="x">             'a_id' =&gt;</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-40" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-40" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-40"></a><span class="x">             array(</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-41" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-41" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-41"></a><span class="x">              'type' =&gt; 'integer',</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-42" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-42" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-42"></a><span class="x">              'length' =&gt; '8',</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-43" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-43" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-43"></a><span class="x">             ),</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-44" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-44" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-44"></a><span class="x">             ), array(</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-45" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-45" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-45"></a><span class="x">             'primary' =&gt;</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-46" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-46" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-46"></a><span class="x">             array(</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-47" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-47" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-47"></a><span class="x">              0 =&gt; 'id',</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-48" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-48" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-48"></a><span class="x">             ),</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-49" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-49" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-49"></a><span class="x">             'collate' =&gt; 'utf8_general_ci',</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-50" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-50" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-50"></a><span class="x">             'charset' =&gt; 'utf8',</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-51" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-51" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-51"></a><span class="x">             ));</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-52" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-52" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-52"></a><span class="x">    }</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-53" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-53" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-53"></a>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-54" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-54" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-54"></a><span class="x">    public function down()</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-55" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-55" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-55"></a><span class="x">    {</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-56" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-56" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-56"></a><span class="x">        $this-&gt;dropTable('model_a');</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-57" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-57" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-57"></a><span class="x">        $this-&gt;dropTable('model_b');</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-58" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-58" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-58"></a><span class="x">    }</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-59" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-59" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-59"></a><span class="x">}</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-60" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-60" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-60"></a>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-61" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-61" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-61"></a><span class="x">class Version13 extends Doctrine_Migration_Base</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-62" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-62" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-62"></a><span class="x">{</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-63" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-63" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-63"></a><span class="x">    public function up()</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-64" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-64" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-64"></a><span class="x">    {</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-65" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-65" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-65"></a><span class="x">        $this-&gt;createForeignKey('model_b', 'model_b_a_id_model_a_id', array(</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-66" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-66" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-66"></a><span class="x">             'name' =&gt; 'model_b_a_id_model_a_id',</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-67" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-67" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-67"></a><span class="x">             'local' =&gt; 'a_id',</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-68" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-68" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-68"></a><span class="x">             'foreign' =&gt; 'id',</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-69" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-69" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-69"></a><span class="x">             'foreignTable' =&gt; 'model_a',</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-70" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-70" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-70"></a><span class="x">             ));</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-71" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-71" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-71"></a><span class="x">        $this-&gt;addIndex('model_b', 'model_b_a_id', array(</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-72" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-72" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-72"></a><span class="x">             'fields' =&gt;</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-73" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-73" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-73"></a><span class="x">             array(</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-74" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-74" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-74"></a><span class="x">              0 =&gt; 'a_id',</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-75" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-75" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-75"></a><span class="x">             ),</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-76" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-76" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-76"></a><span class="x">             ));</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-77" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-77" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-77"></a><span class="x">    }</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-78" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-78" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-78"></a>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-79" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-79" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-79"></a><span class="x">    public function down()</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-80" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-80" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-80"></a><span class="x">    {</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-81" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-81" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-81"></a><span class="x">        $this-&gt;dropForeignKey('model_b', 'model_b_a_id_model_a_id');</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-82" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-82" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-82"></a><span class="x">        $this-&gt;removeIndex('model_b', 'model_b_a_id', array(</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-83" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-83" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-83"></a><span class="x">             'fields' =&gt;</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-84" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-84" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-84"></a><span class="x">             array(</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-85" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-85" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-85"></a><span class="x">              0 =&gt; 'a_id',</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-86" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-86" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-86"></a><span class="x">             ),</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-87" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-87" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-87"></a><span class="x">             ));</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-88" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-88" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-88"></a><span class="x">    }</span>
-<a id="rest_code_dd2b0004197a44489d7129c79bedb2b1-89" name="rest_code_dd2b0004197a44489d7129c79bedb2b1-89" href="#rest_code_dd2b0004197a44489d7129c79bedb2b1-89"></a><span class="x">}</span>
+<div class="code"><pre class="code php"><a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-1" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-1" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-1"></a><span class="x">class Version12 extends Doctrine_Migration_Base</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-2" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-2" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-2"></a><span class="x">{</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-3" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-3" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-3"></a><span class="x">    public function up()</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-4" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-4" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-4"></a><span class="x">    {</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-5" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-5" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-5"></a><span class="x">        $this-&gt;createTable('model_a', array(</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-6" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-6" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-6"></a><span class="x">             'id' =&gt;</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-7" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-7" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-7"></a><span class="x">             array(</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-8" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-8" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-8"></a><span class="x">              'type' =&gt; 'integer',</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-9" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-9" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-9"></a><span class="x">              'length' =&gt; '8',</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-10" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-10" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-10"></a><span class="x">              'autoincrement' =&gt; '1',</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-11" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-11" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-11"></a><span class="x">              'primary' =&gt; '1',</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-12" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-12" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-12"></a><span class="x">             ),</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-13" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-13" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-13"></a><span class="x">             'name' =&gt;</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-14" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-14" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-14"></a><span class="x">             array(</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-15" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-15" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-15"></a><span class="x">              'type' =&gt; 'string',</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-16" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-16" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-16"></a><span class="x">              'length' =&gt; '255',</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-17" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-17" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-17"></a><span class="x">             ),</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-18" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-18" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-18"></a><span class="x">             ), array(</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-19" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-19" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-19"></a><span class="x">             'primary' =&gt;</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-20" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-20" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-20"></a><span class="x">             array(</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-21" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-21" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-21"></a><span class="x">              0 =&gt; 'id',</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-22" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-22" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-22"></a><span class="x">             ),</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-23" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-23" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-23"></a><span class="x">             'collate' =&gt; 'utf8_general_ci',</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-24" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-24" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-24"></a><span class="x">             'charset' =&gt; 'utf8',</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-25" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-25" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-25"></a><span class="x">             ));</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-26" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-26" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-26"></a><span class="x">        $this-&gt;createTable('model_b', array(</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-27" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-27" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-27"></a><span class="x">             'id' =&gt;</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-28" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-28" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-28"></a><span class="x">             array(</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-29" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-29" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-29"></a><span class="x">              'type' =&gt; 'integer',</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-30" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-30" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-30"></a><span class="x">              'length' =&gt; '8',</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-31" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-31" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-31"></a><span class="x">              'autoincrement' =&gt; '1',</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-32" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-32" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-32"></a><span class="x">              'primary' =&gt; '1',</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-33" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-33" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-33"></a><span class="x">             ),</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-34" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-34" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-34"></a><span class="x">             'name' =&gt;</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-35" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-35" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-35"></a><span class="x">             array(</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-36" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-36" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-36"></a><span class="x">              'type' =&gt; 'string',</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-37" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-37" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-37"></a><span class="x">              'length' =&gt; '255',</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-38" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-38" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-38"></a><span class="x">             ),</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-39" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-39" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-39"></a><span class="x">             'a_id' =&gt;</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-40" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-40" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-40"></a><span class="x">             array(</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-41" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-41" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-41"></a><span class="x">              'type' =&gt; 'integer',</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-42" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-42" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-42"></a><span class="x">              'length' =&gt; '8',</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-43" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-43" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-43"></a><span class="x">             ),</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-44" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-44" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-44"></a><span class="x">             ), array(</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-45" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-45" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-45"></a><span class="x">             'primary' =&gt;</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-46" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-46" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-46"></a><span class="x">             array(</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-47" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-47" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-47"></a><span class="x">              0 =&gt; 'id',</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-48" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-48" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-48"></a><span class="x">             ),</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-49" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-49" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-49"></a><span class="x">             'collate' =&gt; 'utf8_general_ci',</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-50" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-50" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-50"></a><span class="x">             'charset' =&gt; 'utf8',</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-51" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-51" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-51"></a><span class="x">             ));</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-52" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-52" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-52"></a><span class="x">    }</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-53" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-53" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-53"></a>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-54" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-54" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-54"></a><span class="x">    public function down()</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-55" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-55" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-55"></a><span class="x">    {</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-56" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-56" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-56"></a><span class="x">        $this-&gt;dropTable('model_a');</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-57" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-57" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-57"></a><span class="x">        $this-&gt;dropTable('model_b');</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-58" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-58" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-58"></a><span class="x">    }</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-59" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-59" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-59"></a><span class="x">}</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-60" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-60" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-60"></a>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-61" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-61" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-61"></a><span class="x">class Version13 extends Doctrine_Migration_Base</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-62" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-62" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-62"></a><span class="x">{</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-63" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-63" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-63"></a><span class="x">    public function up()</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-64" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-64" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-64"></a><span class="x">    {</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-65" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-65" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-65"></a><span class="x">        $this-&gt;createForeignKey('model_b', 'model_b_a_id_model_a_id', array(</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-66" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-66" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-66"></a><span class="x">             'name' =&gt; 'model_b_a_id_model_a_id',</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-67" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-67" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-67"></a><span class="x">             'local' =&gt; 'a_id',</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-68" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-68" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-68"></a><span class="x">             'foreign' =&gt; 'id',</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-69" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-69" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-69"></a><span class="x">             'foreignTable' =&gt; 'model_a',</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-70" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-70" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-70"></a><span class="x">             ));</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-71" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-71" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-71"></a><span class="x">        $this-&gt;addIndex('model_b', 'model_b_a_id', array(</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-72" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-72" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-72"></a><span class="x">             'fields' =&gt;</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-73" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-73" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-73"></a><span class="x">             array(</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-74" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-74" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-74"></a><span class="x">              0 =&gt; 'a_id',</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-75" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-75" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-75"></a><span class="x">             ),</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-76" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-76" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-76"></a><span class="x">             ));</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-77" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-77" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-77"></a><span class="x">    }</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-78" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-78" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-78"></a>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-79" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-79" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-79"></a><span class="x">    public function down()</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-80" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-80" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-80"></a><span class="x">    {</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-81" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-81" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-81"></a><span class="x">        $this-&gt;dropForeignKey('model_b', 'model_b_a_id_model_a_id');</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-82" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-82" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-82"></a><span class="x">        $this-&gt;removeIndex('model_b', 'model_b_a_id', array(</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-83" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-83" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-83"></a><span class="x">             'fields' =&gt;</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-84" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-84" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-84"></a><span class="x">             array(</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-85" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-85" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-85"></a><span class="x">              0 =&gt; 'a_id',</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-86" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-86" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-86"></a><span class="x">             ),</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-87" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-87" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-87"></a><span class="x">             ));</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-88" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-88" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-88"></a><span class="x">    }</span>
+<a id="rest_code_b4f8a65e0df442db80ab31f9c213a378-89" name="rest_code_b4f8a65e0df442db80ab31f9c213a378-89" href="#rest_code_b4f8a65e0df442db80ab31f9c213a378-89"></a><span class="x">}</span>
 </pre></div>
 <p>Podejście to jest jak najbardziej w porządku, gdy dodajemy elementy do
 naszej struktury. Jeśli od niej coś odejmujemy, wygenerowane migracje
@@ -140,60 +140,60 @@ następują w tej samej kolejności! Najpierw tabele, lub pola, są usuwane
 z bazy, a następnie usuwane są klucze obce i indeksy. Analogicznie
 wygenerowana migracja w operacji w dół próbuje najpierw stworzyć klucze
 obce, później dopiero tabelę.</p>
-<div class="code"><pre class="code php"><a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-1" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-1" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-1"></a><span class="x">class Version14 extends Doctrine_Migration_Base</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-2" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-2" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-2"></a><span class="x">{</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-3" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-3" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-3"></a><span class="x">    public function up()</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-4" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-4" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-4"></a><span class="x">    {</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-5" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-5" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-5"></a><span class="x">        $this-&gt;dropTable('model_a');</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-6" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-6" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-6"></a><span class="x">    }</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-7" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-7" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-7"></a>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-8" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-8" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-8"></a><span class="x">    public function down()</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-9" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-9" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-9"></a><span class="x">    {</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-10" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-10" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-10"></a><span class="x">        $this-&gt;createTable('model_a', array(</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-11" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-11" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-11"></a><span class="x">             'id' =&gt;</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-12" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-12" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-12"></a><span class="x">             array(</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-13" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-13" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-13"></a><span class="x">              'type' =&gt; 'integer',</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-14" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-14" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-14"></a><span class="x">              'length' =&gt; '8',</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-15" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-15" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-15"></a><span class="x">              'autoincrement' =&gt; '1',</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-16" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-16" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-16"></a><span class="x">              'primary' =&gt; '1',</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-17" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-17" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-17"></a><span class="x">             ),</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-18" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-18" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-18"></a><span class="x">             'name' =&gt;</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-19" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-19" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-19"></a><span class="x">             array(</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-20" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-20" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-20"></a><span class="x">              'type' =&gt; 'string',</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-21" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-21" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-21"></a><span class="x">              'length' =&gt; '255',</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-22" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-22" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-22"></a><span class="x">             ),</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-23" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-23" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-23"></a><span class="x">             ), array(</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-24" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-24" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-24"></a><span class="x">             'type' =&gt; '',</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-25" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-25" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-25"></a><span class="x">             'indexes' =&gt;</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-26" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-26" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-26"></a><span class="x">             array(</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-27" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-27" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-27"></a><span class="x">             ),</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-28" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-28" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-28"></a><span class="x">             'primary' =&gt;</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-29" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-29" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-29"></a><span class="x">             array(</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-30" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-30" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-30"></a><span class="x">              0 =&gt; 'id',</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-31" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-31" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-31"></a><span class="x">             ),</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-32" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-32" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-32"></a><span class="x">             'collate' =&gt; 'utf8_general_ci',</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-33" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-33" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-33"></a><span class="x">             'charset' =&gt; 'utf8',</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-34" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-34" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-34"></a><span class="x">             ));</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-35" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-35" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-35"></a><span class="x">    }</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-36" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-36" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-36"></a><span class="x">}</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-37" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-37" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-37"></a>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-38" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-38" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-38"></a><span class="x">class Version15 extends Doctrine_Migration_Base</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-39" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-39" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-39"></a><span class="x">{</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-40" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-40" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-40"></a><span class="x">    public function up()</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-41" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-41" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-41"></a><span class="x">    {</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-42" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-42" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-42"></a><span class="x">        $this-&gt;dropForeignKey('model_b', 'model_b_a_id_model_a_id');</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-43" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-43" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-43"></a><span class="x">    }</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-44" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-44" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-44"></a>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-45" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-45" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-45"></a><span class="x">    public function down()</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-46" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-46" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-46"></a><span class="x">    {</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-47" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-47" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-47"></a><span class="x">        $this-&gt;createForeignKey('model_b', 'model_b_a_id_model_a_id', array(</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-48" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-48" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-48"></a><span class="x">             'name' =&gt; 'model_b_a_id_model_a_id',</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-49" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-49" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-49"></a><span class="x">             'local' =&gt; 'a_id',</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-50" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-50" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-50"></a><span class="x">             'foreign' =&gt; 'id',</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-51" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-51" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-51"></a><span class="x">             'foreignTable' =&gt; 'model_a',</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-52" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-52" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-52"></a><span class="x">             ));</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-53" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-53" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-53"></a><span class="x">    }</span>
-<a id="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-54" name="rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-54" href="#rest_code_42b5796ed0fc4832bb3e9c72a4f2a1a0-54"></a><span class="x">}</span>
+<div class="code"><pre class="code php"><a id="rest_code_822590b978ae49268ee645713da3c65d-1" name="rest_code_822590b978ae49268ee645713da3c65d-1" href="#rest_code_822590b978ae49268ee645713da3c65d-1"></a><span class="x">class Version14 extends Doctrine_Migration_Base</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-2" name="rest_code_822590b978ae49268ee645713da3c65d-2" href="#rest_code_822590b978ae49268ee645713da3c65d-2"></a><span class="x">{</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-3" name="rest_code_822590b978ae49268ee645713da3c65d-3" href="#rest_code_822590b978ae49268ee645713da3c65d-3"></a><span class="x">    public function up()</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-4" name="rest_code_822590b978ae49268ee645713da3c65d-4" href="#rest_code_822590b978ae49268ee645713da3c65d-4"></a><span class="x">    {</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-5" name="rest_code_822590b978ae49268ee645713da3c65d-5" href="#rest_code_822590b978ae49268ee645713da3c65d-5"></a><span class="x">        $this-&gt;dropTable('model_a');</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-6" name="rest_code_822590b978ae49268ee645713da3c65d-6" href="#rest_code_822590b978ae49268ee645713da3c65d-6"></a><span class="x">    }</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-7" name="rest_code_822590b978ae49268ee645713da3c65d-7" href="#rest_code_822590b978ae49268ee645713da3c65d-7"></a>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-8" name="rest_code_822590b978ae49268ee645713da3c65d-8" href="#rest_code_822590b978ae49268ee645713da3c65d-8"></a><span class="x">    public function down()</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-9" name="rest_code_822590b978ae49268ee645713da3c65d-9" href="#rest_code_822590b978ae49268ee645713da3c65d-9"></a><span class="x">    {</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-10" name="rest_code_822590b978ae49268ee645713da3c65d-10" href="#rest_code_822590b978ae49268ee645713da3c65d-10"></a><span class="x">        $this-&gt;createTable('model_a', array(</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-11" name="rest_code_822590b978ae49268ee645713da3c65d-11" href="#rest_code_822590b978ae49268ee645713da3c65d-11"></a><span class="x">             'id' =&gt;</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-12" name="rest_code_822590b978ae49268ee645713da3c65d-12" href="#rest_code_822590b978ae49268ee645713da3c65d-12"></a><span class="x">             array(</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-13" name="rest_code_822590b978ae49268ee645713da3c65d-13" href="#rest_code_822590b978ae49268ee645713da3c65d-13"></a><span class="x">              'type' =&gt; 'integer',</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-14" name="rest_code_822590b978ae49268ee645713da3c65d-14" href="#rest_code_822590b978ae49268ee645713da3c65d-14"></a><span class="x">              'length' =&gt; '8',</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-15" name="rest_code_822590b978ae49268ee645713da3c65d-15" href="#rest_code_822590b978ae49268ee645713da3c65d-15"></a><span class="x">              'autoincrement' =&gt; '1',</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-16" name="rest_code_822590b978ae49268ee645713da3c65d-16" href="#rest_code_822590b978ae49268ee645713da3c65d-16"></a><span class="x">              'primary' =&gt; '1',</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-17" name="rest_code_822590b978ae49268ee645713da3c65d-17" href="#rest_code_822590b978ae49268ee645713da3c65d-17"></a><span class="x">             ),</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-18" name="rest_code_822590b978ae49268ee645713da3c65d-18" href="#rest_code_822590b978ae49268ee645713da3c65d-18"></a><span class="x">             'name' =&gt;</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-19" name="rest_code_822590b978ae49268ee645713da3c65d-19" href="#rest_code_822590b978ae49268ee645713da3c65d-19"></a><span class="x">             array(</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-20" name="rest_code_822590b978ae49268ee645713da3c65d-20" href="#rest_code_822590b978ae49268ee645713da3c65d-20"></a><span class="x">              'type' =&gt; 'string',</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-21" name="rest_code_822590b978ae49268ee645713da3c65d-21" href="#rest_code_822590b978ae49268ee645713da3c65d-21"></a><span class="x">              'length' =&gt; '255',</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-22" name="rest_code_822590b978ae49268ee645713da3c65d-22" href="#rest_code_822590b978ae49268ee645713da3c65d-22"></a><span class="x">             ),</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-23" name="rest_code_822590b978ae49268ee645713da3c65d-23" href="#rest_code_822590b978ae49268ee645713da3c65d-23"></a><span class="x">             ), array(</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-24" name="rest_code_822590b978ae49268ee645713da3c65d-24" href="#rest_code_822590b978ae49268ee645713da3c65d-24"></a><span class="x">             'type' =&gt; '',</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-25" name="rest_code_822590b978ae49268ee645713da3c65d-25" href="#rest_code_822590b978ae49268ee645713da3c65d-25"></a><span class="x">             'indexes' =&gt;</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-26" name="rest_code_822590b978ae49268ee645713da3c65d-26" href="#rest_code_822590b978ae49268ee645713da3c65d-26"></a><span class="x">             array(</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-27" name="rest_code_822590b978ae49268ee645713da3c65d-27" href="#rest_code_822590b978ae49268ee645713da3c65d-27"></a><span class="x">             ),</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-28" name="rest_code_822590b978ae49268ee645713da3c65d-28" href="#rest_code_822590b978ae49268ee645713da3c65d-28"></a><span class="x">             'primary' =&gt;</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-29" name="rest_code_822590b978ae49268ee645713da3c65d-29" href="#rest_code_822590b978ae49268ee645713da3c65d-29"></a><span class="x">             array(</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-30" name="rest_code_822590b978ae49268ee645713da3c65d-30" href="#rest_code_822590b978ae49268ee645713da3c65d-30"></a><span class="x">              0 =&gt; 'id',</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-31" name="rest_code_822590b978ae49268ee645713da3c65d-31" href="#rest_code_822590b978ae49268ee645713da3c65d-31"></a><span class="x">             ),</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-32" name="rest_code_822590b978ae49268ee645713da3c65d-32" href="#rest_code_822590b978ae49268ee645713da3c65d-32"></a><span class="x">             'collate' =&gt; 'utf8_general_ci',</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-33" name="rest_code_822590b978ae49268ee645713da3c65d-33" href="#rest_code_822590b978ae49268ee645713da3c65d-33"></a><span class="x">             'charset' =&gt; 'utf8',</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-34" name="rest_code_822590b978ae49268ee645713da3c65d-34" href="#rest_code_822590b978ae49268ee645713da3c65d-34"></a><span class="x">             ));</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-35" name="rest_code_822590b978ae49268ee645713da3c65d-35" href="#rest_code_822590b978ae49268ee645713da3c65d-35"></a><span class="x">    }</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-36" name="rest_code_822590b978ae49268ee645713da3c65d-36" href="#rest_code_822590b978ae49268ee645713da3c65d-36"></a><span class="x">}</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-37" name="rest_code_822590b978ae49268ee645713da3c65d-37" href="#rest_code_822590b978ae49268ee645713da3c65d-37"></a>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-38" name="rest_code_822590b978ae49268ee645713da3c65d-38" href="#rest_code_822590b978ae49268ee645713da3c65d-38"></a><span class="x">class Version15 extends Doctrine_Migration_Base</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-39" name="rest_code_822590b978ae49268ee645713da3c65d-39" href="#rest_code_822590b978ae49268ee645713da3c65d-39"></a><span class="x">{</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-40" name="rest_code_822590b978ae49268ee645713da3c65d-40" href="#rest_code_822590b978ae49268ee645713da3c65d-40"></a><span class="x">    public function up()</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-41" name="rest_code_822590b978ae49268ee645713da3c65d-41" href="#rest_code_822590b978ae49268ee645713da3c65d-41"></a><span class="x">    {</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-42" name="rest_code_822590b978ae49268ee645713da3c65d-42" href="#rest_code_822590b978ae49268ee645713da3c65d-42"></a><span class="x">        $this-&gt;dropForeignKey('model_b', 'model_b_a_id_model_a_id');</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-43" name="rest_code_822590b978ae49268ee645713da3c65d-43" href="#rest_code_822590b978ae49268ee645713da3c65d-43"></a><span class="x">    }</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-44" name="rest_code_822590b978ae49268ee645713da3c65d-44" href="#rest_code_822590b978ae49268ee645713da3c65d-44"></a>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-45" name="rest_code_822590b978ae49268ee645713da3c65d-45" href="#rest_code_822590b978ae49268ee645713da3c65d-45"></a><span class="x">    public function down()</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-46" name="rest_code_822590b978ae49268ee645713da3c65d-46" href="#rest_code_822590b978ae49268ee645713da3c65d-46"></a><span class="x">    {</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-47" name="rest_code_822590b978ae49268ee645713da3c65d-47" href="#rest_code_822590b978ae49268ee645713da3c65d-47"></a><span class="x">        $this-&gt;createForeignKey('model_b', 'model_b_a_id_model_a_id', array(</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-48" name="rest_code_822590b978ae49268ee645713da3c65d-48" href="#rest_code_822590b978ae49268ee645713da3c65d-48"></a><span class="x">             'name' =&gt; 'model_b_a_id_model_a_id',</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-49" name="rest_code_822590b978ae49268ee645713da3c65d-49" href="#rest_code_822590b978ae49268ee645713da3c65d-49"></a><span class="x">             'local' =&gt; 'a_id',</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-50" name="rest_code_822590b978ae49268ee645713da3c65d-50" href="#rest_code_822590b978ae49268ee645713da3c65d-50"></a><span class="x">             'foreign' =&gt; 'id',</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-51" name="rest_code_822590b978ae49268ee645713da3c65d-51" href="#rest_code_822590b978ae49268ee645713da3c65d-51"></a><span class="x">             'foreignTable' =&gt; 'model_a',</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-52" name="rest_code_822590b978ae49268ee645713da3c65d-52" href="#rest_code_822590b978ae49268ee645713da3c65d-52"></a><span class="x">             ));</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-53" name="rest_code_822590b978ae49268ee645713da3c65d-53" href="#rest_code_822590b978ae49268ee645713da3c65d-53"></a><span class="x">    }</span>
+<a id="rest_code_822590b978ae49268ee645713da3c65d-54" name="rest_code_822590b978ae49268ee645713da3c65d-54" href="#rest_code_822590b978ae49268ee645713da3c65d-54"></a><span class="x">}</span>
 </pre></div>
 <p>Nie byłoby tragicznie, gdyby operacja migrowania była objęta transakcją,
 problem jest taki, że nie jest. I tak, jeśli uruchomimy błędną migrację,
@@ -267,7 +267,7 @@ jest dostępny na licencji
 </a>.</li>
             
                 <li>
-<a href="https://fizyk.dev">Strona domowa</a>
+<a href="https://fizyk.dev/pl">Strona domowa</a>
                 </li>
 <li>
 <a href="../../archive/">Archiwum</a>

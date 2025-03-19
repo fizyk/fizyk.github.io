@@ -7,1650 +7,1650 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://fizyk.dev/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/archive/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/archive/2010/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/archive/2011/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/archive/2012/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/archive/2013/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/archive/2014/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/archive/2015/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/archive/2016/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/apple-sauce-chicken/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/cherokee-http-server-and-symfony-1-4-en/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/commit-a-day-will-scratch-your-itch-away/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/configure-gitlab-with-smtp-mail-server/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/creating-a-timestamp-in-python-difference-between-calendartimegm-and-timemktime/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/decrease-number-of-queries-for-admin-generated-module-the-better-way/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/default-filter-values-in-admin-generated-symfony-module/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/delete-all-the-pyc/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/deploying-python-packages-with-travis-ci/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/differences-between-django-and-pyramid-routing/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/easy-way-to-debug-email-communication-in-python/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/elasticsearch-analyzers/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/format-date-for-rssatom/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="pl" href="https://fizyk.dev/pl/blog/formatowanie-daty-dla-rssatom/" />
  </url>
  <url>
   <loc>https://fizyk.dev/blog/fzblameableplugin-1-1-0/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/fzblameableplugin-1-1-1-released/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/fzblameableplugin-1-1-2-released/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/fztagplugin-1-2-3-and-sfforkeddoctrineapply-1-5-4-en/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/fztagplugin-1-2-4-en/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/fztagplugin-1-2-6/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/fztagplugin-1-2-7/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/fztagplugin-1-2-8/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/gathering-tests-coverage-for-subprocesses-in-python/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/how-to-kill-a-process-hanging-on-a-port/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/how-to-redirect-user-around-your-website/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/howto-list-module-s-methods-in-python/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="pl" href="https://fizyk.dev/pl/blog/listowanie-metod-modulu-w-pythonie/" />
  </url>
  <url>
   <loc>https://fizyk.dev/blog/measuring-test-coverage-of-pytest-plugins/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/mirakuru-02-released/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/mirakuru-your-tests-little-helper/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/my-first-bump-with-pypy/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/pandoc-convert-documents-between-formats/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/powerline-shell-beautify-your-shell/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/pylama-python-developers-helpful-companion/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/pyramid_fullauth-020/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/pyramid_fullauth-023/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/pyramid_fullauth-030-released/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/pyramid_fullauth-04-python3-and-few-fixes/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/pyramid_fullauth-can-speak-your-language-now/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/pyramid_localize-010-released/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/pyramid_localizer-a-helpful-package/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/pytest-dbfixtures-now-works-with-python-3/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/pytest_pyramid-to-ease-testing-pyramid-apps-in-pytest-suite/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/pytest_sauce-a-helpful-companion-to-your-selenium-tests-written-in-pytest/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/reminder-set-pool_recycle-for-sqlalchemys-connection-to-mysql/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/running-python-tests-on-traviss-osx-workers/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/sfforkeddoctrineapplyplugin-1-5-5-now-speaks-german-en/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/sfforkeddoctrineapplyplugin-1-5-6-spanish-translation/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/sfforkeddoctrineapplyplugin-1-5-8/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/sfforkeddoctrineapplyplugin-1-5-9/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/sort-doctrine-model-by-default/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/sqlalchemy-09-dialects-speed-tests/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/sqlalchemy-speed-tests-on-mysql-connector-python-mysqldb-and-oursql-drivers/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/sqlalchemy-speed-tests-on-postgres-and-mysql/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/sshconfig-file/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/symfony-command-line-tool-with-custom-php-ini-en/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/symony2-project-from-scratch/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/testing-web-applications-using-sqlalchemy/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/travis-ci-continuous-integration-for-your-python-project/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/tzfpyramid_yml-02/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="pl" href="https://fizyk.dev/pl/blog/tzfpyramid_yml-02/" />
  </url>
  <url>
   <loc>https://fizyk.dev/blog/tzfpyramid_yml-030/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/unicode-is-faster-than-decode/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/welcome-nikola/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="pl" href="https://fizyk.dev/pl/blog/witaj-nikola/" />
  </url>
  <url>
   <loc>https://fizyk.dev/blog/why-documentation-matters/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/blog/years-end-sqlalchemy-speed-tests-on-postgres-and-mysql/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/index-1.html</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/index-2.html</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/index-3.html</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/index-4.html</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/index-5.html</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/index-6.html</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/archive/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/archive/2010/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/archive/2011/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/archive/2012/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/archive/2013/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/31-stringow-dla-informatykow-piekielne-pudelka-czarujacych/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/ajax-i-document-write-nie-stali-w-jednym-domku/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/aktualizacja-sfdoctrineguardplugin-4-0-1-do-4-0-2/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/apocalyptica-7th-symphony/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/apocalyptica-broken-pieces/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/baklazan-w-pomidorach-ze-schabem/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/beta-opery-10-53-na-linuksa/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/camelize-w-pythonie/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/cos-sie-konczy-cos-sie-zaczyna-wiedzmin/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/curlftpfs-zastapic-klienta-ftp-pl/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/definiowanie-kodowania-w-plikach-zrodlowych-pythona/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/desmod-nemusis-sa-bat/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/doctrine-inheritance-hell/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/end-of-me-wideo/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/finalna-opera-10-60/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/formatowanie-daty-dla-rssatom/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://fizyk.dev/blog/format-date-for-rssatom/" />
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/fzblameable/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/fztagplugin-1-1-0/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/fztagplugin-1-2-0/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/fztagplugin-1-2-1/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/fztagplugin-latwosc-tagowania-jak-w-diem-cmf/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/git-a-inne-systemy-kontroli-wersji-svn-i-bzr/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/git-na-kolorowo/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/gulasz-to-czy-solianka/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/i-m-the-freeman/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/indyk-w-sosie-imbirowo-cytrynowym/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/jak-szybko-dostac-sie-do-opera-dragonfly/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/join-i-delete-w-mysql/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/kilka-slow-o-przeplywach-roboczych-w-gicie-pl/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/komentarze-dla-modeli-w-symfony/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/koncert-jelonka-wroclaw/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/kurczak-po-baskijsku/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/kurczak-z-miodem/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/listowanie-metod-modulu-w-pythonie/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://fizyk.dev/blog/howto-list-module-s-methods-in-python/" />
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/migracje-z-behaviourem-generujacym-dodatkowe-modele/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/netbeans-6-9-rc1/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/netbeans-6-9/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/netbeans-7-0-beta/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/nie-wierz-migracjom/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/numerowanie-elementow-dom-przy-pomocy-css/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/odmiana-slowianskich-rzeczownikow-wedlug-liczb/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/odswiezanie-cache-u-w-symfony-1-4/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/opera-10-60-beta/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/opera-10-62-wypuszczona/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/opera-10-63/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/opera-11-00-pl/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/opera-11-beta/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/opera-11-nowy-instalator-i-rozszerzenia/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/opera-dragonfly-przegladaj-element/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/opera-link-bedzie-synchronizowala-blokowana-zawartosc/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/optymalizacja-zasobow-dla-srodowiska-produkcyjnego-w-symfony/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/pieklo-pocztowe-terry-ego-pratchetta-going-postal/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/pierwszy-singiel-z-7th-symphony/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/polskie-znaki-w-mysql-doctrine-i-symfony/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/poprawka-wydania-paczki-sfdoctrineguard/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/przygotuj-strone-pod-speeddial-opery/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/python-atrybut-instancji-atrybut-klasy/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/python-i-wszystko-jest-obiektem/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/python-popularniejszy-od-php/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/rex-v-narzedzie-do-ewaluacji-wyrazen-regularnych/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/settery-pol-behavioura-dla-doctrine/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/sfforkeddoctrineapply-1-0-2/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/sfforkeddoctrineapply-1-4-0-i-1-3-5/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/sfforkeddoctrineapply-w-wersji-1-2-0/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/sfforkeddoctrineapply-w-wersji-1-3-0-1-3-1/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/sfforkeddoctrineapply-w-wersji-1-5/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/sfforkeddoctrineapplyplugin-1-1-0/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/sfforkeddoctrineapplyplugin-1-4-1/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/sfforkeddoctrineapplyplugin-wypuszczony/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/sortowanie-pobieranych-elementow-z-dql-wedlug-zadanego-zbioru/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/spaghetti-z-sosem-pomidorowo-imbirowym/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/sqlite-w-srodowisku-developerskim-w-symfony-i-symfony2/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/stabilna-opera-10-5x-nie-dla-linuksa/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/symfony-1-4-4-i-basetoprfx/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/symfony-1-4-5/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/symfony-1-4-7/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/symfony-1-4-8/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/symfony-1-4-9-wydane/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/symfony2-preview-release-4-pl/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/symfony2-w-fazie-beta/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/terminal-ze-szczypta-git-a/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/troche-o-pyramid-microframework/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/tzfpyramid_yml-02/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://fizyk.dev/blog/tzfpyramid_yml-02/" />
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/ubuntu-aa-4-lucid-lynx-pierwsze-wrazenia/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/unicode-a-python/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/wiedzmin/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/wirtualne-srodowisko-uruchomieniowe-pythona/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/witaj-nikola/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://fizyk.dev/blog/welcome-nikola/" />
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/wpis-inaugurujacy/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/wszystkie-drogi-prowadza-przed-siebie/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/wyprawa-na-sleze/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/zima-sie-skonczyla/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/blog/zmiana-modelu-dziedziczenia-w-pluginie-sfforkeddoctrineapply/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/index-1.html</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/index-2.html</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/index-3.html</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/index-4.html</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/index-5.html</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/index-6.html</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/index-7.html</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/index-8.html</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/index-9.html</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/7th-symphony/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/adobe-air/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/ajax/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/aktualizacja/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/apocalyptica/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/apostrophe/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/autocomplete/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/baklazan/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/bash/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/bazaar/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/behaviour/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/beta/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/bezpieczenstwo/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/blog/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/brent-smith/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/broken-pieces/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/cache/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/camelize/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/canvas/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/captcha/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/chorizo/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/ckeditor/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/column_aggregation/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/compression/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/crud/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/css/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/curlftpfs/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/cynamon/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/cytryna/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/date/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/dave-lombardo/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/desmod/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/diem/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/dmtag/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/doctrine-migration/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/doctrine/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/dql/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/dragonfly/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/drob/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/end-of-me/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/filecache/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/film/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/framework/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/ftp/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/fzblameable/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/fzdoctrinepagedroute/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/fztag/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/gavin-rossdale/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/git/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/gory/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/gry/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/gulasz/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/half-life/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/howto/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/html5/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/i18n/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/ide/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/imbir/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/inheritance/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/instalacja/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/javafx/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/jelonek/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/jquery/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/js/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/koncert/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/kuchnia/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/kurczak/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/lacey-mosley/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/linux/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/list/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/manala/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/microframework/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/migracje/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/miod/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/muzyka/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/mysql/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/netbeans/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/nikola/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/oop/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/opera-link/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/opera/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/order-by/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/pcre/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/peacekeeper-test/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/pep/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/php/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/piekarnik/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/plany/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/plugin/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/pomidor/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/posix/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/programowanie/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/przepis/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/pyramid/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/python/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/recaptcha/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/regexp/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/regular-expressions/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/rfc3339/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/routing/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/sfdoctrineapply/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/sfdoctrineapplyplugin/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/sfdoctrineguard/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/sfforkeddoctrineapply/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/skrzypce/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/sleza/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/slowianie/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/sniezka/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/sobotka/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/solianka/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/sos/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/spaghetti/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/speed-dial/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/sql/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/sqlite/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/strefa-czasowa/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/string/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/strona/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/subversion/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/symfony/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/symfony2/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/system-operacyjny/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/tag-cloud/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/terminal/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/terry-pratchett/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/tinymce/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/tools/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/toprfx/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/ubuntu/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/unicode/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/utf8/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/vcs/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/video/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/virtaal/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/virtualenv/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/vjcomment/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/webm/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/where-in/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/wideo/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/wiedzmin/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/wrazenia/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/xliff/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/yaml/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/youtube/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/yui-compressor/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/pl/tags/zima/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/3xx/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/admin-generator/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/apple/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/authentication/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/bash/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/behaviour/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/benchmark/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/blog/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/cache/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/calendar/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/cherokee/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/chicken/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/community/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/continuous-integration/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/coverage/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/csrf/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/date/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/dbfixtures/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/django/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/doctrine/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/documentation/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/elasticsearch/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/email/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/fullauth/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/fzblameable/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/fztag/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/gitlab/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/howto/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/http/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/i18n/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/kitchen/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/linter/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/list/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/mirakuru/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/mysql/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/nikola/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/open-source/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/osx/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/oven/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/pandoc/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/pep8/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/performance/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/php/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/plugin/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/postgresql/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/pypi/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/pypy/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/pyramid/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/pytest-dbfixtures/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/pytest/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/pytest_pyramid/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/python/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/query/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/recipe/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/release/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/rfc3339/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/routing/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/saucelabs/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/selenium/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/sfforkeddoctrineapply/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/shell/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/smtp/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/sqlalchemy/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/ssh/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/symfony/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/symfony2/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/tag-cloud/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/terminal/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/testing/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/tests/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/time/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/timezone/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/tip/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/tools/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/travis/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://fizyk.dev/tags/yaml/</loc>
-  <lastmod>2025-03-19T20:55:00Z</lastmod>
+  <lastmod>2025-03-19T21:04:00Z</lastmod>
  </url>
 </urlset>

@@ -8,8 +8,8 @@
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../pl/rss.xml">
 <link rel="canonical" href="https://fizyk.dev/blog/how-to-kill-a-process-hanging-on-a-port/">
-<link rel="icon" href="../../favicon-speddial.png" sizes="269x262">
 <link rel="icon" href="../../favicon.png" sizes="62x60">
+<link rel="icon" href="../../favicon-speddial.png" sizes="269x262">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -37,7 +37,7 @@
         </div>
     <p>Sometimes when you develop, you might find yourself with strange error. It says that the process you're trying to start is trying to use port, that is already being used. It's strange, because it is usually You, who used this port on previous run. If that's the case, then <strong>fuser</strong> command should relieve you from this error.</p>
 <p>For example:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_7a831c43275b4b5dba0bb25c9f99d694-1" name="rest_code_7a831c43275b4b5dba0bb25c9f99d694-1" href="#rest_code_7a831c43275b4b5dba0bb25c9f99d694-1"></a>fuser<span class="w"> </span><span class="m">6543</span>/tcp<span class="w"> </span>-k
+<div class="code"><pre class="code bash"><a id="rest_code_a8a91fb929b9444bb1e53f2920281271-1" name="rest_code_a8a91fb929b9444bb1e53f2920281271-1" href="#rest_code_a8a91fb929b9444bb1e53f2920281271-1"></a>fuser<span class="w"> </span><span class="m">6543</span>/tcp<span class="w"> </span>-k
 </pre></div>
 <p>The <strong>k</strong> parameter is responsible for actual killing. Without it, the command would just identify which process is using port/socket in question.</p>
     
@@ -99,7 +99,7 @@ jest dostępny na licencji
 </a>.</li>
             
                 <li>
-<a href="https://fizyk.dev/en">Homepage</a>
+<a href="https://fizyk.dev/">Homepage</a>
                 </li>
 <li>
 <a href="../../archive/">Archives</a>

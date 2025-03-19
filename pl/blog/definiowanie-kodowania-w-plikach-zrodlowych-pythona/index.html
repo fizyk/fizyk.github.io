@@ -9,8 +9,8 @@
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../rss.xml">
 <link rel="canonical" href="https://fizyk.dev/pl/blog/definiowanie-kodowania-w-plikach-zrodlowych-pythona/">
-<link rel="icon" href="../../../favicon-speddial.png" sizes="269x262">
 <link rel="icon" href="../../../favicon.png" sizes="62x60">
+<link rel="icon" href="../../../favicon-speddial.png" sizes="269x262">
 <!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -47,14 +47,14 @@ Pythonie (przynajmniej 2.x) również czysty plik jest  kodowany w 7
 bitowym ASCII i tak też interpretowany.</p>
 <p>Chyba, że dodamy w pierwszej, lub drugiej linii pliku deklarację
 kodowania np. utf8:</p>
-<div class="code"><pre class="code python"><a id="rest_code_07abf31f36bd49039c019396afedd40a-1" name="rest_code_07abf31f36bd49039c019396afedd40a-1" href="#rest_code_07abf31f36bd49039c019396afedd40a-1"></a><span class="c1"># Some comment</span>
-<a id="rest_code_07abf31f36bd49039c019396afedd40a-2" name="rest_code_07abf31f36bd49039c019396afedd40a-2" href="#rest_code_07abf31f36bd49039c019396afedd40a-2"></a><span class="c1"># -*- coding: utf-8 -*</span>
+<div class="code"><pre class="code python"><a id="rest_code_0eeacc96401745dfb4594baeca627e14-1" name="rest_code_0eeacc96401745dfb4594baeca627e14-1" href="#rest_code_0eeacc96401745dfb4594baeca627e14-1"></a><span class="c1"># Some comment</span>
+<a id="rest_code_0eeacc96401745dfb4594baeca627e14-2" name="rest_code_0eeacc96401745dfb4594baeca627e14-2" href="#rest_code_0eeacc96401745dfb4594baeca627e14-2"></a><span class="c1"># -*- coding: utf-8 -*</span>
 </pre></div>
 <p>Deklaracja taka musi znaleźć się w <strong>każdym</strong> pliku projektu.</p>
 <p>Bez tej deklaracji zwykłe stringi, jakie mieścimy w kodzie źródłowym
 zostaną wyświetlone poprawnie, jednak jeśli już zaczniemy pisać ą i ę w
 stringach Unicode:</p>
-<div class="code"><pre class="code python"><a id="rest_code_eea1f5e79b2841e48733f1502205f86b-1" name="rest_code_eea1f5e79b2841e48733f1502205f86b-1" href="#rest_code_eea1f5e79b2841e48733f1502205f86b-1"></a><span class="n">unicode_string</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">'ciąg znaków z ą i ę'</span>
+<div class="code"><pre class="code python"><a id="rest_code_21eb12d7a8ba42b6ac8f8886cafaddaa-1" name="rest_code_21eb12d7a8ba42b6ac8f8886cafaddaa-1" href="#rest_code_21eb12d7a8ba42b6ac8f8886cafaddaa-1"></a><span class="n">unicode_string</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">'ciąg znaków z ą i ę'</span>
 </pre></div>
 <p>Może spowodować błąd, choć nowsze wersje wyświetlą tylko ostrzeżenie.
 Python 3 zdaje się już nie sprawia takich problemów z kodowaniem,
@@ -123,7 +123,7 @@ jest dostępny na licencji
 </a>.</li>
             
                 <li>
-<a href="https://fizyk.dev">Strona domowa</a>
+<a href="https://fizyk.dev/pl">Strona domowa</a>
                 </li>
 <li>
 <a href="../../archive/">Archiwum</a>

@@ -9,8 +9,8 @@
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../rss.xml">
 <link rel="canonical" href="https://fizyk.dev/pl/blog/fzblameable/">
-<link rel="icon" href="../../../favicon-speddial.png" sizes="269x262">
 <link rel="icon" href="../../../favicon.png" sizes="62x60">
+<link rel="icon" href="../../../favicon-speddial.png" sizes="269x262">
 <!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -66,12 +66,12 @@ zauważyć jeden mankament: brak jest aliasu zwrotnego z obiektu
 użytkownika, do obiektu tworzonego. Głównie z tego powodu zdecydowałem
 się stworzyć modyfikację Blameable dla symfony i sfDoctrineGuard. Dodane
 fragmenty kodu są nieznaczną modyfikacją:</p>
-<div class="code"><pre class="code php"><a id="rest_code_d63019e21f2244c992eb59095f412fb1-1" name="rest_code_d63019e21f2244c992eb59095f412fb1-1" href="#rest_code_d63019e21f2244c992eb59095f412fb1-1"></a><span class="x">Doctrine_Core::getTable( 'sfGuardUser' )-&gt;bind(</span>
-<a id="rest_code_d63019e21f2244c992eb59095f412fb1-2" name="rest_code_d63019e21f2244c992eb59095f412fb1-2" href="#rest_code_d63019e21f2244c992eb59095f412fb1-2"></a><span class="x">        array($className.' as Created'.$className.'s',</span>
-<a id="rest_code_d63019e21f2244c992eb59095f412fb1-3" name="rest_code_d63019e21f2244c992eb59095f412fb1-3" href="#rest_code_d63019e21f2244c992eb59095f412fb1-3"></a><span class="x">          array( 'class'    =&gt; $className,</span>
-<a id="rest_code_d63019e21f2244c992eb59095f412fb1-4" name="rest_code_d63019e21f2244c992eb59095f412fb1-4" href="#rest_code_d63019e21f2244c992eb59095f412fb1-4"></a><span class="x">            'local'    =&gt; $this-&gt;_options['relations']['created']['foreign'],</span>
-<a id="rest_code_d63019e21f2244c992eb59095f412fb1-5" name="rest_code_d63019e21f2244c992eb59095f412fb1-5" href="#rest_code_d63019e21f2244c992eb59095f412fb1-5"></a><span class="x">            'foreign'  =&gt; $this-&gt;_options['columns']['created']['name']</span>
-<a id="rest_code_d63019e21f2244c992eb59095f412fb1-6" name="rest_code_d63019e21f2244c992eb59095f412fb1-6" href="#rest_code_d63019e21f2244c992eb59095f412fb1-6"></a><span class="x">        )), Doctrine_Relation::MANY );</span>
+<div class="code"><pre class="code php"><a id="rest_code_81089a50b75d4a8a9dd34a7de4eb951a-1" name="rest_code_81089a50b75d4a8a9dd34a7de4eb951a-1" href="#rest_code_81089a50b75d4a8a9dd34a7de4eb951a-1"></a><span class="x">Doctrine_Core::getTable( 'sfGuardUser' )-&gt;bind(</span>
+<a id="rest_code_81089a50b75d4a8a9dd34a7de4eb951a-2" name="rest_code_81089a50b75d4a8a9dd34a7de4eb951a-2" href="#rest_code_81089a50b75d4a8a9dd34a7de4eb951a-2"></a><span class="x">        array($className.' as Created'.$className.'s',</span>
+<a id="rest_code_81089a50b75d4a8a9dd34a7de4eb951a-3" name="rest_code_81089a50b75d4a8a9dd34a7de4eb951a-3" href="#rest_code_81089a50b75d4a8a9dd34a7de4eb951a-3"></a><span class="x">          array( 'class'    =&gt; $className,</span>
+<a id="rest_code_81089a50b75d4a8a9dd34a7de4eb951a-4" name="rest_code_81089a50b75d4a8a9dd34a7de4eb951a-4" href="#rest_code_81089a50b75d4a8a9dd34a7de4eb951a-4"></a><span class="x">            'local'    =&gt; $this-&gt;_options['relations']['created']['foreign'],</span>
+<a id="rest_code_81089a50b75d4a8a9dd34a7de4eb951a-5" name="rest_code_81089a50b75d4a8a9dd34a7de4eb951a-5" href="#rest_code_81089a50b75d4a8a9dd34a7de4eb951a-5"></a><span class="x">            'foreign'  =&gt; $this-&gt;_options['columns']['created']['name']</span>
+<a id="rest_code_81089a50b75d4a8a9dd34a7de4eb951a-6" name="rest_code_81089a50b75d4a8a9dd34a7de4eb951a-6" href="#rest_code_81089a50b75d4a8a9dd34a7de4eb951a-6"></a><span class="x">        )), Doctrine_Relation::MANY );</span>
 </pre></div>
 <p>Ale jakże ułatwią tworzenie zapytań pobierających obiekty stworzone
 przez użytkownika. Zwykłe pobieranie wszystkich obiektów stworzonych
@@ -81,14 +81,14 @@ jest idealny.</p>
 1.0.0</a>
 współdziała domyślnie z sfDoctrineGuard 4.x, ale do użycia go w
 sfDoctrineGuard 5.x wystarczy zmienić typy pól created i updated:</p>
-<div class="code"><pre class="code php"><a id="rest_code_3b6af050cd7146d285e12636b4716c04-1" name="rest_code_3b6af050cd7146d285e12636b4716c04-1" href="#rest_code_3b6af050cd7146d285e12636b4716c04-1"></a><span class="x">MyModel:</span>
-<a id="rest_code_3b6af050cd7146d285e12636b4716c04-2" name="rest_code_3b6af050cd7146d285e12636b4716c04-2" href="#rest_code_3b6af050cd7146d285e12636b4716c04-2"></a><span class="x">  actAs:</span>
-<a id="rest_code_3b6af050cd7146d285e12636b4716c04-3" name="rest_code_3b6af050cd7146d285e12636b4716c04-3" href="#rest_code_3b6af050cd7146d285e12636b4716c04-3"></a><span class="x">    fzBlameable:</span>
-<a id="rest_code_3b6af050cd7146d285e12636b4716c04-4" name="rest_code_3b6af050cd7146d285e12636b4716c04-4" href="#rest_code_3b6af050cd7146d285e12636b4716c04-4"></a><span class="x">      columns:</span>
-<a id="rest_code_3b6af050cd7146d285e12636b4716c04-5" name="rest_code_3b6af050cd7146d285e12636b4716c04-5" href="#rest_code_3b6af050cd7146d285e12636b4716c04-5"></a><span class="x">        created:</span>
-<a id="rest_code_3b6af050cd7146d285e12636b4716c04-6" name="rest_code_3b6af050cd7146d285e12636b4716c04-6" href="#rest_code_3b6af050cd7146d285e12636b4716c04-6"></a><span class="x">          length: 8</span>
-<a id="rest_code_3b6af050cd7146d285e12636b4716c04-7" name="rest_code_3b6af050cd7146d285e12636b4716c04-7" href="#rest_code_3b6af050cd7146d285e12636b4716c04-7"></a><span class="x">        updated:</span>
-<a id="rest_code_3b6af050cd7146d285e12636b4716c04-8" name="rest_code_3b6af050cd7146d285e12636b4716c04-8" href="#rest_code_3b6af050cd7146d285e12636b4716c04-8"></a><span class="x">          length: 8</span>
+<div class="code"><pre class="code php"><a id="rest_code_d19caf52f7e44f9a8544f53efccd47c5-1" name="rest_code_d19caf52f7e44f9a8544f53efccd47c5-1" href="#rest_code_d19caf52f7e44f9a8544f53efccd47c5-1"></a><span class="x">MyModel:</span>
+<a id="rest_code_d19caf52f7e44f9a8544f53efccd47c5-2" name="rest_code_d19caf52f7e44f9a8544f53efccd47c5-2" href="#rest_code_d19caf52f7e44f9a8544f53efccd47c5-2"></a><span class="x">  actAs:</span>
+<a id="rest_code_d19caf52f7e44f9a8544f53efccd47c5-3" name="rest_code_d19caf52f7e44f9a8544f53efccd47c5-3" href="#rest_code_d19caf52f7e44f9a8544f53efccd47c5-3"></a><span class="x">    fzBlameable:</span>
+<a id="rest_code_d19caf52f7e44f9a8544f53efccd47c5-4" name="rest_code_d19caf52f7e44f9a8544f53efccd47c5-4" href="#rest_code_d19caf52f7e44f9a8544f53efccd47c5-4"></a><span class="x">      columns:</span>
+<a id="rest_code_d19caf52f7e44f9a8544f53efccd47c5-5" name="rest_code_d19caf52f7e44f9a8544f53efccd47c5-5" href="#rest_code_d19caf52f7e44f9a8544f53efccd47c5-5"></a><span class="x">        created:</span>
+<a id="rest_code_d19caf52f7e44f9a8544f53efccd47c5-6" name="rest_code_d19caf52f7e44f9a8544f53efccd47c5-6" href="#rest_code_d19caf52f7e44f9a8544f53efccd47c5-6"></a><span class="x">          length: 8</span>
+<a id="rest_code_d19caf52f7e44f9a8544f53efccd47c5-7" name="rest_code_d19caf52f7e44f9a8544f53efccd47c5-7" href="#rest_code_d19caf52f7e44f9a8544f53efccd47c5-7"></a><span class="x">        updated:</span>
+<a id="rest_code_d19caf52f7e44f9a8544f53efccd47c5-8" name="rest_code_d19caf52f7e44f9a8544f53efccd47c5-8" href="#rest_code_d19caf52f7e44f9a8544f53efccd47c5-8"></a><span class="x">          length: 8</span>
 </pre></div>
     
         <ul class="pager hidden-print">
@@ -149,7 +149,7 @@ jest dostępny na licencji
 </a>.</li>
             
                 <li>
-<a href="https://fizyk.dev">Strona domowa</a>
+<a href="https://fizyk.dev/pl">Strona domowa</a>
                 </li>
 <li>
 <a href="../../archive/">Archiwum</a>
