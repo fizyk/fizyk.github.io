@@ -54,12 +54,12 @@ TRANSLATIONS = {
 # You should provide a key-value pair for each used language.
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ('https://fizyk.dev/en', 'Homepage'),
+        ('https://fizyk.dev/', 'Homepage'),
         ('/archive/', 'Archives'),
         ('/tags/', 'Tags'),
     ),
     'pl': (
-        ('https://fizyk.dev', 'Strona domowa'),
+        ('https://fizyk.dev/pl', 'Strona domowa'),
         ('/pl/archive/', 'Archiwum'),
         ('/pl/tags/', 'Tagi'),
     ),
