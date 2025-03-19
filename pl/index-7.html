@@ -115,7 +115,7 @@ rozwiązanie tej kwestii w Pythonie sprawia mi niemały kłopot.</p>
 ogonki, musi być unicodowym ciągiem znaków. Zwykłe stringi akceptują
 tylko i wyłącznie znaki ASCII.</p>
 <p>I tak deklarując zmienną w kodzie, na pewno będzie stringiem.</p>
-<div class="code"><pre class="code python"><a id="rest_code_55afda07d6494382856a7ebff9cf63c0-1" name="rest_code_55afda07d6494382856a7ebff9cf63c0-1" href="blog/unicode-a-python/#rest_code_55afda07d6494382856a7ebff9cf63c0-1"></a><span class="n">zmienna</span> <span class="o">=</span> <span class="s1">'łańcuch'</span>
+<div class="code"><pre class="code python"><a id="rest_code_29c83cd391994f98a06047ca1bf5f3b0-1" name="rest_code_29c83cd391994f98a06047ca1bf5f3b0-1" href="blog/unicode-a-python/#rest_code_29c83cd391994f98a06047ca1bf5f3b0-1"></a><span class="n">zmienna</span> <span class="o">=</span> <span class="s1">'łańcuch'</span>
 </pre></div>
 <p>Raczej bez różnicy, jakich znaków użyjemy. Jeśli jednak wartość zmienna
 zostaje wczytana z zewnętrznego źródła danych, wtedy możemy napotkać
@@ -133,12 +133,12 @@ Unicode.</p>
 <p>Jak to obejść? Wyłapać się wszystkiego w czasie pisania nie da, można
 chyba tylko przed wywołaniem, które zwraca błąd zastosować poniższą
 konstrukcję:</p>
-<div class="code"><pre class="code python"><a id="rest_code_1e1c6417cd2d4b28b00bcc50642a2fce-1" name="rest_code_1e1c6417cd2d4b28b00bcc50642a2fce-1" href="blog/unicode-a-python/#rest_code_1e1c6417cd2d4b28b00bcc50642a2fce-1"></a><span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">zmienna</span><span class="p">,</span> <span class="n">unicode</span><span class="p">):</span>
-<a id="rest_code_1e1c6417cd2d4b28b00bcc50642a2fce-2" name="rest_code_1e1c6417cd2d4b28b00bcc50642a2fce-2" href="blog/unicode-a-python/#rest_code_1e1c6417cd2d4b28b00bcc50642a2fce-2"></a>    <span class="n">zmienna</span> <span class="o">=</span> <span class="n">zmienna</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">'utf-8'</span><span class="p">)</span>
+<div class="code"><pre class="code python"><a id="rest_code_03a1ea6562074d559f7d684d47b58368-1" name="rest_code_03a1ea6562074d559f7d684d47b58368-1" href="blog/unicode-a-python/#rest_code_03a1ea6562074d559f7d684d47b58368-1"></a><span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">zmienna</span><span class="p">,</span> <span class="n">unicode</span><span class="p">):</span>
+<a id="rest_code_03a1ea6562074d559f7d684d47b58368-2" name="rest_code_03a1ea6562074d559f7d684d47b58368-2" href="blog/unicode-a-python/#rest_code_03a1ea6562074d559f7d684d47b58368-2"></a>    <span class="n">zmienna</span> <span class="o">=</span> <span class="n">zmienna</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">'utf-8'</span><span class="p">)</span>
 </pre></div>
 <p>Gdy po raz pierwszy spotkałem się z tym problemem, znalazłem informację
 o możliwości zdefiniowania kodowania plików źródłowych:</p>
-<div class="code"><pre class="code python"><a id="rest_code_9fc37aaadbef4c7f9803d06e6f4b5ffd-1" name="rest_code_9fc37aaadbef4c7f9803d06e6f4b5ffd-1" href="blog/unicode-a-python/#rest_code_9fc37aaadbef4c7f9803d06e6f4b5ffd-1"></a><span class="c1"># -*- coding: utf-8 -*-</span>
+<div class="code"><pre class="code python"><a id="rest_code_52b3bd6943ee47ae9e9e3de42772e7c2-1" name="rest_code_52b3bd6943ee47ae9e9e3de42772e7c2-1" href="blog/unicode-a-python/#rest_code_52b3bd6943ee47ae9e9e3de42772e7c2-1"></a><span class="c1"># -*- coding: utf-8 -*-</span>
 </pre></div>
 <p>Ta konstrukcja służy jednak tylko i wyłącznie zdefiniowaniu kodowania
 kodu źródłowego, nie kodowania używanego przez Pythona. Stąd w swoich

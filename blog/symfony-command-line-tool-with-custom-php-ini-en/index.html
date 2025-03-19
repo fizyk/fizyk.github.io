@@ -52,9 +52,9 @@ since command line php hadn't had apc module enabled.</p>
 execute. It's small bash script, that runs symfony execute with my
 webserver php.ini file and passes all it's parameters to symfony command
 line tool:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_868a04da9df4499e93a3cb7d241ad138-1" name="rest_code_868a04da9df4499e93a3cb7d241ad138-1" href="#rest_code_868a04da9df4499e93a3cb7d241ad138-1"></a><span class="ch">#!/bin/bash</span>
-<a id="rest_code_868a04da9df4499e93a3cb7d241ad138-2" name="rest_code_868a04da9df4499e93a3cb7d241ad138-2" href="#rest_code_868a04da9df4499e93a3cb7d241ad138-2"></a>
-<a id="rest_code_868a04da9df4499e93a3cb7d241ad138-3" name="rest_code_868a04da9df4499e93a3cb7d241ad138-3" href="#rest_code_868a04da9df4499e93a3cb7d241ad138-3"></a>php<span class="w"> </span>-c<span class="w"> </span>/path/to/php.ini<span class="w"> </span>symfony<span class="w"> </span><span class="nv">$@</span>
+<div class="code"><pre class="code bash"><a id="rest_code_57f152fc25304f3c8fe3921a0ea94f66-1" name="rest_code_57f152fc25304f3c8fe3921a0ea94f66-1" href="#rest_code_57f152fc25304f3c8fe3921a0ea94f66-1"></a><span class="ch">#!/bin/bash</span>
+<a id="rest_code_57f152fc25304f3c8fe3921a0ea94f66-2" name="rest_code_57f152fc25304f3c8fe3921a0ea94f66-2" href="#rest_code_57f152fc25304f3c8fe3921a0ea94f66-2"></a>
+<a id="rest_code_57f152fc25304f3c8fe3921a0ea94f66-3" name="rest_code_57f152fc25304f3c8fe3921a0ea94f66-3" href="#rest_code_57f152fc25304f3c8fe3921a0ea94f66-3"></a>php<span class="w"> </span>-c<span class="w"> </span>/path/to/php.ini<span class="w"> </span>symfony<span class="w"> </span><span class="nv">$@</span>
 </pre></div>
 <p>But there's a question, why bother with this, when I can just run this
 code from command line?</p>

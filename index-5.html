@@ -236,7 +236,7 @@ Elasticsearch from solutions I've been using so far are analyzers.</p>
             </div>
         <p>Sometimes when you develop, you might find yourself with strange error. It says that the process you're trying to start is trying to use port, that is already being used. It's strange, because it is usually You, who used this port on previous run. If that's the case, then <strong>fuser</strong> command should relieve you from this error.</p>
 <p>For example:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_33231193d8e54736bf2cd411853e31cf-1" name="rest_code_33231193d8e54736bf2cd411853e31cf-1" href="blog/how-to-kill-a-process-hanging-on-a-port/#rest_code_33231193d8e54736bf2cd411853e31cf-1"></a>fuser<span class="w"> </span><span class="m">6543</span>/tcp<span class="w"> </span>-k
+<div class="code"><pre class="code bash"><a id="rest_code_7a831c43275b4b5dba0bb25c9f99d694-1" name="rest_code_7a831c43275b4b5dba0bb25c9f99d694-1" href="blog/how-to-kill-a-process-hanging-on-a-port/#rest_code_7a831c43275b4b5dba0bb25c9f99d694-1"></a>fuser<span class="w"> </span><span class="m">6543</span>/tcp<span class="w"> </span>-k
 </pre></div>
 <p>The <strong>k</strong> parameter is responsible for actual killing. Without it, the command would just identify which process is using port/socket in question.</p>
             

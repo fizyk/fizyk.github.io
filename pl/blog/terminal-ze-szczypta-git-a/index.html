@@ -45,13 +45,13 @@ jest git, z którego korzystam właśnie przez terminal.</p>
 się od razu, w jakiej gałęzi kodu pracujemy, oczywiście, jeśli
 korzystamy z gałęzi intensywnie. Ale jest na to sposób. Wystarczy lekko
 zmodyfikować plik <strong>.bashrc</strong> dodając linijkę:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_a0ac8d2d68c14310a55cfdb720286435-1" name="rest_code_a0ac8d2d68c14310a55cfdb720286435-1" href="#rest_code_a0ac8d2d68c14310a55cfdb720286435-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PS1</span><span class="o">=</span><span class="s1">'\u@\h: \w$(__git_ps1 "(%s)")$ '</span>
+<div class="code"><pre class="code bash"><a id="rest_code_451c0fd6bf5d496482c384dcb0781433-1" name="rest_code_451c0fd6bf5d496482c384dcb0781433-1" href="#rest_code_451c0fd6bf5d496482c384dcb0781433-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PS1</span><span class="o">=</span><span class="s1">'\u@\h: \w$(__git_ps1 "(%s)")$ '</span>
 </pre></div>
 <p>Jedyny problem z takim rozwiązaniem jest taki, że modyfikuje tytuł okna
 xterminala. Aby zaradzić temu, trzeba dodać jeszcze takie linijki:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_2643556a279a4a2785f8b30a88ee82dd-1" name="rest_code_2643556a279a4a2785f8b30a88ee82dd-1" href="#rest_code_2643556a279a4a2785f8b30a88ee82dd-1"></a><span class="k">case</span><span class="w"> </span><span class="s2">"</span><span class="nv">$TERM</span><span class="s2">"</span><span class="w"> </span><span class="k">in</span>
-<a id="rest_code_2643556a279a4a2785f8b30a88ee82dd-2" name="rest_code_2643556a279a4a2785f8b30a88ee82dd-2" href="#rest_code_2643556a279a4a2785f8b30a88ee82dd-2"></a>xterm*<span class="p">|</span>rxvt*<span class="o">)</span>
-<a id="rest_code_2643556a279a4a2785f8b30a88ee82dd-3" name="rest_code_2643556a279a4a2785f8b30a88ee82dd-3" href="#rest_code_2643556a279a4a2785f8b30a88ee82dd-3"></a><span class="w">    </span><span class="nv">PS1</span><span class="o">=</span><span class="s2">"\[\e]0;</span><span class="si">${</span><span class="nv">debian_chroot</span><span class="p">:+(</span><span class="nv">$debian_chroot</span><span class="p">)</span><span class="si">}</span><span class="s2">\u@\h: \w\a\]</span><span class="nv">$PS1</span><span class="s2">"</span>
+<div class="code"><pre class="code bash"><a id="rest_code_fce045fab44245a18bc6c3d47c703407-1" name="rest_code_fce045fab44245a18bc6c3d47c703407-1" href="#rest_code_fce045fab44245a18bc6c3d47c703407-1"></a><span class="k">case</span><span class="w"> </span><span class="s2">"</span><span class="nv">$TERM</span><span class="s2">"</span><span class="w"> </span><span class="k">in</span>
+<a id="rest_code_fce045fab44245a18bc6c3d47c703407-2" name="rest_code_fce045fab44245a18bc6c3d47c703407-2" href="#rest_code_fce045fab44245a18bc6c3d47c703407-2"></a>xterm*<span class="p">|</span>rxvt*<span class="o">)</span>
+<a id="rest_code_fce045fab44245a18bc6c3d47c703407-3" name="rest_code_fce045fab44245a18bc6c3d47c703407-3" href="#rest_code_fce045fab44245a18bc6c3d47c703407-3"></a><span class="w">    </span><span class="nv">PS1</span><span class="o">=</span><span class="s2">"\[\e]0;</span><span class="si">${</span><span class="nv">debian_chroot</span><span class="p">:+(</span><span class="nv">$debian_chroot</span><span class="p">)</span><span class="si">}</span><span class="s2">\u@\h: \w\a\]</span><span class="nv">$PS1</span><span class="s2">"</span>
 </pre></div>
     
         <ul class="pager hidden-print">

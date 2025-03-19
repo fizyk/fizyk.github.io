@@ -66,12 +66,12 @@ zauważyć jeden mankament: brak jest aliasu zwrotnego z obiektu
 użytkownika, do obiektu tworzonego. Głównie z tego powodu zdecydowałem
 się stworzyć modyfikację Blameable dla symfony i sfDoctrineGuard. Dodane
 fragmenty kodu są nieznaczną modyfikacją:</p>
-<div class="code"><pre class="code php"><a id="rest_code_fc7b40750a9149aeaa4b630e250b9b37-1" name="rest_code_fc7b40750a9149aeaa4b630e250b9b37-1" href="#rest_code_fc7b40750a9149aeaa4b630e250b9b37-1"></a><span class="x">Doctrine_Core::getTable( 'sfGuardUser' )-&gt;bind(</span>
-<a id="rest_code_fc7b40750a9149aeaa4b630e250b9b37-2" name="rest_code_fc7b40750a9149aeaa4b630e250b9b37-2" href="#rest_code_fc7b40750a9149aeaa4b630e250b9b37-2"></a><span class="x">        array($className.' as Created'.$className.'s',</span>
-<a id="rest_code_fc7b40750a9149aeaa4b630e250b9b37-3" name="rest_code_fc7b40750a9149aeaa4b630e250b9b37-3" href="#rest_code_fc7b40750a9149aeaa4b630e250b9b37-3"></a><span class="x">          array( 'class'    =&gt; $className,</span>
-<a id="rest_code_fc7b40750a9149aeaa4b630e250b9b37-4" name="rest_code_fc7b40750a9149aeaa4b630e250b9b37-4" href="#rest_code_fc7b40750a9149aeaa4b630e250b9b37-4"></a><span class="x">            'local'    =&gt; $this-&gt;_options['relations']['created']['foreign'],</span>
-<a id="rest_code_fc7b40750a9149aeaa4b630e250b9b37-5" name="rest_code_fc7b40750a9149aeaa4b630e250b9b37-5" href="#rest_code_fc7b40750a9149aeaa4b630e250b9b37-5"></a><span class="x">            'foreign'  =&gt; $this-&gt;_options['columns']['created']['name']</span>
-<a id="rest_code_fc7b40750a9149aeaa4b630e250b9b37-6" name="rest_code_fc7b40750a9149aeaa4b630e250b9b37-6" href="#rest_code_fc7b40750a9149aeaa4b630e250b9b37-6"></a><span class="x">        )), Doctrine_Relation::MANY );</span>
+<div class="code"><pre class="code php"><a id="rest_code_d63019e21f2244c992eb59095f412fb1-1" name="rest_code_d63019e21f2244c992eb59095f412fb1-1" href="#rest_code_d63019e21f2244c992eb59095f412fb1-1"></a><span class="x">Doctrine_Core::getTable( 'sfGuardUser' )-&gt;bind(</span>
+<a id="rest_code_d63019e21f2244c992eb59095f412fb1-2" name="rest_code_d63019e21f2244c992eb59095f412fb1-2" href="#rest_code_d63019e21f2244c992eb59095f412fb1-2"></a><span class="x">        array($className.' as Created'.$className.'s',</span>
+<a id="rest_code_d63019e21f2244c992eb59095f412fb1-3" name="rest_code_d63019e21f2244c992eb59095f412fb1-3" href="#rest_code_d63019e21f2244c992eb59095f412fb1-3"></a><span class="x">          array( 'class'    =&gt; $className,</span>
+<a id="rest_code_d63019e21f2244c992eb59095f412fb1-4" name="rest_code_d63019e21f2244c992eb59095f412fb1-4" href="#rest_code_d63019e21f2244c992eb59095f412fb1-4"></a><span class="x">            'local'    =&gt; $this-&gt;_options['relations']['created']['foreign'],</span>
+<a id="rest_code_d63019e21f2244c992eb59095f412fb1-5" name="rest_code_d63019e21f2244c992eb59095f412fb1-5" href="#rest_code_d63019e21f2244c992eb59095f412fb1-5"></a><span class="x">            'foreign'  =&gt; $this-&gt;_options['columns']['created']['name']</span>
+<a id="rest_code_d63019e21f2244c992eb59095f412fb1-6" name="rest_code_d63019e21f2244c992eb59095f412fb1-6" href="#rest_code_d63019e21f2244c992eb59095f412fb1-6"></a><span class="x">        )), Doctrine_Relation::MANY );</span>
 </pre></div>
 <p>Ale jakże ułatwią tworzenie zapytań pobierających obiekty stworzone
 przez użytkownika. Zwykłe pobieranie wszystkich obiektów stworzonych
@@ -81,14 +81,14 @@ jest idealny.</p>
 1.0.0</a>
 współdziała domyślnie z sfDoctrineGuard 4.x, ale do użycia go w
 sfDoctrineGuard 5.x wystarczy zmienić typy pól created i updated:</p>
-<div class="code"><pre class="code php"><a id="rest_code_3441497babaa4e3c96d36daeeac67d1b-1" name="rest_code_3441497babaa4e3c96d36daeeac67d1b-1" href="#rest_code_3441497babaa4e3c96d36daeeac67d1b-1"></a><span class="x">MyModel:</span>
-<a id="rest_code_3441497babaa4e3c96d36daeeac67d1b-2" name="rest_code_3441497babaa4e3c96d36daeeac67d1b-2" href="#rest_code_3441497babaa4e3c96d36daeeac67d1b-2"></a><span class="x">  actAs:</span>
-<a id="rest_code_3441497babaa4e3c96d36daeeac67d1b-3" name="rest_code_3441497babaa4e3c96d36daeeac67d1b-3" href="#rest_code_3441497babaa4e3c96d36daeeac67d1b-3"></a><span class="x">    fzBlameable:</span>
-<a id="rest_code_3441497babaa4e3c96d36daeeac67d1b-4" name="rest_code_3441497babaa4e3c96d36daeeac67d1b-4" href="#rest_code_3441497babaa4e3c96d36daeeac67d1b-4"></a><span class="x">      columns:</span>
-<a id="rest_code_3441497babaa4e3c96d36daeeac67d1b-5" name="rest_code_3441497babaa4e3c96d36daeeac67d1b-5" href="#rest_code_3441497babaa4e3c96d36daeeac67d1b-5"></a><span class="x">        created:</span>
-<a id="rest_code_3441497babaa4e3c96d36daeeac67d1b-6" name="rest_code_3441497babaa4e3c96d36daeeac67d1b-6" href="#rest_code_3441497babaa4e3c96d36daeeac67d1b-6"></a><span class="x">          length: 8</span>
-<a id="rest_code_3441497babaa4e3c96d36daeeac67d1b-7" name="rest_code_3441497babaa4e3c96d36daeeac67d1b-7" href="#rest_code_3441497babaa4e3c96d36daeeac67d1b-7"></a><span class="x">        updated:</span>
-<a id="rest_code_3441497babaa4e3c96d36daeeac67d1b-8" name="rest_code_3441497babaa4e3c96d36daeeac67d1b-8" href="#rest_code_3441497babaa4e3c96d36daeeac67d1b-8"></a><span class="x">          length: 8</span>
+<div class="code"><pre class="code php"><a id="rest_code_3b6af050cd7146d285e12636b4716c04-1" name="rest_code_3b6af050cd7146d285e12636b4716c04-1" href="#rest_code_3b6af050cd7146d285e12636b4716c04-1"></a><span class="x">MyModel:</span>
+<a id="rest_code_3b6af050cd7146d285e12636b4716c04-2" name="rest_code_3b6af050cd7146d285e12636b4716c04-2" href="#rest_code_3b6af050cd7146d285e12636b4716c04-2"></a><span class="x">  actAs:</span>
+<a id="rest_code_3b6af050cd7146d285e12636b4716c04-3" name="rest_code_3b6af050cd7146d285e12636b4716c04-3" href="#rest_code_3b6af050cd7146d285e12636b4716c04-3"></a><span class="x">    fzBlameable:</span>
+<a id="rest_code_3b6af050cd7146d285e12636b4716c04-4" name="rest_code_3b6af050cd7146d285e12636b4716c04-4" href="#rest_code_3b6af050cd7146d285e12636b4716c04-4"></a><span class="x">      columns:</span>
+<a id="rest_code_3b6af050cd7146d285e12636b4716c04-5" name="rest_code_3b6af050cd7146d285e12636b4716c04-5" href="#rest_code_3b6af050cd7146d285e12636b4716c04-5"></a><span class="x">        created:</span>
+<a id="rest_code_3b6af050cd7146d285e12636b4716c04-6" name="rest_code_3b6af050cd7146d285e12636b4716c04-6" href="#rest_code_3b6af050cd7146d285e12636b4716c04-6"></a><span class="x">          length: 8</span>
+<a id="rest_code_3b6af050cd7146d285e12636b4716c04-7" name="rest_code_3b6af050cd7146d285e12636b4716c04-7" href="#rest_code_3b6af050cd7146d285e12636b4716c04-7"></a><span class="x">        updated:</span>
+<a id="rest_code_3b6af050cd7146d285e12636b4716c04-8" name="rest_code_3b6af050cd7146d285e12636b4716c04-8" href="#rest_code_3b6af050cd7146d285e12636b4716c04-8"></a><span class="x">          length: 8</span>
 </pre></div>
     
         <ul class="pager hidden-print">

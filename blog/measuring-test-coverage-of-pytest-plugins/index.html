@@ -49,11 +49,11 @@ kicks in in exact moment, thanks to a pytest_sessionstart hook.</p>
 <p>And just today, I was toying with the idea looking first at recent changes in
 pytest-cov, and it occurred to me, that to get full coverage of pytest plugin,
 I actually have to turn it off!</p>
-<div class="code"><pre class="code text"><a id="rest_code_e22861c06dc7499c886636e20612fdb1-1" name="rest_code_e22861c06dc7499c886636e20612fdb1-1" href="#rest_code_e22861c06dc7499c886636e20612fdb1-1"></a>py.test -p no:pytest-plugin
+<div class="code"><pre class="code text"><a id="rest_code_7f56511b7e4243d5aef0c7db797e8ea3-1" name="rest_code_7f56511b7e4243d5aef0c7db797e8ea3-1" href="#rest_code_7f56511b7e4243d5aef0c7db797e8ea3-1"></a>py.test -p no:pytest-plugin
 </pre></div>
 <p>But how do we use plguin's fixtures and configuration then? Well, it's enough
 to import everything from the plugin in test's <em>conftest.py</em> file!</p>
-<div class="code"><pre class="code python"><a id="rest_code_1e5701218027467989d2785406a59511-1" name="rest_code_1e5701218027467989d2785406a59511-1" href="#rest_code_1e5701218027467989d2785406a59511-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pytest_plugin.plugin</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<div class="code"><pre class="code python"><a id="rest_code_926566dc5f4b450fa200f1d020155fe5-1" name="rest_code_926566dc5f4b450fa200f1d020155fe5-1" href="#rest_code_926566dc5f4b450fa200f1d020155fe5-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pytest_plugin.plugin</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 <p>This will make your plugin's fixture to kick in, as well as any configuration
 option your pytest plugin might require.</p>
