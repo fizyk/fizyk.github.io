@@ -9,11 +9,11 @@ import time
 #
 
 
-SITE_URL = "http://blog.fizyk.net.pl/"
+SITE_URL = "https://fizyk.dev/"
 # Data about this site
 BLOG_AUTHOR = "Grzegorz Śliwiński"
 BLOG_TITLE = "Cases"
-BLOG_EMAIL = "fizyk@fizyk.net.pl"
+BLOG_EMAIL = "fizyk@fizyk.dev"
 BLOG_DESCRIPTION = "Not only about encountered programming cases."
 
 # Nikola is multilingual!
@@ -54,12 +54,12 @@ TRANSLATIONS = {
 # You should provide a key-value pair for each used language.
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ('http://www.fizyk.net.pl/en', 'Homepage'),
+        ('https://fizyk.dev/en', 'Homepage'),
         ('/archive/', 'Archives'),
         ('/tags/', 'Tags'),
     ),
     'pl': (
-        ('http://www.fizyk.net.pl', 'Strona domowa'),
+        ('https://fizyk.dev', 'Strona domowa'),
         ('/pl/archive/', 'Archiwum'),
         ('/pl/tags/', 'Tagi'),
     ),
