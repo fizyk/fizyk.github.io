@@ -1,4 +1,4 @@
-Sitemap: http://blog.fizyk.net.pl/sitemapindex.xml
+Sitemap: https://fizyk.dev/sitemapindex.xml
 
 User-Agent: *
-Host: blog.fizyk.net.pl
+Host: fizyk.dev

@@ -8,9 +8,9 @@
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../pl/rss.xml">
-<link rel="canonical" href="http://blog.fizyk.net.pl/blog/travis-ci-continuous-integration-for-your-python-project/">
-<link rel="icon" href="../../favicon.png" sizes="62x60">
+<link rel="canonical" href="https://fizyk.dev/blog/travis-ci-continuous-integration-for-your-python-project/">
 <link rel="icon" href="../../favicon-speddial.png" sizes="269x262">
+<link rel="icon" href="../../favicon.png" sizes="62x60">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -37,8 +37,7 @@
 
         </span>
         </div>
-    <div>
-<p>A long while ago, with help of Tomek Święcicki, I've discovered <a class="reference external" href="https://travis-ci.org/">Travis-CI</a>, a service that provides Continuous integration, to both open source, and enterprise projects, and that's quite easy to connect to Github repository.</p>
+    <p>A long while ago, with help of Tomek Święcicki, I've discovered <a class="reference external" href="https://travis-ci.org/">Travis-CI</a>, a service that provides Continuous integration, to both open source, and enterprise projects, and that's quite easy to connect to Github repository.</p>
 <!-- TEASER_END -->
 <p>So how does it work? First of all, you need a test suite for your project, and some command to run these tests. Then, at root level of your project, you add <strong>.travis.yaml</strong> file.</p>
 <p>There are four required sections:</p>
@@ -49,13 +48,10 @@
 <li><p><strong>script</strong> - the actual test suite script. I've used <code class="docutils literal">python setup.py nosetests</code>, but recently I'm switching to py.test.</p></li>
 </ul>
 <p>There's also fifth section, <strong>after_success</strong> which I use to send coverage reports to <a class="reference external" href="https://coveralls.io/">coveralls.io</a>, which then reports any change back to me, and on github, if this is a merge request.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<aside class="admonition note"><p class="admonition-title">Note</p>
 <p>My default <strong>.travis.yaml</strong> file can be checked on my <a class="reference external" href="https://github.com/fizyk/pypt/blob/master/.travis.yml">pypt</a> repository. Where I keep templates for packages.</p>
-</div>
-<p>Whole process adding your github project to Travis-ci is as simple as login, refreshing your project's list, and simply turning it on on travis-ci pages, which in turn, turns Travis-Ci integration hook on gihub's repository settings. After that every push gets picked up by travis, and defined commands are being run.</p>
+</aside><p>Whole process adding your github project to Travis-ci is as simple as login, refreshing your project's list, and simply turning it on on travis-ci pages, which in turn, turns Travis-Ci integration hook on gihub's repository settings. After that every push gets picked up by travis, and defined commands are being run.</p>
 <p>Happy testing!</p>
-</div>
     
         <ul class="pager hidden-print">
 <li class="previous">
@@ -68,7 +64,7 @@
 <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="casesblog",
-            disqus_url="http://blog.fizyk.net.pl/blog/travis-ci-continuous-integration-for-your-python-project/",
+            disqus_url="https://fizyk.dev/blog/travis-ci-continuous-integration-for-your-python-project/",
         disqus_title="Travis-CI - continuous integration for your python project",
         disqus_identifier="cache/posts/2013-08-03-travis-ci-continuous-integration-for-your-python-project.html",
         disqus_config = function () {
@@ -92,13 +88,13 @@
         <div id="sidebar">
             <!--Sidebar content-->
             <h1 id="blog-title">
-                <a href="http://blog.fizyk.net.pl/" title="Cases">Cases</a>
+                <a href="https://fizyk.dev/" title="Cases">Cases</a>
             </h1>
             
             <small>
                 Also available in: 
                 
-            <li><a href="http://blog.fizyk.net.pl/pl/" rel="alternate" hreflang="pl">Polski</a></li>
+            <li><a href="https://fizyk.dev/pl/" rel="alternate" hreflang="pl">Polski</a></li>
 
             </small>
             
@@ -115,7 +111,7 @@ jest dostępny na licencji
 </a>.</li>
             
                 <li>
-<a href="http://www.fizyk.net.pl/en">Homepage</a>
+<a href="https://fizyk.dev/en">Homepage</a>
                 </li>
 <li>
 <a href="../../archive/">Archives</a>
@@ -130,7 +126,7 @@ jest dostępny na licencji
             </ul>
 </div>
         <div id="footer">
-            Contents © 2021 <a href="mailto:fizyk~~fizyk.net.pl">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
+            Contents © 2025 <a href="mailto:fizyk~~fizyk.dev">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
             
         </div>
     </div>

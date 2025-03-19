@@ -7,9 +7,9 @@
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../pl/rss.xml">
-<link rel="canonical" href="http://blog.fizyk.net.pl/blog/unicode-is-faster-than-decode/">
-<link rel="icon" href="../../favicon.png" sizes="62x60">
+<link rel="canonical" href="https://fizyk.dev/blog/unicode-is-faster-than-decode/">
 <link rel="icon" href="../../favicon-speddial.png" sizes="269x262">
+<link rel="icon" href="../../favicon.png" sizes="62x60">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -36,19 +36,17 @@
 
         </span>
         </div>
-    <div>
-<p>This might come as a surprise, but in python 2.7, it's actually faster to decode strigs with unicode function, than decode method.</p>
-<pre class="code python"><a id="rest_code_8c9a9613fc3d45e48dbbe45c5660785b-1" name="rest_code_8c9a9613fc3d45e48dbbe45c5660785b-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">timeit</span> <span class="kn">import</span> <span class="n">Timer</span>
-<a id="rest_code_8c9a9613fc3d45e48dbbe45c5660785b-2" name="rest_code_8c9a9613fc3d45e48dbbe45c5660785b-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="s2">"grzegrzółka"</span>
-<a id="rest_code_8c9a9613fc3d45e48dbbe45c5660785b-3" name="rest_code_8c9a9613fc3d45e48dbbe45c5660785b-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ts</span> <span class="o">=</span> <span class="n">Timer</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">s</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">'utf-8'</span><span class="p">))</span>
-<a id="rest_code_8c9a9613fc3d45e48dbbe45c5660785b-4" name="rest_code_8c9a9613fc3d45e48dbbe45c5660785b-4"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ts</span><span class="o">.</span><span class="n">timeit</span><span class="p">()</span>
-<a id="rest_code_8c9a9613fc3d45e48dbbe45c5660785b-5" name="rest_code_8c9a9613fc3d45e48dbbe45c5660785b-5"></a><span class="mf">1.4051871299743652</span>
-<a id="rest_code_8c9a9613fc3d45e48dbbe45c5660785b-6" name="rest_code_8c9a9613fc3d45e48dbbe45c5660785b-6"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">tu</span> <span class="o">=</span> <span class="n">Timer</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">unicode</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="s1">'utf-8'</span><span class="p">))</span>
-<a id="rest_code_8c9a9613fc3d45e48dbbe45c5660785b-7" name="rest_code_8c9a9613fc3d45e48dbbe45c5660785b-7"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">tu</span><span class="o">.</span><span class="n">timeit</span><span class="p">()</span>
-<a id="rest_code_8c9a9613fc3d45e48dbbe45c5660785b-8" name="rest_code_8c9a9613fc3d45e48dbbe45c5660785b-8"></a><span class="mf">0.4272959232330322</span>
-</pre>
+    <p>This might come as a surprise, but in python 2.7, it's actually faster to decode strigs with unicode function, than decode method.</p>
+<div class="code"><pre class="code python"><a id="rest_code_ddecb741c3f147228fbe6ddeccf1b46f-1" name="rest_code_ddecb741c3f147228fbe6ddeccf1b46f-1" href="#rest_code_ddecb741c3f147228fbe6ddeccf1b46f-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span><span class="w"> </span><span class="nn">timeit</span><span class="w"> </span><span class="kn">import</span> <span class="n">Timer</span>
+<a id="rest_code_ddecb741c3f147228fbe6ddeccf1b46f-2" name="rest_code_ddecb741c3f147228fbe6ddeccf1b46f-2" href="#rest_code_ddecb741c3f147228fbe6ddeccf1b46f-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="s2">"grzegrzółka"</span>
+<a id="rest_code_ddecb741c3f147228fbe6ddeccf1b46f-3" name="rest_code_ddecb741c3f147228fbe6ddeccf1b46f-3" href="#rest_code_ddecb741c3f147228fbe6ddeccf1b46f-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ts</span> <span class="o">=</span> <span class="n">Timer</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">s</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">'utf-8'</span><span class="p">))</span>
+<a id="rest_code_ddecb741c3f147228fbe6ddeccf1b46f-4" name="rest_code_ddecb741c3f147228fbe6ddeccf1b46f-4" href="#rest_code_ddecb741c3f147228fbe6ddeccf1b46f-4"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ts</span><span class="o">.</span><span class="n">timeit</span><span class="p">()</span>
+<a id="rest_code_ddecb741c3f147228fbe6ddeccf1b46f-5" name="rest_code_ddecb741c3f147228fbe6ddeccf1b46f-5" href="#rest_code_ddecb741c3f147228fbe6ddeccf1b46f-5"></a><span class="mf">1.4051871299743652</span>
+<a id="rest_code_ddecb741c3f147228fbe6ddeccf1b46f-6" name="rest_code_ddecb741c3f147228fbe6ddeccf1b46f-6" href="#rest_code_ddecb741c3f147228fbe6ddeccf1b46f-6"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">tu</span> <span class="o">=</span> <span class="n">Timer</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">unicode</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="s1">'utf-8'</span><span class="p">))</span>
+<a id="rest_code_ddecb741c3f147228fbe6ddeccf1b46f-7" name="rest_code_ddecb741c3f147228fbe6ddeccf1b46f-7" href="#rest_code_ddecb741c3f147228fbe6ddeccf1b46f-7"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">tu</span><span class="o">.</span><span class="n">timeit</span><span class="p">()</span>
+<a id="rest_code_ddecb741c3f147228fbe6ddeccf1b46f-8" name="rest_code_ddecb741c3f147228fbe6ddeccf1b46f-8" href="#rest_code_ddecb741c3f147228fbe6ddeccf1b46f-8"></a><span class="mf">0.4272959232330322</span>
+</pre></div>
 <p>Of course, unicode method isn't valid for python3, but you can always mock it's behaviour for py3 in some compat.py file, but... strings in python3 are finally unicode, not ascii like in python2.7,so unless you develop some nice library, you probably know what python version will be running your project.</p>
-</div>
     
         <ul class="pager hidden-print">
 <li class="previous">
@@ -61,7 +59,7 @@
 <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="casesblog",
-            disqus_url="http://blog.fizyk.net.pl/blog/unicode-is-faster-than-decode/",
+            disqus_url="https://fizyk.dev/blog/unicode-is-faster-than-decode/",
         disqus_title="unicode is faster than decode",
         disqus_identifier="cache/posts/2013-07-17-unicode-is-faster-than-decode.html",
         disqus_config = function () {
@@ -85,13 +83,13 @@
         <div id="sidebar">
             <!--Sidebar content-->
             <h1 id="blog-title">
-                <a href="http://blog.fizyk.net.pl/" title="Cases">Cases</a>
+                <a href="https://fizyk.dev/" title="Cases">Cases</a>
             </h1>
             
             <small>
                 Also available in: 
                 
-            <li><a href="http://blog.fizyk.net.pl/pl/" rel="alternate" hreflang="pl">Polski</a></li>
+            <li><a href="https://fizyk.dev/pl/" rel="alternate" hreflang="pl">Polski</a></li>
 
             </small>
             
@@ -108,7 +106,7 @@ jest dostępny na licencji
 </a>.</li>
             
                 <li>
-<a href="http://www.fizyk.net.pl/en">Homepage</a>
+<a href="https://fizyk.dev/en">Homepage</a>
                 </li>
 <li>
 <a href="../../archive/">Archives</a>
@@ -123,7 +121,7 @@ jest dostępny na licencji
             </ul>
 </div>
         <div id="footer">
-            Contents © 2021 <a href="mailto:fizyk~~fizyk.net.pl">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
+            Contents © 2025 <a href="mailto:fizyk~~fizyk.dev">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
             
         </div>
     </div>

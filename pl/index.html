@@ -8,9 +8,9 @@
 <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="rss.xml">
-<link rel="canonical" href="http://blog.fizyk.net.pl/pl/">
-<link rel="icon" href="../favicon.png" sizes="62x60">
+<link rel="canonical" href="https://fizyk.dev/pl/">
 <link rel="icon" href="../favicon-speddial.png" sizes="269x262">
+<link rel="icon" href="../favicon.png" sizes="62x60">
 <link rel="next" href="index-9.html" type="text/html">
 <!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]-->
 </head>
@@ -30,43 +30,41 @@
                             <a class="tag" href="tags/python/"><span>python</span></a>
                 </span>
             </div>
-        <div>
-<p>Jakiś czas temu wpisałem sobie konsoli pythonowej wypisałem metody instancj inta za pomocą funkcji dir:</p>
-<pre class="code python"><a id="rest_code_9738c49fe93c4e7b846b3d46acff8d7f-1" name="rest_code_9738c49fe93c4e7b846b3d46acff8d7f-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">dir</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<a id="rest_code_9738c49fe93c4e7b846b3d46acff8d7f-2" name="rest_code_9738c49fe93c4e7b846b3d46acff8d7f-2"></a><span class="p">[</span><span class="s1">'__abs__'</span><span class="p">,</span> <span class="s1">'__add__'</span><span class="p">,</span> <span class="s1">'__and__'</span><span class="p">,</span> <span class="s1">'__class__'</span><span class="p">,</span> <span class="s1">'__cmp__'</span><span class="p">,</span> <span class="s1">'__coerce__'</span><span class="p">,</span> <span class="s1">'__delattr__'</span><span class="p">,</span> <span class="s1">'__div__'</span><span class="p">,</span> <span class="s1">'__divmod__'</span><span class="p">,</span> <span class="s1">'__doc__'</span><span class="p">,</span> <span class="s1">'__float__'</span><span class="p">,</span> <span class="s1">'__floordiv__'</span><span class="p">,</span> <span class="s1">'__format__'</span><span class="p">,</span> <span class="s1">'__getattribute__'</span><span class="p">,</span> <span class="s1">'__getnewargs__'</span><span class="p">,</span> <span class="s1">'__hash__'</span><span class="p">,</span> <span class="s1">'__hex__'</span><span class="p">,</span> <span class="s1">'__index__'</span><span class="p">,</span> <span class="s1">'__init__'</span><span class="p">,</span> <span class="s1">'__int__'</span><span class="p">,</span> <span class="s1">'__invert__'</span><span class="p">,</span> <span class="s1">'__long__'</span><span class="p">,</span> <span class="s1">'__lshift__'</span><span class="p">,</span> <span class="s1">'__mod__'</span><span class="p">,</span> <span class="s1">'__mul__'</span><span class="p">,</span> <span class="s1">'__neg__'</span><span class="p">,</span> <span class="s1">'__new__'</span><span class="p">,</span> <span class="s1">'__nonzero__'</span><span class="p">,</span> <span class="s1">'__oct__'</span><span class="p">,</span> <span class="s1">'__or__'</span><span class="p">,</span> <span class="s1">'__pos__'</span><span class="p">,</span> <span class="s1">'__pow__'</span><span class="p">,</span> <span class="s1">'__radd__'</span><span class="p">,</span> <span class="s1">'__rand__'</span><span class="p">,</span> <span class="s1">'__rdiv__'</span><span class="p">,</span> <span class="s1">'__rdivmod__'</span><span class="p">,</span> <span class="s1">'__reduce__'</span><span class="p">,</span> <span class="s1">'__reduce_ex__'</span><span class="p">,</span> <span class="s1">'__repr__'</span><span class="p">,</span> <span class="s1">'__rfloordiv__'</span><span class="p">,</span> <span class="s1">'__rlshift__'</span><span class="p">,</span> <span class="s1">'__rmod__'</span><span class="p">,</span> <span class="s1">'__rmul__'</span><span class="p">,</span> <span class="s1">'__ror__'</span><span class="p">,</span> <span class="s1">'__rpow__'</span><span class="p">,</span> <span class="s1">'__rrshift__'</span><span class="p">,</span> <span class="s1">'__rshift__'</span><span class="p">,</span> <span class="s1">'__rsub__'</span><span class="p">,</span> <span class="s1">'__rtruediv__'</span><span class="p">,</span> <span class="s1">'__rxor__'</span><span class="p">,</span> <span class="s1">'__setattr__'</span><span class="p">,</span> <span class="s1">'__sizeof__'</span><span class="p">,</span> <span class="s1">'__str__'</span><span class="p">,</span> <span class="s1">'__sub__'</span><span class="p">,</span> <span class="s1">'__subclasshook__'</span><span class="p">,</span> <span class="s1">'__truediv__'</span><span class="p">,</span> <span class="s1">'__trunc__'</span><span class="p">,</span> <span class="s1">'__xor__'</span><span class="p">,</span> <span class="s1">'bit_length'</span><span class="p">,</span> <span class="s1">'conjugate'</span><span class="p">,</span> <span class="s1">'denominator'</span><span class="p">,</span> <span class="s1">'imag'</span><span class="p">,</span> <span class="s1">'numerator'</span><span class="p">,</span> <span class="s1">'real'</span><span class="p">]</span>
-</pre>
+        <p>Jakiś czas temu wpisałem sobie konsoli pythonowej wypisałem metody instancj inta za pomocą funkcji dir:</p>
+<div class="code"><pre class="code python"><a id="rest_code_ae00fa13bd804c4ab38ac63bb612b003-1" name="rest_code_ae00fa13bd804c4ab38ac63bb612b003-1" href="blog/python-i-wszystko-jest-obiektem/#rest_code_ae00fa13bd804c4ab38ac63bb612b003-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">dir</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a id="rest_code_ae00fa13bd804c4ab38ac63bb612b003-2" name="rest_code_ae00fa13bd804c4ab38ac63bb612b003-2" href="blog/python-i-wszystko-jest-obiektem/#rest_code_ae00fa13bd804c4ab38ac63bb612b003-2"></a><span class="p">[</span><span class="s1">'__abs__'</span><span class="p">,</span> <span class="s1">'__add__'</span><span class="p">,</span> <span class="s1">'__and__'</span><span class="p">,</span> <span class="s1">'__class__'</span><span class="p">,</span> <span class="s1">'__cmp__'</span><span class="p">,</span> <span class="s1">'__coerce__'</span><span class="p">,</span> <span class="s1">'__delattr__'</span><span class="p">,</span> <span class="s1">'__div__'</span><span class="p">,</span> <span class="s1">'__divmod__'</span><span class="p">,</span> <span class="s1">'__doc__'</span><span class="p">,</span> <span class="s1">'__float__'</span><span class="p">,</span> <span class="s1">'__floordiv__'</span><span class="p">,</span> <span class="s1">'__format__'</span><span class="p">,</span> <span class="s1">'__getattribute__'</span><span class="p">,</span> <span class="s1">'__getnewargs__'</span><span class="p">,</span> <span class="s1">'__hash__'</span><span class="p">,</span> <span class="s1">'__hex__'</span><span class="p">,</span> <span class="s1">'__index__'</span><span class="p">,</span> <span class="s1">'__init__'</span><span class="p">,</span> <span class="s1">'__int__'</span><span class="p">,</span> <span class="s1">'__invert__'</span><span class="p">,</span> <span class="s1">'__long__'</span><span class="p">,</span> <span class="s1">'__lshift__'</span><span class="p">,</span> <span class="s1">'__mod__'</span><span class="p">,</span> <span class="s1">'__mul__'</span><span class="p">,</span> <span class="s1">'__neg__'</span><span class="p">,</span> <span class="s1">'__new__'</span><span class="p">,</span> <span class="s1">'__nonzero__'</span><span class="p">,</span> <span class="s1">'__oct__'</span><span class="p">,</span> <span class="s1">'__or__'</span><span class="p">,</span> <span class="s1">'__pos__'</span><span class="p">,</span> <span class="s1">'__pow__'</span><span class="p">,</span> <span class="s1">'__radd__'</span><span class="p">,</span> <span class="s1">'__rand__'</span><span class="p">,</span> <span class="s1">'__rdiv__'</span><span class="p">,</span> <span class="s1">'__rdivmod__'</span><span class="p">,</span> <span class="s1">'__reduce__'</span><span class="p">,</span> <span class="s1">'__reduce_ex__'</span><span class="p">,</span> <span class="s1">'__repr__'</span><span class="p">,</span> <span class="s1">'__rfloordiv__'</span><span class="p">,</span> <span class="s1">'__rlshift__'</span><span class="p">,</span> <span class="s1">'__rmod__'</span><span class="p">,</span> <span class="s1">'__rmul__'</span><span class="p">,</span> <span class="s1">'__ror__'</span><span class="p">,</span> <span class="s1">'__rpow__'</span><span class="p">,</span> <span class="s1">'__rrshift__'</span><span class="p">,</span> <span class="s1">'__rshift__'</span><span class="p">,</span> <span class="s1">'__rsub__'</span><span class="p">,</span> <span class="s1">'__rtruediv__'</span><span class="p">,</span> <span class="s1">'__rxor__'</span><span class="p">,</span> <span class="s1">'__setattr__'</span><span class="p">,</span> <span class="s1">'__sizeof__'</span><span class="p">,</span> <span class="s1">'__str__'</span><span class="p">,</span> <span class="s1">'__sub__'</span><span class="p">,</span> <span class="s1">'__subclasshook__'</span><span class="p">,</span> <span class="s1">'__truediv__'</span><span class="p">,</span> <span class="s1">'__trunc__'</span><span class="p">,</span> <span class="s1">'__xor__'</span><span class="p">,</span> <span class="s1">'bit_length'</span><span class="p">,</span> <span class="s1">'conjugate'</span><span class="p">,</span> <span class="s1">'denominator'</span><span class="p">,</span> <span class="s1">'imag'</span><span class="p">,</span> <span class="s1">'numerator'</span><span class="p">,</span> <span class="s1">'real'</span><span class="p">]</span>
+</pre></div>
 <p>Spodziewałem się tego, choć chyba nie aż takiej ilości atrybutów. Instancja integera ma 64 metody i atrybuty. Parę kolejnych przykładów:</p>
-<pre class="code python"><a id="rest_code_2c30309bb76b43788cae0f1f946b2182-1" name="rest_code_2c30309bb76b43788cae0f1f946b2182-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="nb">int</span><span class="p">))</span>
-<a id="rest_code_2c30309bb76b43788cae0f1f946b2182-2" name="rest_code_2c30309bb76b43788cae0f1f946b2182-2"></a><span class="mi">64</span>
-<a id="rest_code_2c30309bb76b43788cae0f1f946b2182-3" name="rest_code_2c30309bb76b43788cae0f1f946b2182-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="nb">str</span><span class="p">))</span>
-<a id="rest_code_2c30309bb76b43788cae0f1f946b2182-4" name="rest_code_2c30309bb76b43788cae0f1f946b2182-4"></a><span class="mi">71</span>
-<a id="rest_code_2c30309bb76b43788cae0f1f946b2182-5" name="rest_code_2c30309bb76b43788cae0f1f946b2182-5"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="nb">bool</span><span class="p">))</span>
-<a id="rest_code_2c30309bb76b43788cae0f1f946b2182-6" name="rest_code_2c30309bb76b43788cae0f1f946b2182-6"></a><span class="mi">64</span>
-<a id="rest_code_2c30309bb76b43788cae0f1f946b2182-7" name="rest_code_2c30309bb76b43788cae0f1f946b2182-7"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">))</span>
-<a id="rest_code_2c30309bb76b43788cae0f1f946b2182-8" name="rest_code_2c30309bb76b43788cae0f1f946b2182-8"></a><span class="mi">26</span>
-<a id="rest_code_2c30309bb76b43788cae0f1f946b2182-9" name="rest_code_2c30309bb76b43788cae0f1f946b2182-9"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="nb">dir</span><span class="p">))</span>
-<a id="rest_code_2c30309bb76b43788cae0f1f946b2182-10" name="rest_code_2c30309bb76b43788cae0f1f946b2182-10"></a><span class="mi">26</span>
-<a id="rest_code_2c30309bb76b43788cae0f1f946b2182-11" name="rest_code_2c30309bb76b43788cae0f1f946b2182-11"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="nb">len</span><span class="p">))</span>
-<a id="rest_code_2c30309bb76b43788cae0f1f946b2182-12" name="rest_code_2c30309bb76b43788cae0f1f946b2182-12"></a><span class="mi">26</span>
-</pre>
+<div class="code"><pre class="code python"><a id="rest_code_ec1ed470fd9a4fdc811e7c79c5fefdec-1" name="rest_code_ec1ed470fd9a4fdc811e7c79c5fefdec-1" href="blog/python-i-wszystko-jest-obiektem/#rest_code_ec1ed470fd9a4fdc811e7c79c5fefdec-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="nb">int</span><span class="p">))</span>
+<a id="rest_code_ec1ed470fd9a4fdc811e7c79c5fefdec-2" name="rest_code_ec1ed470fd9a4fdc811e7c79c5fefdec-2" href="blog/python-i-wszystko-jest-obiektem/#rest_code_ec1ed470fd9a4fdc811e7c79c5fefdec-2"></a><span class="mi">64</span>
+<a id="rest_code_ec1ed470fd9a4fdc811e7c79c5fefdec-3" name="rest_code_ec1ed470fd9a4fdc811e7c79c5fefdec-3" href="blog/python-i-wszystko-jest-obiektem/#rest_code_ec1ed470fd9a4fdc811e7c79c5fefdec-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="nb">str</span><span class="p">))</span>
+<a id="rest_code_ec1ed470fd9a4fdc811e7c79c5fefdec-4" name="rest_code_ec1ed470fd9a4fdc811e7c79c5fefdec-4" href="blog/python-i-wszystko-jest-obiektem/#rest_code_ec1ed470fd9a4fdc811e7c79c5fefdec-4"></a><span class="mi">71</span>
+<a id="rest_code_ec1ed470fd9a4fdc811e7c79c5fefdec-5" name="rest_code_ec1ed470fd9a4fdc811e7c79c5fefdec-5" href="blog/python-i-wszystko-jest-obiektem/#rest_code_ec1ed470fd9a4fdc811e7c79c5fefdec-5"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="nb">bool</span><span class="p">))</span>
+<a id="rest_code_ec1ed470fd9a4fdc811e7c79c5fefdec-6" name="rest_code_ec1ed470fd9a4fdc811e7c79c5fefdec-6" href="blog/python-i-wszystko-jest-obiektem/#rest_code_ec1ed470fd9a4fdc811e7c79c5fefdec-6"></a><span class="mi">64</span>
+<a id="rest_code_ec1ed470fd9a4fdc811e7c79c5fefdec-7" name="rest_code_ec1ed470fd9a4fdc811e7c79c5fefdec-7" href="blog/python-i-wszystko-jest-obiektem/#rest_code_ec1ed470fd9a4fdc811e7c79c5fefdec-7"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">))</span>
+<a id="rest_code_ec1ed470fd9a4fdc811e7c79c5fefdec-8" name="rest_code_ec1ed470fd9a4fdc811e7c79c5fefdec-8" href="blog/python-i-wszystko-jest-obiektem/#rest_code_ec1ed470fd9a4fdc811e7c79c5fefdec-8"></a><span class="mi">26</span>
+<a id="rest_code_ec1ed470fd9a4fdc811e7c79c5fefdec-9" name="rest_code_ec1ed470fd9a4fdc811e7c79c5fefdec-9" href="blog/python-i-wszystko-jest-obiektem/#rest_code_ec1ed470fd9a4fdc811e7c79c5fefdec-9"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="nb">dir</span><span class="p">))</span>
+<a id="rest_code_ec1ed470fd9a4fdc811e7c79c5fefdec-10" name="rest_code_ec1ed470fd9a4fdc811e7c79c5fefdec-10" href="blog/python-i-wszystko-jest-obiektem/#rest_code_ec1ed470fd9a4fdc811e7c79c5fefdec-10"></a><span class="mi">26</span>
+<a id="rest_code_ec1ed470fd9a4fdc811e7c79c5fefdec-11" name="rest_code_ec1ed470fd9a4fdc811e7c79c5fefdec-11" href="blog/python-i-wszystko-jest-obiektem/#rest_code_ec1ed470fd9a4fdc811e7c79c5fefdec-11"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="nb">len</span><span class="p">))</span>
+<a id="rest_code_ec1ed470fd9a4fdc811e7c79c5fefdec-12" name="rest_code_ec1ed470fd9a4fdc811e7c79c5fefdec-12" href="blog/python-i-wszystko-jest-obiektem/#rest_code_ec1ed470fd9a4fdc811e7c79c5fefdec-12"></a><span class="mi">26</span>
+</pre></div>
 <p>I niespodzianka:</p>
-<pre class="code python"><a id="rest_code_f039a69de6c147ec85dcb77b85544e7c-1" name="rest_code_f039a69de6c147ec85dcb77b85544e7c-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="nb">print</span><span class="p">))</span>
-<a id="rest_code_f039a69de6c147ec85dcb77b85544e7c-2" name="rest_code_f039a69de6c147ec85dcb77b85544e7c-2"></a>  <span class="n">File</span> <span class="s2">"&lt;stdin&gt;"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span>
-<a id="rest_code_f039a69de6c147ec85dcb77b85544e7c-3" name="rest_code_f039a69de6c147ec85dcb77b85544e7c-3"></a>    <span class="nb">len</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="nb">print</span><span class="p">))</span>
-<a id="rest_code_f039a69de6c147ec85dcb77b85544e7c-4" name="rest_code_f039a69de6c147ec85dcb77b85544e7c-4"></a>            <span class="o">^</span>
-<a id="rest_code_f039a69de6c147ec85dcb77b85544e7c-5" name="rest_code_f039a69de6c147ec85dcb77b85544e7c-5"></a><span class="ne">SyntaxError</span><span class="p">:</span> <span class="n">invalid</span> <span class="n">syntax</span>
-</pre>
+<div class="code"><pre class="code python"><a id="rest_code_64fafdbfedb046849d021ac7154aad64-1" name="rest_code_64fafdbfedb046849d021ac7154aad64-1" href="blog/python-i-wszystko-jest-obiektem/#rest_code_64fafdbfedb046849d021ac7154aad64-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="nb">print</span><span class="p">))</span>
+<a id="rest_code_64fafdbfedb046849d021ac7154aad64-2" name="rest_code_64fafdbfedb046849d021ac7154aad64-2" href="blog/python-i-wszystko-jest-obiektem/#rest_code_64fafdbfedb046849d021ac7154aad64-2"></a>  <span class="n">File</span> <span class="s2">"&lt;stdin&gt;"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span>
+<a id="rest_code_64fafdbfedb046849d021ac7154aad64-3" name="rest_code_64fafdbfedb046849d021ac7154aad64-3" href="blog/python-i-wszystko-jest-obiektem/#rest_code_64fafdbfedb046849d021ac7154aad64-3"></a>    <span class="nb">len</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="nb">print</span><span class="p">))</span>
+<a id="rest_code_64fafdbfedb046849d021ac7154aad64-4" name="rest_code_64fafdbfedb046849d021ac7154aad64-4" href="blog/python-i-wszystko-jest-obiektem/#rest_code_64fafdbfedb046849d021ac7154aad64-4"></a>            <span class="o">^</span>
+<a id="rest_code_64fafdbfedb046849d021ac7154aad64-5" name="rest_code_64fafdbfedb046849d021ac7154aad64-5" href="blog/python-i-wszystko-jest-obiektem/#rest_code_64fafdbfedb046849d021ac7154aad64-5"></a><span class="ne">SyntaxError</span><span class="p">:</span> <span class="n">invalid</span> <span class="n">syntax</span>
+</pre></div>
 <p>W zasadzie nie wiem, czego się spodziewałem.... chociaż, sprawdźmy w paythonie 3.3:</p>
-<pre class="code python"><a id="rest_code_1e9d952fe50548dd8a6bb3624edd5958-1" name="rest_code_1e9d952fe50548dd8a6bb3624edd5958-1"></a><span class="n">Python</span> <span class="mf">3.3.1</span> <span class="p">(</span><span class="n">default</span><span class="p">,</span> <span class="n">Apr</span> <span class="mi">17</span> <span class="mi">2013</span><span class="p">,</span> <span class="mi">22</span><span class="p">:</span><span class="mi">30</span><span class="p">:</span><span class="mi">32</span><span class="p">)</span>
-<a id="rest_code_1e9d952fe50548dd8a6bb3624edd5958-2" name="rest_code_1e9d952fe50548dd8a6bb3624edd5958-2"></a><span class="p">[</span><span class="n">GCC</span> <span class="mf">4.7.3</span><span class="p">]</span> <span class="n">on</span> <span class="n">linux</span>
-<a id="rest_code_1e9d952fe50548dd8a6bb3624edd5958-3" name="rest_code_1e9d952fe50548dd8a6bb3624edd5958-3"></a><span class="n">Type</span> <span class="s2">"help"</span><span class="p">,</span> <span class="s2">"copyright"</span><span class="p">,</span> <span class="s2">"credits"</span> <span class="ow">or</span> <span class="s2">"license"</span> <span class="k">for</span> <span class="n">more</span> <span class="n">information</span><span class="o">.</span>
-<a id="rest_code_1e9d952fe50548dd8a6bb3624edd5958-4" name="rest_code_1e9d952fe50548dd8a6bb3624edd5958-4"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="nb">print</span><span class="p">))</span>
-<a id="rest_code_1e9d952fe50548dd8a6bb3624edd5958-5" name="rest_code_1e9d952fe50548dd8a6bb3624edd5958-5"></a><span class="mi">27</span>
-</pre>
+<div class="code"><pre class="code python"><a id="rest_code_5de14c97ff7d4804a1c48f077e532f1a-1" name="rest_code_5de14c97ff7d4804a1c48f077e532f1a-1" href="blog/python-i-wszystko-jest-obiektem/#rest_code_5de14c97ff7d4804a1c48f077e532f1a-1"></a><span class="n">Python</span> <span class="mf">3.3.1</span> <span class="p">(</span><span class="n">default</span><span class="p">,</span> <span class="n">Apr</span> <span class="mi">17</span> <span class="mi">2013</span><span class="p">,</span> <span class="mi">22</span><span class="p">:</span><span class="mi">30</span><span class="p">:</span><span class="mi">32</span><span class="p">)</span>
+<a id="rest_code_5de14c97ff7d4804a1c48f077e532f1a-2" name="rest_code_5de14c97ff7d4804a1c48f077e532f1a-2" href="blog/python-i-wszystko-jest-obiektem/#rest_code_5de14c97ff7d4804a1c48f077e532f1a-2"></a><span class="p">[</span><span class="n">GCC</span> <span class="mf">4.7.3</span><span class="p">]</span> <span class="n">on</span> <span class="n">linux</span>
+<a id="rest_code_5de14c97ff7d4804a1c48f077e532f1a-3" name="rest_code_5de14c97ff7d4804a1c48f077e532f1a-3" href="blog/python-i-wszystko-jest-obiektem/#rest_code_5de14c97ff7d4804a1c48f077e532f1a-3"></a><span class="n">Type</span> <span class="s2">"help"</span><span class="p">,</span> <span class="s2">"copyright"</span><span class="p">,</span> <span class="s2">"credits"</span> <span class="ow">or</span> <span class="s2">"license"</span> <span class="k">for</span> <span class="n">more</span> <span class="n">information</span><span class="o">.</span>
+<a id="rest_code_5de14c97ff7d4804a1c48f077e532f1a-4" name="rest_code_5de14c97ff7d4804a1c48f077e532f1a-4" href="blog/python-i-wszystko-jest-obiektem/#rest_code_5de14c97ff7d4804a1c48f077e532f1a-4"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="nb">print</span><span class="p">))</span>
+<a id="rest_code_5de14c97ff7d4804a1c48f077e532f1a-5" name="rest_code_5de14c97ff7d4804a1c48f077e532f1a-5" href="blog/python-i-wszystko-jest-obiektem/#rest_code_5de14c97ff7d4804a1c48f077e532f1a-5"></a><span class="mi">27</span>
+</pre></div>
 <p>Tak, w pythonie 3, print jest już normalną funkcją.</p>
-</div>
             
-        
+    
     <a href="blog/python-i-wszystko-jest-obiektem/#disqus_thread" data-disqus-identifier="cache/posts/2013-07-08-python-i-wszystko-jest-obiektem.pl.html">Komentarze</a>
 
 
@@ -88,7 +86,7 @@
 <p class="more"><a href="blog/tzfpyramid_yml-02/">Czytaj więcej…</a></p>
 </div>
             
-        
+    
     <a href="blog/tzfpyramid_yml-02/#disqus_thread" data-disqus-identifier="cache/posts/2013-05-29-tzfpyramid_yml-02.html">Komentarze</a>
 
 
@@ -111,7 +109,7 @@
 <p class="more"><a href="blog/kurczak-po-baskijsku/">Czytaj więcej…</a></p>
 </div>
             
-        
+    
     <a href="blog/kurczak-po-baskijsku/#disqus_thread" data-disqus-identifier="cache/posts/2013-04-21-kurczak-po-baskijsku.pl.html">Komentarze</a>
 
 
@@ -133,7 +131,7 @@
 <p class="more"><a href="blog/formatowanie-daty-dla-rssatom/">Czytaj więcej…</a></p>
 </div>
             
-        
+    
     <a href="blog/formatowanie-daty-dla-rssatom/#disqus_thread" data-disqus-identifier="cache/posts/2013-04-17-format-date-for-rssatom.html">Komentarze</a>
 
 
@@ -154,7 +152,7 @@
 <p class="more"><a href="blog/witaj-nikola/">Czytaj więcej…</a></p>
 </div>
             
-        
+    
     <a href="blog/witaj-nikola/#disqus_thread" data-disqus-identifier="cache/posts/2013-03-20-welcome-nikola.html">Komentarze</a>
 
 
@@ -175,7 +173,7 @@ ustawić te oto wartości:</p>
 <p class="more"><a href="blog/git-na-kolorowo/">Czytaj więcej…</a></p>
 </div>
             
-        
+    
     <a href="blog/git-na-kolorowo/#disqus_thread" data-disqus-identifier="cache/posts/2012-10-10-git-na-kolorowo.pl.html">Komentarze</a>
 
 
@@ -195,7 +193,7 @@ użycia znacznika list. Sposób ten pozwala również rozszerzyć same listy.</p
 <p class="more"><a href="blog/numerowanie-elementow-dom-przy-pomocy-css/">Czytaj więcej…</a></p>
 </div>
             
-        
+    
     <a href="blog/numerowanie-elementow-dom-przy-pomocy-css/#disqus_thread" data-disqus-identifier="cache/posts/2012-09-06-numerowanie-elementow-dom-przy-pomocy-css.pl.html">Komentarze</a>
 
 
@@ -219,7 +217,7 @@ kolejne testy i nie przejmować się modyfikacją podstawy testów.</p>
 <p class="more"><a href="blog/listowanie-metod-modulu-w-pythonie/">Czytaj więcej…</a></p>
 </div>
             
-        
+    
     <a href="blog/listowanie-metod-modulu-w-pythonie/#disqus_thread" data-disqus-identifier="cache/posts/2012-08-17-howto-list-module-s-methods-in-python.html">Komentarze</a>
 
 
@@ -243,7 +241,7 @@ uruchomieniowe, virtualenv, a znacznym ułatwieniem, virtualenvwrapper.</p>
 <p class="more"><a href="blog/wirtualne-srodowisko-uruchomieniowe-pythona/">Czytaj więcej…</a></p>
 </div>
             
-        
+    
     <a href="blog/wirtualne-srodowisko-uruchomieniowe-pythona/#disqus_thread" data-disqus-identifier="cache/posts/2012-08-09-wirtualne-srodowisko-uruchomieniowe-pythona.pl.html">Komentarze</a>
 
 
@@ -270,7 +268,7 @@ pomidorowo-imbiowym jest moją specjalnością.</p>
 <p class="more"><a href="blog/spaghetti-z-sosem-pomidorowo-imbirowym/">Czytaj więcej…</a></p>
 </div>
             
-        
+    
     <a href="blog/spaghetti-z-sosem-pomidorowo-imbirowym/#disqus_thread" data-disqus-identifier="cache/posts/2012-04-22-spaghetti-z-sosem-pomidorowo-imbirowym.pl.html">Komentarze</a>
 
 
@@ -285,13 +283,13 @@ pomidorowo-imbiowym jest moją specjalnością.</p>
         <div id="sidebar">
             <!--Sidebar content-->
             <h1 id="blog-title">
-                <a href="http://blog.fizyk.net.pl/" title="Cases">Cases</a>
+                <a href="https://fizyk.dev/" title="Cases">Cases</a>
             </h1>
             
             <small>
                 Również dostępny w językach: 
                 
-            <li><a href="http://blog.fizyk.net.pl/" rel="alternate" hreflang="en">English</a></li>
+            <li><a href="https://fizyk.dev/" rel="alternate" hreflang="en">English</a></li>
 
             </small>
             
@@ -308,7 +306,7 @@ jest dostępny na licencji
 </a>.</li>
             
                 <li>
-<a href="http://www.fizyk.net.pl">Strona domowa</a>
+<a href="https://fizyk.dev">Strona domowa</a>
                 </li>
 <li>
 <a href="archive/">Archiwum</a>
@@ -323,7 +321,7 @@ jest dostępny na licencji
             </ul>
 </div>
         <div id="footer">
-            Contents © 2021 <a href="mailto:fizyk~~fizyk.net.pl">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
+            Contents © 2025 <a href="mailto:fizyk~~fizyk.dev">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
             
         </div>
     </div>

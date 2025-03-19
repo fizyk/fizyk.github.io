@@ -8,9 +8,9 @@
 <link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../rss.xml">
-<link rel="canonical" href="http://blog.fizyk.net.pl/pl/blog/aktualizacja-sfdoctrineguardplugin-4-0-1-do-4-0-2/">
-<link rel="icon" href="../../../favicon.png" sizes="62x60">
+<link rel="canonical" href="https://fizyk.dev/pl/blog/aktualizacja-sfdoctrineguardplugin-4-0-1-do-4-0-2/">
 <link rel="icon" href="../../../favicon-speddial.png" sizes="269x262">
+<link rel="icon" href="../../../favicon.png" sizes="62x60">
 <!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -41,8 +41,7 @@
 
         </span>
         </div>
-    <div>
-<p>W tygodniu pojawiła się nowa wersja pluginu sfDoctrineGuardPlugin.
+    <p>W tygodniu pojawiła się nowa wersja pluginu sfDoctrineGuardPlugin.
 [STRIKEOUT:Nie przywiązywałem do tego większej wagi, ze względu na
 changelog, który informował tylko o poprawce generowania kluczy
 "pamiętaj mnie" <em>(ang. Remember Me)</em>].</p>
@@ -58,181 +57,181 @@ klucze obce do <strong>sfGuardUser</strong>, najpierw powinniśmy je tymczasowo
 zrzucić (np. zakomentować fragmenty pliku <strong>schema.yml</strong> odpowiedzialne
 za stworzenie relacji).</p>
 <p>Poniżej przykładowa klasa migracyjna:</p>
-<pre class="code php"><a id="rest_code_7389467f8f444a1a9a89ceb599386ddc-1" name="rest_code_7389467f8f444a1a9a89ceb599386ddc-1"></a><span class="x">class Version14 extends Doctrine_Migration_Base</span>
-<a id="rest_code_7389467f8f444a1a9a89ceb599386ddc-2" name="rest_code_7389467f8f444a1a9a89ceb599386ddc-2"></a><span class="x">{</span>
-<a id="rest_code_7389467f8f444a1a9a89ceb599386ddc-3" name="rest_code_7389467f8f444a1a9a89ceb599386ddc-3"></a><span class="x">    public function up()</span>
-<a id="rest_code_7389467f8f444a1a9a89ceb599386ddc-4" name="rest_code_7389467f8f444a1a9a89ceb599386ddc-4"></a><span class="x">    {</span>
-<a id="rest_code_7389467f8f444a1a9a89ceb599386ddc-5" name="rest_code_7389467f8f444a1a9a89ceb599386ddc-5"></a>
-<a id="rest_code_7389467f8f444a1a9a89ceb599386ddc-6" name="rest_code_7389467f8f444a1a9a89ceb599386ddc-6"></a><span class="x">        $this-&gt;dropForeignKey('sf_guard_user_profile', 'sf_guard_user_profile_user_id_sf_guard_user_id');</span>
-<a id="rest_code_7389467f8f444a1a9a89ceb599386ddc-7" name="rest_code_7389467f8f444a1a9a89ceb599386ddc-7"></a><span class="x">    }</span>
-<a id="rest_code_7389467f8f444a1a9a89ceb599386ddc-8" name="rest_code_7389467f8f444a1a9a89ceb599386ddc-8"></a>
-<a id="rest_code_7389467f8f444a1a9a89ceb599386ddc-9" name="rest_code_7389467f8f444a1a9a89ceb599386ddc-9"></a><span class="x">    public function down()</span>
-<a id="rest_code_7389467f8f444a1a9a89ceb599386ddc-10" name="rest_code_7389467f8f444a1a9a89ceb599386ddc-10"></a><span class="x">    {</span>
-<a id="rest_code_7389467f8f444a1a9a89ceb599386ddc-11" name="rest_code_7389467f8f444a1a9a89ceb599386ddc-11"></a><span class="x">        $this-&gt;createForeignKey('sf_guard_user_profile', 'sf_guard_user_profile_user_id_sf_guard_user_id', array(</span>
-<a id="rest_code_7389467f8f444a1a9a89ceb599386ddc-12" name="rest_code_7389467f8f444a1a9a89ceb599386ddc-12"></a><span class="x">             'name' =&gt; 'sf_guard_user_profile_user_id_sf_guard_user_id',</span>
-<a id="rest_code_7389467f8f444a1a9a89ceb599386ddc-13" name="rest_code_7389467f8f444a1a9a89ceb599386ddc-13"></a><span class="x">             'local' =&gt; 'user_id',</span>
-<a id="rest_code_7389467f8f444a1a9a89ceb599386ddc-14" name="rest_code_7389467f8f444a1a9a89ceb599386ddc-14"></a><span class="x">             'foreign' =&gt; 'id',</span>
-<a id="rest_code_7389467f8f444a1a9a89ceb599386ddc-15" name="rest_code_7389467f8f444a1a9a89ceb599386ddc-15"></a><span class="x">             'foreignTable' =&gt; 'sf_guard_user',</span>
-<a id="rest_code_7389467f8f444a1a9a89ceb599386ddc-16" name="rest_code_7389467f8f444a1a9a89ceb599386ddc-16"></a><span class="x">             'onUpdate' =&gt; '',</span>
-<a id="rest_code_7389467f8f444a1a9a89ceb599386ddc-17" name="rest_code_7389467f8f444a1a9a89ceb599386ddc-17"></a><span class="x">             'onDelete' =&gt; 'cascade',</span>
-<a id="rest_code_7389467f8f444a1a9a89ceb599386ddc-18" name="rest_code_7389467f8f444a1a9a89ceb599386ddc-18"></a><span class="x">             ));</span>
-<a id="rest_code_7389467f8f444a1a9a89ceb599386ddc-19" name="rest_code_7389467f8f444a1a9a89ceb599386ddc-19"></a><span class="x">    }</span>
-<a id="rest_code_7389467f8f444a1a9a89ceb599386ddc-20" name="rest_code_7389467f8f444a1a9a89ceb599386ddc-20"></a><span class="x">}</span>
-</pre>
+<div class="code"><pre class="code php"><a id="rest_code_a299289d7f7a4fa9abbd147f0d762d6e-1" name="rest_code_a299289d7f7a4fa9abbd147f0d762d6e-1" href="#rest_code_a299289d7f7a4fa9abbd147f0d762d6e-1"></a><span class="x">class Version14 extends Doctrine_Migration_Base</span>
+<a id="rest_code_a299289d7f7a4fa9abbd147f0d762d6e-2" name="rest_code_a299289d7f7a4fa9abbd147f0d762d6e-2" href="#rest_code_a299289d7f7a4fa9abbd147f0d762d6e-2"></a><span class="x">{</span>
+<a id="rest_code_a299289d7f7a4fa9abbd147f0d762d6e-3" name="rest_code_a299289d7f7a4fa9abbd147f0d762d6e-3" href="#rest_code_a299289d7f7a4fa9abbd147f0d762d6e-3"></a><span class="x">    public function up()</span>
+<a id="rest_code_a299289d7f7a4fa9abbd147f0d762d6e-4" name="rest_code_a299289d7f7a4fa9abbd147f0d762d6e-4" href="#rest_code_a299289d7f7a4fa9abbd147f0d762d6e-4"></a><span class="x">    {</span>
+<a id="rest_code_a299289d7f7a4fa9abbd147f0d762d6e-5" name="rest_code_a299289d7f7a4fa9abbd147f0d762d6e-5" href="#rest_code_a299289d7f7a4fa9abbd147f0d762d6e-5"></a>
+<a id="rest_code_a299289d7f7a4fa9abbd147f0d762d6e-6" name="rest_code_a299289d7f7a4fa9abbd147f0d762d6e-6" href="#rest_code_a299289d7f7a4fa9abbd147f0d762d6e-6"></a><span class="x">        $this-&gt;dropForeignKey('sf_guard_user_profile', 'sf_guard_user_profile_user_id_sf_guard_user_id');</span>
+<a id="rest_code_a299289d7f7a4fa9abbd147f0d762d6e-7" name="rest_code_a299289d7f7a4fa9abbd147f0d762d6e-7" href="#rest_code_a299289d7f7a4fa9abbd147f0d762d6e-7"></a><span class="x">    }</span>
+<a id="rest_code_a299289d7f7a4fa9abbd147f0d762d6e-8" name="rest_code_a299289d7f7a4fa9abbd147f0d762d6e-8" href="#rest_code_a299289d7f7a4fa9abbd147f0d762d6e-8"></a>
+<a id="rest_code_a299289d7f7a4fa9abbd147f0d762d6e-9" name="rest_code_a299289d7f7a4fa9abbd147f0d762d6e-9" href="#rest_code_a299289d7f7a4fa9abbd147f0d762d6e-9"></a><span class="x">    public function down()</span>
+<a id="rest_code_a299289d7f7a4fa9abbd147f0d762d6e-10" name="rest_code_a299289d7f7a4fa9abbd147f0d762d6e-10" href="#rest_code_a299289d7f7a4fa9abbd147f0d762d6e-10"></a><span class="x">    {</span>
+<a id="rest_code_a299289d7f7a4fa9abbd147f0d762d6e-11" name="rest_code_a299289d7f7a4fa9abbd147f0d762d6e-11" href="#rest_code_a299289d7f7a4fa9abbd147f0d762d6e-11"></a><span class="x">        $this-&gt;createForeignKey('sf_guard_user_profile', 'sf_guard_user_profile_user_id_sf_guard_user_id', array(</span>
+<a id="rest_code_a299289d7f7a4fa9abbd147f0d762d6e-12" name="rest_code_a299289d7f7a4fa9abbd147f0d762d6e-12" href="#rest_code_a299289d7f7a4fa9abbd147f0d762d6e-12"></a><span class="x">             'name' =&gt; 'sf_guard_user_profile_user_id_sf_guard_user_id',</span>
+<a id="rest_code_a299289d7f7a4fa9abbd147f0d762d6e-13" name="rest_code_a299289d7f7a4fa9abbd147f0d762d6e-13" href="#rest_code_a299289d7f7a4fa9abbd147f0d762d6e-13"></a><span class="x">             'local' =&gt; 'user_id',</span>
+<a id="rest_code_a299289d7f7a4fa9abbd147f0d762d6e-14" name="rest_code_a299289d7f7a4fa9abbd147f0d762d6e-14" href="#rest_code_a299289d7f7a4fa9abbd147f0d762d6e-14"></a><span class="x">             'foreign' =&gt; 'id',</span>
+<a id="rest_code_a299289d7f7a4fa9abbd147f0d762d6e-15" name="rest_code_a299289d7f7a4fa9abbd147f0d762d6e-15" href="#rest_code_a299289d7f7a4fa9abbd147f0d762d6e-15"></a><span class="x">             'foreignTable' =&gt; 'sf_guard_user',</span>
+<a id="rest_code_a299289d7f7a4fa9abbd147f0d762d6e-16" name="rest_code_a299289d7f7a4fa9abbd147f0d762d6e-16" href="#rest_code_a299289d7f7a4fa9abbd147f0d762d6e-16"></a><span class="x">             'onUpdate' =&gt; '',</span>
+<a id="rest_code_a299289d7f7a4fa9abbd147f0d762d6e-17" name="rest_code_a299289d7f7a4fa9abbd147f0d762d6e-17" href="#rest_code_a299289d7f7a4fa9abbd147f0d762d6e-17"></a><span class="x">             'onDelete' =&gt; 'cascade',</span>
+<a id="rest_code_a299289d7f7a4fa9abbd147f0d762d6e-18" name="rest_code_a299289d7f7a4fa9abbd147f0d762d6e-18" href="#rest_code_a299289d7f7a4fa9abbd147f0d762d6e-18"></a><span class="x">             ));</span>
+<a id="rest_code_a299289d7f7a4fa9abbd147f0d762d6e-19" name="rest_code_a299289d7f7a4fa9abbd147f0d762d6e-19" href="#rest_code_a299289d7f7a4fa9abbd147f0d762d6e-19"></a><span class="x">    }</span>
+<a id="rest_code_a299289d7f7a4fa9abbd147f0d762d6e-20" name="rest_code_a299289d7f7a4fa9abbd147f0d762d6e-20" href="#rest_code_a299289d7f7a4fa9abbd147f0d762d6e-20"></a><span class="x">}</span>
+</pre></div>
 <p>Niestety, dotyczy to również obiektów natywnych dla <strong>sfGuardPlugin</strong>, z tym, że w relacjach pomiędzy tymi obiektami musimy zakomentować wszystkie relacje.</p>
 <p>Tak więc ostatecznie ta migracja powinna wyglądać mniej więcej tak:</p>
-<pre class="code php"><a id="rest_code_07186fe603034137b91ae60688d63637-1" name="rest_code_07186fe603034137b91ae60688d63637-1"></a><span class="x">class Version14 extends Doctrine_Migration_Base</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-2" name="rest_code_07186fe603034137b91ae60688d63637-2"></a><span class="x">{</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-3" name="rest_code_07186fe603034137b91ae60688d63637-3"></a><span class="x">    public function up()</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-4" name="rest_code_07186fe603034137b91ae60688d63637-4"></a><span class="x">    {</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-5" name="rest_code_07186fe603034137b91ae60688d63637-5"></a><span class="x">        $this-&gt;dropForeignKey('sf_guard_user_profile', 'sf_guard_user_profile_user_id_sf_guard_user_id');</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-6" name="rest_code_07186fe603034137b91ae60688d63637-6"></a><span class="x">        $this-&gt;dropForeignKey('sf_guard_group_permission', 'sf_guard_group_permission_group_id_sf_guard_group_id');</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-7" name="rest_code_07186fe603034137b91ae60688d63637-7"></a><span class="x">        $this-&gt;dropForeignKey('sf_guard_group_permission', 'sf_guard_group_permission_permission_id_sf_guard_permission_id');</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-8" name="rest_code_07186fe603034137b91ae60688d63637-8"></a><span class="x">        $this-&gt;dropForeignKey('sf_guard_remember_key', 'sf_guard_remember_key_user_id_sf_guard_user_id');</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-9" name="rest_code_07186fe603034137b91ae60688d63637-9"></a><span class="x">        $this-&gt;dropForeignKey('sf_guard_user_group', 'sf_guard_user_group_user_id_sf_guard_user_id');</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-10" name="rest_code_07186fe603034137b91ae60688d63637-10"></a><span class="x">        $this-&gt;dropForeignKey('sf_guard_user_group', 'sf_guard_user_group_group_id_sf_guard_group_id');</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-11" name="rest_code_07186fe603034137b91ae60688d63637-11"></a><span class="x">        $this-&gt;dropForeignKey('sf_guard_user_permission', 'sf_guard_user_permission_user_id_sf_guard_user_id');</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-12" name="rest_code_07186fe603034137b91ae60688d63637-12"></a><span class="x">        $this-&gt;dropForeignKey('sf_guard_user_permission', 'sf_guard_user_permission_permission_id_sf_guard_permission_id');</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-13" name="rest_code_07186fe603034137b91ae60688d63637-13"></a><span class="x">    }</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-14" name="rest_code_07186fe603034137b91ae60688d63637-14"></a>
-<a id="rest_code_07186fe603034137b91ae60688d63637-15" name="rest_code_07186fe603034137b91ae60688d63637-15"></a><span class="x">    public function down()</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-16" name="rest_code_07186fe603034137b91ae60688d63637-16"></a><span class="x">    {</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-17" name="rest_code_07186fe603034137b91ae60688d63637-17"></a><span class="x">        $this-&gt;createForeignKey('sf_guard_user_profile', 'sf_guard_user_profile_user_id_sf_guard_user_id', array(</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-18" name="rest_code_07186fe603034137b91ae60688d63637-18"></a><span class="x">             'name' =&gt; 'sf_guard_user_profile_user_id_sf_guard_user_id',</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-19" name="rest_code_07186fe603034137b91ae60688d63637-19"></a><span class="x">             'local' =&gt; 'user_id',</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-20" name="rest_code_07186fe603034137b91ae60688d63637-20"></a><span class="x">             'foreign' =&gt; 'id',</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-21" name="rest_code_07186fe603034137b91ae60688d63637-21"></a><span class="x">             'foreignTable' =&gt; 'sf_guard_user',</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-22" name="rest_code_07186fe603034137b91ae60688d63637-22"></a><span class="x">             'onUpdate' =&gt; '',</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-23" name="rest_code_07186fe603034137b91ae60688d63637-23"></a><span class="x">             'onDelete' =&gt; 'cascade',</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-24" name="rest_code_07186fe603034137b91ae60688d63637-24"></a><span class="x">             ));</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-25" name="rest_code_07186fe603034137b91ae60688d63637-25"></a><span class="x">        $this-&gt;createForeignKey('sf_guard_group_permission', 'sf_guard_group_permission_group_id_sf_guard_group_id', array(</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-26" name="rest_code_07186fe603034137b91ae60688d63637-26"></a><span class="x">             'name' =&gt; 'sf_guard_group_permission_group_id_sf_guard_group_id',</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-27" name="rest_code_07186fe603034137b91ae60688d63637-27"></a><span class="x">             'local' =&gt; 'group_id',</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-28" name="rest_code_07186fe603034137b91ae60688d63637-28"></a><span class="x">             'foreign' =&gt; 'id',</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-29" name="rest_code_07186fe603034137b91ae60688d63637-29"></a><span class="x">             'foreignTable' =&gt; 'sf_guard_group',</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-30" name="rest_code_07186fe603034137b91ae60688d63637-30"></a><span class="x">             'onUpdate' =&gt; '',</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-31" name="rest_code_07186fe603034137b91ae60688d63637-31"></a><span class="x">             'onDelete' =&gt; 'CASCADE',</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-32" name="rest_code_07186fe603034137b91ae60688d63637-32"></a><span class="x">             ));</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-33" name="rest_code_07186fe603034137b91ae60688d63637-33"></a><span class="x">        $this-&gt;createForeignKey('sf_guard_group_permission', 'sf_guard_group_permission_permission_id_sf_guard_permission_id', array(</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-34" name="rest_code_07186fe603034137b91ae60688d63637-34"></a><span class="x">             'name' =&gt; 'sf_guard_group_permission_permission_id_sf_guard_permission_id',</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-35" name="rest_code_07186fe603034137b91ae60688d63637-35"></a><span class="x">             'local' =&gt; 'permission_id',</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-36" name="rest_code_07186fe603034137b91ae60688d63637-36"></a><span class="x">             'foreign' =&gt; 'id',</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-37" name="rest_code_07186fe603034137b91ae60688d63637-37"></a><span class="x">             'foreignTable' =&gt; 'sf_guard_permission',</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-38" name="rest_code_07186fe603034137b91ae60688d63637-38"></a><span class="x">             'onUpdate' =&gt; '',</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-39" name="rest_code_07186fe603034137b91ae60688d63637-39"></a><span class="x">             'onDelete' =&gt; 'CASCADE',</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-40" name="rest_code_07186fe603034137b91ae60688d63637-40"></a><span class="x">             ));</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-41" name="rest_code_07186fe603034137b91ae60688d63637-41"></a><span class="x">        $this-&gt;createForeignKey('sf_guard_remember_key', 'sf_guard_remember_key_user_id_sf_guard_user_id', array(</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-42" name="rest_code_07186fe603034137b91ae60688d63637-42"></a><span class="x">             'name' =&gt; 'sf_guard_remember_key_user_id_sf_guard_user_id',</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-43" name="rest_code_07186fe603034137b91ae60688d63637-43"></a><span class="x">             'local' =&gt; 'user_id',</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-44" name="rest_code_07186fe603034137b91ae60688d63637-44"></a><span class="x">             'foreign' =&gt; 'id',</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-45" name="rest_code_07186fe603034137b91ae60688d63637-45"></a><span class="x">             'foreignTable' =&gt; 'sf_guard_user',</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-46" name="rest_code_07186fe603034137b91ae60688d63637-46"></a><span class="x">             'onUpdate' =&gt; '',</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-47" name="rest_code_07186fe603034137b91ae60688d63637-47"></a><span class="x">             'onDelete' =&gt; 'CASCADE',</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-48" name="rest_code_07186fe603034137b91ae60688d63637-48"></a><span class="x">             ));</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-49" name="rest_code_07186fe603034137b91ae60688d63637-49"></a><span class="x">        $this-&gt;createForeignKey('sf_guard_user_group', 'sf_guard_user_group_user_id_sf_guard_user_id', array(</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-50" name="rest_code_07186fe603034137b91ae60688d63637-50"></a><span class="x">             'name' =&gt; 'sf_guard_user_group_user_id_sf_guard_user_id',</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-51" name="rest_code_07186fe603034137b91ae60688d63637-51"></a><span class="x">             'local' =&gt; 'user_id',</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-52" name="rest_code_07186fe603034137b91ae60688d63637-52"></a><span class="x">             'foreign' =&gt; 'id',</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-53" name="rest_code_07186fe603034137b91ae60688d63637-53"></a><span class="x">             'foreignTable' =&gt; 'sf_guard_user',</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-54" name="rest_code_07186fe603034137b91ae60688d63637-54"></a><span class="x">             'onUpdate' =&gt; '',</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-55" name="rest_code_07186fe603034137b91ae60688d63637-55"></a><span class="x">             'onDelete' =&gt; 'CASCADE',</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-56" name="rest_code_07186fe603034137b91ae60688d63637-56"></a><span class="x">             ));</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-57" name="rest_code_07186fe603034137b91ae60688d63637-57"></a><span class="x">        $this-&gt;createForeignKey('sf_guard_user_group', 'sf_guard_user_group_group_id_sf_guard_group_id', array(</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-58" name="rest_code_07186fe603034137b91ae60688d63637-58"></a><span class="x">             'name' =&gt; 'sf_guard_user_group_group_id_sf_guard_group_id',</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-59" name="rest_code_07186fe603034137b91ae60688d63637-59"></a><span class="x">             'local' =&gt; 'group_id',</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-60" name="rest_code_07186fe603034137b91ae60688d63637-60"></a><span class="x">             'foreign' =&gt; 'id',</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-61" name="rest_code_07186fe603034137b91ae60688d63637-61"></a><span class="x">             'foreignTable' =&gt; 'sf_guard_group',</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-62" name="rest_code_07186fe603034137b91ae60688d63637-62"></a><span class="x">             'onUpdate' =&gt; '',</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-63" name="rest_code_07186fe603034137b91ae60688d63637-63"></a><span class="x">             'onDelete' =&gt; 'CASCADE',</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-64" name="rest_code_07186fe603034137b91ae60688d63637-64"></a><span class="x">             ));</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-65" name="rest_code_07186fe603034137b91ae60688d63637-65"></a><span class="x">        $this-&gt;createForeignKey('sf_guard_user_permission', 'sf_guard_user_permission_user_id_sf_guard_user_id', array(</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-66" name="rest_code_07186fe603034137b91ae60688d63637-66"></a><span class="x">             'name' =&gt; 'sf_guard_user_permission_user_id_sf_guard_user_id',</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-67" name="rest_code_07186fe603034137b91ae60688d63637-67"></a><span class="x">             'local' =&gt; 'user_id',</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-68" name="rest_code_07186fe603034137b91ae60688d63637-68"></a><span class="x">             'foreign' =&gt; 'id',</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-69" name="rest_code_07186fe603034137b91ae60688d63637-69"></a><span class="x">             'foreignTable' =&gt; 'sf_guard_user',</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-70" name="rest_code_07186fe603034137b91ae60688d63637-70"></a><span class="x">             'onUpdate' =&gt; '',</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-71" name="rest_code_07186fe603034137b91ae60688d63637-71"></a><span class="x">             'onDelete' =&gt; 'CASCADE',</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-72" name="rest_code_07186fe603034137b91ae60688d63637-72"></a><span class="x">             ));</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-73" name="rest_code_07186fe603034137b91ae60688d63637-73"></a><span class="x">        $this-&gt;createForeignKey('sf_guard_user_permission', 'sf_guard_user_permission_permission_id_sf_guard_permission_id', array(</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-74" name="rest_code_07186fe603034137b91ae60688d63637-74"></a><span class="x">             'name' =&gt; 'sf_guard_user_permission_permission_id_sf_guard_permission_id',</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-75" name="rest_code_07186fe603034137b91ae60688d63637-75"></a><span class="x">             'local' =&gt; 'permission_id',</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-76" name="rest_code_07186fe603034137b91ae60688d63637-76"></a><span class="x">             'foreign' =&gt; 'id',</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-77" name="rest_code_07186fe603034137b91ae60688d63637-77"></a><span class="x">             'foreignTable' =&gt; 'sf_guard_permission',</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-78" name="rest_code_07186fe603034137b91ae60688d63637-78"></a><span class="x">             'onUpdate' =&gt; '',</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-79" name="rest_code_07186fe603034137b91ae60688d63637-79"></a><span class="x">             'onDelete' =&gt; 'CASCADE',</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-80" name="rest_code_07186fe603034137b91ae60688d63637-80"></a><span class="x">             ));</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-81" name="rest_code_07186fe603034137b91ae60688d63637-81"></a><span class="x">    }</span>
-<a id="rest_code_07186fe603034137b91ae60688d63637-82" name="rest_code_07186fe603034137b91ae60688d63637-82"></a><span class="x">}</span>
-</pre>
+<div class="code"><pre class="code php"><a id="rest_code_d433a301356048a4b563ea54436e6210-1" name="rest_code_d433a301356048a4b563ea54436e6210-1" href="#rest_code_d433a301356048a4b563ea54436e6210-1"></a><span class="x">class Version14 extends Doctrine_Migration_Base</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-2" name="rest_code_d433a301356048a4b563ea54436e6210-2" href="#rest_code_d433a301356048a4b563ea54436e6210-2"></a><span class="x">{</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-3" name="rest_code_d433a301356048a4b563ea54436e6210-3" href="#rest_code_d433a301356048a4b563ea54436e6210-3"></a><span class="x">    public function up()</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-4" name="rest_code_d433a301356048a4b563ea54436e6210-4" href="#rest_code_d433a301356048a4b563ea54436e6210-4"></a><span class="x">    {</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-5" name="rest_code_d433a301356048a4b563ea54436e6210-5" href="#rest_code_d433a301356048a4b563ea54436e6210-5"></a><span class="x">        $this-&gt;dropForeignKey('sf_guard_user_profile', 'sf_guard_user_profile_user_id_sf_guard_user_id');</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-6" name="rest_code_d433a301356048a4b563ea54436e6210-6" href="#rest_code_d433a301356048a4b563ea54436e6210-6"></a><span class="x">        $this-&gt;dropForeignKey('sf_guard_group_permission', 'sf_guard_group_permission_group_id_sf_guard_group_id');</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-7" name="rest_code_d433a301356048a4b563ea54436e6210-7" href="#rest_code_d433a301356048a4b563ea54436e6210-7"></a><span class="x">        $this-&gt;dropForeignKey('sf_guard_group_permission', 'sf_guard_group_permission_permission_id_sf_guard_permission_id');</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-8" name="rest_code_d433a301356048a4b563ea54436e6210-8" href="#rest_code_d433a301356048a4b563ea54436e6210-8"></a><span class="x">        $this-&gt;dropForeignKey('sf_guard_remember_key', 'sf_guard_remember_key_user_id_sf_guard_user_id');</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-9" name="rest_code_d433a301356048a4b563ea54436e6210-9" href="#rest_code_d433a301356048a4b563ea54436e6210-9"></a><span class="x">        $this-&gt;dropForeignKey('sf_guard_user_group', 'sf_guard_user_group_user_id_sf_guard_user_id');</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-10" name="rest_code_d433a301356048a4b563ea54436e6210-10" href="#rest_code_d433a301356048a4b563ea54436e6210-10"></a><span class="x">        $this-&gt;dropForeignKey('sf_guard_user_group', 'sf_guard_user_group_group_id_sf_guard_group_id');</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-11" name="rest_code_d433a301356048a4b563ea54436e6210-11" href="#rest_code_d433a301356048a4b563ea54436e6210-11"></a><span class="x">        $this-&gt;dropForeignKey('sf_guard_user_permission', 'sf_guard_user_permission_user_id_sf_guard_user_id');</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-12" name="rest_code_d433a301356048a4b563ea54436e6210-12" href="#rest_code_d433a301356048a4b563ea54436e6210-12"></a><span class="x">        $this-&gt;dropForeignKey('sf_guard_user_permission', 'sf_guard_user_permission_permission_id_sf_guard_permission_id');</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-13" name="rest_code_d433a301356048a4b563ea54436e6210-13" href="#rest_code_d433a301356048a4b563ea54436e6210-13"></a><span class="x">    }</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-14" name="rest_code_d433a301356048a4b563ea54436e6210-14" href="#rest_code_d433a301356048a4b563ea54436e6210-14"></a>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-15" name="rest_code_d433a301356048a4b563ea54436e6210-15" href="#rest_code_d433a301356048a4b563ea54436e6210-15"></a><span class="x">    public function down()</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-16" name="rest_code_d433a301356048a4b563ea54436e6210-16" href="#rest_code_d433a301356048a4b563ea54436e6210-16"></a><span class="x">    {</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-17" name="rest_code_d433a301356048a4b563ea54436e6210-17" href="#rest_code_d433a301356048a4b563ea54436e6210-17"></a><span class="x">        $this-&gt;createForeignKey('sf_guard_user_profile', 'sf_guard_user_profile_user_id_sf_guard_user_id', array(</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-18" name="rest_code_d433a301356048a4b563ea54436e6210-18" href="#rest_code_d433a301356048a4b563ea54436e6210-18"></a><span class="x">             'name' =&gt; 'sf_guard_user_profile_user_id_sf_guard_user_id',</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-19" name="rest_code_d433a301356048a4b563ea54436e6210-19" href="#rest_code_d433a301356048a4b563ea54436e6210-19"></a><span class="x">             'local' =&gt; 'user_id',</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-20" name="rest_code_d433a301356048a4b563ea54436e6210-20" href="#rest_code_d433a301356048a4b563ea54436e6210-20"></a><span class="x">             'foreign' =&gt; 'id',</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-21" name="rest_code_d433a301356048a4b563ea54436e6210-21" href="#rest_code_d433a301356048a4b563ea54436e6210-21"></a><span class="x">             'foreignTable' =&gt; 'sf_guard_user',</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-22" name="rest_code_d433a301356048a4b563ea54436e6210-22" href="#rest_code_d433a301356048a4b563ea54436e6210-22"></a><span class="x">             'onUpdate' =&gt; '',</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-23" name="rest_code_d433a301356048a4b563ea54436e6210-23" href="#rest_code_d433a301356048a4b563ea54436e6210-23"></a><span class="x">             'onDelete' =&gt; 'cascade',</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-24" name="rest_code_d433a301356048a4b563ea54436e6210-24" href="#rest_code_d433a301356048a4b563ea54436e6210-24"></a><span class="x">             ));</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-25" name="rest_code_d433a301356048a4b563ea54436e6210-25" href="#rest_code_d433a301356048a4b563ea54436e6210-25"></a><span class="x">        $this-&gt;createForeignKey('sf_guard_group_permission', 'sf_guard_group_permission_group_id_sf_guard_group_id', array(</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-26" name="rest_code_d433a301356048a4b563ea54436e6210-26" href="#rest_code_d433a301356048a4b563ea54436e6210-26"></a><span class="x">             'name' =&gt; 'sf_guard_group_permission_group_id_sf_guard_group_id',</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-27" name="rest_code_d433a301356048a4b563ea54436e6210-27" href="#rest_code_d433a301356048a4b563ea54436e6210-27"></a><span class="x">             'local' =&gt; 'group_id',</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-28" name="rest_code_d433a301356048a4b563ea54436e6210-28" href="#rest_code_d433a301356048a4b563ea54436e6210-28"></a><span class="x">             'foreign' =&gt; 'id',</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-29" name="rest_code_d433a301356048a4b563ea54436e6210-29" href="#rest_code_d433a301356048a4b563ea54436e6210-29"></a><span class="x">             'foreignTable' =&gt; 'sf_guard_group',</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-30" name="rest_code_d433a301356048a4b563ea54436e6210-30" href="#rest_code_d433a301356048a4b563ea54436e6210-30"></a><span class="x">             'onUpdate' =&gt; '',</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-31" name="rest_code_d433a301356048a4b563ea54436e6210-31" href="#rest_code_d433a301356048a4b563ea54436e6210-31"></a><span class="x">             'onDelete' =&gt; 'CASCADE',</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-32" name="rest_code_d433a301356048a4b563ea54436e6210-32" href="#rest_code_d433a301356048a4b563ea54436e6210-32"></a><span class="x">             ));</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-33" name="rest_code_d433a301356048a4b563ea54436e6210-33" href="#rest_code_d433a301356048a4b563ea54436e6210-33"></a><span class="x">        $this-&gt;createForeignKey('sf_guard_group_permission', 'sf_guard_group_permission_permission_id_sf_guard_permission_id', array(</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-34" name="rest_code_d433a301356048a4b563ea54436e6210-34" href="#rest_code_d433a301356048a4b563ea54436e6210-34"></a><span class="x">             'name' =&gt; 'sf_guard_group_permission_permission_id_sf_guard_permission_id',</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-35" name="rest_code_d433a301356048a4b563ea54436e6210-35" href="#rest_code_d433a301356048a4b563ea54436e6210-35"></a><span class="x">             'local' =&gt; 'permission_id',</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-36" name="rest_code_d433a301356048a4b563ea54436e6210-36" href="#rest_code_d433a301356048a4b563ea54436e6210-36"></a><span class="x">             'foreign' =&gt; 'id',</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-37" name="rest_code_d433a301356048a4b563ea54436e6210-37" href="#rest_code_d433a301356048a4b563ea54436e6210-37"></a><span class="x">             'foreignTable' =&gt; 'sf_guard_permission',</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-38" name="rest_code_d433a301356048a4b563ea54436e6210-38" href="#rest_code_d433a301356048a4b563ea54436e6210-38"></a><span class="x">             'onUpdate' =&gt; '',</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-39" name="rest_code_d433a301356048a4b563ea54436e6210-39" href="#rest_code_d433a301356048a4b563ea54436e6210-39"></a><span class="x">             'onDelete' =&gt; 'CASCADE',</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-40" name="rest_code_d433a301356048a4b563ea54436e6210-40" href="#rest_code_d433a301356048a4b563ea54436e6210-40"></a><span class="x">             ));</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-41" name="rest_code_d433a301356048a4b563ea54436e6210-41" href="#rest_code_d433a301356048a4b563ea54436e6210-41"></a><span class="x">        $this-&gt;createForeignKey('sf_guard_remember_key', 'sf_guard_remember_key_user_id_sf_guard_user_id', array(</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-42" name="rest_code_d433a301356048a4b563ea54436e6210-42" href="#rest_code_d433a301356048a4b563ea54436e6210-42"></a><span class="x">             'name' =&gt; 'sf_guard_remember_key_user_id_sf_guard_user_id',</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-43" name="rest_code_d433a301356048a4b563ea54436e6210-43" href="#rest_code_d433a301356048a4b563ea54436e6210-43"></a><span class="x">             'local' =&gt; 'user_id',</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-44" name="rest_code_d433a301356048a4b563ea54436e6210-44" href="#rest_code_d433a301356048a4b563ea54436e6210-44"></a><span class="x">             'foreign' =&gt; 'id',</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-45" name="rest_code_d433a301356048a4b563ea54436e6210-45" href="#rest_code_d433a301356048a4b563ea54436e6210-45"></a><span class="x">             'foreignTable' =&gt; 'sf_guard_user',</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-46" name="rest_code_d433a301356048a4b563ea54436e6210-46" href="#rest_code_d433a301356048a4b563ea54436e6210-46"></a><span class="x">             'onUpdate' =&gt; '',</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-47" name="rest_code_d433a301356048a4b563ea54436e6210-47" href="#rest_code_d433a301356048a4b563ea54436e6210-47"></a><span class="x">             'onDelete' =&gt; 'CASCADE',</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-48" name="rest_code_d433a301356048a4b563ea54436e6210-48" href="#rest_code_d433a301356048a4b563ea54436e6210-48"></a><span class="x">             ));</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-49" name="rest_code_d433a301356048a4b563ea54436e6210-49" href="#rest_code_d433a301356048a4b563ea54436e6210-49"></a><span class="x">        $this-&gt;createForeignKey('sf_guard_user_group', 'sf_guard_user_group_user_id_sf_guard_user_id', array(</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-50" name="rest_code_d433a301356048a4b563ea54436e6210-50" href="#rest_code_d433a301356048a4b563ea54436e6210-50"></a><span class="x">             'name' =&gt; 'sf_guard_user_group_user_id_sf_guard_user_id',</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-51" name="rest_code_d433a301356048a4b563ea54436e6210-51" href="#rest_code_d433a301356048a4b563ea54436e6210-51"></a><span class="x">             'local' =&gt; 'user_id',</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-52" name="rest_code_d433a301356048a4b563ea54436e6210-52" href="#rest_code_d433a301356048a4b563ea54436e6210-52"></a><span class="x">             'foreign' =&gt; 'id',</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-53" name="rest_code_d433a301356048a4b563ea54436e6210-53" href="#rest_code_d433a301356048a4b563ea54436e6210-53"></a><span class="x">             'foreignTable' =&gt; 'sf_guard_user',</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-54" name="rest_code_d433a301356048a4b563ea54436e6210-54" href="#rest_code_d433a301356048a4b563ea54436e6210-54"></a><span class="x">             'onUpdate' =&gt; '',</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-55" name="rest_code_d433a301356048a4b563ea54436e6210-55" href="#rest_code_d433a301356048a4b563ea54436e6210-55"></a><span class="x">             'onDelete' =&gt; 'CASCADE',</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-56" name="rest_code_d433a301356048a4b563ea54436e6210-56" href="#rest_code_d433a301356048a4b563ea54436e6210-56"></a><span class="x">             ));</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-57" name="rest_code_d433a301356048a4b563ea54436e6210-57" href="#rest_code_d433a301356048a4b563ea54436e6210-57"></a><span class="x">        $this-&gt;createForeignKey('sf_guard_user_group', 'sf_guard_user_group_group_id_sf_guard_group_id', array(</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-58" name="rest_code_d433a301356048a4b563ea54436e6210-58" href="#rest_code_d433a301356048a4b563ea54436e6210-58"></a><span class="x">             'name' =&gt; 'sf_guard_user_group_group_id_sf_guard_group_id',</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-59" name="rest_code_d433a301356048a4b563ea54436e6210-59" href="#rest_code_d433a301356048a4b563ea54436e6210-59"></a><span class="x">             'local' =&gt; 'group_id',</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-60" name="rest_code_d433a301356048a4b563ea54436e6210-60" href="#rest_code_d433a301356048a4b563ea54436e6210-60"></a><span class="x">             'foreign' =&gt; 'id',</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-61" name="rest_code_d433a301356048a4b563ea54436e6210-61" href="#rest_code_d433a301356048a4b563ea54436e6210-61"></a><span class="x">             'foreignTable' =&gt; 'sf_guard_group',</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-62" name="rest_code_d433a301356048a4b563ea54436e6210-62" href="#rest_code_d433a301356048a4b563ea54436e6210-62"></a><span class="x">             'onUpdate' =&gt; '',</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-63" name="rest_code_d433a301356048a4b563ea54436e6210-63" href="#rest_code_d433a301356048a4b563ea54436e6210-63"></a><span class="x">             'onDelete' =&gt; 'CASCADE',</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-64" name="rest_code_d433a301356048a4b563ea54436e6210-64" href="#rest_code_d433a301356048a4b563ea54436e6210-64"></a><span class="x">             ));</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-65" name="rest_code_d433a301356048a4b563ea54436e6210-65" href="#rest_code_d433a301356048a4b563ea54436e6210-65"></a><span class="x">        $this-&gt;createForeignKey('sf_guard_user_permission', 'sf_guard_user_permission_user_id_sf_guard_user_id', array(</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-66" name="rest_code_d433a301356048a4b563ea54436e6210-66" href="#rest_code_d433a301356048a4b563ea54436e6210-66"></a><span class="x">             'name' =&gt; 'sf_guard_user_permission_user_id_sf_guard_user_id',</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-67" name="rest_code_d433a301356048a4b563ea54436e6210-67" href="#rest_code_d433a301356048a4b563ea54436e6210-67"></a><span class="x">             'local' =&gt; 'user_id',</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-68" name="rest_code_d433a301356048a4b563ea54436e6210-68" href="#rest_code_d433a301356048a4b563ea54436e6210-68"></a><span class="x">             'foreign' =&gt; 'id',</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-69" name="rest_code_d433a301356048a4b563ea54436e6210-69" href="#rest_code_d433a301356048a4b563ea54436e6210-69"></a><span class="x">             'foreignTable' =&gt; 'sf_guard_user',</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-70" name="rest_code_d433a301356048a4b563ea54436e6210-70" href="#rest_code_d433a301356048a4b563ea54436e6210-70"></a><span class="x">             'onUpdate' =&gt; '',</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-71" name="rest_code_d433a301356048a4b563ea54436e6210-71" href="#rest_code_d433a301356048a4b563ea54436e6210-71"></a><span class="x">             'onDelete' =&gt; 'CASCADE',</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-72" name="rest_code_d433a301356048a4b563ea54436e6210-72" href="#rest_code_d433a301356048a4b563ea54436e6210-72"></a><span class="x">             ));</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-73" name="rest_code_d433a301356048a4b563ea54436e6210-73" href="#rest_code_d433a301356048a4b563ea54436e6210-73"></a><span class="x">        $this-&gt;createForeignKey('sf_guard_user_permission', 'sf_guard_user_permission_permission_id_sf_guard_permission_id', array(</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-74" name="rest_code_d433a301356048a4b563ea54436e6210-74" href="#rest_code_d433a301356048a4b563ea54436e6210-74"></a><span class="x">             'name' =&gt; 'sf_guard_user_permission_permission_id_sf_guard_permission_id',</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-75" name="rest_code_d433a301356048a4b563ea54436e6210-75" href="#rest_code_d433a301356048a4b563ea54436e6210-75"></a><span class="x">             'local' =&gt; 'permission_id',</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-76" name="rest_code_d433a301356048a4b563ea54436e6210-76" href="#rest_code_d433a301356048a4b563ea54436e6210-76"></a><span class="x">             'foreign' =&gt; 'id',</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-77" name="rest_code_d433a301356048a4b563ea54436e6210-77" href="#rest_code_d433a301356048a4b563ea54436e6210-77"></a><span class="x">             'foreignTable' =&gt; 'sf_guard_permission',</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-78" name="rest_code_d433a301356048a4b563ea54436e6210-78" href="#rest_code_d433a301356048a4b563ea54436e6210-78"></a><span class="x">             'onUpdate' =&gt; '',</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-79" name="rest_code_d433a301356048a4b563ea54436e6210-79" href="#rest_code_d433a301356048a4b563ea54436e6210-79"></a><span class="x">             'onDelete' =&gt; 'CASCADE',</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-80" name="rest_code_d433a301356048a4b563ea54436e6210-80" href="#rest_code_d433a301356048a4b563ea54436e6210-80"></a><span class="x">             ));</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-81" name="rest_code_d433a301356048a4b563ea54436e6210-81" href="#rest_code_d433a301356048a4b563ea54436e6210-81"></a><span class="x">    }</span>
+<a id="rest_code_d433a301356048a4b563ea54436e6210-82" name="rest_code_d433a301356048a4b563ea54436e6210-82" href="#rest_code_d433a301356048a4b563ea54436e6210-82"></a><span class="x">}</span>
+</pre></div>
 <p>Jeśli projekt był już w użyciu od jakiegoś czasu i w bazie istnieją już
 użytkownicy, to ważne, by w początkowym okresie dodać następujący
 fragment do swojego <strong>schema.yml</strong>:</p>
-<pre class="code php"><a id="rest_code_096c3569d3cc4a8b9908bcbaeb38d054-1" name="rest_code_096c3569d3cc4a8b9908bcbaeb38d054-1"></a><span class="x">sfGuardUser:</span>
-<a id="rest_code_096c3569d3cc4a8b9908bcbaeb38d054-2" name="rest_code_096c3569d3cc4a8b9908bcbaeb38d054-2"></a><span class="x">  columns:</span>
-<a id="rest_code_096c3569d3cc4a8b9908bcbaeb38d054-3" name="rest_code_096c3569d3cc4a8b9908bcbaeb38d054-3"></a><span class="x">    email_address:</span>
-<a id="rest_code_096c3569d3cc4a8b9908bcbaeb38d054-4" name="rest_code_096c3569d3cc4a8b9908bcbaeb38d054-4"></a><span class="x">      type: string(255)</span>
-<a id="rest_code_096c3569d3cc4a8b9908bcbaeb38d054-5" name="rest_code_096c3569d3cc4a8b9908bcbaeb38d054-5"></a><span class="x">      notnull: false</span>
-<a id="rest_code_096c3569d3cc4a8b9908bcbaeb38d054-6" name="rest_code_096c3569d3cc4a8b9908bcbaeb38d054-6"></a><span class="x">      unique: true</span>
-</pre>
+<div class="code"><pre class="code php"><a id="rest_code_7d3b248e75ed458195b485140df7e494-1" name="rest_code_7d3b248e75ed458195b485140df7e494-1" href="#rest_code_7d3b248e75ed458195b485140df7e494-1"></a><span class="x">sfGuardUser:</span>
+<a id="rest_code_7d3b248e75ed458195b485140df7e494-2" name="rest_code_7d3b248e75ed458195b485140df7e494-2" href="#rest_code_7d3b248e75ed458195b485140df7e494-2"></a><span class="x">  columns:</span>
+<a id="rest_code_7d3b248e75ed458195b485140df7e494-3" name="rest_code_7d3b248e75ed458195b485140df7e494-3" href="#rest_code_7d3b248e75ed458195b485140df7e494-3"></a><span class="x">    email_address:</span>
+<a id="rest_code_7d3b248e75ed458195b485140df7e494-4" name="rest_code_7d3b248e75ed458195b485140df7e494-4" href="#rest_code_7d3b248e75ed458195b485140df7e494-4"></a><span class="x">      type: string(255)</span>
+<a id="rest_code_7d3b248e75ed458195b485140df7e494-5" name="rest_code_7d3b248e75ed458195b485140df7e494-5" href="#rest_code_7d3b248e75ed458195b485140df7e494-5"></a><span class="x">      notnull: false</span>
+<a id="rest_code_7d3b248e75ed458195b485140df7e494-6" name="rest_code_7d3b248e75ed458195b485140df7e494-6" href="#rest_code_7d3b248e75ed458195b485140df7e494-6"></a><span class="x">      unique: true</span>
+</pre></div>
 <p>Domyślnie pole to jest ustawione jako <strong>notnull: true</strong>, i migracja nie ma szans powodzenia jeśli istnieją już rekordy w tabeli <strong>sfGuardUser</strong>.</p>
 <p>Na sam koniec należy odkomentować wszelkie relacje (ale wcześniej zmienić definicje typów powiązanych do <strong>sfGuardUser</strong>):</p>
-<pre class="code php"><a id="rest_code_263caef1aec946b7984882246555a98e-1" name="rest_code_263caef1aec946b7984882246555a98e-1"></a><span class="x">class Version17 extends Doctrine_Migration_Base</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-2" name="rest_code_263caef1aec946b7984882246555a98e-2"></a><span class="x">{</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-3" name="rest_code_263caef1aec946b7984882246555a98e-3"></a><span class="x">    public function up()</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-4" name="rest_code_263caef1aec946b7984882246555a98e-4"></a><span class="x">    {</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-5" name="rest_code_263caef1aec946b7984882246555a98e-5"></a><span class="x">        $this-&gt;createForeignKey('comment', 'comment_user_id_sf_guard_user_id', array(</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-6" name="rest_code_263caef1aec946b7984882246555a98e-6"></a><span class="x">             'name' =&gt; 'comment_user_id_sf_guard_user_id',</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-7" name="rest_code_263caef1aec946b7984882246555a98e-7"></a><span class="x">             'local' =&gt; 'user_id',</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-8" name="rest_code_263caef1aec946b7984882246555a98e-8"></a><span class="x">             'foreign' =&gt; 'id',</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-9" name="rest_code_263caef1aec946b7984882246555a98e-9"></a><span class="x">             'foreignTable' =&gt; 'sf_guard_user',</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-10" name="rest_code_263caef1aec946b7984882246555a98e-10"></a><span class="x">             ));</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-11" name="rest_code_263caef1aec946b7984882246555a98e-11"></a><span class="x">        $this-&gt;createForeignKey('sf_guard_user_profile', 'sf_guard_user_profile_user_id_sf_guard_user_id', array(</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-12" name="rest_code_263caef1aec946b7984882246555a98e-12"></a><span class="x">             'name' =&gt; 'sf_guard_user_profile_user_id_sf_guard_user_id',</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-13" name="rest_code_263caef1aec946b7984882246555a98e-13"></a><span class="x">             'local' =&gt; 'user_id',</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-14" name="rest_code_263caef1aec946b7984882246555a98e-14"></a><span class="x">             'foreign' =&gt; 'id',</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-15" name="rest_code_263caef1aec946b7984882246555a98e-15"></a><span class="x">             'foreignTable' =&gt; 'sf_guard_user',</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-16" name="rest_code_263caef1aec946b7984882246555a98e-16"></a><span class="x">             'onUpdate' =&gt; '',</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-17" name="rest_code_263caef1aec946b7984882246555a98e-17"></a><span class="x">             'onDelete' =&gt; 'cascade',</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-18" name="rest_code_263caef1aec946b7984882246555a98e-18"></a><span class="x">             ));</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-19" name="rest_code_263caef1aec946b7984882246555a98e-19"></a><span class="x">        $this-&gt;createForeignKey('sf_guard_forgot_password', 'sf_guard_forgot_password_user_id_sf_guard_user_id', array(</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-20" name="rest_code_263caef1aec946b7984882246555a98e-20"></a><span class="x">             'name' =&gt; 'sf_guard_forgot_password_user_id_sf_guard_user_id',</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-21" name="rest_code_263caef1aec946b7984882246555a98e-21"></a><span class="x">             'local' =&gt; 'user_id',</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-22" name="rest_code_263caef1aec946b7984882246555a98e-22"></a><span class="x">             'foreign' =&gt; 'id',</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-23" name="rest_code_263caef1aec946b7984882246555a98e-23"></a><span class="x">             'foreignTable' =&gt; 'sf_guard_user',</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-24" name="rest_code_263caef1aec946b7984882246555a98e-24"></a><span class="x">             'onUpdate' =&gt; '',</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-25" name="rest_code_263caef1aec946b7984882246555a98e-25"></a><span class="x">             'onDelete' =&gt; 'CASCADE',</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-26" name="rest_code_263caef1aec946b7984882246555a98e-26"></a><span class="x">             ));</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-27" name="rest_code_263caef1aec946b7984882246555a98e-27"></a><span class="x">        $this-&gt;createForeignKey('sf_guard_remember_key', 'sf_guard_remember_key_user_id_sf_guard_user_id', array(</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-28" name="rest_code_263caef1aec946b7984882246555a98e-28"></a><span class="x">             'name' =&gt; 'sf_guard_remember_key_user_id_sf_guard_user_id',</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-29" name="rest_code_263caef1aec946b7984882246555a98e-29"></a><span class="x">             'local' =&gt; 'user_id',</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-30" name="rest_code_263caef1aec946b7984882246555a98e-30"></a><span class="x">             'foreign' =&gt; 'id',</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-31" name="rest_code_263caef1aec946b7984882246555a98e-31"></a><span class="x">             'foreignTable' =&gt; 'sf_guard_user',</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-32" name="rest_code_263caef1aec946b7984882246555a98e-32"></a><span class="x">             'onUpdate' =&gt; '',</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-33" name="rest_code_263caef1aec946b7984882246555a98e-33"></a><span class="x">             'onDelete' =&gt; 'CASCADE',</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-34" name="rest_code_263caef1aec946b7984882246555a98e-34"></a><span class="x">             ));</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-35" name="rest_code_263caef1aec946b7984882246555a98e-35"></a><span class="x">        $this-&gt;addIndex('sf_guard_forgot_password', 'sf_guard_forgot_password_user_id', array(</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-36" name="rest_code_263caef1aec946b7984882246555a98e-36"></a><span class="x">             'fields' =&gt;</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-37" name="rest_code_263caef1aec946b7984882246555a98e-37"></a><span class="x">             array(</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-38" name="rest_code_263caef1aec946b7984882246555a98e-38"></a><span class="x">              0 =&gt; 'user_id',</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-39" name="rest_code_263caef1aec946b7984882246555a98e-39"></a><span class="x">             ),</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-40" name="rest_code_263caef1aec946b7984882246555a98e-40"></a><span class="x">             ));</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-41" name="rest_code_263caef1aec946b7984882246555a98e-41"></a><span class="x">    }</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-42" name="rest_code_263caef1aec946b7984882246555a98e-42"></a>
-<a id="rest_code_263caef1aec946b7984882246555a98e-43" name="rest_code_263caef1aec946b7984882246555a98e-43"></a><span class="x">    public function down()</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-44" name="rest_code_263caef1aec946b7984882246555a98e-44"></a><span class="x">    {</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-45" name="rest_code_263caef1aec946b7984882246555a98e-45"></a><span class="x">        $this-&gt;dropForeignKey('comment', 'comment_user_id_sf_guard_user_id');</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-46" name="rest_code_263caef1aec946b7984882246555a98e-46"></a><span class="x">        $this-&gt;dropForeignKey('sf_guard_user_profile', 'sf_guard_user_profile_user_id_sf_guard_user_id');</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-47" name="rest_code_263caef1aec946b7984882246555a98e-47"></a><span class="x">        $this-&gt;dropForeignKey('sf_guard_forgot_password', 'sf_guard_forgot_password_user_id_sf_guard_user_id');</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-48" name="rest_code_263caef1aec946b7984882246555a98e-48"></a><span class="x">        $this-&gt;dropForeignKey('sf_guard_remember_key', 'sf_guard_remember_key_user_id_sf_guard_user_id');</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-49" name="rest_code_263caef1aec946b7984882246555a98e-49"></a><span class="x">        $this-&gt;removeIndex('sf_guard_forgot_password', 'sf_guard_forgot_password_user_id', array(</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-50" name="rest_code_263caef1aec946b7984882246555a98e-50"></a><span class="x">             'fields' =&gt;</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-51" name="rest_code_263caef1aec946b7984882246555a98e-51"></a><span class="x">             array(</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-52" name="rest_code_263caef1aec946b7984882246555a98e-52"></a><span class="x">              0 =&gt; 'user_id',</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-53" name="rest_code_263caef1aec946b7984882246555a98e-53"></a><span class="x">             ),</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-54" name="rest_code_263caef1aec946b7984882246555a98e-54"></a><span class="x">             ));</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-55" name="rest_code_263caef1aec946b7984882246555a98e-55"></a><span class="x">    }</span>
-<a id="rest_code_263caef1aec946b7984882246555a98e-56" name="rest_code_263caef1aec946b7984882246555a98e-56"></a><span class="x">}</span>
-</pre>
+<div class="code"><pre class="code php"><a id="rest_code_9b97885049be48d8ba5b737b93443295-1" name="rest_code_9b97885049be48d8ba5b737b93443295-1" href="#rest_code_9b97885049be48d8ba5b737b93443295-1"></a><span class="x">class Version17 extends Doctrine_Migration_Base</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-2" name="rest_code_9b97885049be48d8ba5b737b93443295-2" href="#rest_code_9b97885049be48d8ba5b737b93443295-2"></a><span class="x">{</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-3" name="rest_code_9b97885049be48d8ba5b737b93443295-3" href="#rest_code_9b97885049be48d8ba5b737b93443295-3"></a><span class="x">    public function up()</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-4" name="rest_code_9b97885049be48d8ba5b737b93443295-4" href="#rest_code_9b97885049be48d8ba5b737b93443295-4"></a><span class="x">    {</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-5" name="rest_code_9b97885049be48d8ba5b737b93443295-5" href="#rest_code_9b97885049be48d8ba5b737b93443295-5"></a><span class="x">        $this-&gt;createForeignKey('comment', 'comment_user_id_sf_guard_user_id', array(</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-6" name="rest_code_9b97885049be48d8ba5b737b93443295-6" href="#rest_code_9b97885049be48d8ba5b737b93443295-6"></a><span class="x">             'name' =&gt; 'comment_user_id_sf_guard_user_id',</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-7" name="rest_code_9b97885049be48d8ba5b737b93443295-7" href="#rest_code_9b97885049be48d8ba5b737b93443295-7"></a><span class="x">             'local' =&gt; 'user_id',</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-8" name="rest_code_9b97885049be48d8ba5b737b93443295-8" href="#rest_code_9b97885049be48d8ba5b737b93443295-8"></a><span class="x">             'foreign' =&gt; 'id',</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-9" name="rest_code_9b97885049be48d8ba5b737b93443295-9" href="#rest_code_9b97885049be48d8ba5b737b93443295-9"></a><span class="x">             'foreignTable' =&gt; 'sf_guard_user',</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-10" name="rest_code_9b97885049be48d8ba5b737b93443295-10" href="#rest_code_9b97885049be48d8ba5b737b93443295-10"></a><span class="x">             ));</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-11" name="rest_code_9b97885049be48d8ba5b737b93443295-11" href="#rest_code_9b97885049be48d8ba5b737b93443295-11"></a><span class="x">        $this-&gt;createForeignKey('sf_guard_user_profile', 'sf_guard_user_profile_user_id_sf_guard_user_id', array(</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-12" name="rest_code_9b97885049be48d8ba5b737b93443295-12" href="#rest_code_9b97885049be48d8ba5b737b93443295-12"></a><span class="x">             'name' =&gt; 'sf_guard_user_profile_user_id_sf_guard_user_id',</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-13" name="rest_code_9b97885049be48d8ba5b737b93443295-13" href="#rest_code_9b97885049be48d8ba5b737b93443295-13"></a><span class="x">             'local' =&gt; 'user_id',</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-14" name="rest_code_9b97885049be48d8ba5b737b93443295-14" href="#rest_code_9b97885049be48d8ba5b737b93443295-14"></a><span class="x">             'foreign' =&gt; 'id',</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-15" name="rest_code_9b97885049be48d8ba5b737b93443295-15" href="#rest_code_9b97885049be48d8ba5b737b93443295-15"></a><span class="x">             'foreignTable' =&gt; 'sf_guard_user',</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-16" name="rest_code_9b97885049be48d8ba5b737b93443295-16" href="#rest_code_9b97885049be48d8ba5b737b93443295-16"></a><span class="x">             'onUpdate' =&gt; '',</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-17" name="rest_code_9b97885049be48d8ba5b737b93443295-17" href="#rest_code_9b97885049be48d8ba5b737b93443295-17"></a><span class="x">             'onDelete' =&gt; 'cascade',</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-18" name="rest_code_9b97885049be48d8ba5b737b93443295-18" href="#rest_code_9b97885049be48d8ba5b737b93443295-18"></a><span class="x">             ));</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-19" name="rest_code_9b97885049be48d8ba5b737b93443295-19" href="#rest_code_9b97885049be48d8ba5b737b93443295-19"></a><span class="x">        $this-&gt;createForeignKey('sf_guard_forgot_password', 'sf_guard_forgot_password_user_id_sf_guard_user_id', array(</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-20" name="rest_code_9b97885049be48d8ba5b737b93443295-20" href="#rest_code_9b97885049be48d8ba5b737b93443295-20"></a><span class="x">             'name' =&gt; 'sf_guard_forgot_password_user_id_sf_guard_user_id',</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-21" name="rest_code_9b97885049be48d8ba5b737b93443295-21" href="#rest_code_9b97885049be48d8ba5b737b93443295-21"></a><span class="x">             'local' =&gt; 'user_id',</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-22" name="rest_code_9b97885049be48d8ba5b737b93443295-22" href="#rest_code_9b97885049be48d8ba5b737b93443295-22"></a><span class="x">             'foreign' =&gt; 'id',</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-23" name="rest_code_9b97885049be48d8ba5b737b93443295-23" href="#rest_code_9b97885049be48d8ba5b737b93443295-23"></a><span class="x">             'foreignTable' =&gt; 'sf_guard_user',</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-24" name="rest_code_9b97885049be48d8ba5b737b93443295-24" href="#rest_code_9b97885049be48d8ba5b737b93443295-24"></a><span class="x">             'onUpdate' =&gt; '',</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-25" name="rest_code_9b97885049be48d8ba5b737b93443295-25" href="#rest_code_9b97885049be48d8ba5b737b93443295-25"></a><span class="x">             'onDelete' =&gt; 'CASCADE',</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-26" name="rest_code_9b97885049be48d8ba5b737b93443295-26" href="#rest_code_9b97885049be48d8ba5b737b93443295-26"></a><span class="x">             ));</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-27" name="rest_code_9b97885049be48d8ba5b737b93443295-27" href="#rest_code_9b97885049be48d8ba5b737b93443295-27"></a><span class="x">        $this-&gt;createForeignKey('sf_guard_remember_key', 'sf_guard_remember_key_user_id_sf_guard_user_id', array(</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-28" name="rest_code_9b97885049be48d8ba5b737b93443295-28" href="#rest_code_9b97885049be48d8ba5b737b93443295-28"></a><span class="x">             'name' =&gt; 'sf_guard_remember_key_user_id_sf_guard_user_id',</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-29" name="rest_code_9b97885049be48d8ba5b737b93443295-29" href="#rest_code_9b97885049be48d8ba5b737b93443295-29"></a><span class="x">             'local' =&gt; 'user_id',</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-30" name="rest_code_9b97885049be48d8ba5b737b93443295-30" href="#rest_code_9b97885049be48d8ba5b737b93443295-30"></a><span class="x">             'foreign' =&gt; 'id',</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-31" name="rest_code_9b97885049be48d8ba5b737b93443295-31" href="#rest_code_9b97885049be48d8ba5b737b93443295-31"></a><span class="x">             'foreignTable' =&gt; 'sf_guard_user',</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-32" name="rest_code_9b97885049be48d8ba5b737b93443295-32" href="#rest_code_9b97885049be48d8ba5b737b93443295-32"></a><span class="x">             'onUpdate' =&gt; '',</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-33" name="rest_code_9b97885049be48d8ba5b737b93443295-33" href="#rest_code_9b97885049be48d8ba5b737b93443295-33"></a><span class="x">             'onDelete' =&gt; 'CASCADE',</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-34" name="rest_code_9b97885049be48d8ba5b737b93443295-34" href="#rest_code_9b97885049be48d8ba5b737b93443295-34"></a><span class="x">             ));</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-35" name="rest_code_9b97885049be48d8ba5b737b93443295-35" href="#rest_code_9b97885049be48d8ba5b737b93443295-35"></a><span class="x">        $this-&gt;addIndex('sf_guard_forgot_password', 'sf_guard_forgot_password_user_id', array(</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-36" name="rest_code_9b97885049be48d8ba5b737b93443295-36" href="#rest_code_9b97885049be48d8ba5b737b93443295-36"></a><span class="x">             'fields' =&gt;</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-37" name="rest_code_9b97885049be48d8ba5b737b93443295-37" href="#rest_code_9b97885049be48d8ba5b737b93443295-37"></a><span class="x">             array(</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-38" name="rest_code_9b97885049be48d8ba5b737b93443295-38" href="#rest_code_9b97885049be48d8ba5b737b93443295-38"></a><span class="x">              0 =&gt; 'user_id',</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-39" name="rest_code_9b97885049be48d8ba5b737b93443295-39" href="#rest_code_9b97885049be48d8ba5b737b93443295-39"></a><span class="x">             ),</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-40" name="rest_code_9b97885049be48d8ba5b737b93443295-40" href="#rest_code_9b97885049be48d8ba5b737b93443295-40"></a><span class="x">             ));</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-41" name="rest_code_9b97885049be48d8ba5b737b93443295-41" href="#rest_code_9b97885049be48d8ba5b737b93443295-41"></a><span class="x">    }</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-42" name="rest_code_9b97885049be48d8ba5b737b93443295-42" href="#rest_code_9b97885049be48d8ba5b737b93443295-42"></a>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-43" name="rest_code_9b97885049be48d8ba5b737b93443295-43" href="#rest_code_9b97885049be48d8ba5b737b93443295-43"></a><span class="x">    public function down()</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-44" name="rest_code_9b97885049be48d8ba5b737b93443295-44" href="#rest_code_9b97885049be48d8ba5b737b93443295-44"></a><span class="x">    {</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-45" name="rest_code_9b97885049be48d8ba5b737b93443295-45" href="#rest_code_9b97885049be48d8ba5b737b93443295-45"></a><span class="x">        $this-&gt;dropForeignKey('comment', 'comment_user_id_sf_guard_user_id');</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-46" name="rest_code_9b97885049be48d8ba5b737b93443295-46" href="#rest_code_9b97885049be48d8ba5b737b93443295-46"></a><span class="x">        $this-&gt;dropForeignKey('sf_guard_user_profile', 'sf_guard_user_profile_user_id_sf_guard_user_id');</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-47" name="rest_code_9b97885049be48d8ba5b737b93443295-47" href="#rest_code_9b97885049be48d8ba5b737b93443295-47"></a><span class="x">        $this-&gt;dropForeignKey('sf_guard_forgot_password', 'sf_guard_forgot_password_user_id_sf_guard_user_id');</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-48" name="rest_code_9b97885049be48d8ba5b737b93443295-48" href="#rest_code_9b97885049be48d8ba5b737b93443295-48"></a><span class="x">        $this-&gt;dropForeignKey('sf_guard_remember_key', 'sf_guard_remember_key_user_id_sf_guard_user_id');</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-49" name="rest_code_9b97885049be48d8ba5b737b93443295-49" href="#rest_code_9b97885049be48d8ba5b737b93443295-49"></a><span class="x">        $this-&gt;removeIndex('sf_guard_forgot_password', 'sf_guard_forgot_password_user_id', array(</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-50" name="rest_code_9b97885049be48d8ba5b737b93443295-50" href="#rest_code_9b97885049be48d8ba5b737b93443295-50"></a><span class="x">             'fields' =&gt;</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-51" name="rest_code_9b97885049be48d8ba5b737b93443295-51" href="#rest_code_9b97885049be48d8ba5b737b93443295-51"></a><span class="x">             array(</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-52" name="rest_code_9b97885049be48d8ba5b737b93443295-52" href="#rest_code_9b97885049be48d8ba5b737b93443295-52"></a><span class="x">              0 =&gt; 'user_id',</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-53" name="rest_code_9b97885049be48d8ba5b737b93443295-53" href="#rest_code_9b97885049be48d8ba5b737b93443295-53"></a><span class="x">             ),</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-54" name="rest_code_9b97885049be48d8ba5b737b93443295-54" href="#rest_code_9b97885049be48d8ba5b737b93443295-54"></a><span class="x">             ));</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-55" name="rest_code_9b97885049be48d8ba5b737b93443295-55" href="#rest_code_9b97885049be48d8ba5b737b93443295-55"></a><span class="x">    }</span>
+<a id="rest_code_9b97885049be48d8ba5b737b93443295-56" name="rest_code_9b97885049be48d8ba5b737b93443295-56" href="#rest_code_9b97885049be48d8ba5b737b93443295-56"></a><span class="x">}</span>
+</pre></div>
 <p>[STRIKEOUT:Koniec końców, wypuszczenie pluginu w taki sposób to jest
 niestety porażka. Jak na "małą" aktualizację wersji, brakuje
 zdecydowanie wstecznej kompatybilności, a i changelog jest zdecydowanie
@@ -240,13 +239,9 @@ potraktowany po macoszemu. Plugin powinien być wydany co najmniej jako
 wersja 4.1.0].</p>
 <p>[STRIKEOUT:Przy okazji wydanie** sfForkedDoctrineApply** 1.3.0 trochę
 się opóźni, trzeba będzie dostosować do nowej wersji doctrine guarda.]</p>
-<div class="admonition note">
-<p class="admonition-title">Przypis</p>
+<aside class="admonition note"><p class="admonition-title">Przypis</p>
 <p>Po paru wiadomościach na grupie symfony Jonathan Wage poprawił paczki z pluginami.</p>
-</div>
-</div>
-    
-        <ul class="pager hidden-print">
+</aside><ul class="pager hidden-print">
 <li class="previous">
                 <a href="../zmiana-modelu-dziedziczenia-w-pluginie-sfforkeddoctrineapply/" rel="prev" title="Zmiana modelu dziedziczenia w pluginie sfForkedDoctrineApply">Poprzedni post</a>
             </li>
@@ -257,7 +252,7 @@ się opóźni, trzeba będzie dostosować do nowej wersji doctrine guarda.]</p>
 <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="casesblog",
-            disqus_url="http://blog.fizyk.net.pl/pl/blog/aktualizacja-sfdoctrineguardplugin-4-0-1-do-4-0-2/",
+            disqus_url="https://fizyk.dev/pl/blog/aktualizacja-sfdoctrineguardplugin-4-0-1-do-4-0-2/",
         disqus_title="Aktualizacja sfDoctrineGuardPlugin 4.0.1 do 5.0.0",
         disqus_identifier="cache/posts/2010-07-18-aktualizacja-sfdoctrineguardplugin.pl.html",
         disqus_config = function () {
@@ -281,13 +276,13 @@ się opóźni, trzeba będzie dostosować do nowej wersji doctrine guarda.]</p>
         <div id="sidebar">
             <!--Sidebar content-->
             <h1 id="blog-title">
-                <a href="http://blog.fizyk.net.pl/" title="Cases">Cases</a>
+                <a href="https://fizyk.dev/" title="Cases">Cases</a>
             </h1>
             
             <small>
                 Również dostępny w językach: 
                 
-            <li><a href="http://blog.fizyk.net.pl/" rel="alternate" hreflang="en">English</a></li>
+            <li><a href="https://fizyk.dev/" rel="alternate" hreflang="en">English</a></li>
 
             </small>
             
@@ -304,7 +299,7 @@ jest dostępny na licencji
 </a>.</li>
             
                 <li>
-<a href="http://www.fizyk.net.pl">Strona domowa</a>
+<a href="https://fizyk.dev">Strona domowa</a>
                 </li>
 <li>
 <a href="../../archive/">Archiwum</a>
@@ -319,7 +314,7 @@ jest dostępny na licencji
             </ul>
 </div>
         <div id="footer">
-            Contents © 2021 <a href="mailto:fizyk~~fizyk.net.pl">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
+            Contents © 2025 <a href="mailto:fizyk~~fizyk.dev">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
             
         </div>
     </div>

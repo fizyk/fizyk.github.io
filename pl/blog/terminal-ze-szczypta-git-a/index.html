@@ -8,9 +8,9 @@
 <link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../rss.xml">
-<link rel="canonical" href="http://blog.fizyk.net.pl/pl/blog/terminal-ze-szczypta-git-a/">
-<link rel="icon" href="../../../favicon.png" sizes="62x60">
+<link rel="canonical" href="https://fizyk.dev/pl/blog/terminal-ze-szczypta-git-a/">
 <link rel="icon" href="../../../favicon-speddial.png" sizes="269x262">
+<link rel="icon" href="../../../favicon.png" sizes="62x60">
 <!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -38,23 +38,21 @@
 
         </span>
         </div>
-    <div>
-<p>Kto dłużej popracował na Linuksie, wie, jak przydatny czasem potrafi
+    <p>Kto dłużej popracował na Linuksie, wie, jak przydatny czasem potrafi
 bywać terminal. Dla mnie, jako programisty, równie przydatnym narzędziem
 jest git, z którego korzystam właśnie przez terminal.</p>
 <p>Jedyny problem z takim połączeniem jest to, że czasem trudno zorientować
 się od razu, w jakiej gałęzi kodu pracujemy, oczywiście, jeśli
 korzystamy z gałęzi intensywnie. Ale jest na to sposób. Wystarczy lekko
 zmodyfikować plik <strong>.bashrc</strong> dodając linijkę:</p>
-<pre class="code bash"><a id="rest_code_ef5bf61dd10746f3b5a71784b1dfd8d5-1" name="rest_code_ef5bf61dd10746f3b5a71784b1dfd8d5-1"></a><span class="nb">export</span> <span class="nv">PS1</span><span class="o">=</span><span class="s1">'\u@\h: \w$(__git_ps1 "(%s)")$ '</span>
-</pre>
+<div class="code"><pre class="code bash"><a id="rest_code_a0ac8d2d68c14310a55cfdb720286435-1" name="rest_code_a0ac8d2d68c14310a55cfdb720286435-1" href="#rest_code_a0ac8d2d68c14310a55cfdb720286435-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PS1</span><span class="o">=</span><span class="s1">'\u@\h: \w$(__git_ps1 "(%s)")$ '</span>
+</pre></div>
 <p>Jedyny problem z takim rozwiązaniem jest taki, że modyfikuje tytuł okna
 xterminala. Aby zaradzić temu, trzeba dodać jeszcze takie linijki:</p>
-<pre class="code bash"><a id="rest_code_c1cd1df1bfb9482cad8cfd841d505c31-1" name="rest_code_c1cd1df1bfb9482cad8cfd841d505c31-1"></a><span class="k">case</span> <span class="s2">"</span><span class="nv">$TERM</span><span class="s2">"</span> <span class="k">in</span>
-<a id="rest_code_c1cd1df1bfb9482cad8cfd841d505c31-2" name="rest_code_c1cd1df1bfb9482cad8cfd841d505c31-2"></a>xterm*<span class="p">|</span>rxvt*<span class="o">)</span>
-<a id="rest_code_c1cd1df1bfb9482cad8cfd841d505c31-3" name="rest_code_c1cd1df1bfb9482cad8cfd841d505c31-3"></a>    <span class="nv">PS1</span><span class="o">=</span><span class="s2">"\[\e]0;</span><span class="si">${</span><span class="nv">debian_chroot</span><span class="p">:+(</span><span class="nv">$debian_chroot</span><span class="p">)</span><span class="si">}</span><span class="s2">\u@\h: \w\a\]</span><span class="nv">$PS1</span><span class="s2">"</span>
-</pre>
-</div>
+<div class="code"><pre class="code bash"><a id="rest_code_2643556a279a4a2785f8b30a88ee82dd-1" name="rest_code_2643556a279a4a2785f8b30a88ee82dd-1" href="#rest_code_2643556a279a4a2785f8b30a88ee82dd-1"></a><span class="k">case</span><span class="w"> </span><span class="s2">"</span><span class="nv">$TERM</span><span class="s2">"</span><span class="w"> </span><span class="k">in</span>
+<a id="rest_code_2643556a279a4a2785f8b30a88ee82dd-2" name="rest_code_2643556a279a4a2785f8b30a88ee82dd-2" href="#rest_code_2643556a279a4a2785f8b30a88ee82dd-2"></a>xterm*<span class="p">|</span>rxvt*<span class="o">)</span>
+<a id="rest_code_2643556a279a4a2785f8b30a88ee82dd-3" name="rest_code_2643556a279a4a2785f8b30a88ee82dd-3" href="#rest_code_2643556a279a4a2785f8b30a88ee82dd-3"></a><span class="w">    </span><span class="nv">PS1</span><span class="o">=</span><span class="s2">"\[\e]0;</span><span class="si">${</span><span class="nv">debian_chroot</span><span class="p">:+(</span><span class="nv">$debian_chroot</span><span class="p">)</span><span class="si">}</span><span class="s2">\u@\h: \w\a\]</span><span class="nv">$PS1</span><span class="s2">"</span>
+</pre></div>
     
         <ul class="pager hidden-print">
 <li class="previous">
@@ -67,7 +65,7 @@ xterminala. Aby zaradzić temu, trzeba dodać jeszcze takie linijki:</p>
 <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="casesblog",
-            disqus_url="http://blog.fizyk.net.pl/pl/blog/terminal-ze-szczypta-git-a/",
+            disqus_url="https://fizyk.dev/pl/blog/terminal-ze-szczypta-git-a/",
         disqus_title="terminal ze szczypt\u0105 git'a",
         disqus_identifier="cache/posts/2011-08-18-terminal-ze-szczypta-git-a.pl.html",
         disqus_config = function () {
@@ -91,13 +89,13 @@ xterminala. Aby zaradzić temu, trzeba dodać jeszcze takie linijki:</p>
         <div id="sidebar">
             <!--Sidebar content-->
             <h1 id="blog-title">
-                <a href="http://blog.fizyk.net.pl/" title="Cases">Cases</a>
+                <a href="https://fizyk.dev/" title="Cases">Cases</a>
             </h1>
             
             <small>
                 Również dostępny w językach: 
                 
-            <li><a href="http://blog.fizyk.net.pl/" rel="alternate" hreflang="en">English</a></li>
+            <li><a href="https://fizyk.dev/" rel="alternate" hreflang="en">English</a></li>
 
             </small>
             
@@ -114,7 +112,7 @@ jest dostępny na licencji
 </a>.</li>
             
                 <li>
-<a href="http://www.fizyk.net.pl">Strona domowa</a>
+<a href="https://fizyk.dev">Strona domowa</a>
                 </li>
 <li>
 <a href="../../archive/">Archiwum</a>
@@ -129,7 +127,7 @@ jest dostępny na licencji
             </ul>
 </div>
         <div id="footer">
-            Contents © 2021 <a href="mailto:fizyk~~fizyk.net.pl">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
+            Contents © 2025 <a href="mailto:fizyk~~fizyk.dev">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
             
         </div>
     </div>

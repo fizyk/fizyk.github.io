@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cases (Posty o fzTag)</title><link>http://blog.fizyk.net.pl/</link><description></description><atom:link href="http://blog.fizyk.net.pl/pl/tags/fztag.xml" rel="self" type="application/rss+xml"></atom:link><language>pl</language><lastBuildDate>Wed, 16 Jun 2021 11:45:54 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>fzTagPlugin 1.2.1</title><link>http://blog.fizyk.net.pl/pl/blog/fztagplugin-1-2-1/</link><dc:creator>Grzegorz Śliwiński</dc:creator><description>&lt;div&gt;&lt;p&gt;Szybka aktualizacja z nową wersją biblioteki TagCanvas 1.4.1. Poprawiono
+<?xml-stylesheet type="text/xsl" href="../../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cases (Posty o fzTag)</title><link>https://fizyk.dev/</link><description></description><atom:link href="https://fizyk.dev/pl/tags/fztag.xml" rel="self" type="application/rss+xml"></atom:link><language>pl</language><lastBuildDate>Wed, 19 Mar 2025 20:53:24 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>fzTagPlugin 1.2.1</title><link>https://fizyk.dev/pl/blog/fztagplugin-1-2-1/</link><dc:creator>Grzegorz Śliwiński</dc:creator><description>&lt;p&gt;Szybka aktualizacja z nową wersją biblioteki TagCanvas 1.4.1. Poprawiono
 w niej rakcję na kliknięcie myszką, i od teraz akcję na tagu wykonuje
 tylko lewe kliknięcie myszki.&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="http://www.goat1000.com/tagcanvas.php"&gt;Strona TagCanvas&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/fizyk/fzTagPlugin"&gt;Strona gihub fzTagPlugin&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="http://www.symfony-project.org/plugins/fzTagPlugin"&gt;Strona symfony fzTagPlugin&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/div&gt;</description><category>canvas</category><category>fzTag</category><category>php</category><category>symfony</category><category>tag cloud</category><guid>http://blog.fizyk.net.pl/pl/blog/fztagplugin-1-2-1/</guid><pubDate>Thu, 25 Nov 2010 19:11:08 GMT</pubDate></item><item><title>fzTagPlugin 1.2.0</title><link>http://blog.fizyk.net.pl/pl/blog/fztagplugin-1-2-0/</link><dc:creator>Grzegorz Śliwiński</dc:creator><description>&lt;div&gt;&lt;p&gt;Po sporej przerwie od poprzedniej wersji i okresie rozwijania
+&lt;/ul&gt;</description><category>canvas</category><category>fzTag</category><category>php</category><category>symfony</category><category>tag cloud</category><guid>https://fizyk.dev/pl/blog/fztagplugin-1-2-1/</guid><pubDate>Thu, 25 Nov 2010 19:11:08 GMT</pubDate></item><item><title>fzTagPlugin 1.2.0</title><link>https://fizyk.dev/pl/blog/fztagplugin-1-2-0/</link><dc:creator>Grzegorz Śliwiński</dc:creator><description>&lt;p&gt;Po sporej przerwie od poprzedniej wersji i okresie rozwijania
 zaplanowanych funkcjonalności, z przyjemnością przedstawiam nową wersje
 pluginu fzTag dla &lt;a class="reference external" href="http://www.symfony-project.org/"&gt;symfony&lt;/a&gt;. W menu
 tym razem chmury tagów i ilość użycia.&lt;/p&gt;
@@ -35,11 +35,12 @@ jednak) a także trzy komponenty chmury tagów.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;Jak zwykle, plugin można zdobyć na trzy sposoby, uruchamiając taska
 symfony:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a id="rest_code_73492aeab8e44cab8073f030973b56cb-1" name="rest_code_73492aeab8e44cab8073f030973b56cb-1"&gt;&lt;/a&gt;./symfony plugin:upgrade fzTagPlugin
-&lt;/pre&gt;&lt;/li&gt;
+&lt;div class="code"&gt;&lt;pre class="code bash"&gt;&lt;a id="rest_code_45152599e2614e4f88c5ac74e7ff4b21-1" name="rest_code_45152599e2614e4f88c5ac74e7ff4b21-1" href="https://fizyk.dev/pl/blog/fztagplugin-1-2-0/#rest_code_45152599e2614e4f88c5ac74e7ff4b21-1"&gt;&lt;/a&gt;./symfony&lt;span class="w"&gt; &lt;/span&gt;plugin:upgrade&lt;span class="w"&gt; &lt;/span&gt;fzTagPlugin
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="http://www.symfony-project.org/plugins/fzTagPlugin/1_2_0"&gt;Ze stron symfony&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/fizyk/fzTagPlugin/tree/1.2.0"&gt;Z repozytorium pluginu na githubie&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/div&gt;</description><category>fzTag</category><category>jQuery</category><category>php</category><category>symfony</category><category>tag cloud</category><guid>http://blog.fizyk.net.pl/pl/blog/fztagplugin-1-2-0/</guid><pubDate>Sun, 21 Nov 2010 20:11:23 GMT</pubDate></item><item><title>fzTagPlugin 1.1.0</title><link>http://blog.fizyk.net.pl/pl/blog/fztagplugin-1-1-0/</link><dc:creator>Grzegorz Śliwiński</dc:creator><description>&lt;div&gt;&lt;p&gt;Po długim oczekiwaniu znalazłem chwilkę, by wprowadzić część zmian do
+&lt;/ul&gt;</description><category>fzTag</category><category>jQuery</category><category>php</category><category>symfony</category><category>tag cloud</category><guid>https://fizyk.dev/pl/blog/fztagplugin-1-2-0/</guid><pubDate>Sun, 21 Nov 2010 20:11:23 GMT</pubDate></item><item><title>fzTagPlugin 1.1.0</title><link>https://fizyk.dev/pl/blog/fztagplugin-1-1-0/</link><dc:creator>Grzegorz Śliwiński</dc:creator><description>&lt;p&gt;Po długim oczekiwaniu znalazłem chwilkę, by wprowadzić część zmian do
 fzTagPlugin.&lt;/p&gt;
 &lt;p&gt;Główne zmiany, które dotknęły plugin to:&lt;/p&gt;
 &lt;ul class="simple"&gt;
@@ -59,7 +60,7 @@ oraz moje modyfikacje. Zaktualizowany został plik README, oraz polskie
 tłumaczenie.&lt;/p&gt;
 &lt;p&gt;Plugin można znaleźć i pobrać na stronach
 &lt;a class="reference external" href="http://www.symfony-project.org/plugins/fzTagPlugin"&gt;symfony&lt;/a&gt; oraz
-&lt;a class="reference external" href="http://github.com/fizyk/fzTagPlugin"&gt;github&lt;/a&gt;.&lt;/p&gt;&lt;/div&gt;</description><category>fzTag</category><category>php</category><category>symfony</category><guid>http://blog.fizyk.net.pl/pl/blog/fztagplugin-1-1-0/</guid><pubDate>Thu, 12 Aug 2010 16:08:27 GMT</pubDate></item><item><title>fzTagPlugin, łatwość tagowania jak w Diem CMF</title><link>http://blog.fizyk.net.pl/pl/blog/fztagplugin-latwosc-tagowania-jak-w-diem-cmf/</link><dc:creator>Grzegorz Śliwiński</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;a class="reference external" href="http://diem-project.org/plugins/dmtagplugin"&gt;dmTagPlugin&lt;/a&gt; zrobił na
+&lt;a class="reference external" href="http://github.com/fizyk/fzTagPlugin"&gt;github&lt;/a&gt;.&lt;/p&gt;</description><category>fzTag</category><category>php</category><category>symfony</category><guid>https://fizyk.dev/pl/blog/fztagplugin-1-1-0/</guid><pubDate>Thu, 12 Aug 2010 16:08:27 GMT</pubDate></item><item><title>fzTagPlugin, łatwość tagowania jak w Diem CMF</title><link>https://fizyk.dev/pl/blog/fztagplugin-latwosc-tagowania-jak-w-diem-cmf/</link><dc:creator>Grzegorz Śliwiński</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;a class="reference external" href="http://diem-project.org/plugins/dmtagplugin"&gt;dmTagPlugin&lt;/a&gt; zrobił na
 mnie spore wrażenie, gdy pierwszy raz go testowałem i badałem jego
 funkcjonalność na potrzeby innej, dość podobnej funkcjonalności z
 projektu realizowanego w firmie. Wrażenie na mnie zrobił przede
@@ -68,4 +69,4 @@ użyty w widgecie, a także w miarę badania, bądź co bądź niedużego kodu,
 wstrzykiwanie widgetu i walidatora odpowiedzialnego za operacje na
 tagach do formularza. Bije to inne możliwości tagowania, które widziałem
 w symfony na głowę.&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://blog.fizyk.net.pl/pl/blog/fztagplugin-latwosc-tagowania-jak-w-diem-cmf/"&gt;Czytaj więcej…&lt;/a&gt; (zostało 1 minut czytania)&lt;/p&gt;&lt;/div&gt;</description><category>diem</category><category>dmTag</category><category>fzTag</category><category>plugin</category><category>symfony</category><guid>http://blog.fizyk.net.pl/pl/blog/fztagplugin-latwosc-tagowania-jak-w-diem-cmf/</guid><pubDate>Tue, 27 Apr 2010 19:04:19 GMT</pubDate></item></channel></rss>
+&lt;p&gt;&lt;a href="https://fizyk.dev/pl/blog/fztagplugin-latwosc-tagowania-jak-w-diem-cmf/"&gt;Czytaj więcej…&lt;/a&gt; (zostało 1 minut czytania)&lt;/p&gt;&lt;/div&gt;</description><category>diem</category><category>dmTag</category><category>fzTag</category><category>plugin</category><category>symfony</category><guid>https://fizyk.dev/pl/blog/fztagplugin-latwosc-tagowania-jak-w-diem-cmf/</guid><pubDate>Tue, 27 Apr 2010 19:04:19 GMT</pubDate></item></channel></rss>

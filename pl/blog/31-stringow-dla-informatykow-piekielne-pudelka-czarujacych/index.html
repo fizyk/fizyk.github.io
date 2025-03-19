@@ -8,9 +8,9 @@
 <link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../rss.xml">
-<link rel="canonical" href="http://blog.fizyk.net.pl/pl/blog/31-stringow-dla-informatykow-piekielne-pudelka-czarujacych/">
-<link rel="icon" href="../../../favicon.png" sizes="62x60">
+<link rel="canonical" href="https://fizyk.dev/pl/blog/31-stringow-dla-informatykow-piekielne-pudelka-czarujacych/">
 <link rel="icon" href="../../../favicon-speddial.png" sizes="269x262">
+<link rel="icon" href="../../../favicon.png" sizes="62x60">
 <!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -40,17 +40,15 @@
 
         </span>
         </div>
-    <div>
-<p>Tyle ciągów znaków do przetłumaczenia znalazłem w module <strong>sfApply</strong>. Generalnie procedura wydobycia ich jest niemal prosta, wystarczy wykonać polecenie:</p>
-<pre class="code bash"><a id="rest_code_19d562fd9db947728ab789ceab76a576-1" name="rest_code_19d562fd9db947728ab789ceab76a576-1"></a>./symfony i18n:extract nazwa<span class="se">\_</span>aplikacji*
-</pre>
+    <p>Tyle ciągów znaków do przetłumaczenia znalazłem w module <strong>sfApply</strong>. Generalnie procedura wydobycia ich jest niemal prosta, wystarczy wykonać polecenie:</p>
+<div class="code"><pre class="code bash"><a id="rest_code_5e9fcfb293314f349dedddb061f44a67-1" name="rest_code_5e9fcfb293314f349dedddb061f44a67-1" href="#rest_code_5e9fcfb293314f349dedddb061f44a67-1"></a>./symfony<span class="w"> </span>i18n:extract<span class="w"> </span>nazwa<span class="se">\_</span>aplikacji*
+</pre></div>
 <!-- TEASER_END -->
 <p>i gotowe. Plik w formacie <a class="reference external" href="http://en.wikipedia.org/wiki/XLIFF">xliff</a> z rozszerzeniem xml pojawia się w katalogu i18n danej aplikacji.</p>
 <p>Wszystko było dobrze, gdyby jeszcze sprawdzał dopuszczone w aplikacji moduły z pluginów. Niestety, nie sprawdza. Na szczęście da się to załatwić szybkim przenieś i ponownym wykonaniem polecenia.</p>
 <p>I tutaj napotkałem kolejny problem. Otóż w celu ułatwienia sobie tłumaczenia stringów w module sfApply, zainstalowałem sobie program <a class="reference external" href="http://translate.sourceforge.net/wiki/virtaal/index">Virtaal</a>. Obsługuje całe mnóstwo formatów językowych, co może być przydatne patrząc, jakie są wykorzystane w samym symfony. Jest tylko mały szkopuł.</p>
 <p>Rozszerzenie generowanego przez task <strong>i18n:extract</strong> pliku to <strong>.xml</strong>, rozszerzenie formatu to <strong>.xlf</strong>, a Virtaal rozpoznaje format po rozszerzeniu. Zmiana rozszerzenia na potrzeby tłumaczenia wymaga późniejszej zmiany z powrotem do .xml na potrzeby symfony. Bug w Virtaal, czy bug w symfony?</p>
 <p>W każdym razie uruchomienie rejestracji coraz bliżej, razem z komentarzami. A dodatkowo w weekend zmieniłem sobie edytor z <a class="reference external" href="http://tinymce.moxiecode.com/">TinyMCE</a> na <a class="reference external" href="http://ckeditor.com/">CKeditor</a>.</p>
-</div>
     
         <ul class="pager hidden-print">
 <li class="previous">
@@ -63,7 +61,7 @@
 <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="casesblog",
-            disqus_url="http://blog.fizyk.net.pl/pl/blog/31-stringow-dla-informatykow-piekielne-pudelka-czarujacych/",
+            disqus_url="https://fizyk.dev/pl/blog/31-stringow-dla-informatykow-piekielne-pudelka-czarujacych/",
         disqus_title="31 string\u00f3w dla informatyk\u00f3w, piekielne pude\u0142ka czaruj\u0105cych",
         disqus_identifier="cache/posts/2010-03-15-31-stringow-dla-informatykow-piekielne-pudelka-czarujacych.pl.html",
         disqus_config = function () {
@@ -87,13 +85,13 @@
         <div id="sidebar">
             <!--Sidebar content-->
             <h1 id="blog-title">
-                <a href="http://blog.fizyk.net.pl/" title="Cases">Cases</a>
+                <a href="https://fizyk.dev/" title="Cases">Cases</a>
             </h1>
             
             <small>
                 Również dostępny w językach: 
                 
-            <li><a href="http://blog.fizyk.net.pl/" rel="alternate" hreflang="en">English</a></li>
+            <li><a href="https://fizyk.dev/" rel="alternate" hreflang="en">English</a></li>
 
             </small>
             
@@ -110,7 +108,7 @@ jest dostępny na licencji
 </a>.</li>
             
                 <li>
-<a href="http://www.fizyk.net.pl">Strona domowa</a>
+<a href="https://fizyk.dev">Strona domowa</a>
                 </li>
 <li>
 <a href="../../archive/">Archiwum</a>
@@ -125,7 +123,7 @@ jest dostępny na licencji
             </ul>
 </div>
         <div id="footer">
-            Contents © 2021 <a href="mailto:fizyk~~fizyk.net.pl">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
+            Contents © 2025 <a href="mailto:fizyk~~fizyk.dev">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
             
         </div>
     </div>

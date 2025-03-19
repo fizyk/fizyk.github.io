@@ -8,9 +8,9 @@
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../pl/rss.xml">
-<link rel="canonical" href="http://blog.fizyk.net.pl/blog/sqlalchemy-speed-tests-on-postgres-and-mysql/">
-<link rel="icon" href="../../favicon.png" sizes="62x60">
+<link rel="canonical" href="https://fizyk.dev/blog/sqlalchemy-speed-tests-on-postgres-and-mysql/">
 <link rel="icon" href="../../favicon-speddial.png" sizes="269x262">
+<link rel="icon" href="../../favicon.png" sizes="62x60">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -38,8 +38,7 @@
 
         </span>
         </div>
-    <div>
-<p>10 months ago, I run sqlalchemy tests against mysql server on different mysql dialects. This time, I did the same, but for both postgres and mysql dialects.</p>
+    <p>10 months ago, I run sqlalchemy tests against mysql server on different mysql dialects. This time, I did the same, but for both postgres and mysql dialects.</p>
 <!-- TEASER_END -->
 <p>To run this tests I've chosen 6 dialects. 3 for postgres: <strong>psycopg2</strong>, <strong>pypostgresql</strong>, <strong>pg8000</strong> and 3 for mysql: <strong>mysqldb</strong> <em>(mysql-python)</em>, <strong>oursql</strong> and <strong>mysqlconnector</strong> <em>(mysql-connector-python)</em>. Out of these three, py-postgresql failed to install, as I run tests on python 2.7, and this connector requires at least python 3.1, and oursql failed during tests on Insert with rollback test on 100 objects.</p>
 <p>The five tests were (same as on recent tests):</p>
@@ -65,12 +64,6 @@
 <p>As previously, results favour MySQLdb, but this time, it goes head to head with psycopg2. There isn't much difference between these two (except when deleting) and giving, that postgresql gained recently more features, and few more are getting brewed, I think I found my new database engine of choice. But pg8000 is something that I'd avoid.</p>
 <section id="test-results"><h2>Test results</h2>
 <table>
-<colgroup>
-<col style="width: 35%">
-<col style="width: 20%">
-<col style="width: 22%">
-<col style="width: 24%">
-</colgroup>
 <thead><tr>
 <th class="head"></th>
 <th class="head"><p>s/run 1</p></th>
@@ -113,12 +106,6 @@
 <p>Table:  Insert with rollback</p>
 <p>psycopg2 performance is comparable with MySQLdb. pg8000 is definitely something I will not use.</p>
 <table>
-<colgroup>
-<col style="width: 35%">
-<col style="width: 20%">
-<col style="width: 22%">
-<col style="width: 24%">
-</colgroup>
 <thead><tr>
 <th class="head"></th>
 <th class="head"><p>s/run 1</p></th>
@@ -155,12 +142,6 @@
 <p>Table:  Insert with commit</p>
 <p>MySQLdb is the fastest connector when inserting and committing objects. But psycopg2 is close behind.</p>
 <table>
-<colgroup>
-<col style="width: 35%">
-<col style="width: 20%">
-<col style="width: 22%">
-<col style="width: 24%">
-</colgroup>
 <thead><tr>
 <th class="head"></th>
 <th class="head"><p>s/run 1</p></th>
@@ -197,12 +178,6 @@
 <p>Table:  Select</p>
 <p>For simple select psycopg2 performed best out of all. MySQLdb closes to psycopg2 on selecting more objects, and Connector is close by.</p>
 <table>
-<colgroup>
-<col style="width: 35%">
-<col style="width: 20%">
-<col style="width: 22%">
-<col style="width: 24%">
-</colgroup>
 <thead><tr>
 <th class="head"></th>
 <th class="head"><p>s/run 1</p></th>
@@ -239,12 +214,6 @@
 <p>Table:  Delete with rollback</p>
 <p>When it comes to reverting delete operation, postgresql should be your choice. No matter how many object, it still performed almost the same amount of time. Andy psycopg2 shines amongst all other connectors.</p>
 <table>
-<colgroup>
-<col style="width: 35%">
-<col style="width: 20%">
-<col style="width: 22%">
-<col style="width: 24%">
-</colgroup>
 <thead><tr>
 <th class="head"></th>
 <th class="head"><p>s/run 1</p></th>
@@ -280,10 +249,7 @@
 </table>
 <p>Table:  Delete with commit</p>
 <p>When committing delete operations, MySQLdb is best for single objects. But still regresses a lot, when the number of objects increases. As if there was no difference between rollback and commit. And there's only place, where Connector gets ahead of MySQLdb. postgres connectors are almost as steady as with roll-back, although committing seems to be taking twice that time as rollback</p>
-</section>
-</div>
-    
-        <ul class="pager hidden-print">
+</section><ul class="pager hidden-print">
 <li class="previous">
                 <a href="../powerline-shell-beautify-your-shell/" rel="prev" title="Powerline-shell - beautify your shell">Previous post</a>
             </li>
@@ -294,7 +260,7 @@
 <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="casesblog",
-            disqus_url="http://blog.fizyk.net.pl/blog/sqlalchemy-speed-tests-on-postgres-and-mysql/",
+            disqus_url="https://fizyk.dev/blog/sqlalchemy-speed-tests-on-postgres-and-mysql/",
         disqus_title="SQLAlchemy speed tests on postgres and mysql",
         disqus_identifier="cache/posts/2013-08-29-sqlalchemy-speed-tests-on-postgres-and-mysql.html",
         disqus_config = function () {
@@ -318,13 +284,13 @@
         <div id="sidebar">
             <!--Sidebar content-->
             <h1 id="blog-title">
-                <a href="http://blog.fizyk.net.pl/" title="Cases">Cases</a>
+                <a href="https://fizyk.dev/" title="Cases">Cases</a>
             </h1>
             
             <small>
                 Also available in: 
                 
-            <li><a href="http://blog.fizyk.net.pl/pl/" rel="alternate" hreflang="pl">Polski</a></li>
+            <li><a href="https://fizyk.dev/pl/" rel="alternate" hreflang="pl">Polski</a></li>
 
             </small>
             
@@ -341,7 +307,7 @@ jest dostępny na licencji
 </a>.</li>
             
                 <li>
-<a href="http://www.fizyk.net.pl/en">Homepage</a>
+<a href="https://fizyk.dev/en">Homepage</a>
                 </li>
 <li>
 <a href="../../archive/">Archives</a>
@@ -356,7 +322,7 @@ jest dostępny na licencji
             </ul>
 </div>
         <div id="footer">
-            Contents © 2021 <a href="mailto:fizyk~~fizyk.net.pl">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
+            Contents © 2025 <a href="mailto:fizyk~~fizyk.dev">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
             
         </div>
     </div>

@@ -8,9 +8,9 @@
 <link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../rss.xml">
-<link rel="canonical" href="http://blog.fizyk.net.pl/pl/blog/definiowanie-kodowania-w-plikach-zrodlowych-pythona/">
-<link rel="icon" href="../../../favicon.png" sizes="62x60">
+<link rel="canonical" href="https://fizyk.dev/pl/blog/definiowanie-kodowania-w-plikach-zrodlowych-pythona/">
 <link rel="icon" href="../../../favicon-speddial.png" sizes="269x262">
+<link rel="icon" href="../../../favicon.png" sizes="62x60">
 <!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -37,8 +37,7 @@
 
         </span>
         </div>
-    <div>
-<p>Dlaczego definiowanie kodowania w pliku źródłowym Pythona jest istotne?</p>
+    <p>Dlaczego definiowanie kodowania w pliku źródłowym Pythona jest istotne?</p>
 <!-- TEASER_END -->
 <p>Odpowiedź na to pytanie jest dość prosta. O ile zazwyczaj rozwiązania
 powstające na zachodzie są świetne, o tyle nikt tam nie myśli zazwyczaj
@@ -48,15 +47,15 @@ Pythonie (przynajmniej 2.x) również czysty plik jest  kodowany w 7
 bitowym ASCII i tak też interpretowany.</p>
 <p>Chyba, że dodamy w pierwszej, lub drugiej linii pliku deklarację
 kodowania np. utf8:</p>
-<pre class="code python"><a id="rest_code_a680795d5bed4c8cb92002e956c4dabf-1" name="rest_code_a680795d5bed4c8cb92002e956c4dabf-1"></a><span class="c1"># Some comment</span>
-<a id="rest_code_a680795d5bed4c8cb92002e956c4dabf-2" name="rest_code_a680795d5bed4c8cb92002e956c4dabf-2"></a><span class="c1"># -*- coding: utf-8 -*</span>
-</pre>
+<div class="code"><pre class="code python"><a id="rest_code_a2ffa90ce5394d2a8a0487721abe0abf-1" name="rest_code_a2ffa90ce5394d2a8a0487721abe0abf-1" href="#rest_code_a2ffa90ce5394d2a8a0487721abe0abf-1"></a><span class="c1"># Some comment</span>
+<a id="rest_code_a2ffa90ce5394d2a8a0487721abe0abf-2" name="rest_code_a2ffa90ce5394d2a8a0487721abe0abf-2" href="#rest_code_a2ffa90ce5394d2a8a0487721abe0abf-2"></a><span class="c1"># -*- coding: utf-8 -*</span>
+</pre></div>
 <p>Deklaracja taka musi znaleźć się w <strong>każdym</strong> pliku projektu.</p>
 <p>Bez tej deklaracji zwykłe stringi, jakie mieścimy w kodzie źródłowym
 zostaną wyświetlone poprawnie, jednak jeśli już zaczniemy pisać ą i ę w
 stringach Unicode:</p>
-<pre class="code python"><a id="rest_code_9aa62b2161fc46b39a366e873d8249bb-1" name="rest_code_9aa62b2161fc46b39a366e873d8249bb-1"></a><span class="n">unicode_string</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">'ciąg znaków z ą i ę'</span>
-</pre>
+<div class="code"><pre class="code python"><a id="rest_code_44a1a59f30b4439ca7e3572ba18e6f38-1" name="rest_code_44a1a59f30b4439ca7e3572ba18e6f38-1" href="#rest_code_44a1a59f30b4439ca7e3572ba18e6f38-1"></a><span class="n">unicode_string</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">'ciąg znaków z ą i ę'</span>
+</pre></div>
 <p>Może spowodować błąd, choć nowsze wersje wyświetlą tylko ostrzeżenie.
 Python 3 zdaje się już nie sprawia takich problemów z kodowaniem,
 rozwiązując problem na korzyść utf8, jednak trochę wody jeszcze upłynie
@@ -65,7 +64,6 @@ w odrze, nim się wszyscy przeniosą...</p>
 263</a> a wprowadzone w
 <a class="reference external" href="http://docs.python.org/release/2.3/whatsnew/section-encodings.html">Pythonie
 2.3</a>.</p>
-</div>
     
         <ul class="pager hidden-print">
 <li class="previous">
@@ -78,7 +76,7 @@ w odrze, nim się wszyscy przeniosą...</p>
 <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="casesblog",
-            disqus_url="http://blog.fizyk.net.pl/pl/blog/definiowanie-kodowania-w-plikach-zrodlowych-pythona/",
+            disqus_url="https://fizyk.dev/pl/blog/definiowanie-kodowania-w-plikach-zrodlowych-pythona/",
         disqus_title="Definiowanie kodowania w plikach \u017ar\u00f3d\u0142owych Pythona",
         disqus_identifier="cache/posts/2011-12-31-definiowanie-kodowania-w-plikach-zrodlowych-pythona.pl.html",
         disqus_config = function () {
@@ -102,13 +100,13 @@ w odrze, nim się wszyscy przeniosą...</p>
         <div id="sidebar">
             <!--Sidebar content-->
             <h1 id="blog-title">
-                <a href="http://blog.fizyk.net.pl/" title="Cases">Cases</a>
+                <a href="https://fizyk.dev/" title="Cases">Cases</a>
             </h1>
             
             <small>
                 Również dostępny w językach: 
                 
-            <li><a href="http://blog.fizyk.net.pl/" rel="alternate" hreflang="en">English</a></li>
+            <li><a href="https://fizyk.dev/" rel="alternate" hreflang="en">English</a></li>
 
             </small>
             
@@ -125,7 +123,7 @@ jest dostępny na licencji
 </a>.</li>
             
                 <li>
-<a href="http://www.fizyk.net.pl">Strona domowa</a>
+<a href="https://fizyk.dev">Strona domowa</a>
                 </li>
 <li>
 <a href="../../archive/">Archiwum</a>
@@ -140,7 +138,7 @@ jest dostępny na licencji
             </ul>
 </div>
         <div id="footer">
-            Contents © 2021 <a href="mailto:fizyk~~fizyk.net.pl">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
+            Contents © 2025 <a href="mailto:fizyk~~fizyk.dev">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
             
         </div>
     </div>

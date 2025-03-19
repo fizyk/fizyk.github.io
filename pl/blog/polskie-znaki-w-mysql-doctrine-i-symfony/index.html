@@ -8,9 +8,9 @@
 <link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../rss.xml">
-<link rel="canonical" href="http://blog.fizyk.net.pl/pl/blog/polskie-znaki-w-mysql-doctrine-i-symfony/">
-<link rel="icon" href="../../../favicon.png" sizes="62x60">
+<link rel="canonical" href="https://fizyk.dev/pl/blog/polskie-znaki-w-mysql-doctrine-i-symfony/">
 <link rel="icon" href="../../../favicon-speddial.png" sizes="269x262">
+<link rel="icon" href="../../../favicon.png" sizes="62x60">
 <!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -39,8 +39,7 @@
 
         </span>
         </div>
-    <div>
-<p>Niejednokrotnie tworząc bazę danych w MySQL, nie trudno nie zauważyć, iż
+    <p>Niejednokrotnie tworząc bazę danych w MySQL, nie trudno nie zauważyć, iż
 w świeżej, nieskonfigurowanej instalacji tego systemu zarządzania bazą
 danych, domyślnym typem kodowania nie jest
 <a class="reference external" href="http://pl.wikipedia.org/wiki/UTF-8">utf8</a> tylko
@@ -59,15 +58,15 @@ wymusić stosowanie tego kodowanie w tworzonych poprzez doctrine
 tabelach, czy też samym połączeniu na lini baza danych - aplikacja.
 Konieczne jest ręczne ustawienie odpowiednich wartości w pliku
 <strong>database.yml</strong>:</p>
-<pre class="code yaml"><a id="rest_code_5062f1b6dcbc4fc5ad72d22a8bc0ad2a-1" name="rest_code_5062f1b6dcbc4fc5ad72d22a8bc0ad2a-1"></a><span class="nt">all</span><span class="p">:</span>
-<a id="rest_code_5062f1b6dcbc4fc5ad72d22a8bc0ad2a-2" name="rest_code_5062f1b6dcbc4fc5ad72d22a8bc0ad2a-2"></a>  <span class="nt">doctrine</span><span class="p">:</span>
-<a id="rest_code_5062f1b6dcbc4fc5ad72d22a8bc0ad2a-3" name="rest_code_5062f1b6dcbc4fc5ad72d22a8bc0ad2a-3"></a>    <span class="nt">class</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">sfDoctrineDatabase</span>
-<a id="rest_code_5062f1b6dcbc4fc5ad72d22a8bc0ad2a-4" name="rest_code_5062f1b6dcbc4fc5ad72d22a8bc0ad2a-4"></a>    <span class="nt">param</span><span class="p">:</span>
-<a id="rest_code_5062f1b6dcbc4fc5ad72d22a8bc0ad2a-5" name="rest_code_5062f1b6dcbc4fc5ad72d22a8bc0ad2a-5"></a>      <span class="c1">#...</span>
-<a id="rest_code_5062f1b6dcbc4fc5ad72d22a8bc0ad2a-6" name="rest_code_5062f1b6dcbc4fc5ad72d22a8bc0ad2a-6"></a>      <span class="nt">attributes</span><span class="p">:</span>
-<a id="rest_code_5062f1b6dcbc4fc5ad72d22a8bc0ad2a-7" name="rest_code_5062f1b6dcbc4fc5ad72d22a8bc0ad2a-7"></a>        <span class="nt">default_table_charset</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">utf8</span>
-<a id="rest_code_5062f1b6dcbc4fc5ad72d22a8bc0ad2a-8" name="rest_code_5062f1b6dcbc4fc5ad72d22a8bc0ad2a-8"></a>        <span class="nt">default_table_collate</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">utf8_general_ci</span>
-</pre>
+<div class="code"><pre class="code yaml"><a id="rest_code_0489c82e85644c659bc1b91650cba7d3-1" name="rest_code_0489c82e85644c659bc1b91650cba7d3-1" href="#rest_code_0489c82e85644c659bc1b91650cba7d3-1"></a><span class="nt">all</span><span class="p">:</span>
+<a id="rest_code_0489c82e85644c659bc1b91650cba7d3-2" name="rest_code_0489c82e85644c659bc1b91650cba7d3-2" href="#rest_code_0489c82e85644c659bc1b91650cba7d3-2"></a><span class="w">  </span><span class="nt">doctrine</span><span class="p">:</span>
+<a id="rest_code_0489c82e85644c659bc1b91650cba7d3-3" name="rest_code_0489c82e85644c659bc1b91650cba7d3-3" href="#rest_code_0489c82e85644c659bc1b91650cba7d3-3"></a><span class="w">    </span><span class="nt">class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sfDoctrineDatabase</span>
+<a id="rest_code_0489c82e85644c659bc1b91650cba7d3-4" name="rest_code_0489c82e85644c659bc1b91650cba7d3-4" href="#rest_code_0489c82e85644c659bc1b91650cba7d3-4"></a><span class="w">    </span><span class="nt">param</span><span class="p">:</span>
+<a id="rest_code_0489c82e85644c659bc1b91650cba7d3-5" name="rest_code_0489c82e85644c659bc1b91650cba7d3-5" href="#rest_code_0489c82e85644c659bc1b91650cba7d3-5"></a><span class="w">      </span><span class="c1">#...</span>
+<a id="rest_code_0489c82e85644c659bc1b91650cba7d3-6" name="rest_code_0489c82e85644c659bc1b91650cba7d3-6" href="#rest_code_0489c82e85644c659bc1b91650cba7d3-6"></a><span class="w">      </span><span class="nt">attributes</span><span class="p">:</span>
+<a id="rest_code_0489c82e85644c659bc1b91650cba7d3-7" name="rest_code_0489c82e85644c659bc1b91650cba7d3-7" href="#rest_code_0489c82e85644c659bc1b91650cba7d3-7"></a><span class="w">        </span><span class="nt">default_table_charset</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">utf8</span>
+<a id="rest_code_0489c82e85644c659bc1b91650cba7d3-8" name="rest_code_0489c82e85644c659bc1b91650cba7d3-8" href="#rest_code_0489c82e85644c659bc1b91650cba7d3-8"></a><span class="w">        </span><span class="nt">default_table_collate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">utf8_general_ci</span>
+</pre></div>
 <p>W ten sposób można w spokoju tworzyć aplikacje używające kodowania
 unicode bez obawy wystąpienia błędu nieprawidłowego kodowania znaków w
 porównaniu MySQL, lub innych niespodzianek z tym związanych.</p>
@@ -75,7 +74,6 @@ porównaniu MySQL, lub innych niespodzianek z tym związanych.</p>
 sposób w unicode jak i w cp1252/latin1, czego nie można powiedzieć o
 polskich ogonkach, czy występujących w czeskim i innych
 zachodniosłowiańskich językach ptaszkach (Przykład: Čech).</p>
-</div>
     
         <ul class="pager hidden-print">
 <li class="previous">
@@ -88,7 +86,7 @@ zachodniosłowiańskich językach ptaszkach (Przykład: Čech).</p>
 <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="casesblog",
-            disqus_url="http://blog.fizyk.net.pl/pl/blog/polskie-znaki-w-mysql-doctrine-i-symfony/",
+            disqus_url="https://fizyk.dev/pl/blog/polskie-znaki-w-mysql-doctrine-i-symfony/",
         disqus_title="Polskie znaki w MySQL, doctrine i symfony",
         disqus_identifier="cache/posts/2010-05-09-polskie-znaki-w-mysql-doctrine-i-symfony.pl.html",
         disqus_config = function () {
@@ -112,13 +110,13 @@ zachodniosłowiańskich językach ptaszkach (Przykład: Čech).</p>
         <div id="sidebar">
             <!--Sidebar content-->
             <h1 id="blog-title">
-                <a href="http://blog.fizyk.net.pl/" title="Cases">Cases</a>
+                <a href="https://fizyk.dev/" title="Cases">Cases</a>
             </h1>
             
             <small>
                 Również dostępny w językach: 
                 
-            <li><a href="http://blog.fizyk.net.pl/" rel="alternate" hreflang="en">English</a></li>
+            <li><a href="https://fizyk.dev/" rel="alternate" hreflang="en">English</a></li>
 
             </small>
             
@@ -135,7 +133,7 @@ jest dostępny na licencji
 </a>.</li>
             
                 <li>
-<a href="http://www.fizyk.net.pl">Strona domowa</a>
+<a href="https://fizyk.dev">Strona domowa</a>
                 </li>
 <li>
 <a href="../../archive/">Archiwum</a>
@@ -150,7 +148,7 @@ jest dostępny na licencji
             </ul>
 </div>
         <div id="footer">
-            Contents © 2021 <a href="mailto:fizyk~~fizyk.net.pl">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
+            Contents © 2025 <a href="mailto:fizyk~~fizyk.dev">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
             
         </div>
     </div>

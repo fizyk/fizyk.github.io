@@ -8,9 +8,9 @@
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../pl/rss.xml">
-<link rel="canonical" href="http://blog.fizyk.net.pl/blog/cherokee-http-server-and-symfony-1-4-en/">
-<link rel="icon" href="../../favicon.png" sizes="62x60">
+<link rel="canonical" href="https://fizyk.dev/blog/cherokee-http-server-and-symfony-1-4-en/">
 <link rel="icon" href="../../favicon-speddial.png" sizes="269x262">
+<link rel="icon" href="../../favicon.png" sizes="62x60">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -37,8 +37,7 @@
 
         </span>
         </div>
-    <div>
-<p>Few months ago I got directed at <a class="reference external" href="http://www.cherokee-project.com/">Cherokee http
+    <p>Few months ago I got directed at <a class="reference external" href="http://www.cherokee-project.com/">Cherokee http
 server</a>, as it's supposed to be
 faster than Apache. I finally took a look at Cherokee and it seems that
 it's also easier to configure than Apache. Cherokee is available on
@@ -47,8 +46,8 @@ popular distros. It's licensed with <strong>GPL license</strong>.</p>
 <!-- TEASER_END -->
 <p>So... how do you actually configure a symfony project with it? First of all, you'd need to install php-cgi package, as Chreokee uses FastCGI.</p>
 <p>Then run cherokee admin:</p>
-<pre class="code bash"><a id="rest_code_9552b5eeb8194b0f9d48ff9d711ae5be-1" name="rest_code_9552b5eeb8194b0f9d48ff9d711ae5be-1"></a>sudo cherokee-admin
-</pre>
+<div class="code"><pre class="code bash"><a id="rest_code_9ab55178db1b4f96bfddd3d63a0c6144-1" name="rest_code_9ab55178db1b4f96bfddd3d63a0c6144-1" href="#rest_code_9ab55178db1b4f96bfddd3d63a0c6144-1"></a>sudo<span class="w"> </span>cherokee-admin
+</pre></div>
 <p>You need to run it as root, otherwise it will not be able to access
 configuration files (hence sudo - I'm working on Ubuntu). You'll get
 printed user name (which is <strong>admin</strong>) and generated one-time password.
@@ -88,7 +87,6 @@ for example.</p>
 <p>Next steps will be to check how does symfttpd works and how to run
 <a class="reference external" href="http://www.symfony-reloaded.org/">symfony2</a> project on cherokee (as
 soon as I'll start one).</p>
-</div>
     
         <ul class="pager hidden-print">
 <li class="previous">
@@ -101,7 +99,7 @@ soon as I'll start one).</p>
 <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="casesblog",
-            disqus_url="http://blog.fizyk.net.pl/blog/cherokee-http-server-and-symfony-1-4-en/",
+            disqus_url="https://fizyk.dev/blog/cherokee-http-server-and-symfony-1-4-en/",
         disqus_title="Cherokee http server and symfony 1.4",
         disqus_identifier="cache/posts/2011-01-28-cherokee-http-server-and-symfony-1-4-en.html",
         disqus_config = function () {
@@ -125,13 +123,13 @@ soon as I'll start one).</p>
         <div id="sidebar">
             <!--Sidebar content-->
             <h1 id="blog-title">
-                <a href="http://blog.fizyk.net.pl/" title="Cases">Cases</a>
+                <a href="https://fizyk.dev/" title="Cases">Cases</a>
             </h1>
             
             <small>
                 Also available in: 
                 
-            <li><a href="http://blog.fizyk.net.pl/pl/" rel="alternate" hreflang="pl">Polski</a></li>
+            <li><a href="https://fizyk.dev/pl/" rel="alternate" hreflang="pl">Polski</a></li>
 
             </small>
             
@@ -148,7 +146,7 @@ jest dostępny na licencji
 </a>.</li>
             
                 <li>
-<a href="http://www.fizyk.net.pl/en">Homepage</a>
+<a href="https://fizyk.dev/en">Homepage</a>
                 </li>
 <li>
 <a href="../../archive/">Archives</a>
@@ -163,7 +161,7 @@ jest dostępny na licencji
             </ul>
 </div>
         <div id="footer">
-            Contents © 2021 <a href="mailto:fizyk~~fizyk.net.pl">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
+            Contents © 2025 <a href="mailto:fizyk~~fizyk.dev">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
             
         </div>
     </div>

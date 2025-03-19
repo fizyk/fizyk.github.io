@@ -8,9 +8,9 @@
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../pl/rss.xml">
-<link rel="canonical" href="http://blog.fizyk.net.pl/blog/pyramid_fullauth-can-speak-your-language-now/">
-<link rel="icon" href="../../favicon.png" sizes="62x60">
+<link rel="canonical" href="https://fizyk.dev/blog/pyramid_fullauth-can-speak-your-language-now/">
 <link rel="icon" href="../../favicon-speddial.png" sizes="269x262">
+<link rel="icon" href="../../favicon.png" sizes="62x60">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -37,27 +37,29 @@
 
         </span>
         </div>
-    <div>
-<p>A couple of days ago, I completed and released new version of pyramid_fullauth, now at 0.1. This package aims to provide full authorization and authentication functionality for Your pyramid application. It provides standard email authentication, and by integrating velruse, it also allows for broad spectrum of social and oauth2 services authentication, by just the means of settings config! So what's new in version 0.1?</p>
+    <p>A couple of days ago, I completed and released new version of pyramid_fullauth, now at 0.1. This package aims to provide full authorization and authentication functionality for Your pyramid application. It provides standard email authentication, and by integrating velruse, it also allows for broad spectrum of social and oauth2 services authentication, by just the means of settings config! So what's new in version 0.1?</p>
 <!-- TEASER_END -->
 <p>First of all, thanks to <strong>Veronica Zgirvaci</strong>, fullauth now allows to set custom session factory for pyramid application.  Simply modify these settings in your config file:</p>
-<pre class="code yaml"><a id="rest_code_f9866bb0f85e43ee98bb778bb98ef64b-1" name="rest_code_f9866bb0f85e43ee98bb778bb98ef64b-1"></a><span class="nt">fullauth</span><span class="p">:</span>
-<a id="rest_code_f9866bb0f85e43ee98bb778bb98ef64b-2" name="rest_code_f9866bb0f85e43ee98bb778bb98ef64b-2"></a>    <span class="nt">session</span><span class="p">:</span>
-<a id="rest_code_f9866bb0f85e43ee98bb778bb98ef64b-3" name="rest_code_f9866bb0f85e43ee98bb778bb98ef64b-3"></a>        <span class="nt">factory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">pyramid.session.UnencryptedCookieSessionFactoryConfig</span>
-<a id="rest_code_f9866bb0f85e43ee98bb778bb98ef64b-4" name="rest_code_f9866bb0f85e43ee98bb778bb98ef64b-4"></a>        <span class="nt">settings</span><span class="p">:</span>
-<a id="rest_code_f9866bb0f85e43ee98bb778bb98ef64b-5" name="rest_code_f9866bb0f85e43ee98bb778bb98ef64b-5"></a>            <span class="nt">secret</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">THATS_NOT_SECRET_ITS_A_SECRET</span>
-</pre>
+<div class="code"><pre class="code yaml"><a id="rest_code_395575fed41f4ac68127a8810c7c8396-1" name="rest_code_395575fed41f4ac68127a8810c7c8396-1" href="#rest_code_395575fed41f4ac68127a8810c7c8396-1"></a><span class="nt">fullauth</span><span class="p">:</span>
+<a id="rest_code_395575fed41f4ac68127a8810c7c8396-2" name="rest_code_395575fed41f4ac68127a8810c7c8396-2" href="#rest_code_395575fed41f4ac68127a8810c7c8396-2"></a><span class="w">    </span><span class="nt">session</span><span class="p">:</span>
+<a id="rest_code_395575fed41f4ac68127a8810c7c8396-3" name="rest_code_395575fed41f4ac68127a8810c7c8396-3" href="#rest_code_395575fed41f4ac68127a8810c7c8396-3"></a><span class="w">        </span><span class="nt">factory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pyramid.session.UnencryptedCookieSessionFactoryConfig</span>
+<a id="rest_code_395575fed41f4ac68127a8810c7c8396-4" name="rest_code_395575fed41f4ac68127a8810c7c8396-4" href="#rest_code_395575fed41f4ac68127a8810c7c8396-4"></a><span class="w">        </span><span class="nt">settings</span><span class="p">:</span>
+<a id="rest_code_395575fed41f4ac68127a8810c7c8396-5" name="rest_code_395575fed41f4ac68127a8810c7c8396-5" href="#rest_code_395575fed41f4ac68127a8810c7c8396-5"></a><span class="w">            </span><span class="nt">secret</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">THATS_NOT_SECRET_ITS_A_SECRET</span>
+</pre></div>
 <p>factory key holds the python path for session factory, while settings, as key name suggests, holds key: value pairs of settings, that should be passed.</p>
 <p>Second thing, and for me it's most important in this release, is integration with <a class="reference external" href="https://pyramid_localize.readthedocs.org/en/latest/">pyramid_localize</a>. Right now all strings that comes from pyramid_fullauth to end user, should be translatable, with .pot file delivered inside package itself. By default pyramid_localize does nothing with these strings, as localize installs fake translation methods by default.</p>
 <p>Last thing that has changed is small adjustment in password validation. It has been moved into function inside tools module, and now it's used both during registration, and during reset password all the same. And now it rises validation exceptions. I plan using some form framework in future, hopefully one that provides form validation as well.</p>
 <p>pyramid_fullauth is like always, avaliable on <a class="reference external" href="https://pypi.python.org/pypi/pyramid_fullauth/0.1.0">pypi</a> and any issue, should be reported to <a class="reference external" href="https://github.com/fizyk/pyramid_fullauth">github</a>.</p>
 <p>Also note, that I've just started migrating fullauth's test to pytest, which I recently discovered.</p>
 <p>package stats:</p>
-<a class="reference external image-reference" href="https://travis-ci.org/fizyk/pyramid_fullauth"><img alt="Tests for RandomWords" src="https://travis-ci.org/fizyk/pyramid_fullauth.png?branch=master"></a>
-<a class="reference external image-reference" href="https://coveralls.io/r/fizyk/pyramid_fullauth?branch=master"><img alt="Coverage Status" src="https://coveralls.io/repos/fizyk/pyramid_fullauth/badge.png?branch=master"></a>
-<a class="reference external image-reference" href="https://crate.io/packages/pyramid_fullauth/"><img alt="Latest PyPI version" src="https://pypip.in/v/pyramid_fullauth/badge.png"></a>
-<a class="reference external image-reference" href="https://crate.io/packages/pyramid_fullauth/"><img alt="Number of PyPI downloads" src="https://pypip.in/d/pyramid_fullauth/badge.png"></a>
-</div>
+<a class="reference external image-reference" href="https://travis-ci.org/fizyk/pyramid_fullauth">
+<img alt="Tests for RandomWords" src="https://travis-ci.org/fizyk/pyramid_fullauth.png?branch=master"></a>
+<a class="reference external image-reference" href="https://coveralls.io/r/fizyk/pyramid_fullauth?branch=master">
+<img alt="Coverage Status" src="https://coveralls.io/repos/fizyk/pyramid_fullauth/badge.png?branch=master"></a>
+<a class="reference external image-reference" href="https://crate.io/packages/pyramid_fullauth/">
+<img alt="Latest PyPI version" src="https://pypip.in/v/pyramid_fullauth/badge.png"></a>
+<a class="reference external image-reference" href="https://crate.io/packages/pyramid_fullauth/">
+<img alt="Number of PyPI downloads" src="https://pypip.in/d/pyramid_fullauth/badge.png"></a>
     
         <ul class="pager hidden-print">
 <li class="previous">
@@ -70,7 +72,7 @@
 <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="casesblog",
-            disqus_url="http://blog.fizyk.net.pl/blog/pyramid_fullauth-can-speak-your-language-now/",
+            disqus_url="https://fizyk.dev/blog/pyramid_fullauth-can-speak-your-language-now/",
         disqus_title="pyramid_fullauth can speak Your language now",
         disqus_identifier="cache/posts/2013-07-27-pyramid_fullauth-can-speak-your-language-now.html",
         disqus_config = function () {
@@ -94,13 +96,13 @@
         <div id="sidebar">
             <!--Sidebar content-->
             <h1 id="blog-title">
-                <a href="http://blog.fizyk.net.pl/" title="Cases">Cases</a>
+                <a href="https://fizyk.dev/" title="Cases">Cases</a>
             </h1>
             
             <small>
                 Also available in: 
                 
-            <li><a href="http://blog.fizyk.net.pl/pl/" rel="alternate" hreflang="pl">Polski</a></li>
+            <li><a href="https://fizyk.dev/pl/" rel="alternate" hreflang="pl">Polski</a></li>
 
             </small>
             
@@ -117,7 +119,7 @@ jest dostępny na licencji
 </a>.</li>
             
                 <li>
-<a href="http://www.fizyk.net.pl/en">Homepage</a>
+<a href="https://fizyk.dev/en">Homepage</a>
                 </li>
 <li>
 <a href="../../archive/">Archives</a>
@@ -132,7 +134,7 @@ jest dostępny na licencji
             </ul>
 </div>
         <div id="footer">
-            Contents © 2021 <a href="mailto:fizyk~~fizyk.net.pl">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
+            Contents © 2025 <a href="mailto:fizyk~~fizyk.dev">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
             
         </div>
     </div>

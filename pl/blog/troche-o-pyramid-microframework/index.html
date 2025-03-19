@@ -8,9 +8,9 @@
 <link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../rss.xml">
-<link rel="canonical" href="http://blog.fizyk.net.pl/pl/blog/troche-o-pyramid-microframework/">
-<link rel="icon" href="../../../favicon.png" sizes="62x60">
+<link rel="canonical" href="https://fizyk.dev/pl/blog/troche-o-pyramid-microframework/">
 <link rel="icon" href="../../../favicon-speddial.png" sizes="269x262">
+<link rel="icon" href="../../../favicon.png" sizes="62x60">
 <!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -38,8 +38,7 @@
 
         </span>
         </div>
-    <div>
-<p>W ciągu ostatnich kilku dni miałem okazję zapoznać się z nowym (dla
+    <p>W ciągu ostatnich kilku dni miałem okazję zapoznać się z nowym (dla
 mnie) web frameworkiem, kolejnym po <strong>web2py</strong> frameworkiem pythonowym.
 W ramach nowego podprojektu postanowiliśmy wykorzystać coś innego i
 wybór padł na microframework
@@ -55,21 +54,21 @@ wersji 2.0 idzie <a class="reference external" href="http://symfony.com/">symfon
 jak i niewielkich, takich, które praktycznie nie mają wpływu na system
 (choć zawsze może się zdarzyć tak zwane Duże Zainteresowanie Aplikacją).</p>
 <p>Prosta aplikacja w pyramidzie może zawierać się w jednym pliku:</p>
-<pre class="code python"><a id="rest_code_69efae6b47df418ea201ac01bdad051f-1" name="rest_code_69efae6b47df418ea201ac01bdad051f-1"></a><span class="kn">from</span> <span class="nn">wsgiref.simple_server</span> <span class="kn">import</span> <span class="n">make_server</span>
-<a id="rest_code_69efae6b47df418ea201ac01bdad051f-2" name="rest_code_69efae6b47df418ea201ac01bdad051f-2"></a><span class="kn">from</span> <span class="nn">pyramid.config</span> <span class="kn">import</span> <span class="n">Configurator</span>
-<a id="rest_code_69efae6b47df418ea201ac01bdad051f-3" name="rest_code_69efae6b47df418ea201ac01bdad051f-3"></a><span class="kn">from</span> <span class="nn">pyramid.response</span> <span class="kn">import</span> <span class="n">Response</span>
-<a id="rest_code_69efae6b47df418ea201ac01bdad051f-4" name="rest_code_69efae6b47df418ea201ac01bdad051f-4"></a>
-<a id="rest_code_69efae6b47df418ea201ac01bdad051f-5" name="rest_code_69efae6b47df418ea201ac01bdad051f-5"></a><span class="k">def</span> <span class="nf">hello_world</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
-<a id="rest_code_69efae6b47df418ea201ac01bdad051f-6" name="rest_code_69efae6b47df418ea201ac01bdad051f-6"></a>    <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="s1">'Hello </span><span class="si">%(name)s</span><span class="s1">!'</span> <span class="o">%</span> <span class="n">request</span><span class="o">.</span><span class="n">matchdict</span><span class="p">)</span>
-<a id="rest_code_69efae6b47df418ea201ac01bdad051f-7" name="rest_code_69efae6b47df418ea201ac01bdad051f-7"></a>
-<a id="rest_code_69efae6b47df418ea201ac01bdad051f-8" name="rest_code_69efae6b47df418ea201ac01bdad051f-8"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
-<a id="rest_code_69efae6b47df418ea201ac01bdad051f-9" name="rest_code_69efae6b47df418ea201ac01bdad051f-9"></a>    <span class="n">config</span> <span class="o">=</span> <span class="n">Configurator</span><span class="p">()</span>
-<a id="rest_code_69efae6b47df418ea201ac01bdad051f-10" name="rest_code_69efae6b47df418ea201ac01bdad051f-10"></a>    <span class="n">config</span><span class="o">.</span><span class="n">add_route</span><span class="p">(</span><span class="s1">'hello'</span><span class="p">,</span> <span class="s1">'/hello/</span><span class="si">{name}</span><span class="s1">'</span><span class="p">)</span>
-<a id="rest_code_69efae6b47df418ea201ac01bdad051f-11" name="rest_code_69efae6b47df418ea201ac01bdad051f-11"></a>    <span class="n">config</span><span class="o">.</span><span class="n">add_view</span><span class="p">(</span><span class="n">hello_world</span><span class="p">,</span> <span class="n">route_name</span><span class="o">=</span><span class="s1">'hello'</span><span class="p">)</span>
-<a id="rest_code_69efae6b47df418ea201ac01bdad051f-12" name="rest_code_69efae6b47df418ea201ac01bdad051f-12"></a>    <span class="n">app</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">make_wsgi_app</span><span class="p">()</span>
-<a id="rest_code_69efae6b47df418ea201ac01bdad051f-13" name="rest_code_69efae6b47df418ea201ac01bdad051f-13"></a>    <span class="n">server</span> <span class="o">=</span> <span class="n">make_server</span><span class="p">(</span><span class="s1">'0.0.0.0'</span><span class="p">,</span> <span class="mi">8080</span><span class="p">,</span> <span class="n">app</span><span class="p">)</span>
-<a id="rest_code_69efae6b47df418ea201ac01bdad051f-14" name="rest_code_69efae6b47df418ea201ac01bdad051f-14"></a>    <span class="n">server</span><span class="o">.</span><span class="n">serve_forever</span><span class="p">()</span>
-</pre>
+<div class="code"><pre class="code python"><a id="rest_code_0a4bc6cdf2c74ff6bc3893c8a49a881e-1" name="rest_code_0a4bc6cdf2c74ff6bc3893c8a49a881e-1" href="#rest_code_0a4bc6cdf2c74ff6bc3893c8a49a881e-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">wsgiref.simple_server</span><span class="w"> </span><span class="kn">import</span> <span class="n">make_server</span>
+<a id="rest_code_0a4bc6cdf2c74ff6bc3893c8a49a881e-2" name="rest_code_0a4bc6cdf2c74ff6bc3893c8a49a881e-2" href="#rest_code_0a4bc6cdf2c74ff6bc3893c8a49a881e-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pyramid.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">Configurator</span>
+<a id="rest_code_0a4bc6cdf2c74ff6bc3893c8a49a881e-3" name="rest_code_0a4bc6cdf2c74ff6bc3893c8a49a881e-3" href="#rest_code_0a4bc6cdf2c74ff6bc3893c8a49a881e-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pyramid.response</span><span class="w"> </span><span class="kn">import</span> <span class="n">Response</span>
+<a id="rest_code_0a4bc6cdf2c74ff6bc3893c8a49a881e-4" name="rest_code_0a4bc6cdf2c74ff6bc3893c8a49a881e-4" href="#rest_code_0a4bc6cdf2c74ff6bc3893c8a49a881e-4"></a>
+<a id="rest_code_0a4bc6cdf2c74ff6bc3893c8a49a881e-5" name="rest_code_0a4bc6cdf2c74ff6bc3893c8a49a881e-5" href="#rest_code_0a4bc6cdf2c74ff6bc3893c8a49a881e-5"></a><span class="k">def</span><span class="w"> </span><span class="nf">hello_world</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+<a id="rest_code_0a4bc6cdf2c74ff6bc3893c8a49a881e-6" name="rest_code_0a4bc6cdf2c74ff6bc3893c8a49a881e-6" href="#rest_code_0a4bc6cdf2c74ff6bc3893c8a49a881e-6"></a>    <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="s1">'Hello </span><span class="si">%(name)s</span><span class="s1">!'</span> <span class="o">%</span> <span class="n">request</span><span class="o">.</span><span class="n">matchdict</span><span class="p">)</span>
+<a id="rest_code_0a4bc6cdf2c74ff6bc3893c8a49a881e-7" name="rest_code_0a4bc6cdf2c74ff6bc3893c8a49a881e-7" href="#rest_code_0a4bc6cdf2c74ff6bc3893c8a49a881e-7"></a>
+<a id="rest_code_0a4bc6cdf2c74ff6bc3893c8a49a881e-8" name="rest_code_0a4bc6cdf2c74ff6bc3893c8a49a881e-8" href="#rest_code_0a4bc6cdf2c74ff6bc3893c8a49a881e-8"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+<a id="rest_code_0a4bc6cdf2c74ff6bc3893c8a49a881e-9" name="rest_code_0a4bc6cdf2c74ff6bc3893c8a49a881e-9" href="#rest_code_0a4bc6cdf2c74ff6bc3893c8a49a881e-9"></a>    <span class="n">config</span> <span class="o">=</span> <span class="n">Configurator</span><span class="p">()</span>
+<a id="rest_code_0a4bc6cdf2c74ff6bc3893c8a49a881e-10" name="rest_code_0a4bc6cdf2c74ff6bc3893c8a49a881e-10" href="#rest_code_0a4bc6cdf2c74ff6bc3893c8a49a881e-10"></a>    <span class="n">config</span><span class="o">.</span><span class="n">add_route</span><span class="p">(</span><span class="s1">'hello'</span><span class="p">,</span> <span class="s1">'/hello/</span><span class="si">{name}</span><span class="s1">'</span><span class="p">)</span>
+<a id="rest_code_0a4bc6cdf2c74ff6bc3893c8a49a881e-11" name="rest_code_0a4bc6cdf2c74ff6bc3893c8a49a881e-11" href="#rest_code_0a4bc6cdf2c74ff6bc3893c8a49a881e-11"></a>    <span class="n">config</span><span class="o">.</span><span class="n">add_view</span><span class="p">(</span><span class="n">hello_world</span><span class="p">,</span> <span class="n">route_name</span><span class="o">=</span><span class="s1">'hello'</span><span class="p">)</span>
+<a id="rest_code_0a4bc6cdf2c74ff6bc3893c8a49a881e-12" name="rest_code_0a4bc6cdf2c74ff6bc3893c8a49a881e-12" href="#rest_code_0a4bc6cdf2c74ff6bc3893c8a49a881e-12"></a>    <span class="n">app</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">make_wsgi_app</span><span class="p">()</span>
+<a id="rest_code_0a4bc6cdf2c74ff6bc3893c8a49a881e-13" name="rest_code_0a4bc6cdf2c74ff6bc3893c8a49a881e-13" href="#rest_code_0a4bc6cdf2c74ff6bc3893c8a49a881e-13"></a>    <span class="n">server</span> <span class="o">=</span> <span class="n">make_server</span><span class="p">(</span><span class="s1">'0.0.0.0'</span><span class="p">,</span> <span class="mi">8080</span><span class="p">,</span> <span class="n">app</span><span class="p">)</span>
+<a id="rest_code_0a4bc6cdf2c74ff6bc3893c8a49a881e-14" name="rest_code_0a4bc6cdf2c74ff6bc3893c8a49a881e-14" href="#rest_code_0a4bc6cdf2c74ff6bc3893c8a49a881e-14"></a>    <span class="n">server</span><span class="o">.</span><span class="n">serve_forever</span><span class="p">()</span>
+</pre></div>
 <p>I wszystko to w 15 liniach. W kilku następnych postach postaram się
 przedstawić, jak stworzyć prostą aplikację razem ze znajomą strukturą
 plików (wiadomo, przyzwyczajenie).</p>
@@ -84,7 +83,6 @@ zrobić wszystko ręcznie, żeby zobaczyć i zrozumieć trybiki pyramida od
 <p>Na pewno jeszcze muszę się dokładniej przyjrzeć sqlalchemy, przydałaby
 się możliwość migracji schematu bazy danych. I rozejrzeć się za jjakimś
 ciekawym frameworkiem formularzy.</p>
-</div>
     
         <ul class="pager hidden-print">
 <li class="previous">
@@ -97,7 +95,7 @@ ciekawym frameworkiem formularzy.</p>
 <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="casesblog",
-            disqus_url="http://blog.fizyk.net.pl/pl/blog/troche-o-pyramid-microframework/",
+            disqus_url="https://fizyk.dev/pl/blog/troche-o-pyramid-microframework/",
         disqus_title="Troch\u0119 o pyramid microframework",
         disqus_identifier="cache/posts/2012-02-16-troche-o-pyramid-microframework.pl.html",
         disqus_config = function () {
@@ -121,13 +119,13 @@ ciekawym frameworkiem formularzy.</p>
         <div id="sidebar">
             <!--Sidebar content-->
             <h1 id="blog-title">
-                <a href="http://blog.fizyk.net.pl/" title="Cases">Cases</a>
+                <a href="https://fizyk.dev/" title="Cases">Cases</a>
             </h1>
             
             <small>
                 Również dostępny w językach: 
                 
-            <li><a href="http://blog.fizyk.net.pl/" rel="alternate" hreflang="en">English</a></li>
+            <li><a href="https://fizyk.dev/" rel="alternate" hreflang="en">English</a></li>
 
             </small>
             
@@ -144,7 +142,7 @@ jest dostępny na licencji
 </a>.</li>
             
                 <li>
-<a href="http://www.fizyk.net.pl">Strona domowa</a>
+<a href="https://fizyk.dev">Strona domowa</a>
                 </li>
 <li>
 <a href="../../archive/">Archiwum</a>
@@ -159,7 +157,7 @@ jest dostępny na licencji
             </ul>
 </div>
         <div id="footer">
-            Contents © 2021 <a href="mailto:fizyk~~fizyk.net.pl">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
+            Contents © 2025 <a href="mailto:fizyk~~fizyk.dev">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
             
         </div>
     </div>

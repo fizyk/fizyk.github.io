@@ -8,9 +8,9 @@
 <link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../rss.xml">
-<link rel="canonical" href="http://blog.fizyk.net.pl/pl/blog/join-i-delete-w-mysql/">
-<link rel="icon" href="../../../favicon.png" sizes="62x60">
+<link rel="canonical" href="https://fizyk.dev/pl/blog/join-i-delete-w-mysql/">
 <link rel="icon" href="../../../favicon-speddial.png" sizes="269x262">
+<link rel="icon" href="../../../favicon.png" sizes="62x60">
 <!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -36,30 +36,28 @@
 
         </span>
         </div>
-    <div>
-<p>Parę dni temu zdarzyło się próbować usunąć rekordy z bazy mySQL, które
+    <p>Parę dni temu zdarzyło się próbować usunąć rekordy z bazy mySQL, które
 warunki do usunięcia spełniały w innych tabelach. I o ile
 programistycznie, można cel osiągnąć za pomocą kilku odwołań do bazy, to
 jednak postanowiłem wykonać jedno.</p>
 <!-- TEASER_END -->
 <p>Jak wygląda standardowe zapytanie DELETE każdy wie. Wychodząc z tego
 punktu, szybko rozszerzyłem podstawową wersję zapytania o JOIN i Aliasy:</p>
-<pre class="code mysql"><a id="rest_code_5efd53c5333946f585289b2c50e89602-1" name="rest_code_5efd53c5333946f585289b2c50e89602-1"></a><span class="k">DELETE</span> <span class="k">FROM</span> <span class="k">table</span> <span class="k">AS</span> <span class="n">t</span>
-<a id="rest_code_5efd53c5333946f585289b2c50e89602-2" name="rest_code_5efd53c5333946f585289b2c50e89602-2"></a><span class="k">LEFT</span> <span class="k">JOIN</span> <span class="n">other_table</span> <span class="k">AS</span> <span class="n">o</span> <span class="k">ON</span> <span class="n">o</span><span class="p">.</span><span class="n">table_id</span><span class="o">=</span><span class="n">t</span><span class="p">.</span><span class="n">id</span> <span class="k">WHERE</span> <span class="n">o</span><span class="p">.</span><span class="k">condition</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
-</pre>
+<div class="code"><pre class="code mysql"><a id="rest_code_6e3512b6e84b46b6a7f52fec5907a962-1" name="rest_code_6e3512b6e84b46b6a7f52fec5907a962-1" href="#rest_code_6e3512b6e84b46b6a7f52fec5907a962-1"></a><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">t</span>
+<a id="rest_code_6e3512b6e84b46b6a7f52fec5907a962-2" name="rest_code_6e3512b6e84b46b6a7f52fec5907a962-2" href="#rest_code_6e3512b6e84b46b6a7f52fec5907a962-2"></a><span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">other_table</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">table_id</span><span class="o">=</span><span class="n">t</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="k">condition</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+</pre></div>
 <p>Niestety, może i klient mySQL przełknie to zapytanie, ale sam mySQL już
 nie. Zapytanie poprawnie powinno wyglądać tak:</p>
-<pre class="code mysql"><a id="rest_code_4bbd48d6883842638670f585defb482c-1" name="rest_code_4bbd48d6883842638670f585defb482c-1"></a><span class="k">DELETE</span> <span class="n">t</span> <span class="k">FROM</span> <span class="k">table</span> <span class="k">AS</span> <span class="n">t</span>
-<a id="rest_code_4bbd48d6883842638670f585defb482c-2" name="rest_code_4bbd48d6883842638670f585defb482c-2"></a><span class="k">LEFT</span> <span class="k">JOIN</span> <span class="n">other_table</span> <span class="k">AS</span> <span class="n">o</span> <span class="k">ON</span> <span class="n">o</span><span class="p">.</span><span class="n">table_id</span><span class="o">=</span><span class="n">t</span><span class="p">.</span><span class="n">id</span> <span class="k">WHERE</span> <span class="n">o</span><span class="p">.</span><span class="k">condition</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
-</pre>
+<div class="code"><pre class="code mysql"><a id="rest_code_2de7b65227b44c40aac69d844303853d-1" name="rest_code_2de7b65227b44c40aac69d844303853d-1" href="#rest_code_2de7b65227b44c40aac69d844303853d-1"></a><span class="k">DELETE</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">t</span>
+<a id="rest_code_2de7b65227b44c40aac69d844303853d-2" name="rest_code_2de7b65227b44c40aac69d844303853d-2" href="#rest_code_2de7b65227b44c40aac69d844303853d-2"></a><span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">other_table</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">table_id</span><span class="o">=</span><span class="n">t</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="k">condition</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+</pre></div>
 <p>Gdzie ustalamy, z której tabeli konkretnie chcemy usunąć wiersze. Więcej
 na ten temat można przeczytać o dziwo w <a class="reference external" href="http://dev.mysql.com/doc/refman/5.1/en/delete.html">dokumentacji
 mySQL</a>.
 Oczywiście, można jeszcze próbować zapytań zagnieżdżonych:</p>
-<pre class="code mysql"><a id="rest_code_9cc0ce1ed2844ba3919d54c63d19da44-1" name="rest_code_9cc0ce1ed2844ba3919d54c63d19da44-1"></a><span class="k">DELETE</span> <span class="k">FROM</span> <span class="k">table</span> <span class="k">WHERE</span> <span class="n">id</span> <span class="k">IN</span>
-<a id="rest_code_9cc0ce1ed2844ba3919d54c63d19da44-2" name="rest_code_9cc0ce1ed2844ba3919d54c63d19da44-2"></a><span class="p">(</span><span class="k">SELECT</span> <span class="n">table_id</span> <span class="k">FROM</span> <span class="n">other_table</span> <span class="k">WHERE</span> <span class="k">condition</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
-</pre>
-</div>
+<div class="code"><pre class="code mysql"><a id="rest_code_15741b8b65474c43bd7ae8ec214d3938-1" name="rest_code_15741b8b65474c43bd7ae8ec214d3938-1" href="#rest_code_15741b8b65474c43bd7ae8ec214d3938-1"></a><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">IN</span>
+<a id="rest_code_15741b8b65474c43bd7ae8ec214d3938-2" name="rest_code_15741b8b65474c43bd7ae8ec214d3938-2" href="#rest_code_15741b8b65474c43bd7ae8ec214d3938-2"></a><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">table_id</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">other_table</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="k">condition</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+</pre></div>
     
         <ul class="pager hidden-print">
 <li class="previous">
@@ -72,7 +70,7 @@ Oczywiście, można jeszcze próbować zapytań zagnieżdżonych:</p>
 <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="casesblog",
-            disqus_url="http://blog.fizyk.net.pl/pl/blog/join-i-delete-w-mysql/",
+            disqus_url="https://fizyk.dev/pl/blog/join-i-delete-w-mysql/",
         disqus_title="JOIN i DELETE w mySQL",
         disqus_identifier="cache/posts/2012-02-15-join-i-delete-w-mysql.pl.html",
         disqus_config = function () {
@@ -96,13 +94,13 @@ Oczywiście, można jeszcze próbować zapytań zagnieżdżonych:</p>
         <div id="sidebar">
             <!--Sidebar content-->
             <h1 id="blog-title">
-                <a href="http://blog.fizyk.net.pl/" title="Cases">Cases</a>
+                <a href="https://fizyk.dev/" title="Cases">Cases</a>
             </h1>
             
             <small>
                 Również dostępny w językach: 
                 
-            <li><a href="http://blog.fizyk.net.pl/" rel="alternate" hreflang="en">English</a></li>
+            <li><a href="https://fizyk.dev/" rel="alternate" hreflang="en">English</a></li>
 
             </small>
             
@@ -119,7 +117,7 @@ jest dostępny na licencji
 </a>.</li>
             
                 <li>
-<a href="http://www.fizyk.net.pl">Strona domowa</a>
+<a href="https://fizyk.dev">Strona domowa</a>
                 </li>
 <li>
 <a href="../../archive/">Archiwum</a>
@@ -134,7 +132,7 @@ jest dostępny na licencji
             </ul>
 </div>
         <div id="footer">
-            Contents © 2021 <a href="mailto:fizyk~~fizyk.net.pl">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
+            Contents © 2025 <a href="mailto:fizyk~~fizyk.dev">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
             
         </div>
     </div>

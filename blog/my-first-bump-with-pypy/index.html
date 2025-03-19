@@ -7,9 +7,9 @@
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../pl/rss.xml">
-<link rel="canonical" href="http://blog.fizyk.net.pl/blog/my-first-bump-with-pypy/">
-<link rel="icon" href="../../favicon.png" sizes="62x60">
+<link rel="canonical" href="https://fizyk.dev/blog/my-first-bump-with-pypy/">
 <link rel="icon" href="../../favicon-speddial.png" sizes="269x262">
+<link rel="icon" href="../../favicon.png" sizes="62x60">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -35,50 +35,48 @@
 
         </span>
         </div>
-    <div>
-<p>Just until two weeks ago, I was only reading about PyPy. My though about it was somewhat simple: that's the interpreter, that speeds up python code. I expected that some changes to python code, that's supposed to run in PyPy will be required, but I thought it will be easy to spot. I haven't been more wrong.</p>
+    <p>Just until two weeks ago, I was only reading about PyPy. My though about it was somewhat simple: that's the interpreter, that speeds up python code. I expected that some changes to python code, that's supposed to run in PyPy will be required, but I thought it will be easy to spot. I haven't been more wrong.</p>
 <!-- TEASER_END -->
 <p>I wanted to add PyPy's interpreters to mirakuru's tests on travis. I thought, that it will be more or less enough, to add PyPy and PyPy3 to travis.yml file. Well... One of the tests hanged, and I had no idea why.</p>
 <p>For this test, we start a SimpleHTTPServer that's available in python, and wait, till it is started. But before it starts, be wait at the subprocess for 3 seconds.</p>
-<pre class="code python"><a id="rest_code_c6ebf9a49f5d418ea5c68cee55dbbf08-1" name="rest_code_c6ebf9a49f5d418ea5c68cee55dbbf08-1"></a><span class="n">command</span> <span class="o">=</span> <span class="s1">'bash -c "sleep 3 &amp;&amp; python -m SimpleHTTPServer 7897"'</span>
-<a id="rest_code_c6ebf9a49f5d418ea5c68cee55dbbf08-2" name="rest_code_c6ebf9a49f5d418ea5c68cee55dbbf08-2"></a>
-<a id="rest_code_c6ebf9a49f5d418ea5c68cee55dbbf08-3" name="rest_code_c6ebf9a49f5d418ea5c68cee55dbbf08-3"></a><span class="n">executor</span> <span class="o">=</span> <span class="n">HTTPExecutor</span><span class="p">(</span>
-<a id="rest_code_c6ebf9a49f5d418ea5c68cee55dbbf08-4" name="rest_code_c6ebf9a49f5d418ea5c68cee55dbbf08-4"></a>    <span class="n">command</span><span class="p">,</span> <span class="s1">'http://127.0.0.1:7897/'</span>
-<a id="rest_code_c6ebf9a49f5d418ea5c68cee55dbbf08-5" name="rest_code_c6ebf9a49f5d418ea5c68cee55dbbf08-5"></a>    <span class="n">timeout</span><span class="o">=</span><span class="mi">20</span>
-<a id="rest_code_c6ebf9a49f5d418ea5c68cee55dbbf08-6" name="rest_code_c6ebf9a49f5d418ea5c68cee55dbbf08-6"></a><span class="p">)</span>
-<a id="rest_code_c6ebf9a49f5d418ea5c68cee55dbbf08-7" name="rest_code_c6ebf9a49f5d418ea5c68cee55dbbf08-7"></a><span class="n">executor</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-</pre>
+<div class="code"><pre class="code python"><a id="rest_code_4ea68a0efed345b1bb155ef6fc72824f-1" name="rest_code_4ea68a0efed345b1bb155ef6fc72824f-1" href="#rest_code_4ea68a0efed345b1bb155ef6fc72824f-1"></a><span class="n">command</span> <span class="o">=</span> <span class="s1">'bash -c "sleep 3 &amp;&amp; python -m SimpleHTTPServer 7897"'</span>
+<a id="rest_code_4ea68a0efed345b1bb155ef6fc72824f-2" name="rest_code_4ea68a0efed345b1bb155ef6fc72824f-2" href="#rest_code_4ea68a0efed345b1bb155ef6fc72824f-2"></a>
+<a id="rest_code_4ea68a0efed345b1bb155ef6fc72824f-3" name="rest_code_4ea68a0efed345b1bb155ef6fc72824f-3" href="#rest_code_4ea68a0efed345b1bb155ef6fc72824f-3"></a><span class="n">executor</span> <span class="o">=</span> <span class="n">HTTPExecutor</span><span class="p">(</span>
+<a id="rest_code_4ea68a0efed345b1bb155ef6fc72824f-4" name="rest_code_4ea68a0efed345b1bb155ef6fc72824f-4" href="#rest_code_4ea68a0efed345b1bb155ef6fc72824f-4"></a>    <span class="n">command</span><span class="p">,</span> <span class="s1">'http://127.0.0.1:7897/'</span>
+<a id="rest_code_4ea68a0efed345b1bb155ef6fc72824f-5" name="rest_code_4ea68a0efed345b1bb155ef6fc72824f-5" href="#rest_code_4ea68a0efed345b1bb155ef6fc72824f-5"></a>    <span class="n">timeout</span><span class="o">=</span><span class="mi">20</span>
+<a id="rest_code_4ea68a0efed345b1bb155ef6fc72824f-6" name="rest_code_4ea68a0efed345b1bb155ef6fc72824f-6" href="#rest_code_4ea68a0efed345b1bb155ef6fc72824f-6"></a><span class="p">)</span>
+<a id="rest_code_4ea68a0efed345b1bb155ef6fc72824f-7" name="rest_code_4ea68a0efed345b1bb155ef6fc72824f-7" href="#rest_code_4ea68a0efed345b1bb155ef6fc72824f-7"></a><span class="n">executor</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</pre></div>
 <p>Inside of HTTPExecutor we've been waiting for process, to start responding on TCP connection first at the host and port in address passed to Executor:</p>
-<pre class="code python"><a id="rest_code_a33cd55cb787444b8057d58e1bf76e6f-1" name="rest_code_a33cd55cb787444b8057d58e1bf76e6f-1"></a><span class="k">try</span><span class="p">:</span>
-<a id="rest_code_a33cd55cb787444b8057d58e1bf76e6f-2" name="rest_code_a33cd55cb787444b8057d58e1bf76e6f-2"></a>    <span class="n">sock</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">()</span>
-<a id="rest_code_a33cd55cb787444b8057d58e1bf76e6f-3" name="rest_code_a33cd55cb787444b8057d58e1bf76e6f-3"></a>    <span class="n">sock</span><span class="o">.</span><span class="n">connect</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">port</span><span class="p">))</span>
-<a id="rest_code_a33cd55cb787444b8057d58e1bf76e6f-4" name="rest_code_a33cd55cb787444b8057d58e1bf76e6f-4"></a>    <span class="k">return</span> <span class="kc">True</span>
-<a id="rest_code_a33cd55cb787444b8057d58e1bf76e6f-5" name="rest_code_a33cd55cb787444b8057d58e1bf76e6f-5"></a><span class="k">except</span> <span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">error</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">timeout</span><span class="p">):</span>
-<a id="rest_code_a33cd55cb787444b8057d58e1bf76e6f-6" name="rest_code_a33cd55cb787444b8057d58e1bf76e6f-6"></a>    <span class="k">return</span> <span class="kc">False</span>
-</pre>
+<div class="code"><pre class="code python"><a id="rest_code_7b4a5af19ddd4b33af17c464bf4008c3-1" name="rest_code_7b4a5af19ddd4b33af17c464bf4008c3-1" href="#rest_code_7b4a5af19ddd4b33af17c464bf4008c3-1"></a><span class="k">try</span><span class="p">:</span>
+<a id="rest_code_7b4a5af19ddd4b33af17c464bf4008c3-2" name="rest_code_7b4a5af19ddd4b33af17c464bf4008c3-2" href="#rest_code_7b4a5af19ddd4b33af17c464bf4008c3-2"></a>    <span class="n">sock</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">()</span>
+<a id="rest_code_7b4a5af19ddd4b33af17c464bf4008c3-3" name="rest_code_7b4a5af19ddd4b33af17c464bf4008c3-3" href="#rest_code_7b4a5af19ddd4b33af17c464bf4008c3-3"></a>    <span class="n">sock</span><span class="o">.</span><span class="n">connect</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">port</span><span class="p">))</span>
+<a id="rest_code_7b4a5af19ddd4b33af17c464bf4008c3-4" name="rest_code_7b4a5af19ddd4b33af17c464bf4008c3-4" href="#rest_code_7b4a5af19ddd4b33af17c464bf4008c3-4"></a>    <span class="k">return</span> <span class="kc">True</span>
+<a id="rest_code_7b4a5af19ddd4b33af17c464bf4008c3-5" name="rest_code_7b4a5af19ddd4b33af17c464bf4008c3-5" href="#rest_code_7b4a5af19ddd4b33af17c464bf4008c3-5"></a><span class="k">except</span> <span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">error</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">timeout</span><span class="p">):</span>
+<a id="rest_code_7b4a5af19ddd4b33af17c464bf4008c3-6" name="rest_code_7b4a5af19ddd4b33af17c464bf4008c3-6" href="#rest_code_7b4a5af19ddd4b33af17c464bf4008c3-6"></a>    <span class="k">return</span> <span class="kc">False</span>
+</pre></div>
 <p>And after that, for a successful head at the address passed:</p>
-<pre class="code python"><a id="rest_code_a8fb423deb114254b9afdf103bf22958-1" name="rest_code_a8fb423deb114254b9afdf103bf22958-1"></a><span class="k">try</span><span class="p">:</span>
-<a id="rest_code_a8fb423deb114254b9afdf103bf22958-2" name="rest_code_a8fb423deb114254b9afdf103bf22958-2"></a>    <span class="n">conn</span> <span class="o">=</span> <span class="n">HTTPConnection</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="o">.</span><span class="n">hostname</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="o">.</span><span class="n">port</span><span class="p">)</span>
-<a id="rest_code_a8fb423deb114254b9afdf103bf22958-3" name="rest_code_a8fb423deb114254b9afdf103bf22958-3"></a>
-<a id="rest_code_a8fb423deb114254b9afdf103bf22958-4" name="rest_code_a8fb423deb114254b9afdf103bf22958-4"></a>    <span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s1">'HEAD'</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
-<a id="rest_code_a8fb423deb114254b9afdf103bf22958-5" name="rest_code_a8fb423deb114254b9afdf103bf22958-5"></a>    <span class="n">response</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
-<a id="rest_code_a8fb423deb114254b9afdf103bf22958-6" name="rest_code_a8fb423deb114254b9afdf103bf22958-6"></a>
-<a id="rest_code_a8fb423deb114254b9afdf103bf22958-7" name="rest_code_a8fb423deb114254b9afdf103bf22958-7"></a>    <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status</span> <span class="ow">is</span> <span class="n">OK</span><span class="p">:</span>
-<a id="rest_code_a8fb423deb114254b9afdf103bf22958-8" name="rest_code_a8fb423deb114254b9afdf103bf22958-8"></a>        <span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<a id="rest_code_a8fb423deb114254b9afdf103bf22958-9" name="rest_code_a8fb423deb114254b9afdf103bf22958-9"></a>        <span class="k">return</span> <span class="kc">True</span>
-<a id="rest_code_a8fb423deb114254b9afdf103bf22958-10" name="rest_code_a8fb423deb114254b9afdf103bf22958-10"></a>
-<a id="rest_code_a8fb423deb114254b9afdf103bf22958-11" name="rest_code_a8fb423deb114254b9afdf103bf22958-11"></a><span class="k">except</span> <span class="p">(</span><span class="n">HTTPException</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">timeout</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">error</span><span class="p">):</span>
-<a id="rest_code_a8fb423deb114254b9afdf103bf22958-12" name="rest_code_a8fb423deb114254b9afdf103bf22958-12"></a>    <span class="k">return</span> <span class="kc">False</span>
-</pre>
+<div class="code"><pre class="code python"><a id="rest_code_45ab72dc0d5c463eb760577f6a1f31b3-1" name="rest_code_45ab72dc0d5c463eb760577f6a1f31b3-1" href="#rest_code_45ab72dc0d5c463eb760577f6a1f31b3-1"></a><span class="k">try</span><span class="p">:</span>
+<a id="rest_code_45ab72dc0d5c463eb760577f6a1f31b3-2" name="rest_code_45ab72dc0d5c463eb760577f6a1f31b3-2" href="#rest_code_45ab72dc0d5c463eb760577f6a1f31b3-2"></a>    <span class="n">conn</span> <span class="o">=</span> <span class="n">HTTPConnection</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="o">.</span><span class="n">hostname</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="o">.</span><span class="n">port</span><span class="p">)</span>
+<a id="rest_code_45ab72dc0d5c463eb760577f6a1f31b3-3" name="rest_code_45ab72dc0d5c463eb760577f6a1f31b3-3" href="#rest_code_45ab72dc0d5c463eb760577f6a1f31b3-3"></a>
+<a id="rest_code_45ab72dc0d5c463eb760577f6a1f31b3-4" name="rest_code_45ab72dc0d5c463eb760577f6a1f31b3-4" href="#rest_code_45ab72dc0d5c463eb760577f6a1f31b3-4"></a>    <span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s1">'HEAD'</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+<a id="rest_code_45ab72dc0d5c463eb760577f6a1f31b3-5" name="rest_code_45ab72dc0d5c463eb760577f6a1f31b3-5" href="#rest_code_45ab72dc0d5c463eb760577f6a1f31b3-5"></a>    <span class="n">response</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
+<a id="rest_code_45ab72dc0d5c463eb760577f6a1f31b3-6" name="rest_code_45ab72dc0d5c463eb760577f6a1f31b3-6" href="#rest_code_45ab72dc0d5c463eb760577f6a1f31b3-6"></a>
+<a id="rest_code_45ab72dc0d5c463eb760577f6a1f31b3-7" name="rest_code_45ab72dc0d5c463eb760577f6a1f31b3-7" href="#rest_code_45ab72dc0d5c463eb760577f6a1f31b3-7"></a>    <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status</span> <span class="ow">is</span> <span class="n">OK</span><span class="p">:</span>
+<a id="rest_code_45ab72dc0d5c463eb760577f6a1f31b3-8" name="rest_code_45ab72dc0d5c463eb760577f6a1f31b3-8" href="#rest_code_45ab72dc0d5c463eb760577f6a1f31b3-8"></a>        <span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<a id="rest_code_45ab72dc0d5c463eb760577f6a1f31b3-9" name="rest_code_45ab72dc0d5c463eb760577f6a1f31b3-9" href="#rest_code_45ab72dc0d5c463eb760577f6a1f31b3-9"></a>        <span class="k">return</span> <span class="kc">True</span>
+<a id="rest_code_45ab72dc0d5c463eb760577f6a1f31b3-10" name="rest_code_45ab72dc0d5c463eb760577f6a1f31b3-10" href="#rest_code_45ab72dc0d5c463eb760577f6a1f31b3-10"></a>
+<a id="rest_code_45ab72dc0d5c463eb760577f6a1f31b3-11" name="rest_code_45ab72dc0d5c463eb760577f6a1f31b3-11" href="#rest_code_45ab72dc0d5c463eb760577f6a1f31b3-11"></a><span class="k">except</span> <span class="p">(</span><span class="n">HTTPException</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">timeout</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">error</span><span class="p">):</span>
+<a id="rest_code_45ab72dc0d5c463eb760577f6a1f31b3-12" name="rest_code_45ab72dc0d5c463eb760577f6a1f31b3-12" href="#rest_code_45ab72dc0d5c463eb760577f6a1f31b3-12"></a>    <span class="k">return</span> <span class="kc">False</span>
+</pre></div>
 <p>And the code execution hanged just at the <cite>conn.getresponse()</cite> <em>I guess</em>. Unfortunately, when I tried to debug the code, it just worked, so I assume, debugging it, just turns off any optimisation PyPy is doing.</p>
 <p>Few days later, a colleague of mine, <strong>Paweł Wilczyński</strong>, introduced checks before starting process, if ports are not already taken. It also reduced waits after starting to only check the HTTPConnection - and surprisingly tests started to pass.</p>
 <p>At that time I still haven't got the slightest idea why pypy tests started to pass, and haven't before. So I started to play with the code instead of merging, and now, I think I know what happened.</p>
 <p>Fault was ours, of course, and it was open socket, that have been left after the first check. Python must have been closing it, when it garbage collecting it, but PyPy's garbage collecting seems to be different - and left that socket open. Or PyPy just simply does not close the socket by itself, leaving it leaked.</p>
 <p>Anyway, the solution was to fix first example by manually closing the socket in the end.</p>
-<pre class="code python"><a id="rest_code_4327f1e9a0c04bf4b80304f24f70c738-1" name="rest_code_4327f1e9a0c04bf4b80304f24f70c738-1"></a><span class="k">finally</span><span class="p">:</span>
-<a id="rest_code_4327f1e9a0c04bf4b80304f24f70c738-2" name="rest_code_4327f1e9a0c04bf4b80304f24f70c738-2"></a>    <span class="n">socket</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</pre>
-</div>
+<div class="code"><pre class="code python"><a id="rest_code_812388ca62b04404acef9318235adc8e-1" name="rest_code_812388ca62b04404acef9318235adc8e-1" href="#rest_code_812388ca62b04404acef9318235adc8e-1"></a><span class="k">finally</span><span class="p">:</span>
+<a id="rest_code_812388ca62b04404acef9318235adc8e-2" name="rest_code_812388ca62b04404acef9318235adc8e-2" href="#rest_code_812388ca62b04404acef9318235adc8e-2"></a>    <span class="n">socket</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
     
         <ul class="pager hidden-print">
 <li class="previous">
@@ -91,7 +89,7 @@
 <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="casesblog",
-            disqus_url="http://blog.fizyk.net.pl/blog/my-first-bump-with-pypy/",
+            disqus_url="https://fizyk.dev/blog/my-first-bump-with-pypy/",
         disqus_title="My first bump with pypy",
         disqus_identifier="cache/posts/2014-08-21-my-first-bump-with-pypy.html",
         disqus_config = function () {
@@ -115,13 +113,13 @@
         <div id="sidebar">
             <!--Sidebar content-->
             <h1 id="blog-title">
-                <a href="http://blog.fizyk.net.pl/" title="Cases">Cases</a>
+                <a href="https://fizyk.dev/" title="Cases">Cases</a>
             </h1>
             
             <small>
                 Also available in: 
                 
-            <li><a href="http://blog.fizyk.net.pl/pl/" rel="alternate" hreflang="pl">Polski</a></li>
+            <li><a href="https://fizyk.dev/pl/" rel="alternate" hreflang="pl">Polski</a></li>
 
             </small>
             
@@ -138,7 +136,7 @@ jest dostępny na licencji
 </a>.</li>
             
                 <li>
-<a href="http://www.fizyk.net.pl/en">Homepage</a>
+<a href="https://fizyk.dev/en">Homepage</a>
                 </li>
 <li>
 <a href="../../archive/">Archives</a>
@@ -153,7 +151,7 @@ jest dostępny na licencji
             </ul>
 </div>
         <div id="footer">
-            Contents © 2021 <a href="mailto:fizyk~~fizyk.net.pl">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
+            Contents © 2025 <a href="mailto:fizyk~~fizyk.dev">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
             
         </div>
     </div>

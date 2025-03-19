@@ -8,9 +8,9 @@
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../pl/rss.xml">
-<link rel="canonical" href="http://blog.fizyk.net.pl/blog/format-date-for-rssatom/">
-<link rel="icon" href="../../favicon.png" sizes="62x60">
+<link rel="canonical" href="https://fizyk.dev/blog/format-date-for-rssatom/">
 <link rel="icon" href="../../favicon-speddial.png" sizes="269x262">
+<link rel="icon" href="../../favicon.png" sizes="62x60">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -42,29 +42,27 @@
 
         </span>
         </div>
-    <div>
-<p>While importing posts from my old Blog to <a class="reference external" href="http://nikola.ralsina.com.ar/">Nikola</a>, I considered generating a big atom feed, and import it using Nikola importers. I finally generated all post files by hand, but along the way I found how to correctly format DateTime object to match <a class="reference external" href="http://www.ietf.org/rfc/rfc3339.txt">rfc3339</a> which is required for RSS or Atom feeds.</p>
+    <p>While importing posts from my old Blog to <a class="reference external" href="http://nikola.ralsina.com.ar/">Nikola</a>, I considered generating a big atom feed, and import it using Nikola importers. I finally generated all post files by hand, but along the way I found how to correctly format DateTime object to match <a class="reference external" href="http://www.ietf.org/rfc/rfc3339.txt">rfc3339</a> which is required for RSS or Atom feeds.</p>
 <!-- TEASER_END -->
 <p>Obviously there's an <a class="reference external" href="https://pypi.python.org/pypi/rfc3339">rfc3339 libary</a> which will help you get desired format, and correct date printed.</p>
-<pre class="code python"><a id="rest_code_de48c0a80f1d4ee38fd13b4afc591d5f-1" name="rest_code_de48c0a80f1d4ee38fd13b4afc591d5f-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">rfc3339</span> <span class="kn">import</span> <span class="n">rfc3339</span>
-<a id="rest_code_de48c0a80f1d4ee38fd13b4afc591d5f-2" name="rest_code_de48c0a80f1d4ee38fd13b4afc591d5f-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
-<a id="rest_code_de48c0a80f1d4ee38fd13b4afc591d5f-3" name="rest_code_de48c0a80f1d4ee38fd13b4afc591d5f-3"></a><span class="o">&gt;&gt;&gt;</span>
-<a id="rest_code_de48c0a80f1d4ee38fd13b4afc591d5f-4" name="rest_code_de48c0a80f1d4ee38fd13b4afc591d5f-4"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="s1">'2013/04/17 22:22:14'</span><span class="p">,</span> <span class="s1">'%Y/%m/</span><span class="si">%d</span><span class="s1"> %H:%M:%S'</span><span class="p">)</span>
-<a id="rest_code_de48c0a80f1d4ee38fd13b4afc591d5f-5" name="rest_code_de48c0a80f1d4ee38fd13b4afc591d5f-5"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">now</span>
-<a id="rest_code_de48c0a80f1d4ee38fd13b4afc591d5f-6" name="rest_code_de48c0a80f1d4ee38fd13b4afc591d5f-6"></a><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2013</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">14</span><span class="p">)</span>
-<a id="rest_code_de48c0a80f1d4ee38fd13b4afc591d5f-7" name="rest_code_de48c0a80f1d4ee38fd13b4afc591d5f-7"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">rfc3339</span><span class="p">(</span><span class="n">now</span><span class="p">)</span>
-<a id="rest_code_de48c0a80f1d4ee38fd13b4afc591d5f-8" name="rest_code_de48c0a80f1d4ee38fd13b4afc591d5f-8"></a><span class="s1">'2013-04-17T22:22:14+02:00'</span>
-</pre>
+<div class="code"><pre class="code python"><a id="rest_code_6b632126fa3840c1bc3e3b8e946ccefd-1" name="rest_code_6b632126fa3840c1bc3e3b8e946ccefd-1" href="#rest_code_6b632126fa3840c1bc3e3b8e946ccefd-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span><span class="w"> </span><span class="nn">rfc3339</span><span class="w"> </span><span class="kn">import</span> <span class="n">rfc3339</span>
+<a id="rest_code_6b632126fa3840c1bc3e3b8e946ccefd-2" name="rest_code_6b632126fa3840c1bc3e3b8e946ccefd-2" href="#rest_code_6b632126fa3840c1bc3e3b8e946ccefd-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+<a id="rest_code_6b632126fa3840c1bc3e3b8e946ccefd-3" name="rest_code_6b632126fa3840c1bc3e3b8e946ccefd-3" href="#rest_code_6b632126fa3840c1bc3e3b8e946ccefd-3"></a><span class="o">&gt;&gt;&gt;</span>
+<a id="rest_code_6b632126fa3840c1bc3e3b8e946ccefd-4" name="rest_code_6b632126fa3840c1bc3e3b8e946ccefd-4" href="#rest_code_6b632126fa3840c1bc3e3b8e946ccefd-4"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="s1">'2013/04/17 22:22:14'</span><span class="p">,</span> <span class="s1">'%Y/%m/</span><span class="si">%d</span><span class="s1"> %H:%M:%S'</span><span class="p">)</span>
+<a id="rest_code_6b632126fa3840c1bc3e3b8e946ccefd-5" name="rest_code_6b632126fa3840c1bc3e3b8e946ccefd-5" href="#rest_code_6b632126fa3840c1bc3e3b8e946ccefd-5"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">now</span>
+<a id="rest_code_6b632126fa3840c1bc3e3b8e946ccefd-6" name="rest_code_6b632126fa3840c1bc3e3b8e946ccefd-6" href="#rest_code_6b632126fa3840c1bc3e3b8e946ccefd-6"></a><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2013</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">14</span><span class="p">)</span>
+<a id="rest_code_6b632126fa3840c1bc3e3b8e946ccefd-7" name="rest_code_6b632126fa3840c1bc3e3b8e946ccefd-7" href="#rest_code_6b632126fa3840c1bc3e3b8e946ccefd-7"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">rfc3339</span><span class="p">(</span><span class="n">now</span><span class="p">)</span>
+<a id="rest_code_6b632126fa3840c1bc3e3b8e946ccefd-8" name="rest_code_6b632126fa3840c1bc3e3b8e946ccefd-8" href="#rest_code_6b632126fa3840c1bc3e3b8e946ccefd-8"></a><span class="s1">'2013-04-17T22:22:14+02:00'</span>
+</pre></div>
 <p>It might happen however, that your datetime does not have timezone info on this, and you're working on system, which has different timezone set. In this case, you'll also need <strong>pytz</strong> library and create required timezone yourself, and localize the date:</p>
-<pre class="code python"><a id="rest_code_dd51ae0d18f448178071027f6f2e54c5-1" name="rest_code_dd51ae0d18f448178071027f6f2e54c5-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">pytz</span>
-<a id="rest_code_dd51ae0d18f448178071027f6f2e54c5-2" name="rest_code_dd51ae0d18f448178071027f6f2e54c5-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">warsaw</span> <span class="o">=</span> <span class="n">pytz</span><span class="o">.</span><span class="n">timezone</span><span class="p">(</span><span class="s1">'Europe/Warsaw'</span><span class="p">)</span>
-<a id="rest_code_dd51ae0d18f448178071027f6f2e54c5-3" name="rest_code_dd51ae0d18f448178071027f6f2e54c5-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">warsaw</span><span class="o">.</span><span class="n">localize</span><span class="p">(</span><span class="n">now</span><span class="p">)</span>
-<a id="rest_code_dd51ae0d18f448178071027f6f2e54c5-4" name="rest_code_dd51ae0d18f448178071027f6f2e54c5-4"></a><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2013</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="n">tzinfo</span><span class="o">=&lt;</span><span class="n">DstTzInfo</span> <span class="s1">'Europe/Warsaw'</span> <span class="n">CEST</span><span class="o">+</span><span class="mi">2</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span> <span class="n">DST</span><span class="o">&gt;</span><span class="p">)</span>
-<a id="rest_code_dd51ae0d18f448178071027f6f2e54c5-5" name="rest_code_dd51ae0d18f448178071027f6f2e54c5-5"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">rfc3339</span><span class="p">(</span><span class="n">warsaw</span><span class="o">.</span><span class="n">localize</span><span class="p">(</span><span class="n">now</span><span class="p">))</span>
-<a id="rest_code_dd51ae0d18f448178071027f6f2e54c5-6" name="rest_code_dd51ae0d18f448178071027f6f2e54c5-6"></a><span class="s1">'2013-04-17T22:22:14+01:00'</span>
-</pre>
+<div class="code"><pre class="code python"><a id="rest_code_a382837cebc74f6caa834d3f9fbd0b79-1" name="rest_code_a382837cebc74f6caa834d3f9fbd0b79-1" href="#rest_code_a382837cebc74f6caa834d3f9fbd0b79-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pytz</span>
+<a id="rest_code_a382837cebc74f6caa834d3f9fbd0b79-2" name="rest_code_a382837cebc74f6caa834d3f9fbd0b79-2" href="#rest_code_a382837cebc74f6caa834d3f9fbd0b79-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">warsaw</span> <span class="o">=</span> <span class="n">pytz</span><span class="o">.</span><span class="n">timezone</span><span class="p">(</span><span class="s1">'Europe/Warsaw'</span><span class="p">)</span>
+<a id="rest_code_a382837cebc74f6caa834d3f9fbd0b79-3" name="rest_code_a382837cebc74f6caa834d3f9fbd0b79-3" href="#rest_code_a382837cebc74f6caa834d3f9fbd0b79-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">warsaw</span><span class="o">.</span><span class="n">localize</span><span class="p">(</span><span class="n">now</span><span class="p">)</span>
+<a id="rest_code_a382837cebc74f6caa834d3f9fbd0b79-4" name="rest_code_a382837cebc74f6caa834d3f9fbd0b79-4" href="#rest_code_a382837cebc74f6caa834d3f9fbd0b79-4"></a><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2013</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="n">tzinfo</span><span class="o">=&lt;</span><span class="n">DstTzInfo</span> <span class="s1">'Europe/Warsaw'</span> <span class="n">CEST</span><span class="o">+</span><span class="mi">2</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span> <span class="n">DST</span><span class="o">&gt;</span><span class="p">)</span>
+<a id="rest_code_a382837cebc74f6caa834d3f9fbd0b79-5" name="rest_code_a382837cebc74f6caa834d3f9fbd0b79-5" href="#rest_code_a382837cebc74f6caa834d3f9fbd0b79-5"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">rfc3339</span><span class="p">(</span><span class="n">warsaw</span><span class="o">.</span><span class="n">localize</span><span class="p">(</span><span class="n">now</span><span class="p">))</span>
+<a id="rest_code_a382837cebc74f6caa834d3f9fbd0b79-6" name="rest_code_a382837cebc74f6caa834d3f9fbd0b79-6" href="#rest_code_a382837cebc74f6caa834d3f9fbd0b79-6"></a><span class="s1">'2013-04-17T22:22:14+01:00'</span>
+</pre></div>
 <p>Of course, there's also the issue to find out the timezone the date was originally stored with if we retrieve it from database.</p>
-</div>
     
         <ul class="pager hidden-print">
 <li class="previous">
@@ -77,7 +75,7 @@
 <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="casesblog",
-            disqus_url="http://blog.fizyk.net.pl/blog/format-date-for-rssatom/",
+            disqus_url="https://fizyk.dev/blog/format-date-for-rssatom/",
         disqus_title="Format date for RSS/Atom",
         disqus_identifier="cache/posts/2013-04-17-format-date-for-rssatom.html",
         disqus_config = function () {
@@ -101,13 +99,13 @@
         <div id="sidebar">
             <!--Sidebar content-->
             <h1 id="blog-title">
-                <a href="http://blog.fizyk.net.pl/" title="Cases">Cases</a>
+                <a href="https://fizyk.dev/" title="Cases">Cases</a>
             </h1>
             
             <small>
                 Also available in: 
                 
-            <li><a href="http://blog.fizyk.net.pl/pl/" rel="alternate" hreflang="pl">Polski</a></li>
+            <li><a href="https://fizyk.dev/pl/" rel="alternate" hreflang="pl">Polski</a></li>
 
             </small>
             
@@ -124,7 +122,7 @@ jest dostępny na licencji
 </a>.</li>
             
                 <li>
-<a href="http://www.fizyk.net.pl/en">Homepage</a>
+<a href="https://fizyk.dev/en">Homepage</a>
                 </li>
 <li>
 <a href="../../archive/">Archives</a>
@@ -139,7 +137,7 @@ jest dostępny na licencji
             </ul>
 </div>
         <div id="footer">
-            Contents © 2021 <a href="mailto:fizyk~~fizyk.net.pl">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
+            Contents © 2025 <a href="mailto:fizyk~~fizyk.dev">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
             
         </div>
     </div>

@@ -7,9 +7,9 @@
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../pl/rss.xml">
-<link rel="canonical" href="http://blog.fizyk.net.pl/blog/sqlalchemy-09-dialects-speed-tests/">
-<link rel="icon" href="../../favicon.png" sizes="62x60">
+<link rel="canonical" href="https://fizyk.dev/blog/sqlalchemy-09-dialects-speed-tests/">
 <link rel="icon" href="../../favicon-speddial.png" sizes="269x262">
+<link rel="icon" href="../../favicon.png" sizes="62x60">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -37,8 +37,7 @@
 
         </span>
         </div>
-    <div>
-<p>This fourth <a class="reference external" href="http://www.sqlalchemy.org/">SQLAlchemy's</a> dialects speed tests aims to test this ORM's newest version, 0.9.x, which is available for about a month already. This version, amongst other improvements, contains C extension for python3.</p>
+    <p>This fourth <a class="reference external" href="http://www.sqlalchemy.org/">SQLAlchemy's</a> dialects speed tests aims to test this ORM's newest version, 0.9.x, which is available for about a month already. This version, amongst other improvements, contains C extension for python3.</p>
 <!-- TEASER_END -->
 <p>There are six dialects tested like previously: 3 for postgres: <strong>psycopg2</strong>, <strong>pypostgresql</strong>, <strong>pg8000</strong> and 3 for mysql: <strong>mysqldb</strong> <em>(mysql-python)</em>, <strong>oursql</strong> and <strong>mysqlconnector</strong> <em>(mysql-connector-python)</em>.</p>
 <p><strong>My basic setup:</strong></p>
@@ -68,12 +67,6 @@
 <!-- note: --><p>I had to extend <strong>run.sh</strong> of my test suite script to facilitate the fact, that the mysql-connector-python is not hosted on pypi.</p>
 <section id="test-results"><h2>Test results</h2>
 <table>
-<colgroup>
-<col style="width: 36%">
-<col style="width: 20%">
-<col style="width: 21%">
-<col style="width: 23%">
-</colgroup>
 <thead><tr>
 <th class="head"></th>
 <th class="head"><p>s/run 1</p></th>
@@ -141,12 +134,6 @@
 <p>Like before, no real difference between python2 and python3 able connectors. With psycopg2 still the fastest of all (even mysql) and pg800 being about 50% slower than py-postgresql.
 MySQLdb as usual leads within MySQL connectors, with Mysql-connector-python close by.</p>
 <table>
-<colgroup>
-<col style="width: 36%">
-<col style="width: 20%">
-<col style="width: 21%">
-<col style="width: 23%">
-</colgroup>
 <thead><tr>
 <th class="head"></th>
 <th class="head"><p>s/run 1</p></th>
@@ -213,12 +200,6 @@ MySQLdb as usual leads within MySQL connectors, with Mysql-connector-python clos
 <p>Table:  Insert with commit</p>
 <p>Not much different for insert with commit, although this operation is taking longer for all connectors. Oursql passed all tests this time.</p>
 <table>
-<colgroup>
-<col style="width: 36%">
-<col style="width: 20%">
-<col style="width: 21%">
-<col style="width: 23%">
-</colgroup>
 <thead><tr>
 <th class="head"></th>
 <th class="head"><p>s/run 1</p></th>
@@ -285,12 +266,6 @@ MySQLdb as usual leads within MySQL connectors, with Mysql-connector-python clos
 <p>Table:  Select test</p>
 <p>Not much change since last time I presented results for this test, except  mysql-connector-python gets on-par between different python versions.</p>
 <table>
-<colgroup>
-<col style="width: 36%">
-<col style="width: 20%">
-<col style="width: 21%">
-<col style="width: 23%">
-</colgroup>
 <thead><tr>
 <th class="head"></th>
 <th class="head"><p>s/run 1</p></th>
@@ -357,12 +332,6 @@ MySQLdb as usual leads within MySQL connectors, with Mysql-connector-python clos
 <p>Table:  Delete with rollback</p>
 <p>Again, quite an improvement for mysql-connector-python on python3 here. Other differences could be attributed to network.</p>
 <table>
-<colgroup>
-<col style="width: 36%">
-<col style="width: 20%">
-<col style="width: 21%">
-<col style="width: 23%">
-</colgroup>
 <thead><tr>
 <th class="head"></th>
 <th class="head"><p>s/run 1</p></th>
@@ -434,10 +403,7 @@ MySQLdb as usual leads within MySQL connectors, with Mysql-connector-python clos
 </section><section id="tests-code"><h2>Tests code</h2>
 <p>Test code can be checked here <a class="reference external" href="https://github.com/fizyk/sqlalchemy-tests">github.com/fizyk/sqlalchemy-tests</a>. Requirement for it is to have virtualenvwrapper installed, and script itself should create clean envirtonments and install required dependeincies for tets.</p>
 <p>Got some ideas on moving this code to py.test based tests with some logger fixture to produce pre-rendered reports.</p>
-</section>
-</div>
-    
-        <ul class="pager hidden-print">
+</section><ul class="pager hidden-print">
 <li class="previous">
                 <a href="../pyramid_fullauth-023/" rel="prev" title="pyramid_fullauth 0.2.3">Previous post</a>
             </li>
@@ -448,7 +414,7 @@ MySQLdb as usual leads within MySQL connectors, with Mysql-connector-python clos
 <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="casesblog",
-            disqus_url="http://blog.fizyk.net.pl/blog/sqlalchemy-09-dialects-speed-tests/",
+            disqus_url="https://fizyk.dev/blog/sqlalchemy-09-dialects-speed-tests/",
         disqus_title="SQLAlchemy 0.9 dialects speed tests",
         disqus_identifier="cache/posts/2014-02-02-sqlalchemy-09-dialects-speed-tests.html",
         disqus_config = function () {
@@ -472,13 +438,13 @@ MySQLdb as usual leads within MySQL connectors, with Mysql-connector-python clos
         <div id="sidebar">
             <!--Sidebar content-->
             <h1 id="blog-title">
-                <a href="http://blog.fizyk.net.pl/" title="Cases">Cases</a>
+                <a href="https://fizyk.dev/" title="Cases">Cases</a>
             </h1>
             
             <small>
                 Also available in: 
                 
-            <li><a href="http://blog.fizyk.net.pl/pl/" rel="alternate" hreflang="pl">Polski</a></li>
+            <li><a href="https://fizyk.dev/pl/" rel="alternate" hreflang="pl">Polski</a></li>
 
             </small>
             
@@ -495,7 +461,7 @@ jest dostępny na licencji
 </a>.</li>
             
                 <li>
-<a href="http://www.fizyk.net.pl/en">Homepage</a>
+<a href="https://fizyk.dev/en">Homepage</a>
                 </li>
 <li>
 <a href="../../archive/">Archives</a>
@@ -510,7 +476,7 @@ jest dostępny na licencji
             </ul>
 </div>
         <div id="footer">
-            Contents © 2021 <a href="mailto:fizyk~~fizyk.net.pl">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
+            Contents © 2025 <a href="mailto:fizyk~~fizyk.dev">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
             
         </div>
     </div>

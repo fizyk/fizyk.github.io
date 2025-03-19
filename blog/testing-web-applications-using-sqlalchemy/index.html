@@ -7,9 +7,9 @@
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../pl/rss.xml">
-<link rel="canonical" href="http://blog.fizyk.net.pl/blog/testing-web-applications-using-sqlalchemy/">
-<link rel="icon" href="../../favicon.png" sizes="62x60">
+<link rel="canonical" href="https://fizyk.dev/blog/testing-web-applications-using-sqlalchemy/">
 <link rel="icon" href="../../favicon-speddial.png" sizes="269x262">
+<link rel="icon" href="../../favicon.png" sizes="62x60">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -37,8 +37,7 @@
 
         </span>
         </div>
-    <div>
-<p>Some time ago, I decided to refactor <a class="reference external" href="https://pypi.python.org/pypi/pyramid_fullauth">pyramid_fullauth</a> tests from mostly unittest style
+    <p>Some time ago, I decided to refactor <a class="reference external" href="https://pypi.python.org/pypi/pyramid_fullauth">pyramid_fullauth</a> tests from mostly unittest style
 (though run by py.test) to same factor function style tests and base them on
 <a class="reference external" href="https://pypi.python.org/pypi/pytest_pyramid">pytest_pyramid</a> package,
 when it comes to test webapp. Everhything went smoothly,
@@ -51,23 +50,23 @@ That's something I haven't figured out why, and would be grateful
 for any explanation, however I managed to get around it. I've just made sure,
 that both in test and within application, the same session is being used.</p>
 <p>I made sure that the connection is being set up by me in fixture, and then assigned it to the pyramid_basemodel's global Session attribute. To make sure, I'm not using local copy anywhere in the pyramid_fullauth, I treat the Session as pyramid_basemodel's attribute, by calling it always through full namespace.</p>
-<pre class="code python"><a id="rest_code_f25dae9b559544678b8f9b166d0187cb-1" name="rest_code_f25dae9b559544678b8f9b166d0187cb-1"></a><span class="kn">import</span> <span class="nn">pyramid_basemodel</span>
-<a id="rest_code_f25dae9b559544678b8f9b166d0187cb-2" name="rest_code_f25dae9b559544678b8f9b166d0187cb-2"></a>
-<a id="rest_code_f25dae9b559544678b8f9b166d0187cb-3" name="rest_code_f25dae9b559544678b8f9b166d0187cb-3"></a><span class="c1"># ...</span>
-<a id="rest_code_f25dae9b559544678b8f9b166d0187cb-4" name="rest_code_f25dae9b559544678b8f9b166d0187cb-4"></a>
-<a id="rest_code_f25dae9b559544678b8f9b166d0187cb-5" name="rest_code_f25dae9b559544678b8f9b166d0187cb-5"></a><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s1">'function'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">[</span><span class="s1">'sqlite'</span><span class="p">,</span> <span class="s1">'mysql'</span><span class="p">,</span> <span class="s1">'postgresql'</span><span class="p">])</span>
-<a id="rest_code_f25dae9b559544678b8f9b166d0187cb-6" name="rest_code_f25dae9b559544678b8f9b166d0187cb-6"></a><span class="k">def</span> <span class="nf">db_session</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
-<a id="rest_code_f25dae9b559544678b8f9b166d0187cb-7" name="rest_code_f25dae9b559544678b8f9b166d0187cb-7"></a>    <span class="sd">"""SQLAlchemy session."""</span>
-<a id="rest_code_f25dae9b559544678b8f9b166d0187cb-8" name="rest_code_f25dae9b559544678b8f9b166d0187cb-8"></a>    <span class="kn">from</span> <span class="nn">pyramid_fullauth.models</span> <span class="kn">import</span> <span class="n">Base</span>
-<a id="rest_code_f25dae9b559544678b8f9b166d0187cb-9" name="rest_code_f25dae9b559544678b8f9b166d0187cb-9"></a>
-<a id="rest_code_f25dae9b559544678b8f9b166d0187cb-10" name="rest_code_f25dae9b559544678b8f9b166d0187cb-10"></a>    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">param</span> <span class="o">==</span> <span class="s1">'sqlite'</span><span class="p">:</span>
-<a id="rest_code_f25dae9b559544678b8f9b166d0187cb-11" name="rest_code_f25dae9b559544678b8f9b166d0187cb-11"></a>        <span class="n">connection</span> <span class="o">=</span> <span class="s1">'sqlite:///fullauth.sqlite'</span>
-<a id="rest_code_f25dae9b559544678b8f9b166d0187cb-12" name="rest_code_f25dae9b559544678b8f9b166d0187cb-12"></a>
-<a id="rest_code_f25dae9b559544678b8f9b166d0187cb-13" name="rest_code_f25dae9b559544678b8f9b166d0187cb-13"></a>    <span class="n">engine</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="n">connection</span><span class="p">,</span> <span class="n">echo</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<a id="rest_code_f25dae9b559544678b8f9b166d0187cb-14" name="rest_code_f25dae9b559544678b8f9b166d0187cb-14"></a>    <span class="n">pyramid_basemodel</span><span class="o">.</span><span class="n">Session</span> <span class="o">=</span> <span class="n">scoped_session</span><span class="p">(</span>
-<a id="rest_code_f25dae9b559544678b8f9b166d0187cb-15" name="rest_code_f25dae9b559544678b8f9b166d0187cb-15"></a>        <span class="n">sessionmaker</span><span class="p">(</span><span class="n">extension</span><span class="o">=</span><span class="n">ZopeTransactionExtension</span><span class="p">()))</span>
-<a id="rest_code_f25dae9b559544678b8f9b166d0187cb-16" name="rest_code_f25dae9b559544678b8f9b166d0187cb-16"></a>    <span class="n">pyramid_basemodel</span><span class="o">.</span><span class="n">bind_engine</span><span class="p">(</span><span class="n">engine</span><span class="p">,</span> <span class="n">pyramid_basemodel</span><span class="o">.</span><span class="n">Session</span><span class="p">,</span> <span class="n">should_drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre>
+<div class="code"><pre class="code python"><a id="rest_code_476e9e1f4fd54a549cf5bf195f177fe7-1" name="rest_code_476e9e1f4fd54a549cf5bf195f177fe7-1" href="#rest_code_476e9e1f4fd54a549cf5bf195f177fe7-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pyramid_basemodel</span>
+<a id="rest_code_476e9e1f4fd54a549cf5bf195f177fe7-2" name="rest_code_476e9e1f4fd54a549cf5bf195f177fe7-2" href="#rest_code_476e9e1f4fd54a549cf5bf195f177fe7-2"></a>
+<a id="rest_code_476e9e1f4fd54a549cf5bf195f177fe7-3" name="rest_code_476e9e1f4fd54a549cf5bf195f177fe7-3" href="#rest_code_476e9e1f4fd54a549cf5bf195f177fe7-3"></a><span class="c1"># ...</span>
+<a id="rest_code_476e9e1f4fd54a549cf5bf195f177fe7-4" name="rest_code_476e9e1f4fd54a549cf5bf195f177fe7-4" href="#rest_code_476e9e1f4fd54a549cf5bf195f177fe7-4"></a>
+<a id="rest_code_476e9e1f4fd54a549cf5bf195f177fe7-5" name="rest_code_476e9e1f4fd54a549cf5bf195f177fe7-5" href="#rest_code_476e9e1f4fd54a549cf5bf195f177fe7-5"></a><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s1">'function'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">[</span><span class="s1">'sqlite'</span><span class="p">,</span> <span class="s1">'mysql'</span><span class="p">,</span> <span class="s1">'postgresql'</span><span class="p">])</span>
+<a id="rest_code_476e9e1f4fd54a549cf5bf195f177fe7-6" name="rest_code_476e9e1f4fd54a549cf5bf195f177fe7-6" href="#rest_code_476e9e1f4fd54a549cf5bf195f177fe7-6"></a><span class="k">def</span><span class="w"> </span><span class="nf">db_session</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+<a id="rest_code_476e9e1f4fd54a549cf5bf195f177fe7-7" name="rest_code_476e9e1f4fd54a549cf5bf195f177fe7-7" href="#rest_code_476e9e1f4fd54a549cf5bf195f177fe7-7"></a><span class="w">    </span><span class="sd">"""SQLAlchemy session."""</span>
+<a id="rest_code_476e9e1f4fd54a549cf5bf195f177fe7-8" name="rest_code_476e9e1f4fd54a549cf5bf195f177fe7-8" href="#rest_code_476e9e1f4fd54a549cf5bf195f177fe7-8"></a>    <span class="kn">from</span><span class="w"> </span><span class="nn">pyramid_fullauth.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Base</span>
+<a id="rest_code_476e9e1f4fd54a549cf5bf195f177fe7-9" name="rest_code_476e9e1f4fd54a549cf5bf195f177fe7-9" href="#rest_code_476e9e1f4fd54a549cf5bf195f177fe7-9"></a>
+<a id="rest_code_476e9e1f4fd54a549cf5bf195f177fe7-10" name="rest_code_476e9e1f4fd54a549cf5bf195f177fe7-10" href="#rest_code_476e9e1f4fd54a549cf5bf195f177fe7-10"></a>    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">param</span> <span class="o">==</span> <span class="s1">'sqlite'</span><span class="p">:</span>
+<a id="rest_code_476e9e1f4fd54a549cf5bf195f177fe7-11" name="rest_code_476e9e1f4fd54a549cf5bf195f177fe7-11" href="#rest_code_476e9e1f4fd54a549cf5bf195f177fe7-11"></a>        <span class="n">connection</span> <span class="o">=</span> <span class="s1">'sqlite:///fullauth.sqlite'</span>
+<a id="rest_code_476e9e1f4fd54a549cf5bf195f177fe7-12" name="rest_code_476e9e1f4fd54a549cf5bf195f177fe7-12" href="#rest_code_476e9e1f4fd54a549cf5bf195f177fe7-12"></a>
+<a id="rest_code_476e9e1f4fd54a549cf5bf195f177fe7-13" name="rest_code_476e9e1f4fd54a549cf5bf195f177fe7-13" href="#rest_code_476e9e1f4fd54a549cf5bf195f177fe7-13"></a>    <span class="n">engine</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="n">connection</span><span class="p">,</span> <span class="n">echo</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<a id="rest_code_476e9e1f4fd54a549cf5bf195f177fe7-14" name="rest_code_476e9e1f4fd54a549cf5bf195f177fe7-14" href="#rest_code_476e9e1f4fd54a549cf5bf195f177fe7-14"></a>    <span class="n">pyramid_basemodel</span><span class="o">.</span><span class="n">Session</span> <span class="o">=</span> <span class="n">scoped_session</span><span class="p">(</span>
+<a id="rest_code_476e9e1f4fd54a549cf5bf195f177fe7-15" name="rest_code_476e9e1f4fd54a549cf5bf195f177fe7-15" href="#rest_code_476e9e1f4fd54a549cf5bf195f177fe7-15"></a>        <span class="n">sessionmaker</span><span class="p">(</span><span class="n">extension</span><span class="o">=</span><span class="n">ZopeTransactionExtension</span><span class="p">()))</span>
+<a id="rest_code_476e9e1f4fd54a549cf5bf195f177fe7-16" name="rest_code_476e9e1f4fd54a549cf5bf195f177fe7-16" href="#rest_code_476e9e1f4fd54a549cf5bf195f177fe7-16"></a>    <span class="n">pyramid_basemodel</span><span class="o">.</span><span class="n">bind_engine</span><span class="p">(</span><span class="n">engine</span><span class="p">,</span> <span class="n">pyramid_basemodel</span><span class="o">.</span><span class="n">Session</span><span class="p">,</span> <span class="n">should_drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
 <p>That's it! Of course, I have to remember to use <strong>transaction.commit()</strong>,
 not <strong>Session.commit()</strong>, and that by default ZopeTransactionExtension closes
 connection after commit, so all instances need to be merged back into session.
@@ -88,33 +87,32 @@ So the question was, how to close SQLALchemy's connection?</p>
 <p>Answer came in this <a class="reference external" href="http://stackoverflow.com/questions/7186961/how-do-i-close-the-engine-created-by-sqlalchemy-ext-sqlsoup">stackoverflow thread</a>, <strong>engine.dispose()</strong>! However it's
 <a class="reference external" href="http://stackoverflow.com/questions/21738944/how-can-i-properly-close-a-sqlalchemy-session">follow-up</a> had cleaner solution, to use <strong>NullPool</strong> instead! This, when closing session, instead moving connection back to pool, just closes it, as there's no connection pool!</p>
 <p>So, after this, the whole sqlalchemy session fixture looks like that:</p>
-<pre class="code python"><a id="rest_code_5a234179b4a04993991f1af79c63f13c-1" name="rest_code_5a234179b4a04993991f1af79c63f13c-1"></a><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s1">'function'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">[</span><span class="s1">'sqlite'</span><span class="p">,</span> <span class="s1">'mysql'</span><span class="p">,</span> <span class="s1">'postgresql'</span><span class="p">])</span>
-<a id="rest_code_5a234179b4a04993991f1af79c63f13c-2" name="rest_code_5a234179b4a04993991f1af79c63f13c-2"></a><span class="k">def</span> <span class="nf">db_session</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
-<a id="rest_code_5a234179b4a04993991f1af79c63f13c-3" name="rest_code_5a234179b4a04993991f1af79c63f13c-3"></a>    <span class="sd">"""SQLAlchemy session."""</span>
-<a id="rest_code_5a234179b4a04993991f1af79c63f13c-4" name="rest_code_5a234179b4a04993991f1af79c63f13c-4"></a>    <span class="kn">from</span> <span class="nn">pyramid_fullauth.models</span> <span class="kn">import</span> <span class="n">Base</span>
-<a id="rest_code_5a234179b4a04993991f1af79c63f13c-5" name="rest_code_5a234179b4a04993991f1af79c63f13c-5"></a>
-<a id="rest_code_5a234179b4a04993991f1af79c63f13c-6" name="rest_code_5a234179b4a04993991f1af79c63f13c-6"></a>    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">param</span> <span class="o">==</span> <span class="s1">'sqlite'</span><span class="p">:</span>
-<a id="rest_code_5a234179b4a04993991f1af79c63f13c-7" name="rest_code_5a234179b4a04993991f1af79c63f13c-7"></a>        <span class="n">connection</span> <span class="o">=</span> <span class="s1">'sqlite:///fullauth.sqlite'</span>
-<a id="rest_code_5a234179b4a04993991f1af79c63f13c-8" name="rest_code_5a234179b4a04993991f1af79c63f13c-8"></a>    <span class="k">elif</span> <span class="n">request</span><span class="o">.</span><span class="n">param</span> <span class="o">==</span> <span class="s1">'mysql'</span><span class="p">:</span>
-<a id="rest_code_5a234179b4a04993991f1af79c63f13c-9" name="rest_code_5a234179b4a04993991f1af79c63f13c-9"></a>        <span class="n">request</span><span class="o">.</span><span class="n">getfuncargvalue</span><span class="p">(</span><span class="s1">'mysqldb'</span><span class="p">)</span>  <span class="c1"># takes care of creating database</span>
-<a id="rest_code_5a234179b4a04993991f1af79c63f13c-10" name="rest_code_5a234179b4a04993991f1af79c63f13c-10"></a>        <span class="n">connection</span> <span class="o">=</span> <span class="s1">'mysql+mysqldb://root:@127.0.0.1:3307/tests?charset=utf8'</span>
-<a id="rest_code_5a234179b4a04993991f1af79c63f13c-11" name="rest_code_5a234179b4a04993991f1af79c63f13c-11"></a>    <span class="k">elif</span> <span class="n">request</span><span class="o">.</span><span class="n">param</span> <span class="o">==</span> <span class="s1">'postgresql'</span><span class="p">:</span>
-<a id="rest_code_5a234179b4a04993991f1af79c63f13c-12" name="rest_code_5a234179b4a04993991f1af79c63f13c-12"></a>        <span class="n">request</span><span class="o">.</span><span class="n">getfuncargvalue</span><span class="p">(</span><span class="s1">'postgresql'</span><span class="p">)</span>  <span class="c1"># takes care of creating database</span>
-<a id="rest_code_5a234179b4a04993991f1af79c63f13c-13" name="rest_code_5a234179b4a04993991f1af79c63f13c-13"></a>        <span class="n">connection</span> <span class="o">=</span> <span class="s1">'postgresql+psycopg2://postgres:@127.0.0.1:5433/tests'</span>
-<a id="rest_code_5a234179b4a04993991f1af79c63f13c-14" name="rest_code_5a234179b4a04993991f1af79c63f13c-14"></a>
-<a id="rest_code_5a234179b4a04993991f1af79c63f13c-15" name="rest_code_5a234179b4a04993991f1af79c63f13c-15"></a>    <span class="n">engine</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="n">connection</span><span class="p">,</span> <span class="n">echo</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">poolclass</span><span class="o">=</span><span class="n">NullPool</span><span class="p">)</span>
-<a id="rest_code_5a234179b4a04993991f1af79c63f13c-16" name="rest_code_5a234179b4a04993991f1af79c63f13c-16"></a>    <span class="n">pyramid_basemodel</span><span class="o">.</span><span class="n">Session</span> <span class="o">=</span> <span class="n">scoped_session</span><span class="p">(</span><span class="n">sessionmaker</span><span class="p">(</span><span class="n">extension</span><span class="o">=</span><span class="n">ZopeTransactionExtension</span><span class="p">()))</span>
-<a id="rest_code_5a234179b4a04993991f1af79c63f13c-17" name="rest_code_5a234179b4a04993991f1af79c63f13c-17"></a>    <span class="n">pyramid_basemodel</span><span class="o">.</span><span class="n">bind_engine</span><span class="p">(</span><span class="n">engine</span><span class="p">,</span> <span class="n">pyramid_basemodel</span><span class="o">.</span><span class="n">Session</span><span class="p">,</span> <span class="n">should_drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<a id="rest_code_5a234179b4a04993991f1af79c63f13c-18" name="rest_code_5a234179b4a04993991f1af79c63f13c-18"></a>
-<a id="rest_code_5a234179b4a04993991f1af79c63f13c-19" name="rest_code_5a234179b4a04993991f1af79c63f13c-19"></a>    <span class="k">def</span> <span class="nf">destroy</span><span class="p">():</span>
-<a id="rest_code_5a234179b4a04993991f1af79c63f13c-20" name="rest_code_5a234179b4a04993991f1af79c63f13c-20"></a>        <span class="n">transaction</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
-<a id="rest_code_5a234179b4a04993991f1af79c63f13c-21" name="rest_code_5a234179b4a04993991f1af79c63f13c-21"></a>        <span class="n">Base</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">drop_all</span><span class="p">(</span><span class="n">engine</span><span class="p">)</span>
-<a id="rest_code_5a234179b4a04993991f1af79c63f13c-22" name="rest_code_5a234179b4a04993991f1af79c63f13c-22"></a>
-<a id="rest_code_5a234179b4a04993991f1af79c63f13c-23" name="rest_code_5a234179b4a04993991f1af79c63f13c-23"></a>    <span class="n">request</span><span class="o">.</span><span class="n">addfinalizer</span><span class="p">(</span><span class="n">destroy</span><span class="p">)</span>
-<a id="rest_code_5a234179b4a04993991f1af79c63f13c-24" name="rest_code_5a234179b4a04993991f1af79c63f13c-24"></a>
-<a id="rest_code_5a234179b4a04993991f1af79c63f13c-25" name="rest_code_5a234179b4a04993991f1af79c63f13c-25"></a>    <span class="k">return</span> <span class="n">pyramid_basemodel</span><span class="o">.</span><span class="n">Session</span>
-</pre>
-</div>
+<div class="code"><pre class="code python"><a id="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-1" name="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-1" href="#rest_code_36a4f838c3114e23aaf02f2f6b117dd4-1"></a><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s1">'function'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">[</span><span class="s1">'sqlite'</span><span class="p">,</span> <span class="s1">'mysql'</span><span class="p">,</span> <span class="s1">'postgresql'</span><span class="p">])</span>
+<a id="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-2" name="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-2" href="#rest_code_36a4f838c3114e23aaf02f2f6b117dd4-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">db_session</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+<a id="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-3" name="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-3" href="#rest_code_36a4f838c3114e23aaf02f2f6b117dd4-3"></a><span class="w">    </span><span class="sd">"""SQLAlchemy session."""</span>
+<a id="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-4" name="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-4" href="#rest_code_36a4f838c3114e23aaf02f2f6b117dd4-4"></a>    <span class="kn">from</span><span class="w"> </span><span class="nn">pyramid_fullauth.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Base</span>
+<a id="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-5" name="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-5" href="#rest_code_36a4f838c3114e23aaf02f2f6b117dd4-5"></a>
+<a id="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-6" name="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-6" href="#rest_code_36a4f838c3114e23aaf02f2f6b117dd4-6"></a>    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">param</span> <span class="o">==</span> <span class="s1">'sqlite'</span><span class="p">:</span>
+<a id="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-7" name="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-7" href="#rest_code_36a4f838c3114e23aaf02f2f6b117dd4-7"></a>        <span class="n">connection</span> <span class="o">=</span> <span class="s1">'sqlite:///fullauth.sqlite'</span>
+<a id="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-8" name="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-8" href="#rest_code_36a4f838c3114e23aaf02f2f6b117dd4-8"></a>    <span class="k">elif</span> <span class="n">request</span><span class="o">.</span><span class="n">param</span> <span class="o">==</span> <span class="s1">'mysql'</span><span class="p">:</span>
+<a id="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-9" name="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-9" href="#rest_code_36a4f838c3114e23aaf02f2f6b117dd4-9"></a>        <span class="n">request</span><span class="o">.</span><span class="n">getfuncargvalue</span><span class="p">(</span><span class="s1">'mysqldb'</span><span class="p">)</span>  <span class="c1"># takes care of creating database</span>
+<a id="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-10" name="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-10" href="#rest_code_36a4f838c3114e23aaf02f2f6b117dd4-10"></a>        <span class="n">connection</span> <span class="o">=</span> <span class="s1">'mysql+mysqldb://root:@127.0.0.1:3307/tests?charset=utf8'</span>
+<a id="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-11" name="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-11" href="#rest_code_36a4f838c3114e23aaf02f2f6b117dd4-11"></a>    <span class="k">elif</span> <span class="n">request</span><span class="o">.</span><span class="n">param</span> <span class="o">==</span> <span class="s1">'postgresql'</span><span class="p">:</span>
+<a id="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-12" name="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-12" href="#rest_code_36a4f838c3114e23aaf02f2f6b117dd4-12"></a>        <span class="n">request</span><span class="o">.</span><span class="n">getfuncargvalue</span><span class="p">(</span><span class="s1">'postgresql'</span><span class="p">)</span>  <span class="c1"># takes care of creating database</span>
+<a id="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-13" name="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-13" href="#rest_code_36a4f838c3114e23aaf02f2f6b117dd4-13"></a>        <span class="n">connection</span> <span class="o">=</span> <span class="s1">'postgresql+psycopg2://postgres:@127.0.0.1:5433/tests'</span>
+<a id="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-14" name="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-14" href="#rest_code_36a4f838c3114e23aaf02f2f6b117dd4-14"></a>
+<a id="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-15" name="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-15" href="#rest_code_36a4f838c3114e23aaf02f2f6b117dd4-15"></a>    <span class="n">engine</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="n">connection</span><span class="p">,</span> <span class="n">echo</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">poolclass</span><span class="o">=</span><span class="n">NullPool</span><span class="p">)</span>
+<a id="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-16" name="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-16" href="#rest_code_36a4f838c3114e23aaf02f2f6b117dd4-16"></a>    <span class="n">pyramid_basemodel</span><span class="o">.</span><span class="n">Session</span> <span class="o">=</span> <span class="n">scoped_session</span><span class="p">(</span><span class="n">sessionmaker</span><span class="p">(</span><span class="n">extension</span><span class="o">=</span><span class="n">ZopeTransactionExtension</span><span class="p">()))</span>
+<a id="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-17" name="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-17" href="#rest_code_36a4f838c3114e23aaf02f2f6b117dd4-17"></a>    <span class="n">pyramid_basemodel</span><span class="o">.</span><span class="n">bind_engine</span><span class="p">(</span><span class="n">engine</span><span class="p">,</span> <span class="n">pyramid_basemodel</span><span class="o">.</span><span class="n">Session</span><span class="p">,</span> <span class="n">should_drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-18" name="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-18" href="#rest_code_36a4f838c3114e23aaf02f2f6b117dd4-18"></a>
+<a id="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-19" name="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-19" href="#rest_code_36a4f838c3114e23aaf02f2f6b117dd4-19"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">destroy</span><span class="p">():</span>
+<a id="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-20" name="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-20" href="#rest_code_36a4f838c3114e23aaf02f2f6b117dd4-20"></a>        <span class="n">transaction</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<a id="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-21" name="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-21" href="#rest_code_36a4f838c3114e23aaf02f2f6b117dd4-21"></a>        <span class="n">Base</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">drop_all</span><span class="p">(</span><span class="n">engine</span><span class="p">)</span>
+<a id="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-22" name="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-22" href="#rest_code_36a4f838c3114e23aaf02f2f6b117dd4-22"></a>
+<a id="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-23" name="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-23" href="#rest_code_36a4f838c3114e23aaf02f2f6b117dd4-23"></a>    <span class="n">request</span><span class="o">.</span><span class="n">addfinalizer</span><span class="p">(</span><span class="n">destroy</span><span class="p">)</span>
+<a id="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-24" name="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-24" href="#rest_code_36a4f838c3114e23aaf02f2f6b117dd4-24"></a>
+<a id="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-25" name="rest_code_36a4f838c3114e23aaf02f2f6b117dd4-25" href="#rest_code_36a4f838c3114e23aaf02f2f6b117dd4-25"></a>    <span class="k">return</span> <span class="n">pyramid_basemodel</span><span class="o">.</span><span class="n">Session</span>
+</pre></div>
     
         <ul class="pager hidden-print">
 <li class="previous">
@@ -127,7 +125,7 @@ So the question was, how to close SQLALchemy's connection?</p>
 <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="casesblog",
-            disqus_url="http://blog.fizyk.net.pl/blog/testing-web-applications-using-sqlalchemy/",
+            disqus_url="https://fizyk.dev/blog/testing-web-applications-using-sqlalchemy/",
         disqus_title="Testing web applications using SQLAlchemy.",
         disqus_identifier="cache/posts/2014-04-09-testing-web-applications-using-sqlalchemy.html",
         disqus_config = function () {
@@ -151,13 +149,13 @@ So the question was, how to close SQLALchemy's connection?</p>
         <div id="sidebar">
             <!--Sidebar content-->
             <h1 id="blog-title">
-                <a href="http://blog.fizyk.net.pl/" title="Cases">Cases</a>
+                <a href="https://fizyk.dev/" title="Cases">Cases</a>
             </h1>
             
             <small>
                 Also available in: 
                 
-            <li><a href="http://blog.fizyk.net.pl/pl/" rel="alternate" hreflang="pl">Polski</a></li>
+            <li><a href="https://fizyk.dev/pl/" rel="alternate" hreflang="pl">Polski</a></li>
 
             </small>
             
@@ -174,7 +172,7 @@ jest dostępny na licencji
 </a>.</li>
             
                 <li>
-<a href="http://www.fizyk.net.pl/en">Homepage</a>
+<a href="https://fizyk.dev/en">Homepage</a>
                 </li>
 <li>
 <a href="../../archive/">Archives</a>
@@ -189,7 +187,7 @@ jest dostępny na licencji
             </ul>
 </div>
         <div id="footer">
-            Contents © 2021 <a href="mailto:fizyk~~fizyk.net.pl">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
+            Contents © 2025 <a href="mailto:fizyk~~fizyk.dev">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
             
         </div>
     </div>

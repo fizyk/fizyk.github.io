@@ -8,9 +8,9 @@
 <link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../rss.xml">
-<link rel="canonical" href="http://blog.fizyk.net.pl/pl/blog/wirtualne-srodowisko-uruchomieniowe-pythona/">
-<link rel="icon" href="../../../favicon.png" sizes="62x60">
+<link rel="canonical" href="https://fizyk.dev/pl/blog/wirtualne-srodowisko-uruchomieniowe-pythona/">
 <link rel="icon" href="../../../favicon-speddial.png" sizes="269x262">
+<link rel="icon" href="../../../favicon.png" sizes="62x60">
 <!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -36,8 +36,7 @@
 
         </span>
         </div>
-    <div>
-<p>Praca programisty wymaga niekiedy testowania nowych bibliotek i
+    <p>Praca programisty wymaga niekiedy testowania nowych bibliotek i
 rozwiązań. Niekiedy instalujemy biblioteki do testów zapominając o nich,
 co może spowodować potem śmietnik w bibliotekach systemowych Pythona.
 Rozwiązaniem, by utrzymać porządek, jest wirtualne środowisko
@@ -56,24 +55,24 @@ jak w tworzeniu oprogramowania.</p>
 przy włączonym środowisku venv, wywoła za nas aktualnie włączone
 wirtualne środowisko. Jedyne, co trzeba zrobić, to uruchomić
 odpowiednie:</p>
-<pre class="code bash"><a id="rest_code_40449e6acaa448169cc789f576356e16-1" name="rest_code_40449e6acaa448169cc789f576356e16-1"></a>workon python-basic
-<a id="rest_code_40449e6acaa448169cc789f576356e16-2" name="rest_code_40449e6acaa448169cc789f576356e16-2"></a>workon python-z-ta-super-biblioteka
-</pre>
+<div class="code"><pre class="code bash"><a id="rest_code_c911e51517364d938f850dd6bbcae288-1" name="rest_code_c911e51517364d938f850dd6bbcae288-1" href="#rest_code_c911e51517364d938f850dd6bbcae288-1"></a>workon<span class="w"> </span>python-basic
+<a id="rest_code_c911e51517364d938f850dd6bbcae288-2" name="rest_code_c911e51517364d938f850dd6bbcae288-2" href="#rest_code_c911e51517364d938f850dd6bbcae288-2"></a>workon<span class="w"> </span>python-z-ta-super-biblioteka
+</pre></div>
 <p>Jedyny minus, to trochę bardziej skomplikowana instalacja narzędzi, za
 to utworzenie nowego środowiska jest już zdecydowanie prostsze.</p>
 <p>Najpierw należy oczywiście zainstalować virtualenvwrappera w systemie.
 Ubuntu 12.04 w repozytorium posiada wersję 2.11, więc najlepiej
 zainstalować najnowszą przez pip'a:</p>
-<pre class="code bash"><a id="rest_code_30ac9e13272f4dc9857b3c8e54700d88-1" name="rest_code_30ac9e13272f4dc9857b3c8e54700d88-1"></a>pip install virtualenvwrapper
-</pre>
+<div class="code"><pre class="code bash"><a id="rest_code_36ad2a2b82974a878a2f272809a3e009-1" name="rest_code_36ad2a2b82974a878a2f272809a3e009-1" href="#rest_code_36ad2a2b82974a878a2f272809a3e009-1"></a>pip<span class="w"> </span>install<span class="w"> </span>virtualenvwrapper
+</pre></div>
 <p>bądź:</p>
-<pre class="code bash"><a id="rest_code_fa6db0ed686b4e43ba9adade6a13c240-1" name="rest_code_fa6db0ed686b4e43ba9adade6a13c240-1"></a>sudo pip install virtualenvwrapper
-</pre>
+<div class="code"><pre class="code bash"><a id="rest_code_64c11ce4d8dc44caa545438353ca9d5a-1" name="rest_code_64c11ce4d8dc44caa545438353ca9d5a-1" href="#rest_code_64c11ce4d8dc44caa545438353ca9d5a-1"></a>sudo<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>virtualenvwrapper
+</pre></div>
 <p>Następne polecenia wykonujemy już w kontekście zalogowanego użytkownika,
 nie całego systemu:</p>
-<pre class="code bash"><a id="rest_code_9439a872676840fca6425d3517dc44b9-1" name="rest_code_9439a872676840fca6425d3517dc44b9-1"></a><span class="nb">export</span> <span class="nv">WORKON_HOME</span><span class="o">=</span>~/.virtualenv
-<a id="rest_code_9439a872676840fca6425d3517dc44b9-2" name="rest_code_9439a872676840fca6425d3517dc44b9-2"></a><span class="nb">source</span> /usr/local/bin/virtualenvwrapper.sh
-</pre>
+<div class="code"><pre class="code bash"><a id="rest_code_01328ac7de8347679406f0535ad46ab6-1" name="rest_code_01328ac7de8347679406f0535ad46ab6-1" href="#rest_code_01328ac7de8347679406f0535ad46ab6-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">WORKON_HOME</span><span class="o">=</span>~/.virtualenv
+<a id="rest_code_01328ac7de8347679406f0535ad46ab6-2" name="rest_code_01328ac7de8347679406f0535ad46ab6-2" href="#rest_code_01328ac7de8347679406f0535ad46ab6-2"></a><span class="nb">source</span><span class="w"> </span>/usr/local/bin/virtualenvwrapper.sh
+</pre></div>
 <p>Oba powyższe polecenia warto dodać jeszcze do pliku .bashrc.</p>
 <p>Tak wykonana instalacja utworzy nam nowe kontener środowisk, oraz
 zapewni auto uzupełnianie swoich komend. Możemy spokojnie umieścić go w
@@ -81,21 +80,20 @@ ukrytym katalogu, nie będziemy się do środowisk odwoływać inaczej, jak
 poprzez ich nazwę.</p>
 <p>Wirtualne środowisko najłatwiej utworzyć za pomocą polecenia
 mkvirtualenv:</p>
-<pre class="code bash"><a id="rest_code_1c09c035236749a6b8eacd7cbc20fdf3-1" name="rest_code_1c09c035236749a6b8eacd7cbc20fdf3-1"></a>mkvirtualenv python-basic
-<a id="rest_code_1c09c035236749a6b8eacd7cbc20fdf3-2" name="rest_code_1c09c035236749a6b8eacd7cbc20fdf3-2"></a>mkvirtualenv -p /usr/bin/python3 python3-basic
-</pre>
+<div class="code"><pre class="code bash"><a id="rest_code_d451891506614d63a7c2e989675feefa-1" name="rest_code_d451891506614d63a7c2e989675feefa-1" href="#rest_code_d451891506614d63a7c2e989675feefa-1"></a>mkvirtualenv<span class="w"> </span>python-basic
+<a id="rest_code_d451891506614d63a7c2e989675feefa-2" name="rest_code_d451891506614d63a7c2e989675feefa-2" href="#rest_code_d451891506614d63a7c2e989675feefa-2"></a>mkvirtualenv<span class="w"> </span>-p<span class="w"> </span>/usr/bin/python3<span class="w"> </span>python3-basic
+</pre></div>
 <p>Drugi przypadek tworzy nam środowisku uruchomieniowe python3 (musimy
 oczywiście mieć zainstalowane w systemie). Teraz wystarczy się
 przełączyć:</p>
-<pre class="code bash"><a id="rest_code_4488335d678748f2823f117c9def6d89-1" name="rest_code_4488335d678748f2823f117c9def6d89-1"></a>workon python-basic
-<a id="rest_code_4488335d678748f2823f117c9def6d89-2" name="rest_code_4488335d678748f2823f117c9def6d89-2"></a>workon python3-basic
-</pre>
+<div class="code"><pre class="code bash"><a id="rest_code_ddcc7494c3204e0583d30e0afac9cff3-1" name="rest_code_ddcc7494c3204e0583d30e0afac9cff3-1" href="#rest_code_ddcc7494c3204e0583d30e0afac9cff3-1"></a>workon<span class="w"> </span>python-basic
+<a id="rest_code_ddcc7494c3204e0583d30e0afac9cff3-2" name="rest_code_ddcc7494c3204e0583d30e0afac9cff3-2" href="#rest_code_ddcc7494c3204e0583d30e0afac9cff3-2"></a>workon<span class="w"> </span>python3-basic
+</pre></div>
 <p>Po wykonaniu drugiego polecenia, wywołanie Python w terinalu uruchomi
 nam konsolę Pythona w wersji 3, a nie 2.7, jaka jest domyślnie
 zainstalowana w Ubuntu 12.04</p>
 <p>Na zakończenie, jeśli chcemy wrócić do systemowej biblioteki i przestać
 używać środowiska wirtualnego, wykonujemy polecenie <strong>deactivate</strong>.</p>
-</div>
     
         <ul class="pager hidden-print">
 <li class="previous">
@@ -108,7 +106,7 @@ używać środowiska wirtualnego, wykonujemy polecenie <strong>deactivate</stron
 <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="casesblog",
-            disqus_url="http://blog.fizyk.net.pl/pl/blog/wirtualne-srodowisko-uruchomieniowe-pythona/",
+            disqus_url="https://fizyk.dev/pl/blog/wirtualne-srodowisko-uruchomieniowe-pythona/",
         disqus_title="Wirtualne \u015brodowisko uruchomieniowe Pythona",
         disqus_identifier="cache/posts/2012-08-09-wirtualne-srodowisko-uruchomieniowe-pythona.pl.html",
         disqus_config = function () {
@@ -132,13 +130,13 @@ używać środowiska wirtualnego, wykonujemy polecenie <strong>deactivate</stron
         <div id="sidebar">
             <!--Sidebar content-->
             <h1 id="blog-title">
-                <a href="http://blog.fizyk.net.pl/" title="Cases">Cases</a>
+                <a href="https://fizyk.dev/" title="Cases">Cases</a>
             </h1>
             
             <small>
                 Również dostępny w językach: 
                 
-            <li><a href="http://blog.fizyk.net.pl/" rel="alternate" hreflang="en">English</a></li>
+            <li><a href="https://fizyk.dev/" rel="alternate" hreflang="en">English</a></li>
 
             </small>
             
@@ -155,7 +153,7 @@ jest dostępny na licencji
 </a>.</li>
             
                 <li>
-<a href="http://www.fizyk.net.pl">Strona domowa</a>
+<a href="https://fizyk.dev">Strona domowa</a>
                 </li>
 <li>
 <a href="../../archive/">Archiwum</a>
@@ -170,7 +168,7 @@ jest dostępny na licencji
             </ul>
 </div>
         <div id="footer">
-            Contents © 2021 <a href="mailto:fizyk~~fizyk.net.pl">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
+            Contents © 2025 <a href="mailto:fizyk~~fizyk.dev">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
             
         </div>
     </div>

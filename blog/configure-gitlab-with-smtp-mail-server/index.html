@@ -8,9 +8,9 @@
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../pl/rss.xml">
-<link rel="canonical" href="http://blog.fizyk.net.pl/blog/configure-gitlab-with-smtp-mail-server/">
-<link rel="icon" href="../../favicon.png" sizes="62x60">
+<link rel="canonical" href="https://fizyk.dev/blog/configure-gitlab-with-smtp-mail-server/">
 <link rel="icon" href="../../favicon-speddial.png" sizes="269x262">
+<link rel="icon" href="../../favicon.png" sizes="62x60">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -37,29 +37,27 @@
 
         </span>
         </div>
-    <div>
-<p>Probably one of the most desired features, when installing software to manage your git repository like <a class="reference external" href="http://gitlab.org/">gitlab</a>, is to allow notification emails to be send. It's not the most important, but nevertheless still quite useful. And while it might be clear to people that dealt before with ruby or ruby on rails applications, it wasn't for me, and gitlab documentation hasn't mentioned it anywhere... How to configure mail sending with smtp servers!?</p>
+    <p>Probably one of the most desired features, when installing software to manage your git repository like <a class="reference external" href="http://gitlab.org/">gitlab</a>, is to allow notification emails to be send. It's not the most important, but nevertheless still quite useful. And while it might be clear to people that dealt before with ruby or ruby on rails applications, it wasn't for me, and gitlab documentation hasn't mentioned it anywhere... How to configure mail sending with smtp servers!?</p>
 <!-- TEASER_END -->
 <p>Took out some digging for me and Andrew, but finally found it, so here's short instructions on this topic (Should work on gitlab 5.2 and higher, haven't tried it on lower):</p>
 <p>First, find your <strong>config/environments/production.rb</strong> file. Find lines that starts with <strong>config.action_mailer</strong>.</p>
 <p>Make sure to have delivery_method set to smtp like that:</p>
-<pre class="code ruby"><a id="rest_code_efb88219a3cb43a4b041ca8465517dc4-1" name="rest_code_efb88219a3cb43a4b041ca8465517dc4-1"></a><span class="n">config</span><span class="o">.</span><span class="n">action_mailer</span><span class="o">.</span><span class="n">delivery_method</span> <span class="o">=</span> <span class="ss">:smtp</span>
-</pre>
+<div class="code"><pre class="code ruby"><a id="rest_code_fad37150b0144985a34f3aa6868e4195-1" name="rest_code_fad37150b0144985a34f3aa6868e4195-1" href="#rest_code_fad37150b0144985a34f3aa6868e4195-1"></a><span class="n">config</span><span class="o">.</span><span class="n">action_mailer</span><span class="o">.</span><span class="n">delivery_method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">:smtp</span>
+</pre></div>
 <p>Now find <strong>config/initializers/smtp_settings.rb</strong> (You might have it as smtp_settings.rb.sample). Here's how it should look line more or less, if setting up with gmail mailbox:</p>
-<pre class="code ruby"><a id="rest_code_6ca3b62ae76d46a7a37bbb51091b422f-1" name="rest_code_6ca3b62ae76d46a7a37bbb51091b422f-1"></a><span class="k">if</span> <span class="no">Gitlab</span><span class="o">::</span><span class="no">Application</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">action_mailer</span><span class="o">.</span><span class="n">delivery_method</span> <span class="o">==</span> <span class="ss">:smtp</span>
-<a id="rest_code_6ca3b62ae76d46a7a37bbb51091b422f-2" name="rest_code_6ca3b62ae76d46a7a37bbb51091b422f-2"></a>  <span class="no">ActionMailer</span><span class="o">::</span><span class="no">Base</span><span class="o">.</span><span class="n">smtp_settings</span> <span class="o">=</span> <span class="p">{</span>
-<a id="rest_code_6ca3b62ae76d46a7a37bbb51091b422f-3" name="rest_code_6ca3b62ae76d46a7a37bbb51091b422f-3"></a>    <span class="ss">address</span><span class="p">:</span> <span class="s2">"smtp.gmail.com"</span><span class="p">,</span>
-<a id="rest_code_6ca3b62ae76d46a7a37bbb51091b422f-4" name="rest_code_6ca3b62ae76d46a7a37bbb51091b422f-4"></a>    <span class="ss">port</span><span class="p">:</span> <span class="mi">587</span><span class="p">,</span>
-<a id="rest_code_6ca3b62ae76d46a7a37bbb51091b422f-5" name="rest_code_6ca3b62ae76d46a7a37bbb51091b422f-5"></a>    <span class="ss">user_name</span><span class="p">:</span> <span class="s2">"yourgmail@gmail.com"</span><span class="p">,</span>
-<a id="rest_code_6ca3b62ae76d46a7a37bbb51091b422f-6" name="rest_code_6ca3b62ae76d46a7a37bbb51091b422f-6"></a>    <span class="ss">password</span><span class="p">:</span> <span class="s2">"gmai_password"</span><span class="p">,</span>
-<a id="rest_code_6ca3b62ae76d46a7a37bbb51091b422f-7" name="rest_code_6ca3b62ae76d46a7a37bbb51091b422f-7"></a>    <span class="ss">domain</span><span class="p">:</span> <span class="s2">"gmail_account_domain"</span><span class="p">,</span>
-<a id="rest_code_6ca3b62ae76d46a7a37bbb51091b422f-8" name="rest_code_6ca3b62ae76d46a7a37bbb51091b422f-8"></a>    <span class="ss">authentication</span><span class="p">:</span> <span class="s1">'plain'</span><span class="p">,</span>
-<a id="rest_code_6ca3b62ae76d46a7a37bbb51091b422f-9" name="rest_code_6ca3b62ae76d46a7a37bbb51091b422f-9"></a>    <span class="ss">enable_starttls_auto</span><span class="p">:</span> <span class="kp">true</span>
-<a id="rest_code_6ca3b62ae76d46a7a37bbb51091b422f-10" name="rest_code_6ca3b62ae76d46a7a37bbb51091b422f-10"></a>  <span class="p">}</span>
-<a id="rest_code_6ca3b62ae76d46a7a37bbb51091b422f-11" name="rest_code_6ca3b62ae76d46a7a37bbb51091b422f-11"></a><span class="k">end</span>
-</pre>
+<div class="code"><pre class="code ruby"><a id="rest_code_84234ccd140a403ba6eaa44aecb358d6-1" name="rest_code_84234ccd140a403ba6eaa44aecb358d6-1" href="#rest_code_84234ccd140a403ba6eaa44aecb358d6-1"></a><span class="k">if</span><span class="w"> </span><span class="no">Gitlab</span><span class="o">::</span><span class="no">Application</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">action_mailer</span><span class="o">.</span><span class="n">delivery_method</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="ss">:smtp</span>
+<a id="rest_code_84234ccd140a403ba6eaa44aecb358d6-2" name="rest_code_84234ccd140a403ba6eaa44aecb358d6-2" href="#rest_code_84234ccd140a403ba6eaa44aecb358d6-2"></a><span class="w">  </span><span class="no">ActionMailer</span><span class="o">::</span><span class="no">Base</span><span class="o">.</span><span class="n">smtp_settings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<a id="rest_code_84234ccd140a403ba6eaa44aecb358d6-3" name="rest_code_84234ccd140a403ba6eaa44aecb358d6-3" href="#rest_code_84234ccd140a403ba6eaa44aecb358d6-3"></a><span class="w">    </span><span class="ss">address</span><span class="p">:</span><span class="w"> </span><span class="s2">"smtp.gmail.com"</span><span class="p">,</span>
+<a id="rest_code_84234ccd140a403ba6eaa44aecb358d6-4" name="rest_code_84234ccd140a403ba6eaa44aecb358d6-4" href="#rest_code_84234ccd140a403ba6eaa44aecb358d6-4"></a><span class="w">    </span><span class="ss">port</span><span class="p">:</span><span class="w"> </span><span class="mi">587</span><span class="p">,</span>
+<a id="rest_code_84234ccd140a403ba6eaa44aecb358d6-5" name="rest_code_84234ccd140a403ba6eaa44aecb358d6-5" href="#rest_code_84234ccd140a403ba6eaa44aecb358d6-5"></a><span class="w">    </span><span class="ss">user_name</span><span class="p">:</span><span class="w"> </span><span class="s2">"yourgmail@gmail.com"</span><span class="p">,</span>
+<a id="rest_code_84234ccd140a403ba6eaa44aecb358d6-6" name="rest_code_84234ccd140a403ba6eaa44aecb358d6-6" href="#rest_code_84234ccd140a403ba6eaa44aecb358d6-6"></a><span class="w">    </span><span class="ss">password</span><span class="p">:</span><span class="w"> </span><span class="s2">"gmai_password"</span><span class="p">,</span>
+<a id="rest_code_84234ccd140a403ba6eaa44aecb358d6-7" name="rest_code_84234ccd140a403ba6eaa44aecb358d6-7" href="#rest_code_84234ccd140a403ba6eaa44aecb358d6-7"></a><span class="w">    </span><span class="ss">domain</span><span class="p">:</span><span class="w"> </span><span class="s2">"gmail_account_domain"</span><span class="p">,</span>
+<a id="rest_code_84234ccd140a403ba6eaa44aecb358d6-8" name="rest_code_84234ccd140a403ba6eaa44aecb358d6-8" href="#rest_code_84234ccd140a403ba6eaa44aecb358d6-8"></a><span class="w">    </span><span class="ss">authentication</span><span class="p">:</span><span class="w"> </span><span class="s1">'plain'</span><span class="p">,</span>
+<a id="rest_code_84234ccd140a403ba6eaa44aecb358d6-9" name="rest_code_84234ccd140a403ba6eaa44aecb358d6-9" href="#rest_code_84234ccd140a403ba6eaa44aecb358d6-9"></a><span class="w">    </span><span class="ss">enable_starttls_auto</span><span class="p">:</span><span class="w"> </span><span class="kp">true</span>
+<a id="rest_code_84234ccd140a403ba6eaa44aecb358d6-10" name="rest_code_84234ccd140a403ba6eaa44aecb358d6-10" href="#rest_code_84234ccd140a403ba6eaa44aecb358d6-10"></a><span class="w">  </span><span class="p">}</span>
+<a id="rest_code_84234ccd140a403ba6eaa44aecb358d6-11" name="rest_code_84234ccd140a403ba6eaa44aecb358d6-11" href="#rest_code_84234ccd140a403ba6eaa44aecb358d6-11"></a><span class="k">end</span>
+</pre></div>
 <p>The <strong>domain</strong> parameter is applicable to Google Apps account, as these are using own domains usually. Don't remeber what do you need that to set if you use regular gmail account.</p>
-</div>
     
         <ul class="pager hidden-print">
 <li class="previous">
@@ -72,7 +70,7 @@
 <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="casesblog",
-            disqus_url="http://blog.fizyk.net.pl/blog/configure-gitlab-with-smtp-mail-server/",
+            disqus_url="https://fizyk.dev/blog/configure-gitlab-with-smtp-mail-server/",
         disqus_title="Configure gitlab with smtp mail server",
         disqus_identifier="cache/posts/2013-07-14-configure-gitlab-with-smtp-mail-server.html",
         disqus_config = function () {
@@ -96,13 +94,13 @@
         <div id="sidebar">
             <!--Sidebar content-->
             <h1 id="blog-title">
-                <a href="http://blog.fizyk.net.pl/" title="Cases">Cases</a>
+                <a href="https://fizyk.dev/" title="Cases">Cases</a>
             </h1>
             
             <small>
                 Also available in: 
                 
-            <li><a href="http://blog.fizyk.net.pl/pl/" rel="alternate" hreflang="pl">Polski</a></li>
+            <li><a href="https://fizyk.dev/pl/" rel="alternate" hreflang="pl">Polski</a></li>
 
             </small>
             
@@ -119,7 +117,7 @@ jest dostępny na licencji
 </a>.</li>
             
                 <li>
-<a href="http://www.fizyk.net.pl/en">Homepage</a>
+<a href="https://fizyk.dev/en">Homepage</a>
                 </li>
 <li>
 <a href="../../archive/">Archives</a>
@@ -134,7 +132,7 @@ jest dostępny na licencji
             </ul>
 </div>
         <div id="footer">
-            Contents © 2021 <a href="mailto:fizyk~~fizyk.net.pl">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
+            Contents © 2025 <a href="mailto:fizyk~~fizyk.dev">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
             
         </div>
     </div>

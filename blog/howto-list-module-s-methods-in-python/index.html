@@ -8,9 +8,9 @@
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../pl/rss.xml">
-<link rel="canonical" href="http://blog.fizyk.net.pl/blog/howto-list-module-s-methods-in-python/">
-<link rel="icon" href="../../favicon.png" sizes="62x60">
+<link rel="canonical" href="https://fizyk.dev/blog/howto-list-module-s-methods-in-python/">
 <link rel="icon" href="../../favicon-speddial.png" sizes="269x262">
+<link rel="icon" href="../../favicon.png" sizes="62x60">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -41,8 +41,7 @@
 
         </span>
         </div>
-    <div>
-<p>I'm testing efficiency of three mysql connector libraries:
+    <p>I'm testing efficiency of three mysql connector libraries:
 mysql-connector, MySQLdb and oursql, within sqlalchemy. Took me a while
 to prepare basis, but after that, I began to wonder, how to make more
 methods, and run them, without worrying about their inclusion into
@@ -50,33 +49,32 @@ testing process?</p>
 <!-- TEASER_END -->
 <p>After searching a while, I've found several solution, but the best one
 employed <strong>dir</strong>:</p>
-<pre class="code python"><a id="rest_code_5b08b6e250d44b78a6cb1d943b066c8b-1" name="rest_code_5b08b6e250d44b78a6cb1d943b066c8b-1"></a><span class="kn">import</span> <span class="nn">types</span>
-<a id="rest_code_5b08b6e250d44b78a6cb1d943b066c8b-2" name="rest_code_5b08b6e250d44b78a6cb1d943b066c8b-2"></a><span class="kn">import</span> <span class="nn">module</span>
-<a id="rest_code_5b08b6e250d44b78a6cb1d943b066c8b-3" name="rest_code_5b08b6e250d44b78a6cb1d943b066c8b-3"></a>
-<a id="rest_code_5b08b6e250d44b78a6cb1d943b066c8b-4" name="rest_code_5b08b6e250d44b78a6cb1d943b066c8b-4"></a><span class="n">alchemy_tests</span> <span class="o">=</span> <span class="p">[</span><span class="n">module</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">test</span><span class="p">)</span> <span class="k">for</span> <span class="n">test</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">module</span><span class="p">)</span>
-<a id="rest_code_5b08b6e250d44b78a6cb1d943b066c8b-5" name="rest_code_5b08b6e250d44b78a6cb1d943b066c8b-5"></a>                     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">module</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">test</span><span class="p">),</span> <span class="n">types</span><span class="o">.</span><span class="n">FunctionType</span><span class="p">)</span>
-<a id="rest_code_5b08b6e250d44b78a6cb1d943b066c8b-6" name="rest_code_5b08b6e250d44b78a6cb1d943b066c8b-6"></a>                        <span class="ow">and</span> <span class="n">test</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'sqltest_'</span><span class="p">)]</span>
-</pre>
+<div class="code"><pre class="code python"><a id="rest_code_6b0f1cac3c64401ab4607fe4601d652b-1" name="rest_code_6b0f1cac3c64401ab4607fe4601d652b-1" href="#rest_code_6b0f1cac3c64401ab4607fe4601d652b-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">types</span>
+<a id="rest_code_6b0f1cac3c64401ab4607fe4601d652b-2" name="rest_code_6b0f1cac3c64401ab4607fe4601d652b-2" href="#rest_code_6b0f1cac3c64401ab4607fe4601d652b-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">module</span>
+<a id="rest_code_6b0f1cac3c64401ab4607fe4601d652b-3" name="rest_code_6b0f1cac3c64401ab4607fe4601d652b-3" href="#rest_code_6b0f1cac3c64401ab4607fe4601d652b-3"></a>
+<a id="rest_code_6b0f1cac3c64401ab4607fe4601d652b-4" name="rest_code_6b0f1cac3c64401ab4607fe4601d652b-4" href="#rest_code_6b0f1cac3c64401ab4607fe4601d652b-4"></a><span class="n">alchemy_tests</span> <span class="o">=</span> <span class="p">[</span><span class="n">module</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">test</span><span class="p">)</span> <span class="k">for</span> <span class="n">test</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">module</span><span class="p">)</span>
+<a id="rest_code_6b0f1cac3c64401ab4607fe4601d652b-5" name="rest_code_6b0f1cac3c64401ab4607fe4601d652b-5" href="#rest_code_6b0f1cac3c64401ab4607fe4601d652b-5"></a>                     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">module</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">test</span><span class="p">),</span> <span class="n">types</span><span class="o">.</span><span class="n">FunctionType</span><span class="p">)</span>
+<a id="rest_code_6b0f1cac3c64401ab4607fe4601d652b-6" name="rest_code_6b0f1cac3c64401ab4607fe4601d652b-6" href="#rest_code_6b0f1cac3c64401ab4607fe4601d652b-6"></a>                        <span class="ow">and</span> <span class="n">test</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'sqltest_'</span><span class="p">)]</span>
+</pre></div>
 <p>There are two parts, first one is iterating over module's elements:</p>
-<pre class="code python"><a id="rest_code_fa1997fe66a541569c7f3734c06591e2-1" name="rest_code_fa1997fe66a541569c7f3734c06591e2-1"></a><span class="n">module</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">test</span><span class="p">)</span> <span class="k">for</span> <span class="n">test</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">module</span><span class="p">)</span>
-</pre>
+<div class="code"><pre class="code python"><a id="rest_code_d49759eeee3f4f7fa49053e45e43d668-1" name="rest_code_d49759eeee3f4f7fa49053e45e43d668-1" href="#rest_code_d49759eeee3f4f7fa49053e45e43d668-1"></a><span class="n">module</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">test</span><span class="p">)</span> <span class="k">for</span> <span class="n">test</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">module</span><span class="p">)</span>
+</pre></div>
 <p>Second one is condition, telling when do we want to include module's
 element in a list:</p>
-<pre class="code python"><a id="rest_code_f350959ce6614399a50f664ac55ebb1c-1" name="rest_code_f350959ce6614399a50f664ac55ebb1c-1"></a><span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">module</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">test</span><span class="p">),</span> <span class="n">types</span><span class="o">.</span><span class="n">FunctionType</span><span class="p">)</span> <span class="ow">and</span> <span class="n">test</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'sqltest_'</span><span class="p">)</span>
-</pre>
+<div class="code"><pre class="code python"><a id="rest_code_acebf4653518455188455a64371a6522-1" name="rest_code_acebf4653518455188455a64371a6522-1" href="#rest_code_acebf4653518455188455a64371a6522-1"></a><span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">module</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">test</span><span class="p">),</span> <span class="n">types</span><span class="o">.</span><span class="n">FunctionType</span><span class="p">)</span> <span class="ow">and</span> <span class="n">test</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'sqltest_'</span><span class="p">)</span>
+</pre></div>
 <p>Now remember, that list returned by <strong>dir</strong> contains only names, hence
 the <strong>module.__dict__.get</strong>, which returns module's elements.</p>
 <p>And here's unfolded version:</p>
-<pre class="code python"><a id="rest_code_5290f6d0712844db9b7bcd254e99b969-1" name="rest_code_5290f6d0712844db9b7bcd254e99b969-1"></a><span class="kn">import</span> <span class="nn">types</span>
-<a id="rest_code_5290f6d0712844db9b7bcd254e99b969-2" name="rest_code_5290f6d0712844db9b7bcd254e99b969-2"></a><span class="kn">import</span> <span class="nn">module</span>
-<a id="rest_code_5290f6d0712844db9b7bcd254e99b969-3" name="rest_code_5290f6d0712844db9b7bcd254e99b969-3"></a>
-<a id="rest_code_5290f6d0712844db9b7bcd254e99b969-4" name="rest_code_5290f6d0712844db9b7bcd254e99b969-4"></a><span class="n">alchemy_tests</span> <span class="o">=</span> <span class="p">[]</span>
-<a id="rest_code_5290f6d0712844db9b7bcd254e99b969-5" name="rest_code_5290f6d0712844db9b7bcd254e99b969-5"></a>    <span class="k">for</span> <span class="n">test</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">module</span><span class="p">):</span>
-<a id="rest_code_5290f6d0712844db9b7bcd254e99b969-6" name="rest_code_5290f6d0712844db9b7bcd254e99b969-6"></a>        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">module</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">test</span><span class="p">),</span> <span class="n">types</span><span class="o">.</span><span class="n">FunctionType</span><span class="p">)</span> \
-<a id="rest_code_5290f6d0712844db9b7bcd254e99b969-7" name="rest_code_5290f6d0712844db9b7bcd254e99b969-7"></a>            <span class="ow">and</span> <span class="n">test</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'sqltest_'</span><span class="p">):</span>
-<a id="rest_code_5290f6d0712844db9b7bcd254e99b969-8" name="rest_code_5290f6d0712844db9b7bcd254e99b969-8"></a>            <span class="n">alchemy_tests</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">module</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">test</span><span class="p">))</span>
-</pre>
-</div>
+<div class="code"><pre class="code python"><a id="rest_code_6de186a2651f406881e3452aefd700f9-1" name="rest_code_6de186a2651f406881e3452aefd700f9-1" href="#rest_code_6de186a2651f406881e3452aefd700f9-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">types</span>
+<a id="rest_code_6de186a2651f406881e3452aefd700f9-2" name="rest_code_6de186a2651f406881e3452aefd700f9-2" href="#rest_code_6de186a2651f406881e3452aefd700f9-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">module</span>
+<a id="rest_code_6de186a2651f406881e3452aefd700f9-3" name="rest_code_6de186a2651f406881e3452aefd700f9-3" href="#rest_code_6de186a2651f406881e3452aefd700f9-3"></a>
+<a id="rest_code_6de186a2651f406881e3452aefd700f9-4" name="rest_code_6de186a2651f406881e3452aefd700f9-4" href="#rest_code_6de186a2651f406881e3452aefd700f9-4"></a><span class="n">alchemy_tests</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="rest_code_6de186a2651f406881e3452aefd700f9-5" name="rest_code_6de186a2651f406881e3452aefd700f9-5" href="#rest_code_6de186a2651f406881e3452aefd700f9-5"></a>    <span class="k">for</span> <span class="n">test</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">module</span><span class="p">):</span>
+<a id="rest_code_6de186a2651f406881e3452aefd700f9-6" name="rest_code_6de186a2651f406881e3452aefd700f9-6" href="#rest_code_6de186a2651f406881e3452aefd700f9-6"></a>        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">module</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">test</span><span class="p">),</span> <span class="n">types</span><span class="o">.</span><span class="n">FunctionType</span><span class="p">)</span> \
+<a id="rest_code_6de186a2651f406881e3452aefd700f9-7" name="rest_code_6de186a2651f406881e3452aefd700f9-7" href="#rest_code_6de186a2651f406881e3452aefd700f9-7"></a>            <span class="ow">and</span> <span class="n">test</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'sqltest_'</span><span class="p">):</span>
+<a id="rest_code_6de186a2651f406881e3452aefd700f9-8" name="rest_code_6de186a2651f406881e3452aefd700f9-8" href="#rest_code_6de186a2651f406881e3452aefd700f9-8"></a>            <span class="n">alchemy_tests</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">module</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">test</span><span class="p">))</span>
+</pre></div>
     
         <ul class="pager hidden-print">
 <li class="previous">
@@ -89,7 +87,7 @@ the <strong>module.__dict__.get</strong>, which returns module's elements.</p>
 <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="casesblog",
-            disqus_url="http://blog.fizyk.net.pl/blog/howto-list-module-s-methods-in-python/",
+            disqus_url="https://fizyk.dev/blog/howto-list-module-s-methods-in-python/",
         disqus_title="Howto list module's methods in python",
         disqus_identifier="cache/posts/2012-08-17-howto-list-module-s-methods-in-python.html",
         disqus_config = function () {
@@ -113,13 +111,13 @@ the <strong>module.__dict__.get</strong>, which returns module's elements.</p>
         <div id="sidebar">
             <!--Sidebar content-->
             <h1 id="blog-title">
-                <a href="http://blog.fizyk.net.pl/" title="Cases">Cases</a>
+                <a href="https://fizyk.dev/" title="Cases">Cases</a>
             </h1>
             
             <small>
                 Also available in: 
                 
-            <li><a href="http://blog.fizyk.net.pl/pl/" rel="alternate" hreflang="pl">Polski</a></li>
+            <li><a href="https://fizyk.dev/pl/" rel="alternate" hreflang="pl">Polski</a></li>
 
             </small>
             
@@ -136,7 +134,7 @@ jest dostępny na licencji
 </a>.</li>
             
                 <li>
-<a href="http://www.fizyk.net.pl/en">Homepage</a>
+<a href="https://fizyk.dev/en">Homepage</a>
                 </li>
 <li>
 <a href="../../archive/">Archives</a>
@@ -151,7 +149,7 @@ jest dostępny na licencji
             </ul>
 </div>
         <div id="footer">
-            Contents © 2021 <a href="mailto:fizyk~~fizyk.net.pl">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
+            Contents © 2025 <a href="mailto:fizyk~~fizyk.dev">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
             
         </div>
     </div>

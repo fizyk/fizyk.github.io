@@ -8,9 +8,9 @@
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../pl/rss.xml">
-<link rel="canonical" href="http://blog.fizyk.net.pl/blog/delete-all-the-pyc/">
-<link rel="icon" href="../../favicon.png" sizes="62x60">
+<link rel="canonical" href="https://fizyk.dev/blog/delete-all-the-pyc/">
 <link rel="icon" href="../../favicon-speddial.png" sizes="269x262">
+<link rel="icon" href="../../favicon.png" sizes="62x60">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -37,19 +37,17 @@
 
         </span>
         </div>
-    <div>
-<p>How to remove leftover .pyc files, when your editor doesn't provide such option? Run simple bash command.</p>
+    <p>How to remove leftover .pyc files, when your editor doesn't provide such option? Run simple bash command.</p>
 <!-- TEASER_END -->
 <p>I've been using it for some time, stareted with this:</p>
-<pre class="code bash"><a id="rest_code_6bdfcdfa316e49d7b5b2916ac9cd39e0-1" name="rest_code_6bdfcdfa316e49d7b5b2916ac9cd39e0-1"></a>find . -name <span class="s2">"*.pyc"</span> -exec rm -rf <span class="o">{}</span> <span class="se">\;</span>
-</pre>
+<div class="code"><pre class="code bash"><a id="rest_code_e27bc2fe3fad478b84af9ebd5106f74f-1" name="rest_code_e27bc2fe3fad478b84af9ebd5106f74f-1" href="#rest_code_e27bc2fe3fad478b84af9ebd5106f74f-1"></a>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s2">"*.pyc"</span><span class="w"> </span>-exec<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span>
+</pre></div>
 <p>But it can be run much simpler:</p>
-<pre class="code bash"><a id="rest_code_f0854e77202849b5b698d10292ef200f-1" name="rest_code_f0854e77202849b5b698d10292ef200f-1"></a>find . -name <span class="s2">"*.pyc"</span> -delete
-</pre>
+<div class="code"><pre class="code bash"><a id="rest_code_3a7e0eb3a8e248458d02c1010419191c-1" name="rest_code_3a7e0eb3a8e248458d02c1010419191c-1" href="#rest_code_3a7e0eb3a8e248458d02c1010419191c-1"></a>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s2">"*.pyc"</span><span class="w"> </span>-delete
+</pre></div>
 <p>And finally, it also can be assigned to bash alias:</p>
-<pre class="code bash"><a id="rest_code_1988c5d050a744469971c36bc59b4c6e-1" name="rest_code_1988c5d050a744469971c36bc59b4c6e-1"></a><span class="nb">alias</span> <span class="nv">delpyc</span><span class="o">=</span><span class="s1">'find . -name "*.pyc" -delete'</span>
-</pre>
-</div>
+<div class="code"><pre class="code bash"><a id="rest_code_4106ba9782dd4a7a99624ca885bebbb2-1" name="rest_code_4106ba9782dd4a7a99624ca885bebbb2-1" href="#rest_code_4106ba9782dd4a7a99624ca885bebbb2-1"></a><span class="nb">alias</span><span class="w"> </span><span class="nv">delpyc</span><span class="o">=</span><span class="s1">'find . -name "*.pyc" -delete'</span>
+</pre></div>
     
         <ul class="pager hidden-print">
 <li class="previous">
@@ -62,7 +60,7 @@
 <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="casesblog",
-            disqus_url="http://blog.fizyk.net.pl/blog/delete-all-the-pyc/",
+            disqus_url="https://fizyk.dev/blog/delete-all-the-pyc/",
         disqus_title="Delete all the .pyc!",
         disqus_identifier="cache/posts/2013-04-01-delete-all-the-pyc.html",
         disqus_config = function () {
@@ -86,13 +84,13 @@
         <div id="sidebar">
             <!--Sidebar content-->
             <h1 id="blog-title">
-                <a href="http://blog.fizyk.net.pl/" title="Cases">Cases</a>
+                <a href="https://fizyk.dev/" title="Cases">Cases</a>
             </h1>
             
             <small>
                 Also available in: 
                 
-            <li><a href="http://blog.fizyk.net.pl/pl/" rel="alternate" hreflang="pl">Polski</a></li>
+            <li><a href="https://fizyk.dev/pl/" rel="alternate" hreflang="pl">Polski</a></li>
 
             </small>
             
@@ -109,7 +107,7 @@ jest dostępny na licencji
 </a>.</li>
             
                 <li>
-<a href="http://www.fizyk.net.pl/en">Homepage</a>
+<a href="https://fizyk.dev/en">Homepage</a>
                 </li>
 <li>
 <a href="../../archive/">Archives</a>
@@ -124,7 +122,7 @@ jest dostępny na licencji
             </ul>
 </div>
         <div id="footer">
-            Contents © 2021 <a href="mailto:fizyk~~fizyk.net.pl">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
+            Contents © 2025 <a href="mailto:fizyk~~fizyk.dev">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
             
         </div>
     </div>

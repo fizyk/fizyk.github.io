@@ -8,9 +8,9 @@
 <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="rss.xml">
-<link rel="canonical" href="http://blog.fizyk.net.pl/pl/index-7.html">
-<link rel="icon" href="../favicon.png" sizes="62x60">
+<link rel="canonical" href="https://fizyk.dev/pl/index-7.html">
 <link rel="icon" href="../favicon-speddial.png" sizes="269x262">
+<link rel="icon" href="../favicon.png" sizes="62x60">
 <link rel="prev" href="index-8.html" type="text/html">
 <link rel="next" href="index-6.html" type="text/html">
 <!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]-->
@@ -40,7 +40,7 @@ w tygodniu.</p>
 <p class="more"><a href="blog/baklazan-w-pomidorach-ze-schabem/">Czytaj więcej…</a></p>
 </div>
             
-        
+    
     <a href="blog/baklazan-w-pomidorach-ze-schabem/#disqus_thread" data-disqus-identifier="cache/posts/2011-03-20-baklazan-w-pomidorach-ze-schabem.pl.html">Komentarze</a>
 
 
@@ -64,7 +64,7 @@ piętach.</p>
 <p class="more"><a href="blog/python-popularniejszy-od-php/">Czytaj więcej…</a></p>
 </div>
             
-        
+    
     <a href="blog/python-popularniejszy-od-php/#disqus_thread" data-disqus-identifier="cache/posts/2011-02-17-python-popularniejszy-od-php.pl.html">Komentarze</a>
 
 
@@ -79,8 +79,7 @@ piętach.</p>
                             <a class="tag" href="tags/symfony/"><span>symfony</span></a>
                 </span>
             </div>
-        <div>
-<p>Po niemal 5 miesiącach od poprzedniej, zespół symfony pod
+        <p>Po niemal 5 miesiącach od poprzedniej, zespół symfony pod
 kierownictwem <strong>Krisa Wallsmitha</strong> wydał kolejną wersje symfony
 1.3/1.4 -
 <a class="reference external" href="http://www.symfony-project.org/blog/2011/02/14/symfony-1-3-9-and-1-4-9">1.3.9/1.4.9</a>.
@@ -92,10 +91,7 @@ kolejnej wersji stabilnej doctrine 1.2.</p>
 <li><p><a class="reference external" href="http://trac.symfony-project.org/browser/branches/1.4/CHANGELOG">Lista zmian: </a></p></li>
 <li><p><a class="reference external" href="http://www.symfony-project.org/installation">Ściągnąć paczkę z nową wersją symfony można stąd</a>.</p></li>
 </ul>
-</div>
-            
-        
-    <a href="blog/symfony-1-4-9-wydane/#disqus_thread" data-disqus-identifier="cache/posts/2011-02-14-symfony-1-4-9-wydane.pl.html">Komentarze</a>
+<a href="blog/symfony-1-4-9-wydane/#disqus_thread" data-disqus-identifier="cache/posts/2011-02-14-symfony-1-4-9-wydane.pl.html">Komentarze</a>
 
 
         </div>
@@ -110,8 +106,7 @@ kolejnej wersji stabilnej doctrine 1.2.</p>
                             <a class="tag" href="tags/unicode/"><span>unicode</span></a>
                 </span>
             </div>
-        <div>
-<p>Od paru miesięcy programuję w Pythonie. Najpierw oczywiście trzeba się
+        <p>Od paru miesięcy programuję w Pythonie. Najpierw oczywiście trzeba się
 było Pythona nauczyć, zanim zacząłem w robocie dostawać pierwsze
 zadania, ale źle nie było. Jedna rzecz mnie w Pythonie zdziwiła, a
 mianowicie podejście do kodowania stringów. Zresztą, po dziś dzień
@@ -120,8 +115,8 @@ rozwiązanie tej kwestii w Pythonie sprawia mi niemały kłopot.</p>
 ogonki, musi być unicodowym ciągiem znaków. Zwykłe stringi akceptują
 tylko i wyłącznie znaki ASCII.</p>
 <p>I tak deklarując zmienną w kodzie, na pewno będzie stringiem.</p>
-<pre class="code python"><a id="rest_code_67a3ebb4de824223a88fd74ace359091-1" name="rest_code_67a3ebb4de824223a88fd74ace359091-1"></a><span class="n">zmienna</span> <span class="o">=</span> <span class="s1">'łańcuch'</span>
-</pre>
+<div class="code"><pre class="code python"><a id="rest_code_55afda07d6494382856a7ebff9cf63c0-1" name="rest_code_55afda07d6494382856a7ebff9cf63c0-1" href="blog/unicode-a-python/#rest_code_55afda07d6494382856a7ebff9cf63c0-1"></a><span class="n">zmienna</span> <span class="o">=</span> <span class="s1">'łańcuch'</span>
+</pre></div>
 <p>Raczej bez różnicy, jakich znaków użyjemy. Jeśli jednak wartość zmienna
 zostaje wczytana z zewnętrznego źródła danych, wtedy możemy napotkać
 problem.</p>
@@ -138,20 +133,19 @@ Unicode.</p>
 <p>Jak to obejść? Wyłapać się wszystkiego w czasie pisania nie da, można
 chyba tylko przed wywołaniem, które zwraca błąd zastosować poniższą
 konstrukcję:</p>
-<pre class="code python"><a id="rest_code_8955a996e7a246589b1b3821b18c8a73-1" name="rest_code_8955a996e7a246589b1b3821b18c8a73-1"></a><span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">zmienna</span><span class="p">,</span> <span class="n">unicode</span><span class="p">):</span>
-<a id="rest_code_8955a996e7a246589b1b3821b18c8a73-2" name="rest_code_8955a996e7a246589b1b3821b18c8a73-2"></a>    <span class="n">zmienna</span> <span class="o">=</span> <span class="n">zmienna</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">'utf-8'</span><span class="p">)</span>
-</pre>
+<div class="code"><pre class="code python"><a id="rest_code_1e1c6417cd2d4b28b00bcc50642a2fce-1" name="rest_code_1e1c6417cd2d4b28b00bcc50642a2fce-1" href="blog/unicode-a-python/#rest_code_1e1c6417cd2d4b28b00bcc50642a2fce-1"></a><span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">zmienna</span><span class="p">,</span> <span class="n">unicode</span><span class="p">):</span>
+<a id="rest_code_1e1c6417cd2d4b28b00bcc50642a2fce-2" name="rest_code_1e1c6417cd2d4b28b00bcc50642a2fce-2" href="blog/unicode-a-python/#rest_code_1e1c6417cd2d4b28b00bcc50642a2fce-2"></a>    <span class="n">zmienna</span> <span class="o">=</span> <span class="n">zmienna</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">'utf-8'</span><span class="p">)</span>
+</pre></div>
 <p>Gdy po raz pierwszy spotkałem się z tym problemem, znalazłem informację
 o możliwości zdefiniowania kodowania plików źródłowych:</p>
-<pre class="code python"><a id="rest_code_747a1bc1024141fa96cd2214cb662597-1" name="rest_code_747a1bc1024141fa96cd2214cb662597-1"></a><span class="c1"># -*- coding: utf-8 -*-</span>
-</pre>
+<div class="code"><pre class="code python"><a id="rest_code_9fc37aaadbef4c7f9803d06e6f4b5ffd-1" name="rest_code_9fc37aaadbef4c7f9803d06e6f4b5ffd-1" href="blog/unicode-a-python/#rest_code_9fc37aaadbef4c7f9803d06e6f4b5ffd-1"></a><span class="c1"># -*- coding: utf-8 -*-</span>
+</pre></div>
 <p>Ta konstrukcja służy jednak tylko i wyłącznie zdefiniowaniu kodowania
 kodu źródłowego, nie kodowania używanego przez Pythona. Stąd w swoich
 pierwszych programach napisanych w pythonie używałem sporo wywołań
 metody encode i decode na stringu.</p>
-</div>
             
-        
+    
     <a href="blog/unicode-a-python/#disqus_thread" data-disqus-identifier="cache/posts/2011-02-06-unicode-a-python.pl.html">Komentarze</a>
 
 
@@ -175,7 +169,7 @@ a na koniec parę słów o repozytorium samodzielnym.</p>
 <p class="more"><a href="blog/kilka-slow-o-przeplywach-roboczych-w-gicie-pl/">Czytaj więcej…</a></p>
 </div>
             
-        
+    
     <a href="blog/kilka-slow-o-przeplywach-roboczych-w-gicie-pl/#disqus_thread" data-disqus-identifier="cache/posts/2011-01-02-kilka-slow-o-przeplywach-roboczych-w-gicie-pl.pl.html">Komentarze</a>
 
 
@@ -196,7 +190,7 @@ udogodnień i nowych funcjonalności.</p>
 <p class="more"><a href="blog/opera-11-00-pl/">Czytaj więcej…</a></p>
 </div>
             
-        
+    
     <a href="blog/opera-11-00-pl/#disqus_thread" data-disqus-identifier="cache/posts/2010-12-29-opera-11-00-pl.pl.html">Komentarze</a>
 
 
@@ -220,7 +214,7 @@ trafić. Na mapie kolejną wersją powinna być beta, co oznacza, że sam
 framework ustabilizuje się na tyle, by można było zacząć tworzyć w nim
 projekty.</p>
             
-        
+    
     <a href="blog/symfony2-preview-release-4-pl/#disqus_thread" data-disqus-identifier="cache/posts/2010-12-01-symfony2-preview-release-4-pl.pl.html">Komentarze</a>
 
 
@@ -247,7 +241,7 @@ ftp jak na system plików.</p>
 <p class="more"><a href="blog/curlftpfs-zastapic-klienta-ftp-pl/">Czytaj więcej…</a></p>
 </div>
             
-        
+    
     <a href="blog/curlftpfs-zastapic-klienta-ftp-pl/#disqus_thread" data-disqus-identifier="cache/posts/2010-11-30-curlftpfs-zastapic-klienta-ftp-pl.pl.html">Komentarze</a>
 
 
@@ -265,8 +259,7 @@ ftp jak na system plików.</p>
                             <a class="tag" href="tags/tag-cloud/"><span>tag cloud</span></a>
                 </span>
             </div>
-        <div>
-<p>Szybka aktualizacja z nową wersją biblioteki TagCanvas 1.4.1. Poprawiono
+        <p>Szybka aktualizacja z nową wersją biblioteki TagCanvas 1.4.1. Poprawiono
 w niej rakcję na kliknięcie myszką, i od teraz akcję na tagu wykonuje
 tylko lewe kliknięcie myszki.</p>
 <ul class="simple">
@@ -274,10 +267,7 @@ tylko lewe kliknięcie myszki.</p>
 <li><p><a class="reference external" href="https://github.com/fizyk/fzTagPlugin">Strona gihub fzTagPlugin</a></p></li>
 <li><p><a class="reference external" href="http://www.symfony-project.org/plugins/fzTagPlugin">Strona symfony fzTagPlugin</a></p></li>
 </ul>
-</div>
-            
-        
-    <a href="blog/fztagplugin-1-2-1/#disqus_thread" data-disqus-identifier="cache/posts/2010-11-25-fztagplugin-1-2-1.pl.html">Komentarze</a>
+<a href="blog/fztagplugin-1-2-1/#disqus_thread" data-disqus-identifier="cache/posts/2010-11-25-fztagplugin-1-2-1.pl.html">Komentarze</a>
 
 
         </div>
@@ -300,7 +290,7 @@ poprzedniej, zmiany są niewielkie, ale istotne.</p>
 <p class="more"><a href="blog/sfforkeddoctrineapply-w-wersji-1-5/">Czytaj więcej…</a></p>
 </div>
             
-        
+    
     <a href="blog/sfforkeddoctrineapply-w-wersji-1-5/#disqus_thread" data-disqus-identifier="cache/posts/2010-11-23-sfforkeddoctrineapply-w-wersji-1-5.pl.html">Komentarze</a>
 
 
@@ -318,13 +308,13 @@ poprzedniej, zmiany są niewielkie, ale istotne.</p>
         <div id="sidebar">
             <!--Sidebar content-->
             <h1 id="blog-title">
-                <a href="http://blog.fizyk.net.pl/" title="Cases">Cases</a>
+                <a href="https://fizyk.dev/" title="Cases">Cases</a>
             </h1>
             
             <small>
                 Również dostępny w językach: 
                 
-            <li><a href="http://blog.fizyk.net.pl/" rel="alternate" hreflang="en">English</a></li>
+            <li><a href="https://fizyk.dev/" rel="alternate" hreflang="en">English</a></li>
 
             </small>
             
@@ -341,7 +331,7 @@ jest dostępny na licencji
 </a>.</li>
             
                 <li>
-<a href="http://www.fizyk.net.pl">Strona domowa</a>
+<a href="https://fizyk.dev">Strona domowa</a>
                 </li>
 <li>
 <a href="archive/">Archiwum</a>
@@ -356,7 +346,7 @@ jest dostępny na licencji
             </ul>
 </div>
         <div id="footer">
-            Contents © 2021 <a href="mailto:fizyk~~fizyk.net.pl">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
+            Contents © 2025 <a href="mailto:fizyk~~fizyk.dev">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
             
         </div>
     </div>

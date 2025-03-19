@@ -8,9 +8,9 @@
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../pl/rss.xml">
-<link rel="canonical" href="http://blog.fizyk.net.pl/blog/pyramid_localizer-a-helpful-package/">
-<link rel="icon" href="../../favicon.png" sizes="62x60">
+<link rel="canonical" href="https://fizyk.dev/blog/pyramid_localizer-a-helpful-package/">
 <link rel="icon" href="../../favicon-speddial.png" sizes="269x262">
+<link rel="icon" href="../../favicon.png" sizes="62x60">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -37,14 +37,12 @@
 
         </span>
         </div>
-    <div>
-<p>Localization, and internationalization of websites isn't easy, and neither it's easy with pyramid, although there's some <a class="reference external" href="http://docs.pylonsproject.org/projects/pyramid/en/1.4-branch/narr/i18n.html">nice documentation</a>. So I prepared a package, that'll help setting most of the needed things to translate application written in pyramid framework.</p>
+    <p>Localization, and internationalization of websites isn't easy, and neither it's easy with pyramid, although there's some <a class="reference external" href="http://docs.pylonsproject.org/projects/pyramid/en/1.4-branch/narr/i18n.html">nice documentation</a>. So I prepared a package, that'll help setting most of the needed things to translate application written in pyramid framework.</p>
 <!-- TEASER_END -->
 <p>Package basically works three way, firstly, it adds subscribers, which in turn adds translation methods, the widely used underscore  - <strong>"_"</strong>, to request object, and to renderer. It works as described in pyramid documentation. Thanks to the underscore method, babel extractors can work out their magic, and rip all text that need to be translated from your code. That's it, no configuration needed.</p>
 <p>Second thing, is, that this package can also configure your application, to do this, you need to follow this part of <a class="reference external" href="https://pyramid_localize.readthedocs.org/en/latest/basic.html#configuration">pyramid_localize's documentation</a>, Please, forgive me, that I made use of pyramid_yml, rather than .ini configuration. I find it better suited to provide default configuration values.</p>
 <p>Third option is rather intended for package developers, which could allow to develop translatable packages, with translation files, but without the need to actually use them. If you do not install babel, pyramid_localize will only install fake translation methods as underscore methods - <strong>"_"</strong>, which will do almost everything the standard method does, but without translating.</p>
 <p>package can be found on <a class="reference external" href="https://pypi.python.org/pypi/pyramid_localize/0.0.1">pypi already</a> and the code on <a class="reference external" href="https://github.com/fizyk/pyramid_localize">github</a>.</p>
-</div>
     
         <ul class="pager hidden-print">
 <li class="previous">
@@ -57,7 +55,7 @@
 <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="casesblog",
-            disqus_url="http://blog.fizyk.net.pl/blog/pyramid_localizer-a-helpful-package/",
+            disqus_url="https://fizyk.dev/blog/pyramid_localizer-a-helpful-package/",
         disqus_title="pyramid_localize, a helpful package",
         disqus_identifier="cache/posts/2013-06-17-pyramid_localize-a-helpful-package.html",
         disqus_config = function () {
@@ -81,13 +79,13 @@
         <div id="sidebar">
             <!--Sidebar content-->
             <h1 id="blog-title">
-                <a href="http://blog.fizyk.net.pl/" title="Cases">Cases</a>
+                <a href="https://fizyk.dev/" title="Cases">Cases</a>
             </h1>
             
             <small>
                 Also available in: 
                 
-            <li><a href="http://blog.fizyk.net.pl/pl/" rel="alternate" hreflang="pl">Polski</a></li>
+            <li><a href="https://fizyk.dev/pl/" rel="alternate" hreflang="pl">Polski</a></li>
 
             </small>
             
@@ -104,7 +102,7 @@ jest dostępny na licencji
 </a>.</li>
             
                 <li>
-<a href="http://www.fizyk.net.pl/en">Homepage</a>
+<a href="https://fizyk.dev/en">Homepage</a>
                 </li>
 <li>
 <a href="../../archive/">Archives</a>
@@ -119,7 +117,7 @@ jest dostępny na licencji
             </ul>
 </div>
         <div id="footer">
-            Contents © 2021 <a href="mailto:fizyk~~fizyk.net.pl">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
+            Contents © 2025 <a href="mailto:fizyk~~fizyk.dev">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
             
         </div>
     </div>

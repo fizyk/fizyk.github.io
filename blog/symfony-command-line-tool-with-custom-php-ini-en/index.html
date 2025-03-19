@@ -8,9 +8,9 @@
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../pl/rss.xml">
-<link rel="canonical" href="http://blog.fizyk.net.pl/blog/symfony-command-line-tool-with-custom-php-ini-en/">
-<link rel="icon" href="../../favicon.png" sizes="62x60">
+<link rel="canonical" href="https://fizyk.dev/blog/symfony-command-line-tool-with-custom-php-ini-en/">
 <link rel="icon" href="../../favicon-speddial.png" sizes="269x262">
+<link rel="icon" href="../../favicon.png" sizes="62x60">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -37,8 +37,7 @@
 
         </span>
         </div>
-    <div>
-<p>I recently changed hosting service provider. It's acutally quite great.
+    <p>I recently changed hosting service provider. It's acutally quite great.
 It's shared hosting, so it's not that expensive like vps, got secure
 shell (ssh) access and it serves website much faster than previous
 hoster. Plus I got the place to play with python, php5.3, and if (or
@@ -53,10 +52,10 @@ since command line php hadn't had apc module enabled.</p>
 execute. It's small bash script, that runs symfony execute with my
 webserver php.ini file and passes all it's parameters to symfony command
 line tool:</p>
-<pre class="code bash"><a id="rest_code_3043af69eae94cd5a28d318db2d9b56d-1" name="rest_code_3043af69eae94cd5a28d318db2d9b56d-1"></a><span class="ch">#!/bin/bash</span>
-<a id="rest_code_3043af69eae94cd5a28d318db2d9b56d-2" name="rest_code_3043af69eae94cd5a28d318db2d9b56d-2"></a>
-<a id="rest_code_3043af69eae94cd5a28d318db2d9b56d-3" name="rest_code_3043af69eae94cd5a28d318db2d9b56d-3"></a>php -c /path/to/php.ini symfony <span class="nv">$@</span>
-</pre>
+<div class="code"><pre class="code bash"><a id="rest_code_868a04da9df4499e93a3cb7d241ad138-1" name="rest_code_868a04da9df4499e93a3cb7d241ad138-1" href="#rest_code_868a04da9df4499e93a3cb7d241ad138-1"></a><span class="ch">#!/bin/bash</span>
+<a id="rest_code_868a04da9df4499e93a3cb7d241ad138-2" name="rest_code_868a04da9df4499e93a3cb7d241ad138-2" href="#rest_code_868a04da9df4499e93a3cb7d241ad138-2"></a>
+<a id="rest_code_868a04da9df4499e93a3cb7d241ad138-3" name="rest_code_868a04da9df4499e93a3cb7d241ad138-3" href="#rest_code_868a04da9df4499e93a3cb7d241ad138-3"></a>php<span class="w"> </span>-c<span class="w"> </span>/path/to/php.ini<span class="w"> </span>symfony<span class="w"> </span><span class="nv">$@</span>
+</pre></div>
 <p>But there's a question, why bother with this, when I can just run this
 code from command line?</p>
 <p>Well... If I got an execute that already runs by itself, why should I
@@ -67,7 +66,6 @@ complex issue), but at least I no longer have error message in my cli,
 that I have to enable it APC, before I use it in project. Still
 question, which is better for standalone app cache: APC or memcached?
 And how to use both?</p>
-</div>
     
         <ul class="pager hidden-print">
 <li class="previous">
@@ -80,7 +78,7 @@ And how to use both?</p>
 <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="casesblog",
-            disqus_url="http://blog.fizyk.net.pl/blog/symfony-command-line-tool-with-custom-php-ini-en/",
+            disqus_url="https://fizyk.dev/blog/symfony-command-line-tool-with-custom-php-ini-en/",
         disqus_title="symfony command line tool with custom php.ini",
         disqus_identifier="cache/posts/2011-01-12-symfony-command-line-tool-with-custom-php-ini-en.html",
         disqus_config = function () {
@@ -104,13 +102,13 @@ And how to use both?</p>
         <div id="sidebar">
             <!--Sidebar content-->
             <h1 id="blog-title">
-                <a href="http://blog.fizyk.net.pl/" title="Cases">Cases</a>
+                <a href="https://fizyk.dev/" title="Cases">Cases</a>
             </h1>
             
             <small>
                 Also available in: 
                 
-            <li><a href="http://blog.fizyk.net.pl/pl/" rel="alternate" hreflang="pl">Polski</a></li>
+            <li><a href="https://fizyk.dev/pl/" rel="alternate" hreflang="pl">Polski</a></li>
 
             </small>
             
@@ -127,7 +125,7 @@ jest dostępny na licencji
 </a>.</li>
             
                 <li>
-<a href="http://www.fizyk.net.pl/en">Homepage</a>
+<a href="https://fizyk.dev/en">Homepage</a>
                 </li>
 <li>
 <a href="../../archive/">Archives</a>
@@ -142,7 +140,7 @@ jest dostępny na licencji
             </ul>
 </div>
         <div id="footer">
-            Contents © 2021 <a href="mailto:fizyk~~fizyk.net.pl">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
+            Contents © 2025 <a href="mailto:fizyk~~fizyk.dev">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
             
         </div>
     </div>

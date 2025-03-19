@@ -8,9 +8,9 @@
 <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="rss.xml">
-<link rel="canonical" href="http://blog.fizyk.net.pl/pl/index-8.html">
-<link rel="icon" href="../favicon.png" sizes="62x60">
+<link rel="canonical" href="https://fizyk.dev/pl/index-8.html">
 <link rel="icon" href="../favicon-speddial.png" sizes="269x262">
+<link rel="icon" href="../favicon.png" sizes="62x60">
 <link rel="prev" href="index-9.html" type="text/html">
 <link rel="next" href="index-7.html" type="text/html">
 <!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]-->
@@ -42,7 +42,7 @@ serwerów bazy danych, sqlite nada się idealnie.</p>
 <p class="more"><a href="blog/sqlite-w-srodowisku-developerskim-w-symfony-i-symfony2/">Czytaj więcej…</a></p>
 </div>
             
-        
+    
     <a href="blog/sqlite-w-srodowisku-developerskim-w-symfony-i-symfony2/#disqus_thread" data-disqus-identifier="cache/posts/2012-01-26-sqlite-w-srodowisku-developerskim-w-symfony-i-symfony2.pl.html">Komentarze</a>
 
 
@@ -63,7 +63,7 @@ serwerów bazy danych, sqlite nada się idealnie.</p>
 <p class="more"><a href="blog/definiowanie-kodowania-w-plikach-zrodlowych-pythona/">Czytaj więcej…</a></p>
 </div>
             
-        
+    
     <a href="blog/definiowanie-kodowania-w-plikach-zrodlowych-pythona/#disqus_thread" data-disqus-identifier="cache/posts/2011-12-31-definiowanie-kodowania-w-plikach-zrodlowych-pythona.pl.html">Komentarze</a>
 
 
@@ -80,25 +80,23 @@ serwerów bazy danych, sqlite nada się idealnie.</p>
                             <a class="tag" href="tags/terminal/"><span>terminal</span></a>
                 </span>
             </div>
-        <div>
-<p>Kto dłużej popracował na Linuksie, wie, jak przydatny czasem potrafi
+        <p>Kto dłużej popracował na Linuksie, wie, jak przydatny czasem potrafi
 bywać terminal. Dla mnie, jako programisty, równie przydatnym narzędziem
 jest git, z którego korzystam właśnie przez terminal.</p>
 <p>Jedyny problem z takim połączeniem jest to, że czasem trudno zorientować
 się od razu, w jakiej gałęzi kodu pracujemy, oczywiście, jeśli
 korzystamy z gałęzi intensywnie. Ale jest na to sposób. Wystarczy lekko
 zmodyfikować plik <strong>.bashrc</strong> dodając linijkę:</p>
-<pre class="code bash"><a id="rest_code_ef5bf61dd10746f3b5a71784b1dfd8d5-1" name="rest_code_ef5bf61dd10746f3b5a71784b1dfd8d5-1"></a><span class="nb">export</span> <span class="nv">PS1</span><span class="o">=</span><span class="s1">'\u@\h: \w$(__git_ps1 "(%s)")$ '</span>
-</pre>
+<div class="code"><pre class="code bash"><a id="rest_code_a0ac8d2d68c14310a55cfdb720286435-1" name="rest_code_a0ac8d2d68c14310a55cfdb720286435-1" href="blog/terminal-ze-szczypta-git-a/#rest_code_a0ac8d2d68c14310a55cfdb720286435-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PS1</span><span class="o">=</span><span class="s1">'\u@\h: \w$(__git_ps1 "(%s)")$ '</span>
+</pre></div>
 <p>Jedyny problem z takim rozwiązaniem jest taki, że modyfikuje tytuł okna
 xterminala. Aby zaradzić temu, trzeba dodać jeszcze takie linijki:</p>
-<pre class="code bash"><a id="rest_code_c1cd1df1bfb9482cad8cfd841d505c31-1" name="rest_code_c1cd1df1bfb9482cad8cfd841d505c31-1"></a><span class="k">case</span> <span class="s2">"</span><span class="nv">$TERM</span><span class="s2">"</span> <span class="k">in</span>
-<a id="rest_code_c1cd1df1bfb9482cad8cfd841d505c31-2" name="rest_code_c1cd1df1bfb9482cad8cfd841d505c31-2"></a>xterm*<span class="p">|</span>rxvt*<span class="o">)</span>
-<a id="rest_code_c1cd1df1bfb9482cad8cfd841d505c31-3" name="rest_code_c1cd1df1bfb9482cad8cfd841d505c31-3"></a>    <span class="nv">PS1</span><span class="o">=</span><span class="s2">"\[\e]0;</span><span class="si">${</span><span class="nv">debian_chroot</span><span class="p">:+(</span><span class="nv">$debian_chroot</span><span class="p">)</span><span class="si">}</span><span class="s2">\u@\h: \w\a\]</span><span class="nv">$PS1</span><span class="s2">"</span>
-</pre>
-</div>
+<div class="code"><pre class="code bash"><a id="rest_code_2643556a279a4a2785f8b30a88ee82dd-1" name="rest_code_2643556a279a4a2785f8b30a88ee82dd-1" href="blog/terminal-ze-szczypta-git-a/#rest_code_2643556a279a4a2785f8b30a88ee82dd-1"></a><span class="k">case</span><span class="w"> </span><span class="s2">"</span><span class="nv">$TERM</span><span class="s2">"</span><span class="w"> </span><span class="k">in</span>
+<a id="rest_code_2643556a279a4a2785f8b30a88ee82dd-2" name="rest_code_2643556a279a4a2785f8b30a88ee82dd-2" href="blog/terminal-ze-szczypta-git-a/#rest_code_2643556a279a4a2785f8b30a88ee82dd-2"></a>xterm*<span class="p">|</span>rxvt*<span class="o">)</span>
+<a id="rest_code_2643556a279a4a2785f8b30a88ee82dd-3" name="rest_code_2643556a279a4a2785f8b30a88ee82dd-3" href="blog/terminal-ze-szczypta-git-a/#rest_code_2643556a279a4a2785f8b30a88ee82dd-3"></a><span class="w">    </span><span class="nv">PS1</span><span class="o">=</span><span class="s2">"\[\e]0;</span><span class="si">${</span><span class="nv">debian_chroot</span><span class="p">:+(</span><span class="nv">$debian_chroot</span><span class="p">)</span><span class="si">}</span><span class="s2">\u@\h: \w\a\]</span><span class="nv">$PS1</span><span class="s2">"</span>
+</pre></div>
             
-        
+    
     <a href="blog/terminal-ze-szczypta-git-a/#disqus_thread" data-disqus-identifier="cache/posts/2011-08-18-terminal-ze-szczypta-git-a.pl.html">Komentarze</a>
 
 
@@ -122,7 +120,7 @@ po wersji 2.0).</p>
 <p class="more"><a href="blog/cos-sie-konczy-cos-sie-zaczyna-wiedzmin/">Czytaj więcej…</a></p>
 </div>
             
-        
+    
     <a href="blog/cos-sie-konczy-cos-sie-zaczyna-wiedzmin/#disqus_thread" data-disqus-identifier="cache/posts/2011-08-15-cos-sie-konczy-cos-sie-zaczyna-wiedzmin.pl.html">Komentarze</a>
 
 
@@ -147,7 +145,7 @@ składnikami były słój po miodzie i pierś kurczaka.</p>
 <p class="more"><a href="blog/kurczak-z-miodem/">Czytaj więcej…</a></p>
 </div>
             
-        
+    
     <a href="blog/kurczak-z-miodem/#disqus_thread" data-disqus-identifier="cache/posts/2011-08-11-kurczak-z-miodem.pl.html">Komentarze</a>
 
 
@@ -169,7 +167,7 @@ przyjrzałem się temu mechanizmowi.</p>
 <p class="more"><a href="blog/przygotuj-strone-pod-speeddial-opery/">Czytaj więcej…</a></p>
 </div>
             
-        
+    
     <a href="blog/przygotuj-strone-pod-speeddial-opery/#disqus_thread" data-disqus-identifier="cache/posts/2011-05-14-przygotuj-strone-pod-speeddial-opery.pl.html">Komentarze</a>
 
 
@@ -196,7 +194,7 @@ frameworka formularzy.</p>
 <p class="more"><a href="blog/symfony2-w-fazie-beta/">Czytaj więcej…</a></p>
 </div>
             
-        
+    
     <a href="blog/symfony2-w-fazie-beta/#disqus_thread" data-disqus-identifier="cache/posts/2011-04-29-symfony2-w-fazie-beta.pl.html">Komentarze</a>
 
 
@@ -216,7 +214,7 @@ frameworka formularzy.</p>
 <p class="more"><a href="blog/camelize-w-pythonie/">Czytaj więcej…</a></p>
 </div>
             
-        
+    
     <a href="blog/camelize-w-pythonie/#disqus_thread" data-disqus-identifier="cache/posts/2011-04-28-camelize-w-pythonie.pl.html">Komentarze</a>
 
 
@@ -239,7 +237,7 @@ historii, fabuły, przedstawionej w grze.</p>
 <p class="more"><a href="blog/wiedzmin/">Czytaj więcej…</a></p>
 </div>
             
-        
+    
     <a href="blog/wiedzmin/#disqus_thread" data-disqus-identifier="cache/posts/2011-04-17-wiedzmin.pl.html">Komentarze</a>
 
 
@@ -264,7 +262,7 @@ grał we Wrocławiu w Alibi i postanowiłem nie przegapić tej szansy.</p>
 <p class="more"><a href="blog/koncert-jelonka-wroclaw/">Czytaj więcej…</a></p>
 </div>
             
-        
+    
     <a href="blog/koncert-jelonka-wroclaw/#disqus_thread" data-disqus-identifier="cache/posts/2011-03-31-koncert-jelonka-wroclaw.pl.html">Komentarze</a>
 
 
@@ -282,13 +280,13 @@ grał we Wrocławiu w Alibi i postanowiłem nie przegapić tej szansy.</p>
         <div id="sidebar">
             <!--Sidebar content-->
             <h1 id="blog-title">
-                <a href="http://blog.fizyk.net.pl/" title="Cases">Cases</a>
+                <a href="https://fizyk.dev/" title="Cases">Cases</a>
             </h1>
             
             <small>
                 Również dostępny w językach: 
                 
-            <li><a href="http://blog.fizyk.net.pl/" rel="alternate" hreflang="en">English</a></li>
+            <li><a href="https://fizyk.dev/" rel="alternate" hreflang="en">English</a></li>
 
             </small>
             
@@ -305,7 +303,7 @@ jest dostępny na licencji
 </a>.</li>
             
                 <li>
-<a href="http://www.fizyk.net.pl">Strona domowa</a>
+<a href="https://fizyk.dev">Strona domowa</a>
                 </li>
 <li>
 <a href="archive/">Archiwum</a>
@@ -320,7 +318,7 @@ jest dostępny na licencji
             </ul>
 </div>
         <div id="footer">
-            Contents © 2021 <a href="mailto:fizyk~~fizyk.net.pl">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
+            Contents © 2025 <a href="mailto:fizyk~~fizyk.dev">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
             
         </div>
     </div>

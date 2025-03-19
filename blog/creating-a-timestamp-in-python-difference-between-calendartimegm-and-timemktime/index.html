@@ -7,9 +7,9 @@
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../pl/rss.xml">
-<link rel="canonical" href="http://blog.fizyk.net.pl/blog/creating-a-timestamp-in-python-difference-between-calendartimegm-and-timemktime/">
-<link rel="icon" href="../../favicon.png" sizes="62x60">
+<link rel="canonical" href="https://fizyk.dev/blog/creating-a-timestamp-in-python-difference-between-calendartimegm-and-timemktime/">
 <link rel="icon" href="../../favicon-speddial.png" sizes="269x262">
+<link rel="icon" href="../../favicon.png" sizes="62x60">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -37,8 +37,7 @@
 
         </span>
         </div>
-    <div>
-<p>If think most of python programmers realise that there are two ways of getting timestamp with only the
+    <p>If think most of python programmers realise that there are two ways of getting timestamp with only the
 help of stdlib libraries. It's <a class="reference external" href="https://docs.python.org/3.5/library/time.html#time.mktime">time.mktime</a>
 and weirdly placed <a class="reference external" href="https://docs.python.org/3.5/library/calendar.html#calendar.timegm">calendar.timegm</a>.</p>
 <p>There are two things people are probably not aware. First one can be attributed due to the fact that
@@ -55,25 +54,24 @@ returns an integer.</p>
 <p>Second things - timegm function is faster than mktime! See the short benchmarks below:</p>
 <!-- TEASER_END -->
 <p>Results on python 3.5:</p>
-<pre class="code python"><a id="rest_code_f41144655b834730a738910e6a8143f2-1" name="rest_code_f41144655b834730a738910e6a8143f2-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">21</span><span class="p">]:</span> <span class="o">%</span><span class="n">timeit</span> <span class="n">time</span><span class="o">.</span><span class="n">mktime</span><span class="p">(</span><span class="n">timetuple</span><span class="p">)</span>
-<a id="rest_code_f41144655b834730a738910e6a8143f2-2" name="rest_code_f41144655b834730a738910e6a8143f2-2"></a><span class="n">The</span> <span class="n">slowest</span> <span class="n">run</span> <span class="n">took</span> <span class="mf">32.44</span> <span class="n">times</span> <span class="n">longer</span> <span class="n">than</span> <span class="n">the</span> <span class="n">fastest</span><span class="o">.</span> <span class="n">This</span> <span class="n">could</span> <span class="n">mean</span> <span class="n">that</span> <span class="n">an</span> <span class="n">intermediate</span> <span class="n">result</span> <span class="ow">is</span> <span class="n">being</span> <span class="n">cached</span>
-<a id="rest_code_f41144655b834730a738910e6a8143f2-3" name="rest_code_f41144655b834730a738910e6a8143f2-3"></a><span class="mi">1000000</span> <span class="n">loops</span><span class="p">,</span> <span class="n">best</span> <span class="n">of</span> <span class="mi">3</span><span class="p">:</span> <span class="mi">938</span> <span class="n">ns</span> <span class="n">per</span> <span class="n">loop</span>
-<a id="rest_code_f41144655b834730a738910e6a8143f2-4" name="rest_code_f41144655b834730a738910e6a8143f2-4"></a>
-<a id="rest_code_f41144655b834730a738910e6a8143f2-5" name="rest_code_f41144655b834730a738910e6a8143f2-5"></a><span class="n">In</span> <span class="p">[</span><span class="mi">22</span><span class="p">]:</span> <span class="o">%</span><span class="n">timeit</span> <span class="n">calendar</span><span class="o">.</span><span class="n">timegm</span><span class="p">(</span><span class="n">timetuple</span><span class="p">)</span>
-<a id="rest_code_f41144655b834730a738910e6a8143f2-6" name="rest_code_f41144655b834730a738910e6a8143f2-6"></a><span class="n">The</span> <span class="n">slowest</span> <span class="n">run</span> <span class="n">took</span> <span class="mf">20.75</span> <span class="n">times</span> <span class="n">longer</span> <span class="n">than</span> <span class="n">the</span> <span class="n">fastest</span><span class="o">.</span> <span class="n">This</span> <span class="n">could</span> <span class="n">mean</span> <span class="n">that</span> <span class="n">an</span> <span class="n">intermediate</span> <span class="n">result</span> <span class="ow">is</span> <span class="n">being</span> <span class="n">cached</span>
-<a id="rest_code_f41144655b834730a738910e6a8143f2-7" name="rest_code_f41144655b834730a738910e6a8143f2-7"></a><span class="mi">1000000</span> <span class="n">loops</span><span class="p">,</span> <span class="n">best</span> <span class="n">of</span> <span class="mi">3</span><span class="p">:</span> <span class="mi">817</span> <span class="n">ns</span> <span class="n">per</span> <span class="n">loop</span>
-</pre>
+<div class="code"><pre class="code python"><a id="rest_code_2ca8eeab97d641d69f7f3eaa9a0a6e39-1" name="rest_code_2ca8eeab97d641d69f7f3eaa9a0a6e39-1" href="#rest_code_2ca8eeab97d641d69f7f3eaa9a0a6e39-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">21</span><span class="p">]:</span> <span class="o">%</span><span class="n">timeit</span> <span class="n">time</span><span class="o">.</span><span class="n">mktime</span><span class="p">(</span><span class="n">timetuple</span><span class="p">)</span>
+<a id="rest_code_2ca8eeab97d641d69f7f3eaa9a0a6e39-2" name="rest_code_2ca8eeab97d641d69f7f3eaa9a0a6e39-2" href="#rest_code_2ca8eeab97d641d69f7f3eaa9a0a6e39-2"></a><span class="n">The</span> <span class="n">slowest</span> <span class="n">run</span> <span class="n">took</span> <span class="mf">32.44</span> <span class="n">times</span> <span class="n">longer</span> <span class="n">than</span> <span class="n">the</span> <span class="n">fastest</span><span class="o">.</span> <span class="n">This</span> <span class="n">could</span> <span class="n">mean</span> <span class="n">that</span> <span class="n">an</span> <span class="n">intermediate</span> <span class="n">result</span> <span class="ow">is</span> <span class="n">being</span> <span class="n">cached</span>
+<a id="rest_code_2ca8eeab97d641d69f7f3eaa9a0a6e39-3" name="rest_code_2ca8eeab97d641d69f7f3eaa9a0a6e39-3" href="#rest_code_2ca8eeab97d641d69f7f3eaa9a0a6e39-3"></a><span class="mi">1000000</span> <span class="n">loops</span><span class="p">,</span> <span class="n">best</span> <span class="n">of</span> <span class="mi">3</span><span class="p">:</span> <span class="mi">938</span> <span class="n">ns</span> <span class="n">per</span> <span class="n">loop</span>
+<a id="rest_code_2ca8eeab97d641d69f7f3eaa9a0a6e39-4" name="rest_code_2ca8eeab97d641d69f7f3eaa9a0a6e39-4" href="#rest_code_2ca8eeab97d641d69f7f3eaa9a0a6e39-4"></a>
+<a id="rest_code_2ca8eeab97d641d69f7f3eaa9a0a6e39-5" name="rest_code_2ca8eeab97d641d69f7f3eaa9a0a6e39-5" href="#rest_code_2ca8eeab97d641d69f7f3eaa9a0a6e39-5"></a><span class="n">In</span> <span class="p">[</span><span class="mi">22</span><span class="p">]:</span> <span class="o">%</span><span class="n">timeit</span> <span class="n">calendar</span><span class="o">.</span><span class="n">timegm</span><span class="p">(</span><span class="n">timetuple</span><span class="p">)</span>
+<a id="rest_code_2ca8eeab97d641d69f7f3eaa9a0a6e39-6" name="rest_code_2ca8eeab97d641d69f7f3eaa9a0a6e39-6" href="#rest_code_2ca8eeab97d641d69f7f3eaa9a0a6e39-6"></a><span class="n">The</span> <span class="n">slowest</span> <span class="n">run</span> <span class="n">took</span> <span class="mf">20.75</span> <span class="n">times</span> <span class="n">longer</span> <span class="n">than</span> <span class="n">the</span> <span class="n">fastest</span><span class="o">.</span> <span class="n">This</span> <span class="n">could</span> <span class="n">mean</span> <span class="n">that</span> <span class="n">an</span> <span class="n">intermediate</span> <span class="n">result</span> <span class="ow">is</span> <span class="n">being</span> <span class="n">cached</span>
+<a id="rest_code_2ca8eeab97d641d69f7f3eaa9a0a6e39-7" name="rest_code_2ca8eeab97d641d69f7f3eaa9a0a6e39-7" href="#rest_code_2ca8eeab97d641d69f7f3eaa9a0a6e39-7"></a><span class="mi">1000000</span> <span class="n">loops</span><span class="p">,</span> <span class="n">best</span> <span class="n">of</span> <span class="mi">3</span><span class="p">:</span> <span class="mi">817</span> <span class="n">ns</span> <span class="n">per</span> <span class="n">loop</span>
+</pre></div>
 <p>And even faster on python 2.7:</p>
-<pre class="code python"><a id="rest_code_9d1d8b56572641f1a0f2c37c50daf9c6-1" name="rest_code_9d1d8b56572641f1a0f2c37c50daf9c6-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">21</span><span class="p">]:</span> <span class="o">%</span><span class="n">timeit</span> <span class="n">time</span><span class="o">.</span><span class="n">mktime</span><span class="p">(</span><span class="n">timetuple</span><span class="p">)</span>
-<a id="rest_code_9d1d8b56572641f1a0f2c37c50daf9c6-2" name="rest_code_9d1d8b56572641f1a0f2c37c50daf9c6-2"></a><span class="n">The</span> <span class="n">slowest</span> <span class="n">run</span> <span class="n">took</span> <span class="mf">35.25</span> <span class="n">times</span> <span class="n">longer</span> <span class="n">than</span> <span class="n">the</span> <span class="n">fastest</span><span class="o">.</span> <span class="n">This</span> <span class="n">could</span> <span class="n">mean</span> <span class="n">that</span> <span class="n">an</span> <span class="n">intermediate</span> <span class="n">result</span> <span class="ow">is</span> <span class="n">being</span> <span class="n">cached</span>
-<a id="rest_code_9d1d8b56572641f1a0f2c37c50daf9c6-3" name="rest_code_9d1d8b56572641f1a0f2c37c50daf9c6-3"></a><span class="mi">1000000</span> <span class="n">loops</span><span class="p">,</span> <span class="n">best</span> <span class="n">of</span> <span class="mi">3</span><span class="p">:</span> <span class="mi">906</span> <span class="n">ns</span> <span class="n">per</span> <span class="n">loop</span>
-<a id="rest_code_9d1d8b56572641f1a0f2c37c50daf9c6-4" name="rest_code_9d1d8b56572641f1a0f2c37c50daf9c6-4"></a>
-<a id="rest_code_9d1d8b56572641f1a0f2c37c50daf9c6-5" name="rest_code_9d1d8b56572641f1a0f2c37c50daf9c6-5"></a><span class="n">In</span> <span class="p">[</span><span class="mi">22</span><span class="p">]:</span> <span class="o">%</span><span class="n">timeit</span> <span class="n">calendar</span><span class="o">.</span><span class="n">timegm</span><span class="p">(</span><span class="n">timetuple</span><span class="p">)</span>
-<a id="rest_code_9d1d8b56572641f1a0f2c37c50daf9c6-6" name="rest_code_9d1d8b56572641f1a0f2c37c50daf9c6-6"></a><span class="n">The</span> <span class="n">slowest</span> <span class="n">run</span> <span class="n">took</span> <span class="mf">24.31</span> <span class="n">times</span> <span class="n">longer</span> <span class="n">than</span> <span class="n">the</span> <span class="n">fastest</span><span class="o">.</span> <span class="n">This</span> <span class="n">could</span> <span class="n">mean</span> <span class="n">that</span> <span class="n">an</span> <span class="n">intermediate</span> <span class="n">result</span> <span class="ow">is</span> <span class="n">being</span> <span class="n">cached</span>
-<a id="rest_code_9d1d8b56572641f1a0f2c37c50daf9c6-7" name="rest_code_9d1d8b56572641f1a0f2c37c50daf9c6-7"></a><span class="mi">1000000</span> <span class="n">loops</span><span class="p">,</span> <span class="n">best</span> <span class="n">of</span> <span class="mi">3</span><span class="p">:</span> <span class="mi">579</span> <span class="n">ns</span> <span class="n">per</span> <span class="n">loop</span>
-</pre>
+<div class="code"><pre class="code python"><a id="rest_code_6985c6385a4943cda02a01c786dfc164-1" name="rest_code_6985c6385a4943cda02a01c786dfc164-1" href="#rest_code_6985c6385a4943cda02a01c786dfc164-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">21</span><span class="p">]:</span> <span class="o">%</span><span class="n">timeit</span> <span class="n">time</span><span class="o">.</span><span class="n">mktime</span><span class="p">(</span><span class="n">timetuple</span><span class="p">)</span>
+<a id="rest_code_6985c6385a4943cda02a01c786dfc164-2" name="rest_code_6985c6385a4943cda02a01c786dfc164-2" href="#rest_code_6985c6385a4943cda02a01c786dfc164-2"></a><span class="n">The</span> <span class="n">slowest</span> <span class="n">run</span> <span class="n">took</span> <span class="mf">35.25</span> <span class="n">times</span> <span class="n">longer</span> <span class="n">than</span> <span class="n">the</span> <span class="n">fastest</span><span class="o">.</span> <span class="n">This</span> <span class="n">could</span> <span class="n">mean</span> <span class="n">that</span> <span class="n">an</span> <span class="n">intermediate</span> <span class="n">result</span> <span class="ow">is</span> <span class="n">being</span> <span class="n">cached</span>
+<a id="rest_code_6985c6385a4943cda02a01c786dfc164-3" name="rest_code_6985c6385a4943cda02a01c786dfc164-3" href="#rest_code_6985c6385a4943cda02a01c786dfc164-3"></a><span class="mi">1000000</span> <span class="n">loops</span><span class="p">,</span> <span class="n">best</span> <span class="n">of</span> <span class="mi">3</span><span class="p">:</span> <span class="mi">906</span> <span class="n">ns</span> <span class="n">per</span> <span class="n">loop</span>
+<a id="rest_code_6985c6385a4943cda02a01c786dfc164-4" name="rest_code_6985c6385a4943cda02a01c786dfc164-4" href="#rest_code_6985c6385a4943cda02a01c786dfc164-4"></a>
+<a id="rest_code_6985c6385a4943cda02a01c786dfc164-5" name="rest_code_6985c6385a4943cda02a01c786dfc164-5" href="#rest_code_6985c6385a4943cda02a01c786dfc164-5"></a><span class="n">In</span> <span class="p">[</span><span class="mi">22</span><span class="p">]:</span> <span class="o">%</span><span class="n">timeit</span> <span class="n">calendar</span><span class="o">.</span><span class="n">timegm</span><span class="p">(</span><span class="n">timetuple</span><span class="p">)</span>
+<a id="rest_code_6985c6385a4943cda02a01c786dfc164-6" name="rest_code_6985c6385a4943cda02a01c786dfc164-6" href="#rest_code_6985c6385a4943cda02a01c786dfc164-6"></a><span class="n">The</span> <span class="n">slowest</span> <span class="n">run</span> <span class="n">took</span> <span class="mf">24.31</span> <span class="n">times</span> <span class="n">longer</span> <span class="n">than</span> <span class="n">the</span> <span class="n">fastest</span><span class="o">.</span> <span class="n">This</span> <span class="n">could</span> <span class="n">mean</span> <span class="n">that</span> <span class="n">an</span> <span class="n">intermediate</span> <span class="n">result</span> <span class="ow">is</span> <span class="n">being</span> <span class="n">cached</span>
+<a id="rest_code_6985c6385a4943cda02a01c786dfc164-7" name="rest_code_6985c6385a4943cda02a01c786dfc164-7" href="#rest_code_6985c6385a4943cda02a01c786dfc164-7"></a><span class="mi">1000000</span> <span class="n">loops</span><span class="p">,</span> <span class="n">best</span> <span class="n">of</span> <span class="mi">3</span><span class="p">:</span> <span class="mi">579</span> <span class="n">ns</span> <span class="n">per</span> <span class="n">loop</span>
+</pre></div>
 <p>There seems to be some performance regression for timegm on python 3, but it's still a bit faster than mktime.</p>
-</div>
     
         <ul class="pager hidden-print">
 <li class="previous">
@@ -86,7 +84,7 @@ returns an integer.</p>
 <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="casesblog",
-            disqus_url="http://blog.fizyk.net.pl/blog/creating-a-timestamp-in-python-difference-between-calendartimegm-and-timemktime/",
+            disqus_url="https://fizyk.dev/blog/creating-a-timestamp-in-python-difference-between-calendartimegm-and-timemktime/",
         disqus_title="Creating a timestamp in python - difference between calendar.timegm and time.mktime",
         disqus_identifier="cache/posts/2015-11-25-creating-a-timestamp-in-python-difference-between-calendartimegm-and-timemktime.html",
         disqus_config = function () {
@@ -110,13 +108,13 @@ returns an integer.</p>
         <div id="sidebar">
             <!--Sidebar content-->
             <h1 id="blog-title">
-                <a href="http://blog.fizyk.net.pl/" title="Cases">Cases</a>
+                <a href="https://fizyk.dev/" title="Cases">Cases</a>
             </h1>
             
             <small>
                 Also available in: 
                 
-            <li><a href="http://blog.fizyk.net.pl/pl/" rel="alternate" hreflang="pl">Polski</a></li>
+            <li><a href="https://fizyk.dev/pl/" rel="alternate" hreflang="pl">Polski</a></li>
 
             </small>
             
@@ -133,7 +131,7 @@ jest dostępny na licencji
 </a>.</li>
             
                 <li>
-<a href="http://www.fizyk.net.pl/en">Homepage</a>
+<a href="https://fizyk.dev/en">Homepage</a>
                 </li>
 <li>
 <a href="../../archive/">Archives</a>
@@ -148,7 +146,7 @@ jest dostępny na licencji
             </ul>
 </div>
         <div id="footer">
-            Contents © 2021 <a href="mailto:fizyk~~fizyk.net.pl">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
+            Contents © 2025 <a href="mailto:fizyk~~fizyk.dev">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
             
         </div>
     </div>

@@ -8,9 +8,9 @@
 <link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../rss.xml">
-<link rel="canonical" href="http://blog.fizyk.net.pl/pl/blog/fzblameable/">
-<link rel="icon" href="../../../favicon.png" sizes="62x60">
+<link rel="canonical" href="https://fizyk.dev/pl/blog/fzblameable/">
 <link rel="icon" href="../../../favicon-speddial.png" sizes="269x262">
+<link rel="icon" href="../../../favicon.png" sizes="62x60">
 <!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -40,8 +40,7 @@
 
         </span>
         </div>
-    <div>
-<p>Podczas pierwszego kontaktu z symfony i doctrine, nie zdawałem sobie
+    <p>Podczas pierwszego kontaktu z symfony i doctrine, nie zdawałem sobie
 sprawy z ułatwień oferowanych przez behavioury. Sluggable był z początku
 swego rodzaju magią, a ja lubię wiedzieć, jakie kółka zębate wprawiają
 machinę w ruch. Kwiestię właściciela, który stworzył dany obiekt,
@@ -67,13 +66,13 @@ zauważyć jeden mankament: brak jest aliasu zwrotnego z obiektu
 użytkownika, do obiektu tworzonego. Głównie z tego powodu zdecydowałem
 się stworzyć modyfikację Blameable dla symfony i sfDoctrineGuard. Dodane
 fragmenty kodu są nieznaczną modyfikacją:</p>
-<pre class="code php"><a id="rest_code_e9faabadd1eb400384f34a46068eef13-1" name="rest_code_e9faabadd1eb400384f34a46068eef13-1"></a><span class="x">Doctrine_Core::getTable( 'sfGuardUser' )-&gt;bind(</span>
-<a id="rest_code_e9faabadd1eb400384f34a46068eef13-2" name="rest_code_e9faabadd1eb400384f34a46068eef13-2"></a><span class="x">        array($className.' as Created'.$className.'s',</span>
-<a id="rest_code_e9faabadd1eb400384f34a46068eef13-3" name="rest_code_e9faabadd1eb400384f34a46068eef13-3"></a><span class="x">          array( 'class'    =&gt; $className,</span>
-<a id="rest_code_e9faabadd1eb400384f34a46068eef13-4" name="rest_code_e9faabadd1eb400384f34a46068eef13-4"></a><span class="x">            'local'    =&gt; $this-&gt;_options['relations']['created']['foreign'],</span>
-<a id="rest_code_e9faabadd1eb400384f34a46068eef13-5" name="rest_code_e9faabadd1eb400384f34a46068eef13-5"></a><span class="x">            'foreign'  =&gt; $this-&gt;_options['columns']['created']['name']</span>
-<a id="rest_code_e9faabadd1eb400384f34a46068eef13-6" name="rest_code_e9faabadd1eb400384f34a46068eef13-6"></a><span class="x">        )), Doctrine_Relation::MANY );</span>
-</pre>
+<div class="code"><pre class="code php"><a id="rest_code_fc7b40750a9149aeaa4b630e250b9b37-1" name="rest_code_fc7b40750a9149aeaa4b630e250b9b37-1" href="#rest_code_fc7b40750a9149aeaa4b630e250b9b37-1"></a><span class="x">Doctrine_Core::getTable( 'sfGuardUser' )-&gt;bind(</span>
+<a id="rest_code_fc7b40750a9149aeaa4b630e250b9b37-2" name="rest_code_fc7b40750a9149aeaa4b630e250b9b37-2" href="#rest_code_fc7b40750a9149aeaa4b630e250b9b37-2"></a><span class="x">        array($className.' as Created'.$className.'s',</span>
+<a id="rest_code_fc7b40750a9149aeaa4b630e250b9b37-3" name="rest_code_fc7b40750a9149aeaa4b630e250b9b37-3" href="#rest_code_fc7b40750a9149aeaa4b630e250b9b37-3"></a><span class="x">          array( 'class'    =&gt; $className,</span>
+<a id="rest_code_fc7b40750a9149aeaa4b630e250b9b37-4" name="rest_code_fc7b40750a9149aeaa4b630e250b9b37-4" href="#rest_code_fc7b40750a9149aeaa4b630e250b9b37-4"></a><span class="x">            'local'    =&gt; $this-&gt;_options['relations']['created']['foreign'],</span>
+<a id="rest_code_fc7b40750a9149aeaa4b630e250b9b37-5" name="rest_code_fc7b40750a9149aeaa4b630e250b9b37-5" href="#rest_code_fc7b40750a9149aeaa4b630e250b9b37-5"></a><span class="x">            'foreign'  =&gt; $this-&gt;_options['columns']['created']['name']</span>
+<a id="rest_code_fc7b40750a9149aeaa4b630e250b9b37-6" name="rest_code_fc7b40750a9149aeaa4b630e250b9b37-6" href="#rest_code_fc7b40750a9149aeaa4b630e250b9b37-6"></a><span class="x">        )), Doctrine_Relation::MANY );</span>
+</pre></div>
 <p>Ale jakże ułatwią tworzenie zapytań pobierających obiekty stworzone
 przez użytkownika. Zwykłe pobieranie wszystkich obiektów stworzonych
 przez użytkownika może być karkołomne, ale dla podzapytań taki alias
@@ -82,16 +81,15 @@ jest idealny.</p>
 1.0.0</a>
 współdziała domyślnie z sfDoctrineGuard 4.x, ale do użycia go w
 sfDoctrineGuard 5.x wystarczy zmienić typy pól created i updated:</p>
-<pre class="code php"><a id="rest_code_56d743eef6ad4e6787ccc8960fa74ef2-1" name="rest_code_56d743eef6ad4e6787ccc8960fa74ef2-1"></a><span class="x">MyModel:</span>
-<a id="rest_code_56d743eef6ad4e6787ccc8960fa74ef2-2" name="rest_code_56d743eef6ad4e6787ccc8960fa74ef2-2"></a><span class="x">  actAs:</span>
-<a id="rest_code_56d743eef6ad4e6787ccc8960fa74ef2-3" name="rest_code_56d743eef6ad4e6787ccc8960fa74ef2-3"></a><span class="x">    fzBlameable:</span>
-<a id="rest_code_56d743eef6ad4e6787ccc8960fa74ef2-4" name="rest_code_56d743eef6ad4e6787ccc8960fa74ef2-4"></a><span class="x">      columns:</span>
-<a id="rest_code_56d743eef6ad4e6787ccc8960fa74ef2-5" name="rest_code_56d743eef6ad4e6787ccc8960fa74ef2-5"></a><span class="x">        created:</span>
-<a id="rest_code_56d743eef6ad4e6787ccc8960fa74ef2-6" name="rest_code_56d743eef6ad4e6787ccc8960fa74ef2-6"></a><span class="x">          length: 8</span>
-<a id="rest_code_56d743eef6ad4e6787ccc8960fa74ef2-7" name="rest_code_56d743eef6ad4e6787ccc8960fa74ef2-7"></a><span class="x">        updated:</span>
-<a id="rest_code_56d743eef6ad4e6787ccc8960fa74ef2-8" name="rest_code_56d743eef6ad4e6787ccc8960fa74ef2-8"></a><span class="x">          length: 8</span>
-</pre>
-</div>
+<div class="code"><pre class="code php"><a id="rest_code_3441497babaa4e3c96d36daeeac67d1b-1" name="rest_code_3441497babaa4e3c96d36daeeac67d1b-1" href="#rest_code_3441497babaa4e3c96d36daeeac67d1b-1"></a><span class="x">MyModel:</span>
+<a id="rest_code_3441497babaa4e3c96d36daeeac67d1b-2" name="rest_code_3441497babaa4e3c96d36daeeac67d1b-2" href="#rest_code_3441497babaa4e3c96d36daeeac67d1b-2"></a><span class="x">  actAs:</span>
+<a id="rest_code_3441497babaa4e3c96d36daeeac67d1b-3" name="rest_code_3441497babaa4e3c96d36daeeac67d1b-3" href="#rest_code_3441497babaa4e3c96d36daeeac67d1b-3"></a><span class="x">    fzBlameable:</span>
+<a id="rest_code_3441497babaa4e3c96d36daeeac67d1b-4" name="rest_code_3441497babaa4e3c96d36daeeac67d1b-4" href="#rest_code_3441497babaa4e3c96d36daeeac67d1b-4"></a><span class="x">      columns:</span>
+<a id="rest_code_3441497babaa4e3c96d36daeeac67d1b-5" name="rest_code_3441497babaa4e3c96d36daeeac67d1b-5" href="#rest_code_3441497babaa4e3c96d36daeeac67d1b-5"></a><span class="x">        created:</span>
+<a id="rest_code_3441497babaa4e3c96d36daeeac67d1b-6" name="rest_code_3441497babaa4e3c96d36daeeac67d1b-6" href="#rest_code_3441497babaa4e3c96d36daeeac67d1b-6"></a><span class="x">          length: 8</span>
+<a id="rest_code_3441497babaa4e3c96d36daeeac67d1b-7" name="rest_code_3441497babaa4e3c96d36daeeac67d1b-7" href="#rest_code_3441497babaa4e3c96d36daeeac67d1b-7"></a><span class="x">        updated:</span>
+<a id="rest_code_3441497babaa4e3c96d36daeeac67d1b-8" name="rest_code_3441497babaa4e3c96d36daeeac67d1b-8" href="#rest_code_3441497babaa4e3c96d36daeeac67d1b-8"></a><span class="x">          length: 8</span>
+</pre></div>
     
         <ul class="pager hidden-print">
 <li class="previous">
@@ -104,7 +102,7 @@ sfDoctrineGuard 5.x wystarczy zmienić typy pól created i updated:</p>
 <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="casesblog",
-            disqus_url="http://blog.fizyk.net.pl/pl/blog/fzblameable/",
+            disqus_url="https://fizyk.dev/pl/blog/fzblameable/",
         disqus_title="fzBlameable",
         disqus_identifier="cache/posts/2010-08-01-fzblameable.pl.html",
         disqus_config = function () {
@@ -128,13 +126,13 @@ sfDoctrineGuard 5.x wystarczy zmienić typy pól created i updated:</p>
         <div id="sidebar">
             <!--Sidebar content-->
             <h1 id="blog-title">
-                <a href="http://blog.fizyk.net.pl/" title="Cases">Cases</a>
+                <a href="https://fizyk.dev/" title="Cases">Cases</a>
             </h1>
             
             <small>
                 Również dostępny w językach: 
                 
-            <li><a href="http://blog.fizyk.net.pl/" rel="alternate" hreflang="en">English</a></li>
+            <li><a href="https://fizyk.dev/" rel="alternate" hreflang="en">English</a></li>
 
             </small>
             
@@ -151,7 +149,7 @@ jest dostępny na licencji
 </a>.</li>
             
                 <li>
-<a href="http://www.fizyk.net.pl">Strona domowa</a>
+<a href="https://fizyk.dev">Strona domowa</a>
                 </li>
 <li>
 <a href="../../archive/">Archiwum</a>
@@ -166,7 +164,7 @@ jest dostępny na licencji
             </ul>
 </div>
         <div id="footer">
-            Contents © 2021 <a href="mailto:fizyk~~fizyk.net.pl">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
+            Contents © 2025 <a href="mailto:fizyk~~fizyk.dev">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
             
         </div>
     </div>

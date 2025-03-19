@@ -8,9 +8,9 @@
 <link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../rss.xml">
-<link rel="canonical" href="http://blog.fizyk.net.pl/pl/blog/numerowanie-elementow-dom-przy-pomocy-css/">
-<link rel="icon" href="../../../favicon.png" sizes="62x60">
+<link rel="canonical" href="https://fizyk.dev/pl/blog/numerowanie-elementow-dom-przy-pomocy-css/">
 <link rel="icon" href="../../../favicon-speddial.png" sizes="269x262">
+<link rel="icon" href="../../../favicon.png" sizes="62x60">
 <!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -35,8 +35,7 @@
 
         </span>
         </div>
-    <div>
-<p>W CSS2 istnieje prosty sposób, na stworzenie listy numerowanej, bez
+    <p>W CSS2 istnieje prosty sposób, na stworzenie listy numerowanej, bez
 użycia znacznika list. Sposób ten pozwala również rozszerzyć same listy.</p>
 <!-- TEASER_END -->
 <p>By osiągnąć efekt listy numerowanej, konieczne jest użycie trzech
@@ -47,35 +46,34 @@ właściwości CSS:</p>
 <li><p>content wraz z funkcją counter</p></li>
 </ul>
 <p><strong>counter-reset</strong> informuje w jakich warunkach licznik jest resetowany:</p>
-<pre class="code css"><a id="rest_code_2088e48cf9294f2e8a69921ada8b2b2b-1" name="rest_code_2088e48cf9294f2e8a69921ada8b2b2b-1"></a><span class="p">.</span><span class="nc">reset</span>
-<a id="rest_code_2088e48cf9294f2e8a69921ada8b2b2b-2" name="rest_code_2088e48cf9294f2e8a69921ada8b2b2b-2"></a><span class="p">{</span>
-<a id="rest_code_2088e48cf9294f2e8a69921ada8b2b2b-3" name="rest_code_2088e48cf9294f2e8a69921ada8b2b2b-3"></a>  <span class="k">counter-reset</span><span class="p">:</span> <span class="n">licznik</span><span class="p">;</span>
-<a id="rest_code_2088e48cf9294f2e8a69921ada8b2b2b-4" name="rest_code_2088e48cf9294f2e8a69921ada8b2b2b-4"></a><span class="p">}</span>
-</pre>
+<div class="code"><pre class="code css"><a id="rest_code_97c7a1517cdb4289b19c6268679f7022-1" name="rest_code_97c7a1517cdb4289b19c6268679f7022-1" href="#rest_code_97c7a1517cdb4289b19c6268679f7022-1"></a><span class="p">.</span><span class="nc">reset</span>
+<a id="rest_code_97c7a1517cdb4289b19c6268679f7022-2" name="rest_code_97c7a1517cdb4289b19c6268679f7022-2" href="#rest_code_97c7a1517cdb4289b19c6268679f7022-2"></a><span class="p">{</span>
+<a id="rest_code_97c7a1517cdb4289b19c6268679f7022-3" name="rest_code_97c7a1517cdb4289b19c6268679f7022-3" href="#rest_code_97c7a1517cdb4289b19c6268679f7022-3"></a><span class="w">  </span><span class="k">counter-reset</span><span class="p">:</span><span class="w"> </span><span class="n">licznik</span><span class="p">;</span>
+<a id="rest_code_97c7a1517cdb4289b19c6268679f7022-4" name="rest_code_97c7a1517cdb4289b19c6268679f7022-4" href="#rest_code_97c7a1517cdb4289b19c6268679f7022-4"></a><span class="p">}</span>
+</pre></div>
 <p><strong>counter-increment</strong> podnosi wartosć licznika:</p>
-<pre class="code css"><a id="rest_code_73844b5c050d4e22af2e7b821a27be9b-1" name="rest_code_73844b5c050d4e22af2e7b821a27be9b-1"></a><span class="p">.</span><span class="nc">increment</span>
-<a id="rest_code_73844b5c050d4e22af2e7b821a27be9b-2" name="rest_code_73844b5c050d4e22af2e7b821a27be9b-2"></a><span class="p">{</span>
-<a id="rest_code_73844b5c050d4e22af2e7b821a27be9b-3" name="rest_code_73844b5c050d4e22af2e7b821a27be9b-3"></a>  <span class="k">counter-increment</span><span class="p">:</span> <span class="n">licznik</span><span class="p">;</span>
-<a id="rest_code_73844b5c050d4e22af2e7b821a27be9b-4" name="rest_code_73844b5c050d4e22af2e7b821a27be9b-4"></a><span class="p">}</span>
-</pre>
+<div class="code"><pre class="code css"><a id="rest_code_937f414da71640d5bb373c19c960be04-1" name="rest_code_937f414da71640d5bb373c19c960be04-1" href="#rest_code_937f414da71640d5bb373c19c960be04-1"></a><span class="p">.</span><span class="nc">increment</span>
+<a id="rest_code_937f414da71640d5bb373c19c960be04-2" name="rest_code_937f414da71640d5bb373c19c960be04-2" href="#rest_code_937f414da71640d5bb373c19c960be04-2"></a><span class="p">{</span>
+<a id="rest_code_937f414da71640d5bb373c19c960be04-3" name="rest_code_937f414da71640d5bb373c19c960be04-3" href="#rest_code_937f414da71640d5bb373c19c960be04-3"></a><span class="w">  </span><span class="k">counter-increment</span><span class="p">:</span><span class="w"> </span><span class="n">licznik</span><span class="p">;</span>
+<a id="rest_code_937f414da71640d5bb373c19c960be04-4" name="rest_code_937f414da71640d5bb373c19c960be04-4" href="#rest_code_937f414da71640d5bb373c19c960be04-4"></a><span class="p">}</span>
+</pre></div>
 <p>Natomiast <strong>content</strong> wraz z funkcją counter wyświetla w odpowiednim
 miejscu wartość licznika. Dlatego najlepiej umieścić tą właściwość w
 definicji z selektorem <strong>:before</strong></p>
-<pre class="code css"><a id="rest_code_4f623a9df6bc4919b289a236fdb26393-1" name="rest_code_4f623a9df6bc4919b289a236fdb26393-1"></a><span class="p">.</span><span class="nc">count-me</span><span class="p">:</span><span class="nd">before</span>
-<a id="rest_code_4f623a9df6bc4919b289a236fdb26393-2" name="rest_code_4f623a9df6bc4919b289a236fdb26393-2"></a><span class="p">{</span>
-<a id="rest_code_4f623a9df6bc4919b289a236fdb26393-3" name="rest_code_4f623a9df6bc4919b289a236fdb26393-3"></a>  <span class="k">counter-increment</span><span class="p">:</span> <span class="n">licznik</span>
-<a id="rest_code_4f623a9df6bc4919b289a236fdb26393-4" name="rest_code_4f623a9df6bc4919b289a236fdb26393-4"></a>  <span class="k">content</span><span class="o">:</span> <span class="nb">counter</span><span class="p">(</span><span class="n">licznik</span><span class="p">);</span>
-<a id="rest_code_4f623a9df6bc4919b289a236fdb26393-5" name="rest_code_4f623a9df6bc4919b289a236fdb26393-5"></a><span class="p">}</span>
-</pre>
+<div class="code"><pre class="code css"><a id="rest_code_555eb3f517ab499689377b83538fbb17-1" name="rest_code_555eb3f517ab499689377b83538fbb17-1" href="#rest_code_555eb3f517ab499689377b83538fbb17-1"></a><span class="p">.</span><span class="nc">count-me</span><span class="p">:</span><span class="nd">before</span>
+<a id="rest_code_555eb3f517ab499689377b83538fbb17-2" name="rest_code_555eb3f517ab499689377b83538fbb17-2" href="#rest_code_555eb3f517ab499689377b83538fbb17-2"></a><span class="p">{</span>
+<a id="rest_code_555eb3f517ab499689377b83538fbb17-3" name="rest_code_555eb3f517ab499689377b83538fbb17-3" href="#rest_code_555eb3f517ab499689377b83538fbb17-3"></a><span class="w">  </span><span class="k">counter-increment</span><span class="p">:</span><span class="w"> </span><span class="n">licznik</span>
+<a id="rest_code_555eb3f517ab499689377b83538fbb17-4" name="rest_code_555eb3f517ab499689377b83538fbb17-4" href="#rest_code_555eb3f517ab499689377b83538fbb17-4"></a><span class="w">  </span><span class="k">content</span><span class="o">:</span><span class="w"> </span><span class="nb">counter</span><span class="p">(</span><span class="n">licznik</span><span class="p">);</span>
+<a id="rest_code_555eb3f517ab499689377b83538fbb17-5" name="rest_code_555eb3f517ab499689377b83538fbb17-5" href="#rest_code_555eb3f517ab499689377b83538fbb17-5"></a><span class="p">}</span>
+</pre></div>
 <p>Metoda content potrafi wyświetlić również ciąg znaków, a nawet dwa
 liczniki, dlatego też można wyświetlić coś takiego:</p>
-<pre class="code css"><a id="rest_code_309bcebc171e4d8ea54522068b57117a-1" name="rest_code_309bcebc171e4d8ea54522068b57117a-1"></a><span class="p">.</span><span class="nc">count-me-too</span><span class="p">:</span><span class="nd">before</span>
-<a id="rest_code_309bcebc171e4d8ea54522068b57117a-2" name="rest_code_309bcebc171e4d8ea54522068b57117a-2"></a><span class="p">{</span>
-<a id="rest_code_309bcebc171e4d8ea54522068b57117a-3" name="rest_code_309bcebc171e4d8ea54522068b57117a-3"></a>  <span class="k">counter-increment</span><span class="p">:</span> <span class="n">licznik</span>
-<a id="rest_code_309bcebc171e4d8ea54522068b57117a-4" name="rest_code_309bcebc171e4d8ea54522068b57117a-4"></a>  <span class="k">content</span><span class="o">:</span> <span class="s2">"Art. "</span> <span class="nb">counter</span><span class="p">(</span><span class="n">licznik</span><span class="p">)</span> <span class="s2">". "</span><span class="p">;</span>
-<a id="rest_code_309bcebc171e4d8ea54522068b57117a-5" name="rest_code_309bcebc171e4d8ea54522068b57117a-5"></a><span class="p">}</span>
-</pre>
-</div>
+<div class="code"><pre class="code css"><a id="rest_code_9130afe85da74b36bff2537660e24c72-1" name="rest_code_9130afe85da74b36bff2537660e24c72-1" href="#rest_code_9130afe85da74b36bff2537660e24c72-1"></a><span class="p">.</span><span class="nc">count-me-too</span><span class="p">:</span><span class="nd">before</span>
+<a id="rest_code_9130afe85da74b36bff2537660e24c72-2" name="rest_code_9130afe85da74b36bff2537660e24c72-2" href="#rest_code_9130afe85da74b36bff2537660e24c72-2"></a><span class="p">{</span>
+<a id="rest_code_9130afe85da74b36bff2537660e24c72-3" name="rest_code_9130afe85da74b36bff2537660e24c72-3" href="#rest_code_9130afe85da74b36bff2537660e24c72-3"></a><span class="w">  </span><span class="k">counter-increment</span><span class="p">:</span><span class="w"> </span><span class="n">licznik</span>
+<a id="rest_code_9130afe85da74b36bff2537660e24c72-4" name="rest_code_9130afe85da74b36bff2537660e24c72-4" href="#rest_code_9130afe85da74b36bff2537660e24c72-4"></a><span class="w">  </span><span class="k">content</span><span class="o">:</span><span class="w"> </span><span class="s2">"Art. "</span><span class="w"> </span><span class="nb">counter</span><span class="p">(</span><span class="n">licznik</span><span class="p">)</span><span class="w"> </span><span class="s2">". "</span><span class="p">;</span>
+<a id="rest_code_9130afe85da74b36bff2537660e24c72-5" name="rest_code_9130afe85da74b36bff2537660e24c72-5" href="#rest_code_9130afe85da74b36bff2537660e24c72-5"></a><span class="p">}</span>
+</pre></div>
     
         <ul class="pager hidden-print">
 <li class="previous">
@@ -88,7 +86,7 @@ liczniki, dlatego też można wyświetlić coś takiego:</p>
 <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="casesblog",
-            disqus_url="http://blog.fizyk.net.pl/pl/blog/numerowanie-elementow-dom-przy-pomocy-css/",
+            disqus_url="https://fizyk.dev/pl/blog/numerowanie-elementow-dom-przy-pomocy-css/",
         disqus_title="Numerowanie element\u00f3w DOM przy pomocy CSS",
         disqus_identifier="cache/posts/2012-09-06-numerowanie-elementow-dom-przy-pomocy-css.pl.html",
         disqus_config = function () {
@@ -112,13 +110,13 @@ liczniki, dlatego też można wyświetlić coś takiego:</p>
         <div id="sidebar">
             <!--Sidebar content-->
             <h1 id="blog-title">
-                <a href="http://blog.fizyk.net.pl/" title="Cases">Cases</a>
+                <a href="https://fizyk.dev/" title="Cases">Cases</a>
             </h1>
             
             <small>
                 Również dostępny w językach: 
                 
-            <li><a href="http://blog.fizyk.net.pl/" rel="alternate" hreflang="en">English</a></li>
+            <li><a href="https://fizyk.dev/" rel="alternate" hreflang="en">English</a></li>
 
             </small>
             
@@ -135,7 +133,7 @@ jest dostępny na licencji
 </a>.</li>
             
                 <li>
-<a href="http://www.fizyk.net.pl">Strona domowa</a>
+<a href="https://fizyk.dev">Strona domowa</a>
                 </li>
 <li>
 <a href="../../archive/">Archiwum</a>
@@ -150,7 +148,7 @@ jest dostępny na licencji
             </ul>
 </div>
         <div id="footer">
-            Contents © 2021 <a href="mailto:fizyk~~fizyk.net.pl">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
+            Contents © 2025 <a href="mailto:fizyk~~fizyk.dev">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
             
         </div>
     </div>

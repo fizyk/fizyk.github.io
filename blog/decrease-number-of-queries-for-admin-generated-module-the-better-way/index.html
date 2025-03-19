@@ -8,9 +8,9 @@
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../pl/rss.xml">
-<link rel="canonical" href="http://blog.fizyk.net.pl/blog/decrease-number-of-queries-for-admin-generated-module-the-better-way/">
-<link rel="icon" href="../../favicon.png" sizes="62x60">
+<link rel="canonical" href="https://fizyk.dev/blog/decrease-number-of-queries-for-admin-generated-module-the-better-way/">
 <link rel="icon" href="../../favicon-speddial.png" sizes="269x262">
+<link rel="icon" href="../../favicon.png" sizes="62x60">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -38,8 +38,7 @@
 
         </span>
         </div>
-    <div>
-<p>Recently I saw two posts in the symfony blogosphere about decreasing
+    <p>Recently I saw two posts in the symfony blogosphere about decreasing
 number of queries in admin generated module (in January on <a class="reference external" href="http://www.techiecorner.com/1963/how-to-reduce-admin-generator-query-in-symfony-1-4/">Techie
 Corner</a>,
 and today on <a class="reference external" href="http://symfony-world.blogspot.com/2011/02/less-doctrine-queries-in-symfony-admin.html">Symfony
@@ -52,19 +51,18 @@ modules.</p>
 <p>When I first saw that solution on techiecorner, I thought: "<em>hmmm.. that
 could be useful</em>", but then, I looked at my generator.yml file and saw
 <strong>table_method</strong> i placed there long time ago...</p>
-<pre class="code yaml"><a id="rest_code_be906297117545fd82aa7c4b7e8cca6e-1" name="rest_code_be906297117545fd82aa7c4b7e8cca6e-1"></a><span class="nt">generator</span><span class="p">:</span>
-<a id="rest_code_be906297117545fd82aa7c4b7e8cca6e-2" name="rest_code_be906297117545fd82aa7c4b7e8cca6e-2"></a>  <span class="nt">param</span><span class="p">:</span>
-<a id="rest_code_be906297117545fd82aa7c4b7e8cca6e-3" name="rest_code_be906297117545fd82aa7c4b7e8cca6e-3"></a>    <span class="nt">config</span><span class="p">:</span>
-<a id="rest_code_be906297117545fd82aa7c4b7e8cca6e-4" name="rest_code_be906297117545fd82aa7c4b7e8cca6e-4"></a>      <span class="nt">list</span><span class="p">:</span>
-<a id="rest_code_be906297117545fd82aa7c4b7e8cca6e-5" name="rest_code_be906297117545fd82aa7c4b7e8cca6e-5"></a>        <span class="nt">table_method</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">getAdminNotes</span>
-</pre>
+<div class="code"><pre class="code yaml"><a id="rest_code_7ab1407109534d269616b15a179383ec-1" name="rest_code_7ab1407109534d269616b15a179383ec-1" href="#rest_code_7ab1407109534d269616b15a179383ec-1"></a><span class="nt">generator</span><span class="p">:</span>
+<a id="rest_code_7ab1407109534d269616b15a179383ec-2" name="rest_code_7ab1407109534d269616b15a179383ec-2" href="#rest_code_7ab1407109534d269616b15a179383ec-2"></a><span class="w">  </span><span class="nt">param</span><span class="p">:</span>
+<a id="rest_code_7ab1407109534d269616b15a179383ec-3" name="rest_code_7ab1407109534d269616b15a179383ec-3" href="#rest_code_7ab1407109534d269616b15a179383ec-3"></a><span class="w">    </span><span class="nt">config</span><span class="p">:</span>
+<a id="rest_code_7ab1407109534d269616b15a179383ec-4" name="rest_code_7ab1407109534d269616b15a179383ec-4" href="#rest_code_7ab1407109534d269616b15a179383ec-4"></a><span class="w">      </span><span class="nt">list</span><span class="p">:</span>
+<a id="rest_code_7ab1407109534d269616b15a179383ec-5" name="rest_code_7ab1407109534d269616b15a179383ec-5" href="#rest_code_7ab1407109534d269616b15a179383ec-5"></a><span class="w">        </span><span class="nt">table_method</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">getAdminNotes</span>
+</pre></div>
 <p>And while both, overwriting buildQuery and setting table_method can
 achieve same goal, I think table_method is more elegant, as it keeps
 your query in your ModelTable, and can be reused in other part of your
 project as well.</p>
 <p>See <a class="reference external" href="http://www.symfony-project.org/reference/1_4/en/06-Admin-Generator#chapter_06_sub_table_method">The symfony Reference
 Book</a>.</p>
-</div>
     
         <ul class="pager hidden-print">
 <li class="previous">
@@ -77,7 +75,7 @@ Book</a>.</p>
 <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="casesblog",
-            disqus_url="http://blog.fizyk.net.pl/blog/decrease-number-of-queries-for-admin-generated-module-the-better-way/",
+            disqus_url="https://fizyk.dev/blog/decrease-number-of-queries-for-admin-generated-module-the-better-way/",
         disqus_title="Decrease number of queries for admin generated module: the better way",
         disqus_identifier="cache/posts/2011-02-14-decrease-number-of-queries-for-admin-generated-module-the-better-way.html",
         disqus_config = function () {
@@ -101,13 +99,13 @@ Book</a>.</p>
         <div id="sidebar">
             <!--Sidebar content-->
             <h1 id="blog-title">
-                <a href="http://blog.fizyk.net.pl/" title="Cases">Cases</a>
+                <a href="https://fizyk.dev/" title="Cases">Cases</a>
             </h1>
             
             <small>
                 Also available in: 
                 
-            <li><a href="http://blog.fizyk.net.pl/pl/" rel="alternate" hreflang="pl">Polski</a></li>
+            <li><a href="https://fizyk.dev/pl/" rel="alternate" hreflang="pl">Polski</a></li>
 
             </small>
             
@@ -124,7 +122,7 @@ jest dostępny na licencji
 </a>.</li>
             
                 <li>
-<a href="http://www.fizyk.net.pl/en">Homepage</a>
+<a href="https://fizyk.dev/en">Homepage</a>
                 </li>
 <li>
 <a href="../../archive/">Archives</a>
@@ -139,7 +137,7 @@ jest dostępny na licencji
             </ul>
 </div>
         <div id="footer">
-            Contents © 2021 <a href="mailto:fizyk~~fizyk.net.pl">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
+            Contents © 2025 <a href="mailto:fizyk~~fizyk.dev">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
             
         </div>
     </div>

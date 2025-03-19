@@ -8,9 +8,9 @@
 <link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../rss.xml">
-<link rel="canonical" href="http://blog.fizyk.net.pl/pl/blog/python-atrybut-instancji-atrybut-klasy/">
-<link rel="icon" href="../../../favicon.png" sizes="62x60">
+<link rel="canonical" href="https://fizyk.dev/pl/blog/python-atrybut-instancji-atrybut-klasy/">
 <link rel="icon" href="../../../favicon-speddial.png" sizes="269x262">
+<link rel="icon" href="../../../favicon.png" sizes="62x60">
 <!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -35,8 +35,7 @@
 
         </span>
         </div>
-    <div>
-<p>Python jest dziwnym językiem, językiem silnie zależnym od konwencji.
+    <p>Python jest dziwnym językiem, językiem silnie zależnym od konwencji.
 Chociaż wiedziałem, że dużo w tym języku zależy od konwencji, mocno mnie
 zaskoczyło to, jak bardzo konwencja wpływa na programy w pythonie. Bloki
 kodu wydzielone poprzez wcięcia to banał.</p>
@@ -46,44 +45,44 @@ zacząłem pisać pierwszy program w pythonie, trochę poczytałem, więc
 mniej więcej wiedziałem, że tworząc klasę, można mieć atrybuty klasy
 (statyczne), jak i instancji, do których odwołać można się w następujący
 sposób:</p>
-<pre class="code python"><a id="rest_code_5055ce7178ca42e397ff7b0af698ff19-1" name="rest_code_5055ce7178ca42e397ff7b0af698ff19-1"></a><span class="k">class</span> <span class="nc">Klasa</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-<a id="rest_code_5055ce7178ca42e397ff7b0af698ff19-2" name="rest_code_5055ce7178ca42e397ff7b0af698ff19-2"></a>
-<a id="rest_code_5055ce7178ca42e397ff7b0af698ff19-3" name="rest_code_5055ce7178ca42e397ff7b0af698ff19-3"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="rest_code_5055ce7178ca42e397ff7b0af698ff19-4" name="rest_code_5055ce7178ca42e397ff7b0af698ff19-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">someMethod</span><span class="p">()</span>
-<a id="rest_code_5055ce7178ca42e397ff7b0af698ff19-5" name="rest_code_5055ce7178ca42e397ff7b0af698ff19-5"></a>
-<a id="rest_code_5055ce7178ca42e397ff7b0af698ff19-6" name="rest_code_5055ce7178ca42e397ff7b0af698ff19-6"></a>    <span class="k">def</span> <span class="nf">someMethod</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="rest_code_5055ce7178ca42e397ff7b0af698ff19-7" name="rest_code_5055ce7178ca42e397ff7b0af698ff19-7"></a>        <span class="o">//</span><span class="n">atrybut</span> <span class="n">instancji</span>
-<a id="rest_code_5055ce7178ca42e397ff7b0af698ff19-8" name="rest_code_5055ce7178ca42e397ff7b0af698ff19-8"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">atrybut</span>
-<a id="rest_code_5055ce7178ca42e397ff7b0af698ff19-9" name="rest_code_5055ce7178ca42e397ff7b0af698ff19-9"></a>        <span class="o">//</span><span class="n">atrybut</span> <span class="n">klasy</span>
-<a id="rest_code_5055ce7178ca42e397ff7b0af698ff19-10" name="rest_code_5055ce7178ca42e397ff7b0af698ff19-10"></a>        <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">atrybut</span>
-</pre>
+<div class="code"><pre class="code python"><a id="rest_code_c554d6743ea1448891211abd0d9aca12-1" name="rest_code_c554d6743ea1448891211abd0d9aca12-1" href="#rest_code_c554d6743ea1448891211abd0d9aca12-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Klasa</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<a id="rest_code_c554d6743ea1448891211abd0d9aca12-2" name="rest_code_c554d6743ea1448891211abd0d9aca12-2" href="#rest_code_c554d6743ea1448891211abd0d9aca12-2"></a>
+<a id="rest_code_c554d6743ea1448891211abd0d9aca12-3" name="rest_code_c554d6743ea1448891211abd0d9aca12-3" href="#rest_code_c554d6743ea1448891211abd0d9aca12-3"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="rest_code_c554d6743ea1448891211abd0d9aca12-4" name="rest_code_c554d6743ea1448891211abd0d9aca12-4" href="#rest_code_c554d6743ea1448891211abd0d9aca12-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">someMethod</span><span class="p">()</span>
+<a id="rest_code_c554d6743ea1448891211abd0d9aca12-5" name="rest_code_c554d6743ea1448891211abd0d9aca12-5" href="#rest_code_c554d6743ea1448891211abd0d9aca12-5"></a>
+<a id="rest_code_c554d6743ea1448891211abd0d9aca12-6" name="rest_code_c554d6743ea1448891211abd0d9aca12-6" href="#rest_code_c554d6743ea1448891211abd0d9aca12-6"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">someMethod</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="rest_code_c554d6743ea1448891211abd0d9aca12-7" name="rest_code_c554d6743ea1448891211abd0d9aca12-7" href="#rest_code_c554d6743ea1448891211abd0d9aca12-7"></a>        <span class="o">//</span><span class="n">atrybut</span> <span class="n">instancji</span>
+<a id="rest_code_c554d6743ea1448891211abd0d9aca12-8" name="rest_code_c554d6743ea1448891211abd0d9aca12-8" href="#rest_code_c554d6743ea1448891211abd0d9aca12-8"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">atrybut</span>
+<a id="rest_code_c554d6743ea1448891211abd0d9aca12-9" name="rest_code_c554d6743ea1448891211abd0d9aca12-9" href="#rest_code_c554d6743ea1448891211abd0d9aca12-9"></a>        <span class="o">//</span><span class="n">atrybut</span> <span class="n">klasy</span>
+<a id="rest_code_c554d6743ea1448891211abd0d9aca12-10" name="rest_code_c554d6743ea1448891211abd0d9aca12-10" href="#rest_code_c554d6743ea1448891211abd0d9aca12-10"></a>        <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">atrybut</span>
+</pre></div>
 <p>Oczywiście, nie ma żadnego słowa kluczowego, który by zasugerował, że
 atrybut jest taki, lub taki. Ja, jak to mam w zwyczaju, atrybuty
 deklaruję zawsze w klasie, a następnie do nich się odwołuję:</p>
-<pre class="code python"><a id="rest_code_4ae0539e1c504d2bbf70354ac037c033-1" name="rest_code_4ae0539e1c504d2bbf70354ac037c033-1"></a><span class="k">class</span> <span class="nc">Klasa</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-<a id="rest_code_4ae0539e1c504d2bbf70354ac037c033-2" name="rest_code_4ae0539e1c504d2bbf70354ac037c033-2"></a>    <span class="n">atrybut</span> <span class="o">=</span> <span class="p">[]</span>
-<a id="rest_code_4ae0539e1c504d2bbf70354ac037c033-3" name="rest_code_4ae0539e1c504d2bbf70354ac037c033-3"></a>
-<a id="rest_code_4ae0539e1c504d2bbf70354ac037c033-4" name="rest_code_4ae0539e1c504d2bbf70354ac037c033-4"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="rest_code_4ae0539e1c504d2bbf70354ac037c033-5" name="rest_code_4ae0539e1c504d2bbf70354ac037c033-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">someMethod</span><span class="p">()</span>
-<a id="rest_code_4ae0539e1c504d2bbf70354ac037c033-6" name="rest_code_4ae0539e1c504d2bbf70354ac037c033-6"></a>
-<a id="rest_code_4ae0539e1c504d2bbf70354ac037c033-7" name="rest_code_4ae0539e1c504d2bbf70354ac037c033-7"></a>    <span class="k">def</span> <span class="nf">someMethod</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="rest_code_4ae0539e1c504d2bbf70354ac037c033-8" name="rest_code_4ae0539e1c504d2bbf70354ac037c033-8"></a>        <span class="o">//</span><span class="n">atrybut</span> <span class="n">instancji</span>
-<a id="rest_code_4ae0539e1c504d2bbf70354ac037c033-9" name="rest_code_4ae0539e1c504d2bbf70354ac037c033-9"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">atrybut</span>
-<a id="rest_code_4ae0539e1c504d2bbf70354ac037c033-10" name="rest_code_4ae0539e1c504d2bbf70354ac037c033-10"></a>        <span class="o">//</span><span class="n">atrybut</span> <span class="n">klasy</span>
-<a id="rest_code_4ae0539e1c504d2bbf70354ac037c033-11" name="rest_code_4ae0539e1c504d2bbf70354ac037c033-11"></a>        <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">atrybut</span>
-</pre>
+<div class="code"><pre class="code python"><a id="rest_code_30ac38c2e03240a58664cf3d96d01032-1" name="rest_code_30ac38c2e03240a58664cf3d96d01032-1" href="#rest_code_30ac38c2e03240a58664cf3d96d01032-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Klasa</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<a id="rest_code_30ac38c2e03240a58664cf3d96d01032-2" name="rest_code_30ac38c2e03240a58664cf3d96d01032-2" href="#rest_code_30ac38c2e03240a58664cf3d96d01032-2"></a>    <span class="n">atrybut</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="rest_code_30ac38c2e03240a58664cf3d96d01032-3" name="rest_code_30ac38c2e03240a58664cf3d96d01032-3" href="#rest_code_30ac38c2e03240a58664cf3d96d01032-3"></a>
+<a id="rest_code_30ac38c2e03240a58664cf3d96d01032-4" name="rest_code_30ac38c2e03240a58664cf3d96d01032-4" href="#rest_code_30ac38c2e03240a58664cf3d96d01032-4"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="rest_code_30ac38c2e03240a58664cf3d96d01032-5" name="rest_code_30ac38c2e03240a58664cf3d96d01032-5" href="#rest_code_30ac38c2e03240a58664cf3d96d01032-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">someMethod</span><span class="p">()</span>
+<a id="rest_code_30ac38c2e03240a58664cf3d96d01032-6" name="rest_code_30ac38c2e03240a58664cf3d96d01032-6" href="#rest_code_30ac38c2e03240a58664cf3d96d01032-6"></a>
+<a id="rest_code_30ac38c2e03240a58664cf3d96d01032-7" name="rest_code_30ac38c2e03240a58664cf3d96d01032-7" href="#rest_code_30ac38c2e03240a58664cf3d96d01032-7"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">someMethod</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="rest_code_30ac38c2e03240a58664cf3d96d01032-8" name="rest_code_30ac38c2e03240a58664cf3d96d01032-8" href="#rest_code_30ac38c2e03240a58664cf3d96d01032-8"></a>        <span class="o">//</span><span class="n">atrybut</span> <span class="n">instancji</span>
+<a id="rest_code_30ac38c2e03240a58664cf3d96d01032-9" name="rest_code_30ac38c2e03240a58664cf3d96d01032-9" href="#rest_code_30ac38c2e03240a58664cf3d96d01032-9"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">atrybut</span>
+<a id="rest_code_30ac38c2e03240a58664cf3d96d01032-10" name="rest_code_30ac38c2e03240a58664cf3d96d01032-10" href="#rest_code_30ac38c2e03240a58664cf3d96d01032-10"></a>        <span class="o">//</span><span class="n">atrybut</span> <span class="n">klasy</span>
+<a id="rest_code_30ac38c2e03240a58664cf3d96d01032-11" name="rest_code_30ac38c2e03240a58664cf3d96d01032-11" href="#rest_code_30ac38c2e03240a58664cf3d96d01032-11"></a>        <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">atrybut</span>
+</pre></div>
 <p>Z takim podejściem jest jeden kłopot. Załóżmy teraz takie odwołanie do
 atrybutu w metodzie:</p>
-<pre class="code python"><a id="rest_code_333d7b402d3b4c6fb7b1aa495086e93e-1" name="rest_code_333d7b402d3b4c6fb7b1aa495086e93e-1"></a><span class="k">class</span> <span class="nc">Klasa</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-<a id="rest_code_333d7b402d3b4c6fb7b1aa495086e93e-2" name="rest_code_333d7b402d3b4c6fb7b1aa495086e93e-2"></a>    <span class="n">atrybut</span> <span class="o">=</span> <span class="p">[]</span>
-<a id="rest_code_333d7b402d3b4c6fb7b1aa495086e93e-3" name="rest_code_333d7b402d3b4c6fb7b1aa495086e93e-3"></a>
-<a id="rest_code_333d7b402d3b4c6fb7b1aa495086e93e-4" name="rest_code_333d7b402d3b4c6fb7b1aa495086e93e-4"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="rest_code_333d7b402d3b4c6fb7b1aa495086e93e-5" name="rest_code_333d7b402d3b4c6fb7b1aa495086e93e-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">someMethod</span><span class="p">()</span>
-<a id="rest_code_333d7b402d3b4c6fb7b1aa495086e93e-6" name="rest_code_333d7b402d3b4c6fb7b1aa495086e93e-6"></a>
-<a id="rest_code_333d7b402d3b4c6fb7b1aa495086e93e-7" name="rest_code_333d7b402d3b4c6fb7b1aa495086e93e-7"></a>    <span class="k">def</span> <span class="nf">someMethod</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="rest_code_333d7b402d3b4c6fb7b1aa495086e93e-8" name="rest_code_333d7b402d3b4c6fb7b1aa495086e93e-8"></a>        <span class="o">//</span><span class="n">atrybut</span> <span class="n">instancji</span> <span class="p">(</span><span class="err">?</span><span class="p">)</span>
-<a id="rest_code_333d7b402d3b4c6fb7b1aa495086e93e-9" name="rest_code_333d7b402d3b4c6fb7b1aa495086e93e-9"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">atrybut</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'string'</span><span class="p">)</span>
-</pre>
+<div class="code"><pre class="code python"><a id="rest_code_aa854b5600304188891602c1d6d46ef2-1" name="rest_code_aa854b5600304188891602c1d6d46ef2-1" href="#rest_code_aa854b5600304188891602c1d6d46ef2-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Klasa</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<a id="rest_code_aa854b5600304188891602c1d6d46ef2-2" name="rest_code_aa854b5600304188891602c1d6d46ef2-2" href="#rest_code_aa854b5600304188891602c1d6d46ef2-2"></a>    <span class="n">atrybut</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="rest_code_aa854b5600304188891602c1d6d46ef2-3" name="rest_code_aa854b5600304188891602c1d6d46ef2-3" href="#rest_code_aa854b5600304188891602c1d6d46ef2-3"></a>
+<a id="rest_code_aa854b5600304188891602c1d6d46ef2-4" name="rest_code_aa854b5600304188891602c1d6d46ef2-4" href="#rest_code_aa854b5600304188891602c1d6d46ef2-4"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="rest_code_aa854b5600304188891602c1d6d46ef2-5" name="rest_code_aa854b5600304188891602c1d6d46ef2-5" href="#rest_code_aa854b5600304188891602c1d6d46ef2-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">someMethod</span><span class="p">()</span>
+<a id="rest_code_aa854b5600304188891602c1d6d46ef2-6" name="rest_code_aa854b5600304188891602c1d6d46ef2-6" href="#rest_code_aa854b5600304188891602c1d6d46ef2-6"></a>
+<a id="rest_code_aa854b5600304188891602c1d6d46ef2-7" name="rest_code_aa854b5600304188891602c1d6d46ef2-7" href="#rest_code_aa854b5600304188891602c1d6d46ef2-7"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">someMethod</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="rest_code_aa854b5600304188891602c1d6d46ef2-8" name="rest_code_aa854b5600304188891602c1d6d46ef2-8" href="#rest_code_aa854b5600304188891602c1d6d46ef2-8"></a>        <span class="o">//</span><span class="n">atrybut</span> <span class="n">instancji</span> <span class="p">(</span><span class="err">?</span><span class="p">)</span>
+<a id="rest_code_aa854b5600304188891602c1d6d46ef2-9" name="rest_code_aa854b5600304188891602c1d6d46ef2-9" href="#rest_code_aa854b5600304188891602c1d6d46ef2-9"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">atrybut</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'string'</span><span class="p">)</span>
+</pre></div>
 <p>Python ma dość nietypowe podejście do atrybutów klasy (<em>statycznych</em>).
 Po pierwsze, deklaracja atrybutów w ciele klasy jest przede wszystkim
 statyczna - atrybuty klasy. I moje przyzwyczajenie nie wydaje się być
@@ -100,29 +99,26 @@ powyższym przykładzie zadeklarowany jest atrybut klasy, a w metodzie
 <strong>*someMethod*</strong>, odwołanie zostaje skierowane do atrybutu klasy
 właśnie. Jak więc dodać atrybut do słownika trybutów instancji? Tylko
 poprzez wcześniejszą inicjację atrybutu:</p>
-<pre class="code python"><a id="rest_code_0d06f4184ea649b985f56ead9880806f-1" name="rest_code_0d06f4184ea649b985f56ead9880806f-1"></a><span class="k">class</span> <span class="nc">Klasa</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-<a id="rest_code_0d06f4184ea649b985f56ead9880806f-2" name="rest_code_0d06f4184ea649b985f56ead9880806f-2"></a>    <span class="n">atrybut</span> <span class="o">=</span> <span class="p">[]</span>
-<a id="rest_code_0d06f4184ea649b985f56ead9880806f-3" name="rest_code_0d06f4184ea649b985f56ead9880806f-3"></a>
-<a id="rest_code_0d06f4184ea649b985f56ead9880806f-4" name="rest_code_0d06f4184ea649b985f56ead9880806f-4"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="rest_code_0d06f4184ea649b985f56ead9880806f-5" name="rest_code_0d06f4184ea649b985f56ead9880806f-5"></a>        <span class="o">//</span> <span class="n">odwołanie</span> <span class="n">do</span> <span class="n">atrybutu</span> <span class="n">klasy</span>
-<a id="rest_code_0d06f4184ea649b985f56ead9880806f-6" name="rest_code_0d06f4184ea649b985f56ead9880806f-6"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">someMethod</span><span class="p">()</span>
-<a id="rest_code_0d06f4184ea649b985f56ead9880806f-7" name="rest_code_0d06f4184ea649b985f56ead9880806f-7"></a>        <span class="o">//</span> <span class="n">inicjacja</span> <span class="n">atrybutu</span> <span class="n">instancji</span>
-<a id="rest_code_0d06f4184ea649b985f56ead9880806f-8" name="rest_code_0d06f4184ea649b985f56ead9880806f-8"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">atrybut</span> <span class="o">=</span> <span class="p">[]</span>
-<a id="rest_code_0d06f4184ea649b985f56ead9880806f-9" name="rest_code_0d06f4184ea649b985f56ead9880806f-9"></a>        <span class="o">//</span> <span class="n">odwołanie</span> <span class="n">do</span> <span class="n">atrybutu</span> <span class="n">instancji</span>
-<a id="rest_code_0d06f4184ea649b985f56ead9880806f-10" name="rest_code_0d06f4184ea649b985f56ead9880806f-10"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">someMethod</span><span class="p">()</span>
-<a id="rest_code_0d06f4184ea649b985f56ead9880806f-11" name="rest_code_0d06f4184ea649b985f56ead9880806f-11"></a>
-<a id="rest_code_0d06f4184ea649b985f56ead9880806f-12" name="rest_code_0d06f4184ea649b985f56ead9880806f-12"></a>    <span class="k">def</span> <span class="nf">someMethod</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="rest_code_0d06f4184ea649b985f56ead9880806f-13" name="rest_code_0d06f4184ea649b985f56ead9880806f-13"></a>        <span class="o">//</span><span class="n">atrybut</span> <span class="n">instancji</span> <span class="p">(</span><span class="err">?</span><span class="p">)</span>
-<a id="rest_code_0d06f4184ea649b985f56ead9880806f-14" name="rest_code_0d06f4184ea649b985f56ead9880806f-14"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">atrybut</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'string'</span><span class="p">)</span>
-</pre>
+<div class="code"><pre class="code python"><a id="rest_code_4d93bc61820b4591a3af451f5503299c-1" name="rest_code_4d93bc61820b4591a3af451f5503299c-1" href="#rest_code_4d93bc61820b4591a3af451f5503299c-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Klasa</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<a id="rest_code_4d93bc61820b4591a3af451f5503299c-2" name="rest_code_4d93bc61820b4591a3af451f5503299c-2" href="#rest_code_4d93bc61820b4591a3af451f5503299c-2"></a>    <span class="n">atrybut</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="rest_code_4d93bc61820b4591a3af451f5503299c-3" name="rest_code_4d93bc61820b4591a3af451f5503299c-3" href="#rest_code_4d93bc61820b4591a3af451f5503299c-3"></a>
+<a id="rest_code_4d93bc61820b4591a3af451f5503299c-4" name="rest_code_4d93bc61820b4591a3af451f5503299c-4" href="#rest_code_4d93bc61820b4591a3af451f5503299c-4"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="rest_code_4d93bc61820b4591a3af451f5503299c-5" name="rest_code_4d93bc61820b4591a3af451f5503299c-5" href="#rest_code_4d93bc61820b4591a3af451f5503299c-5"></a>        <span class="o">//</span> <span class="n">odwołanie</span> <span class="n">do</span> <span class="n">atrybutu</span> <span class="n">klasy</span>
+<a id="rest_code_4d93bc61820b4591a3af451f5503299c-6" name="rest_code_4d93bc61820b4591a3af451f5503299c-6" href="#rest_code_4d93bc61820b4591a3af451f5503299c-6"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">someMethod</span><span class="p">()</span>
+<a id="rest_code_4d93bc61820b4591a3af451f5503299c-7" name="rest_code_4d93bc61820b4591a3af451f5503299c-7" href="#rest_code_4d93bc61820b4591a3af451f5503299c-7"></a>        <span class="o">//</span> <span class="n">inicjacja</span> <span class="n">atrybutu</span> <span class="n">instancji</span>
+<a id="rest_code_4d93bc61820b4591a3af451f5503299c-8" name="rest_code_4d93bc61820b4591a3af451f5503299c-8" href="#rest_code_4d93bc61820b4591a3af451f5503299c-8"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">atrybut</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="rest_code_4d93bc61820b4591a3af451f5503299c-9" name="rest_code_4d93bc61820b4591a3af451f5503299c-9" href="#rest_code_4d93bc61820b4591a3af451f5503299c-9"></a>        <span class="o">//</span> <span class="n">odwołanie</span> <span class="n">do</span> <span class="n">atrybutu</span> <span class="n">instancji</span>
+<a id="rest_code_4d93bc61820b4591a3af451f5503299c-10" name="rest_code_4d93bc61820b4591a3af451f5503299c-10" href="#rest_code_4d93bc61820b4591a3af451f5503299c-10"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">someMethod</span><span class="p">()</span>
+<a id="rest_code_4d93bc61820b4591a3af451f5503299c-11" name="rest_code_4d93bc61820b4591a3af451f5503299c-11" href="#rest_code_4d93bc61820b4591a3af451f5503299c-11"></a>
+<a id="rest_code_4d93bc61820b4591a3af451f5503299c-12" name="rest_code_4d93bc61820b4591a3af451f5503299c-12" href="#rest_code_4d93bc61820b4591a3af451f5503299c-12"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">someMethod</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="rest_code_4d93bc61820b4591a3af451f5503299c-13" name="rest_code_4d93bc61820b4591a3af451f5503299c-13" href="#rest_code_4d93bc61820b4591a3af451f5503299c-13"></a>        <span class="o">//</span><span class="n">atrybut</span> <span class="n">instancji</span> <span class="p">(</span><span class="err">?</span><span class="p">)</span>
+<a id="rest_code_4d93bc61820b4591a3af451f5503299c-14" name="rest_code_4d93bc61820b4591a3af451f5503299c-14" href="#rest_code_4d93bc61820b4591a3af451f5503299c-14"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">atrybut</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'string'</span><span class="p">)</span>
+</pre></div>
 <p>Zanim się w tym zorientowałem, doprowadziłem do małego wycieku pamięci
 ;-).</p>
 <section id="wiecej-do-poczytania-po-angielsku-na-ten-temat-mozna-znalezc-w-tym-linku"><h2>Więcej do poczytania (po angielsku) na ten temat można znaleźć w tym linku:</h2>
 <p><a class="reference external" href="http://docs.python.org/tutorial/classes.html#python-scopes-and-namespaces">http://docs.python.org/tutorial/classes.html#python-scopes-and-namespaces</a></p>
-</section>
-</div>
-    
-        <ul class="pager hidden-print">
+</section><ul class="pager hidden-print">
 <li class="previous">
                 <a href="../git-a-inne-systemy-kontroli-wersji-svn-i-bzr/" rel="prev" title="Git a inne systemy kontroli wersji (svn i bzr)">Poprzedni post</a>
             </li>
@@ -133,7 +129,7 @@ poprzez wcześniejszą inicjację atrybutu:</p>
 <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="casesblog",
-            disqus_url="http://blog.fizyk.net.pl/pl/blog/python-atrybut-instancji-atrybut-klasy/",
+            disqus_url="https://fizyk.dev/pl/blog/python-atrybut-instancji-atrybut-klasy/",
         disqus_title="Python - atrybut instancji, atrybut klasy",
         disqus_identifier="cache/posts/2010-11-18-python-atrybut-instancji-atrybut-klasy.pl.html",
         disqus_config = function () {
@@ -157,13 +153,13 @@ poprzez wcześniejszą inicjację atrybutu:</p>
         <div id="sidebar">
             <!--Sidebar content-->
             <h1 id="blog-title">
-                <a href="http://blog.fizyk.net.pl/" title="Cases">Cases</a>
+                <a href="https://fizyk.dev/" title="Cases">Cases</a>
             </h1>
             
             <small>
                 Również dostępny w językach: 
                 
-            <li><a href="http://blog.fizyk.net.pl/" rel="alternate" hreflang="en">English</a></li>
+            <li><a href="https://fizyk.dev/" rel="alternate" hreflang="en">English</a></li>
 
             </small>
             
@@ -180,7 +176,7 @@ jest dostępny na licencji
 </a>.</li>
             
                 <li>
-<a href="http://www.fizyk.net.pl">Strona domowa</a>
+<a href="https://fizyk.dev">Strona domowa</a>
                 </li>
 <li>
 <a href="../../archive/">Archiwum</a>
@@ -195,7 +191,7 @@ jest dostępny na licencji
             </ul>
 </div>
         <div id="footer">
-            Contents © 2021 <a href="mailto:fizyk~~fizyk.net.pl">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
+            Contents © 2025 <a href="mailto:fizyk~~fizyk.dev">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
             
         </div>
     </div>

@@ -8,9 +8,9 @@
 <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="rss.xml">
-<link rel="canonical" href="http://blog.fizyk.net.pl/pl/index-2.html">
-<link rel="icon" href="../favicon.png" sizes="62x60">
+<link rel="canonical" href="https://fizyk.dev/pl/index-2.html">
 <link rel="icon" href="../favicon-speddial.png" sizes="269x262">
+<link rel="icon" href="../favicon.png" sizes="62x60">
 <link rel="prev" href="index-3.html" type="text/html">
 <link rel="next" href="index-1.html" type="text/html">
 <!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]-->
@@ -41,7 +41,7 @@ tabelach, później klucze i indeksy:</p>
 <p class="more"><a href="blog/nie-wierz-migracjom/">Czytaj więcej…</a></p>
 </div>
             
-        
+    
     <a href="blog/nie-wierz-migracjom/#disqus_thread" data-disqus-identifier="cache/posts/2010-05-16-nie-wierz-migracjom.pl.html">Komentarze</a>
 
 
@@ -59,8 +59,7 @@ tabelach, później klucze i indeksy:</p>
                             <a class="tag" href="tags/utf8/"><span>utf8</span></a>
                 </span>
             </div>
-        <div>
-<p>Niejednokrotnie tworząc bazę danych w MySQL, nie trudno nie zauważyć, iż
+        <p>Niejednokrotnie tworząc bazę danych w MySQL, nie trudno nie zauważyć, iż
 w świeżej, nieskonfigurowanej instalacji tego systemu zarządzania bazą
 danych, domyślnym typem kodowania nie jest
 <a class="reference external" href="http://pl.wikipedia.org/wiki/UTF-8">utf8</a> tylko
@@ -79,15 +78,15 @@ wymusić stosowanie tego kodowanie w tworzonych poprzez doctrine
 tabelach, czy też samym połączeniu na lini baza danych - aplikacja.
 Konieczne jest ręczne ustawienie odpowiednich wartości w pliku
 <strong>database.yml</strong>:</p>
-<pre class="code yaml"><a id="rest_code_5062f1b6dcbc4fc5ad72d22a8bc0ad2a-1" name="rest_code_5062f1b6dcbc4fc5ad72d22a8bc0ad2a-1"></a><span class="nt">all</span><span class="p">:</span>
-<a id="rest_code_5062f1b6dcbc4fc5ad72d22a8bc0ad2a-2" name="rest_code_5062f1b6dcbc4fc5ad72d22a8bc0ad2a-2"></a>  <span class="nt">doctrine</span><span class="p">:</span>
-<a id="rest_code_5062f1b6dcbc4fc5ad72d22a8bc0ad2a-3" name="rest_code_5062f1b6dcbc4fc5ad72d22a8bc0ad2a-3"></a>    <span class="nt">class</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">sfDoctrineDatabase</span>
-<a id="rest_code_5062f1b6dcbc4fc5ad72d22a8bc0ad2a-4" name="rest_code_5062f1b6dcbc4fc5ad72d22a8bc0ad2a-4"></a>    <span class="nt">param</span><span class="p">:</span>
-<a id="rest_code_5062f1b6dcbc4fc5ad72d22a8bc0ad2a-5" name="rest_code_5062f1b6dcbc4fc5ad72d22a8bc0ad2a-5"></a>      <span class="c1">#...</span>
-<a id="rest_code_5062f1b6dcbc4fc5ad72d22a8bc0ad2a-6" name="rest_code_5062f1b6dcbc4fc5ad72d22a8bc0ad2a-6"></a>      <span class="nt">attributes</span><span class="p">:</span>
-<a id="rest_code_5062f1b6dcbc4fc5ad72d22a8bc0ad2a-7" name="rest_code_5062f1b6dcbc4fc5ad72d22a8bc0ad2a-7"></a>        <span class="nt">default_table_charset</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">utf8</span>
-<a id="rest_code_5062f1b6dcbc4fc5ad72d22a8bc0ad2a-8" name="rest_code_5062f1b6dcbc4fc5ad72d22a8bc0ad2a-8"></a>        <span class="nt">default_table_collate</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">utf8_general_ci</span>
-</pre>
+<div class="code"><pre class="code yaml"><a id="rest_code_0489c82e85644c659bc1b91650cba7d3-1" name="rest_code_0489c82e85644c659bc1b91650cba7d3-1" href="blog/polskie-znaki-w-mysql-doctrine-i-symfony/#rest_code_0489c82e85644c659bc1b91650cba7d3-1"></a><span class="nt">all</span><span class="p">:</span>
+<a id="rest_code_0489c82e85644c659bc1b91650cba7d3-2" name="rest_code_0489c82e85644c659bc1b91650cba7d3-2" href="blog/polskie-znaki-w-mysql-doctrine-i-symfony/#rest_code_0489c82e85644c659bc1b91650cba7d3-2"></a><span class="w">  </span><span class="nt">doctrine</span><span class="p">:</span>
+<a id="rest_code_0489c82e85644c659bc1b91650cba7d3-3" name="rest_code_0489c82e85644c659bc1b91650cba7d3-3" href="blog/polskie-znaki-w-mysql-doctrine-i-symfony/#rest_code_0489c82e85644c659bc1b91650cba7d3-3"></a><span class="w">    </span><span class="nt">class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sfDoctrineDatabase</span>
+<a id="rest_code_0489c82e85644c659bc1b91650cba7d3-4" name="rest_code_0489c82e85644c659bc1b91650cba7d3-4" href="blog/polskie-znaki-w-mysql-doctrine-i-symfony/#rest_code_0489c82e85644c659bc1b91650cba7d3-4"></a><span class="w">    </span><span class="nt">param</span><span class="p">:</span>
+<a id="rest_code_0489c82e85644c659bc1b91650cba7d3-5" name="rest_code_0489c82e85644c659bc1b91650cba7d3-5" href="blog/polskie-znaki-w-mysql-doctrine-i-symfony/#rest_code_0489c82e85644c659bc1b91650cba7d3-5"></a><span class="w">      </span><span class="c1">#...</span>
+<a id="rest_code_0489c82e85644c659bc1b91650cba7d3-6" name="rest_code_0489c82e85644c659bc1b91650cba7d3-6" href="blog/polskie-znaki-w-mysql-doctrine-i-symfony/#rest_code_0489c82e85644c659bc1b91650cba7d3-6"></a><span class="w">      </span><span class="nt">attributes</span><span class="p">:</span>
+<a id="rest_code_0489c82e85644c659bc1b91650cba7d3-7" name="rest_code_0489c82e85644c659bc1b91650cba7d3-7" href="blog/polskie-znaki-w-mysql-doctrine-i-symfony/#rest_code_0489c82e85644c659bc1b91650cba7d3-7"></a><span class="w">        </span><span class="nt">default_table_charset</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">utf8</span>
+<a id="rest_code_0489c82e85644c659bc1b91650cba7d3-8" name="rest_code_0489c82e85644c659bc1b91650cba7d3-8" href="blog/polskie-znaki-w-mysql-doctrine-i-symfony/#rest_code_0489c82e85644c659bc1b91650cba7d3-8"></a><span class="w">        </span><span class="nt">default_table_collate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">utf8_general_ci</span>
+</pre></div>
 <p>W ten sposób można w spokoju tworzyć aplikacje używające kodowania
 unicode bez obawy wystąpienia błędu nieprawidłowego kodowania znaków w
 porównaniu MySQL, lub innych niespodzianek z tym związanych.</p>
@@ -95,9 +94,8 @@ porównaniu MySQL, lub innych niespodzianek z tym związanych.</p>
 sposób w unicode jak i w cp1252/latin1, czego nie można powiedzieć o
 polskich ogonkach, czy występujących w czeskim i innych
 zachodniosłowiańskich językach ptaszkach (Przykład: Čech).</p>
-</div>
             
-        
+    
     <a href="blog/polskie-znaki-w-mysql-doctrine-i-symfony/#disqus_thread" data-disqus-identifier="cache/posts/2010-05-09-polskie-znaki-w-mysql-doctrine-i-symfony.pl.html">Komentarze</a>
 
 
@@ -121,7 +119,7 @@ sfDoctrineApply.</p>
 <p class="more"><a href="blog/sfforkeddoctrineapply-w-wersji-1-2-0/">Czytaj więcej…</a></p>
 </div>
             
-        
+    
     <a href="blog/sfforkeddoctrineapply-w-wersji-1-2-0/#disqus_thread" data-disqus-identifier="cache/posts/2010-05-06-sfforkeddoctrineapply-w-wersji-1-2-0.pl.html">Komentarze</a>
 
 
@@ -149,7 +147,7 @@ do tej pory.</p>
 <p class="more"><a href="blog/beta-opery-10-53-na-linuksa/">Czytaj więcej…</a></p>
 </div>
             
-        
+    
     <a href="blog/beta-opery-10-53-na-linuksa/#disqus_thread" data-disqus-identifier="cache/posts/2010-05-04-beta-opery-10-53-na-linuksa.pl.html">Komentarze</a>
 
 
@@ -174,7 +172,7 @@ z pracy, zacząłem sprawdzać zachowanie na komputerach.</p>
 <p class="more"><a href="blog/ubuntu-aa-4-lucid-lynx-pierwsze-wrazenia/">Czytaj więcej…</a></p>
 </div>
             
-        
+    
     <a href="blog/ubuntu-aa-4-lucid-lynx-pierwsze-wrazenia/#disqus_thread" data-disqus-identifier="cache/posts/2010-05-01-ubuntu-10-4-lucid-lynx-pierwsze-wrazenia.pl.html">Komentarze</a>
 
 
@@ -198,7 +196,7 @@ szablon behavioura do modelu otrzymującego naszego behavioura.</p>
 <p class="more"><a href="blog/settery-pol-behavioura-dla-doctrine/">Czytaj więcej…</a></p>
 </div>
             
-        
+    
     <a href="blog/settery-pol-behavioura-dla-doctrine/#disqus_thread" data-disqus-identifier="cache/posts/2010-04-27-settery-pol-behavioura-dla-doctrine.pl.html">Komentarze</a>
 
 
@@ -229,7 +227,7 @@ w symfony na głowę.</p>
 <p class="more"><a href="blog/fztagplugin-latwosc-tagowania-jak-w-diem-cmf/">Czytaj więcej…</a></p>
 </div>
             
-        
+    
     <a href="blog/fztagplugin-latwosc-tagowania-jak-w-diem-cmf/#disqus_thread" data-disqus-identifier="cache/posts/2010-04-27-fztagplugin-latwosc-tagowania-jak-w-diem-cmf.pl.html">Komentarze</a>
 
 
@@ -253,7 +251,7 @@ Realizacja postanowienia wymagała przedsięwzięcia paru kroków:</p>
 <p class="more"><a href="blog/wyprawa-na-sleze/">Czytaj więcej…</a></p>
 </div>
             
-        
+    
     <a href="blog/wyprawa-na-sleze/#disqus_thread" data-disqus-identifier="cache/posts/2010-04-18-wyprawa-na-sleze.pl.html">Komentarze</a>
 
 
@@ -282,7 +280,7 @@ ile posiada on komentarzy, ile tych moderowanych/usuniętych.</p>
 <p class="more"><a href="blog/komentarze-dla-modeli-w-symfony/">Czytaj więcej…</a></p>
 </div>
             
-        
+    
     <a href="blog/komentarze-dla-modeli-w-symfony/#disqus_thread" data-disqus-identifier="cache/posts/2010-04-15-komentarze-dla-modeli-w-symfony.pl.html">Komentarze</a>
 
 
@@ -310,7 +308,7 @@ migracje tak szybko jak na to zadania pozwolą.</p>
 <p class="more"><a href="blog/symfony-1-4-4-i-basetoprfx/">Czytaj więcej…</a></p>
 </div>
             
-        
+    
     <a href="blog/symfony-1-4-4-i-basetoprfx/#disqus_thread" data-disqus-identifier="cache/posts/2010-04-08-symfony-1-4-4-i-basetoprfx.pl.html">Komentarze</a>
 
 
@@ -328,13 +326,13 @@ migracje tak szybko jak na to zadania pozwolą.</p>
         <div id="sidebar">
             <!--Sidebar content-->
             <h1 id="blog-title">
-                <a href="http://blog.fizyk.net.pl/" title="Cases">Cases</a>
+                <a href="https://fizyk.dev/" title="Cases">Cases</a>
             </h1>
             
             <small>
                 Również dostępny w językach: 
                 
-            <li><a href="http://blog.fizyk.net.pl/" rel="alternate" hreflang="en">English</a></li>
+            <li><a href="https://fizyk.dev/" rel="alternate" hreflang="en">English</a></li>
 
             </small>
             
@@ -351,7 +349,7 @@ jest dostępny na licencji
 </a>.</li>
             
                 <li>
-<a href="http://www.fizyk.net.pl">Strona domowa</a>
+<a href="https://fizyk.dev">Strona domowa</a>
                 </li>
 <li>
 <a href="archive/">Archiwum</a>
@@ -366,7 +364,7 @@ jest dostępny na licencji
             </ul>
 </div>
         <div id="footer">
-            Contents © 2021 <a href="mailto:fizyk~~fizyk.net.pl">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
+            Contents © 2025 <a href="mailto:fizyk~~fizyk.dev">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
             
         </div>
     </div>

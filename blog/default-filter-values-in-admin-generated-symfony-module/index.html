@@ -8,9 +8,9 @@
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../pl/rss.xml">
-<link rel="canonical" href="http://blog.fizyk.net.pl/blog/default-filter-values-in-admin-generated-symfony-module/">
-<link rel="icon" href="../../favicon.png" sizes="62x60">
+<link rel="canonical" href="https://fizyk.dev/blog/default-filter-values-in-admin-generated-symfony-module/">
 <link rel="icon" href="../../favicon-speddial.png" sizes="269x262">
+<link rel="icon" href="../../favicon.png" sizes="62x60">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -37,8 +37,7 @@
 
         </span>
         </div>
-    <div>
-<p>Admin generated backend modules are very useful, they are generating
+    <p>Admin generated backend modules are very useful, they are generating
 with all necessary code, they have some layout, all necessary actions
 are there and are easy to be modified. recently. You can even add
 default filter setting, although it's not as simple as editing
@@ -52,15 +51,15 @@ overwrite. These methods are located in your module's
 folder.</p>
 <p>First method is getFilterForm(), which is used to serve filter form to
 be generated:</p>
-<pre class="code php"><a id="rest_code_0031298027794875ad8bd2f827478493-1" name="rest_code_0031298027794875ad8bd2f827478493-1"></a><span class="x">public function getFilterForm($filters)</span>
-<a id="rest_code_0031298027794875ad8bd2f827478493-2" name="rest_code_0031298027794875ad8bd2f827478493-2"></a><span class="x">{</span>
-<a id="rest_code_0031298027794875ad8bd2f827478493-3" name="rest_code_0031298027794875ad8bd2f827478493-3"></a><span class="x">    if(!array_key_exists('field_name', $filters))</span>
-<a id="rest_code_0031298027794875ad8bd2f827478493-4" name="rest_code_0031298027794875ad8bd2f827478493-4"></a><span class="x">    {</span>
-<a id="rest_code_0031298027794875ad8bd2f827478493-5" name="rest_code_0031298027794875ad8bd2f827478493-5"></a><span class="x">        $filters['field_name'] = 'value';</span>
-<a id="rest_code_0031298027794875ad8bd2f827478493-6" name="rest_code_0031298027794875ad8bd2f827478493-6"></a><span class="x">    }</span>
-<a id="rest_code_0031298027794875ad8bd2f827478493-7" name="rest_code_0031298027794875ad8bd2f827478493-7"></a><span class="x">    return parent::getFilterForm($filters);</span>
-<a id="rest_code_0031298027794875ad8bd2f827478493-8" name="rest_code_0031298027794875ad8bd2f827478493-8"></a><span class="x">}</span>
-</pre>
+<div class="code"><pre class="code php"><a id="rest_code_830fdd871a3a4f7cafefad096a9c9eaa-1" name="rest_code_830fdd871a3a4f7cafefad096a9c9eaa-1" href="#rest_code_830fdd871a3a4f7cafefad096a9c9eaa-1"></a><span class="x">public function getFilterForm($filters)</span>
+<a id="rest_code_830fdd871a3a4f7cafefad096a9c9eaa-2" name="rest_code_830fdd871a3a4f7cafefad096a9c9eaa-2" href="#rest_code_830fdd871a3a4f7cafefad096a9c9eaa-2"></a><span class="x">{</span>
+<a id="rest_code_830fdd871a3a4f7cafefad096a9c9eaa-3" name="rest_code_830fdd871a3a4f7cafefad096a9c9eaa-3" href="#rest_code_830fdd871a3a4f7cafefad096a9c9eaa-3"></a><span class="x">    if(!array_key_exists('field_name', $filters))</span>
+<a id="rest_code_830fdd871a3a4f7cafefad096a9c9eaa-4" name="rest_code_830fdd871a3a4f7cafefad096a9c9eaa-4" href="#rest_code_830fdd871a3a4f7cafefad096a9c9eaa-4"></a><span class="x">    {</span>
+<a id="rest_code_830fdd871a3a4f7cafefad096a9c9eaa-5" name="rest_code_830fdd871a3a4f7cafefad096a9c9eaa-5" href="#rest_code_830fdd871a3a4f7cafefad096a9c9eaa-5"></a><span class="x">        $filters['field_name'] = 'value';</span>
+<a id="rest_code_830fdd871a3a4f7cafefad096a9c9eaa-6" name="rest_code_830fdd871a3a4f7cafefad096a9c9eaa-6" href="#rest_code_830fdd871a3a4f7cafefad096a9c9eaa-6"></a><span class="x">    }</span>
+<a id="rest_code_830fdd871a3a4f7cafefad096a9c9eaa-7" name="rest_code_830fdd871a3a4f7cafefad096a9c9eaa-7" href="#rest_code_830fdd871a3a4f7cafefad096a9c9eaa-7"></a><span class="x">    return parent::getFilterForm($filters);</span>
+<a id="rest_code_830fdd871a3a4f7cafefad096a9c9eaa-8" name="rest_code_830fdd871a3a4f7cafefad096a9c9eaa-8" href="#rest_code_830fdd871a3a4f7cafefad096a9c9eaa-8"></a><span class="x">}</span>
+</pre></div>
 <p>Variable named <strong>$filters</strong> is array containing default values for
 filter form. Once we use filter, values get passed through filters to
 form, so it could show consistent field values. But if the field doesn't
@@ -70,15 +69,14 @@ otherwise... overwriting this method is completely unnecessary.</p>
 <p>Second method to look at is <strong>getFilterDefaults()</strong>, which is actually
 used to get default values for filter. These values are then applied
 both to filter form, and the query from <strong>table_method</strong>.</p>
-<pre class="code php"><a id="rest_code_6e726b8c6e5d451b814556ed8e315c88-1" name="rest_code_6e726b8c6e5d451b814556ed8e315c88-1"></a><span class="x">public function getFilterDefaults()</span>
-<a id="rest_code_6e726b8c6e5d451b814556ed8e315c88-2" name="rest_code_6e726b8c6e5d451b814556ed8e315c88-2"></a><span class="x">{</span>
-<a id="rest_code_6e726b8c6e5d451b814556ed8e315c88-3" name="rest_code_6e726b8c6e5d451b814556ed8e315c88-3"></a><span class="x">    return array('field_name' =&gt; 'value');</span>
-<a id="rest_code_6e726b8c6e5d451b814556ed8e315c88-4" name="rest_code_6e726b8c6e5d451b814556ed8e315c88-4"></a><span class="x">}</span>
-</pre>
+<div class="code"><pre class="code php"><a id="rest_code_2bacd4840c934979833e42fd019f6e9d-1" name="rest_code_2bacd4840c934979833e42fd019f6e9d-1" href="#rest_code_2bacd4840c934979833e42fd019f6e9d-1"></a><span class="x">public function getFilterDefaults()</span>
+<a id="rest_code_2bacd4840c934979833e42fd019f6e9d-2" name="rest_code_2bacd4840c934979833e42fd019f6e9d-2" href="#rest_code_2bacd4840c934979833e42fd019f6e9d-2"></a><span class="x">{</span>
+<a id="rest_code_2bacd4840c934979833e42fd019f6e9d-3" name="rest_code_2bacd4840c934979833e42fd019f6e9d-3" href="#rest_code_2bacd4840c934979833e42fd019f6e9d-3"></a><span class="x">    return array('field_name' =&gt; 'value');</span>
+<a id="rest_code_2bacd4840c934979833e42fd019f6e9d-4" name="rest_code_2bacd4840c934979833e42fd019f6e9d-4" href="#rest_code_2bacd4840c934979833e42fd019f6e9d-4"></a><span class="x">}</span>
+</pre></div>
 <p>Method returns an array, that has same construction as the <strong>$filter</strong>
 variable from <strong>getFilterForm</strong> method. Now you can enjoy your admin's
 module list filtered by default values.</p>
-</div>
     
         <ul class="pager hidden-print">
 <li class="previous">
@@ -91,7 +89,7 @@ module list filtered by default values.</p>
 <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="casesblog",
-            disqus_url="http://blog.fizyk.net.pl/blog/default-filter-values-in-admin-generated-symfony-module/",
+            disqus_url="https://fizyk.dev/blog/default-filter-values-in-admin-generated-symfony-module/",
         disqus_title="Default filter values in admin-generated symfony module",
         disqus_identifier="cache/posts/2011-02-22-default-filter-values-in-admin-generated-symfony-module.html",
         disqus_config = function () {
@@ -115,13 +113,13 @@ module list filtered by default values.</p>
         <div id="sidebar">
             <!--Sidebar content-->
             <h1 id="blog-title">
-                <a href="http://blog.fizyk.net.pl/" title="Cases">Cases</a>
+                <a href="https://fizyk.dev/" title="Cases">Cases</a>
             </h1>
             
             <small>
                 Also available in: 
                 
-            <li><a href="http://blog.fizyk.net.pl/pl/" rel="alternate" hreflang="pl">Polski</a></li>
+            <li><a href="https://fizyk.dev/pl/" rel="alternate" hreflang="pl">Polski</a></li>
 
             </small>
             
@@ -138,7 +136,7 @@ jest dostępny na licencji
 </a>.</li>
             
                 <li>
-<a href="http://www.fizyk.net.pl/en">Homepage</a>
+<a href="https://fizyk.dev/en">Homepage</a>
                 </li>
 <li>
 <a href="../../archive/">Archives</a>
@@ -153,7 +151,7 @@ jest dostępny na licencji
             </ul>
 </div>
         <div id="footer">
-            Contents © 2021 <a href="mailto:fizyk~~fizyk.net.pl">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
+            Contents © 2025 <a href="mailto:fizyk~~fizyk.dev">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
             
         </div>
     </div>

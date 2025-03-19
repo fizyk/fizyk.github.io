@@ -8,9 +8,9 @@
 <link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../rss.xml">
-<link rel="canonical" href="http://blog.fizyk.net.pl/pl/blog/sqlite-w-srodowisku-developerskim-w-symfony-i-symfony2/">
-<link rel="icon" href="../../../favicon.png" sizes="62x60">
+<link rel="canonical" href="https://fizyk.dev/pl/blog/sqlite-w-srodowisku-developerskim-w-symfony-i-symfony2/">
 <link rel="icon" href="../../../favicon-speddial.png" sizes="269x262">
+<link rel="icon" href="../../../favicon.png" sizes="62x60">
 <!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -39,40 +39,39 @@
 
         </span>
         </div>
-    <div>
-<p>Sqlite nie koniecznie jest dobrą bazą produkcyjną dla tworzonych
+    <p>Sqlite nie koniecznie jest dobrą bazą produkcyjną dla tworzonych
 aplikacji internetowych. Jednak podczas ich tworzenia powinna nadać się
 idealnie. Tym bardziej, jeśli nie chcemy naszej maszyny developerskiej
 obarczać dodatkowymi procesami, czy też pilnować włączania/wyłączania
 serwerów bazy danych, sqlite nada się idealnie.</p>
 <!-- TEASER_END -->
 <p>Konfiguracja dla doctrine w symfony 1.4 powinna wyglądać następująco:</p>
-<pre class="code yaml"><a id="rest_code_b54c291b757f42c7bf0b7598dca1c7dc-1" name="rest_code_b54c291b757f42c7bf0b7598dca1c7dc-1"></a><span class="c1"># database.yml</span>
-<a id="rest_code_b54c291b757f42c7bf0b7598dca1c7dc-2" name="rest_code_b54c291b757f42c7bf0b7598dca1c7dc-2"></a><span class="nt">dev</span><span class="p">:</span>
-<a id="rest_code_b54c291b757f42c7bf0b7598dca1c7dc-3" name="rest_code_b54c291b757f42c7bf0b7598dca1c7dc-3"></a>  <span class="nt">doctrine</span><span class="p">:</span>
-<a id="rest_code_b54c291b757f42c7bf0b7598dca1c7dc-4" name="rest_code_b54c291b757f42c7bf0b7598dca1c7dc-4"></a>    <span class="nt">class</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">sfDoctrineDatabase</span>
-<a id="rest_code_b54c291b757f42c7bf0b7598dca1c7dc-5" name="rest_code_b54c291b757f42c7bf0b7598dca1c7dc-5"></a>    <span class="nt">param</span><span class="p">:</span>
-<a id="rest_code_b54c291b757f42c7bf0b7598dca1c7dc-6" name="rest_code_b54c291b757f42c7bf0b7598dca1c7dc-6"></a>      <span class="nt">dsn</span><span class="p">:</span> <span class="s">"sqlite:///%SF_DATA_DIR%/doctrine/sqlite_dbfile.db?mode=0666"</span>
-<a id="rest_code_b54c291b757f42c7bf0b7598dca1c7dc-7" name="rest_code_b54c291b757f42c7bf0b7598dca1c7dc-7"></a>      <span class="nt">username</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">root</span>
-<a id="rest_code_b54c291b757f42c7bf0b7598dca1c7dc-8" name="rest_code_b54c291b757f42c7bf0b7598dca1c7dc-8"></a>      <span class="nt">password</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">~</span>
-<a id="rest_code_b54c291b757f42c7bf0b7598dca1c7dc-9" name="rest_code_b54c291b757f42c7bf0b7598dca1c7dc-9"></a>      <span class="nt">encoding</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">utf8</span>
-<a id="rest_code_b54c291b757f42c7bf0b7598dca1c7dc-10" name="rest_code_b54c291b757f42c7bf0b7598dca1c7dc-10"></a>      <span class="nt">attributes</span><span class="p">:</span>
-<a id="rest_code_b54c291b757f42c7bf0b7598dca1c7dc-11" name="rest_code_b54c291b757f42c7bf0b7598dca1c7dc-11"></a>        <span class="nt">default_table_collate</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">utf8_general_ci</span>
-<a id="rest_code_b54c291b757f42c7bf0b7598dca1c7dc-12" name="rest_code_b54c291b757f42c7bf0b7598dca1c7dc-12"></a>        <span class="nt">default_table_charset</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">utf8</span>
-</pre>
+<div class="code"><pre class="code yaml"><a id="rest_code_3651b12568424cd5aaf99570ebf83a91-1" name="rest_code_3651b12568424cd5aaf99570ebf83a91-1" href="#rest_code_3651b12568424cd5aaf99570ebf83a91-1"></a><span class="c1"># database.yml</span>
+<a id="rest_code_3651b12568424cd5aaf99570ebf83a91-2" name="rest_code_3651b12568424cd5aaf99570ebf83a91-2" href="#rest_code_3651b12568424cd5aaf99570ebf83a91-2"></a><span class="nt">dev</span><span class="p">:</span>
+<a id="rest_code_3651b12568424cd5aaf99570ebf83a91-3" name="rest_code_3651b12568424cd5aaf99570ebf83a91-3" href="#rest_code_3651b12568424cd5aaf99570ebf83a91-3"></a><span class="w">  </span><span class="nt">doctrine</span><span class="p">:</span>
+<a id="rest_code_3651b12568424cd5aaf99570ebf83a91-4" name="rest_code_3651b12568424cd5aaf99570ebf83a91-4" href="#rest_code_3651b12568424cd5aaf99570ebf83a91-4"></a><span class="w">    </span><span class="nt">class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sfDoctrineDatabase</span>
+<a id="rest_code_3651b12568424cd5aaf99570ebf83a91-5" name="rest_code_3651b12568424cd5aaf99570ebf83a91-5" href="#rest_code_3651b12568424cd5aaf99570ebf83a91-5"></a><span class="w">    </span><span class="nt">param</span><span class="p">:</span>
+<a id="rest_code_3651b12568424cd5aaf99570ebf83a91-6" name="rest_code_3651b12568424cd5aaf99570ebf83a91-6" href="#rest_code_3651b12568424cd5aaf99570ebf83a91-6"></a><span class="w">      </span><span class="nt">dsn</span><span class="p">:</span><span class="w"> </span><span class="s">"sqlite:///%SF_DATA_DIR%/doctrine/sqlite_dbfile.db?mode=0666"</span>
+<a id="rest_code_3651b12568424cd5aaf99570ebf83a91-7" name="rest_code_3651b12568424cd5aaf99570ebf83a91-7" href="#rest_code_3651b12568424cd5aaf99570ebf83a91-7"></a><span class="w">      </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span>
+<a id="rest_code_3651b12568424cd5aaf99570ebf83a91-8" name="rest_code_3651b12568424cd5aaf99570ebf83a91-8" href="#rest_code_3651b12568424cd5aaf99570ebf83a91-8"></a><span class="w">      </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~</span>
+<a id="rest_code_3651b12568424cd5aaf99570ebf83a91-9" name="rest_code_3651b12568424cd5aaf99570ebf83a91-9" href="#rest_code_3651b12568424cd5aaf99570ebf83a91-9"></a><span class="w">      </span><span class="nt">encoding</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">utf8</span>
+<a id="rest_code_3651b12568424cd5aaf99570ebf83a91-10" name="rest_code_3651b12568424cd5aaf99570ebf83a91-10" href="#rest_code_3651b12568424cd5aaf99570ebf83a91-10"></a><span class="w">      </span><span class="nt">attributes</span><span class="p">:</span>
+<a id="rest_code_3651b12568424cd5aaf99570ebf83a91-11" name="rest_code_3651b12568424cd5aaf99570ebf83a91-11" href="#rest_code_3651b12568424cd5aaf99570ebf83a91-11"></a><span class="w">        </span><span class="nt">default_table_collate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">utf8_general_ci</span>
+<a id="rest_code_3651b12568424cd5aaf99570ebf83a91-12" name="rest_code_3651b12568424cd5aaf99570ebf83a91-12" href="#rest_code_3651b12568424cd5aaf99570ebf83a91-12"></a><span class="w">        </span><span class="nt">default_table_charset</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">utf8</span>
+</pre></div>
 <p>Natomiast dla Symfony2 w ten sposób:</p>
-<pre class="code yaml"><a id="rest_code_4818602453184db8bb0d4d4152cf7526-1" name="rest_code_4818602453184db8bb0d4d4152cf7526-1"></a><span class="c1"># Doctrine Configuration</span>
-<a id="rest_code_4818602453184db8bb0d4d4152cf7526-2" name="rest_code_4818602453184db8bb0d4d4152cf7526-2"></a><span class="nt">doctrine</span><span class="p">:</span>
-<a id="rest_code_4818602453184db8bb0d4d4152cf7526-3" name="rest_code_4818602453184db8bb0d4d4152cf7526-3"></a>    <span class="nt">dbal</span><span class="p">:</span>
-<a id="rest_code_4818602453184db8bb0d4d4152cf7526-4" name="rest_code_4818602453184db8bb0d4d4152cf7526-4"></a>        <span class="nt">driver</span><span class="p">:</span>   <span class="l l-Scalar l-Scalar-Plain">pdo_sqlite</span>
-<a id="rest_code_4818602453184db8bb0d4d4152cf7526-5" name="rest_code_4818602453184db8bb0d4d4152cf7526-5"></a>        <span class="nt">dbname</span><span class="p">:</span>   <span class="l l-Scalar l-Scalar-Plain">Symfony</span>
-<a id="rest_code_4818602453184db8bb0d4d4152cf7526-6" name="rest_code_4818602453184db8bb0d4d4152cf7526-6"></a>        <span class="nt">user</span><span class="p">:</span>     <span class="l l-Scalar l-Scalar-Plain">root</span>
-<a id="rest_code_4818602453184db8bb0d4d4152cf7526-7" name="rest_code_4818602453184db8bb0d4d4152cf7526-7"></a>        <span class="nt">password</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">null</span>
-<a id="rest_code_4818602453184db8bb0d4d4152cf7526-8" name="rest_code_4818602453184db8bb0d4d4152cf7526-8"></a>        <span class="nt">host</span><span class="p">:</span>     <span class="l l-Scalar l-Scalar-Plain">localhost</span>
-<a id="rest_code_4818602453184db8bb0d4d4152cf7526-9" name="rest_code_4818602453184db8bb0d4d4152cf7526-9"></a>        <span class="nt">port</span><span class="p">:</span>     <span class="l l-Scalar l-Scalar-Plain">~</span>
-<a id="rest_code_4818602453184db8bb0d4d4152cf7526-10" name="rest_code_4818602453184db8bb0d4d4152cf7526-10"></a>        <span class="nt">path</span><span class="p">:</span>     <span class="s">"%kernel.root_dir%/data/symfony.sqlite"</span>
-<a id="rest_code_4818602453184db8bb0d4d4152cf7526-11" name="rest_code_4818602453184db8bb0d4d4152cf7526-11"></a>        <span class="nt">charset</span><span class="p">:</span>  <span class="l l-Scalar l-Scalar-Plain">UTF8</span>
-</pre>
+<div class="code"><pre class="code yaml"><a id="rest_code_8e60eaee5d524dd6b039f47c8b10ddc4-1" name="rest_code_8e60eaee5d524dd6b039f47c8b10ddc4-1" href="#rest_code_8e60eaee5d524dd6b039f47c8b10ddc4-1"></a><span class="c1"># Doctrine Configuration</span>
+<a id="rest_code_8e60eaee5d524dd6b039f47c8b10ddc4-2" name="rest_code_8e60eaee5d524dd6b039f47c8b10ddc4-2" href="#rest_code_8e60eaee5d524dd6b039f47c8b10ddc4-2"></a><span class="nt">doctrine</span><span class="p">:</span>
+<a id="rest_code_8e60eaee5d524dd6b039f47c8b10ddc4-3" name="rest_code_8e60eaee5d524dd6b039f47c8b10ddc4-3" href="#rest_code_8e60eaee5d524dd6b039f47c8b10ddc4-3"></a><span class="w">    </span><span class="nt">dbal</span><span class="p">:</span>
+<a id="rest_code_8e60eaee5d524dd6b039f47c8b10ddc4-4" name="rest_code_8e60eaee5d524dd6b039f47c8b10ddc4-4" href="#rest_code_8e60eaee5d524dd6b039f47c8b10ddc4-4"></a><span class="w">        </span><span class="nt">driver</span><span class="p">:</span><span class="w">   </span><span class="l l-Scalar l-Scalar-Plain">pdo_sqlite</span>
+<a id="rest_code_8e60eaee5d524dd6b039f47c8b10ddc4-5" name="rest_code_8e60eaee5d524dd6b039f47c8b10ddc4-5" href="#rest_code_8e60eaee5d524dd6b039f47c8b10ddc4-5"></a><span class="w">        </span><span class="nt">dbname</span><span class="p">:</span><span class="w">   </span><span class="l l-Scalar l-Scalar-Plain">Symfony</span>
+<a id="rest_code_8e60eaee5d524dd6b039f47c8b10ddc4-6" name="rest_code_8e60eaee5d524dd6b039f47c8b10ddc4-6" href="#rest_code_8e60eaee5d524dd6b039f47c8b10ddc4-6"></a><span class="w">        </span><span class="nt">user</span><span class="p">:</span><span class="w">     </span><span class="l l-Scalar l-Scalar-Plain">root</span>
+<a id="rest_code_8e60eaee5d524dd6b039f47c8b10ddc4-7" name="rest_code_8e60eaee5d524dd6b039f47c8b10ddc4-7" href="#rest_code_8e60eaee5d524dd6b039f47c8b10ddc4-7"></a><span class="w">        </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+<a id="rest_code_8e60eaee5d524dd6b039f47c8b10ddc4-8" name="rest_code_8e60eaee5d524dd6b039f47c8b10ddc4-8" href="#rest_code_8e60eaee5d524dd6b039f47c8b10ddc4-8"></a><span class="w">        </span><span class="nt">host</span><span class="p">:</span><span class="w">     </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+<a id="rest_code_8e60eaee5d524dd6b039f47c8b10ddc4-9" name="rest_code_8e60eaee5d524dd6b039f47c8b10ddc4-9" href="#rest_code_8e60eaee5d524dd6b039f47c8b10ddc4-9"></a><span class="w">        </span><span class="nt">port</span><span class="p">:</span><span class="w">     </span><span class="l l-Scalar l-Scalar-Plain">~</span>
+<a id="rest_code_8e60eaee5d524dd6b039f47c8b10ddc4-10" name="rest_code_8e60eaee5d524dd6b039f47c8b10ddc4-10" href="#rest_code_8e60eaee5d524dd6b039f47c8b10ddc4-10"></a><span class="w">        </span><span class="nt">path</span><span class="p">:</span><span class="w">     </span><span class="s">"%kernel.root_dir%/data/symfony.sqlite"</span>
+<a id="rest_code_8e60eaee5d524dd6b039f47c8b10ddc4-11" name="rest_code_8e60eaee5d524dd6b039f47c8b10ddc4-11" href="#rest_code_8e60eaee5d524dd6b039f47c8b10ddc4-11"></a><span class="w">        </span><span class="nt">charset</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">UTF8</span>
+</pre></div>
 <p>Kilka rzeczy, o których należy pamiętać, konfigurując sobie środowisko
 developerskie w ten sposób:</p>
 <p>Po pierwsze, wszelkie zmiany w modelu danych powinny zostać
@@ -87,7 +86,6 @@ rewizji.</p>
 skonfigurowania środowiska
 testowego</a>
 naszej aplikacji w symfony.</p>
-</div>
     
         <ul class="pager hidden-print">
 <li class="previous">
@@ -100,7 +98,7 @@ naszej aplikacji w symfony.</p>
 <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="casesblog",
-            disqus_url="http://blog.fizyk.net.pl/pl/blog/sqlite-w-srodowisku-developerskim-w-symfony-i-symfony2/",
+            disqus_url="https://fizyk.dev/pl/blog/sqlite-w-srodowisku-developerskim-w-symfony-i-symfony2/",
         disqus_title="sqlite w \u015brodowisku developerskim w symfony i symfony2",
         disqus_identifier="cache/posts/2012-01-26-sqlite-w-srodowisku-developerskim-w-symfony-i-symfony2.pl.html",
         disqus_config = function () {
@@ -124,13 +122,13 @@ naszej aplikacji w symfony.</p>
         <div id="sidebar">
             <!--Sidebar content-->
             <h1 id="blog-title">
-                <a href="http://blog.fizyk.net.pl/" title="Cases">Cases</a>
+                <a href="https://fizyk.dev/" title="Cases">Cases</a>
             </h1>
             
             <small>
                 Również dostępny w językach: 
                 
-            <li><a href="http://blog.fizyk.net.pl/" rel="alternate" hreflang="en">English</a></li>
+            <li><a href="https://fizyk.dev/" rel="alternate" hreflang="en">English</a></li>
 
             </small>
             
@@ -147,7 +145,7 @@ jest dostępny na licencji
 </a>.</li>
             
                 <li>
-<a href="http://www.fizyk.net.pl">Strona domowa</a>
+<a href="https://fizyk.dev">Strona domowa</a>
                 </li>
 <li>
 <a href="../../archive/">Archiwum</a>
@@ -162,7 +160,7 @@ jest dostępny na licencji
             </ul>
 </div>
         <div id="footer">
-            Contents © 2021 <a href="mailto:fizyk~~fizyk.net.pl">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
+            Contents © 2025 <a href="mailto:fizyk~~fizyk.dev">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
             
         </div>
     </div>
