@@ -45,15 +45,15 @@ optymalizacja serwera, aplikacji, lub zasobów.</p>
 <!-- TEASER_END -->
 <p>Najprostszym sposobem na zoptymalizowanie zasobów (np, plików CSS) jest
 ich minifikacja. ich zastosowanie jest dość proste:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_0226a3938fb14f299c008fd05f8ffbc6-1" name="rest_code_0226a3938fb14f299c008fd05f8ffbc6-1" href="#rest_code_0226a3938fb14f299c008fd05f8ffbc6-1"></a>yui-compressor<span class="w"> </span>path/to/css/main.css<span class="w"> </span>-o<span class="w"> </span>path/to/css/main.min.css
+<div class="code"><pre class="code bash"><a id="rest_code_2a2507ca7f904c8da0105e60a8368b01-1" name="rest_code_2a2507ca7f904c8da0105e60a8368b01-1" href="#rest_code_2a2507ca7f904c8da0105e60a8368b01-1"></a>yui-compressor<span class="w"> </span>path/to/css/main.css<span class="w"> </span>-o<span class="w"> </span>path/to/css/main.min.css
 </pre></div>
 <p>Dzięki temu mamy dostępną wersję zminimalizowaną naszego pliku CSS,
 którą możemy załączyć w aplikacji. Oczywiście nie jest z byt wygodne
 trzymanie wszystkiego w jednym pliku CSS, czasem wygodniej jest rozbić
 definicje styli na kilka plików. Ułatwia to pracę, ale generuje zbędne
 żądania. Proces kompresji można zmusić do kompresji do jednego pliku:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_077f6417a2974b6da8301c5729835f93-1" name="rest_code_077f6417a2974b6da8301c5729835f93-1" href="#rest_code_077f6417a2974b6da8301c5729835f93-1"></a>yui-compressor<span class="w"> </span>path/to/css/main.css<span class="w"> </span>-o<span class="w"> </span>path/to/css/min.css
-<a id="rest_code_077f6417a2974b6da8301c5729835f93-2" name="rest_code_077f6417a2974b6da8301c5729835f93-2" href="#rest_code_077f6417a2974b6da8301c5729835f93-2"></a>yui-compressor<span class="w"> </span>path/to/css/other.css<span class="w"> </span>&gt;&gt;<span class="w"> </span>path/to/css/min.css
+<div class="code"><pre class="code bash"><a id="rest_code_229f829b68994deea4bf0587e668b84b-1" name="rest_code_229f829b68994deea4bf0587e668b84b-1" href="#rest_code_229f829b68994deea4bf0587e668b84b-1"></a>yui-compressor<span class="w"> </span>path/to/css/main.css<span class="w"> </span>-o<span class="w"> </span>path/to/css/min.css
+<a id="rest_code_229f829b68994deea4bf0587e668b84b-2" name="rest_code_229f829b68994deea4bf0587e668b84b-2" href="#rest_code_229f829b68994deea4bf0587e668b84b-2"></a>yui-compressor<span class="w"> </span>path/to/css/other.css<span class="w"> </span>&gt;&gt;<span class="w"> </span>path/to/css/min.css
 </pre></div>
 <p>Zostaje do rozwiązania tylko jeden problem. pierwsza sytuacja
 minifikacji wymaga załączenia pliku zminifikowanego, więc, by
@@ -64,14 +64,14 @@ jest wygodnie, gdyż dodatkowo dochodzi różnica w ilości plików.</p>
 PHP i imamy dostęp do elementów frameworka. Dzięki temu, możemy dla obu
 środowisk, produkcyjnego i developerskiego podać osobne zestawy CSS'ów
 (podobnie jak js):</p>
-<div class="code"><pre class="code yaml"><a id="rest_code_85b648b0f7e14904b67d721c15375373-1" name="rest_code_85b648b0f7e14904b67d721c15375373-1" href="#rest_code_85b648b0f7e14904b67d721c15375373-1"></a><span class="nt">default</span><span class="p">:</span>
-<a id="rest_code_85b648b0f7e14904b67d721c15375373-2" name="rest_code_85b648b0f7e14904b67d721c15375373-2" href="#rest_code_85b648b0f7e14904b67d721c15375373-2"></a><span class="w">  </span><span class="nt">stylesheets</span><span class="p">:</span>
-<a id="rest_code_85b648b0f7e14904b67d721c15375373-3" name="rest_code_85b648b0f7e14904b67d721c15375373-3" href="#rest_code_85b648b0f7e14904b67d721c15375373-3"></a><span class="l l-Scalar l-Scalar-Plain">&lt;?php if( sfContext::getInstance()-&gt;getConfiguration()-&gt;getEnvironment() == 'dev')</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">?&gt;</span>
-<a id="rest_code_85b648b0f7e14904b67d721c15375373-4" name="rest_code_85b648b0f7e14904b67d721c15375373-4" href="#rest_code_85b648b0f7e14904b67d721c15375373-4"></a><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">- main.css</span>
-<a id="rest_code_85b648b0f7e14904b67d721c15375373-5" name="rest_code_85b648b0f7e14904b67d721c15375373-5" href="#rest_code_85b648b0f7e14904b67d721c15375373-5"></a><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">- css/other.css</span>
-<a id="rest_code_85b648b0f7e14904b67d721c15375373-6" name="rest_code_85b648b0f7e14904b67d721c15375373-6" href="#rest_code_85b648b0f7e14904b67d721c15375373-6"></a><span class="l l-Scalar l-Scalar-Plain">&lt;?php else</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">?&gt;</span>
-<a id="rest_code_85b648b0f7e14904b67d721c15375373-7" name="rest_code_85b648b0f7e14904b67d721c15375373-7" href="#rest_code_85b648b0f7e14904b67d721c15375373-7"></a><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">- css/min.css</span>
-<a id="rest_code_85b648b0f7e14904b67d721c15375373-8" name="rest_code_85b648b0f7e14904b67d721c15375373-8" href="#rest_code_85b648b0f7e14904b67d721c15375373-8"></a><span class="l l-Scalar l-Scalar-Plain">&lt;?php endif; ?&gt;</span>
+<div class="code"><pre class="code yaml"><a id="rest_code_7e13c5d98d2f4354bec8e10b3a67019f-1" name="rest_code_7e13c5d98d2f4354bec8e10b3a67019f-1" href="#rest_code_7e13c5d98d2f4354bec8e10b3a67019f-1"></a><span class="nt">default</span><span class="p">:</span>
+<a id="rest_code_7e13c5d98d2f4354bec8e10b3a67019f-2" name="rest_code_7e13c5d98d2f4354bec8e10b3a67019f-2" href="#rest_code_7e13c5d98d2f4354bec8e10b3a67019f-2"></a><span class="w">  </span><span class="nt">stylesheets</span><span class="p">:</span>
+<a id="rest_code_7e13c5d98d2f4354bec8e10b3a67019f-3" name="rest_code_7e13c5d98d2f4354bec8e10b3a67019f-3" href="#rest_code_7e13c5d98d2f4354bec8e10b3a67019f-3"></a><span class="l l-Scalar l-Scalar-Plain">&lt;?php if( sfContext::getInstance()-&gt;getConfiguration()-&gt;getEnvironment() == 'dev')</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">?&gt;</span>
+<a id="rest_code_7e13c5d98d2f4354bec8e10b3a67019f-4" name="rest_code_7e13c5d98d2f4354bec8e10b3a67019f-4" href="#rest_code_7e13c5d98d2f4354bec8e10b3a67019f-4"></a><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">- main.css</span>
+<a id="rest_code_7e13c5d98d2f4354bec8e10b3a67019f-5" name="rest_code_7e13c5d98d2f4354bec8e10b3a67019f-5" href="#rest_code_7e13c5d98d2f4354bec8e10b3a67019f-5"></a><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">- css/other.css</span>
+<a id="rest_code_7e13c5d98d2f4354bec8e10b3a67019f-6" name="rest_code_7e13c5d98d2f4354bec8e10b3a67019f-6" href="#rest_code_7e13c5d98d2f4354bec8e10b3a67019f-6"></a><span class="l l-Scalar l-Scalar-Plain">&lt;?php else</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">?&gt;</span>
+<a id="rest_code_7e13c5d98d2f4354bec8e10b3a67019f-7" name="rest_code_7e13c5d98d2f4354bec8e10b3a67019f-7" href="#rest_code_7e13c5d98d2f4354bec8e10b3a67019f-7"></a><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">- css/min.css</span>
+<a id="rest_code_7e13c5d98d2f4354bec8e10b3a67019f-8" name="rest_code_7e13c5d98d2f4354bec8e10b3a67019f-8" href="#rest_code_7e13c5d98d2f4354bec8e10b3a67019f-8"></a><span class="l l-Scalar l-Scalar-Plain">&lt;?php endif; ?&gt;</span>
 </pre></div>
 <p>Ten sam sposób możemy stosować w głównym pliku view.yml, jak i w
 view.yml dla każdego modułu. Jedyne o czym trzeba pamiętać, to

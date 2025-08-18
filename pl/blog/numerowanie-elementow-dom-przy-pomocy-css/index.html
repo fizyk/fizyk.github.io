@@ -46,33 +46,33 @@ właściwości CSS:</p>
 <li><p>content wraz z funkcją counter</p></li>
 </ul>
 <p><strong>counter-reset</strong> informuje w jakich warunkach licznik jest resetowany:</p>
-<div class="code"><pre class="code css"><a id="rest_code_eb805c48a219406ca970bec0d7372600-1" name="rest_code_eb805c48a219406ca970bec0d7372600-1" href="#rest_code_eb805c48a219406ca970bec0d7372600-1"></a><span class="p">.</span><span class="nc">reset</span>
-<a id="rest_code_eb805c48a219406ca970bec0d7372600-2" name="rest_code_eb805c48a219406ca970bec0d7372600-2" href="#rest_code_eb805c48a219406ca970bec0d7372600-2"></a><span class="p">{</span>
-<a id="rest_code_eb805c48a219406ca970bec0d7372600-3" name="rest_code_eb805c48a219406ca970bec0d7372600-3" href="#rest_code_eb805c48a219406ca970bec0d7372600-3"></a><span class="w">  </span><span class="k">counter-reset</span><span class="p">:</span><span class="w"> </span><span class="n">licznik</span><span class="p">;</span>
-<a id="rest_code_eb805c48a219406ca970bec0d7372600-4" name="rest_code_eb805c48a219406ca970bec0d7372600-4" href="#rest_code_eb805c48a219406ca970bec0d7372600-4"></a><span class="p">}</span>
+<div class="code"><pre class="code css"><a id="rest_code_935a7585798e494d9d8a0f6ee8e1c1dc-1" name="rest_code_935a7585798e494d9d8a0f6ee8e1c1dc-1" href="#rest_code_935a7585798e494d9d8a0f6ee8e1c1dc-1"></a><span class="p">.</span><span class="nc">reset</span>
+<a id="rest_code_935a7585798e494d9d8a0f6ee8e1c1dc-2" name="rest_code_935a7585798e494d9d8a0f6ee8e1c1dc-2" href="#rest_code_935a7585798e494d9d8a0f6ee8e1c1dc-2"></a><span class="p">{</span>
+<a id="rest_code_935a7585798e494d9d8a0f6ee8e1c1dc-3" name="rest_code_935a7585798e494d9d8a0f6ee8e1c1dc-3" href="#rest_code_935a7585798e494d9d8a0f6ee8e1c1dc-3"></a><span class="w">  </span><span class="k">counter-reset</span><span class="p">:</span><span class="w"> </span><span class="n">licznik</span><span class="p">;</span>
+<a id="rest_code_935a7585798e494d9d8a0f6ee8e1c1dc-4" name="rest_code_935a7585798e494d9d8a0f6ee8e1c1dc-4" href="#rest_code_935a7585798e494d9d8a0f6ee8e1c1dc-4"></a><span class="p">}</span>
 </pre></div>
 <p><strong>counter-increment</strong> podnosi wartosć licznika:</p>
-<div class="code"><pre class="code css"><a id="rest_code_4fd10a4091db4257b01a4c648c1e81fa-1" name="rest_code_4fd10a4091db4257b01a4c648c1e81fa-1" href="#rest_code_4fd10a4091db4257b01a4c648c1e81fa-1"></a><span class="p">.</span><span class="nc">increment</span>
-<a id="rest_code_4fd10a4091db4257b01a4c648c1e81fa-2" name="rest_code_4fd10a4091db4257b01a4c648c1e81fa-2" href="#rest_code_4fd10a4091db4257b01a4c648c1e81fa-2"></a><span class="p">{</span>
-<a id="rest_code_4fd10a4091db4257b01a4c648c1e81fa-3" name="rest_code_4fd10a4091db4257b01a4c648c1e81fa-3" href="#rest_code_4fd10a4091db4257b01a4c648c1e81fa-3"></a><span class="w">  </span><span class="k">counter-increment</span><span class="p">:</span><span class="w"> </span><span class="n">licznik</span><span class="p">;</span>
-<a id="rest_code_4fd10a4091db4257b01a4c648c1e81fa-4" name="rest_code_4fd10a4091db4257b01a4c648c1e81fa-4" href="#rest_code_4fd10a4091db4257b01a4c648c1e81fa-4"></a><span class="p">}</span>
+<div class="code"><pre class="code css"><a id="rest_code_d5533535b9d54804a113b83a2edd4277-1" name="rest_code_d5533535b9d54804a113b83a2edd4277-1" href="#rest_code_d5533535b9d54804a113b83a2edd4277-1"></a><span class="p">.</span><span class="nc">increment</span>
+<a id="rest_code_d5533535b9d54804a113b83a2edd4277-2" name="rest_code_d5533535b9d54804a113b83a2edd4277-2" href="#rest_code_d5533535b9d54804a113b83a2edd4277-2"></a><span class="p">{</span>
+<a id="rest_code_d5533535b9d54804a113b83a2edd4277-3" name="rest_code_d5533535b9d54804a113b83a2edd4277-3" href="#rest_code_d5533535b9d54804a113b83a2edd4277-3"></a><span class="w">  </span><span class="k">counter-increment</span><span class="p">:</span><span class="w"> </span><span class="n">licznik</span><span class="p">;</span>
+<a id="rest_code_d5533535b9d54804a113b83a2edd4277-4" name="rest_code_d5533535b9d54804a113b83a2edd4277-4" href="#rest_code_d5533535b9d54804a113b83a2edd4277-4"></a><span class="p">}</span>
 </pre></div>
 <p>Natomiast <strong>content</strong> wraz z funkcją counter wyświetla w odpowiednim
 miejscu wartość licznika. Dlatego najlepiej umieścić tą właściwość w
 definicji z selektorem <strong>:before</strong></p>
-<div class="code"><pre class="code css"><a id="rest_code_71d3eec2bd354cce85452cfb9e2fe01b-1" name="rest_code_71d3eec2bd354cce85452cfb9e2fe01b-1" href="#rest_code_71d3eec2bd354cce85452cfb9e2fe01b-1"></a><span class="p">.</span><span class="nc">count-me</span><span class="p">:</span><span class="nd">before</span>
-<a id="rest_code_71d3eec2bd354cce85452cfb9e2fe01b-2" name="rest_code_71d3eec2bd354cce85452cfb9e2fe01b-2" href="#rest_code_71d3eec2bd354cce85452cfb9e2fe01b-2"></a><span class="p">{</span>
-<a id="rest_code_71d3eec2bd354cce85452cfb9e2fe01b-3" name="rest_code_71d3eec2bd354cce85452cfb9e2fe01b-3" href="#rest_code_71d3eec2bd354cce85452cfb9e2fe01b-3"></a><span class="w">  </span><span class="k">counter-increment</span><span class="p">:</span><span class="w"> </span><span class="n">licznik</span>
-<a id="rest_code_71d3eec2bd354cce85452cfb9e2fe01b-4" name="rest_code_71d3eec2bd354cce85452cfb9e2fe01b-4" href="#rest_code_71d3eec2bd354cce85452cfb9e2fe01b-4"></a><span class="w">  </span><span class="k">content</span><span class="o">:</span><span class="w"> </span><span class="nb">counter</span><span class="p">(</span><span class="n">licznik</span><span class="p">);</span>
-<a id="rest_code_71d3eec2bd354cce85452cfb9e2fe01b-5" name="rest_code_71d3eec2bd354cce85452cfb9e2fe01b-5" href="#rest_code_71d3eec2bd354cce85452cfb9e2fe01b-5"></a><span class="p">}</span>
+<div class="code"><pre class="code css"><a id="rest_code_2173a912c1d54d34a9f5d13fb1a02008-1" name="rest_code_2173a912c1d54d34a9f5d13fb1a02008-1" href="#rest_code_2173a912c1d54d34a9f5d13fb1a02008-1"></a><span class="p">.</span><span class="nc">count-me</span><span class="p">:</span><span class="nd">before</span>
+<a id="rest_code_2173a912c1d54d34a9f5d13fb1a02008-2" name="rest_code_2173a912c1d54d34a9f5d13fb1a02008-2" href="#rest_code_2173a912c1d54d34a9f5d13fb1a02008-2"></a><span class="p">{</span>
+<a id="rest_code_2173a912c1d54d34a9f5d13fb1a02008-3" name="rest_code_2173a912c1d54d34a9f5d13fb1a02008-3" href="#rest_code_2173a912c1d54d34a9f5d13fb1a02008-3"></a><span class="w">  </span><span class="k">counter-increment</span><span class="p">:</span><span class="w"> </span><span class="n">licznik</span>
+<a id="rest_code_2173a912c1d54d34a9f5d13fb1a02008-4" name="rest_code_2173a912c1d54d34a9f5d13fb1a02008-4" href="#rest_code_2173a912c1d54d34a9f5d13fb1a02008-4"></a><span class="w">  </span><span class="k">content</span><span class="o">:</span><span class="w"> </span><span class="nb">counter</span><span class="p">(</span><span class="n">licznik</span><span class="p">);</span>
+<a id="rest_code_2173a912c1d54d34a9f5d13fb1a02008-5" name="rest_code_2173a912c1d54d34a9f5d13fb1a02008-5" href="#rest_code_2173a912c1d54d34a9f5d13fb1a02008-5"></a><span class="p">}</span>
 </pre></div>
 <p>Metoda content potrafi wyświetlić również ciąg znaków, a nawet dwa
 liczniki, dlatego też można wyświetlić coś takiego:</p>
-<div class="code"><pre class="code css"><a id="rest_code_e5f17cc9540048519c25414a4a18f303-1" name="rest_code_e5f17cc9540048519c25414a4a18f303-1" href="#rest_code_e5f17cc9540048519c25414a4a18f303-1"></a><span class="p">.</span><span class="nc">count-me-too</span><span class="p">:</span><span class="nd">before</span>
-<a id="rest_code_e5f17cc9540048519c25414a4a18f303-2" name="rest_code_e5f17cc9540048519c25414a4a18f303-2" href="#rest_code_e5f17cc9540048519c25414a4a18f303-2"></a><span class="p">{</span>
-<a id="rest_code_e5f17cc9540048519c25414a4a18f303-3" name="rest_code_e5f17cc9540048519c25414a4a18f303-3" href="#rest_code_e5f17cc9540048519c25414a4a18f303-3"></a><span class="w">  </span><span class="k">counter-increment</span><span class="p">:</span><span class="w"> </span><span class="n">licznik</span>
-<a id="rest_code_e5f17cc9540048519c25414a4a18f303-4" name="rest_code_e5f17cc9540048519c25414a4a18f303-4" href="#rest_code_e5f17cc9540048519c25414a4a18f303-4"></a><span class="w">  </span><span class="k">content</span><span class="o">:</span><span class="w"> </span><span class="s2">"Art. "</span><span class="w"> </span><span class="nb">counter</span><span class="p">(</span><span class="n">licznik</span><span class="p">)</span><span class="w"> </span><span class="s2">". "</span><span class="p">;</span>
-<a id="rest_code_e5f17cc9540048519c25414a4a18f303-5" name="rest_code_e5f17cc9540048519c25414a4a18f303-5" href="#rest_code_e5f17cc9540048519c25414a4a18f303-5"></a><span class="p">}</span>
+<div class="code"><pre class="code css"><a id="rest_code_be639ccf9ab54a07b56e34102454b53c-1" name="rest_code_be639ccf9ab54a07b56e34102454b53c-1" href="#rest_code_be639ccf9ab54a07b56e34102454b53c-1"></a><span class="p">.</span><span class="nc">count-me-too</span><span class="p">:</span><span class="nd">before</span>
+<a id="rest_code_be639ccf9ab54a07b56e34102454b53c-2" name="rest_code_be639ccf9ab54a07b56e34102454b53c-2" href="#rest_code_be639ccf9ab54a07b56e34102454b53c-2"></a><span class="p">{</span>
+<a id="rest_code_be639ccf9ab54a07b56e34102454b53c-3" name="rest_code_be639ccf9ab54a07b56e34102454b53c-3" href="#rest_code_be639ccf9ab54a07b56e34102454b53c-3"></a><span class="w">  </span><span class="k">counter-increment</span><span class="p">:</span><span class="w"> </span><span class="n">licznik</span>
+<a id="rest_code_be639ccf9ab54a07b56e34102454b53c-4" name="rest_code_be639ccf9ab54a07b56e34102454b53c-4" href="#rest_code_be639ccf9ab54a07b56e34102454b53c-4"></a><span class="w">  </span><span class="k">content</span><span class="o">:</span><span class="w"> </span><span class="s2">"Art. "</span><span class="w"> </span><span class="nb">counter</span><span class="p">(</span><span class="n">licznik</span><span class="p">)</span><span class="w"> </span><span class="s2">". "</span><span class="p">;</span>
+<a id="rest_code_be639ccf9ab54a07b56e34102454b53c-5" name="rest_code_be639ccf9ab54a07b56e34102454b53c-5" href="#rest_code_be639ccf9ab54a07b56e34102454b53c-5"></a><span class="p">}</span>
 </pre></div>
     
         <ul class="pager hidden-print">
