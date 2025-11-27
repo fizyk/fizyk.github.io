@@ -9,8 +9,8 @@
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../rss.xml">
 <link rel="canonical" href="https://fizyk.dev/pl/blog/polskie-znaki-w-mysql-doctrine-i-symfony/">
-<link rel="icon" href="../../../favicon.png" sizes="62x60">
 <link rel="icon" href="../../../favicon-speddial.png" sizes="269x262">
+<link rel="icon" href="../../../favicon.png" sizes="62x60">
 <!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -58,14 +58,14 @@ wymusić stosowanie tego kodowanie w tworzonych poprzez doctrine
 tabelach, czy też samym połączeniu na lini baza danych - aplikacja.
 Konieczne jest ręczne ustawienie odpowiednich wartości w pliku
 <strong>database.yml</strong>:</p>
-<div class="code"><pre class="code yaml"><a id="rest_code_186334331e90468bb424062bb5bc774e-1" name="rest_code_186334331e90468bb424062bb5bc774e-1" href="#rest_code_186334331e90468bb424062bb5bc774e-1"></a><span class="nt">all</span><span class="p">:</span>
-<a id="rest_code_186334331e90468bb424062bb5bc774e-2" name="rest_code_186334331e90468bb424062bb5bc774e-2" href="#rest_code_186334331e90468bb424062bb5bc774e-2"></a><span class="w">  </span><span class="nt">doctrine</span><span class="p">:</span>
-<a id="rest_code_186334331e90468bb424062bb5bc774e-3" name="rest_code_186334331e90468bb424062bb5bc774e-3" href="#rest_code_186334331e90468bb424062bb5bc774e-3"></a><span class="w">    </span><span class="nt">class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sfDoctrineDatabase</span>
-<a id="rest_code_186334331e90468bb424062bb5bc774e-4" name="rest_code_186334331e90468bb424062bb5bc774e-4" href="#rest_code_186334331e90468bb424062bb5bc774e-4"></a><span class="w">    </span><span class="nt">param</span><span class="p">:</span>
-<a id="rest_code_186334331e90468bb424062bb5bc774e-5" name="rest_code_186334331e90468bb424062bb5bc774e-5" href="#rest_code_186334331e90468bb424062bb5bc774e-5"></a><span class="w">      </span><span class="c1">#...</span>
-<a id="rest_code_186334331e90468bb424062bb5bc774e-6" name="rest_code_186334331e90468bb424062bb5bc774e-6" href="#rest_code_186334331e90468bb424062bb5bc774e-6"></a><span class="w">      </span><span class="nt">attributes</span><span class="p">:</span>
-<a id="rest_code_186334331e90468bb424062bb5bc774e-7" name="rest_code_186334331e90468bb424062bb5bc774e-7" href="#rest_code_186334331e90468bb424062bb5bc774e-7"></a><span class="w">        </span><span class="nt">default_table_charset</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">utf8</span>
-<a id="rest_code_186334331e90468bb424062bb5bc774e-8" name="rest_code_186334331e90468bb424062bb5bc774e-8" href="#rest_code_186334331e90468bb424062bb5bc774e-8"></a><span class="w">        </span><span class="nt">default_table_collate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">utf8_general_ci</span>
+<div class="code"><pre class="code yaml"><a id="rest_code_5b16883dc3644d368bcd6ae991559ab6-1" name="rest_code_5b16883dc3644d368bcd6ae991559ab6-1" href="#rest_code_5b16883dc3644d368bcd6ae991559ab6-1"></a><span class="nt">all</span><span class="p">:</span>
+<a id="rest_code_5b16883dc3644d368bcd6ae991559ab6-2" name="rest_code_5b16883dc3644d368bcd6ae991559ab6-2" href="#rest_code_5b16883dc3644d368bcd6ae991559ab6-2"></a><span class="w">  </span><span class="nt">doctrine</span><span class="p">:</span>
+<a id="rest_code_5b16883dc3644d368bcd6ae991559ab6-3" name="rest_code_5b16883dc3644d368bcd6ae991559ab6-3" href="#rest_code_5b16883dc3644d368bcd6ae991559ab6-3"></a><span class="w">    </span><span class="nt">class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sfDoctrineDatabase</span>
+<a id="rest_code_5b16883dc3644d368bcd6ae991559ab6-4" name="rest_code_5b16883dc3644d368bcd6ae991559ab6-4" href="#rest_code_5b16883dc3644d368bcd6ae991559ab6-4"></a><span class="w">    </span><span class="nt">param</span><span class="p">:</span>
+<a id="rest_code_5b16883dc3644d368bcd6ae991559ab6-5" name="rest_code_5b16883dc3644d368bcd6ae991559ab6-5" href="#rest_code_5b16883dc3644d368bcd6ae991559ab6-5"></a><span class="w">      </span><span class="c1">#...</span>
+<a id="rest_code_5b16883dc3644d368bcd6ae991559ab6-6" name="rest_code_5b16883dc3644d368bcd6ae991559ab6-6" href="#rest_code_5b16883dc3644d368bcd6ae991559ab6-6"></a><span class="w">      </span><span class="nt">attributes</span><span class="p">:</span>
+<a id="rest_code_5b16883dc3644d368bcd6ae991559ab6-7" name="rest_code_5b16883dc3644d368bcd6ae991559ab6-7" href="#rest_code_5b16883dc3644d368bcd6ae991559ab6-7"></a><span class="w">        </span><span class="nt">default_table_charset</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">utf8</span>
+<a id="rest_code_5b16883dc3644d368bcd6ae991559ab6-8" name="rest_code_5b16883dc3644d368bcd6ae991559ab6-8" href="#rest_code_5b16883dc3644d368bcd6ae991559ab6-8"></a><span class="w">        </span><span class="nt">default_table_collate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">utf8_general_ci</span>
 </pre></div>
 <p>W ten sposób można w spokoju tworzyć aplikacje używające kodowania
 unicode bez obawy wystąpienia błędu nieprawidłowego kodowania znaków w

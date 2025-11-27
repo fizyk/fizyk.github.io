@@ -9,8 +9,8 @@
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../pl/rss.xml">
 <link rel="canonical" href="https://fizyk.dev/blog/default-filter-values-in-admin-generated-symfony-module/">
-<link rel="icon" href="../../favicon.png" sizes="62x60">
 <link rel="icon" href="../../favicon-speddial.png" sizes="269x262">
+<link rel="icon" href="../../favicon.png" sizes="62x60">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -51,14 +51,14 @@ overwrite. These methods are located in your module's
 folder.</p>
 <p>First method is getFilterForm(), which is used to serve filter form to
 be generated:</p>
-<div class="code"><pre class="code php"><a id="rest_code_2e2f520c397942bb8c6c0a030edf241c-1" name="rest_code_2e2f520c397942bb8c6c0a030edf241c-1" href="#rest_code_2e2f520c397942bb8c6c0a030edf241c-1"></a><span class="x">public function getFilterForm($filters)</span>
-<a id="rest_code_2e2f520c397942bb8c6c0a030edf241c-2" name="rest_code_2e2f520c397942bb8c6c0a030edf241c-2" href="#rest_code_2e2f520c397942bb8c6c0a030edf241c-2"></a><span class="x">{</span>
-<a id="rest_code_2e2f520c397942bb8c6c0a030edf241c-3" name="rest_code_2e2f520c397942bb8c6c0a030edf241c-3" href="#rest_code_2e2f520c397942bb8c6c0a030edf241c-3"></a><span class="x">    if(!array_key_exists('field_name', $filters))</span>
-<a id="rest_code_2e2f520c397942bb8c6c0a030edf241c-4" name="rest_code_2e2f520c397942bb8c6c0a030edf241c-4" href="#rest_code_2e2f520c397942bb8c6c0a030edf241c-4"></a><span class="x">    {</span>
-<a id="rest_code_2e2f520c397942bb8c6c0a030edf241c-5" name="rest_code_2e2f520c397942bb8c6c0a030edf241c-5" href="#rest_code_2e2f520c397942bb8c6c0a030edf241c-5"></a><span class="x">        $filters['field_name'] = 'value';</span>
-<a id="rest_code_2e2f520c397942bb8c6c0a030edf241c-6" name="rest_code_2e2f520c397942bb8c6c0a030edf241c-6" href="#rest_code_2e2f520c397942bb8c6c0a030edf241c-6"></a><span class="x">    }</span>
-<a id="rest_code_2e2f520c397942bb8c6c0a030edf241c-7" name="rest_code_2e2f520c397942bb8c6c0a030edf241c-7" href="#rest_code_2e2f520c397942bb8c6c0a030edf241c-7"></a><span class="x">    return parent::getFilterForm($filters);</span>
-<a id="rest_code_2e2f520c397942bb8c6c0a030edf241c-8" name="rest_code_2e2f520c397942bb8c6c0a030edf241c-8" href="#rest_code_2e2f520c397942bb8c6c0a030edf241c-8"></a><span class="x">}</span>
+<div class="code"><pre class="code php"><a id="rest_code_b8e5dcb6ea28401e889a4540dc2026af-1" name="rest_code_b8e5dcb6ea28401e889a4540dc2026af-1" href="#rest_code_b8e5dcb6ea28401e889a4540dc2026af-1"></a><span class="x">public function getFilterForm($filters)</span>
+<a id="rest_code_b8e5dcb6ea28401e889a4540dc2026af-2" name="rest_code_b8e5dcb6ea28401e889a4540dc2026af-2" href="#rest_code_b8e5dcb6ea28401e889a4540dc2026af-2"></a><span class="x">{</span>
+<a id="rest_code_b8e5dcb6ea28401e889a4540dc2026af-3" name="rest_code_b8e5dcb6ea28401e889a4540dc2026af-3" href="#rest_code_b8e5dcb6ea28401e889a4540dc2026af-3"></a><span class="x">    if(!array_key_exists('field_name', $filters))</span>
+<a id="rest_code_b8e5dcb6ea28401e889a4540dc2026af-4" name="rest_code_b8e5dcb6ea28401e889a4540dc2026af-4" href="#rest_code_b8e5dcb6ea28401e889a4540dc2026af-4"></a><span class="x">    {</span>
+<a id="rest_code_b8e5dcb6ea28401e889a4540dc2026af-5" name="rest_code_b8e5dcb6ea28401e889a4540dc2026af-5" href="#rest_code_b8e5dcb6ea28401e889a4540dc2026af-5"></a><span class="x">        $filters['field_name'] = 'value';</span>
+<a id="rest_code_b8e5dcb6ea28401e889a4540dc2026af-6" name="rest_code_b8e5dcb6ea28401e889a4540dc2026af-6" href="#rest_code_b8e5dcb6ea28401e889a4540dc2026af-6"></a><span class="x">    }</span>
+<a id="rest_code_b8e5dcb6ea28401e889a4540dc2026af-7" name="rest_code_b8e5dcb6ea28401e889a4540dc2026af-7" href="#rest_code_b8e5dcb6ea28401e889a4540dc2026af-7"></a><span class="x">    return parent::getFilterForm($filters);</span>
+<a id="rest_code_b8e5dcb6ea28401e889a4540dc2026af-8" name="rest_code_b8e5dcb6ea28401e889a4540dc2026af-8" href="#rest_code_b8e5dcb6ea28401e889a4540dc2026af-8"></a><span class="x">}</span>
 </pre></div>
 <p>Variable named <strong>$filters</strong> is array containing default values for
 filter form. Once we use filter, values get passed through filters to
@@ -69,10 +69,10 @@ otherwise... overwriting this method is completely unnecessary.</p>
 <p>Second method to look at is <strong>getFilterDefaults()</strong>, which is actually
 used to get default values for filter. These values are then applied
 both to filter form, and the query from <strong>table_method</strong>.</p>
-<div class="code"><pre class="code php"><a id="rest_code_f3b6b2d823ab491595512346ea0aa16e-1" name="rest_code_f3b6b2d823ab491595512346ea0aa16e-1" href="#rest_code_f3b6b2d823ab491595512346ea0aa16e-1"></a><span class="x">public function getFilterDefaults()</span>
-<a id="rest_code_f3b6b2d823ab491595512346ea0aa16e-2" name="rest_code_f3b6b2d823ab491595512346ea0aa16e-2" href="#rest_code_f3b6b2d823ab491595512346ea0aa16e-2"></a><span class="x">{</span>
-<a id="rest_code_f3b6b2d823ab491595512346ea0aa16e-3" name="rest_code_f3b6b2d823ab491595512346ea0aa16e-3" href="#rest_code_f3b6b2d823ab491595512346ea0aa16e-3"></a><span class="x">    return array('field_name' =&gt; 'value');</span>
-<a id="rest_code_f3b6b2d823ab491595512346ea0aa16e-4" name="rest_code_f3b6b2d823ab491595512346ea0aa16e-4" href="#rest_code_f3b6b2d823ab491595512346ea0aa16e-4"></a><span class="x">}</span>
+<div class="code"><pre class="code php"><a id="rest_code_2154170b74b44732b3f9fae950b1d2fb-1" name="rest_code_2154170b74b44732b3f9fae950b1d2fb-1" href="#rest_code_2154170b74b44732b3f9fae950b1d2fb-1"></a><span class="x">public function getFilterDefaults()</span>
+<a id="rest_code_2154170b74b44732b3f9fae950b1d2fb-2" name="rest_code_2154170b74b44732b3f9fae950b1d2fb-2" href="#rest_code_2154170b74b44732b3f9fae950b1d2fb-2"></a><span class="x">{</span>
+<a id="rest_code_2154170b74b44732b3f9fae950b1d2fb-3" name="rest_code_2154170b74b44732b3f9fae950b1d2fb-3" href="#rest_code_2154170b74b44732b3f9fae950b1d2fb-3"></a><span class="x">    return array('field_name' =&gt; 'value');</span>
+<a id="rest_code_2154170b74b44732b3f9fae950b1d2fb-4" name="rest_code_2154170b74b44732b3f9fae950b1d2fb-4" href="#rest_code_2154170b74b44732b3f9fae950b1d2fb-4"></a><span class="x">}</span>
 </pre></div>
 <p>Method returns an array, that has same construction as the <strong>$filter</strong>
 variable from <strong>getFilterForm</strong> method. Now you can enjoy your admin's

@@ -9,8 +9,8 @@
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../rss.xml">
 <link rel="canonical" href="https://fizyk.dev/pl/blog/odswiezanie-cache-u-w-symfony-1-4/">
-<link rel="icon" href="../../../favicon.png" sizes="62x60">
 <link rel="icon" href="../../../favicon-speddial.png" sizes="269x262">
+<link rel="icon" href="../../../favicon.png" sizes="62x60">
 <!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -49,9 +49,9 @@ aplikacji. Można nawet użyć odpowiedniego helpera. Również odświeżanie
 cache jest nadzwyczaj proste - o ile robi się to w tej samej aplikacji.
 Odświeżanie cache'u w jednej z aplikacji projektu z innej wymaga pewnej
 gimnastyki.</p>
-<div class="code"><pre class="code php"><a id="rest_code_9b09b3dd4fe84b19ab61f73c4d9b6ac6-1" name="rest_code_9b09b3dd4fe84b19ab61f73c4d9b6ac6-1" href="#rest_code_9b09b3dd4fe84b19ab61f73c4d9b6ac6-1"></a><span class="x">$frontend_cache_dir = sfConfig::get('sf_cache_dir').DIRECTORY_SEPARATOR.'frontend'. DIRECTORY_SEPARATOR.sfConfig::get('sf_environment').DIRECTORY_SEPARATOR.'template';</span>
-<a id="rest_code_9b09b3dd4fe84b19ab61f73c4d9b6ac6-2" name="rest_code_9b09b3dd4fe84b19ab61f73c4d9b6ac6-2" href="#rest_code_9b09b3dd4fe84b19ab61f73c4d9b6ac6-2"></a><span class="x">$cache = new sfFileCache(array('cache_dir' =&gt; $frontend_cache_dir)); // Use the same settings as the ones defined in the frontend factories.yml</span>
-<a id="rest_code_9b09b3dd4fe84b19ab61f73c4d9b6ac6-3" name="rest_code_9b09b3dd4fe84b19ab61f73c4d9b6ac6-3" href="#rest_code_9b09b3dd4fe84b19ab61f73c4d9b6ac6-3"></a><span class="x">$cache-&gt;removePattern('user/show?id=12');</span>
+<div class="code"><pre class="code php"><a id="rest_code_2bd89eec1ac443bdab52439a69bb71ed-1" name="rest_code_2bd89eec1ac443bdab52439a69bb71ed-1" href="#rest_code_2bd89eec1ac443bdab52439a69bb71ed-1"></a><span class="x">$frontend_cache_dir = sfConfig::get('sf_cache_dir').DIRECTORY_SEPARATOR.'frontend'. DIRECTORY_SEPARATOR.sfConfig::get('sf_environment').DIRECTORY_SEPARATOR.'template';</span>
+<a id="rest_code_2bd89eec1ac443bdab52439a69bb71ed-2" name="rest_code_2bd89eec1ac443bdab52439a69bb71ed-2" href="#rest_code_2bd89eec1ac443bdab52439a69bb71ed-2"></a><span class="x">$cache = new sfFileCache(array('cache_dir' =&gt; $frontend_cache_dir)); // Use the same settings as the ones defined in the frontend factories.yml</span>
+<a id="rest_code_2bd89eec1ac443bdab52439a69bb71ed-3" name="rest_code_2bd89eec1ac443bdab52439a69bb71ed-3" href="#rest_code_2bd89eec1ac443bdab52439a69bb71ed-3"></a><span class="x">$cache-&gt;removePattern('user/show?id=12');</span>
 </pre></div>
 <p>Powyższy kod pochodzi ze wspomnianej wyżej książki, rozdział 12.  W
 przykładzie zaprezentowanym w książce jest tylko jeden problem. Możliwe,
@@ -65,46 +65,46 @@ jest fakt, iż metoda removePattern nie zawiera mechanizmów
 zamieniających parametry na ścieżkę cache.</p>
 <p>Należy jednak zwrócić uwagę, że przekazując między innymi dwie gwiazdki
 jako parametr można usunąć cały cache aplikacji frontend:</p>
-<div class="code"><pre class="code php"><a id="rest_code_27ecaa04e76f4d52b417af4e0a61b120-1" name="rest_code_27ecaa04e76f4d52b417af4e0a61b120-1" href="#rest_code_27ecaa04e76f4d52b417af4e0a61b120-1"></a><span class="x">$cache-&gt;removePattern('**');</span>
+<div class="code"><pre class="code php"><a id="rest_code_6a0d13424a9a4294a1fac57a2b4df6c4-1" name="rest_code_6a0d13424a9a4294a1fac57a2b4df6c4-1" href="#rest_code_6a0d13424a9a4294a1fac57a2b4df6c4-1"></a><span class="x">$cache-&gt;removePattern('**');</span>
 </pre></div>
 <p>Zauważając to, łatwo się zorientować, że prawidłowy parametr metody w
 przykładzie powinien mieć postać:</p>
-<div class="code"><pre class="code php"><a id="rest_code_aa7c33eb64ac493ca2db0e6fa3b931e0-1" name="rest_code_aa7c33eb64ac493ca2db0e6fa3b931e0-1" href="#rest_code_aa7c33eb64ac493ca2db0e6fa3b931e0-1"></a><span class="x">//remove specified show</span>
-<a id="rest_code_aa7c33eb64ac493ca2db0e6fa3b931e0-2" name="rest_code_aa7c33eb64ac493ca2db0e6fa3b931e0-2" href="#rest_code_aa7c33eb64ac493ca2db0e6fa3b931e0-2"></a><span class="x">$cache-&gt;removePattern('**/user/show/id/12');</span>
-<a id="rest_code_aa7c33eb64ac493ca2db0e6fa3b931e0-3" name="rest_code_aa7c33eb64ac493ca2db0e6fa3b931e0-3" href="#rest_code_aa7c33eb64ac493ca2db0e6fa3b931e0-3"></a><span class="x">//remove all shows</span>
-<a id="rest_code_aa7c33eb64ac493ca2db0e6fa3b931e0-4" name="rest_code_aa7c33eb64ac493ca2db0e6fa3b931e0-4" href="#rest_code_aa7c33eb64ac493ca2db0e6fa3b931e0-4"></a><span class="x">$cache-&gt;removePattern('**/user/show/**');</span>
+<div class="code"><pre class="code php"><a id="rest_code_2766965fb66b4c499d79a3bb5adab1b4-1" name="rest_code_2766965fb66b4c499d79a3bb5adab1b4-1" href="#rest_code_2766965fb66b4c499d79a3bb5adab1b4-1"></a><span class="x">//remove specified show</span>
+<a id="rest_code_2766965fb66b4c499d79a3bb5adab1b4-2" name="rest_code_2766965fb66b4c499d79a3bb5adab1b4-2" href="#rest_code_2766965fb66b4c499d79a3bb5adab1b4-2"></a><span class="x">$cache-&gt;removePattern('**/user/show/id/12');</span>
+<a id="rest_code_2766965fb66b4c499d79a3bb5adab1b4-3" name="rest_code_2766965fb66b4c499d79a3bb5adab1b4-3" href="#rest_code_2766965fb66b4c499d79a3bb5adab1b4-3"></a><span class="x">//remove all shows</span>
+<a id="rest_code_2766965fb66b4c499d79a3bb5adab1b4-4" name="rest_code_2766965fb66b4c499d79a3bb5adab1b4-4" href="#rest_code_2766965fb66b4c499d79a3bb5adab1b4-4"></a><span class="x">$cache-&gt;removePattern('**/user/show/**');</span>
 </pre></div>
 <p>Bazując na swoich poszukiwaniach, i by nie powtarzać niepotrzebnie kod,
 stworzyłem prostą metodę statyczną, która pozwala mi wyczyścić żądany
 fragment cachu:</p>
-<div class="code"><pre class="code php"><a id="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-1" name="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-1" href="#rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-1"></a><span class="x">class Fizyk</span>
-<a id="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-2" name="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-2" href="#rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-2"></a><span class="x">{</span>
-<a id="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-3" name="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-3" href="#rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-3"></a><span class="x">    /**</span>
-<a id="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-4" name="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-4" href="#rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-4"></a><span class="x">     * ...</span>
-<a id="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-5" name="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-5" href="#rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-5"></a><span class="x">     */</span>
-<a id="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-6" name="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-6" href="#rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-6"></a>
-<a id="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-7" name="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-7" href="#rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-7"></a>
-<a id="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-8" name="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-8" href="#rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-8"></a><span class="x">    /**</span>
-<a id="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-9" name="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-9" href="#rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-9"></a><span class="x">     * method clears frontend cache with given patterns</span>
-<a id="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-10" name="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-10" href="#rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-10"></a><span class="x">     * @param (mixed) $patterns</span>
-<a id="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-11" name="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-11" href="#rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-11"></a><span class="x">     */</span>
-<a id="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-12" name="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-12" href="#rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-12"></a><span class="x">    static public function clearFrontendCache( $patterns = '**' )</span>
-<a id="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-13" name="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-13" href="#rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-13"></a><span class="x">    {</span>
-<a id="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-14" name="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-14" href="#rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-14"></a><span class="x">      $frontend_cache_dir = sfConfig::get('sf_cache_dir').DIRECTORY_SEPARATOR.'frontend'. DIRECTORY_SEPARATOR.sfConfig::get('sf_environment').DIRECTORY_SEPARATOR.'template';</span>
-<a id="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-15" name="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-15" href="#rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-15"></a><span class="x">      $cache = new sfFileCache(array('cache_dir' =&gt; $frontend_cache_dir));</span>
-<a id="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-16" name="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-16" href="#rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-16"></a><span class="x">      if( is_array( $patterns ) )</span>
-<a id="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-17" name="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-17" href="#rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-17"></a><span class="x">      {</span>
-<a id="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-18" name="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-18" href="#rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-18"></a><span class="x">        foreach( $patterns as $pattern )</span>
-<a id="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-19" name="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-19" href="#rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-19"></a><span class="x">        {</span>
-<a id="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-20" name="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-20" href="#rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-20"></a><span class="x">          $cache-&gt;removePattern( $pattern );</span>
-<a id="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-21" name="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-21" href="#rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-21"></a><span class="x">        }</span>
-<a id="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-22" name="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-22" href="#rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-22"></a><span class="x">      }</span>
-<a id="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-23" name="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-23" href="#rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-23"></a><span class="x">      else</span>
-<a id="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-24" name="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-24" href="#rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-24"></a><span class="x">      {</span>
-<a id="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-25" name="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-25" href="#rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-25"></a><span class="x">        $cache-&gt;removePattern( $patterns );</span>
-<a id="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-26" name="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-26" href="#rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-26"></a><span class="x">      }</span>
-<a id="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-27" name="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-27" href="#rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-27"></a><span class="x">    }</span>
-<a id="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-28" name="rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-28" href="#rest_code_fc95c9a9ec6d444f9e98322ce1c70a3c-28"></a><span class="x">}</span>
+<div class="code"><pre class="code php"><a id="rest_code_ec1289881cb74167b612b0d2f7c414dc-1" name="rest_code_ec1289881cb74167b612b0d2f7c414dc-1" href="#rest_code_ec1289881cb74167b612b0d2f7c414dc-1"></a><span class="x">class Fizyk</span>
+<a id="rest_code_ec1289881cb74167b612b0d2f7c414dc-2" name="rest_code_ec1289881cb74167b612b0d2f7c414dc-2" href="#rest_code_ec1289881cb74167b612b0d2f7c414dc-2"></a><span class="x">{</span>
+<a id="rest_code_ec1289881cb74167b612b0d2f7c414dc-3" name="rest_code_ec1289881cb74167b612b0d2f7c414dc-3" href="#rest_code_ec1289881cb74167b612b0d2f7c414dc-3"></a><span class="x">    /**</span>
+<a id="rest_code_ec1289881cb74167b612b0d2f7c414dc-4" name="rest_code_ec1289881cb74167b612b0d2f7c414dc-4" href="#rest_code_ec1289881cb74167b612b0d2f7c414dc-4"></a><span class="x">     * ...</span>
+<a id="rest_code_ec1289881cb74167b612b0d2f7c414dc-5" name="rest_code_ec1289881cb74167b612b0d2f7c414dc-5" href="#rest_code_ec1289881cb74167b612b0d2f7c414dc-5"></a><span class="x">     */</span>
+<a id="rest_code_ec1289881cb74167b612b0d2f7c414dc-6" name="rest_code_ec1289881cb74167b612b0d2f7c414dc-6" href="#rest_code_ec1289881cb74167b612b0d2f7c414dc-6"></a>
+<a id="rest_code_ec1289881cb74167b612b0d2f7c414dc-7" name="rest_code_ec1289881cb74167b612b0d2f7c414dc-7" href="#rest_code_ec1289881cb74167b612b0d2f7c414dc-7"></a>
+<a id="rest_code_ec1289881cb74167b612b0d2f7c414dc-8" name="rest_code_ec1289881cb74167b612b0d2f7c414dc-8" href="#rest_code_ec1289881cb74167b612b0d2f7c414dc-8"></a><span class="x">    /**</span>
+<a id="rest_code_ec1289881cb74167b612b0d2f7c414dc-9" name="rest_code_ec1289881cb74167b612b0d2f7c414dc-9" href="#rest_code_ec1289881cb74167b612b0d2f7c414dc-9"></a><span class="x">     * method clears frontend cache with given patterns</span>
+<a id="rest_code_ec1289881cb74167b612b0d2f7c414dc-10" name="rest_code_ec1289881cb74167b612b0d2f7c414dc-10" href="#rest_code_ec1289881cb74167b612b0d2f7c414dc-10"></a><span class="x">     * @param (mixed) $patterns</span>
+<a id="rest_code_ec1289881cb74167b612b0d2f7c414dc-11" name="rest_code_ec1289881cb74167b612b0d2f7c414dc-11" href="#rest_code_ec1289881cb74167b612b0d2f7c414dc-11"></a><span class="x">     */</span>
+<a id="rest_code_ec1289881cb74167b612b0d2f7c414dc-12" name="rest_code_ec1289881cb74167b612b0d2f7c414dc-12" href="#rest_code_ec1289881cb74167b612b0d2f7c414dc-12"></a><span class="x">    static public function clearFrontendCache( $patterns = '**' )</span>
+<a id="rest_code_ec1289881cb74167b612b0d2f7c414dc-13" name="rest_code_ec1289881cb74167b612b0d2f7c414dc-13" href="#rest_code_ec1289881cb74167b612b0d2f7c414dc-13"></a><span class="x">    {</span>
+<a id="rest_code_ec1289881cb74167b612b0d2f7c414dc-14" name="rest_code_ec1289881cb74167b612b0d2f7c414dc-14" href="#rest_code_ec1289881cb74167b612b0d2f7c414dc-14"></a><span class="x">      $frontend_cache_dir = sfConfig::get('sf_cache_dir').DIRECTORY_SEPARATOR.'frontend'. DIRECTORY_SEPARATOR.sfConfig::get('sf_environment').DIRECTORY_SEPARATOR.'template';</span>
+<a id="rest_code_ec1289881cb74167b612b0d2f7c414dc-15" name="rest_code_ec1289881cb74167b612b0d2f7c414dc-15" href="#rest_code_ec1289881cb74167b612b0d2f7c414dc-15"></a><span class="x">      $cache = new sfFileCache(array('cache_dir' =&gt; $frontend_cache_dir));</span>
+<a id="rest_code_ec1289881cb74167b612b0d2f7c414dc-16" name="rest_code_ec1289881cb74167b612b0d2f7c414dc-16" href="#rest_code_ec1289881cb74167b612b0d2f7c414dc-16"></a><span class="x">      if( is_array( $patterns ) )</span>
+<a id="rest_code_ec1289881cb74167b612b0d2f7c414dc-17" name="rest_code_ec1289881cb74167b612b0d2f7c414dc-17" href="#rest_code_ec1289881cb74167b612b0d2f7c414dc-17"></a><span class="x">      {</span>
+<a id="rest_code_ec1289881cb74167b612b0d2f7c414dc-18" name="rest_code_ec1289881cb74167b612b0d2f7c414dc-18" href="#rest_code_ec1289881cb74167b612b0d2f7c414dc-18"></a><span class="x">        foreach( $patterns as $pattern )</span>
+<a id="rest_code_ec1289881cb74167b612b0d2f7c414dc-19" name="rest_code_ec1289881cb74167b612b0d2f7c414dc-19" href="#rest_code_ec1289881cb74167b612b0d2f7c414dc-19"></a><span class="x">        {</span>
+<a id="rest_code_ec1289881cb74167b612b0d2f7c414dc-20" name="rest_code_ec1289881cb74167b612b0d2f7c414dc-20" href="#rest_code_ec1289881cb74167b612b0d2f7c414dc-20"></a><span class="x">          $cache-&gt;removePattern( $pattern );</span>
+<a id="rest_code_ec1289881cb74167b612b0d2f7c414dc-21" name="rest_code_ec1289881cb74167b612b0d2f7c414dc-21" href="#rest_code_ec1289881cb74167b612b0d2f7c414dc-21"></a><span class="x">        }</span>
+<a id="rest_code_ec1289881cb74167b612b0d2f7c414dc-22" name="rest_code_ec1289881cb74167b612b0d2f7c414dc-22" href="#rest_code_ec1289881cb74167b612b0d2f7c414dc-22"></a><span class="x">      }</span>
+<a id="rest_code_ec1289881cb74167b612b0d2f7c414dc-23" name="rest_code_ec1289881cb74167b612b0d2f7c414dc-23" href="#rest_code_ec1289881cb74167b612b0d2f7c414dc-23"></a><span class="x">      else</span>
+<a id="rest_code_ec1289881cb74167b612b0d2f7c414dc-24" name="rest_code_ec1289881cb74167b612b0d2f7c414dc-24" href="#rest_code_ec1289881cb74167b612b0d2f7c414dc-24"></a><span class="x">      {</span>
+<a id="rest_code_ec1289881cb74167b612b0d2f7c414dc-25" name="rest_code_ec1289881cb74167b612b0d2f7c414dc-25" href="#rest_code_ec1289881cb74167b612b0d2f7c414dc-25"></a><span class="x">        $cache-&gt;removePattern( $patterns );</span>
+<a id="rest_code_ec1289881cb74167b612b0d2f7c414dc-26" name="rest_code_ec1289881cb74167b612b0d2f7c414dc-26" href="#rest_code_ec1289881cb74167b612b0d2f7c414dc-26"></a><span class="x">      }</span>
+<a id="rest_code_ec1289881cb74167b612b0d2f7c414dc-27" name="rest_code_ec1289881cb74167b612b0d2f7c414dc-27" href="#rest_code_ec1289881cb74167b612b0d2f7c414dc-27"></a><span class="x">    }</span>
+<a id="rest_code_ec1289881cb74167b612b0d2f7c414dc-28" name="rest_code_ec1289881cb74167b612b0d2f7c414dc-28" href="#rest_code_ec1289881cb74167b612b0d2f7c414dc-28"></a><span class="x">}</span>
 </pre></div>
 <p>Modyfikując tę metodę bardziej, można również umożliwić wybór aplikacji
 podczas jej wywoływania.</p>

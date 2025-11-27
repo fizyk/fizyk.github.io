@@ -9,8 +9,8 @@
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../pl/rss.xml">
 <link rel="canonical" href="https://fizyk.dev/blog/decrease-number-of-queries-for-admin-generated-module-the-better-way/">
-<link rel="icon" href="../../favicon.png" sizes="62x60">
 <link rel="icon" href="../../favicon-speddial.png" sizes="269x262">
+<link rel="icon" href="../../favicon.png" sizes="62x60">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -51,11 +51,11 @@ modules.</p>
 <p>When I first saw that solution on techiecorner, I thought: "<em>hmmm.. that
 could be useful</em>", but then, I looked at my generator.yml file and saw
 <strong>table_method</strong> i placed there long time ago...</p>
-<div class="code"><pre class="code yaml"><a id="rest_code_c0d06aa66fad47dbb1a72ea28fdadca3-1" name="rest_code_c0d06aa66fad47dbb1a72ea28fdadca3-1" href="#rest_code_c0d06aa66fad47dbb1a72ea28fdadca3-1"></a><span class="nt">generator</span><span class="p">:</span>
-<a id="rest_code_c0d06aa66fad47dbb1a72ea28fdadca3-2" name="rest_code_c0d06aa66fad47dbb1a72ea28fdadca3-2" href="#rest_code_c0d06aa66fad47dbb1a72ea28fdadca3-2"></a><span class="w">  </span><span class="nt">param</span><span class="p">:</span>
-<a id="rest_code_c0d06aa66fad47dbb1a72ea28fdadca3-3" name="rest_code_c0d06aa66fad47dbb1a72ea28fdadca3-3" href="#rest_code_c0d06aa66fad47dbb1a72ea28fdadca3-3"></a><span class="w">    </span><span class="nt">config</span><span class="p">:</span>
-<a id="rest_code_c0d06aa66fad47dbb1a72ea28fdadca3-4" name="rest_code_c0d06aa66fad47dbb1a72ea28fdadca3-4" href="#rest_code_c0d06aa66fad47dbb1a72ea28fdadca3-4"></a><span class="w">      </span><span class="nt">list</span><span class="p">:</span>
-<a id="rest_code_c0d06aa66fad47dbb1a72ea28fdadca3-5" name="rest_code_c0d06aa66fad47dbb1a72ea28fdadca3-5" href="#rest_code_c0d06aa66fad47dbb1a72ea28fdadca3-5"></a><span class="w">        </span><span class="nt">table_method</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">getAdminNotes</span>
+<div class="code"><pre class="code yaml"><a id="rest_code_68bcc2c4506f40f6bd717122634014a2-1" name="rest_code_68bcc2c4506f40f6bd717122634014a2-1" href="#rest_code_68bcc2c4506f40f6bd717122634014a2-1"></a><span class="nt">generator</span><span class="p">:</span>
+<a id="rest_code_68bcc2c4506f40f6bd717122634014a2-2" name="rest_code_68bcc2c4506f40f6bd717122634014a2-2" href="#rest_code_68bcc2c4506f40f6bd717122634014a2-2"></a><span class="w">  </span><span class="nt">param</span><span class="p">:</span>
+<a id="rest_code_68bcc2c4506f40f6bd717122634014a2-3" name="rest_code_68bcc2c4506f40f6bd717122634014a2-3" href="#rest_code_68bcc2c4506f40f6bd717122634014a2-3"></a><span class="w">    </span><span class="nt">config</span><span class="p">:</span>
+<a id="rest_code_68bcc2c4506f40f6bd717122634014a2-4" name="rest_code_68bcc2c4506f40f6bd717122634014a2-4" href="#rest_code_68bcc2c4506f40f6bd717122634014a2-4"></a><span class="w">      </span><span class="nt">list</span><span class="p">:</span>
+<a id="rest_code_68bcc2c4506f40f6bd717122634014a2-5" name="rest_code_68bcc2c4506f40f6bd717122634014a2-5" href="#rest_code_68bcc2c4506f40f6bd717122634014a2-5"></a><span class="w">        </span><span class="nt">table_method</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">getAdminNotes</span>
 </pre></div>
 <p>And while both, overwriting buildQuery and setting table_method can
 achieve same goal, I think table_method is more elegant, as it keeps
