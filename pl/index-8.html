@@ -87,13 +87,13 @@ jest git, z którego korzystam właśnie przez terminal.</p>
 się od razu, w jakiej gałęzi kodu pracujemy, oczywiście, jeśli
 korzystamy z gałęzi intensywnie. Ale jest na to sposób. Wystarczy lekko
 zmodyfikować plik <strong>.bashrc</strong> dodając linijkę:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_b1fd7663bab6435b8482e332c1b999eb-1" name="rest_code_b1fd7663bab6435b8482e332c1b999eb-1" href="blog/terminal-ze-szczypta-git-a/#rest_code_b1fd7663bab6435b8482e332c1b999eb-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PS1</span><span class="o">=</span><span class="s1">'\u@\h: \w$(__git_ps1 "(%s)")$ '</span>
+<div class="code"><pre class="code bash"><a id="rest_code_1beace6b9d024d3bb696ac1e15d6c949-1" name="rest_code_1beace6b9d024d3bb696ac1e15d6c949-1" href="blog/terminal-ze-szczypta-git-a/#rest_code_1beace6b9d024d3bb696ac1e15d6c949-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PS1</span><span class="o">=</span><span class="s1">'\u@\h: \w$(__git_ps1 "(%s)")$ '</span>
 </pre></div>
 <p>Jedyny problem z takim rozwiązaniem jest taki, że modyfikuje tytuł okna
 xterminala. Aby zaradzić temu, trzeba dodać jeszcze takie linijki:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_c942690b4f0a406a86a6874af33b5834-1" name="rest_code_c942690b4f0a406a86a6874af33b5834-1" href="blog/terminal-ze-szczypta-git-a/#rest_code_c942690b4f0a406a86a6874af33b5834-1"></a><span class="k">case</span><span class="w"> </span><span class="s2">"</span><span class="nv">$TERM</span><span class="s2">"</span><span class="w"> </span><span class="k">in</span>
-<a id="rest_code_c942690b4f0a406a86a6874af33b5834-2" name="rest_code_c942690b4f0a406a86a6874af33b5834-2" href="blog/terminal-ze-szczypta-git-a/#rest_code_c942690b4f0a406a86a6874af33b5834-2"></a>xterm*<span class="p">|</span>rxvt*<span class="o">)</span>
-<a id="rest_code_c942690b4f0a406a86a6874af33b5834-3" name="rest_code_c942690b4f0a406a86a6874af33b5834-3" href="blog/terminal-ze-szczypta-git-a/#rest_code_c942690b4f0a406a86a6874af33b5834-3"></a><span class="w">    </span><span class="nv">PS1</span><span class="o">=</span><span class="s2">"\[\e]0;</span><span class="si">${</span><span class="nv">debian_chroot</span><span class="p">:+(</span><span class="nv">$debian_chroot</span><span class="p">)</span><span class="si">}</span><span class="s2">\u@\h: \w\a\]</span><span class="nv">$PS1</span><span class="s2">"</span>
+<div class="code"><pre class="code bash"><a id="rest_code_3ae82db77811481fae2e126b8bec1c0e-1" name="rest_code_3ae82db77811481fae2e126b8bec1c0e-1" href="blog/terminal-ze-szczypta-git-a/#rest_code_3ae82db77811481fae2e126b8bec1c0e-1"></a><span class="k">case</span><span class="w"> </span><span class="s2">"</span><span class="nv">$TERM</span><span class="s2">"</span><span class="w"> </span><span class="k">in</span>
+<a id="rest_code_3ae82db77811481fae2e126b8bec1c0e-2" name="rest_code_3ae82db77811481fae2e126b8bec1c0e-2" href="blog/terminal-ze-szczypta-git-a/#rest_code_3ae82db77811481fae2e126b8bec1c0e-2"></a>xterm*<span class="p">|</span>rxvt*<span class="o">)</span>
+<a id="rest_code_3ae82db77811481fae2e126b8bec1c0e-3" name="rest_code_3ae82db77811481fae2e126b8bec1c0e-3" href="blog/terminal-ze-szczypta-git-a/#rest_code_3ae82db77811481fae2e126b8bec1c0e-3"></a><span class="w">    </span><span class="nv">PS1</span><span class="o">=</span><span class="s2">"\[\e]0;</span><span class="si">${</span><span class="nv">debian_chroot</span><span class="p">:+(</span><span class="nv">$debian_chroot</span><span class="p">)</span><span class="si">}</span><span class="s2">\u@\h: \w\a\]</span><span class="nv">$PS1</span><span class="s2">"</span>
 </pre></div>
             
     
@@ -318,7 +318,7 @@ jest dostępny na licencji
             </ul>
 </div>
         <div id="footer">
-            Contents © 2025 <a href="mailto:fizyk~~fizyk.dev">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
+            Contents © 2026 <a href="mailto:fizyk~~fizyk.dev">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
             
         </div>
     </div>

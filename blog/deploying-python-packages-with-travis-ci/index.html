@@ -56,10 +56,10 @@ And deployment is taking place from within virtualenv, which results in:</p>
 <aside class="admonition warning"><p class="admonition-title">Warning</p>
 <p>error: invalid command 'bdist_wheel' while deploying package to pypi</p>
 </aside><p>Well, to counter this, you need to add wheel installation yourself, like this:</p>
-<div class="code"><pre class="code yaml"><a id="rest_code_efdba1e3c8684d2c94c78315aa7fa1e4-1" name="rest_code_efdba1e3c8684d2c94c78315aa7fa1e4-1" href="#rest_code_efdba1e3c8684d2c94c78315aa7fa1e4-1"></a><span class="nt">install</span><span class="p">:</span>
-<a id="rest_code_efdba1e3c8684d2c94c78315aa7fa1e4-2" name="rest_code_efdba1e3c8684d2c94c78315aa7fa1e4-2" href="#rest_code_efdba1e3c8684d2c94c78315aa7fa1e4-2"></a><span class="w">    </span><span class="c1"># other installation steps</span>
-<a id="rest_code_efdba1e3c8684d2c94c78315aa7fa1e4-3" name="rest_code_efdba1e3c8684d2c94c78315aa7fa1e4-3" href="#rest_code_efdba1e3c8684d2c94c78315aa7fa1e4-3"></a><span class="w">    </span><span class="c1"># manually install wheel for deployment</span>
-<a id="rest_code_efdba1e3c8684d2c94c78315aa7fa1e4-4" name="rest_code_efdba1e3c8684d2c94c78315aa7fa1e4-4" href="#rest_code_efdba1e3c8684d2c94c78315aa7fa1e4-4"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"pip</span><span class="nv"> </span><span class="s">install</span><span class="nv"> </span><span class="s">wheel</span><span class="nv"> </span><span class="s">pylama</span><span class="nv"> </span><span class="s">--use-mirrors"</span>
+<div class="code"><pre class="code yaml"><a id="rest_code_5356928be4cd4ab1968500ba44cd2e9f-1" name="rest_code_5356928be4cd4ab1968500ba44cd2e9f-1" href="#rest_code_5356928be4cd4ab1968500ba44cd2e9f-1"></a><span class="nt">install</span><span class="p">:</span>
+<a id="rest_code_5356928be4cd4ab1968500ba44cd2e9f-2" name="rest_code_5356928be4cd4ab1968500ba44cd2e9f-2" href="#rest_code_5356928be4cd4ab1968500ba44cd2e9f-2"></a><span class="w">    </span><span class="c1"># other installation steps</span>
+<a id="rest_code_5356928be4cd4ab1968500ba44cd2e9f-3" name="rest_code_5356928be4cd4ab1968500ba44cd2e9f-3" href="#rest_code_5356928be4cd4ab1968500ba44cd2e9f-3"></a><span class="w">    </span><span class="c1"># manually install wheel for deployment</span>
+<a id="rest_code_5356928be4cd4ab1968500ba44cd2e9f-4" name="rest_code_5356928be4cd4ab1968500ba44cd2e9f-4" href="#rest_code_5356928be4cd4ab1968500ba44cd2e9f-4"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"pip</span><span class="nv"> </span><span class="s">install</span><span class="nv"> </span><span class="s">wheel</span><span class="nv"> </span><span class="s">pylama</span><span class="nv"> </span><span class="s">--use-mirrors"</span>
 </pre></div>
 <p>After these changes, my deployment process got down to bumping code version with
 bumpversion and pushing tags and code to github.</p>
@@ -137,7 +137,7 @@ jest dostępny na licencji
             </ul>
 </div>
         <div id="footer">
-            Contents © 2025 <a href="mailto:fizyk~~fizyk.dev">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
+            Contents © 2026 <a href="mailto:fizyk~~fizyk.dev">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
             
         </div>
     </div>

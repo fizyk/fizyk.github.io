@@ -8,8 +8,8 @@
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../pl/rss.xml">
 <link rel="canonical" href="https://fizyk.dev/blog/running-python-tests-on-traviss-osx-workers/">
-<link rel="icon" href="../../favicon.png" sizes="62x60">
 <link rel="icon" href="../../favicon-speddial.png" sizes="269x262">
+<link rel="icon" href="../../favicon.png" sizes="62x60">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -47,45 +47,45 @@ which will get 2 years old in this May. Apparently, just setting python as a lan
 the system to test on won't work for apple's operating system.</p>
 <!-- TEASER_END -->
 <p>Looking at the build log:</p>
-<div class="code"><pre class="code text"><a id="rest_code_1f9b9695d04c455abb47ab374bc75184-1" name="rest_code_1f9b9695d04c455abb47ab374bc75184-1" href="#rest_code_1f9b9695d04c455abb47ab374bc75184-1"></a>Build language: python
-<a id="rest_code_1f9b9695d04c455abb47ab374bc75184-2" name="rest_code_1f9b9695d04c455abb47ab374bc75184-2" href="#rest_code_1f9b9695d04c455abb47ab374bc75184-2"></a>Build group: stable
-<a id="rest_code_1f9b9695d04c455abb47ab374bc75184-3" name="rest_code_1f9b9695d04c455abb47ab374bc75184-3" href="#rest_code_1f9b9695d04c455abb47ab374bc75184-3"></a>Build dist: precise
-<a id="rest_code_1f9b9695d04c455abb47ab374bc75184-4" name="rest_code_1f9b9695d04c455abb47ab374bc75184-4" href="#rest_code_1f9b9695d04c455abb47ab374bc75184-4"></a>2.7 is not installed; attempting download
-<a id="rest_code_1f9b9695d04c455abb47ab374bc75184-5" name="rest_code_1f9b9695d04c455abb47ab374bc75184-5" href="#rest_code_1f9b9695d04c455abb47ab374bc75184-5"></a>/Users/travis/build.sh: line 235: lsb_release: command not found
-<a id="rest_code_1f9b9695d04c455abb47ab374bc75184-6" name="rest_code_1f9b9695d04c455abb47ab374bc75184-6" href="#rest_code_1f9b9695d04c455abb47ab374bc75184-6"></a>/Users/travis/build.sh: line 235: lsb_release: command not found
-<a id="rest_code_1f9b9695d04c455abb47ab374bc75184-7" name="rest_code_1f9b9695d04c455abb47ab374bc75184-7" href="#rest_code_1f9b9695d04c455abb47ab374bc75184-7"></a>tar: Unrecognized archive format
-<a id="rest_code_1f9b9695d04c455abb47ab374bc75184-8" name="rest_code_1f9b9695d04c455abb47ab374bc75184-8" href="#rest_code_1f9b9695d04c455abb47ab374bc75184-8"></a>tar: Error exit delayed from previous errors.
-<a id="rest_code_1f9b9695d04c455abb47ab374bc75184-9" name="rest_code_1f9b9695d04c455abb47ab374bc75184-9" href="#rest_code_1f9b9695d04c455abb47ab374bc75184-9"></a>sed: /etc/profile.d/pyenv.sh: No such file or directory
-<a id="rest_code_1f9b9695d04c455abb47ab374bc75184-10" name="rest_code_1f9b9695d04c455abb47ab374bc75184-10" href="#rest_code_1f9b9695d04c455abb47ab374bc75184-10"></a>tee: /etc/profile.d/pyenv.sh: No such file or directory
-<a id="rest_code_1f9b9695d04c455abb47ab374bc75184-11" name="rest_code_1f9b9695d04c455abb47ab374bc75184-11" href="#rest_code_1f9b9695d04c455abb47ab374bc75184-11"></a>git.checkout
-<a id="rest_code_1f9b9695d04c455abb47ab374bc75184-12" name="rest_code_1f9b9695d04c455abb47ab374bc75184-12" href="#rest_code_1f9b9695d04c455abb47ab374bc75184-12"></a>3.00s$ git clone --depth=50 --branch=master https://github.com/ClearcodeHQ/mirakuru.git ClearcodeHQ/mirakuru
-<a id="rest_code_1f9b9695d04c455abb47ab374bc75184-13" name="rest_code_1f9b9695d04c455abb47ab374bc75184-13" href="#rest_code_1f9b9695d04c455abb47ab374bc75184-13"></a>Cloning into 'ClearcodeHQ/mirakuru'...
-<a id="rest_code_1f9b9695d04c455abb47ab374bc75184-14" name="rest_code_1f9b9695d04c455abb47ab374bc75184-14" href="#rest_code_1f9b9695d04c455abb47ab374bc75184-14"></a>remote: Counting objects: 441, done.
-<a id="rest_code_1f9b9695d04c455abb47ab374bc75184-15" name="rest_code_1f9b9695d04c455abb47ab374bc75184-15" href="#rest_code_1f9b9695d04c455abb47ab374bc75184-15"></a>remote: Compressing objects: 100% (217/217), done.
-<a id="rest_code_1f9b9695d04c455abb47ab374bc75184-16" name="rest_code_1f9b9695d04c455abb47ab374bc75184-16" href="#rest_code_1f9b9695d04c455abb47ab374bc75184-16"></a>Receiving objremote: Total 441 (delta 272), reused 374 (delta 214), pack-reused 0
-<a id="rest_code_1f9b9695d04c455abb47ab374bc75184-17" name="rest_code_1f9b9695d04c455abb47ab374bc75184-17" href="#rest_code_1f9b9695d04c455abb47ab374bc75184-17"></a>Receiving objects: 100% (441/441), 110.51 KiB | 0 bytes/s, done.
-<a id="rest_code_1f9b9695d04c455abb47ab374bc75184-18" name="rest_code_1f9b9695d04c455abb47ab374bc75184-18" href="#rest_code_1f9b9695d04c455abb47ab374bc75184-18"></a>Resolving deltas: 100% (272/272), done.
-<a id="rest_code_1f9b9695d04c455abb47ab374bc75184-19" name="rest_code_1f9b9695d04c455abb47ab374bc75184-19" href="#rest_code_1f9b9695d04c455abb47ab374bc75184-19"></a>Checking connectivity... done.
-<a id="rest_code_1f9b9695d04c455abb47ab374bc75184-20" name="rest_code_1f9b9695d04c455abb47ab374bc75184-20" href="#rest_code_1f9b9695d04c455abb47ab374bc75184-20"></a>$ cd ClearcodeHQ/mirakuru
-<a id="rest_code_1f9b9695d04c455abb47ab374bc75184-21" name="rest_code_1f9b9695d04c455abb47ab374bc75184-21" href="#rest_code_1f9b9695d04c455abb47ab374bc75184-21"></a>$ git checkout -qf e30530ac1419cdfb0ff047651c54e5ed9e918024
-<a id="rest_code_1f9b9695d04c455abb47ab374bc75184-22" name="rest_code_1f9b9695d04c455abb47ab374bc75184-22" href="#rest_code_1f9b9695d04c455abb47ab374bc75184-22"></a>0.00s$ source ~/virtualenv/python2.7/bin/activate
-<a id="rest_code_1f9b9695d04c455abb47ab374bc75184-23" name="rest_code_1f9b9695d04c455abb47ab374bc75184-23" href="#rest_code_1f9b9695d04c455abb47ab374bc75184-23"></a>/Users/travis/build.sh: line 45: /Users/travis/virtualenv/python2.7/bin/activate: No such file or directory
-<a id="rest_code_1f9b9695d04c455abb47ab374bc75184-24" name="rest_code_1f9b9695d04c455abb47ab374bc75184-24" href="#rest_code_1f9b9695d04c455abb47ab374bc75184-24"></a>The command "source ~/virtualenv/python2.7/bin/activate" failed and exited with 1 during .
+<div class="code"><pre class="code text"><a id="rest_code_27a04f381e2e4189bbb635dcafa3f5c1-1" name="rest_code_27a04f381e2e4189bbb635dcafa3f5c1-1" href="#rest_code_27a04f381e2e4189bbb635dcafa3f5c1-1"></a>Build language: python
+<a id="rest_code_27a04f381e2e4189bbb635dcafa3f5c1-2" name="rest_code_27a04f381e2e4189bbb635dcafa3f5c1-2" href="#rest_code_27a04f381e2e4189bbb635dcafa3f5c1-2"></a>Build group: stable
+<a id="rest_code_27a04f381e2e4189bbb635dcafa3f5c1-3" name="rest_code_27a04f381e2e4189bbb635dcafa3f5c1-3" href="#rest_code_27a04f381e2e4189bbb635dcafa3f5c1-3"></a>Build dist: precise
+<a id="rest_code_27a04f381e2e4189bbb635dcafa3f5c1-4" name="rest_code_27a04f381e2e4189bbb635dcafa3f5c1-4" href="#rest_code_27a04f381e2e4189bbb635dcafa3f5c1-4"></a>2.7 is not installed; attempting download
+<a id="rest_code_27a04f381e2e4189bbb635dcafa3f5c1-5" name="rest_code_27a04f381e2e4189bbb635dcafa3f5c1-5" href="#rest_code_27a04f381e2e4189bbb635dcafa3f5c1-5"></a>/Users/travis/build.sh: line 235: lsb_release: command not found
+<a id="rest_code_27a04f381e2e4189bbb635dcafa3f5c1-6" name="rest_code_27a04f381e2e4189bbb635dcafa3f5c1-6" href="#rest_code_27a04f381e2e4189bbb635dcafa3f5c1-6"></a>/Users/travis/build.sh: line 235: lsb_release: command not found
+<a id="rest_code_27a04f381e2e4189bbb635dcafa3f5c1-7" name="rest_code_27a04f381e2e4189bbb635dcafa3f5c1-7" href="#rest_code_27a04f381e2e4189bbb635dcafa3f5c1-7"></a>tar: Unrecognized archive format
+<a id="rest_code_27a04f381e2e4189bbb635dcafa3f5c1-8" name="rest_code_27a04f381e2e4189bbb635dcafa3f5c1-8" href="#rest_code_27a04f381e2e4189bbb635dcafa3f5c1-8"></a>tar: Error exit delayed from previous errors.
+<a id="rest_code_27a04f381e2e4189bbb635dcafa3f5c1-9" name="rest_code_27a04f381e2e4189bbb635dcafa3f5c1-9" href="#rest_code_27a04f381e2e4189bbb635dcafa3f5c1-9"></a>sed: /etc/profile.d/pyenv.sh: No such file or directory
+<a id="rest_code_27a04f381e2e4189bbb635dcafa3f5c1-10" name="rest_code_27a04f381e2e4189bbb635dcafa3f5c1-10" href="#rest_code_27a04f381e2e4189bbb635dcafa3f5c1-10"></a>tee: /etc/profile.d/pyenv.sh: No such file or directory
+<a id="rest_code_27a04f381e2e4189bbb635dcafa3f5c1-11" name="rest_code_27a04f381e2e4189bbb635dcafa3f5c1-11" href="#rest_code_27a04f381e2e4189bbb635dcafa3f5c1-11"></a>git.checkout
+<a id="rest_code_27a04f381e2e4189bbb635dcafa3f5c1-12" name="rest_code_27a04f381e2e4189bbb635dcafa3f5c1-12" href="#rest_code_27a04f381e2e4189bbb635dcafa3f5c1-12"></a>3.00s$ git clone --depth=50 --branch=master https://github.com/ClearcodeHQ/mirakuru.git ClearcodeHQ/mirakuru
+<a id="rest_code_27a04f381e2e4189bbb635dcafa3f5c1-13" name="rest_code_27a04f381e2e4189bbb635dcafa3f5c1-13" href="#rest_code_27a04f381e2e4189bbb635dcafa3f5c1-13"></a>Cloning into 'ClearcodeHQ/mirakuru'...
+<a id="rest_code_27a04f381e2e4189bbb635dcafa3f5c1-14" name="rest_code_27a04f381e2e4189bbb635dcafa3f5c1-14" href="#rest_code_27a04f381e2e4189bbb635dcafa3f5c1-14"></a>remote: Counting objects: 441, done.
+<a id="rest_code_27a04f381e2e4189bbb635dcafa3f5c1-15" name="rest_code_27a04f381e2e4189bbb635dcafa3f5c1-15" href="#rest_code_27a04f381e2e4189bbb635dcafa3f5c1-15"></a>remote: Compressing objects: 100% (217/217), done.
+<a id="rest_code_27a04f381e2e4189bbb635dcafa3f5c1-16" name="rest_code_27a04f381e2e4189bbb635dcafa3f5c1-16" href="#rest_code_27a04f381e2e4189bbb635dcafa3f5c1-16"></a>Receiving objremote: Total 441 (delta 272), reused 374 (delta 214), pack-reused 0
+<a id="rest_code_27a04f381e2e4189bbb635dcafa3f5c1-17" name="rest_code_27a04f381e2e4189bbb635dcafa3f5c1-17" href="#rest_code_27a04f381e2e4189bbb635dcafa3f5c1-17"></a>Receiving objects: 100% (441/441), 110.51 KiB | 0 bytes/s, done.
+<a id="rest_code_27a04f381e2e4189bbb635dcafa3f5c1-18" name="rest_code_27a04f381e2e4189bbb635dcafa3f5c1-18" href="#rest_code_27a04f381e2e4189bbb635dcafa3f5c1-18"></a>Resolving deltas: 100% (272/272), done.
+<a id="rest_code_27a04f381e2e4189bbb635dcafa3f5c1-19" name="rest_code_27a04f381e2e4189bbb635dcafa3f5c1-19" href="#rest_code_27a04f381e2e4189bbb635dcafa3f5c1-19"></a>Checking connectivity... done.
+<a id="rest_code_27a04f381e2e4189bbb635dcafa3f5c1-20" name="rest_code_27a04f381e2e4189bbb635dcafa3f5c1-20" href="#rest_code_27a04f381e2e4189bbb635dcafa3f5c1-20"></a>$ cd ClearcodeHQ/mirakuru
+<a id="rest_code_27a04f381e2e4189bbb635dcafa3f5c1-21" name="rest_code_27a04f381e2e4189bbb635dcafa3f5c1-21" href="#rest_code_27a04f381e2e4189bbb635dcafa3f5c1-21"></a>$ git checkout -qf e30530ac1419cdfb0ff047651c54e5ed9e918024
+<a id="rest_code_27a04f381e2e4189bbb635dcafa3f5c1-22" name="rest_code_27a04f381e2e4189bbb635dcafa3f5c1-22" href="#rest_code_27a04f381e2e4189bbb635dcafa3f5c1-22"></a>0.00s$ source ~/virtualenv/python2.7/bin/activate
+<a id="rest_code_27a04f381e2e4189bbb635dcafa3f5c1-23" name="rest_code_27a04f381e2e4189bbb635dcafa3f5c1-23" href="#rest_code_27a04f381e2e4189bbb635dcafa3f5c1-23"></a>/Users/travis/build.sh: line 45: /Users/travis/virtualenv/python2.7/bin/activate: No such file or directory
+<a id="rest_code_27a04f381e2e4189bbb635dcafa3f5c1-24" name="rest_code_27a04f381e2e4189bbb635dcafa3f5c1-24" href="#rest_code_27a04f381e2e4189bbb635dcafa3f5c1-24"></a>The command "source ~/virtualenv/python2.7/bin/activate" failed and exited with 1 during .
 </pre></div>
 <p>It seems that the travis tries to work as if it was an ubuntu based worker, which fails the whole build in just few seconds.</p>
 <p>Luckily, in said bug report,
 <a class="reference external" href="https://github.com/travis-ci/travis-ci/issues/2312#issuecomment-195620855">a githubber Kodie Goodwin, shared his workaround for running tests within osx environment</a>.
 It's basicaly requires building own python environment before proceeding to installation, and running the build as generic:</p>
-<div class="code"><pre class="code yaml"><a id="rest_code_aed2c5497bd94cd7b2499facddea0794-1" name="rest_code_aed2c5497bd94cd7b2499facddea0794-1" href="#rest_code_aed2c5497bd94cd7b2499facddea0794-1"></a><span class="nt">matrix</span><span class="p">:</span>
-<a id="rest_code_aed2c5497bd94cd7b2499facddea0794-2" name="rest_code_aed2c5497bd94cd7b2499facddea0794-2" href="#rest_code_aed2c5497bd94cd7b2499facddea0794-2"></a><span class="w">    </span><span class="nt">include</span><span class="p">:</span>
-<a id="rest_code_aed2c5497bd94cd7b2499facddea0794-3" name="rest_code_aed2c5497bd94cd7b2499facddea0794-3" href="#rest_code_aed2c5497bd94cd7b2499facddea0794-3"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">os</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">osx</span>
-<a id="rest_code_aed2c5497bd94cd7b2499facddea0794-4" name="rest_code_aed2c5497bd94cd7b2499facddea0794-4" href="#rest_code_aed2c5497bd94cd7b2499facddea0794-4"></a><span class="w">          </span><span class="nt">language</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">generic</span>
-<a id="rest_code_aed2c5497bd94cd7b2499facddea0794-5" name="rest_code_aed2c5497bd94cd7b2499facddea0794-5" href="#rest_code_aed2c5497bd94cd7b2499facddea0794-5"></a><span class="c1"># Perform the manual steps on osx to install python3 and activate venv</span>
-<a id="rest_code_aed2c5497bd94cd7b2499facddea0794-6" name="rest_code_aed2c5497bd94cd7b2499facddea0794-6" href="#rest_code_aed2c5497bd94cd7b2499facddea0794-6"></a><span class="nt">before_install</span><span class="p">:</span>
-<a id="rest_code_aed2c5497bd94cd7b2499facddea0794-7" name="rest_code_aed2c5497bd94cd7b2499facddea0794-7" href="#rest_code_aed2c5497bd94cd7b2499facddea0794-7"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update          ; fi</span>
-<a id="rest_code_aed2c5497bd94cd7b2499facddea0794-8" name="rest_code_aed2c5497bd94cd7b2499facddea0794-8" href="#rest_code_aed2c5497bd94cd7b2499facddea0794-8"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install python3; fi</span>
-<a id="rest_code_aed2c5497bd94cd7b2499facddea0794-9" name="rest_code_aed2c5497bd94cd7b2499facddea0794-9" href="#rest_code_aed2c5497bd94cd7b2499facddea0794-9"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then virtualenv venv -p python3; fi</span>
-<a id="rest_code_aed2c5497bd94cd7b2499facddea0794-10" name="rest_code_aed2c5497bd94cd7b2499facddea0794-10" href="#rest_code_aed2c5497bd94cd7b2499facddea0794-10"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then source venv/bin/activate; fi</span>
+<div class="code"><pre class="code yaml"><a id="rest_code_dd0768b3ccf042bc8460c0cd2c03bec0-1" name="rest_code_dd0768b3ccf042bc8460c0cd2c03bec0-1" href="#rest_code_dd0768b3ccf042bc8460c0cd2c03bec0-1"></a><span class="nt">matrix</span><span class="p">:</span>
+<a id="rest_code_dd0768b3ccf042bc8460c0cd2c03bec0-2" name="rest_code_dd0768b3ccf042bc8460c0cd2c03bec0-2" href="#rest_code_dd0768b3ccf042bc8460c0cd2c03bec0-2"></a><span class="w">    </span><span class="nt">include</span><span class="p">:</span>
+<a id="rest_code_dd0768b3ccf042bc8460c0cd2c03bec0-3" name="rest_code_dd0768b3ccf042bc8460c0cd2c03bec0-3" href="#rest_code_dd0768b3ccf042bc8460c0cd2c03bec0-3"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">os</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">osx</span>
+<a id="rest_code_dd0768b3ccf042bc8460c0cd2c03bec0-4" name="rest_code_dd0768b3ccf042bc8460c0cd2c03bec0-4" href="#rest_code_dd0768b3ccf042bc8460c0cd2c03bec0-4"></a><span class="w">          </span><span class="nt">language</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">generic</span>
+<a id="rest_code_dd0768b3ccf042bc8460c0cd2c03bec0-5" name="rest_code_dd0768b3ccf042bc8460c0cd2c03bec0-5" href="#rest_code_dd0768b3ccf042bc8460c0cd2c03bec0-5"></a><span class="c1"># Perform the manual steps on osx to install python3 and activate venv</span>
+<a id="rest_code_dd0768b3ccf042bc8460c0cd2c03bec0-6" name="rest_code_dd0768b3ccf042bc8460c0cd2c03bec0-6" href="#rest_code_dd0768b3ccf042bc8460c0cd2c03bec0-6"></a><span class="nt">before_install</span><span class="p">:</span>
+<a id="rest_code_dd0768b3ccf042bc8460c0cd2c03bec0-7" name="rest_code_dd0768b3ccf042bc8460c0cd2c03bec0-7" href="#rest_code_dd0768b3ccf042bc8460c0cd2c03bec0-7"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update          ; fi</span>
+<a id="rest_code_dd0768b3ccf042bc8460c0cd2c03bec0-8" name="rest_code_dd0768b3ccf042bc8460c0cd2c03bec0-8" href="#rest_code_dd0768b3ccf042bc8460c0cd2c03bec0-8"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install python3; fi</span>
+<a id="rest_code_dd0768b3ccf042bc8460c0cd2c03bec0-9" name="rest_code_dd0768b3ccf042bc8460c0cd2c03bec0-9" href="#rest_code_dd0768b3ccf042bc8460c0cd2c03bec0-9"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then virtualenv venv -p python3; fi</span>
+<a id="rest_code_dd0768b3ccf042bc8460c0cd2c03bec0-10" name="rest_code_dd0768b3ccf042bc8460c0cd2c03bec0-10" href="#rest_code_dd0768b3ccf042bc8460c0cd2c03bec0-10"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then source venv/bin/activate; fi</span>
 </pre></div>
 <p>Same fragment is used in mirakuru. We're running only one build on osx now, since well...
 the only difference should be in the underlying system, and the all supported python versions are already tested on linux.</p>
@@ -161,7 +161,7 @@ jest dostępny na licencji
             </ul>
 </div>
         <div id="footer">
-            Contents © 2025 <a href="mailto:fizyk~~fizyk.dev">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
+            Contents © 2026 <a href="mailto:fizyk~~fizyk.dev">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
             
         </div>
     </div>

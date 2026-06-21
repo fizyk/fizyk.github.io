@@ -38,10 +38,10 @@
     <p>The <em>.ssh/config</em> file allows to configure ssh aliases in quite an elegant way. Makes obsolete the need to remember full ssh server address, port, user or possibly different authentication file you'd need to pass.</p>
 <!-- TEASER_END -->
 <p><strong>.ssh/config</strong> file has lots of options, but for me, for now the most important are</p>
-<div class="code"><pre class="code text"><a id="rest_code_79d26d1990f442fd99e41089bdc083ad-1" name="rest_code_79d26d1990f442fd99e41089bdc083ad-1" href="#rest_code_79d26d1990f442fd99e41089bdc083ad-1"></a>Host some_server
-<a id="rest_code_79d26d1990f442fd99e41089bdc083ad-2" name="rest_code_79d26d1990f442fd99e41089bdc083ad-2" href="#rest_code_79d26d1990f442fd99e41089bdc083ad-2"></a>    HostName some.server.example.com
-<a id="rest_code_79d26d1990f442fd99e41089bdc083ad-3" name="rest_code_79d26d1990f442fd99e41089bdc083ad-3" href="#rest_code_79d26d1990f442fd99e41089bdc083ad-3"></a>    IdentityFile ~/.ssh/some.key
-<a id="rest_code_79d26d1990f442fd99e41089bdc083ad-4" name="rest_code_79d26d1990f442fd99e41089bdc083ad-4" href="#rest_code_79d26d1990f442fd99e41089bdc083ad-4"></a>    User webmaster
+<div class="code"><pre class="code text"><a id="rest_code_3bf4b6c8a12c42128ac3698715327143-1" name="rest_code_3bf4b6c8a12c42128ac3698715327143-1" href="#rest_code_3bf4b6c8a12c42128ac3698715327143-1"></a>Host some_server
+<a id="rest_code_3bf4b6c8a12c42128ac3698715327143-2" name="rest_code_3bf4b6c8a12c42128ac3698715327143-2" href="#rest_code_3bf4b6c8a12c42128ac3698715327143-2"></a>    HostName some.server.example.com
+<a id="rest_code_3bf4b6c8a12c42128ac3698715327143-3" name="rest_code_3bf4b6c8a12c42128ac3698715327143-3" href="#rest_code_3bf4b6c8a12c42128ac3698715327143-3"></a>    IdentityFile ~/.ssh/some.key
+<a id="rest_code_3bf4b6c8a12c42128ac3698715327143-4" name="rest_code_3bf4b6c8a12c42128ac3698715327143-4" href="#rest_code_3bf4b6c8a12c42128ac3698715327143-4"></a>    User webmaster
 </pre></div>
 <p>Meaning, that if I run <code class="docutils literal">ssh some_server</code> in reality i'll issue <code class="docutils literal">ssh <span class="pre">-i</span> <span class="pre">~/.ssh/some.key</span> webmaster@some.server.example.com <span class="pre">-i</span></code>.</p>
 <p>For all configuration options read <a class="reference external" href="http://linux.die.net/man/5/ssh_config">official manpages</a> . But these two posts were most helpful for me: <a class="reference external" href="http://nerderati.com/2011/03/simplify-your-life-with-an-ssh-config-file/">Simplify Your Life With an SSH Config File</a> and <a class="reference external" href="http://blog.sanctum.geek.nz/uses-for-ssh-config/">Uses for ~/.ssh/config</a></p>
@@ -119,7 +119,7 @@ jest dostępny na licencji
             </ul>
 </div>
         <div id="footer">
-            Contents © 2025 <a href="mailto:fizyk~~fizyk.dev">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
+            Contents © 2026 <a href="mailto:fizyk~~fizyk.dev">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
             
         </div>
     </div>

@@ -49,11 +49,11 @@ kicks in in exact moment, thanks to a pytest_sessionstart hook.</p>
 <p>And just today, I was toying with the idea looking first at recent changes in
 pytest-cov, and it occurred to me, that to get full coverage of pytest plugin,
 I actually have to turn it off!</p>
-<div class="code"><pre class="code text"><a id="rest_code_77d9f9fdccf940049411bc730e24537a-1" name="rest_code_77d9f9fdccf940049411bc730e24537a-1" href="#rest_code_77d9f9fdccf940049411bc730e24537a-1"></a>py.test -p no:pytest-plugin
+<div class="code"><pre class="code text"><a id="rest_code_9422bb1902e84e17bf0e7ccf5edd271b-1" name="rest_code_9422bb1902e84e17bf0e7ccf5edd271b-1" href="#rest_code_9422bb1902e84e17bf0e7ccf5edd271b-1"></a>py.test -p no:pytest-plugin
 </pre></div>
 <p>But how do we use plguin's fixtures and configuration then? Well, it's enough
 to import everything from the plugin in test's <em>conftest.py</em> file!</p>
-<div class="code"><pre class="code python"><a id="rest_code_b0eee8825f014152bd37de7a804da70f-1" name="rest_code_b0eee8825f014152bd37de7a804da70f-1" href="#rest_code_b0eee8825f014152bd37de7a804da70f-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pytest_plugin.plugin</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<div class="code"><pre class="code python"><a id="rest_code_3da5d757f8984564892aad93c949178b-1" name="rest_code_3da5d757f8984564892aad93c949178b-1" href="#rest_code_3da5d757f8984564892aad93c949178b-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pytest_plugin.plugin</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 <p>This will make your plugin's fixture to kick in, as well as any configuration
 option your pytest plugin might require.</p>
@@ -137,7 +137,7 @@ jest dostępny na licencji
             </ul>
 </div>
         <div id="footer">
-            Contents © 2025 <a href="mailto:fizyk~~fizyk.dev">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
+            Contents © 2026 <a href="mailto:fizyk~~fizyk.dev">Grzegorz Śliwiński</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
             
         </div>
     </div>
