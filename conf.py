@@ -55,6 +55,9 @@ TRANSLATIONS = {
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         ('https://fizyk.dev/', 'Homepage'),
+        # pages/cv.rst is generated and pushed by CI in fizyk/cv -- do not edit it
+        # here. English only, so it is deliberately absent from the Polish nav.
+        ('/cv/', 'CV'),
         ('/archive/', 'Archives'),
         ('/tags/', 'Tags'),
     ),
