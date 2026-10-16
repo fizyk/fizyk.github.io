@@ -58,33 +58,33 @@ symfony-bootstrapper project. You can download it from it's github pages
 here:
 <a class="reference external" href="https://github.com/symfony/symfony-bootstrapper">https://github.com/symfony/symfony-bootstrapper</a>,
 or clone it:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_d5baab2888b64ed6a54f8811c89e9995-1" name="rest_code_d5baab2888b64ed6a54f8811c89e9995-1" href="#rest_code_d5baab2888b64ed6a54f8811c89e9995-1"></a>git<span class="w"> </span>clone<span class="w"> </span>git://github.com/symfony/symfony-bootstrapper.git
+<div class="code"><pre class="code bash"><a id="rest_code_9b390940a84d42669745a7782d79a8e0-1" name="rest_code_9b390940a84d42669745a7782d79a8e0-1" href="#rest_code_9b390940a84d42669745a7782d79a8e0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>git://github.com/symfony/symfony-bootstrapper.git
 </pre></div>
 <p>The second is actually better choice, since you can update your
 bootstrapper with one command later:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_c288e82d6ae341d681c3edc92156a362-1" name="rest_code_c288e82d6ae341d681c3edc92156a362-1" href="#rest_code_c288e82d6ae341d681c3edc92156a362-1"></a><span class="nb">cd</span><span class="w"> </span>symfony-bootstrapper
-<a id="rest_code_c288e82d6ae341d681c3edc92156a362-2" name="rest_code_c288e82d6ae341d681c3edc92156a362-2" href="#rest_code_c288e82d6ae341d681c3edc92156a362-2"></a>git<span class="w"> </span>pull
+<div class="code"><pre class="code bash"><a id="rest_code_0bd25f3cbf674ba8901480d7f2da82ee-1" name="rest_code_0bd25f3cbf674ba8901480d7f2da82ee-1" href="#rest_code_0bd25f3cbf674ba8901480d7f2da82ee-1"></a><span class="nb">cd</span><span class="w"> </span>symfony-bootstrapper
+<a id="rest_code_0bd25f3cbf674ba8901480d7f2da82ee-2" name="rest_code_0bd25f3cbf674ba8901480d7f2da82ee-2" href="#rest_code_0bd25f3cbf674ba8901480d7f2da82ee-2"></a>git<span class="w"> </span>pull
 </pre></div>
 <p>So... we downloaed bootstrapper, let us create project. First, let's
 create folder for our project:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_bae854767dd441cba326cd5f9a11ee37-1" name="rest_code_bae854767dd441cba326cd5f9a11ee37-1" href="#rest_code_bae854767dd441cba326cd5f9a11ee37-1"></a>mkdir<span class="w"> </span>/path/to/symfony2/project
+<div class="code"><pre class="code bash"><a id="rest_code_a282a20dd6694b2a91f8e2a3ce54be24-1" name="rest_code_a282a20dd6694b2a91f8e2a3ce54be24-1" href="#rest_code_a282a20dd6694b2a91f8e2a3ce54be24-1"></a>mkdir<span class="w"> </span>/path/to/symfony2/project
 </pre></div>
 <p>or</p>
-<div class="code"><pre class="code bash"><a id="rest_code_54e8467554534fc39de33c62bbedc4ff-1" name="rest_code_54e8467554534fc39de33c62bbedc4ff-1" href="#rest_code_54e8467554534fc39de33c62bbedc4ff-1"></a>mkdir<span class="w"> </span>/path/to/symfony2/project<span class="w"> </span>-p
+<div class="code"><pre class="code bash"><a id="rest_code_5643bb3c51a046108da4696e472ee044-1" name="rest_code_5643bb3c51a046108da4696e472ee044-1" href="#rest_code_5643bb3c51a046108da4696e472ee044-1"></a>mkdir<span class="w"> </span>/path/to/symfony2/project<span class="w"> </span>-p
 </pre></div>
 <p>Where project is the folder we're creating, then, go to that folder:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_14b9be4849184468bb1843e0e3866fc2-1" name="rest_code_14b9be4849184468bb1843e0e3866fc2-1" href="#rest_code_14b9be4849184468bb1843e0e3866fc2-1"></a><span class="nb">cd</span><span class="w"> </span>/path/to/symfony/project
+<div class="code"><pre class="code bash"><a id="rest_code_4ef8ef3620fb4666832cffa4ad5d4e3f-1" name="rest_code_4ef8ef3620fb4666832cffa4ad5d4e3f-1" href="#rest_code_4ef8ef3620fb4666832cffa4ad5d4e3f-1"></a><span class="nb">cd</span><span class="w"> </span>/path/to/symfony/project
 </pre></div>
 <p>From there run:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_e6aae13a76aa40a78023429f9b2ed73c-1" name="rest_code_e6aae13a76aa40a78023429f9b2ed73c-1" href="#rest_code_e6aae13a76aa40a78023429f9b2ed73c-1"></a>php<span class="w"> </span>path/to/bootstrapper/symfony.phar<span class="w"> </span>init<span class="w"> </span>--name<span class="o">=</span><span class="s2">"Symfony2Project"</span><span class="w"> </span>--format<span class="o">=</span><span class="s2">"xml"</span>
+<div class="code"><pre class="code bash"><a id="rest_code_0bde50b7e4d94917a852b5aa35e0bb45-1" name="rest_code_0bde50b7e4d94917a852b5aa35e0bb45-1" href="#rest_code_0bde50b7e4d94917a852b5aa35e0bb45-1"></a>php<span class="w"> </span>path/to/bootstrapper/symfony.phar<span class="w"> </span>init<span class="w"> </span>--name<span class="o">=</span><span class="s2">"Symfony2Project"</span><span class="w"> </span>--format<span class="o">=</span><span class="s2">"xml"</span>
 </pre></div>
 <p>Now note, there is/was a bug in <strong>config.xml</strong>, so if you choose your config to be stored in xml, make sure, that you reorder your section to look like this:</p>
-<div class="code"><pre class="code xml"><a id="rest_code_a84b787ca3554137b7758e881f418712-1" name="rest_code_a84b787ca3554137b7758e881f418712-1" href="#rest_code_a84b787ca3554137b7758e881f418712-1"></a><span class="nt">&lt;app:config</span><span class="w"> </span><span class="na">charset=</span><span class="s">"UTF-8"</span><span class="w"> </span><span class="na">csrf-secret=</span><span class="s">"xxxxxxxxxx"</span><span class="w"> </span><span class="na">error-handler=</span><span class="s">"null"</span><span class="nt">&gt;</span>
-<a id="rest_code_a84b787ca3554137b7758e881f418712-2" name="rest_code_a84b787ca3554137b7758e881f418712-2" href="#rest_code_a84b787ca3554137b7758e881f418712-2"></a><span class="w">    </span><span class="nt">&lt;app:router</span><span class="w"> </span><span class="na">resource=</span><span class="s">"%kernel.root_dir%/config/routing.xml"</span><span class="nt">/&gt;</span>
-<a id="rest_code_a84b787ca3554137b7758e881f418712-3" name="rest_code_a84b787ca3554137b7758e881f418712-3" href="#rest_code_a84b787ca3554137b7758e881f418712-3"></a><span class="w">    </span><span class="nt">&lt;app:validation</span><span class="w"> </span><span class="na">annotations=</span><span class="s">"true"</span><span class="w"> </span><span class="na">enabled=</span><span class="s">"true"</span><span class="nt">/&gt;</span>
-<a id="rest_code_a84b787ca3554137b7758e881f418712-4" name="rest_code_a84b787ca3554137b7758e881f418712-4" href="#rest_code_a84b787ca3554137b7758e881f418712-4"></a><span class="w">    </span><span class="nt">&lt;app:session</span><span class="w"> </span><span class="na">auto-start=</span><span class="s">"true"</span><span class="w"> </span><span class="na">default-locale=</span><span class="s">"en"</span><span class="w"> </span><span class="na">lifetime=</span><span class="s">"3600"</span><span class="nt">/&gt;</span>
-<a id="rest_code_a84b787ca3554137b7758e881f418712-5" name="rest_code_a84b787ca3554137b7758e881f418712-5" href="#rest_code_a84b787ca3554137b7758e881f418712-5"></a><span class="w">    </span><span class="nt">&lt;app:templating</span><span class="w"> </span><span class="na">assets-version=</span><span class="s">"SomeVersionScheme"</span><span class="nt">/&gt;</span>
-<a id="rest_code_a84b787ca3554137b7758e881f418712-6" name="rest_code_a84b787ca3554137b7758e881f418712-6" href="#rest_code_a84b787ca3554137b7758e881f418712-6"></a><span class="nt">&lt;/app:config&gt;</span>
+<div class="code"><pre class="code xml"><a id="rest_code_66572fabc8d34202bd7467471a568d48-1" name="rest_code_66572fabc8d34202bd7467471a568d48-1" href="#rest_code_66572fabc8d34202bd7467471a568d48-1"></a><span class="nt">&lt;app:config</span><span class="w"> </span><span class="na">charset=</span><span class="s">"UTF-8"</span><span class="w"> </span><span class="na">csrf-secret=</span><span class="s">"xxxxxxxxxx"</span><span class="w"> </span><span class="na">error-handler=</span><span class="s">"null"</span><span class="nt">&gt;</span>
+<a id="rest_code_66572fabc8d34202bd7467471a568d48-2" name="rest_code_66572fabc8d34202bd7467471a568d48-2" href="#rest_code_66572fabc8d34202bd7467471a568d48-2"></a><span class="w">    </span><span class="nt">&lt;app:router</span><span class="w"> </span><span class="na">resource=</span><span class="s">"%kernel.root_dir%/config/routing.xml"</span><span class="nt">/&gt;</span>
+<a id="rest_code_66572fabc8d34202bd7467471a568d48-3" name="rest_code_66572fabc8d34202bd7467471a568d48-3" href="#rest_code_66572fabc8d34202bd7467471a568d48-3"></a><span class="w">    </span><span class="nt">&lt;app:validation</span><span class="w"> </span><span class="na">annotations=</span><span class="s">"true"</span><span class="w"> </span><span class="na">enabled=</span><span class="s">"true"</span><span class="nt">/&gt;</span>
+<a id="rest_code_66572fabc8d34202bd7467471a568d48-4" name="rest_code_66572fabc8d34202bd7467471a568d48-4" href="#rest_code_66572fabc8d34202bd7467471a568d48-4"></a><span class="w">    </span><span class="nt">&lt;app:session</span><span class="w"> </span><span class="na">auto-start=</span><span class="s">"true"</span><span class="w"> </span><span class="na">default-locale=</span><span class="s">"en"</span><span class="w"> </span><span class="na">lifetime=</span><span class="s">"3600"</span><span class="nt">/&gt;</span>
+<a id="rest_code_66572fabc8d34202bd7467471a568d48-5" name="rest_code_66572fabc8d34202bd7467471a568d48-5" href="#rest_code_66572fabc8d34202bd7467471a568d48-5"></a><span class="w">    </span><span class="nt">&lt;app:templating</span><span class="w"> </span><span class="na">assets-version=</span><span class="s">"SomeVersionScheme"</span><span class="nt">/&gt;</span>
+<a id="rest_code_66572fabc8d34202bd7467471a568d48-6" name="rest_code_66572fabc8d34202bd7467471a568d48-6" href="#rest_code_66572fabc8d34202bd7467471a568d48-6"></a><span class="nt">&lt;/app:config&gt;</span>
 </pre></div>
 <p>Mind the order of app:session and app:templating. It won't work the
 other way. I've submitted reordered config.xml file, and this change was
@@ -95,9 +95,9 @@ you'll need to introduce that change as well.</p>
 Symfony first, you can just clone it, like Henrik wrote in his post, but
 since I place all my projects in git repo, it made more sense to use
 sumbodules (and learn how to work with it):</p>
-<div class="code"><pre class="code bash"><a id="rest_code_2caef1732b2e4343b87793329280840e-1" name="rest_code_2caef1732b2e4343b87793329280840e-1" href="#rest_code_2caef1732b2e4343b87793329280840e-1"></a>git<span class="w"> </span>submodule<span class="w"> </span>add<span class="w"> </span>git://github.com/symfony/symfony.git<span class="w"> </span>src/vendor/symfony/
-<a id="rest_code_2caef1732b2e4343b87793329280840e-2" name="rest_code_2caef1732b2e4343b87793329280840e-2" href="#rest_code_2caef1732b2e4343b87793329280840e-2"></a>git<span class="w"> </span>submodule<span class="w"> </span>init
-<a id="rest_code_2caef1732b2e4343b87793329280840e-3" name="rest_code_2caef1732b2e4343b87793329280840e-3" href="#rest_code_2caef1732b2e4343b87793329280840e-3"></a>git<span class="w"> </span>submodule<span class="w"> </span>update
+<div class="code"><pre class="code bash"><a id="rest_code_e491e4e8110c456cb8878ee0d84bdd22-1" name="rest_code_e491e4e8110c456cb8878ee0d84bdd22-1" href="#rest_code_e491e4e8110c456cb8878ee0d84bdd22-1"></a>git<span class="w"> </span>submodule<span class="w"> </span>add<span class="w"> </span>git://github.com/symfony/symfony.git<span class="w"> </span>src/vendor/symfony/
+<a id="rest_code_e491e4e8110c456cb8878ee0d84bdd22-2" name="rest_code_e491e4e8110c456cb8878ee0d84bdd22-2" href="#rest_code_e491e4e8110c456cb8878ee0d84bdd22-2"></a>git<span class="w"> </span>submodule<span class="w"> </span>init
+<a id="rest_code_e491e4e8110c456cb8878ee0d84bdd22-3" name="rest_code_e491e4e8110c456cb8878ee0d84bdd22-3" href="#rest_code_e491e4e8110c456cb8878ee0d84bdd22-3"></a>git<span class="w"> </span>submodule<span class="w"> </span>update
 </pre></div>
 <p>Symfony uses Zend_Logger, so you'll need at least that as well. It
 isn't shipped with symfony2, but it's enough to copy it from sandbox
@@ -110,59 +110,59 @@ from <a class="reference external" href="http://www.twig-project.org/">www.twig-
 there's RC version available, it is version downloaded from Twig's
 <a class="reference external" href="https://github.com/fabpot/twig">master branch on github repo</a> which
 works, not RC1. And again, you can clone it:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_d7ff77da73c14c8b985d6231beb8d85a-1" name="rest_code_d7ff77da73c14c8b985d6231beb8d85a-1" href="#rest_code_d7ff77da73c14c8b985d6231beb8d85a-1"></a>git<span class="w"> </span>clone<span class="w"> </span>git://github.com/fabpot/Twig.git<span class="w"> </span>src/vendor/twig
+<div class="code"><pre class="code bash"><a id="rest_code_9f72a0a3a55d49bc9ec1fa36a4ac7a96-1" name="rest_code_9f72a0a3a55d49bc9ec1fa36a4ac7a96-1" href="#rest_code_9f72a0a3a55d49bc9ec1fa36a4ac7a96-1"></a>git<span class="w"> </span>clone<span class="w"> </span>git://github.com/fabpot/Twig.git<span class="w"> </span>src/vendor/twig
 </pre></div>
 <p>or submodule it:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_75f307a18d53453abf35bb9dd56e7946-1" name="rest_code_75f307a18d53453abf35bb9dd56e7946-1" href="#rest_code_75f307a18d53453abf35bb9dd56e7946-1"></a>git<span class="w"> </span>submodule<span class="w"> </span>add<span class="w"> </span>git://github.com/fabpot/Twig.git<span class="w"> </span>src/vendor/twig
-<a id="rest_code_75f307a18d53453abf35bb9dd56e7946-2" name="rest_code_75f307a18d53453abf35bb9dd56e7946-2" href="#rest_code_75f307a18d53453abf35bb9dd56e7946-2"></a>git<span class="w"> </span>submodule<span class="w"> </span>init
-<a id="rest_code_75f307a18d53453abf35bb9dd56e7946-3" name="rest_code_75f307a18d53453abf35bb9dd56e7946-3" href="#rest_code_75f307a18d53453abf35bb9dd56e7946-3"></a>git<span class="w"> </span>submodule<span class="w"> </span>update
+<div class="code"><pre class="code bash"><a id="rest_code_f460ec56261143709b21687d50e88c94-1" name="rest_code_f460ec56261143709b21687d50e88c94-1" href="#rest_code_f460ec56261143709b21687d50e88c94-1"></a>git<span class="w"> </span>submodule<span class="w"> </span>add<span class="w"> </span>git://github.com/fabpot/Twig.git<span class="w"> </span>src/vendor/twig
+<a id="rest_code_f460ec56261143709b21687d50e88c94-2" name="rest_code_f460ec56261143709b21687d50e88c94-2" href="#rest_code_f460ec56261143709b21687d50e88c94-2"></a>git<span class="w"> </span>submodule<span class="w"> </span>init
+<a id="rest_code_f460ec56261143709b21687d50e88c94-3" name="rest_code_f460ec56261143709b21687d50e88c94-3" href="#rest_code_f460ec56261143709b21687d50e88c94-3"></a>git<span class="w"> </span>submodule<span class="w"> </span>update
 </pre></div>
 <p>I tried to comment it out, but got error, that there's anything that can
 use twig configuration options.</p>
 <p>At this point your app will yell for you at the lack of Doctrine, but
 you can just comment it out in yours app Kernel:</p>
-<div class="code"><pre class="code php5"><a id="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-1" name="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-1" href="#rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-1"></a><span class="x">class Symfony2ProjectKernel extends Kernel</span>
-<a id="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-2" name="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-2" href="#rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-2"></a><span class="x">{</span>
-<a id="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-3" name="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-3" href="#rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-3"></a>
-<a id="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-4" name="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-4" href="#rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-4"></a><span class="x">    public function registerBundles()</span>
-<a id="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-5" name="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-5" href="#rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-5"></a><span class="x">    {</span>
-<a id="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-6" name="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-6" href="#rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-6"></a><span class="x">        $bundles = array(</span>
-<a id="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-7" name="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-7" href="#rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-7"></a><span class="x">            new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),</span>
-<a id="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-8" name="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-8" href="#rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-8"></a><span class="x">            new Symfony\Bundle\TwigBundle\TwigBundle(),</span>
-<a id="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-9" name="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-9" href="#rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-9"></a>
-<a id="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-10" name="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-10" href="#rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-10"></a><span class="x">             // enable third-party bundles</span>
-<a id="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-11" name="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-11" href="#rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-11"></a><span class="x">             new Symfony\Bundle\ZendBundle\ZendBundle(),</span>
-<a id="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-12" name="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-12" href="#rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-12"></a><span class="x">             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),</span>
-<a id="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-13" name="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-13" href="#rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-13"></a><span class="x">             //new Symfony\Bundle\DoctrineBundle\DoctrineBundle(),</span>
-<a id="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-14" name="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-14" href="#rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-14"></a><span class="x">             //new Symfony\Bundle\DoctrineMigrationsBundle\DoctrineMigrationsBundle(),</span>
-<a id="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-15" name="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-15" href="#rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-15"></a><span class="x">             //new Symfony\Bundle\DoctrineMongoDBBundle\DoctrineMongoDBBundle(),</span>
-<a id="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-16" name="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-16" href="#rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-16"></a><span class="x">             //new Symfony\Bundle\PropelBundle\PropelBundle(),</span>
-<a id="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-17" name="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-17" href="#rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-17"></a>
-<a id="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-18" name="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-18" href="#rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-18"></a><span class="x">             // register your bundles</span>
-<a id="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-19" name="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-19" href="#rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-19"></a><span class="x">        );</span>
-<a id="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-20" name="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-20" href="#rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-20"></a>
-<a id="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-21" name="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-21" href="#rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-21"></a><span class="x">        if ($this-&gt;isDebug()) {</span>
-<a id="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-22" name="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-22" href="#rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-22"></a><span class="x">            $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();</span>
-<a id="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-23" name="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-23" href="#rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-23"></a><span class="x">        }</span>
-<a id="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-24" name="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-24" href="#rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-24"></a>
-<a id="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-25" name="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-25" href="#rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-25"></a><span class="x">        return $bundles;</span>
-<a id="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-26" name="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-26" href="#rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-26"></a><span class="x">    }</span>
-<a id="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-27" name="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-27" href="#rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-27"></a>
-<a id="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-28" name="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-28" href="#rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-28"></a><span class="x">    //...........</span>
-<a id="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-29" name="rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-29" href="#rest_code_d0bb8fb7cc834a3caa0c6d70bc4274bd-29"></a><span class="x">}</span>
+<div class="code"><pre class="code php5"><a id="rest_code_d0f10607aaa24446a84255f0ded29a2b-1" name="rest_code_d0f10607aaa24446a84255f0ded29a2b-1" href="#rest_code_d0f10607aaa24446a84255f0ded29a2b-1"></a><span class="x">class Symfony2ProjectKernel extends Kernel</span>
+<a id="rest_code_d0f10607aaa24446a84255f0ded29a2b-2" name="rest_code_d0f10607aaa24446a84255f0ded29a2b-2" href="#rest_code_d0f10607aaa24446a84255f0ded29a2b-2"></a><span class="x">{</span>
+<a id="rest_code_d0f10607aaa24446a84255f0ded29a2b-3" name="rest_code_d0f10607aaa24446a84255f0ded29a2b-3" href="#rest_code_d0f10607aaa24446a84255f0ded29a2b-3"></a>
+<a id="rest_code_d0f10607aaa24446a84255f0ded29a2b-4" name="rest_code_d0f10607aaa24446a84255f0ded29a2b-4" href="#rest_code_d0f10607aaa24446a84255f0ded29a2b-4"></a><span class="x">    public function registerBundles()</span>
+<a id="rest_code_d0f10607aaa24446a84255f0ded29a2b-5" name="rest_code_d0f10607aaa24446a84255f0ded29a2b-5" href="#rest_code_d0f10607aaa24446a84255f0ded29a2b-5"></a><span class="x">    {</span>
+<a id="rest_code_d0f10607aaa24446a84255f0ded29a2b-6" name="rest_code_d0f10607aaa24446a84255f0ded29a2b-6" href="#rest_code_d0f10607aaa24446a84255f0ded29a2b-6"></a><span class="x">        $bundles = array(</span>
+<a id="rest_code_d0f10607aaa24446a84255f0ded29a2b-7" name="rest_code_d0f10607aaa24446a84255f0ded29a2b-7" href="#rest_code_d0f10607aaa24446a84255f0ded29a2b-7"></a><span class="x">            new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),</span>
+<a id="rest_code_d0f10607aaa24446a84255f0ded29a2b-8" name="rest_code_d0f10607aaa24446a84255f0ded29a2b-8" href="#rest_code_d0f10607aaa24446a84255f0ded29a2b-8"></a><span class="x">            new Symfony\Bundle\TwigBundle\TwigBundle(),</span>
+<a id="rest_code_d0f10607aaa24446a84255f0ded29a2b-9" name="rest_code_d0f10607aaa24446a84255f0ded29a2b-9" href="#rest_code_d0f10607aaa24446a84255f0ded29a2b-9"></a>
+<a id="rest_code_d0f10607aaa24446a84255f0ded29a2b-10" name="rest_code_d0f10607aaa24446a84255f0ded29a2b-10" href="#rest_code_d0f10607aaa24446a84255f0ded29a2b-10"></a><span class="x">             // enable third-party bundles</span>
+<a id="rest_code_d0f10607aaa24446a84255f0ded29a2b-11" name="rest_code_d0f10607aaa24446a84255f0ded29a2b-11" href="#rest_code_d0f10607aaa24446a84255f0ded29a2b-11"></a><span class="x">             new Symfony\Bundle\ZendBundle\ZendBundle(),</span>
+<a id="rest_code_d0f10607aaa24446a84255f0ded29a2b-12" name="rest_code_d0f10607aaa24446a84255f0ded29a2b-12" href="#rest_code_d0f10607aaa24446a84255f0ded29a2b-12"></a><span class="x">             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),</span>
+<a id="rest_code_d0f10607aaa24446a84255f0ded29a2b-13" name="rest_code_d0f10607aaa24446a84255f0ded29a2b-13" href="#rest_code_d0f10607aaa24446a84255f0ded29a2b-13"></a><span class="x">             //new Symfony\Bundle\DoctrineBundle\DoctrineBundle(),</span>
+<a id="rest_code_d0f10607aaa24446a84255f0ded29a2b-14" name="rest_code_d0f10607aaa24446a84255f0ded29a2b-14" href="#rest_code_d0f10607aaa24446a84255f0ded29a2b-14"></a><span class="x">             //new Symfony\Bundle\DoctrineMigrationsBundle\DoctrineMigrationsBundle(),</span>
+<a id="rest_code_d0f10607aaa24446a84255f0ded29a2b-15" name="rest_code_d0f10607aaa24446a84255f0ded29a2b-15" href="#rest_code_d0f10607aaa24446a84255f0ded29a2b-15"></a><span class="x">             //new Symfony\Bundle\DoctrineMongoDBBundle\DoctrineMongoDBBundle(),</span>
+<a id="rest_code_d0f10607aaa24446a84255f0ded29a2b-16" name="rest_code_d0f10607aaa24446a84255f0ded29a2b-16" href="#rest_code_d0f10607aaa24446a84255f0ded29a2b-16"></a><span class="x">             //new Symfony\Bundle\PropelBundle\PropelBundle(),</span>
+<a id="rest_code_d0f10607aaa24446a84255f0ded29a2b-17" name="rest_code_d0f10607aaa24446a84255f0ded29a2b-17" href="#rest_code_d0f10607aaa24446a84255f0ded29a2b-17"></a>
+<a id="rest_code_d0f10607aaa24446a84255f0ded29a2b-18" name="rest_code_d0f10607aaa24446a84255f0ded29a2b-18" href="#rest_code_d0f10607aaa24446a84255f0ded29a2b-18"></a><span class="x">             // register your bundles</span>
+<a id="rest_code_d0f10607aaa24446a84255f0ded29a2b-19" name="rest_code_d0f10607aaa24446a84255f0ded29a2b-19" href="#rest_code_d0f10607aaa24446a84255f0ded29a2b-19"></a><span class="x">        );</span>
+<a id="rest_code_d0f10607aaa24446a84255f0ded29a2b-20" name="rest_code_d0f10607aaa24446a84255f0ded29a2b-20" href="#rest_code_d0f10607aaa24446a84255f0ded29a2b-20"></a>
+<a id="rest_code_d0f10607aaa24446a84255f0ded29a2b-21" name="rest_code_d0f10607aaa24446a84255f0ded29a2b-21" href="#rest_code_d0f10607aaa24446a84255f0ded29a2b-21"></a><span class="x">        if ($this-&gt;isDebug()) {</span>
+<a id="rest_code_d0f10607aaa24446a84255f0ded29a2b-22" name="rest_code_d0f10607aaa24446a84255f0ded29a2b-22" href="#rest_code_d0f10607aaa24446a84255f0ded29a2b-22"></a><span class="x">            $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();</span>
+<a id="rest_code_d0f10607aaa24446a84255f0ded29a2b-23" name="rest_code_d0f10607aaa24446a84255f0ded29a2b-23" href="#rest_code_d0f10607aaa24446a84255f0ded29a2b-23"></a><span class="x">        }</span>
+<a id="rest_code_d0f10607aaa24446a84255f0ded29a2b-24" name="rest_code_d0f10607aaa24446a84255f0ded29a2b-24" href="#rest_code_d0f10607aaa24446a84255f0ded29a2b-24"></a>
+<a id="rest_code_d0f10607aaa24446a84255f0ded29a2b-25" name="rest_code_d0f10607aaa24446a84255f0ded29a2b-25" href="#rest_code_d0f10607aaa24446a84255f0ded29a2b-25"></a><span class="x">        return $bundles;</span>
+<a id="rest_code_d0f10607aaa24446a84255f0ded29a2b-26" name="rest_code_d0f10607aaa24446a84255f0ded29a2b-26" href="#rest_code_d0f10607aaa24446a84255f0ded29a2b-26"></a><span class="x">    }</span>
+<a id="rest_code_d0f10607aaa24446a84255f0ded29a2b-27" name="rest_code_d0f10607aaa24446a84255f0ded29a2b-27" href="#rest_code_d0f10607aaa24446a84255f0ded29a2b-27"></a>
+<a id="rest_code_d0f10607aaa24446a84255f0ded29a2b-28" name="rest_code_d0f10607aaa24446a84255f0ded29a2b-28" href="#rest_code_d0f10607aaa24446a84255f0ded29a2b-28"></a><span class="x">    //...........</span>
+<a id="rest_code_d0f10607aaa24446a84255f0ded29a2b-29" name="rest_code_d0f10607aaa24446a84255f0ded29a2b-29" href="#rest_code_d0f10607aaa24446a84255f0ded29a2b-29"></a><span class="x">}</span>
 </pre></div>
 <p>I know, there's swiftmailer bundle, but well... Doesn't use anything
 third party at the moment.</p>
 <p>There's one last thing to do, before we can look at our fresh, clean
 symfony2 project:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_396e95a7775d475b8bf73b9bbba071b3-1" name="rest_code_396e95a7775d475b8bf73b9bbba071b3-1" href="#rest_code_396e95a7775d475b8bf73b9bbba071b3-1"></a>./app/console<span class="w"> </span>assets:install<span class="w"> </span>web/
+<div class="code"><pre class="code bash"><a id="rest_code_a2bb19047f0b491681af26fc4a5a66b4-1" name="rest_code_a2bb19047f0b491681af26fc4a5a66b4-1" href="#rest_code_a2bb19047f0b491681af26fc4a5a66b4-1"></a>./app/console<span class="w"> </span>assets:install<span class="w"> </span>web/
 </pre></div>
 <p>It copies bundles assets into web/ folder just like command below did in
 symfony 1.4:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_d6040272a9c5465ab70e5fff4adefb5d-1" name="rest_code_d6040272a9c5465ab70e5fff4adefb5d-1" href="#rest_code_d6040272a9c5465ab70e5fff4adefb5d-1"></a>./symfony<span class="w"> </span>plugin:publish-assets
+<div class="code"><pre class="code bash"><a id="rest_code_ebfc24071026484884a3e5c1700ca0ee-1" name="rest_code_ebfc24071026484884a3e5c1700ca0ee-1" href="#rest_code_ebfc24071026484884a3e5c1700ca0ee-1"></a>./symfony<span class="w"> </span>plugin:publish-assets
 </pre></div>
 <p>You can of course create symbolic links:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_28a8036c226b41b6a3be39ba3b9d6baf-1" name="rest_code_28a8036c226b41b6a3be39ba3b9d6baf-1" href="#rest_code_28a8036c226b41b6a3be39ba3b9d6baf-1"></a>./app/console<span class="w"> </span>assets:install<span class="w"> </span>web/<span class="w"> </span>--symbolic
+<div class="code"><pre class="code bash"><a id="rest_code_bfb77b6116b54df999e5a3455a4a286c-1" name="rest_code_bfb77b6116b54df999e5a3455a4a286c-1" href="#rest_code_bfb77b6116b54df999e5a3455a4a286c-1"></a>./app/console<span class="w"> </span>assets:install<span class="w"> </span>web/<span class="w"> </span>--symbolic
 </pre></div>
 <p>But if you install bundle's assets like that, you might have problems
 with loading your project through some ftp clients.</p>

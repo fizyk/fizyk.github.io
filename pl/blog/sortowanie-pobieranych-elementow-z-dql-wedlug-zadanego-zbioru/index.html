@@ -49,10 +49,10 @@ tego problemu.</p>
 <!-- TEASER_END -->
 <p>Pobranie z bazy danych elementów z określonego zbioru jest proste do
 wykonania, zarówno w sql:</p>
-<div class="code"><pre class="code mysql"><a id="rest_code_d9200c963b9744c58671f9d789d9cec2-1" name="rest_code_d9200c963b9744c58671f9d789d9cec2-1" href="#rest_code_d9200c963b9744c58671f9d789d9cec2-1"></a><span class="k">WHERE</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<div class="code"><pre class="code mysql"><a id="rest_code_d5f0962693dd42a18f11ac1126eb6190-1" name="rest_code_d5f0962693dd42a18f11ac1126eb6190-1" href="#rest_code_d5f0962693dd42a18f11ac1126eb6190-1"></a><span class="k">WHERE</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 <p>jak i w dql:</p>
-<div class="code"><pre class="code php"><a id="rest_code_dc3021e331044a9295b5258768ab978f-1" name="rest_code_dc3021e331044a9295b5258768ab978f-1" href="#rest_code_dc3021e331044a9295b5258768ab978f-1"></a><span class="x">$query-&gt;whereIn( 'id', array( 3, 1, 2 ) );</span>
+<div class="code"><pre class="code php"><a id="rest_code_6bf1e47e8259431f8c2950b1d4d81164-1" name="rest_code_6bf1e47e8259431f8c2950b1d4d81164-1" href="#rest_code_6bf1e47e8259431f8c2950b1d4d81164-1"></a><span class="x">$query-&gt;whereIn( 'id', array( 3, 1, 2 ) );</span>
 </pre></div>
 <p>Takie pytanie niestety zwróci nam te trzy elementy w kolejności, w
 jakiej znajdują się w bazie, lub posortowane według wartości któregoś z
@@ -61,50 +61,50 @@ chcieliśmy, ale nie są one ustawione tak jak chcieliśmy.</p>
 <p>Zacznijmy jednak od stworzenia dql, które umożliwi nam właśnie pobranie
 elementów, które chcieliśmy (posortowanie ich tak jak chcieliśmy nastąpi
 później):</p>
-<div class="code"><pre class="code php"><a id="rest_code_ea4e49772fce45e8bbd018c23f5a9402-1" name="rest_code_ea4e49772fce45e8bbd018c23f5a9402-1" href="#rest_code_ea4e49772fce45e8bbd018c23f5a9402-1"></a><span class="x">class MyModelTable extends Doctrine_Table</span>
-<a id="rest_code_ea4e49772fce45e8bbd018c23f5a9402-2" name="rest_code_ea4e49772fce45e8bbd018c23f5a9402-2" href="#rest_code_ea4e49772fce45e8bbd018c23f5a9402-2"></a><span class="x">{</span>
-<a id="rest_code_ea4e49772fce45e8bbd018c23f5a9402-3" name="rest_code_ea4e49772fce45e8bbd018c23f5a9402-3" href="#rest_code_ea4e49772fce45e8bbd018c23f5a9402-3"></a><span class="x">    /**</span>
-<a id="rest_code_ea4e49772fce45e8bbd018c23f5a9402-4" name="rest_code_ea4e49772fce45e8bbd018c23f5a9402-4" href="#rest_code_ea4e49772fce45e8bbd018c23f5a9402-4"></a><span class="x">    * Returns elements based on given ids</span>
-<a id="rest_code_ea4e49772fce45e8bbd018c23f5a9402-5" name="rest_code_ea4e49772fce45e8bbd018c23f5a9402-5" href="#rest_code_ea4e49772fce45e8bbd018c23f5a9402-5"></a><span class="x">    * @param array $element_ids</span>
-<a id="rest_code_ea4e49772fce45e8bbd018c23f5a9402-6" name="rest_code_ea4e49772fce45e8bbd018c23f5a9402-6" href="#rest_code_ea4e49772fce45e8bbd018c23f5a9402-6"></a><span class="x">    * @return Doctrine_Query</span>
-<a id="rest_code_ea4e49772fce45e8bbd018c23f5a9402-7" name="rest_code_ea4e49772fce45e8bbd018c23f5a9402-7" href="#rest_code_ea4e49772fce45e8bbd018c23f5a9402-7"></a><span class="x">    */</span>
-<a id="rest_code_ea4e49772fce45e8bbd018c23f5a9402-8" name="rest_code_ea4e49772fce45e8bbd018c23f5a9402-8" href="#rest_code_ea4e49772fce45e8bbd018c23f5a9402-8"></a><span class="x">    public function getElementsByIdsQuery( $element_ids )</span>
-<a id="rest_code_ea4e49772fce45e8bbd018c23f5a9402-9" name="rest_code_ea4e49772fce45e8bbd018c23f5a9402-9" href="#rest_code_ea4e49772fce45e8bbd018c23f5a9402-9"></a><span class="x">    {</span>
-<a id="rest_code_ea4e49772fce45e8bbd018c23f5a9402-10" name="rest_code_ea4e49772fce45e8bbd018c23f5a9402-10" href="#rest_code_ea4e49772fce45e8bbd018c23f5a9402-10"></a><span class="x">        return $this-&gt;createQuery( 'e' )</span>
-<a id="rest_code_ea4e49772fce45e8bbd018c23f5a9402-11" name="rest_code_ea4e49772fce45e8bbd018c23f5a9402-11" href="#rest_code_ea4e49772fce45e8bbd018c23f5a9402-11"></a><span class="x">            -&gt;select( 'e.*' )</span>
-<a id="rest_code_ea4e49772fce45e8bbd018c23f5a9402-12" name="rest_code_ea4e49772fce45e8bbd018c23f5a9402-12" href="#rest_code_ea4e49772fce45e8bbd018c23f5a9402-12"></a><span class="x">            -&gt;whereIn( 'e.id', $element_ids );</span>
-<a id="rest_code_ea4e49772fce45e8bbd018c23f5a9402-13" name="rest_code_ea4e49772fce45e8bbd018c23f5a9402-13" href="#rest_code_ea4e49772fce45e8bbd018c23f5a9402-13"></a><span class="x">    }</span>
-<a id="rest_code_ea4e49772fce45e8bbd018c23f5a9402-14" name="rest_code_ea4e49772fce45e8bbd018c23f5a9402-14" href="#rest_code_ea4e49772fce45e8bbd018c23f5a9402-14"></a>
-<a id="rest_code_ea4e49772fce45e8bbd018c23f5a9402-15" name="rest_code_ea4e49772fce45e8bbd018c23f5a9402-15" href="#rest_code_ea4e49772fce45e8bbd018c23f5a9402-15"></a><span class="x">}</span>
+<div class="code"><pre class="code php"><a id="rest_code_b42b65353541424e9dbef0aadcf39625-1" name="rest_code_b42b65353541424e9dbef0aadcf39625-1" href="#rest_code_b42b65353541424e9dbef0aadcf39625-1"></a><span class="x">class MyModelTable extends Doctrine_Table</span>
+<a id="rest_code_b42b65353541424e9dbef0aadcf39625-2" name="rest_code_b42b65353541424e9dbef0aadcf39625-2" href="#rest_code_b42b65353541424e9dbef0aadcf39625-2"></a><span class="x">{</span>
+<a id="rest_code_b42b65353541424e9dbef0aadcf39625-3" name="rest_code_b42b65353541424e9dbef0aadcf39625-3" href="#rest_code_b42b65353541424e9dbef0aadcf39625-3"></a><span class="x">    /**</span>
+<a id="rest_code_b42b65353541424e9dbef0aadcf39625-4" name="rest_code_b42b65353541424e9dbef0aadcf39625-4" href="#rest_code_b42b65353541424e9dbef0aadcf39625-4"></a><span class="x">    * Returns elements based on given ids</span>
+<a id="rest_code_b42b65353541424e9dbef0aadcf39625-5" name="rest_code_b42b65353541424e9dbef0aadcf39625-5" href="#rest_code_b42b65353541424e9dbef0aadcf39625-5"></a><span class="x">    * @param array $element_ids</span>
+<a id="rest_code_b42b65353541424e9dbef0aadcf39625-6" name="rest_code_b42b65353541424e9dbef0aadcf39625-6" href="#rest_code_b42b65353541424e9dbef0aadcf39625-6"></a><span class="x">    * @return Doctrine_Query</span>
+<a id="rest_code_b42b65353541424e9dbef0aadcf39625-7" name="rest_code_b42b65353541424e9dbef0aadcf39625-7" href="#rest_code_b42b65353541424e9dbef0aadcf39625-7"></a><span class="x">    */</span>
+<a id="rest_code_b42b65353541424e9dbef0aadcf39625-8" name="rest_code_b42b65353541424e9dbef0aadcf39625-8" href="#rest_code_b42b65353541424e9dbef0aadcf39625-8"></a><span class="x">    public function getElementsByIdsQuery( $element_ids )</span>
+<a id="rest_code_b42b65353541424e9dbef0aadcf39625-9" name="rest_code_b42b65353541424e9dbef0aadcf39625-9" href="#rest_code_b42b65353541424e9dbef0aadcf39625-9"></a><span class="x">    {</span>
+<a id="rest_code_b42b65353541424e9dbef0aadcf39625-10" name="rest_code_b42b65353541424e9dbef0aadcf39625-10" href="#rest_code_b42b65353541424e9dbef0aadcf39625-10"></a><span class="x">        return $this-&gt;createQuery( 'e' )</span>
+<a id="rest_code_b42b65353541424e9dbef0aadcf39625-11" name="rest_code_b42b65353541424e9dbef0aadcf39625-11" href="#rest_code_b42b65353541424e9dbef0aadcf39625-11"></a><span class="x">            -&gt;select( 'e.*' )</span>
+<a id="rest_code_b42b65353541424e9dbef0aadcf39625-12" name="rest_code_b42b65353541424e9dbef0aadcf39625-12" href="#rest_code_b42b65353541424e9dbef0aadcf39625-12"></a><span class="x">            -&gt;whereIn( 'e.id', $element_ids );</span>
+<a id="rest_code_b42b65353541424e9dbef0aadcf39625-13" name="rest_code_b42b65353541424e9dbef0aadcf39625-13" href="#rest_code_b42b65353541424e9dbef0aadcf39625-13"></a><span class="x">    }</span>
+<a id="rest_code_b42b65353541424e9dbef0aadcf39625-14" name="rest_code_b42b65353541424e9dbef0aadcf39625-14" href="#rest_code_b42b65353541424e9dbef0aadcf39625-14"></a>
+<a id="rest_code_b42b65353541424e9dbef0aadcf39625-15" name="rest_code_b42b65353541424e9dbef0aadcf39625-15" href="#rest_code_b42b65353541424e9dbef0aadcf39625-15"></a><span class="x">}</span>
 </pre></div>
 <p>To zapytanie zapewnia podstawę, którą możemy wykorzystać bez
 konieczności przechodzenia przez następny krok. Do posortowania
 elementów wykorzystamy instrukcję warunkową CASE:</p>
-<div class="code"><pre class="code php"><a id="rest_code_a15bd049b9a440f49dd8ea3f0beba615-1" name="rest_code_a15bd049b9a440f49dd8ea3f0beba615-1" href="#rest_code_a15bd049b9a440f49dd8ea3f0beba615-1"></a><span class="x">class MyModelTable extends Doctrine_Table</span>
-<a id="rest_code_a15bd049b9a440f49dd8ea3f0beba615-2" name="rest_code_a15bd049b9a440f49dd8ea3f0beba615-2" href="#rest_code_a15bd049b9a440f49dd8ea3f0beba615-2"></a><span class="x">{</span>
-<a id="rest_code_a15bd049b9a440f49dd8ea3f0beba615-3" name="rest_code_a15bd049b9a440f49dd8ea3f0beba615-3" href="#rest_code_a15bd049b9a440f49dd8ea3f0beba615-3"></a>
-<a id="rest_code_a15bd049b9a440f49dd8ea3f0beba615-4" name="rest_code_a15bd049b9a440f49dd8ea3f0beba615-4" href="#rest_code_a15bd049b9a440f49dd8ea3f0beba615-4"></a><span class="x">    /**</span>
-<a id="rest_code_a15bd049b9a440f49dd8ea3f0beba615-5" name="rest_code_a15bd049b9a440f49dd8ea3f0beba615-5" href="#rest_code_a15bd049b9a440f49dd8ea3f0beba615-5"></a><span class="x">    ...</span>
-<a id="rest_code_a15bd049b9a440f49dd8ea3f0beba615-6" name="rest_code_a15bd049b9a440f49dd8ea3f0beba615-6" href="#rest_code_a15bd049b9a440f49dd8ea3f0beba615-6"></a><span class="x">    */</span>
-<a id="rest_code_a15bd049b9a440f49dd8ea3f0beba615-7" name="rest_code_a15bd049b9a440f49dd8ea3f0beba615-7" href="#rest_code_a15bd049b9a440f49dd8ea3f0beba615-7"></a>
-<a id="rest_code_a15bd049b9a440f49dd8ea3f0beba615-8" name="rest_code_a15bd049b9a440f49dd8ea3f0beba615-8" href="#rest_code_a15bd049b9a440f49dd8ea3f0beba615-8"></a><span class="x">    /**</span>
-<a id="rest_code_a15bd049b9a440f49dd8ea3f0beba615-9" name="rest_code_a15bd049b9a440f49dd8ea3f0beba615-9" href="#rest_code_a15bd049b9a440f49dd8ea3f0beba615-9"></a><span class="x">    * Returns elements based on given ids, ordered as in given array.</span>
-<a id="rest_code_a15bd049b9a440f49dd8ea3f0beba615-10" name="rest_code_a15bd049b9a440f49dd8ea3f0beba615-10" href="#rest_code_a15bd049b9a440f49dd8ea3f0beba615-10"></a><span class="x">    * @param array $element_ids</span>
-<a id="rest_code_a15bd049b9a440f49dd8ea3f0beba615-11" name="rest_code_a15bd049b9a440f49dd8ea3f0beba615-11" href="#rest_code_a15bd049b9a440f49dd8ea3f0beba615-11"></a><span class="x">    * @return Doctrine_Query</span>
-<a id="rest_code_a15bd049b9a440f49dd8ea3f0beba615-12" name="rest_code_a15bd049b9a440f49dd8ea3f0beba615-12" href="#rest_code_a15bd049b9a440f49dd8ea3f0beba615-12"></a><span class="x">    */</span>
-<a id="rest_code_a15bd049b9a440f49dd8ea3f0beba615-13" name="rest_code_a15bd049b9a440f49dd8ea3f0beba615-13" href="#rest_code_a15bd049b9a440f49dd8ea3f0beba615-13"></a><span class="x">    public function getElementsByIdsOrderedQuery( $element_ids )</span>
-<a id="rest_code_a15bd049b9a440f49dd8ea3f0beba615-14" name="rest_code_a15bd049b9a440f49dd8ea3f0beba615-14" href="#rest_code_a15bd049b9a440f49dd8ea3f0beba615-14"></a><span class="x">    {</span>
-<a id="rest_code_a15bd049b9a440f49dd8ea3f0beba615-15" name="rest_code_a15bd049b9a440f49dd8ea3f0beba615-15" href="#rest_code_a15bd049b9a440f49dd8ea3f0beba615-15"></a><span class="x">        $query = $this-&gt;getElementsByIdsQuery($element_ids);</span>
-<a id="rest_code_a15bd049b9a440f49dd8ea3f0beba615-16" name="rest_code_a15bd049b9a440f49dd8ea3f0beba615-16" href="#rest_code_a15bd049b9a440f49dd8ea3f0beba615-16"></a><span class="x">        $orderCASE = '';</span>
-<a id="rest_code_a15bd049b9a440f49dd8ea3f0beba615-17" name="rest_code_a15bd049b9a440f49dd8ea3f0beba615-17" href="#rest_code_a15bd049b9a440f49dd8ea3f0beba615-17"></a><span class="x">        foreach( $element_ids as $order =&gt; $id )</span>
-<a id="rest_code_a15bd049b9a440f49dd8ea3f0beba615-18" name="rest_code_a15bd049b9a440f49dd8ea3f0beba615-18" href="#rest_code_a15bd049b9a440f49dd8ea3f0beba615-18"></a><span class="x">        {</span>
-<a id="rest_code_a15bd049b9a440f49dd8ea3f0beba615-19" name="rest_code_a15bd049b9a440f49dd8ea3f0beba615-19" href="#rest_code_a15bd049b9a440f49dd8ea3f0beba615-19"></a><span class="x">            $orderCASE .= 'WHEN '.$order.' THEN '.$id.' ';</span>
-<a id="rest_code_a15bd049b9a440f49dd8ea3f0beba615-20" name="rest_code_a15bd049b9a440f49dd8ea3f0beba615-20" href="#rest_code_a15bd049b9a440f49dd8ea3f0beba615-20"></a><span class="x">        }</span>
-<a id="rest_code_a15bd049b9a440f49dd8ea3f0beba615-21" name="rest_code_a15bd049b9a440f49dd8ea3f0beba615-21" href="#rest_code_a15bd049b9a440f49dd8ea3f0beba615-21"></a>
-<a id="rest_code_a15bd049b9a440f49dd8ea3f0beba615-22" name="rest_code_a15bd049b9a440f49dd8ea3f0beba615-22" href="#rest_code_a15bd049b9a440f49dd8ea3f0beba615-22"></a><span class="x">        return $query-&gt;addSelect( '(CASE e.id '.$orderCASE.' ELSE 0 END) as order' )</span>
-<a id="rest_code_a15bd049b9a440f49dd8ea3f0beba615-23" name="rest_code_a15bd049b9a440f49dd8ea3f0beba615-23" href="#rest_code_a15bd049b9a440f49dd8ea3f0beba615-23"></a><span class="x">             -&gt;orderBy( 'order ASC' );</span>
-<a id="rest_code_a15bd049b9a440f49dd8ea3f0beba615-24" name="rest_code_a15bd049b9a440f49dd8ea3f0beba615-24" href="#rest_code_a15bd049b9a440f49dd8ea3f0beba615-24"></a><span class="x">    }</span>
-<a id="rest_code_a15bd049b9a440f49dd8ea3f0beba615-25" name="rest_code_a15bd049b9a440f49dd8ea3f0beba615-25" href="#rest_code_a15bd049b9a440f49dd8ea3f0beba615-25"></a><span class="x">}</span>
+<div class="code"><pre class="code php"><a id="rest_code_db189418317649b281b2a95aa4db0a38-1" name="rest_code_db189418317649b281b2a95aa4db0a38-1" href="#rest_code_db189418317649b281b2a95aa4db0a38-1"></a><span class="x">class MyModelTable extends Doctrine_Table</span>
+<a id="rest_code_db189418317649b281b2a95aa4db0a38-2" name="rest_code_db189418317649b281b2a95aa4db0a38-2" href="#rest_code_db189418317649b281b2a95aa4db0a38-2"></a><span class="x">{</span>
+<a id="rest_code_db189418317649b281b2a95aa4db0a38-3" name="rest_code_db189418317649b281b2a95aa4db0a38-3" href="#rest_code_db189418317649b281b2a95aa4db0a38-3"></a>
+<a id="rest_code_db189418317649b281b2a95aa4db0a38-4" name="rest_code_db189418317649b281b2a95aa4db0a38-4" href="#rest_code_db189418317649b281b2a95aa4db0a38-4"></a><span class="x">    /**</span>
+<a id="rest_code_db189418317649b281b2a95aa4db0a38-5" name="rest_code_db189418317649b281b2a95aa4db0a38-5" href="#rest_code_db189418317649b281b2a95aa4db0a38-5"></a><span class="x">    ...</span>
+<a id="rest_code_db189418317649b281b2a95aa4db0a38-6" name="rest_code_db189418317649b281b2a95aa4db0a38-6" href="#rest_code_db189418317649b281b2a95aa4db0a38-6"></a><span class="x">    */</span>
+<a id="rest_code_db189418317649b281b2a95aa4db0a38-7" name="rest_code_db189418317649b281b2a95aa4db0a38-7" href="#rest_code_db189418317649b281b2a95aa4db0a38-7"></a>
+<a id="rest_code_db189418317649b281b2a95aa4db0a38-8" name="rest_code_db189418317649b281b2a95aa4db0a38-8" href="#rest_code_db189418317649b281b2a95aa4db0a38-8"></a><span class="x">    /**</span>
+<a id="rest_code_db189418317649b281b2a95aa4db0a38-9" name="rest_code_db189418317649b281b2a95aa4db0a38-9" href="#rest_code_db189418317649b281b2a95aa4db0a38-9"></a><span class="x">    * Returns elements based on given ids, ordered as in given array.</span>
+<a id="rest_code_db189418317649b281b2a95aa4db0a38-10" name="rest_code_db189418317649b281b2a95aa4db0a38-10" href="#rest_code_db189418317649b281b2a95aa4db0a38-10"></a><span class="x">    * @param array $element_ids</span>
+<a id="rest_code_db189418317649b281b2a95aa4db0a38-11" name="rest_code_db189418317649b281b2a95aa4db0a38-11" href="#rest_code_db189418317649b281b2a95aa4db0a38-11"></a><span class="x">    * @return Doctrine_Query</span>
+<a id="rest_code_db189418317649b281b2a95aa4db0a38-12" name="rest_code_db189418317649b281b2a95aa4db0a38-12" href="#rest_code_db189418317649b281b2a95aa4db0a38-12"></a><span class="x">    */</span>
+<a id="rest_code_db189418317649b281b2a95aa4db0a38-13" name="rest_code_db189418317649b281b2a95aa4db0a38-13" href="#rest_code_db189418317649b281b2a95aa4db0a38-13"></a><span class="x">    public function getElementsByIdsOrderedQuery( $element_ids )</span>
+<a id="rest_code_db189418317649b281b2a95aa4db0a38-14" name="rest_code_db189418317649b281b2a95aa4db0a38-14" href="#rest_code_db189418317649b281b2a95aa4db0a38-14"></a><span class="x">    {</span>
+<a id="rest_code_db189418317649b281b2a95aa4db0a38-15" name="rest_code_db189418317649b281b2a95aa4db0a38-15" href="#rest_code_db189418317649b281b2a95aa4db0a38-15"></a><span class="x">        $query = $this-&gt;getElementsByIdsQuery($element_ids);</span>
+<a id="rest_code_db189418317649b281b2a95aa4db0a38-16" name="rest_code_db189418317649b281b2a95aa4db0a38-16" href="#rest_code_db189418317649b281b2a95aa4db0a38-16"></a><span class="x">        $orderCASE = '';</span>
+<a id="rest_code_db189418317649b281b2a95aa4db0a38-17" name="rest_code_db189418317649b281b2a95aa4db0a38-17" href="#rest_code_db189418317649b281b2a95aa4db0a38-17"></a><span class="x">        foreach( $element_ids as $order =&gt; $id )</span>
+<a id="rest_code_db189418317649b281b2a95aa4db0a38-18" name="rest_code_db189418317649b281b2a95aa4db0a38-18" href="#rest_code_db189418317649b281b2a95aa4db0a38-18"></a><span class="x">        {</span>
+<a id="rest_code_db189418317649b281b2a95aa4db0a38-19" name="rest_code_db189418317649b281b2a95aa4db0a38-19" href="#rest_code_db189418317649b281b2a95aa4db0a38-19"></a><span class="x">            $orderCASE .= 'WHEN '.$order.' THEN '.$id.' ';</span>
+<a id="rest_code_db189418317649b281b2a95aa4db0a38-20" name="rest_code_db189418317649b281b2a95aa4db0a38-20" href="#rest_code_db189418317649b281b2a95aa4db0a38-20"></a><span class="x">        }</span>
+<a id="rest_code_db189418317649b281b2a95aa4db0a38-21" name="rest_code_db189418317649b281b2a95aa4db0a38-21" href="#rest_code_db189418317649b281b2a95aa4db0a38-21"></a>
+<a id="rest_code_db189418317649b281b2a95aa4db0a38-22" name="rest_code_db189418317649b281b2a95aa4db0a38-22" href="#rest_code_db189418317649b281b2a95aa4db0a38-22"></a><span class="x">        return $query-&gt;addSelect( '(CASE e.id '.$orderCASE.' ELSE 0 END) as order' )</span>
+<a id="rest_code_db189418317649b281b2a95aa4db0a38-23" name="rest_code_db189418317649b281b2a95aa4db0a38-23" href="#rest_code_db189418317649b281b2a95aa4db0a38-23"></a><span class="x">             -&gt;orderBy( 'order ASC' );</span>
+<a id="rest_code_db189418317649b281b2a95aa4db0a38-24" name="rest_code_db189418317649b281b2a95aa4db0a38-24" href="#rest_code_db189418317649b281b2a95aa4db0a38-24"></a><span class="x">    }</span>
+<a id="rest_code_db189418317649b281b2a95aa4db0a38-25" name="rest_code_db189418317649b281b2a95aa4db0a38-25" href="#rest_code_db189418317649b281b2a95aa4db0a38-25"></a><span class="x">}</span>
 </pre></div>
 <p>Tak otrzymany dql zwraca nam obiekty ustawione w takiej samej
 kolejności, jak w zadanej tablicy identyfikatorów.</p>
@@ -117,23 +117,23 @@ zapytanie podstawowe zwróci nam wszystkie elementy z tabeli.</p></li>
 <p>Natomiast próba wykonania DQL z metody getElementsByIdsOrderedQuery
 zwróci nam błąd, gdyż w przypadku braku elementów w tablicy
 $element_ids addSelect będzie wyglądał następująco:</p>
-<div class="code"><pre class="code mysql"><a id="rest_code_af49b11ad89944dd83636681dbe734ca-1" name="rest_code_af49b11ad89944dd83636681dbe734ca-1" href="#rest_code_af49b11ad89944dd83636681dbe734ca-1"></a><span class="s1">'(CASE e.id  ELSE 0 END) as order'</span>
+<div class="code"><pre class="code mysql"><a id="rest_code_9ba248c525e74b60a7d11c9943084bd8-1" name="rest_code_9ba248c525e74b60a7d11c9943084bd8-1" href="#rest_code_9ba248c525e74b60a7d11c9943084bd8-1"></a><span class="s1">'(CASE e.id  ELSE 0 END) as order'</span>
 </pre></div>
 </li>
 </ul>
 <p>O ile pierwszy problem, zależnie od intencji programisty może być
 wynikiem pożądanym, o tyle drugi problem nie ucieszy nikogo.</p>
 <p>Zabezpieczyć się przed tym drugim problemem można w następujący sposób:</p>
-<div class="code"><pre class="code php"><a id="rest_code_800ff5f43cb34222872d2f0f487d9aa6-1" name="rest_code_800ff5f43cb34222872d2f0f487d9aa6-1" href="#rest_code_800ff5f43cb34222872d2f0f487d9aa6-1"></a><span class="x">if( count( $element_ids ) &gt; 0 )</span>
-<a id="rest_code_800ff5f43cb34222872d2f0f487d9aa6-2" name="rest_code_800ff5f43cb34222872d2f0f487d9aa6-2" href="#rest_code_800ff5f43cb34222872d2f0f487d9aa6-2"></a><span class="x">{</span>
-<a id="rest_code_800ff5f43cb34222872d2f0f487d9aa6-3" name="rest_code_800ff5f43cb34222872d2f0f487d9aa6-3" href="#rest_code_800ff5f43cb34222872d2f0f487d9aa6-3"></a><span class="x">    $orderCASE = '';</span>
-<a id="rest_code_800ff5f43cb34222872d2f0f487d9aa6-4" name="rest_code_800ff5f43cb34222872d2f0f487d9aa6-4" href="#rest_code_800ff5f43cb34222872d2f0f487d9aa6-4"></a><span class="x">    foreach( $element_ids as $order =&gt; $id )</span>
-<a id="rest_code_800ff5f43cb34222872d2f0f487d9aa6-5" name="rest_code_800ff5f43cb34222872d2f0f487d9aa6-5" href="#rest_code_800ff5f43cb34222872d2f0f487d9aa6-5"></a><span class="x">    {</span>
-<a id="rest_code_800ff5f43cb34222872d2f0f487d9aa6-6" name="rest_code_800ff5f43cb34222872d2f0f487d9aa6-6" href="#rest_code_800ff5f43cb34222872d2f0f487d9aa6-6"></a><span class="x">        $orderCASE .= 'WHEN '.$order.' THEN '.$id.' ';</span>
-<a id="rest_code_800ff5f43cb34222872d2f0f487d9aa6-7" name="rest_code_800ff5f43cb34222872d2f0f487d9aa6-7" href="#rest_code_800ff5f43cb34222872d2f0f487d9aa6-7"></a><span class="x">    }</span>
-<a id="rest_code_800ff5f43cb34222872d2f0f487d9aa6-8" name="rest_code_800ff5f43cb34222872d2f0f487d9aa6-8" href="#rest_code_800ff5f43cb34222872d2f0f487d9aa6-8"></a>
-<a id="rest_code_800ff5f43cb34222872d2f0f487d9aa6-9" name="rest_code_800ff5f43cb34222872d2f0f487d9aa6-9" href="#rest_code_800ff5f43cb34222872d2f0f487d9aa6-9"></a><span class="x">    return $query-&gt;addSelect( '(CASE e.id '.$orderCASE.' ELSE 0 END) as order' );</span>
-<a id="rest_code_800ff5f43cb34222872d2f0f487d9aa6-10" name="rest_code_800ff5f43cb34222872d2f0f487d9aa6-10" href="#rest_code_800ff5f43cb34222872d2f0f487d9aa6-10"></a><span class="x">}</span>
+<div class="code"><pre class="code php"><a id="rest_code_6d7771f966dc459eb3f88664c1af882c-1" name="rest_code_6d7771f966dc459eb3f88664c1af882c-1" href="#rest_code_6d7771f966dc459eb3f88664c1af882c-1"></a><span class="x">if( count( $element_ids ) &gt; 0 )</span>
+<a id="rest_code_6d7771f966dc459eb3f88664c1af882c-2" name="rest_code_6d7771f966dc459eb3f88664c1af882c-2" href="#rest_code_6d7771f966dc459eb3f88664c1af882c-2"></a><span class="x">{</span>
+<a id="rest_code_6d7771f966dc459eb3f88664c1af882c-3" name="rest_code_6d7771f966dc459eb3f88664c1af882c-3" href="#rest_code_6d7771f966dc459eb3f88664c1af882c-3"></a><span class="x">    $orderCASE = '';</span>
+<a id="rest_code_6d7771f966dc459eb3f88664c1af882c-4" name="rest_code_6d7771f966dc459eb3f88664c1af882c-4" href="#rest_code_6d7771f966dc459eb3f88664c1af882c-4"></a><span class="x">    foreach( $element_ids as $order =&gt; $id )</span>
+<a id="rest_code_6d7771f966dc459eb3f88664c1af882c-5" name="rest_code_6d7771f966dc459eb3f88664c1af882c-5" href="#rest_code_6d7771f966dc459eb3f88664c1af882c-5"></a><span class="x">    {</span>
+<a id="rest_code_6d7771f966dc459eb3f88664c1af882c-6" name="rest_code_6d7771f966dc459eb3f88664c1af882c-6" href="#rest_code_6d7771f966dc459eb3f88664c1af882c-6"></a><span class="x">        $orderCASE .= 'WHEN '.$order.' THEN '.$id.' ';</span>
+<a id="rest_code_6d7771f966dc459eb3f88664c1af882c-7" name="rest_code_6d7771f966dc459eb3f88664c1af882c-7" href="#rest_code_6d7771f966dc459eb3f88664c1af882c-7"></a><span class="x">    }</span>
+<a id="rest_code_6d7771f966dc459eb3f88664c1af882c-8" name="rest_code_6d7771f966dc459eb3f88664c1af882c-8" href="#rest_code_6d7771f966dc459eb3f88664c1af882c-8"></a>
+<a id="rest_code_6d7771f966dc459eb3f88664c1af882c-9" name="rest_code_6d7771f966dc459eb3f88664c1af882c-9" href="#rest_code_6d7771f966dc459eb3f88664c1af882c-9"></a><span class="x">    return $query-&gt;addSelect( '(CASE e.id '.$orderCASE.' ELSE 0 END) as order' );</span>
+<a id="rest_code_6d7771f966dc459eb3f88664c1af882c-10" name="rest_code_6d7771f966dc459eb3f88664c1af882c-10" href="#rest_code_6d7771f966dc459eb3f88664c1af882c-10"></a><span class="x">}</span>
 </pre></div>
 <p>W tym wypadku, jeśli tablica będzie pusta, do zapytania dql nie zostanie
 dodana instrukcja case. Należy jednak zwrócić uwagę na brak w tej pętli
@@ -146,10 +146,10 @@ jednoczesnej próbie posortowania po atrybucie order (którego po prostu
 nie będzie) doprowadzi do wystąpienia błędu bazy danych. By pozbyć się
 tego ostatniego błędu, należy dodać atrybut order z ustawioną na sztywno
 wartością:</p>
-<div class="code"><pre class="code php"><a id="rest_code_55a0aefbbf8e4f518ebbbf4991e2ca66-1" name="rest_code_55a0aefbbf8e4f518ebbbf4991e2ca66-1" href="#rest_code_55a0aefbbf8e4f518ebbbf4991e2ca66-1"></a><span class="x">else</span>
-<a id="rest_code_55a0aefbbf8e4f518ebbbf4991e2ca66-2" name="rest_code_55a0aefbbf8e4f518ebbbf4991e2ca66-2" href="#rest_code_55a0aefbbf8e4f518ebbbf4991e2ca66-2"></a><span class="x">{</span>
-<a id="rest_code_55a0aefbbf8e4f518ebbbf4991e2ca66-3" name="rest_code_55a0aefbbf8e4f518ebbbf4991e2ca66-3" href="#rest_code_55a0aefbbf8e4f518ebbbf4991e2ca66-3"></a><span class="x">    $query-&gt;addSelect( '\'1\' as order' );</span>
-<a id="rest_code_55a0aefbbf8e4f518ebbbf4991e2ca66-4" name="rest_code_55a0aefbbf8e4f518ebbbf4991e2ca66-4" href="#rest_code_55a0aefbbf8e4f518ebbbf4991e2ca66-4"></a><span class="x">}</span>
+<div class="code"><pre class="code php"><a id="rest_code_0b9b2eb7cc524524878009d930002514-1" name="rest_code_0b9b2eb7cc524524878009d930002514-1" href="#rest_code_0b9b2eb7cc524524878009d930002514-1"></a><span class="x">else</span>
+<a id="rest_code_0b9b2eb7cc524524878009d930002514-2" name="rest_code_0b9b2eb7cc524524878009d930002514-2" href="#rest_code_0b9b2eb7cc524524878009d930002514-2"></a><span class="x">{</span>
+<a id="rest_code_0b9b2eb7cc524524878009d930002514-3" name="rest_code_0b9b2eb7cc524524878009d930002514-3" href="#rest_code_0b9b2eb7cc524524878009d930002514-3"></a><span class="x">    $query-&gt;addSelect( '\'1\' as order' );</span>
+<a id="rest_code_0b9b2eb7cc524524878009d930002514-4" name="rest_code_0b9b2eb7cc524524878009d930002514-4" href="#rest_code_0b9b2eb7cc524524878009d930002514-4"></a><span class="x">}</span>
 </pre></div>
     
         <ul class="pager hidden-print">
