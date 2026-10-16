@@ -8,8 +8,8 @@
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../pl/rss.xml">
 <link rel="canonical" href="https://fizyk.dev/blog/elasticsearch-analyzers/">
-<link rel="icon" href="../../favicon-speddial.png" sizes="269x262">
 <link rel="icon" href="../../favicon.png" sizes="62x60">
+<link rel="icon" href="../../favicon-speddial.png" sizes="269x262">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -46,18 +46,18 @@ Elasticsearch from solutions I've been using so far are analyzers.</p>
 <p>Unlike <strong>Sphinx</strong> or <strong>Whoosh</strong>, where you determine how to analyze a field
 by search engine, in Elasticsearch, you define an <strong>analyzer</strong> for a field
 to analyze both the field, and query for the field as well.</p>
-<div class="code"><pre class="code json"><a id="rest_code_c9a1f06e8ee641c2b517f2a213d8d791-1" name="rest_code_c9a1f06e8ee641c2b517f2a213d8d791-1" href="#rest_code_c9a1f06e8ee641c2b517f2a213d8d791-1"></a><span class="p">{</span>
-<a id="rest_code_c9a1f06e8ee641c2b517f2a213d8d791-2" name="rest_code_c9a1f06e8ee641c2b517f2a213d8d791-2" href="#rest_code_c9a1f06e8ee641c2b517f2a213d8d791-2"></a><span class="w">    </span><span class="nt">"mappings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="rest_code_c9a1f06e8ee641c2b517f2a213d8d791-3" name="rest_code_c9a1f06e8ee641c2b517f2a213d8d791-3" href="#rest_code_c9a1f06e8ee641c2b517f2a213d8d791-3"></a><span class="w">        </span><span class="nt">"document"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="rest_code_c9a1f06e8ee641c2b517f2a213d8d791-4" name="rest_code_c9a1f06e8ee641c2b517f2a213d8d791-4" href="#rest_code_c9a1f06e8ee641c2b517f2a213d8d791-4"></a><span class="w">            </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="rest_code_c9a1f06e8ee641c2b517f2a213d8d791-5" name="rest_code_c9a1f06e8ee641c2b517f2a213d8d791-5" href="#rest_code_c9a1f06e8ee641c2b517f2a213d8d791-5"></a><span class="w">                </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="rest_code_c9a1f06e8ee641c2b517f2a213d8d791-6" name="rest_code_c9a1f06e8ee641c2b517f2a213d8d791-6" href="#rest_code_c9a1f06e8ee641c2b517f2a213d8d791-6"></a><span class="w">                    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span>
-<a id="rest_code_c9a1f06e8ee641c2b517f2a213d8d791-7" name="rest_code_c9a1f06e8ee641c2b517f2a213d8d791-7" href="#rest_code_c9a1f06e8ee641c2b517f2a213d8d791-7"></a><span class="w">                    </span><span class="nt">"analyzer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"autocomplete_analyzer"</span><span class="p">,</span>
-<a id="rest_code_c9a1f06e8ee641c2b517f2a213d8d791-8" name="rest_code_c9a1f06e8ee641c2b517f2a213d8d791-8" href="#rest_code_c9a1f06e8ee641c2b517f2a213d8d791-8"></a><span class="w">                </span><span class="p">}</span>
-<a id="rest_code_c9a1f06e8ee641c2b517f2a213d8d791-9" name="rest_code_c9a1f06e8ee641c2b517f2a213d8d791-9" href="#rest_code_c9a1f06e8ee641c2b517f2a213d8d791-9"></a><span class="w">            </span><span class="p">}</span>
-<a id="rest_code_c9a1f06e8ee641c2b517f2a213d8d791-10" name="rest_code_c9a1f06e8ee641c2b517f2a213d8d791-10" href="#rest_code_c9a1f06e8ee641c2b517f2a213d8d791-10"></a><span class="w">        </span><span class="p">}</span>
-<a id="rest_code_c9a1f06e8ee641c2b517f2a213d8d791-11" name="rest_code_c9a1f06e8ee641c2b517f2a213d8d791-11" href="#rest_code_c9a1f06e8ee641c2b517f2a213d8d791-11"></a><span class="w">    </span><span class="p">}</span>
-<a id="rest_code_c9a1f06e8ee641c2b517f2a213d8d791-12" name="rest_code_c9a1f06e8ee641c2b517f2a213d8d791-12" href="#rest_code_c9a1f06e8ee641c2b517f2a213d8d791-12"></a><span class="p">}</span>
+<div class="code"><pre class="code json"><a id="rest_code_5e3c8f3e0aec4110abed7f671623de21-1" name="rest_code_5e3c8f3e0aec4110abed7f671623de21-1" href="#rest_code_5e3c8f3e0aec4110abed7f671623de21-1"></a><span class="p">{</span>
+<a id="rest_code_5e3c8f3e0aec4110abed7f671623de21-2" name="rest_code_5e3c8f3e0aec4110abed7f671623de21-2" href="#rest_code_5e3c8f3e0aec4110abed7f671623de21-2"></a><span class="w">    </span><span class="nt">"mappings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="rest_code_5e3c8f3e0aec4110abed7f671623de21-3" name="rest_code_5e3c8f3e0aec4110abed7f671623de21-3" href="#rest_code_5e3c8f3e0aec4110abed7f671623de21-3"></a><span class="w">        </span><span class="nt">"document"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="rest_code_5e3c8f3e0aec4110abed7f671623de21-4" name="rest_code_5e3c8f3e0aec4110abed7f671623de21-4" href="#rest_code_5e3c8f3e0aec4110abed7f671623de21-4"></a><span class="w">            </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="rest_code_5e3c8f3e0aec4110abed7f671623de21-5" name="rest_code_5e3c8f3e0aec4110abed7f671623de21-5" href="#rest_code_5e3c8f3e0aec4110abed7f671623de21-5"></a><span class="w">                </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="rest_code_5e3c8f3e0aec4110abed7f671623de21-6" name="rest_code_5e3c8f3e0aec4110abed7f671623de21-6" href="#rest_code_5e3c8f3e0aec4110abed7f671623de21-6"></a><span class="w">                    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span>
+<a id="rest_code_5e3c8f3e0aec4110abed7f671623de21-7" name="rest_code_5e3c8f3e0aec4110abed7f671623de21-7" href="#rest_code_5e3c8f3e0aec4110abed7f671623de21-7"></a><span class="w">                    </span><span class="nt">"analyzer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"autocomplete_analyzer"</span><span class="p">,</span>
+<a id="rest_code_5e3c8f3e0aec4110abed7f671623de21-8" name="rest_code_5e3c8f3e0aec4110abed7f671623de21-8" href="#rest_code_5e3c8f3e0aec4110abed7f671623de21-8"></a><span class="w">                </span><span class="p">}</span>
+<a id="rest_code_5e3c8f3e0aec4110abed7f671623de21-9" name="rest_code_5e3c8f3e0aec4110abed7f671623de21-9" href="#rest_code_5e3c8f3e0aec4110abed7f671623de21-9"></a><span class="w">            </span><span class="p">}</span>
+<a id="rest_code_5e3c8f3e0aec4110abed7f671623de21-10" name="rest_code_5e3c8f3e0aec4110abed7f671623de21-10" href="#rest_code_5e3c8f3e0aec4110abed7f671623de21-10"></a><span class="w">        </span><span class="p">}</span>
+<a id="rest_code_5e3c8f3e0aec4110abed7f671623de21-11" name="rest_code_5e3c8f3e0aec4110abed7f671623de21-11" href="#rest_code_5e3c8f3e0aec4110abed7f671623de21-11"></a><span class="w">    </span><span class="p">}</span>
+<a id="rest_code_5e3c8f3e0aec4110abed7f671623de21-12" name="rest_code_5e3c8f3e0aec4110abed7f671623de21-12" href="#rest_code_5e3c8f3e0aec4110abed7f671623de21-12"></a><span class="p">}</span>
 </pre></div>
 <p>This mapping definition will cause Elasticsearch to index title field according
 to autocomplete_analyzer and query as well. That's fine for most cases,
@@ -65,19 +65,19 @@ but eg. for autocomplete usually tries to suggest where user can go further
 from what he typed, not what else he might have typed in.</p>
 <p>Elasticsearch provides a possibility to define separate analyzer
 <strong>index_analyzer</strong> for index and <strong>search_analyzer</strong> for search query.</p>
-<div class="code"><pre class="code json"><a id="rest_code_1b6af970321448368ae9b79610c5dbfc-1" name="rest_code_1b6af970321448368ae9b79610c5dbfc-1" href="#rest_code_1b6af970321448368ae9b79610c5dbfc-1"></a><span class="p">{</span>
-<a id="rest_code_1b6af970321448368ae9b79610c5dbfc-2" name="rest_code_1b6af970321448368ae9b79610c5dbfc-2" href="#rest_code_1b6af970321448368ae9b79610c5dbfc-2"></a><span class="w">    </span><span class="nt">"mappings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="rest_code_1b6af970321448368ae9b79610c5dbfc-3" name="rest_code_1b6af970321448368ae9b79610c5dbfc-3" href="#rest_code_1b6af970321448368ae9b79610c5dbfc-3"></a><span class="w">        </span><span class="nt">"document"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="rest_code_1b6af970321448368ae9b79610c5dbfc-4" name="rest_code_1b6af970321448368ae9b79610c5dbfc-4" href="#rest_code_1b6af970321448368ae9b79610c5dbfc-4"></a><span class="w">            </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="rest_code_1b6af970321448368ae9b79610c5dbfc-5" name="rest_code_1b6af970321448368ae9b79610c5dbfc-5" href="#rest_code_1b6af970321448368ae9b79610c5dbfc-5"></a><span class="w">                </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="rest_code_1b6af970321448368ae9b79610c5dbfc-6" name="rest_code_1b6af970321448368ae9b79610c5dbfc-6" href="#rest_code_1b6af970321448368ae9b79610c5dbfc-6"></a><span class="w">                    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span>
-<a id="rest_code_1b6af970321448368ae9b79610c5dbfc-7" name="rest_code_1b6af970321448368ae9b79610c5dbfc-7" href="#rest_code_1b6af970321448368ae9b79610c5dbfc-7"></a><span class="w">                    </span><span class="nt">"index_analyzer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"autocomplete_analyzer"</span><span class="p">,</span>
-<a id="rest_code_1b6af970321448368ae9b79610c5dbfc-8" name="rest_code_1b6af970321448368ae9b79610c5dbfc-8" href="#rest_code_1b6af970321448368ae9b79610c5dbfc-8"></a><span class="w">                    </span><span class="nt">"search_analyzer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"simple"</span>
-<a id="rest_code_1b6af970321448368ae9b79610c5dbfc-9" name="rest_code_1b6af970321448368ae9b79610c5dbfc-9" href="#rest_code_1b6af970321448368ae9b79610c5dbfc-9"></a><span class="w">                </span><span class="p">}</span>
-<a id="rest_code_1b6af970321448368ae9b79610c5dbfc-10" name="rest_code_1b6af970321448368ae9b79610c5dbfc-10" href="#rest_code_1b6af970321448368ae9b79610c5dbfc-10"></a><span class="w">            </span><span class="p">}</span>
-<a id="rest_code_1b6af970321448368ae9b79610c5dbfc-11" name="rest_code_1b6af970321448368ae9b79610c5dbfc-11" href="#rest_code_1b6af970321448368ae9b79610c5dbfc-11"></a><span class="w">        </span><span class="p">}</span>
-<a id="rest_code_1b6af970321448368ae9b79610c5dbfc-12" name="rest_code_1b6af970321448368ae9b79610c5dbfc-12" href="#rest_code_1b6af970321448368ae9b79610c5dbfc-12"></a><span class="w">    </span><span class="p">}</span>
-<a id="rest_code_1b6af970321448368ae9b79610c5dbfc-13" name="rest_code_1b6af970321448368ae9b79610c5dbfc-13" href="#rest_code_1b6af970321448368ae9b79610c5dbfc-13"></a><span class="p">}</span>
+<div class="code"><pre class="code json"><a id="rest_code_524ac43ca26645cd97c263109da1194f-1" name="rest_code_524ac43ca26645cd97c263109da1194f-1" href="#rest_code_524ac43ca26645cd97c263109da1194f-1"></a><span class="p">{</span>
+<a id="rest_code_524ac43ca26645cd97c263109da1194f-2" name="rest_code_524ac43ca26645cd97c263109da1194f-2" href="#rest_code_524ac43ca26645cd97c263109da1194f-2"></a><span class="w">    </span><span class="nt">"mappings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="rest_code_524ac43ca26645cd97c263109da1194f-3" name="rest_code_524ac43ca26645cd97c263109da1194f-3" href="#rest_code_524ac43ca26645cd97c263109da1194f-3"></a><span class="w">        </span><span class="nt">"document"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="rest_code_524ac43ca26645cd97c263109da1194f-4" name="rest_code_524ac43ca26645cd97c263109da1194f-4" href="#rest_code_524ac43ca26645cd97c263109da1194f-4"></a><span class="w">            </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="rest_code_524ac43ca26645cd97c263109da1194f-5" name="rest_code_524ac43ca26645cd97c263109da1194f-5" href="#rest_code_524ac43ca26645cd97c263109da1194f-5"></a><span class="w">                </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="rest_code_524ac43ca26645cd97c263109da1194f-6" name="rest_code_524ac43ca26645cd97c263109da1194f-6" href="#rest_code_524ac43ca26645cd97c263109da1194f-6"></a><span class="w">                    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span>
+<a id="rest_code_524ac43ca26645cd97c263109da1194f-7" name="rest_code_524ac43ca26645cd97c263109da1194f-7" href="#rest_code_524ac43ca26645cd97c263109da1194f-7"></a><span class="w">                    </span><span class="nt">"index_analyzer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"autocomplete_analyzer"</span><span class="p">,</span>
+<a id="rest_code_524ac43ca26645cd97c263109da1194f-8" name="rest_code_524ac43ca26645cd97c263109da1194f-8" href="#rest_code_524ac43ca26645cd97c263109da1194f-8"></a><span class="w">                    </span><span class="nt">"search_analyzer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"simple"</span>
+<a id="rest_code_524ac43ca26645cd97c263109da1194f-9" name="rest_code_524ac43ca26645cd97c263109da1194f-9" href="#rest_code_524ac43ca26645cd97c263109da1194f-9"></a><span class="w">                </span><span class="p">}</span>
+<a id="rest_code_524ac43ca26645cd97c263109da1194f-10" name="rest_code_524ac43ca26645cd97c263109da1194f-10" href="#rest_code_524ac43ca26645cd97c263109da1194f-10"></a><span class="w">            </span><span class="p">}</span>
+<a id="rest_code_524ac43ca26645cd97c263109da1194f-11" name="rest_code_524ac43ca26645cd97c263109da1194f-11" href="#rest_code_524ac43ca26645cd97c263109da1194f-11"></a><span class="w">        </span><span class="p">}</span>
+<a id="rest_code_524ac43ca26645cd97c263109da1194f-12" name="rest_code_524ac43ca26645cd97c263109da1194f-12" href="#rest_code_524ac43ca26645cd97c263109da1194f-12"></a><span class="w">    </span><span class="p">}</span>
+<a id="rest_code_524ac43ca26645cd97c263109da1194f-13" name="rest_code_524ac43ca26645cd97c263109da1194f-13" href="#rest_code_524ac43ca26645cd97c263109da1194f-13"></a><span class="p">}</span>
 </pre></div>
 <p>This will allow to limit suggestions to take account whole words user has
 already typed in. There's one caveat though. If you leave also the default
@@ -146,6 +146,9 @@ jest dostępny na licencji
             
                 <li>
 <a href="https://fizyk.dev/">Homepage</a>
+                </li>
+<li>
+<a href="../../cv/">CV</a>
                 </li>
 <li>
 <a href="../../archive/">Archives</a>

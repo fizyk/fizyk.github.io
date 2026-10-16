@@ -9,8 +9,8 @@
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../pl/rss.xml">
 <link rel="canonical" href="https://fizyk.dev/blog/delete-all-the-pyc/">
-<link rel="icon" href="../../favicon-speddial.png" sizes="269x262">
 <link rel="icon" href="../../favicon.png" sizes="62x60">
+<link rel="icon" href="../../favicon-speddial.png" sizes="269x262">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -40,13 +40,13 @@
     <p>How to remove leftover .pyc files, when your editor doesn't provide such option? Run simple bash command.</p>
 <!-- TEASER_END -->
 <p>I've been using it for some time, stareted with this:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_4525c33a8d6a4b7da03fa529863f9e55-1" name="rest_code_4525c33a8d6a4b7da03fa529863f9e55-1" href="#rest_code_4525c33a8d6a4b7da03fa529863f9e55-1"></a>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s2">"*.pyc"</span><span class="w"> </span>-exec<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span>
+<div class="code"><pre class="code bash"><a id="rest_code_2f503d15fbf748369b97c476deaa8954-1" name="rest_code_2f503d15fbf748369b97c476deaa8954-1" href="#rest_code_2f503d15fbf748369b97c476deaa8954-1"></a>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s2">"*.pyc"</span><span class="w"> </span>-exec<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span>
 </pre></div>
 <p>But it can be run much simpler:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_e4c256f2bfa5476ab19784d4824a1ae7-1" name="rest_code_e4c256f2bfa5476ab19784d4824a1ae7-1" href="#rest_code_e4c256f2bfa5476ab19784d4824a1ae7-1"></a>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s2">"*.pyc"</span><span class="w"> </span>-delete
+<div class="code"><pre class="code bash"><a id="rest_code_4622bddc711b46268837a5a083dabbf2-1" name="rest_code_4622bddc711b46268837a5a083dabbf2-1" href="#rest_code_4622bddc711b46268837a5a083dabbf2-1"></a>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s2">"*.pyc"</span><span class="w"> </span>-delete
 </pre></div>
 <p>And finally, it also can be assigned to bash alias:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_50528fbe95b347c8a5d49cc34e1e3950-1" name="rest_code_50528fbe95b347c8a5d49cc34e1e3950-1" href="#rest_code_50528fbe95b347c8a5d49cc34e1e3950-1"></a><span class="nb">alias</span><span class="w"> </span><span class="nv">delpyc</span><span class="o">=</span><span class="s1">'find . -name "*.pyc" -delete'</span>
+<div class="code"><pre class="code bash"><a id="rest_code_990067d532c54cc4a12d8b59d13b0d90-1" name="rest_code_990067d532c54cc4a12d8b59d13b0d90-1" href="#rest_code_990067d532c54cc4a12d8b59d13b0d90-1"></a><span class="nb">alias</span><span class="w"> </span><span class="nv">delpyc</span><span class="o">=</span><span class="s1">'find . -name "*.pyc" -delete'</span>
 </pre></div>
     
         <ul class="pager hidden-print">
@@ -108,6 +108,9 @@ jest dostępny na licencji
             
                 <li>
 <a href="https://fizyk.dev/">Homepage</a>
+                </li>
+<li>
+<a href="../../cv/">CV</a>
                 </li>
 <li>
 <a href="../../archive/">Archives</a>

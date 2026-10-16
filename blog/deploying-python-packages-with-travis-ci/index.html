@@ -8,8 +8,8 @@
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (pl)" href="../../pl/rss.xml">
 <link rel="canonical" href="https://fizyk.dev/blog/deploying-python-packages-with-travis-ci/">
-<link rel="icon" href="../../favicon-speddial.png" sizes="269x262">
 <link rel="icon" href="../../favicon.png" sizes="62x60">
+<link rel="icon" href="../../favicon-speddial.png" sizes="269x262">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
 </head>
 <body class="home blog">
@@ -56,10 +56,10 @@ And deployment is taking place from within virtualenv, which results in:</p>
 <aside class="admonition warning"><p class="admonition-title">Warning</p>
 <p>error: invalid command 'bdist_wheel' while deploying package to pypi</p>
 </aside><p>Well, to counter this, you need to add wheel installation yourself, like this:</p>
-<div class="code"><pre class="code yaml"><a id="rest_code_5356928be4cd4ab1968500ba44cd2e9f-1" name="rest_code_5356928be4cd4ab1968500ba44cd2e9f-1" href="#rest_code_5356928be4cd4ab1968500ba44cd2e9f-1"></a><span class="nt">install</span><span class="p">:</span>
-<a id="rest_code_5356928be4cd4ab1968500ba44cd2e9f-2" name="rest_code_5356928be4cd4ab1968500ba44cd2e9f-2" href="#rest_code_5356928be4cd4ab1968500ba44cd2e9f-2"></a><span class="w">    </span><span class="c1"># other installation steps</span>
-<a id="rest_code_5356928be4cd4ab1968500ba44cd2e9f-3" name="rest_code_5356928be4cd4ab1968500ba44cd2e9f-3" href="#rest_code_5356928be4cd4ab1968500ba44cd2e9f-3"></a><span class="w">    </span><span class="c1"># manually install wheel for deployment</span>
-<a id="rest_code_5356928be4cd4ab1968500ba44cd2e9f-4" name="rest_code_5356928be4cd4ab1968500ba44cd2e9f-4" href="#rest_code_5356928be4cd4ab1968500ba44cd2e9f-4"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"pip</span><span class="nv"> </span><span class="s">install</span><span class="nv"> </span><span class="s">wheel</span><span class="nv"> </span><span class="s">pylama</span><span class="nv"> </span><span class="s">--use-mirrors"</span>
+<div class="code"><pre class="code yaml"><a id="rest_code_223f88c6f8cf4cee80fe74ebaac2b638-1" name="rest_code_223f88c6f8cf4cee80fe74ebaac2b638-1" href="#rest_code_223f88c6f8cf4cee80fe74ebaac2b638-1"></a><span class="nt">install</span><span class="p">:</span>
+<a id="rest_code_223f88c6f8cf4cee80fe74ebaac2b638-2" name="rest_code_223f88c6f8cf4cee80fe74ebaac2b638-2" href="#rest_code_223f88c6f8cf4cee80fe74ebaac2b638-2"></a><span class="w">    </span><span class="c1"># other installation steps</span>
+<a id="rest_code_223f88c6f8cf4cee80fe74ebaac2b638-3" name="rest_code_223f88c6f8cf4cee80fe74ebaac2b638-3" href="#rest_code_223f88c6f8cf4cee80fe74ebaac2b638-3"></a><span class="w">    </span><span class="c1"># manually install wheel for deployment</span>
+<a id="rest_code_223f88c6f8cf4cee80fe74ebaac2b638-4" name="rest_code_223f88c6f8cf4cee80fe74ebaac2b638-4" href="#rest_code_223f88c6f8cf4cee80fe74ebaac2b638-4"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"pip</span><span class="nv"> </span><span class="s">install</span><span class="nv"> </span><span class="s">wheel</span><span class="nv"> </span><span class="s">pylama</span><span class="nv"> </span><span class="s">--use-mirrors"</span>
 </pre></div>
 <p>After these changes, my deployment process got down to bumping code version with
 bumpversion and pushing tags and code to github.</p>
@@ -123,6 +123,9 @@ jest dostępny na licencji
             
                 <li>
 <a href="https://fizyk.dev/">Homepage</a>
+                </li>
+<li>
+<a href="../../cv/">CV</a>
                 </li>
 <li>
 <a href="../../archive/">Archives</a>
