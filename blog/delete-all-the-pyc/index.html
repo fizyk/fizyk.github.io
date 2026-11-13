@@ -40,13 +40,13 @@
     <p>How to remove leftover .pyc files, when your editor doesn't provide such option? Run simple bash command.</p>
 <!-- TEASER_END -->
 <p>I've been using it for some time, stareted with this:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_da0f834d647b4f7a874c71bd46653272-1" name="rest_code_da0f834d647b4f7a874c71bd46653272-1" href="#rest_code_da0f834d647b4f7a874c71bd46653272-1"></a>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s2">"*.pyc"</span><span class="w"> </span>-exec<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span>
+<div class="code"><pre class="code bash"><a id="rest_code_8dcf02013f7648b8b056a9cc8c64cb38-1" name="rest_code_8dcf02013f7648b8b056a9cc8c64cb38-1" href="#rest_code_8dcf02013f7648b8b056a9cc8c64cb38-1"></a>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s2">"*.pyc"</span><span class="w"> </span>-exec<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span>
 </pre></div>
 <p>But it can be run much simpler:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_6b595760f8db47dcad15d29c0b6f770f-1" name="rest_code_6b595760f8db47dcad15d29c0b6f770f-1" href="#rest_code_6b595760f8db47dcad15d29c0b6f770f-1"></a>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s2">"*.pyc"</span><span class="w"> </span>-delete
+<div class="code"><pre class="code bash"><a id="rest_code_20afbddb5f5843dc8235d46add770a1d-1" name="rest_code_20afbddb5f5843dc8235d46add770a1d-1" href="#rest_code_20afbddb5f5843dc8235d46add770a1d-1"></a>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s2">"*.pyc"</span><span class="w"> </span>-delete
 </pre></div>
 <p>And finally, it also can be assigned to bash alias:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_7aaf1952de8c4c37b3655e0bdbcc04b2-1" name="rest_code_7aaf1952de8c4c37b3655e0bdbcc04b2-1" href="#rest_code_7aaf1952de8c4c37b3655e0bdbcc04b2-1"></a><span class="nb">alias</span><span class="w"> </span><span class="nv">delpyc</span><span class="o">=</span><span class="s1">'find . -name "*.pyc" -delete'</span>
+<div class="code"><pre class="code bash"><a id="rest_code_183f40511fbf4514a0ae643400bdec7d-1" name="rest_code_183f40511fbf4514a0ae643400bdec7d-1" href="#rest_code_183f40511fbf4514a0ae643400bdec7d-1"></a><span class="nb">alias</span><span class="w"> </span><span class="nv">delpyc</span><span class="o">=</span><span class="s1">'find . -name "*.pyc" -delete'</span>
 </pre></div>
     
         <ul class="pager hidden-print">
